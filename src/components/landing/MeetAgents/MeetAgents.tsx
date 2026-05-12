@@ -1,36 +1,39 @@
 import React from 'react';
 
-const agents = [
-  { name: "Create", desc: "Greater test coverage, higher quality products", pos: "top-[10%] left-[10%]" },
-  { name: "Execute", desc: "Test Agents self healing reduces test maintenance", pos: "top-[10%] right-[10%]" },
-  { name: "Document", desc: "Keep stakeholders and team leads in the loop", pos: "top-[40%] left-[-5%]" },
-  { name: "Diagnose", desc: "Keep development teams in the loop automatically", pos: "top-[40%] right-[-5%]" },
-  { name: "Optimize", desc: "Reduce execution time and improve stability", pos: "bottom-[10%] left-[10%]" },
-  { name: "Maintain", desc: "Eliminate the costly maintenance cycle", pos: "bottom-[10%] right-[10%]" }
+const reasons = [
+  { name: "Multi-Platform Testing", desc: "Mobile | API | Web | Desktop", pos: "top-[0%] left-[5%]" },
+  { name: "Flexible Deployment", desc: "On-Prem | Local Hosted | Hybrid", pos: "top-[0%] right-[5%]" },
+  { name: "Real Device Access", desc: "Real Device over SaaS | Device Rack (Hardware)", pos: "top-[40%] left-[-10%]" },
+  { name: "Secure & Automated", desc: "Secured Access | OTP/Code Automation", pos: "top-[40%] right-[-10%]" },
+  { name: "AI-Driven Insights", desc: "Intelligent Reporting | Anomaly Detection", pos: "bottom-[5%] left-[5%]" },
+  { name: "Scale with Ease", desc: "Parallel Execution | Cloud Elasticity", pos: "bottom-[5%] right-[5%]" }
 ];
 
 export default function MeetAgents() {
   return (
-    <section className="w-full max-w-7xl mx-auto px-8 py-40 text-center border-t border-white/5 relative overflow-hidden">
-      <h2 className="text-6xl md:text-8xl font-bold text-white mb-32 tracking-tight">
-        Meet the Agents
+    <section className="w-full max-w-7xl mx-auto px-8 py-40 text-center relative overflow-hidden">
+      <h2 className="text-4xl md:text-6xl font-bold text-white mb-32 tracking-tight">
+        Why Choose cliQTest?
       </h2>
       
       <div className="relative w-full max-w-4xl mx-auto h-[600px] flex items-center justify-center">
-        {/* Central Brain Area (Simplified) */}
-        <div className="absolute w-64 h-64 border border-white/5 rounded-full" />
+        {/* Central Brand Area */}
+        <div className="absolute w-72 h-72 border border-[#00AEEF]/20 rounded-full flex items-center justify-center">
+          <div className="w-64 h-64 border border-white/5 rounded-full animate-spin-slow" />
+          <span className="absolute text-white/20 text-sm font-bold tracking-widest uppercase">The Cliqtest Advantage</span>
+        </div>
         
-        {/* Floating Agent Cards */}
-        {agents.map((agent, i) => (
-          <div key={i} className={`absolute ${agent.pos} flex flex-col items-center group`}>
-            <div className="bg-white rounded-full px-12 py-4 mb-4 flex items-center gap-3 shadow-[0_0_30px_rgba(255,255,255,0.1)] group-hover:scale-110 transition-transform duration-300">
-              <div className="w-6 h-6 rounded bg-blue-500/20 flex items-center justify-center text-blue-500">
-                <span className="text-xs">✦</span>
+        {/* Floating Reason Cards */}
+        {reasons.map((reason, i) => (
+          <div key={i} className={`absolute ${reason.pos} flex flex-col items-center group z-10`}>
+            <div className="bg-white rounded-full px-8 py-3.5 mb-4 flex items-center gap-3 shadow-[0_0_40px_rgba(255,255,255,0.1)] group-hover:scale-105 transition-all duration-300 whitespace-nowrap">
+              <div className="w-5 h-5 rounded-full bg-[#00AEEF]/10 flex items-center justify-center text-[#00AEEF]">
+                <span className="text-[10px]">✦</span>
               </div>
-              <span className="text-black font-bold text-xl">{agent.name}</span>
+              <span className="text-black font-bold text-[16px] tracking-tight">{reason.name}</span>
             </div>
-            <p className="text-[#10B981] text-sm font-medium max-w-[180px] leading-snug">
-              {agent.desc}
+            <p className="text-[#00F2B0] text-sm font-semibold max-w-[220px] leading-snug drop-shadow-sm">
+              {reason.desc}
             </p>
           </div>
         ))}
