@@ -4,7 +4,7 @@ export default function Hero() {
   return (
     <section className="relative w-full bg-black min-h-screen flex items-center pt-20 overflow-hidden">
       {/* Background Image Layer */}
-      <div className="absolute top-0 right-0 h-full w-full lg:w-[70%] z-0 opacity-80">
+      <div className="absolute top-0 right-0 h-full w-full lg:w-[70%] z-0 opacity-90">
         <div className="relative w-full h-full transform scale-110 lg:scale-125 origin-right">
           <Image
             src="/assets/landing hero.png"
