@@ -20,7 +20,7 @@ export default function Footer() {
 
         {/* Quick Links */}
         <div className="flex flex-col gap-6">
-          <h3 className="text-white font-semibold text-lg">Quick Links</h3>
+          <h3 className="text-white font-medium text-lg">Quick Links</h3>
           <ul className="flex flex-col gap-3 text-zinc-500 text-sm">
             <li><a href="#" className="hover:text-white transition-colors">About Us</a></li>
             <li><a href="#" className="hover:text-white transition-colors">Contact Us</a></li>
@@ -31,7 +31,7 @@ export default function Footer() {
 
         {/* Contact Us */}
         <div className="flex flex-col gap-6">
-          <h3 className="text-white font-semibold text-lg">Contact Us</h3>
+          <h3 className="text-white font-medium text-lg">Contact Us</h3>
           <ul className="flex flex-col gap-3 text-zinc-500 text-sm">
             <li className="flex gap-2">
               <span className="text-zinc-400">Email :</span>

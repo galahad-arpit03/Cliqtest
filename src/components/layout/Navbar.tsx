@@ -2,163 +2,176 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
-import { ChevronDown, ChevronRight } from 'lucide-react';
+import Link from 'next/link';
+import { 
+  ChevronDown, 
+  ChevronRight,
+  Zap, 
+  Bot, 
+  Activity, 
+  Layers, 
+  Monitor 
+} from 'lucide-react';
+
+const menuItems = [
+  {
+    title: "Home",
+    href: "/"
+  },
+  {
+    title: "Insights",
+    dropdownType: "tabbed",
+    content: {
+      tabs: [
+        { 
+          id: "overview", 
+          label: "Overview", 
+          title: "cliQTest – Empowering Innovation Through Smarter Testing Solutions",
+          description: "cliQTest is an innovative platform which is designed in such way that whether you’re working on websites, mobile apps, or APIs, cliQTest provides a robust and user-friendly environment to conduct automated and manual testing with precision."
+        },
+        { 
+          id: "nocode", 
+          label: "No-Code Automation", 
+          title: "Autonomous No-Code Automation",
+          description: "Leverage AI-driven agents to automate complex workflows without writing a single line of code. Our platform adapts to UI changes in real-time."
+        },
+        { 
+          id: "devicelab", 
+          label: "Device Lab", 
+          title: "Enterprise Global Device Cloud",
+          description: "Access thousands of real iOS and Android devices, browsers, and OS versions for comprehensive cross-platform testing at scale."
+        },
+        { 
+          id: "data", 
+          label: "Centralized Data Management", 
+          title: "Intelligent Test Data Orchestration",
+          description: "Manage, generate, and mask test data across environments with centralized controls and deep integration into your CI/CD pipelines."
+        }
+      ]
+    }
+  },
+  {
+    title: "About",
+    href: "/about"
+  },
+  {
+    title: "Pricing",
+    href: "/pricing"
+  },
+  {
+    title: "Docs",
+    href: "#"
+  }
+];
 
 export default function Navbar() {
-  const [isInsightsOpen, setIsInsightsOpen] = useState(false);
-  const [activeCategory, setActiveCategory] = useState("Overview");
-
-  const categories = [
-    { 
-      id: "Overview", 
-      name: "Overview",
-      content: {
-        title: "cliQTest – Empowering Innovation Through Smarter Testing Solutions",
-        description: "cliQTest is an innovative platform which is designed in such way that whether you're working on websites, mobile apps, or APIs, cliQTest provides a robust and user-friendly environment to conduct automated and manual testing with precision.",
-        items: []
-      }
-    },
-    { 
-      id: "No-Code Automation", 
-      name: "No-Code Automation",
-      content: {
-        title: "No-Code Automation",
-        items: [
-          { subtitle: "Record and Play", text: "Effortlessly automate your tests with simple record-and-play functionality." },
-          { subtitle: "Auto Healing", text: "Ensure flawless test execution with intelligent auto-healing capabilities." },
-          { subtitle: "Platform-Agnostic Test", text: "Seamlessly automate testing across Web, Mobile, API, and Desktop." }
-        ]
-      }
-    },
-    { 
-      id: "Device Lab", 
-      name: "Device Lab",
-      content: {
-        title: "Device Lab",
-        items: [
-          { subtitle: "Device and Platform Agnostic", text: "Seamlessly test on real devices, browsers, and platforms for quality." },
-          { subtitle: "Comprehensive Testing Capabilities", text: "Evaluate usability, gestures, UI/UX, and functionality seamlessly." },
-          { subtitle: "Developer Console Integration", text: "Access live logs and debug insights directly through developer tools for efficient issue resolution." }
-        ]
-      }
-    },
-    { 
-      id: "Centralized Data Management", 
-      name: "Centralized Data Management",
-      content: {
-        title: "Centralized Data Management",
-        items: [
-          { subtitle: "Requirement & Defect Management", text: "Link test cases to requirements and defects for efficient traceability." },
-          { subtitle: "Test Case Repository", text: "Centralized storage to create, manage, and organize test cases efficiently." },
-          { subtitle: "Test Documentation & Reporting", text: "Generate detailed reports and maintain comprehensive documentation to ensure test process transparency." }
-        ]
-      }
-    }
-  ];
-
-  const activeContent = categories.find(c => c.id === activeCategory)?.content;
+  const [activeMenu, setActiveMenu] = useState<string | null>(null);
+  const [activeTab, setActiveTab] = useState("overview");
 
   return (
-    <nav className="fixed top-0 w-full z-50 border-b border-white/5 bg-[#0A0B1A] px-6 h-16 flex justify-between items-center">
-      <div className="flex items-center gap-2">
+    <nav className="fixed top-0 w-full z-50 bg-[#0A0C10] border-b border-white/5 h-16 px-12 flex justify-between items-center font-rubik">
+      {/* Logo Section */}
+      <Link href="/" className="flex items-center gap-2 cursor-pointer group">
         <div className="relative w-32 h-9.5 overflow-hidden">
           <Image
             src="/logo/logo.png"
             alt="cliQTest"
             fill
-            className="object-cover scale-[1.2] object-center"
+            className="object-cover scale-[1.2] object-center transition-transform group-hover:scale-[1.25]"
             priority
           />
         </div>
-      </div>
-      
-      <div className="hidden md:flex items-center gap-10 text-[15px] font-medium text-zinc-300 h-full font-rubik">
-        <a href="#" className="hover:text-white transition-colors">Home</a>
-        
-        {/* Insights Dropdown Trigger */}
-        <div 
-          className="group h-full flex items-center cursor-pointer"
-          onMouseEnter={() => setIsInsightsOpen(true)}
-          onMouseLeave={() => {
-            setIsInsightsOpen(false);
-            setActiveCategory("Overview");
-          }}
-        >
-          <div className="flex items-center gap-1 hover:text-white transition-colors">
-            <span>Insights</span>
-            <ChevronDown size={16} className={`text-zinc-500 group-hover:text-white transition-all ${isInsightsOpen ? 'rotate-180' : ''}`} />
-          </div>
+      </Link>
 
-          {/* Mega Menu */}
-          {isInsightsOpen && (
-            <div className="absolute top-full left-1/2 -translate-x-1/2 mt-0 w-[1100px] max-w-[95vw] h-[450px] bg-[#0A0B1E] border border-white/10 border-t-0 rounded-b-2xl shadow-2xl overflow-hidden p-10 flex gap-12 animate-in fade-in slide-in-from-top-2 duration-200">
-              {/* Left Section: List */}
-              <div className="w-[320px] flex flex-col gap-1">
-                {categories.map((item) => (
-                  <div 
-                    key={item.id} 
-                    onMouseEnter={() => setActiveCategory(item.id)}
-                    className={`flex items-center justify-between p-4 rounded-xl transition-all cursor-pointer group/item ${activeCategory === item.id ? 'bg-white/5 text-white' : 'text-zinc-400 hover:text-white hover:bg-white/5'}`}
-                  >
-                    <span className="font-medium text-[16px]">{item.name}</span>
-                    <ChevronRight size={18} className={`${activeCategory === item.id ? 'opacity-100' : 'opacity-0'} transition-opacity`} />
-                  </div>
-                ))}
+      {/* Right Content Group */}
+      <div className="flex items-center gap-10">
+        {/* Navigation Items */}
+        <div className="hidden lg:flex items-center gap-8">
+          {menuItems.map((item) => {
+            const isInsights = item.title === "Insights";
+            
+            const ItemLabel = (
+              <div className={`flex items-center gap-1 text-[15px] font-normal transition-colors ${activeMenu === item.title ? 'text-white' : 'text-white/80 hover:text-white'}`}>
+                {item.title}
+                {isInsights && <ChevronDown size={14} className={`transition-transform duration-300 ${activeMenu === item.title ? 'rotate-180' : ''}`} />}
               </div>
+            );
 
-              {/* Separator */}
-              <div className="w-[1px] bg-blue-500/30 self-stretch my-2" />
+            return (
+              <div
+                key={item.title}
+                className="relative h-16 flex items-center cursor-pointer"
+                onMouseEnter={() => isInsights && setActiveMenu(item.title)}
+                onMouseLeave={() => isInsights && setActiveMenu(null)}
+              >
+                {item.href ? (
+                  <Link href={item.href}>
+                    {ItemLabel}
+                  </Link>
+                ) : ItemLabel}
 
-              {/* Right Section: Content */}
-              <div className="flex-1 overflow-y-auto">
-                <h2 className="text-[28px] font-bold mb-6 leading-tight text-white tracking-tight font-sans">
-                  {activeCategory === "Overview" ? (
-                    <>
-                      <span className="text-blue-400">cliQTest</span>
-                      <span> – Empowering Innovation Through Smarter Testing Solutions</span>
-                    </>
-                  ) : activeContent?.title}
-                </h2>
-                
-                {activeCategory === "Overview" ? (
-                  <p className="text-zinc-400 leading-relaxed text-[17px] max-w-[600px] font-sans">
-                    {activeContent?.description}
-                  </p>
-                ) : (
-                  <div className="space-y-5 font-sans">
-                    {activeContent?.items.map((item, idx) => (
-                      <div key={idx} className="group/detail cursor-pointer">
-                        <div className="flex items-center justify-between mb-1">
-                          <h4 className="text-zinc-500 text-[13px] uppercase tracking-wider font-semibold group-hover/detail:text-zinc-300 transition-colors">
-                            {item.subtitle}
-                          </h4>
-                          <ChevronRight size={16} className="text-zinc-600 opacity-0 group-hover/detail:opacity-100 group-hover/detail:translate-x-1 transition-all" />
-                        </div>
-                        <p className="text-white text-[17px] font-medium leading-tight">
-                          {item.text}
-                        </p>
-                        <div className="h-[1px] w-full bg-white/5 mt-4 group-hover/detail:bg-white/10 transition-colors" />
+                {/* Dropdown Menu (Insights Tabbed Layout) */}
+                {isInsights && activeMenu === "Insights" && (
+                  <div className="fixed top-16 left-1/2 -translate-x-1/2 pt-2 animate-in fade-in slide-in-from-top-2 duration-200 z-[100] w-[95vw] max-w-[1200px]">
+                    <div className="bg-[#0D121F] border border-white/5 rounded-[24px] shadow-[0_30px_60px_-15px_rgba(0,0,0,0.6)] overflow-hidden flex min-h-[500px]">
+                      
+                      {/* Left Sidebar: Tabs */}
+                      <div className="w-[380px] p-8 flex flex-col gap-4 bg-black/20">
+                        {item.content?.tabs?.map((tab: any) => (
+                          <div
+                            key={tab.id}
+                            onMouseEnter={() => setActiveTab(tab.id)}
+                            className={`flex items-center justify-between px-6 py-5 rounded-2xl transition-all duration-300 cursor-pointer group/tab ${
+                              activeTab === tab.id 
+                              ? 'bg-[#1D253A] text-white shadow-lg' 
+                              : 'text-white/60 hover:text-white hover:bg-white/5'
+                            }`}
+                          >
+                            <span className="text-lg font-medium">{tab.label}</span>
+                            <ChevronRight size={20} className={`transition-transform duration-300 ${activeTab === tab.id ? 'translate-x-1' : 'opacity-40'}`} />
+                          </div>
+                        ))}
                       </div>
-                    ))}
-                    <button className="text-blue-400 hover:text-blue-300 font-semibold text-[15px] mt-2 inline-flex items-center gap-1.5 transition-colors border-b border-transparent hover:border-blue-400/30 pb-0.5">
-                      view more
-                    </button>
+
+                      {/* Divider */}
+                      <div className="w-[2px] bg-gradient-to-b from-[#00AEEF]/40 via-[#00AEEF] to-[#00AEEF]/40 my-10" />
+
+                      {/* Right Content Area */}
+                      <div className="flex-1 p-16 flex flex-col justify-center">
+                        {item.content?.tabs?.map((tab: any) => (
+                          <div 
+                            key={tab.id} 
+                            className={`transition-all duration-500 absolute pr-20 ${
+                              activeTab === tab.id 
+                              ? 'opacity-100 translate-y-0 relative' 
+                              : 'opacity-0 translate-y-4 pointer-events-none'
+                            }`}
+                          >
+                            <h2 className="text-4xl font-bold leading-tight mb-10 tracking-tight">
+                              <span className="text-[#00F2B0]">cliQTest</span>
+                              <span className="text-white"> – {tab.title.split(' – ')[1] || tab.title}</span>
+                            </h2>
+                            <p className="text-white/50 text-xl leading-relaxed max-w-2xl font-light">
+                              {tab.description}
+                            </p>
+                          </div>
+                        ))}
+                      </div>
+
+                    </div>
                   </div>
                 )}
               </div>
-            </div>
-          )}
+            );
+          })}
         </div>
 
-        <a href="#" className="hover:text-white transition-colors">About</a>
-        <a href="#" className="hover:text-white transition-colors">Pricing</a>
-        <a href="#" className="hover:text-white transition-colors">Docs</a>
-      </div>
-
-      <div className="flex items-center gap-4">
-        <button className="px-6 py-2.5 rounded-xl border border-white/40 text-white font-medium text-sm hover:bg-white/10 transition-all font-rubik">
-          Book Demo
-        </button>
+        {/* Action Button */}
+        <Link href="/book-a-demo">
+          <button className="px-6 py-2 bg-[#00AEEF] text-white text-[14px] font-light rounded-full hover:opacity-90 transition-opacity shadow-[0_0_15px_rgba(0,174,239,0.3)] whitespace-nowrap">
+            Book a Demo
+          </button>
+        </Link>
       </div>
     </nav>
   );
