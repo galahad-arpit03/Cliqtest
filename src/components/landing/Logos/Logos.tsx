@@ -7,7 +7,7 @@ const partners = [
 
 export default function Logos() {
   return (
-    <section className="w-full max-w-7xl mx-auto px-8 py-20 border-t border-white/5">
+    <section className="w-full max-w-7xl mx-auto px-8 py-20">
       <p className="text-zinc-400 text-xl font-medium tracking-wide text-center mb-16">
         Trusted by the World&apos;s Boldest Engineering Teams
       </p>

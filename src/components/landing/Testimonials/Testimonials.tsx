@@ -19,7 +19,7 @@ const quotes = [
 
 export default function Testimonials() {
   return (
-    <section className="w-full max-w-7xl mx-auto px-8 py-32 flex flex-col lg:grid lg:grid-cols-2 gap-20 border-t border-white/5">
+    <section className="w-full max-w-7xl mx-auto px-8 py-32 flex flex-col lg:grid lg:grid-cols-2 gap-20">
       {/* Left side: Quotes */}
       <div className="flex flex-col gap-10">
         {quotes.map((quote, i) => (

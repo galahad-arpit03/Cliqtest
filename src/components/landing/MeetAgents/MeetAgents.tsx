@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 
 const reasons = [
   { name: "Multi-Platform Testing", desc: "Mobile | API | Web | Desktop", pos: "top-[0%] left-[5%]" },
@@ -18,9 +19,17 @@ export default function MeetAgents() {
       
       <div className="relative w-full max-w-4xl mx-auto h-[600px] flex items-center justify-center">
         {/* Central Brand Area */}
-        <div className="absolute w-72 h-72 border border-[#00AEEF]/20 rounded-full flex items-center justify-center">
-          <div className="w-64 h-64 border border-white/5 rounded-full animate-spin-slow" />
-          <span className="absolute text-white/20 text-sm font-bold tracking-widest uppercase">The Cliqtest Advantage</span>
+        <div className="absolute w-[450px] h-[450px] flex items-center justify-center">
+          <div className="relative w-full h-full animate-float">
+            <Image
+              src="/assets/brain.png"
+              alt="Cliqtest AI Brain"
+              fill
+              className="object-contain"
+              priority
+            />
+          </div>
+          <span className="absolute -bottom-12 text-white/20 text-[10px] font-bold tracking-[0.3em] uppercase">The Cliqtest Advantage</span>
         </div>
         
         {/* Floating Reason Cards */}
