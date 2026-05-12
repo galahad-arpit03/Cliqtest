@@ -16,7 +16,7 @@ const rubik = Rubik({
 });
 
 export const metadata: Metadata = {
-  title: "Netraa X | Premium Testing Platform",
+  title: "CliQTest",
   description: "Next-generation automated testing and quality assurance platform powered by Cliqtest.",
   icons: {
     icon: "/logo/bglogo.png",

@@ -17,9 +17,8 @@ export default function MeetAgents() {
       </h2>
       
       <div className="relative w-full max-w-4xl mx-auto h-[600px] flex items-center justify-center">
-        {/* Central Brain Placeholder */}
-        <div className="relative w-80 h-80 rounded-full bg-gradient-to-br from-purple-500/30 to-blue-500/30 blur-[40px] animate-pulse" />
-        <div className="absolute w-64 h-64 border border-white/10 rounded-full animate-spin-slow" />
+        {/* Central Brain Area (Simplified) */}
+        <div className="absolute w-64 h-64 border border-white/5 rounded-full" />
         
         {/* Floating Agent Cards */}
         {agents.map((agent, i) => (

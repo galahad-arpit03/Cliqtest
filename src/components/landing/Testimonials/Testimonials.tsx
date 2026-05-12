@@ -24,7 +24,7 @@ export default function Testimonials() {
       <div className="flex flex-col gap-10">
         {quotes.map((quote, i) => (
           <div key={i} className="flex flex-col gap-6">
-            <div className="p-8 rounded-3xl border border-white/10 bg-[#0A0B1E] relative">
+            <div className="p-8 rounded-3xl border border-white/5 bg-black relative shadow-2xl">
                <p className="text-zinc-300 text-lg leading-relaxed mb-6 font-light italic">
                  &quot;{quote.text}&quot;
                </p>
