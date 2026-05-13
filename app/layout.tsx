@@ -16,10 +16,36 @@ const rubik = Rubik({
 });
 
 export const metadata: Metadata = {
-  title: "CliQTest",
-  description: "Next-generation automated testing and quality assurance platform powered by Cliqtest.",
+  title: "cliQTest | Next-Gen Automated Testing & Quality Assurance Platform",
+  description: "Empower your QA teams with cliQTest - the intelligent automation platform for web, mobile, API, and desktop testing. Features self-healing, no-code engine, and real device labs.",
+  keywords: ["automated testing", "QA automation", "no-code testing", "device lab", "test management", "cliQTest", "software quality assurance"],
+  authors: [{ name: "cliQTest Team" }],
+  viewport: "width=device-width, initial-scale=1",
   icons: {
     icon: "/logo/bglogo.png",
+    apple: "/logo/bglogo.png",
+  },
+  openGraph: {
+    title: "cliQTest | Smarter Testing for Faster Shipping",
+    description: "The all-in-one platform for manual and automated testing across all digital surfaces.",
+    url: "https://cliqtest.com",
+    siteName: "cliQTest",
+    images: [
+      {
+        url: "/logo/logo.png",
+        width: 1200,
+        height: 630,
+        alt: "cliQTest Platform",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "cliQTest | Smarter Testing for Faster Shipping",
+    description: "The all-in-one platform for manual and automated testing across all digital surfaces.",
+    images: ["/logo/logo.png"],
   },
 };
 

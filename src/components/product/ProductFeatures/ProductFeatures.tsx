@@ -1,7 +1,7 @@
 "use client";
 
 import React from 'react';
-import { Zap, TrendingUp, Cpu, Network, Cloud } from 'lucide-react';
+import { Zap, TrendingUp, Network, Cloud } from 'lucide-react';
 
 export default function ProductFeatures() {
   return (

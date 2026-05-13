@@ -15,7 +15,7 @@ export default function Footer() {
               className="object-cover scale-[1.2] object-center"
             />
           </div>
-          <p className="text-zinc-500 text-sm italic ml-2">"Turning Clicks into Confidence"</p>
+          <p className="text-zinc-500 text-sm italic ml-2">&quot;Turning Clicks into Confidence&quot;</p>
         </div>
 
         {/* Quick Links */}

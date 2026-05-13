@@ -12,6 +12,20 @@ import {
   Minus
 } from 'lucide-react';
 
+interface Feature {
+  label: string;
+  desc: string;
+}
+
+interface NavTab {
+  id: string;
+  label: string;
+  title?: string;
+  description?: string;
+  header?: string;
+  features?: Feature[];
+}
+
 const menuItems = [
   {
     title: "Home",
@@ -159,7 +173,7 @@ export default function Navbar() {
                       
                       {/* Dropdown Sidebar */}
                       <div className="w-[300px] p-8 flex flex-col gap-3 bg-white/[0.03] border-r border-white/5">
-                        {item.content?.tabs?.map((tab: any) => (
+                        {item.content?.tabs?.map((tab: NavTab) => (
                           <div
                             key={tab.id}
                             onMouseEnter={() => setActiveTab(tab.id)}
@@ -177,7 +191,7 @@ export default function Navbar() {
 
                       {/* Dropdown Content */}
                       <div className="flex-1 p-12 flex flex-col relative overflow-hidden bg-gradient-to-br from-transparent to-[#00AEEF]/5">
-                        {item.content?.tabs?.map((tab: any) => (
+                        {item.content?.tabs?.map((tab: NavTab) => (
                           <div 
                             key={tab.id} 
                             className={`transition-all duration-500 absolute inset-12 ${
@@ -200,7 +214,7 @@ export default function Navbar() {
                               <div className="flex flex-col">
                                 <h2 className="text-2xl font-black text-white mb-8 border-b border-white/10 pb-4 inline-block">{tab.header}</h2>
                                 <div className="grid grid-cols-1 gap-4">
-                                  {tab.features.map((feat: any, idx: number) => (
+                                  {tab.features?.map((feat: { label: string; desc: string }, idx: number) => (
                                     <div key={idx} className="group/feat p-4 flex flex-col gap-2 relative cursor-pointer hover:bg-white/[0.03] transition-all rounded-2xl border border-transparent hover:border-white/5">
                                       <div className="flex items-center justify-between">
                                         <span className="text-[#00F2B0] text-[10px] tracking-widest uppercase font-black">{feat.label}</span>
@@ -288,7 +302,7 @@ export default function Navbar() {
                 {/* Mobile Insights Expanded Accordion */}
                 {isInsights && isExpanded && (
                   <div className="flex flex-col gap-8 mt-10 ml-4 border-l-2 border-[#00AEEF]/40 pl-8 animate-in slide-in-from-left-6 duration-500">
-                    {item.content?.tabs?.map((tab: any) => (
+                    {item.content?.tabs?.map((tab: NavTab) => (
                       <Link 
                         key={tab.id}
                         href={tab.id === "overview" ? "/about" : "/products/agentic-qa"}

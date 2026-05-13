@@ -64,51 +64,57 @@ export default function PricingGrid() {
   ];
 
   return (
-    <section className="bg-black py-32 px-12 lg:px-24 min-h-screen">
-      <div className="max-w-7xl mx-auto">
-        <h2 className="text-4xl md:text-6xl font-bold mb-24 text-center">
-          <span className="bg-gradient-to-r from-purple-400 via-blue-400 to-cyan-400 bg-clip-text text-transparent">
-            One Platform, Affordable Pricing, Limitless Testing
-          </span>
+    <section className="bg-black py-20 px-6 md:px-12 lg:px-24 min-h-screen">
+      <div className="max-w-[1400px] mx-auto">
+        <h2 className="text-white text-center text-2xl md:text-3xl lg:text-4xl font-bold mb-16 tracking-tight">
+          One Platform, <span className="text-[#00AEEF]">Affordable Pricing</span>, Limitless Testing
         </h2>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 items-stretch">
           {tiers.map((tier, idx) => (
             <div 
               key={idx} 
-              className={`relative rounded-[32px] p-8 flex flex-col border transition-all duration-500 hover:scale-[1.02] ${
+              className={`relative bg-black p-6 md:p-8 flex flex-col border-[1.5px] transition-all duration-300 ${
                 tier.highlighted 
-                ? 'border-purple-500 shadow-[0_0_40px_rgba(168,85,247,0.15)] bg-purple-500/5' 
-                : 'border-white/10 bg-zinc-900/40 hover:border-white/20'
+                ? 'border-[#915BFF] ring-1 ring-[#915BFF]/50 shadow-[0_0_30px_rgba(145,91,255,0.1)]' 
+                : 'border-white/40 hover:border-white/60'
               }`}
+              style={{ borderRadius: '8px' }}
             >
+              {/* Highlight Ribbon for Elite */}
               {tier.highlighted && (
-                <div className="absolute top-4 right-4 w-6 h-6 bg-purple-500 rounded-lg flex items-center justify-center">
-                  <Check size={14} className="text-white" />
+                <div className="absolute top-0 left-0 overflow-hidden w-16 h-16 md:w-20 md:h-20 pointer-events-none">
+                  <div className="absolute top-0 left-0 w-[150%] h-[150%] bg-[#915BFF] origin-top-left -rotate-45 -translate-x-[70%] -translate-y-[70%] shadow-lg" />
+                  <Check size={12} className="absolute top-1 left-1 md:top-1.5 md:left-1.5 text-white z-10" strokeWidth={3} />
                 </div>
               )}
 
-              <div className="text-center mb-10">
-                <h3 className="text-4xl font-light text-white/90 mb-8">{tier.name}</h3>
-                <div className="inline-block p-[1px] bg-gradient-to-r from-[#00F2B0] to-[#00AEEF] rounded-full">
-                  <div className="bg-black/90 px-6 py-2 rounded-full">
-                    <span className="text-[11px] text-[#00F2B0] font-bold leading-tight block text-center">
-                      {tier.tagline}
-                    </span>
-                  </div>
+              {/* Header Section */}
+              <div className="text-center mb-8">
+                <h3 className="text-[40px] md:text-[52px] font-extralight text-[#7B8EDF] mb-6 tracking-tight">
+                  {tier.name}
+                </h3>
+                
+                {/* Tagline Pill */}
+                <div className="border border-[#00F2B0]/40 rounded-[12px] bg-[#0A0A0A] p-3 md:p-4 min-h-[64px] md:min-h-[72px] flex items-center justify-center">
+                  <span className="text-[11px] md:text-[12px] text-[#00F2B0] font-semibold leading-relaxed tracking-wide text-center">
+                    {tier.tagline}
+                  </span>
                 </div>
               </div>
 
-              <ul className="space-y-6 flex-1">
+              {/* Features List */}
+              <ul className="space-y-5 flex-1">
                 {tier.features.map((feature, fIdx) => (
-                  <li key={fIdx} className="flex gap-4 items-start group">
-                    <Check size={18} className={`shrink-0 mt-0.5 ${tier.highlighted ? 'text-purple-400' : 'text-white/40'}`} />
-                    <span className="text-zinc-400 text-[13px] leading-relaxed group-hover:text-white/90 transition-colors">
+                  <li key={fIdx} className="flex gap-3 items-start group">
+                    <Check size={16} className="shrink-0 mt-1 text-white" strokeWidth={2.5} />
+                    <span className="text-white text-[14px] leading-snug font-normal opacity-90">
                       {feature}
                     </span>
                   </li>
                 ))}
               </ul>
+
             </div>
           ))}
         </div>

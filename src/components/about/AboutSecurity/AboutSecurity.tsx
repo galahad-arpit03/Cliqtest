@@ -4,13 +4,13 @@ import React from 'react';
 
 export default function AboutSecurity() {
   return (
-    <section className="bg-white py-32 px-12 lg:px-24">
+    <section className="bg-white py-32 px-6 md:px-12">
       <div className="max-w-4xl mx-auto text-center">
         <h2 className="text-black text-4xl md:text-5xl font-medium mb-12">
           Enterprise Scale and Security
         </h2>
         <p className="text-zinc-600 text-lg md:text-xl leading-relaxed mb-24 max-w-3xl mx-auto">
-          Functionize works with the world's largest enterprises. They trust our security, reliability and scalability. We invest heavily in the security of our cloud systems to ensure world-class support for our customers.
+          cliQTest works with the world&apos;s largest enterprises. They trust our security, reliability, and scalability. We invest heavily in the security of our cloud systems to ensure world-class protection and support for our customers.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-center justify-items-center">

@@ -4,43 +4,46 @@ import React from 'react';
 
 export default function AboutHero() {
   return (
-    <section className="relative pt-32 pb-16 px-12 lg:px-24 bg-black overflow-hidden min-h-[75vh] flex flex-col justify-center">
-      {/* Background Glows */}
-      <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-emerald-500/5 blur-[150px] -z-10" />
-      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-blue-500/5 blur-[150px] -z-10" />
+    <section
+      className="relative min-h-screen flex flex-col justify-center overflow-hidden"
+      style={{
+        backgroundImage: "url('/about/hero.png')",
+        backgroundSize: "cover",
+        backgroundPosition: "center right",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/60 to-black/20 pointer-events-none" />
+      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black to-transparent pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-        {/* Left Side: Content */}
-        <div className="text-left">
-          <h1 className="text-white text-5xl md:text-[72px] font-bold leading-[1] tracking-tight mb-8">
-            What is <br />
-            Functionize?
-          </h1>
-          <p className="text-[#00F2B0] text-lg md:text-xl font-medium max-w-2xl leading-relaxed mb-6">
-            Functionize is a transformative platform revolutionizing Enterprise Agentic Automation by integrating AI, ML, Big Data and Advanced Computer Vision into a cohesive, game-changing solution.
-          </p>
-          <p className="text-white/60 text-base md:text-lg leading-relaxed max-w-2xl mb-10">
-            At its heart, Functionize is powered by proprietary AI technology that develops intelligent, self-healing AI Agents. These agents are crafted to automate intricate user workflows and adeptly adapt in real-time to application changes. This adaptability is driven by our advanced multi-modal AI that not only captures and analyzes your specific application data maps, but also draws insights from similar applications across various platforms—from web to mobile. This ensures our agents can efficiently learn new user workflows and self-correct as incremental changes occur.
-          </p>
-          
-          <button className="px-10 py-4 bg-gradient-to-r from-[#00AEEF] to-[#0091c7] text-white font-black rounded-full hover:scale-105 transition-transform text-sm tracking-[0.2em] uppercase shadow-lg shadow-[#00AEEF]/20">
-            AGENTIC MANIFESTO
+      {/* Content */}
+      <div className="relative z-10 max-w-7xl mx-auto w-full px-6 md:px-12 pt-28 pb-12">
+
+        {/* Heading */}
+        <h1 className="text-white text-3xl md:text-4xl lg:text-[54px] font-black leading-[1.05] tracking-tight mb-6 max-w-xl">
+          What is <br /><span className="text-white">cliQTest</span>?
+        </h1>
+
+        {/* Para 1 — Cyan */}
+        <p className="text-[#00F2B0] text-base md:text-lg font-medium leading-relaxed max-w-[50%] mb-5">
+          cliQTest is an innovative all-in-one platform designed to revolutionize Quality Assurance for software applications, combining no-code automation, real-device access, and seamless workflow management into a cohesive, game-changing solution.
+        </p>
+
+        {/* Para 2 — White */}
+        <p className="text-white/70 text-sm md:text-base leading-relaxed max-w-[50%] mb-10">
+          At its core, cliQTest empowers QA teams with intelligent tools that eliminate complexity. Whether you&apos;re testing websites, mobile apps, APIs, or desktops — cliQTest provides a robust environment to conduct automated and manual testing with precision. Its self-healing automation, real-time device lab, and centralized test management ensure your team ships faster without compromising quality.
+        </p>
+
+        {/* CTA */}
+        <div className="flex flex-col sm:flex-row gap-3">
+          <button className="px-6 py-3 bg-[#00AEEF] text-white font-bold rounded-full hover:bg-[#0092E6] hover:scale-105 transition-all text-sm tracking-[0.15em] uppercase shadow-lg shadow-[#00AEEF]/30">
+            Explore Platform
           </button>
         </div>
 
-        {/* Right Side: Visual Placeholder */}
-        <div className="relative aspect-square w-full max-w-[650px] mx-auto lg:mx-0">
-          <div className="absolute inset-0 bg-[#00F2B0]/5 rounded-[60px] rotate-6 blur-md" />
-          <div className="absolute inset-0 bg-zinc-900/40 border border-white/5 rounded-[60px] backdrop-blur-3xl flex items-center justify-center overflow-hidden shadow-2xl">
-            <div className="relative w-3/4 h-3/4">
-               {/* Abstract 3D elements placeholder */}
-               <div className="absolute inset-0 bg-gradient-to-tr from-emerald-500/20 to-blue-500/20 rounded-3xl" />
-               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-[#00AEEF]/20 rounded-full blur-[80px] animate-pulse" />
-               <div className="absolute top-10 left-10 w-20 h-20 border border-white/20 rounded-2xl rotate-12" />
-               <div className="absolute bottom-20 right-10 w-32 h-32 border border-white/10 rounded-full" />
-            </div>
-          </div>
-        </div>
+
+
       </div>
     </section>
   );
