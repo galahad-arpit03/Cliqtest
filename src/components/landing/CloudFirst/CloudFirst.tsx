@@ -24,7 +24,7 @@ const features = [
 
 export default function CloudFirst() {
   return (
-    <section className="relative w-full bg-black py-24 overflow-hidden">
+    <section className="relative w-full bg-black py-20 overflow-hidden">
       {/* Radial Gradient Background */}
       <div 
         className="absolute inset-0 z-0 pointer-events-none"
@@ -34,17 +34,24 @@ export default function CloudFirst() {
         }}
       />
       
-      <div className="relative z-10 max-w-7xl mx-auto px-8 text-center">
+      <div className="relative z-10 w-full px-6 md:px-12 text-center">
         <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 tracking-tight">
           Features of cliQTest.
         </h2>
         
-        <p className="text-lg md:text-xl text-[#00F2B0] font-medium mb-10 max-w-4xl mx-auto leading-relaxed">
-          From requirements management to version control, review workflows, user-role management, and test data maintenance, cliQTest streamlines every aspect of test data and project handling, ensuring seamless collaboration and complete control in one unified platform.
+        <p className="text-xl md:text-3xl text-[#10B981] font-medium mb-10 leading-tight">
+          Ensuring seamless collaboration and complete control in one unified platform.
         </p>
 
+        <div className="w-full mb-14">
+          <p className="text-zinc-300 text-lg md:text-xl leading-relaxed font-light">
+            From requirements management to version control, review workflows, user-role management, 
+            and test data maintenance, cliQTest streamlines every aspect of test data and project handling.
+          </p>
+        </div>
+
         <div className="flex justify-center mb-20">
-          <button className="px-8 py-3 rounded-full bg-[#00AEEF] text-white font-bold text-xs tracking-widest uppercase hover:bg-[#0092E6] transition-all font-rubik shadow-[0_0_15px_rgba(0,174,239,0.3)]">
+          <button className="px-10 py-3 bg-[#00AEEF] text-white text-xs font-bold tracking-[0.2em] rounded-full uppercase shadow-[0_0_20px_rgba(0,174,239,0.4)] hover:scale-105 transition-transform">
             Enterprise App Intelligence
           </button>
         </div>

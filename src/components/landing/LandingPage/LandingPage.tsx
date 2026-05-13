@@ -4,7 +4,6 @@ import Logos from "@/components/landing/Logos/Logos";
 import Platform from "@/components/landing/Platform/Platform";
 import CloudFirst from "@/components/landing/CloudFirst/CloudFirst";
 import MeetAgents from "@/components/landing/MeetAgents/MeetAgents";
-import Testimonials from "@/components/landing/Testimonials/Testimonials";
 import Resources from "@/components/landing/Resources/Resources";
 
 export default function LandingPage() {
@@ -15,7 +14,6 @@ export default function LandingPage() {
       <Platform />
       <CloudFirst />
       <MeetAgents />
-      <Testimonials />
       <Resources />
       
       {/* Additional sections can be added here */}

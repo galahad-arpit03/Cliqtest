@@ -1,111 +1,106 @@
 import React from 'react';
+import Image from 'next/image';
 
-const resources = [
+const smallCards = [
   {
-    title: "Cliqtest Datasheet",
-    description: "Test faster. Test with Cliqtest. Applications change over time. So should your tests.",
-    image: "bg-gradient-to-br from-purple-500/10 to-blue-500/10"
+    title: "50+ Enterprises",
+    desc: "Trusted by global leaders to automate their most critical workflows and ensure seamless user experiences at scale.",
+    img: "/assets/enterprise.png",
+    fallbackBg: "bg-gradient-to-br from-cyan-50 to-blue-100",
+    icon: "🏢",
+    href: "#"
   },
   {
-    title: "Why test with 70 million data points?",
-    description: "Cliqtest is a world-leading AI-powered test automation platform. But this is only possible because we collect a vast volume of data.",
-    image: "bg-gradient-to-br from-blue-500/10 to-emerald-500/10"
+    title: "4+ Platform Support",
+    desc: "Comprehensive coverage for Web, Mobile, API, and Desktop testing in one intelligent ecosystem.",
+    img: "/assets/platform.png",
+    fallbackBg: "bg-gradient-to-br from-indigo-50 to-purple-100",
+    icon: "🌐",
+    href: "#"
   },
   {
-    title: "The Leader's Guide to AI Testing Transformation",
-    description: "A leader's guide to transforming QA with AI. Learn frameworks, ROI benchmarks, and change-management strategies.",
-    image: "bg-gradient-to-br from-emerald-500/10 to-purple-500/10"
+    title: "10,000+ Device Supports",
+    desc: "Test on real devices and browsers to ensure perfection on every screen and operating system.",
+    img: "/assets/devices.png",
+    fallbackBg: "bg-gradient-to-br from-fuchsia-50 to-pink-100",
+    icon: "📱",
+    href: "#"
   }
 ];
 
 export default function Resources() {
   return (
-    <section className="w-full bg-white text-black py-32">
-      <div className="max-w-7xl mx-auto px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-7xl font-bold mb-4 tracking-tight">Resources</h2>
-          <a href="#" className="text-[#00A3FF] hover:underline font-medium">View All</a>
+    <section className="w-full bg-white text-black py-20 md:py-28">
+      <div className="max-w-7xl mx-auto px-6 md:px-12">
+
+        {/* Section Header */}
+        <div className="mb-12 text-center lg:text-left">
+          <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-[#1a1a2e] mb-2">
+            Platform Impact
+          </h2>
+          <p className="text-[#00A3FF] text-sm font-semibold uppercase tracking-[0.2em]">
+            Driving the future of QA
+          </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-40">
-          {resources.map((res, i) => (
-            <div key={i} className="bg-white rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.1)] flex flex-col h-full group cursor-pointer hover:translate-y-[-8px] transition-all duration-300 border border-zinc-100">
-              <div className={`w-full aspect-video ${res.image} border-b border-zinc-100 flex items-center justify-center`}>
-                <div className="w-16 h-16 rounded-full bg-white/50 backdrop-blur-md flex items-center justify-center text-2xl">
-                  📄
-                </div>
-              </div>
-              <div className="p-10 flex flex-col flex-1 text-center">
-                <h3 className="text-2xl font-bold text-black mb-4 leading-tight">
-                  {res.title}
-                </h3>
-                <p className="text-zinc-500 text-sm leading-relaxed mb-8">
-                  {res.description}
-                </p>
-              </div>
+        {/* Two-Column Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+
+          {/* Left: Featured Large Card */}
+          <div className="flex flex-col rounded-2xl overflow-hidden border border-zinc-200 shadow-sm hover:shadow-md transition-shadow duration-300 bg-white cursor-pointer group">
+            {/* Featured Image */}
+            <div className="relative w-full h-[260px] md:h-[300px] bg-gradient-to-br from-indigo-100 via-purple-50 to-fuchsia-100 overflow-hidden flex items-center justify-center">
+              <div className="text-9xl opacity-20 select-none">📊</div>
+              {/* Decorative glow */}
+              <div className="absolute inset-0 bg-gradient-to-t from-white/30 to-transparent pointer-events-none" />
             </div>
-          ))}
-        </div>
 
-        <div className="flex flex-col gap-6 mb-12">
-          <h2 className="text-7xl font-bold tracking-tight">Guides</h2>
-          <a href="#" className="text-[#00A3FF] hover:underline font-medium">View All</a>
-        </div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {/* Left: Featured Guide */}
-          <div className="relative group cursor-pointer h-[700px]">
-            <div className="w-full h-2/3 rounded-3xl bg-zinc-100 overflow-hidden">
-              <div className="w-full h-full flex items-center justify-center text-4xl opacity-20">
-                🖼️
-              </div>
-            </div>
-            <div className="absolute bottom-0 left-8 right-8 bg-white p-12 rounded-[32px] shadow-[0_30px_60px_rgba(0,0,0,0.12)] border border-zinc-100 transform group-hover:translate-y-[-10px] transition-all duration-300">
-              <h3 className="text-4xl font-bold text-black mb-8 leading-tight">
-                Machine learning in <br /> software testing
+            {/* Featured Text Content */}
+            <div className="p-8 md:p-10 flex flex-col gap-4 flex-1">
+              <h3 className="text-2xl md:text-3xl font-bold text-[#1a1a2e] leading-tight tracking-tight">
+                12,000+<br />Test Runs
               </h3>
-              <p className="text-zinc-500 text-lg leading-relaxed mb-8">
-                Software testing has always been an essential part of the software development lifecycle. Originally, it was a manual process... AI is <span className="font-bold text-black">transforming software testing in ways that could not have been dreamt of a decade ago.</span>
+              <p className="text-zinc-500 text-[15px] leading-relaxed font-normal flex-1">
+                Scale your quality engineering with a platform built for massive parallel execution and enterprise-grade reliability. Run thousands of tests simultaneously without compromising speed or accuracy.
               </p>
-              <div className="text-[#00A3FF] font-bold text-sm uppercase tracking-wider">Learn More</div>
+              <div className="text-[#7B5CF5] font-semibold text-sm hover:underline cursor-pointer group-hover:text-[#6d4de8] transition-colors">
+                Learn More
+              </div>
             </div>
           </div>
 
-          {/* Right: List of Guides */}
-          <div className="flex flex-col gap-6">
-            {[
-              {
-                title: "What is Regression Testing?",
-                desc: "One of the most important testing techniques in terms of overall impact on quality is regression testing. Testing engineers typically devote a lot of time and effort towards regression testing.",
-                img: "bg-blue-500/10"
-              },
-              {
-                title: "Selenium testing",
-                desc: "Selenium is an open source web browser automation framework. It's a combination of several different tools - the Selenium IDE, Selenium WebDriver, Selenium RC, and Selenium Grid.",
-                img: "bg-emerald-500/10"
-              },
-              {
-                title: "Automated testing",
-                desc: "Automated testing has transformed modern software development. Before test automation, all tests had to be done manually. This was slow, error-prone, and expensive.",
-                img: "bg-purple-500/10"
-              }
-            ].map((guide, i) => (
-              <div key={i} className="bg-white rounded-3xl overflow-hidden flex h-[220px] group cursor-pointer shadow-[0_10px_30px_rgba(0,0,0,0.05)] border border-zinc-100 hover:shadow-xl transition-all">
-                <div className={`w-[240px] h-full ${guide.img} flex items-center justify-center text-3xl`}>
-                  📦
+          {/* Right: Three Stacked Cards */}
+          <div className="flex flex-col gap-4">
+            {smallCards.map((card, i) => (
+              <div
+                key={i}
+                className="flex flex-row rounded-2xl overflow-hidden border border-zinc-200 shadow-sm hover:shadow-md transition-all duration-300 bg-white cursor-pointer group"
+              >
+                {/* Thumbnail */}
+                <div className={`relative w-[140px] md:w-[160px] flex-shrink-0 ${card.fallbackBg} flex items-center justify-center overflow-hidden`}>
+                  <span className="text-5xl opacity-30 select-none">{card.icon}</span>
+                  {/* Shimmer overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent pointer-events-none" />
                 </div>
-                <div className="flex-1 p-8 flex flex-col justify-between">
+
+                {/* Card Text */}
+                <div className="flex-1 p-6 flex flex-col justify-between">
                   <div>
-                    <h4 className="text-2xl font-bold text-black mb-3">{guide.title}</h4>
-                    <p className="text-zinc-500 text-sm line-clamp-3 leading-relaxed">
-                      {guide.desc}
+                    <h4 className="text-lg md:text-xl font-bold text-[#1a1a2e] mb-2 leading-snug tracking-tight group-hover:text-[#7B5CF5] transition-colors duration-300">
+                      {card.title}
+                    </h4>
+                    <p className="text-zinc-500 text-[13px] md:text-[14px] leading-relaxed line-clamp-3">
+                      {card.desc}
                     </p>
                   </div>
-                  <div className="text-purple-600 font-bold text-xs uppercase tracking-wider">Learn More</div>
+                  <div className="text-[#7B5CF5] font-semibold text-sm mt-3 hover:underline cursor-pointer group-hover:text-[#6d4de8] transition-colors">
+                    Learn More
+                  </div>
                 </div>
               </div>
             ))}
           </div>
+
         </div>
       </div>
     </section>

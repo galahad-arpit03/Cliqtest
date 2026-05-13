@@ -1,22 +1,27 @@
 import React from 'react';
 
-const features = [
-  { title: "Real-time Analytics", desc: "Monitor your test suites as they execute with live streaming logs.", icon: "⚡" },
-  { title: "AI-Driven Insights", desc: "Identify bottlenecks and flaky tests automatically using ML.", icon: "🤖" },
-  { title: "Cloud Integration", desc: "Connect with AWS, Azure, or GCP in a single click for scaling.", icon: "☁️" }
-];
-
 export default function Features() {
   return (
-    <section className="relative z-10 w-full max-w-5xl px-6 py-20">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
-        {features.map((feature, i) => (
-          <div key={i} className="p-6 rounded-2xl border border-white/5 bg-white/[0.02] backdrop-blur-sm hover:border-purple-500/30 transition-colors group">
-            <div className="text-3xl mb-4 grayscale group-hover:grayscale-0 transition-all">{feature.icon}</div>
-            <h3 className="text-lg font-semibold mb-2 text-white">{feature.title}</h3>
-            <p className="text-zinc-500 text-sm leading-relaxed">{feature.desc}</p>
-          </div>
-        ))}
+    <section className="w-full px-12 py-20 text-center">
+      <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 tracking-tight">
+        Features of cliQTest.
+      </h2>
+      
+      <p className="text-xl md:text-3xl text-[#00F2B0] font-medium mb-10 leading-tight">
+        Streamlining every aspect of test data and project handling.
+      </p>
+
+      <div className="w-full mb-14">
+        <p className="text-zinc-300 text-lg md:text-xl leading-relaxed font-light">
+          From requirements management to version control, review workflows, user-role management, 
+          and test data maintenance, cliQTest ensures seamless collaboration and complete control in one unified platform.
+        </p>
+      </div>
+
+      <div className="flex justify-center">
+        <button className="px-10 py-3 bg-[#00AEEF] text-white text-xs font-bold tracking-[0.2em] rounded-full uppercase shadow-[0_0_20px_rgba(0,174,239,0.4)] hover:scale-105 transition-transform">
+          Enterprise App Intelligence
+        </button>
       </div>
     </section>
   );

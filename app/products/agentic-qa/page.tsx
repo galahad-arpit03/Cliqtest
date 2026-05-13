@@ -1,8 +1,8 @@
-import ProductHero from '@/components/landing/ProductHero';
-import ProductFeatures from '@/components/landing/ProductFeatures';
-import ProductComparison from '@/components/landing/ProductComparison';
-import AgentsSolve from '@/components/landing/AgentsSolve';
-import SuccessStoryForm from '@/components/landing/SuccessStoryForm';
+import ProductHero from '@/components/product/ProductHero/ProductHero';
+import ProductFeatures from '@/components/product/ProductFeatures/ProductFeatures';
+import ProductComparison from '@/components/product/ProductComparison/ProductComparison';
+import AgentsSolve from '@/components/product/AgentsSolve/AgentsSolve';
+import SuccessStoryForm from '@/components/product/SuccessStoryForm/SuccessStoryForm';
 
 export default function AgenticQAPage() {
   return (

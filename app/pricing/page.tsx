@@ -1,5 +1,5 @@
 import React from 'react';
-import PricingGrid from '@/components/landing/PricingGrid';
+import PricingGrid from '@/components/pricing/PricingGrid/PricingGrid';
 
 export default function PricingPage() {
   return (

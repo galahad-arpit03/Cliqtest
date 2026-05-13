@@ -1,8 +1,8 @@
 import React from 'react';
-import AboutHero from '@/components/landing/AboutHero';
-import AboutPlatform from '@/components/landing/AboutPlatform';
-import LogoCloud from '@/components/landing/LogoCloud';
-import AboutSecurity from '@/components/landing/AboutSecurity';
+import AboutHero from '@/components/about/AboutHero/AboutHero';
+import AboutPlatform from '@/components/about/AboutPlatform/AboutPlatform';
+import LogoCloud from '@/components/common/LogoCloud/LogoCloud';
+import AboutSecurity from '@/components/about/AboutSecurity/AboutSecurity';
 
 export default function AboutPage() {
   return (
