@@ -39,6 +39,7 @@ export default function Platform() {
             alt="Cliqtest Platform Monitor"
             fill
             className="object-cover"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
             priority
           />
           {/* Blending Overlays */}

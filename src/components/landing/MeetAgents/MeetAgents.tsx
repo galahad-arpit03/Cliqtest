@@ -36,6 +36,7 @@ export default function MeetAgents() {
                 alt="Cliqtest AI Brain"
                 fill
                 className="object-contain"
+                sizes="(max-width: 768px) 256px, (max-width: 1024px) 320px, 500px"
                 priority
               />
             </div>

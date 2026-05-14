@@ -266,22 +266,40 @@ export default function Navbar() {
     </nav>
 
     {/* 3. Mobile Menu Overlay - Solid, High-Fidelity Design */}
-    <div className={`fixed inset-0 bg-[#030303] z-[100] lg:hidden transition-all duration-500 ease-in-out ${
+    <div className={`fixed inset-0 bg-[#030303] z-[150] lg:hidden transition-all duration-500 ease-in-out ${
       isMobileMenuOpen ? 'opacity-100 pointer-events-auto translate-y-0' : 'opacity-0 pointer-events-none -translate-y-4'
     }`}>
-      <div className="flex flex-col h-full pt-32 px-10 pb-16 overflow-y-auto">
-        <div className="flex flex-col gap-8">
+      {/* Top Bar with Close Button */}
+      <div className="absolute top-0 w-full h-20 px-6 flex justify-between items-center border-b border-white/5">
+        <div className="relative w-28 h-8">
+          <Image
+            src="/logo/logo.png"
+            alt="cliQTest"
+            fill
+            className="object-cover scale-[1.2] object-center"
+          />
+        </div>
+        <button 
+          onClick={() => setIsMobileMenuOpen(false)}
+          className="p-3 bg-white/5 rounded-2xl text-white active:scale-90 transition-all"
+        >
+          <X size={24} />
+        </button>
+      </div>
+
+      <div className="flex flex-col h-full pt-28 px-10 pb-12 overflow-y-auto">
+        <div className="flex flex-col gap-6">
           {menuItems.map((item) => {
             const isInsights = item.title === "Insights";
             const isExpanded = expandedItem === item.title;
 
             return (
-              <div key={item.title} className="flex flex-col border-b border-white/5 pb-8 last:border-0">
+              <div key={item.title} className="flex flex-col border-b border-white/5 pb-6 last:border-0">
                 {item.href ? (
                   <Link 
                     href={item.href}
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="text-5xl font-black text-white hover:text-[#00AEEF] transition-colors py-1 tracking-tighter"
+                    className="text-3xl font-bold text-white hover:text-[#00AEEF] transition-colors py-1 tracking-tight"
                   >
                     {item.title}
                   </Link>
@@ -290,10 +308,10 @@ export default function Navbar() {
                     className="flex items-center justify-between py-1 cursor-pointer group"
                     onClick={() => setExpandedItem(isExpanded ? null : item.title)}
                   >
-                    <span className={`text-5xl font-black transition-colors tracking-tighter ${isExpanded ? 'text-[#00AEEF]' : 'text-white'}`}>{item.title}</span>
+                    <span className={`text-3xl font-bold transition-colors tracking-tight ${isExpanded ? 'text-[#00AEEF]' : 'text-white'}`}>{item.title}</span>
                     {isInsights && (
-                      <div className={`p-3 rounded-2xl transition-all ${isExpanded ? 'bg-[#00AEEF]/10 rotate-180' : 'bg-white/5'}`}>
-                        {isExpanded ? <Minus size={24} className="text-[#00AEEF]" /> : <Plus size={24} className="text-white/40" />}
+                      <div className={`p-2 rounded-xl transition-all ${isExpanded ? 'bg-[#00AEEF]/10 rotate-180' : 'bg-white/5'}`}>
+                        {isExpanded ? <Minus size={20} className="text-[#00AEEF]" /> : <Plus size={20} className="text-white/40" />}
                       </div>
                     )}
                   </div>
@@ -301,16 +319,22 @@ export default function Navbar() {
                 
                 {/* Mobile Insights Expanded Accordion */}
                 {isInsights && isExpanded && (
-                  <div className="flex flex-col gap-8 mt-10 ml-4 border-l-2 border-[#00AEEF]/40 pl-8 animate-in slide-in-from-left-6 duration-500">
+                  <div className="flex flex-col gap-6 mt-6 ml-4 border-l-2 border-[#00AEEF]/40 pl-6 animate-in slide-in-from-left-4 duration-300">
+                    <button 
+                      onClick={() => setExpandedItem(null)}
+                      className="flex items-center gap-2 text-[#00AEEF] text-xs font-bold uppercase tracking-widest mb-2"
+                    >
+                      <ChevronRight size={14} className="rotate-180" /> Back
+                    </button>
                     {item.content?.tabs?.map((tab: NavTab) => (
                       <Link 
                         key={tab.id}
                         href={tab.id === "overview" ? "/about" : "/products/agentic-qa"}
                         onClick={() => setIsMobileMenuOpen(false)}
-                        className="flex flex-col gap-2 group active:opacity-70"
+                        className="flex flex-col gap-1 group active:opacity-70"
                       >
-                        <span className="text-2xl font-bold text-white group-hover:text-[#00AEEF] transition-colors tracking-tight">{tab.label}</span>
-                        <span className="text-sm text-white/40 leading-relaxed font-normal pr-4">{tab.header || tab.description}</span>
+                        <span className="text-xl font-bold text-white group-hover:text-[#00AEEF] transition-colors tracking-tight">{tab.label}</span>
+                        <span className="text-xs text-white/30 leading-relaxed font-normal pr-4 line-clamp-1">{tab.header || tab.description}</span>
                       </Link>
                     ))}
                   </div>
@@ -320,10 +344,9 @@ export default function Navbar() {
           })}
         </div>
 
-        {/* Mobile Demo CTA */}
-        <div className="mt-auto pt-12">
+        <div className="mt-auto pt-10">
           <Link href="/book-a-demo" onClick={() => setIsMobileMenuOpen(false)}>
-            <button className="w-full py-6 bg-[#00AEEF] text-white text-lg font-black rounded-[24px] shadow-2xl hover:scale-[1.02] active:scale-[0.98] transition-all">
+            <button className="w-full py-4 bg-[#00AEEF] text-white text-base font-bold rounded-2xl shadow-xl hover:scale-[1.02] active:scale-[0.98] transition-all">
               Book a Demo
             </button>
           </Link>

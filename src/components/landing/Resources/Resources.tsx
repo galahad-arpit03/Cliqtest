@@ -70,6 +70,7 @@ export default function Resources() {
                 alt="Featured Impact"
                 fill
                 className="object-cover group-hover:scale-105 transition-transform duration-500"
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 600px"
               />
               <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-300" />
             </div>
@@ -106,6 +107,7 @@ export default function Resources() {
                     alt={card.title}
                     fill
                     className="object-cover group-hover:scale-110 transition-transform duration-500"
+                    sizes="(max-width: 768px) 140px, 160px"
                   />
                   <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors duration-300" />
                 </div>

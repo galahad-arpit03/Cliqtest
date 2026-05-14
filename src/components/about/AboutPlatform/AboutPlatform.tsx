@@ -81,30 +81,30 @@ export default function AboutPlatform() {
  
             {/* Floating Info Card */}
             <motion.div 
-              initial={{ opacity: 0, y: 20, x: 20 }}
-              whileInView={{ opacity: 1, y: 0, x: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.4, duration: 0.6 }}
-              className="absolute bottom-[-10px] right-[-10px] md:bottom-[-20px] md:right-[-20px] w-[260px] xs:w-[280px] md:w-[320px] bg-white rounded-[20px] p-5 md:p-6 shadow-[0_20px_50px_rgba(0,0,0,0.12)] border border-zinc-100 z-10"
+              className="relative md:absolute md:bottom-[-20px] md:right-[-20px] mt-6 md:mt-0 w-full md:w-[320px] bg-white rounded-[20px] p-6 shadow-[0_20px_50px_rgba(0,0,0,0.12)] border border-zinc-100 z-10"
             >
-              <h3 className="text-lg md:text-xl font-bold text-black mb-2 md:mb-3 leading-snug">
+              <h3 className="text-xl font-bold text-black mb-3 leading-snug">
                 No-Code Automation Engine
               </h3>
-              <p className="text-zinc-500 text-[12px] md:text-[13px] mb-3 md:mb-4 leading-relaxed">
+              <p className="text-zinc-500 text-sm mb-4 leading-relaxed">
                 Create, execute, and manage test cases without writing a single line of code.
               </p>
-              <ul className="space-y-1.5 md:space-y-2 mb-4 md:mb-5">
+              <ul className="space-y-2 mb-5">
                 {[
                   "Intuitive drag-and-drop interface for faster test creation.",
                   "Supports reusable test components for streamlined processes."
                 ].map((li, i) => (
-                  <li key={i} className="flex gap-2 text-[12px] md:text-[13px] text-[#00AEEF] font-semibold leading-snug">
+                  <li key={i} className="flex gap-2 text-sm text-[#00AEEF] font-semibold leading-snug">
                     <span className="mt-0.5">•</span>
                     {li}
                   </li>
                 ))}
               </ul>
-              <button className="flex items-center gap-2 text-[#00AEEF] font-bold text-[10px] md:text-[11px] uppercase tracking-widest hover:gap-3 transition-all">
+              <button className="flex items-center gap-2 text-[#00AEEF] font-bold text-xs uppercase tracking-widest hover:gap-3 transition-all">
                 Learn More <ArrowRight size={13} />
               </button>
             </motion.div>

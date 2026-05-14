@@ -111,6 +111,7 @@ export default function CloudFirst() {
                      alt={feature.title}
                      fill
                      className="object-cover group-hover:scale-105 transition-transform duration-[1s] ease-out"
+                     sizes="(max-width: 768px) 100vw, (max-width: 1024px) 33vw, 400px"
                    />
                  </div>
                  

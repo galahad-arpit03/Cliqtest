@@ -5,33 +5,33 @@ import React from 'react';
 export default function AboutHero() {
   return (
     <section
-      className="relative min-h-screen flex flex-col justify-center overflow-hidden"
+      className="relative min-h-[80vh] md:min-h-screen flex flex-col justify-center overflow-hidden"
       style={{
         backgroundImage: "url('/about/hero.png')",
         backgroundSize: "cover",
-        backgroundPosition: "center right",
+        backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
       }}
     >
       {/* Dark overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/60 to-black/20 pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-black/30 pointer-events-none" />
       <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black to-transparent pointer-events-none" />
 
       {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto w-full px-6 md:px-12 pt-28 pb-12">
+      <div className="relative z-10 max-w-7xl mx-auto w-full px-6 md:px-12 pt-32 pb-20">
 
         {/* Heading */}
-        <h1 className="text-white text-3xl md:text-4xl lg:text-[54px] font-black leading-[1.05] tracking-tight mb-6 max-w-xl">
+        <h1 className="text-white text-4xl md:text-5xl lg:text-[64px] font-black leading-[1.1] tracking-tight mb-8 max-w-3xl">
           What is <br /><span className="text-white">cliQTest</span>?
         </h1>
 
         {/* Para 1 — Cyan */}
-        <p className="text-[#00F2B0] text-base md:text-lg font-medium leading-relaxed max-w-[50%] mb-5">
+        <p className="text-[#00F2B0] text-lg md:text-xl font-medium leading-relaxed max-w-full md:max-w-[60%] mb-6">
           cliQTest is an innovative all-in-one platform designed to revolutionize Quality Assurance for software applications, combining no-code automation, real-device access, and seamless workflow management into a cohesive, game-changing solution.
         </p>
 
         {/* Para 2 — White */}
-        <p className="text-white/70 text-sm md:text-base leading-relaxed max-w-[50%] mb-10">
+        <p className="text-white/70 text-base md:text-lg leading-relaxed max-w-full md:max-w-[60%] mb-12">
           At its core, cliQTest empowers QA teams with intelligent tools that eliminate complexity. Whether you&apos;re testing websites, mobile apps, APIs, or desktops — cliQTest provides a robust environment to conduct automated and manual testing with precision. Its self-healing automation, real-time device lab, and centralized test management ensure your team ships faster without compromising quality.
         </p>
 
