@@ -1,9 +1,16 @@
 "use client";
 
-import Image from 'next/image';
+import React, { useRef, useEffect } from 'react';
 import { motion, Variants } from 'framer-motion';
 
 export default function Hero() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.playbackRate = 0.4;
+    }
+  }, []);
   const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
@@ -29,23 +36,26 @@ export default function Hero() {
       {/* Top Gradient Overlay for Navbar Legibility */}
       <div className="absolute top-0 left-0 w-full h-40 bg-gradient-to-b from-black/80 to-transparent z-10 pointer-events-none" />
 
-      {/* Background Image Layer */}
+      {/* Background Video Layer */}
       <motion.div 
-        initial={{ opacity: 0, scale: 1.1 }}
-        animate={{ opacity: 0.9, scale: 1.25 }}
-        transition={{ duration: 2, ease: "easeOut" }}
-        className="absolute top-0 right-0 h-full w-full md:w-[60%] lg:w-[70%] z-0 pointer-events-none"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 0.6 }}
+        transition={{ duration: 2 }}
+        className="absolute top-0 right-0 h-full w-full md:w-[50%] lg:w-[70%] z-0 pointer-events-none overflow-hidden"
       >
-        <div className="relative w-full h-full origin-center md:origin-right">
-          <Image
-            src="/assets/landing hero.png"
-            alt="Background Visualization"
-            fill
-            className="object-cover md:object-contain object-center md:object-right"
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 60vw, 70vw"
-            priority
-          />
-        </div>
+        <video
+          ref={videoRef}
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full h-full object-cover md:object-contain object-center md:object-right opacity-40 md:opacity-90 scale-150 md:scale-120 transition-all duration-700"
+        >
+          <source src="/landing page/brain.mp4" type="video/mp4" />
+        </video>
+        {/* Gradients to blend video better */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black md:hidden" />
+        <div className="absolute inset-0 bg-gradient-to-l from-transparent via-black/20 to-black" />
       </motion.div>
 
       {/* Main Container */}
