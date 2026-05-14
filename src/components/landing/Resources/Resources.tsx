@@ -1,27 +1,31 @@
+"use client";
+
 import React from 'react';
+import Image from 'next/image';
+import { motion } from 'framer-motion';
 
 const smallCards = [
   {
     title: "50+ Enterprises",
     desc: "Trusted by global leaders to automate their most critical workflows and ensure seamless user experiences at scale.",
-    img: "/assets/enterprise.png",
-    fallbackBg: "bg-gradient-to-br from-cyan-50 to-blue-100",
+    img: "/assets/66fc49416a607a9c02f4bd04_card-tall-complex-flows-hq-p-500.webp",
+    fallbackBg: "bg-zinc-900",
     icon: "🏢",
     href: "#"
   },
   {
     title: "4+ Platform Support",
     desc: "Comprehensive coverage for Web, Mobile, API, and Desktop testing in one intelligent ecosystem.",
-    img: "/assets/platform.png",
-    fallbackBg: "bg-gradient-to-br from-indigo-50 to-purple-100",
+    img: "/assets/6852f436ba19260e1e1f1bfe_card-agent-action.webp",
+    fallbackBg: "bg-zinc-900",
     icon: "🌐",
     href: "#"
   },
   {
     title: "10,000+ Device Supports",
     desc: "Test on real devices and browsers to ensure perfection on every screen and operating system.",
-    img: "/assets/devices.png",
-    fallbackBg: "bg-gradient-to-br from-fuchsia-50 to-pink-100",
+    img: "/assets/68e97727a405c7cd4f58ca37_card-test-horizontal-stack.webp",
+    fallbackBg: "bg-zinc-900",
     icon: "📱",
     href: "#"
   }
@@ -33,25 +37,41 @@ export default function Resources() {
       <div className="max-w-7xl mx-auto px-6 md:px-12">
 
         {/* Section Header */}
-        <div className="mb-12 text-center lg:text-left">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="mb-12 text-center lg:text-left"
+        >
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-[#1a1a2e] mb-2">
             Platform Impact
           </h2>
           <p className="text-[#00A3FF] text-sm font-semibold uppercase tracking-[0.2em]">
             Driving the future of QA
           </p>
-        </div>
+        </motion.div>
 
         {/* Two-Column Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
 
           {/* Left: Featured Large Card */}
-          <div className="flex flex-col rounded-2xl overflow-hidden border border-zinc-200 shadow-sm hover:shadow-md transition-shadow duration-300 bg-white cursor-pointer group">
+          <motion.div 
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="flex flex-col rounded-2xl overflow-hidden border border-zinc-200 shadow-sm hover:shadow-md transition-shadow duration-300 bg-white cursor-pointer group"
+          >
             {/* Featured Image */}
-            <div className="relative w-full h-[260px] md:h-[300px] bg-gradient-to-br from-indigo-100 via-purple-50 to-fuchsia-100 overflow-hidden flex items-center justify-center">
-              <div className="text-9xl opacity-20 select-none">📊</div>
-              {/* Decorative glow */}
-              <div className="absolute inset-0 bg-gradient-to-t from-white/30 to-transparent pointer-events-none" />
+            <div className="relative w-full h-[260px] md:h-[300px] bg-zinc-900 overflow-hidden">
+              <Image 
+                src="/assets/69176c0974b136817d51ddff_Driving-QA-Transformation-thumb-p-500.webp"
+                alt="Featured Impact"
+                fill
+                className="object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-300" />
             </div>
 
             {/* Featured Text Content */}
@@ -66,20 +86,28 @@ export default function Resources() {
                 Learn More
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Right: Three Stacked Cards */}
           <div className="flex flex-col gap-4">
             {smallCards.map((card, i) => (
-              <div
+              <motion.div
                 key={i}
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.15, duration: 0.6 }}
                 className="flex flex-row rounded-2xl overflow-hidden border border-zinc-200 shadow-sm hover:shadow-md transition-all duration-300 bg-white cursor-pointer group"
               >
                 {/* Thumbnail */}
                 <div className={`relative w-[140px] md:w-[160px] flex-shrink-0 ${card.fallbackBg} flex items-center justify-center overflow-hidden`}>
-                  <span className="text-5xl opacity-30 select-none">{card.icon}</span>
-                  {/* Shimmer overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent pointer-events-none" />
+                  <Image 
+                    src={card.img}
+                    alt={card.title}
+                    fill
+                    className="object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors duration-300" />
                 </div>
 
                 {/* Card Text */}
@@ -96,7 +124,7 @@ export default function Resources() {
                     Learn More
                   </div>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
 

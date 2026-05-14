@@ -3,6 +3,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { ArrowRight } from 'lucide-react';
+import { motion, Variants } from 'framer-motion';
 
 const cards = [
   {
@@ -23,19 +24,50 @@ const cards = [
 ];
 
 export default function AboutPlatform() {
+  const containerVariants: Variants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15
+      }
+    }
+  };
+
+  const itemVariants: Variants = {
+    hidden: { opacity: 0, x: 20 },
+    visible: { 
+      opacity: 1, 
+      x: 0,
+      transition: { duration: 0.6, ease: "easeOut" }
+    }
+  };
+
   return (
     <section className="bg-white py-20 px-6 md:px-12">
       <div className="max-w-7xl mx-auto">
 
         {/* Section Heading */}
-        <h2 className="text-black text-center text-3xl md:text-5xl font-bold mb-16 tracking-tight">
+        <motion.h2 
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="text-black text-center text-3xl md:text-5xl font-bold mb-16 tracking-tight"
+        >
           cliQTest Core Features
-        </h2>
+        </motion.h2>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
 
           {/* Left: Large Featured Card */}
-          <div className="relative">
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="relative"
+          >
             {/* Big Image */}
             <div className="w-full aspect-[4/5] md:aspect-[4/4.5] rounded-[24px] overflow-hidden relative shadow-xl bg-zinc-900">
               <Image
@@ -47,8 +79,14 @@ export default function AboutPlatform() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
             </div>
  
-            {/* Floating Info Card — responsive positioning */}
-            <div className="absolute bottom-[-10px] right-[-10px] md:bottom-[-20px] md:right-[-20px] w-[260px] xs:w-[280px] md:w-[320px] bg-white rounded-[20px] p-5 md:p-6 shadow-[0_20px_50px_rgba(0,0,0,0.12)] border border-zinc-100 z-10">
+            {/* Floating Info Card */}
+            <motion.div 
+              initial={{ opacity: 0, y: 20, x: 20 }}
+              whileInView={{ opacity: 1, y: 0, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.4, duration: 0.6 }}
+              className="absolute bottom-[-10px] right-[-10px] md:bottom-[-20px] md:right-[-20px] w-[260px] xs:w-[280px] md:w-[320px] bg-white rounded-[20px] p-5 md:p-6 shadow-[0_20px_50px_rgba(0,0,0,0.12)] border border-zinc-100 z-10"
+            >
               <h3 className="text-lg md:text-xl font-bold text-black mb-2 md:mb-3 leading-snug">
                 No-Code Automation Engine
               </h3>
@@ -69,15 +107,23 @@ export default function AboutPlatform() {
               <button className="flex items-center gap-2 text-[#00AEEF] font-bold text-[10px] md:text-[11px] uppercase tracking-widest hover:gap-3 transition-all">
                 Learn More <ArrowRight size={13} />
               </button>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
           {/* Right: Stack of 3 Cards */}
-          <div className="flex flex-col gap-5 mt-24 lg:mt-0">
+          <motion.div 
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="flex flex-col gap-5 mt-24 lg:mt-0"
+          >
             {cards.map((card, idx) => (
-              <div
+              <motion.div
                 key={idx}
-                className="bg-white rounded-[20px] border border-zinc-100 shadow-[0_2px_16px_rgba(0,0,0,0.04)] hover:shadow-[0_12px_40px_rgba(0,0,0,0.09)] transition-all flex gap-5 items-start p-5 group cursor-pointer"
+                variants={itemVariants}
+                whileHover={{ x: 5, boxShadow: "0 12px 40px rgba(0,0,0,0.09)" }}
+                className="bg-white rounded-[20px] border border-zinc-100 shadow-[0_2px_16px_rgba(0,0,0,0.04)] transition-all flex gap-5 items-start p-5 group cursor-pointer"
               >
                 {/* Thumbnail */}
                 <div className="shrink-0 w-[110px] h-[100px] rounded-xl overflow-hidden bg-zinc-100 relative">
@@ -85,7 +131,7 @@ export default function AboutPlatform() {
                     src={card.img}
                     alt={card.title}
                     fill
-                    className="object-cover object-center"
+                    className="object-cover object-center group-hover:scale-110 transition-transform duration-500"
                   />
                 </div>
 
@@ -103,9 +149,9 @@ export default function AboutPlatform() {
                     Learn More <ArrowRight size={11} />
                   </button>
                 </div>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
 
         </div>
       </div>

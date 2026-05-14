@@ -1,5 +1,8 @@
+"use client";
+
 import React from 'react';
 import Image from 'next/image';
+import { motion, Variants } from 'framer-motion';
 
 const features = [
   {
@@ -23,6 +26,25 @@ const features = [
 ];
 
 export default function CloudFirst() {
+  const containerVariants: Variants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2
+      }
+    }
+  };
+
+  const itemVariants: Variants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" }
+    }
+  };
+
   return (
     <section className="relative w-full bg-black py-20 overflow-hidden">
       {/* Radial Gradient Background */}
@@ -35,30 +57,52 @@ export default function CloudFirst() {
       />
       
       <div className="relative z-10 w-full px-6 md:px-12 text-center">
-        <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 tracking-tight">
-          Features of cliQTest.
-        </h2>
-        
-        <p className="text-xl md:text-3xl text-[#10B981] font-medium mb-10 leading-tight">
-          Ensuring seamless collaboration and complete control in one unified platform.
-        </p>
-
-        <div className="w-full mb-14">
-          <p className="text-zinc-300 text-lg md:text-xl leading-relaxed font-light">
-            From requirements management to version control, review workflows, user-role management, 
-            and test data maintenance, cliQTest streamlines every aspect of test data and project handling.
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
+          <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 tracking-tight">
+            Features of cliQTest.
+          </h2>
+          
+          <p className="text-xl md:text-3xl text-[#10B981] font-medium mb-10 leading-tight">
+            Ensuring seamless collaboration and complete control in one unified platform.
           </p>
-        </div>
 
-        <div className="flex justify-center mb-20">
-          <button className="px-10 py-3 bg-[#00AEEF] text-white text-xs font-bold tracking-[0.2em] rounded-full uppercase shadow-[0_0_20px_rgba(0,174,239,0.4)] hover:scale-105 transition-transform">
-            Enterprise App Intelligence
-          </button>
-        </div>
+          <div className="w-full mb-14 max-w-4xl mx-auto">
+            <p className="text-zinc-300 text-lg md:text-xl leading-relaxed font-light">
+              From requirements management to version control, review workflows, user-role management, 
+              and test data maintenance, cliQTest streamlines every aspect of test data and project handling.
+            </p>
+          </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
+          <div className="flex justify-center mb-20">
+            <motion.button 
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="px-10 py-3 bg-[#00AEEF] text-white text-xs font-bold tracking-[0.2em] rounded-full uppercase shadow-[0_0_20px_rgba(0,174,239,0.4)] hover:scale-105 transition-transform"
+            >
+              Enterprise App Intelligence
+            </motion.button>
+          </div>
+        </motion.div>
+
+        <motion.div 
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10"
+        >
           {features.map((feature, i) => (
-            <div key={i} className="flex flex-col group text-left">
+            <motion.div 
+              key={i} 
+              variants={itemVariants}
+              whileHover={{ y: -10 }}
+              className="flex flex-col group text-left"
+            >
               <div className={`w-full aspect-[16/10] rounded-[32px] mb-8 ${feature.color} border border-white/5 transition-all duration-700 group-hover:border-[#00AEEF]/40 relative overflow-hidden shadow-xl`}>
                  {/* High-fidelity Zoomed Image */}
                  <div className="absolute inset-0 z-0">
@@ -82,9 +126,9 @@ export default function CloudFirst() {
                   {feature.description}
                 </p>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

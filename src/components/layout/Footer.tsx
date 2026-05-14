@@ -1,13 +1,40 @@
+"use client";
+
 import React from 'react';
 import Image from 'next/image';
+import { motion, Variants } from 'framer-motion';
 
 export default function Footer() {
+  const containerVariants: Variants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        staggerChildren: 0.1,
+        duration: 0.8,
+        ease: "easeOut"
+      }
+    }
+  };
+
+  const itemVariants: Variants = {
+    hidden: { opacity: 0, y: 10 },
+    visible: { opacity: 1, y: 0 }
+  };
+
   return (
-    <footer className="w-full bg-[#0F1115] pt-16 pb-8 px-8 border-t border-white/5">
+    <motion.footer 
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      variants={containerVariants}
+      className="w-full bg-[#0F1115] pt-16 pb-8 px-8 border-t border-white/5"
+    >
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
         {/* Brand Section */}
-        <div className="flex flex-col gap-4">
-          <div className="relative w-40 h-12 overflow-hidden">
+        <motion.div variants={itemVariants} className="flex flex-col gap-4">
+          <div className="relative w-40 h-12 overflow-hidden transition-transform hover:scale-105">
             <Image
               src="/logo/logo.png"
               alt="cliQTest"
@@ -16,37 +43,53 @@ export default function Footer() {
             />
           </div>
           <p className="text-zinc-500 text-sm italic ml-2">&quot;Turning Clicks into Confidence&quot;</p>
-        </div>
+        </motion.div>
 
         {/* Quick Links */}
-        <div className="flex flex-col gap-6">
+        <motion.div variants={itemVariants} className="flex flex-col gap-6">
           <h3 className="text-white font-medium text-lg">Quick Links</h3>
           <ul className="flex flex-col gap-3 text-zinc-500 text-sm">
-            <li><a href="#" className="hover:text-white transition-colors">About Us</a></li>
-            <li><a href="#" className="hover:text-white transition-colors">Contact Us</a></li>
-            <li><a href="#" className="hover:text-white transition-colors">Contribute</a></li>
-            <li><a href="#" className="hover:text-white transition-colors">Sitemap</a></li>
+            {["About Us", "Contact Us", "Contribute", "Sitemap"].map((link) => (
+              <li key={link}>
+                <motion.a 
+                  href="#" 
+                  whileHover={{ x: 5, color: "#ffffff" }}
+                  className="hover:text-white transition-colors inline-block"
+                >
+                  {link}
+                </motion.a>
+              </li>
+            ))}
           </ul>
-        </div>
+        </motion.div>
 
         {/* Contact Us */}
-        <div className="flex flex-col gap-6">
+        <motion.div variants={itemVariants} className="flex flex-col gap-6">
           <h3 className="text-white font-medium text-lg">Contact Us</h3>
           <ul className="flex flex-col gap-3 text-zinc-500 text-sm">
             <li className="flex gap-2">
               <span className="text-zinc-400">Email :</span>
-              <a href="mailto:support@cliQTest.com" className="hover:text-white transition-colors">support@cliQTest.com</a>
+              <motion.a 
+                href="mailto:support@cliQTest.com" 
+                whileHover={{ color: "#ffffff" }}
+                className="hover:text-white transition-colors"
+              >
+                support@cliQTest.com
+              </motion.a>
             </li>
             <li className="flex gap-2">
               <span className="text-zinc-400">Phone :</span>
-              <span>+91 2241-222-250</span>
+              <span className="text-white/80">+91 2241-222-250</span>
             </li>
           </ul>
-        </div>
+        </motion.div>
       </div>
 
       {/* Bottom Bar */}
-      <div className="max-w-7xl mx-auto pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6">
+      <motion.div 
+        variants={itemVariants}
+        className="max-w-7xl mx-auto pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6"
+      >
         <p className="text-zinc-500 text-sm">
           Copyright © 2025 All Rights Reserved by <span className="text-zinc-400">cliQTest</span>.
         </p>
@@ -70,11 +113,12 @@ export default function Footer() {
               path: 'M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z' 
             }
           ].map((social, i) => (
-            <a
+            <motion.a
               key={i}
               href="#"
               aria-label={social.name}
-              className="w-10 h-10 rounded-full bg-zinc-800/50 flex items-center justify-center text-zinc-400 hover:bg-zinc-700 hover:text-white transition-all"
+              whileHover={{ y: -5, backgroundColor: "#3f3f46", color: "#ffffff" }}
+              className="w-10 h-10 rounded-full bg-zinc-800/50 flex items-center justify-center text-zinc-400 transition-all"
             >
               <svg 
                 viewBox="0 0 24 24" 
@@ -83,10 +127,10 @@ export default function Footer() {
               >
                 <path d={social.path} />
               </svg>
-            </a>
+            </motion.a>
           ))}
         </div>
-      </div>
-    </footer>
+      </motion.div>
+    </motion.footer>
   );
 }
