@@ -146,59 +146,98 @@ export default function OverviewPage() {
 
       {/* 2. INFINITY LOOP SECTION: Testing Simplified */}
       <section className="py-32 px-6 relative overflow-hidden">
-        <div className="max-w-7xl mx-auto text-center mb-24">
+        <div className="max-w-7xl mx-auto text-center mb-4">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-6xl font-black tracking-tight"
+            className="text-4xl md:text-[44px] font-bold tracking-tight leading-[1.1]"
           >
             Testing Simplified, <br />
-            <span className="text-zinc-500">Integrations Unlimited.</span>
+            <span className="text-[#00AEEF]">Integrations Unlimited.</span>
           </motion.h2>
         </div>
 
-        <div className="max-w-6xl mx-auto relative h-[600px] hidden lg:block">
+        <div className="max-w-[1200px] mx-auto relative h-[650px] hidden lg:block">
           {/* Infinity Path Simulation */}
-          <svg className="absolute inset-0 w-full h-full opacity-10" viewBox="0 0 1000 500" fill="none">
-            <path d="M250,250 C250,100 450,100 500,250 C550,400 750,400 750,250 C750,100 550,100 500,250 C450,400 250,400 250,250" stroke="white" strokeWidth="2" strokeDasharray="10 10" />
+          <svg className="absolute inset-0 w-full h-full opacity-50" viewBox="0 0 1000 500" fill="none">
+            <path 
+              d="M250,250 C250,50 450,50 500,250 C550,450 750,450 750,250 C750,50 550,50 500,250 C450,450 250,450 250,250" 
+              stroke="url(#infinity-gradient)" 
+              strokeWidth="2" 
+              strokeDasharray="6 12" 
+              className="animate-[dash_30s_linear_infinite]"
+            />
+            <defs>
+              <linearGradient id="infinity-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stopColor="#00AEEF" stopOpacity="0.1" />
+                <stop offset="50%" stopColor="#00F2B0" stopOpacity="0.8" />
+                <stop offset="100%" stopColor="#00AEEF" stopOpacity="0.1" />
+              </linearGradient>
+            </defs>
           </svg>
 
           {/* Feature Nodes (Infinity Loop Representation) */}
           {[
-            { label: "Codeless Automation", pos: "top-[10%] left-[20%]", icon: Zap },
-            { label: "Auto script Generation", pos: "top-[40%] left-[5%]", icon: Cpu },
-            { label: "Adaptive Auto-Healing", pos: "bottom-[10%] left-[20%]", icon: Shield },
-            { label: "Extensive Device Lab", pos: "top-[10%] right-[20%]", icon: Globe },
-            { label: "UI/UX Performance", pos: "top-[40%] right-[5%]", icon: BarChart3 },
-            { label: "Centralized Reporting", pos: "bottom-[10%] right-[20%]", icon: Users }
+            { label: "Codeless Automation", desc: "AI-driven test generation", pos: "top-[8%] left-[22%]", icon: Zap },
+            { label: "Auto Script Generation", desc: "Natural language to code", pos: "top-[43%] left-[4%]", icon: Cpu },
+            { label: "Adaptive Auto-Healing", desc: "Self-correcting locators", pos: "bottom-[8%] left-[22%]", icon: Shield },
+            { label: "Extensive Device Lab", desc: "5000+ real devices", pos: "top-[8%] right-[22%]", icon: Globe },
+            { label: "UI/UX Performance", desc: "Visual regression tracking", pos: "top-[43%] right-[4%]", icon: BarChart3 },
+            { label: "Centralized Reporting", desc: "Unified analytics dashboard", pos: "bottom-[8%] right-[22%]", icon: Users }
           ].map((node, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, scale: 0.5 }}
+              initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className={`absolute ${node.pos} bg-zinc-900 border border-white/10 p-6 rounded-[24px] shadow-xl hover:border-[#00AEEF]/50 transition-all cursor-default group`}
+              transition={{ delay: i * 0.1, type: "spring", stiffness: 100 }}
+              className={`absolute ${node.pos} w-[260px] bg-[#0a0a0c] border border-white/5 p-5 rounded-2xl shadow-[0_20px_40px_rgba(0,0,0,0.4)] hover:border-[#00AEEF]/30 hover:bg-white/[0.02] transition-all cursor-pointer group backdrop-blur-xl z-20`}
             >
-              <node.icon className="w-8 h-8 text-[#00AEEF] mb-3 group-hover:scale-110 transition-transform" />
-              <span className="block text-white font-bold text-sm">{node.label}</span>
+              <div className="flex items-center gap-4 mb-2">
+                <div className="w-10 h-10 rounded-xl bg-white/[0.03] border border-white/5 flex items-center justify-center group-hover:bg-[#00AEEF]/10 group-hover:border-[#00AEEF]/30 transition-all shadow-inner">
+                  <node.icon className="w-5 h-5 text-[#8b92b2] group-hover:text-[#00AEEF] transition-colors" />
+                </div>
+                <span className="block text-white font-bold text-[14px] leading-tight">{node.label}</span>
+              </div>
+              <p className="text-[#8b92b2] text-[12px] leading-relaxed ml-[56px]">{node.desc}</p>
             </motion.div>
           ))}
           
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-            <div className="w-32 h-32 rounded-full bg-[#00AEEF]/10 border border-[#00AEEF]/30 flex items-center justify-center animate-pulse">
-              <span className="text-[#00AEEF] font-black tracking-tighter text-xl">cliQTest</span>
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center z-10">
+            {/* Outer animated rings */}
+            <div className="absolute w-56 h-56 rounded-full border border-[#00AEEF]/20 animate-[spin_10s_linear_infinite]" />
+            <div className="absolute w-[300px] h-[300px] rounded-full border border-dashed border-[#00F2B0]/20 animate-[spin_20s_linear_infinite_reverse]" />
+            
+            {/* Glowing core ambient */}
+            <div className="absolute w-40 h-40 bg-gradient-to-r from-[#00AEEF] to-[#00F2B0] rounded-full blur-[60px] opacity-20 animate-pulse" />
+            
+            {/* Center Core Pill */}
+            <div className="relative w-36 h-36 rounded-full bg-[#0a0a0c] border border-white/10 flex flex-col items-center justify-center shadow-[0_0_50px_rgba(0,174,239,0.15)] group hover:border-[#00AEEF]/50 transition-colors">
+              <span className="text-white font-black tracking-tight text-3xl mb-1 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-[#00AEEF] group-hover:to-[#00F2B0] transition-all">cliQTest</span>
+              <span className="text-[9px] text-[#00AEEF] tracking-[0.3em] uppercase font-bold">Platform</span>
             </div>
           </div>
         </div>
 
         {/* Mobile View for features */}
-        <div className="lg:hidden grid grid-cols-1 md:grid-cols-2 gap-6">
-          {["Codeless Automation", "Auto script Generation", "Adaptive Auto-Healing", "Extensive Device Lab", "UI/UX Performance", "Centralized Reporting"].map((f, i) => (
-            <div key={i} className="bg-zinc-900 border border-white/10 p-6 rounded-2xl">
-              <span className="text-[#00AEEF] font-black block mb-2">0{i+1}</span>
-              <span className="text-white font-bold">{f}</span>
+        <div className="lg:hidden grid grid-cols-1 md:grid-cols-2 gap-4 mt-12">
+          {[
+            { label: "Codeless Automation", desc: "AI-driven test generation", icon: Zap },
+            { label: "Auto Script Generation", desc: "Natural language to code", icon: Cpu },
+            { label: "Adaptive Auto-Healing", desc: "Self-correcting locators", icon: Shield },
+            { label: "Extensive Device Lab", desc: "5000+ real devices", icon: Globe },
+            { label: "UI/UX Performance", desc: "Visual regression tracking", icon: BarChart3 },
+            { label: "Centralized Reporting", desc: "Unified analytics dashboard", icon: Users }
+          ].map((node, i) => (
+            <div key={i} className="bg-[#0a0a0c] border border-white/5 p-6 rounded-2xl flex items-start gap-4">
+              <div className="w-12 h-12 rounded-xl bg-white/[0.03] border border-white/5 flex items-center justify-center shrink-0">
+                <node.icon className="w-6 h-6 text-[#00AEEF]" />
+              </div>
+              <div>
+                <span className="text-white font-bold block mb-1 text-[15px]">{node.label}</span>
+                <span className="text-[#8b92b2] text-[13px]">{node.desc}</span>
+              </div>
             </div>
           ))}
         </div>
