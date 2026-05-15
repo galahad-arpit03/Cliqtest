@@ -44,7 +44,7 @@ export default function AboutPlatform() {
   };
 
   return (
-    <section className="bg-white py-20 px-6 md:px-12">
+    <section className="bg-white py-32 px-6 md:px-12">
       <div className="max-w-7xl mx-auto">
 
         {/* Section Heading */}
@@ -53,7 +53,7 @@ export default function AboutPlatform() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-black text-center text-3xl md:text-5xl font-bold mb-16 tracking-tight"
+          className="text-black text-center text-4xl md:text-6xl font-black mb-24 tracking-tight"
         >
           cliQTest Core Features
         </motion.h2>

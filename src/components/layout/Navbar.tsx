@@ -174,18 +174,23 @@ export default function Navbar() {
                       {/* Dropdown Sidebar */}
                       <div className="w-[300px] p-8 flex flex-col gap-3 bg-white/[0.03] border-r border-white/5">
                         {item.content?.tabs?.map((tab: NavTab) => (
-                          <div
+                          <Link 
+                            href={tab.id === "overview" ? "/overview" : "/products/agentic-qa"}
                             key={tab.id}
-                            onMouseEnter={() => setActiveTab(tab.id)}
-                            className={`flex items-center justify-between px-6 py-4 rounded-2xl transition-all duration-300 cursor-pointer group/tab ${
-                              activeTab === tab.id 
-                              ? 'bg-gradient-to-r from-[#00AEEF]/20 to-transparent border border-[#00AEEF]/30 text-white shadow-lg' 
-                              : 'text-white/40 hover:text-white hover:bg-white/5'
-                            }`}
+                            className="block w-full"
                           >
-                            <span className="text-[15px] font-semibold tracking-wide">{tab.label}</span>
-                            <ChevronRight size={16} className={`transition-transform duration-300 ${activeTab === tab.id ? 'translate-x-1 opacity-100 text-[#00AEEF]' : 'opacity-0'}`} />
-                          </div>
+                            <div
+                              onMouseEnter={() => setActiveTab(tab.id)}
+                              className={`flex items-center justify-between px-6 py-4 rounded-2xl transition-all duration-300 cursor-pointer group/tab ${
+                                activeTab === tab.id 
+                                ? 'bg-gradient-to-r from-[#00AEEF]/20 to-transparent border border-[#00AEEF]/30 text-white shadow-lg' 
+                                : 'text-white/40 hover:text-white hover:bg-white/5'
+                              }`}
+                            >
+                              <span className="text-[15px] font-semibold tracking-wide">{tab.label}</span>
+                              <ChevronRight size={16} className={`transition-transform duration-300 ${activeTab === tab.id ? 'translate-x-1 opacity-100 text-[#00AEEF]' : 'opacity-0'}`} />
+                            </div>
+                          </Link>
                         ))}
                       </div>
 
@@ -206,9 +211,15 @@ export default function Navbar() {
                                   <span className="text-[#00F2B0]">cliQTest</span>
                                   <span> – Empowering Innovation</span>
                                 </h2>
-                                <p className="text-white/50 text-[16px] leading-relaxed max-w-xl font-normal">
+                                <p className="text-white/50 text-[16px] leading-relaxed max-w-xl font-normal mb-8">
                                   {tab.description}
                                 </p>
+                                <Link 
+                                  href="/overview" 
+                                  className="text-[#00AEEF] hover:text-[#00F2B0] text-[15px] font-bold inline-flex items-center gap-2 transition-all group/more w-fit"
+                                >
+                                  Explore Overview <ChevronRight size={16} className="group-hover/more:translate-x-1 transition-transform" />
+                                </Link>
                               </div>
                             ) : (
                               <div className="flex flex-col">
@@ -329,7 +340,7 @@ export default function Navbar() {
                     {item.content?.tabs?.map((tab: NavTab) => (
                       <Link 
                         key={tab.id}
-                        href={tab.id === "overview" ? "/about" : "/products/agentic-qa"}
+                        href={tab.id === "overview" ? "/overview" : "/products/agentic-qa"}
                         onClick={() => setIsMobileMenuOpen(false)}
                         className="flex flex-col gap-1 group active:opacity-70"
                       >

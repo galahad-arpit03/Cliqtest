@@ -35,7 +35,7 @@ export default function Hero() {
     <section className="relative w-full bg-black min-h-screen flex items-center pt-20 overflow-hidden">
       {/* Top Gradient Overlay for Navbar Legibility */}
       <div className="absolute top-0 left-0 w-full h-40 bg-gradient-to-b from-black/80 to-transparent z-10 pointer-events-none" />
-
+      
       {/* Background Video Layer */}
       <motion.div 
         initial={{ opacity: 0 }}
@@ -62,29 +62,29 @@ export default function Hero() {
       <div className="relative z-20 w-full max-w-[1440px] mx-auto px-6 md:px-16 flex flex-col md:flex-row items-center">
         
         {/* Left Side Content */}
-        <motion.div 
+        <motion.div
           variants={containerVariants}
           initial="hidden"
           animate="visible"
           className="flex-1 pt-20 md:pt-0 text-center md:text-left"
         >
-          <motion.h1 
+        <motion.h1
             variants={itemVariants}
             className="text-4xl sm:text-5xl md:text-6xl lg:text-[68px] font-bold tracking-tight text-white leading-[1.1] mb-8 max-w-2xl drop-shadow-2xl"
-          >
+        >
             Stop running tests. <br className="hidden sm:block" />
             Start driving quality.
-          </motion.h1>
-          
-          <motion.p 
+        </motion.h1>
+
+        <motion.p
             variants={itemVariants}
             className="text-lg sm:text-xl md:text-[22px] text-[#00F2B0] font-medium mb-12 leading-relaxed max-w-xl mx-auto md:mx-0 drop-shadow-md"
-          >
+        >
             Built for teams who want to ship faster and <br className="hidden sm:block" />
             never look back.
-          </motion.p>
+        </motion.p>
 
-          <motion.div 
+        <motion.div
             variants={itemVariants}
             className="flex flex-col sm:flex-row gap-4 sm:gap-6 items-center justify-center md:justify-start"
           >
@@ -108,6 +108,17 @@ export default function Hero() {
       {/* Right side spacer to push content left */}
         <div className="flex-1 hidden md:block" />
       </div>
+
+      {/* Scroll Indicator */}
+      <motion.div 
+        animate={{ y: [0, 10, 0] }}
+        transition={{ repeat: Infinity, duration: 2 }}
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-30"
+      >
+        <div className="w-[1px] h-12 bg-gradient-to-b from-transparent to-[#00AEEF]" />
+        <span className="text-[10px] font-black text-white uppercase tracking-[0.4em]">Scroll</span>
+      </motion.div>
+
     </section>
   );
 }

@@ -3,7 +3,7 @@ import AboutHero from '@/components/about/AboutHero/AboutHero';
 import Logos from "@/components/landing/Logos/Logos";
 import AboutPlatform from '@/components/about/AboutPlatform/AboutPlatform';
 import HowItWorks from '@/components/about/HowItWorks/HowItWorks';
-import AboutSecurity from '@/components/about/AboutSecurity/AboutSecurity';
+import KeyBenefits from '@/components/about/KeyBenefits/KeyBenefits';
 
 export default function AboutPage() {
   return (
@@ -11,7 +11,7 @@ export default function AboutPage() {
       <AboutHero />
       <AboutPlatform />
       <Logos />
-      <AboutSecurity />
+      <KeyBenefits />
       <HowItWorks />
     </main>
   );

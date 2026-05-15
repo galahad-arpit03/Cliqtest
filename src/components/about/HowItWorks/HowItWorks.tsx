@@ -39,7 +39,7 @@ export default function HowItWorks() {
   return (
     <section className="bg-black py-32 px-6 md:px-12 lg:px-24 border-t border-white/5">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-white text-center text-3xl md:text-5xl font-bold mb-24 tracking-tight">
+        <h2 className="text-white text-center text-4xl md:text-6xl font-black mb-24 tracking-tight">
           How cliQTest Works
         </h2>
 
@@ -50,12 +50,12 @@ export default function HowItWorks() {
           {steps.map((step, i) => (
             <div key={i} className="relative z-10 flex flex-col items-center text-center group">
               {/* Number Circle with Glow */}
-              <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${step.color} flex items-center justify-center text-white font-black text-xl mb-8 shadow-[0_0_20px_rgba(0,174,239,0.2)] group-hover:scale-110 group-hover:shadow-[0_0_30px_rgba(0,174,239,0.4)] transition-all duration-500 rotate-3 group-hover:rotate-0`}>
+              <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${step.color} flex items-center justify-center text-white font-black text-xl mb-8 shadow-xl group-hover:scale-110 transition-all duration-500 rotate-3 group-hover:rotate-0`}>
                 {step.number}
               </div>
 
               {/* Content Card (Dark Theme) */}
-              <div className="bg-zinc-900/50 backdrop-blur-sm rounded-3xl p-6 border border-white/5 hover:border-white/10 hover:bg-zinc-900 transition-all duration-500 flex-1 flex flex-col group">
+              <div className="bg-zinc-900/40 backdrop-blur-sm rounded-[32px] p-8 border border-white/5 hover:border-[#00AEEF]/30 hover:bg-zinc-900/60 transition-all duration-500 flex-1 flex flex-col group">
                 <h3 className="text-white text-lg font-bold mb-3 leading-tight group-hover:text-[#00AEEF] transition-colors">
                   {step.title}
                 </h3>
