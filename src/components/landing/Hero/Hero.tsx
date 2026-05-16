@@ -49,7 +49,8 @@ export default function Hero() {
           loop
           muted
           playsInline
-          className="w-full h-full object-cover md:object-contain object-center md:object-right opacity-40 md:opacity-90 scale-150 md:scale-120 transition-all duration-700"
+          aria-label="cliQTest AI-powered automated testing platform visualization"
+          className="w-full h-full object-cover md:object-contain object-center md:object-right md:opacity-100 scale-150 md:scale-120 transition-all duration-700"
         >
           <source src="/landing page/brain.mp4" type="video/mp4" />
         </video>
@@ -72,16 +73,15 @@ export default function Hero() {
             variants={itemVariants}
             className="text-4xl sm:text-5xl md:text-6xl lg:text-[68px] font-bold tracking-tight text-white leading-[1.1] mb-8 max-w-2xl drop-shadow-2xl"
         >
-            Stop running tests. <br className="hidden sm:block" />
-            Start driving quality.
+            The AI-Powered <br className="hidden sm:block" />
+            Automated Testing Platform
         </motion.h1>
 
         <motion.p
             variants={itemVariants}
             className="text-lg sm:text-xl md:text-[22px] text-[#00F2B0] font-medium mb-12 leading-relaxed max-w-xl mx-auto md:mx-0 drop-shadow-md"
         >
-            Built for teams who want to ship faster and <br className="hidden sm:block" />
-            never look back.
+            Accelerate release cycles and ensure flawless quality. Automate web, mobile, and API testing, access real device clouds, and manage QA workflows—all from one intelligent platform.
         </motion.p>
 
         <motion.div

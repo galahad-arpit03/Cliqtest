@@ -9,7 +9,11 @@ import {
   Menu,
   X,
   Plus,
-  Minus
+  Minus,
+  Zap,
+  Globe,
+  Database,
+  Cpu
 } from 'lucide-react';
 
 interface Feature {
@@ -24,6 +28,7 @@ interface NavTab {
   description?: string;
   header?: string;
   features?: Feature[];
+  icon?: React.ElementType;
 }
 
 const menuItems = [
@@ -38,38 +43,42 @@ const menuItems = [
       tabs: [
         { 
           id: "overview", 
-          label: "Overview", 
-          title: "cliQTest – Empowering Innovation Through Smarter Testing Solutions",
-          description: "cliQTest is an innovative platform which is designed in such way that whether you’re working on websites, mobile apps, or APIs, cliQTest provides a robust and user-friendly environment to conduct automated and manual testing with precision."
+          label: "Platform Overview", 
+          title: "Intelligent Testing Infrastructure",
+          description: "cliQTest is an innovative platform designed to unify your testing ecosystem. Whether you’re working on websites, mobile apps, or APIs, cliQTest provides a robust, AI-powered environment to conduct automated testing with absolute precision.",
+          icon: Globe
         },
         { 
           id: "nocode", 
           label: "No-Code Automation", 
-          header: "No-Code Automation",
+          header: "Autonomous Test Generation",
+          icon: Zap,
           features: [
-            { label: "Record and Play", desc: "Effortlessly automate your tests with simple record-and-play functionality." },
-            { label: "Auto Healing", desc: "Ensure flawless test execution with intelligent auto-healing capabilities." },
-            { label: "Platform-Agnostic Test", desc: "Seamlessly automate testing across Web, Mobile, API, and Desktop." }
+            { label: "Record and Play", desc: "Effortlessly automate your tests with our intelligent visual recorder." },
+            { label: "Auto Healing", desc: "Ensure flawless execution with predictive self-healing locators." },
+            { label: "Cross-Platform", desc: "Seamlessly automate testing across Web, Mobile, API, and Desktop." }
           ]
         },
         { 
           id: "devicelab", 
-          label: "Device Lab", 
-          header: "Device Lab",
+          label: "Real Device Cloud", 
+          header: "Enterprise Device Lab",
+          icon: Cpu,
           features: [
-            { label: "Device and Platform Agnostic", desc: "Seamlessly test on real devices, browsers, and platforms for quality." },
-            { label: "Comprehensive Testing Capabilities", desc: "Evaluate usability, gestures, UI/UX, and functionality seamlessly." },
-            { label: "Developer Console Integration", desc: "Access live logs and debug insights directly through developer tools for efficient issue resolution." }
+            { label: "Vast Matrix", desc: "Test securely on thousands of real devices, browsers, and platforms." },
+            { label: "Deep Diagnostics", desc: "Evaluate performance, memory, UI/UX, and native functionality." },
+            { label: "Live Debugging", desc: "Access real-time logs and debug insights directly through our console." }
           ]
         },
         { 
           id: "data", 
-          label: "Centralized Data Management", 
-          header: "Centralized Data Management",
+          label: "Unified Analytics", 
+          header: "Centralized Intelligence",
+          icon: Database,
           features: [
-            { label: "Requirement & Defect Management", desc: "Link test cases to requirements and defects for efficient traceability." },
-            { label: "Test Case Repository", desc: "Centralized storage to create, manage, and organize test cases efficiently." },
-            { label: "Test Documentation & Reporting", desc: "Generate detailed reports and maintain comprehensive documentation to ensure test process transparency." }
+            { label: "Traceability", desc: "Link executions to requirements for end-to-end visibility." },
+            { label: "Smart Repository", desc: "AI-organized centralized storage for optimal test case management." },
+            { label: "Reporting", desc: "Generate actionable insights and automated quality trend analysis." }
           ]
         }
       ]
@@ -166,83 +175,107 @@ export default function Navbar() {
                   </Link>
                 ) : ItemLabel}
 
-                {/* Desktop Dropdown - Professional Tabbed Layout */}
+                {/* Desktop Dropdown - Premium AI Vibe */}
                 {isInsights && activeMenu === "Insights" && (
-                  <div className="fixed top-20 left-1/2 -translate-x-1/2 pt-2 animate-in fade-in slide-in-from-top-2 duration-300 z-[120] w-[90vw] max-w-[1000px]">
-                    <div className="bg-[#0A0E17]/98 border border-white/10 rounded-[32px] shadow-[0_40px_100px_-12px_rgba(0,0,0,1)] overflow-hidden flex min-h-[450px] backdrop-blur-3xl">
+                  <div className="fixed top-20 left-1/2 -translate-x-1/2 pt-4 animate-in fade-in slide-in-from-top-4 duration-300 z-[120] w-[90vw] max-w-[1050px]">
+                    <div className="bg-[#050505]/95 border border-white/10 rounded-[32px] shadow-[0_0_80px_rgba(0,174,239,0.15)] overflow-hidden flex min-h-[480px] backdrop-blur-3xl relative">
+                      
+                      {/* Ambient Glow */}
+                      <div className="absolute top-[-20%] left-[-10%] w-[50%] h-[50%] bg-[#00AEEF]/20 blur-[120px] pointer-events-none" />
+                      <div className="absolute bottom-[-20%] right-[-10%] w-[50%] h-[50%] bg-[#00F2B0]/10 blur-[120px] pointer-events-none" />
                       
                       {/* Dropdown Sidebar */}
-                      <div className="w-[300px] p-8 flex flex-col gap-3 bg-white/[0.03] border-r border-white/5">
-                        {item.content?.tabs?.map((tab: NavTab) => (
-                          <Link 
-                            href={tab.id === "overview" ? "/overview" : "/products/agentic-qa"}
-                            key={tab.id}
-                            className="block w-full"
-                          >
-                            <div
-                              onMouseEnter={() => setActiveTab(tab.id)}
-                              className={`flex items-center justify-between px-6 py-4 rounded-2xl transition-all duration-300 cursor-pointer group/tab ${
-                                activeTab === tab.id 
-                                ? 'bg-gradient-to-r from-[#00AEEF]/20 to-transparent border border-[#00AEEF]/30 text-white shadow-lg' 
-                                : 'text-white/40 hover:text-white hover:bg-white/5'
-                              }`}
+                      <div className="w-[320px] p-6 flex flex-col gap-2 bg-white/[0.02] border-r border-white/5 relative z-10">
+                        <h4 className="text-white/30 text-[10px] font-black uppercase tracking-[0.2em] mb-4 ml-4 mt-2">Platform Capabilities</h4>
+                        {item.content?.tabs?.map((tab: NavTab) => {
+                          const Icon = tab.icon;
+                          const isActive = activeTab === tab.id;
+                          return (
+                            <Link 
+                              href="/overview"
+                              key={tab.id}
+                              className="block w-full"
                             >
-                              <span className="text-[15px] font-semibold tracking-wide">{tab.label}</span>
-                              <ChevronRight size={16} className={`transition-transform duration-300 ${activeTab === tab.id ? 'translate-x-1 opacity-100 text-[#00AEEF]' : 'opacity-0'}`} />
-                            </div>
-                          </Link>
-                        ))}
+                              <div
+                                onMouseEnter={() => setActiveTab(tab.id)}
+                                className={`flex items-center gap-4 px-4 py-4 rounded-2xl transition-all duration-300 cursor-pointer group/tab relative ${
+                                  isActive 
+                                  ? 'bg-white/5 border border-white/10 text-white shadow-lg' 
+                                  : 'text-white/50 hover:text-white hover:bg-white/[0.03] border border-transparent'
+                                }`}
+                              >
+                                {/* Active Indicator line */}
+                                <div className={`absolute left-0 top-1/2 -translate-y-1/2 w-1 h-8 bg-gradient-to-b from-[#00AEEF] to-[#00F2B0] rounded-r-full shadow-[0_0_10px_#00AEEF] transition-all duration-300 ${isActive ? 'opacity-100' : 'opacity-0'}`} />
+                                
+                                <div className={`w-10 h-10 rounded-xl flex items-center justify-center transition-colors ${isActive ? 'bg-[#00AEEF]/10 text-[#00AEEF]' : 'bg-white/5 group-hover/tab:bg-white/10 text-white/50 group-hover/tab:text-white'}`}>
+                                  {Icon && <Icon size={18} />}
+                                </div>
+                                
+                                <div className="flex-1">
+                                  <span className={`block text-[14px] font-bold tracking-wide ${isActive ? 'text-white' : 'text-white/70'}`}>{tab.label}</span>
+                                </div>
+                                <ChevronRight size={14} className={`transition-transform duration-300 ${isActive ? 'translate-x-1 opacity-100 text-[#00AEEF]' : 'opacity-0'}`} />
+                              </div>
+                            </Link>
+                          );
+                        })}
                       </div>
 
                       {/* Dropdown Content */}
-                      <div className="flex-1 p-12 flex flex-col relative overflow-hidden bg-gradient-to-br from-transparent to-[#00AEEF]/5">
+                      <div className="flex-1 p-12 relative overflow-hidden flex items-center">
+                        <div className="absolute inset-0 bg-black/40 backdrop-blur-sm z-0" />
+                        
                         {item.content?.tabs?.map((tab: NavTab) => (
                           <div 
                             key={tab.id} 
-                            className={`transition-all duration-500 absolute inset-12 ${
+                            className={`transition-all duration-500 absolute inset-12 z-10 flex flex-col justify-center ${
                               activeTab === tab.id 
                               ? 'opacity-100 translate-y-0 pointer-events-auto' 
-                              : 'opacity-0 translate-y-4 pointer-events-none'
+                              : 'opacity-0 translate-y-8 pointer-events-none'
                             }`}
                           >
                             {tab.id === "overview" ? (
-                              <div className="flex flex-col h-full justify-center">
-                                <h2 className="text-3xl font-black leading-tight mb-8 tracking-tighter text-white">
-                                  <span className="text-[#00F2B0]">cliQTest</span>
-                                  <span> – Empowering Innovation</span>
+                              <div className="max-w-2xl">
+                                <span className="inline-block px-3 py-1 rounded-full bg-[#00AEEF]/10 border border-[#00AEEF]/30 text-[#00AEEF] text-[10px] font-black uppercase tracking-widest mb-6">Platform Core</span>
+                                <h2 className="text-3xl md:text-4xl font-black leading-[1.1] mb-6 tracking-tight text-white">
+                                  {tab.title}
                                 </h2>
-                                <p className="text-white/50 text-[16px] leading-relaxed max-w-xl font-normal mb-8">
+                                <p className="text-[#8b92b2] text-[16px] leading-relaxed mb-10 font-medium">
                                   {tab.description}
                                 </p>
                                 <Link 
                                   href="/overview" 
-                                  className="text-[#00AEEF] hover:text-[#00F2B0] text-[15px] font-bold inline-flex items-center gap-2 transition-all group/more w-fit"
+                                  className="px-6 py-3 bg-white text-black font-bold text-[13px] rounded-full hover:bg-zinc-200 transition-all inline-flex items-center gap-2 group/btn"
                                 >
-                                  Explore Overview <ChevronRight size={16} className="group-hover/more:translate-x-1 transition-transform" />
+                                  Explore Platform <ChevronRight size={16} className="group-hover/btn:translate-x-1 transition-transform" />
                                 </Link>
                               </div>
                             ) : (
-                              <div className="flex flex-col">
-                                <h2 className="text-2xl font-black text-white mb-8 border-b border-white/10 pb-4 inline-block">{tab.header}</h2>
-                                <div className="grid grid-cols-1 gap-4">
+                              <div className="w-full">
+                                <h2 className="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white to-white/50 mb-10 tracking-tight">{tab.header}</h2>
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
                                   {tab.features?.map((feat: { label: string; desc: string }, idx: number) => (
-                                    <div key={idx} className="group/feat p-4 flex flex-col gap-2 relative cursor-pointer hover:bg-white/[0.03] transition-all rounded-2xl border border-transparent hover:border-white/5">
-                                      <div className="flex items-center justify-between">
-                                        <span className="text-[#00F2B0] text-[10px] tracking-widest uppercase font-black">{feat.label}</span>
-                                        <ChevronRight size={14} className="text-white/20 group-hover/feat:text-[#00AEEF] group-hover/feat:translate-x-1 transition-all" />
+                                    <div key={idx} className="group/feat flex gap-4 p-4 rounded-2xl hover:bg-white/[0.03] transition-colors border border-transparent hover:border-white/5">
+                                      <div className="mt-1 flex-shrink-0">
+                                        <div className="w-2 h-2 rounded-full bg-[#00F2B0] group-hover/feat:shadow-[0_0_10px_#00F2B0] transition-all" />
                                       </div>
-                                      <p className="text-white/80 text-[15px] font-medium leading-tight">
-                                        {feat.desc}
-                                      </p>
+                                      <div>
+                                        <h4 className="text-white font-bold text-[15px] mb-2">{feat.label}</h4>
+                                        <p className="text-[#8b92b2] text-[13px] leading-relaxed">
+                                          {feat.desc}
+                                        </p>
+                                      </div>
                                     </div>
                                   ))}
                                 </div>
-                                <Link 
-                                  href="/products/agentic-qa" 
-                                  className="mt-10 text-[#00AEEF] hover:text-[#00F2B0] text-[15px] font-bold inline-flex items-center gap-2 transition-all group/more"
-                                >
-                                  Explore Solution <ChevronRight size={16} className="group-hover/more:translate-x-1 transition-transform" />
-                                </Link>
+                                <div className="mt-10 pt-8 border-t border-white/5">
+                                  <Link 
+                                    href="/overview" 
+                                    className="text-[#00AEEF] hover:text-[#00F2B0] text-[14px] font-bold inline-flex items-center gap-2 transition-all group/more uppercase tracking-wider"
+                                  >
+                                    Explore Platform <ChevronRight size={16} className="group-hover/more:translate-x-1 transition-transform" />
+                                  </Link>
+                                </div>
                               </div>
                             )}
                           </div>
@@ -340,7 +373,7 @@ export default function Navbar() {
                     {item.content?.tabs?.map((tab: NavTab) => (
                       <Link 
                         key={tab.id}
-                        href={tab.id === "overview" ? "/overview" : "/products/agentic-qa"}
+                        href="/overview"
                         onClick={() => setIsMobileMenuOpen(false)}
                         className="flex flex-col gap-1 group active:opacity-70"
                       >
