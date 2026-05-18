@@ -60,14 +60,14 @@ export default function OverviewPage() {
               <motion.button 
                 whileHover={{ scale: 1.05, boxShadow: "0 0 30px rgba(0,174,239,0.5)" }}
                 whileTap={{ scale: 0.95 }}
-                className="w-full sm:w-auto px-8 py-3.5 rounded-full bg-gradient-to-r from-[#00AEEF] to-[#00F2B0] text-black font-bold text-[12px] tracking-widest uppercase transition-all"
+                className="w-full sm:w-auto px-8 py-3.5 rounded-md bg-gradient-to-r from-[#00AEEF] to-[#00F2B0] text-black font-bold text-[12px] tracking-widest uppercase transition-all"
               >
                 Launch Demo
               </motion.button>
               <motion.button 
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="w-full sm:w-auto px-8 py-3.5 rounded-full border border-[#00AEEF] text-white font-bold text-[12px] tracking-widest uppercase hover:bg-[#00AEEF]/10 transition-all backdrop-blur-sm"
+                className="w-full sm:w-auto px-8 py-3.5 rounded-md border border-[#00AEEF] text-white font-bold text-[12px] tracking-widest uppercase hover:bg-[#00AEEF]/10 transition-all backdrop-blur-sm"
               >
                 Explore Platform
               </motion.button>

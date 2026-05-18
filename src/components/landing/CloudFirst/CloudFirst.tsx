@@ -82,7 +82,7 @@ export default function CloudFirst() {
             <motion.button 
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-10 py-3 bg-[#00AEEF] text-white text-xs font-bold tracking-[0.2em] rounded-full uppercase shadow-[0_0_20px_rgba(0,174,239,0.4)] hover:scale-105 transition-transform"
+              className="px-10 py-3 bg-[#00AEEF] text-white text-xs font-bold tracking-[0.2em] rounded-md uppercase shadow-[0_0_20px_rgba(0,174,239,0.4)] hover:scale-105 transition-transform"
             >
               Enterprise App Intelligence
             </motion.button>

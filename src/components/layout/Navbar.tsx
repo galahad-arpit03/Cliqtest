@@ -178,7 +178,7 @@ export default function Navbar() {
                 {/* Desktop Dropdown - Premium AI Vibe */}
                 {isInsights && activeMenu === "Insights" && (
                   <div className="fixed top-20 left-1/2 -translate-x-1/2 pt-4 animate-in fade-in slide-in-from-top-4 duration-300 z-[120] w-[90vw] max-w-[1050px]">
-                    <div className="bg-[#050505]/95 border border-white/10 rounded-[32px] shadow-[0_0_80px_rgba(0,174,239,0.15)] overflow-hidden flex min-h-[480px] backdrop-blur-3xl relative">
+                    <div className="bg-[#050505]/95 border border-white/10 rounded-[12px] shadow-[0_0_80px_rgba(0,174,239,0.15)] overflow-hidden flex min-h-[480px] backdrop-blur-3xl relative">
                       
                       {/* Ambient Glow */}
                       <div className="absolute top-[-20%] left-[-10%] w-[50%] h-[50%] bg-[#00AEEF]/20 blur-[120px] pointer-events-none" />
@@ -198,16 +198,16 @@ export default function Navbar() {
                             >
                               <div
                                 onMouseEnter={() => setActiveTab(tab.id)}
-                                className={`flex items-center gap-4 px-4 py-4 rounded-2xl transition-all duration-300 cursor-pointer group/tab relative ${
+                                className={`flex items-center gap-4 px-4 py-4 rounded-md transition-all duration-300 cursor-pointer group/tab relative ${
                                   isActive 
                                   ? 'bg-white/5 border border-white/10 text-white shadow-lg' 
                                   : 'text-white/50 hover:text-white hover:bg-white/[0.03] border border-transparent'
                                 }`}
                               >
                                 {/* Active Indicator line */}
-                                <div className={`absolute left-0 top-1/2 -translate-y-1/2 w-1 h-8 bg-gradient-to-b from-[#00AEEF] to-[#00F2B0] rounded-r-full shadow-[0_0_10px_#00AEEF] transition-all duration-300 ${isActive ? 'opacity-100' : 'opacity-0'}`} />
+                                <div className={`absolute left-0 top-1/2 -translate-y-1/2 w-1 h-8 bg-gradient-to-b from-[#00AEEF] to-[#00F2B0] rounded-r-md shadow-[0_0_10px_#00AEEF] transition-all duration-300 ${isActive ? 'opacity-100' : 'opacity-0'}`} />
                                 
-                                <div className={`w-10 h-10 rounded-xl flex items-center justify-center transition-colors ${isActive ? 'bg-[#00AEEF]/10 text-[#00AEEF]' : 'bg-white/5 group-hover/tab:bg-white/10 text-white/50 group-hover/tab:text-white'}`}>
+                                <div className={`w-10 h-10 rounded-lg flex items-center justify-center transition-colors ${isActive ? 'bg-[#00AEEF]/10 text-[#00AEEF]' : 'bg-white/5 group-hover/tab:bg-white/10 text-white/50 group-hover/tab:text-white'}`}>
                                   {Icon && <Icon size={18} />}
                                 </div>
                                 
@@ -245,7 +245,7 @@ export default function Navbar() {
                                 </p>
                                 <Link 
                                   href="/overview" 
-                                  className="px-6 py-3 bg-white text-black font-bold text-[13px] rounded-full hover:bg-zinc-200 transition-all inline-flex items-center gap-2 group/btn"
+                                  className="px-6 py-3 bg-white text-black font-bold text-[13px] rounded-md hover:bg-zinc-200 transition-all inline-flex items-center gap-2 group/btn"
                                 >
                                   Explore Platform <ChevronRight size={16} className="group-hover/btn:translate-x-1 transition-transform" />
                                 </Link>
@@ -255,9 +255,9 @@ export default function Navbar() {
                                 <h2 className="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white to-white/50 mb-10 tracking-tight">{tab.header}</h2>
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
                                   {tab.features?.map((feat: { label: string; desc: string }, idx: number) => (
-                                    <div key={idx} className="group/feat flex gap-4 p-4 rounded-2xl hover:bg-white/[0.03] transition-colors border border-transparent hover:border-white/5">
+                                    <div key={idx} className="group/feat flex gap-4 p-4 rounded-xl hover:bg-white/[0.03] transition-colors border border-transparent hover:border-white/5">
                                       <div className="mt-1 flex-shrink-0">
-                                        <div className="w-2 h-2 rounded-full bg-[#00F2B0] group-hover/feat:shadow-[0_0_10px_#00F2B0] transition-all" />
+                                        <div className="w-2 h-2 rounded-md bg-[#00F2B0] group-hover/feat:shadow-[0_0_10px_#00F2B0] transition-all" />
                                       </div>
                                       <div>
                                         <h4 className="text-white font-bold text-[15px] mb-2">{feat.label}</h4>
@@ -292,7 +292,7 @@ export default function Navbar() {
         {/* Action Buttons & Mobile Toggle */}
         <div className="flex items-center gap-4">
           <Link href="/book-a-demo" className="hidden sm:block">
-            <button className="px-8 py-3 bg-[#00AEEF] text-white text-[13px] font-bold rounded-full hover:bg-[#0092E6] transition-all shadow-[0_10px_30px_rgba(0,174,239,0.3)] hover:scale-105 active:scale-95">
+            <button className="px-8 py-3 bg-[#00AEEF] text-white text-[13px] font-bold rounded-md hover:bg-[#0092E6] transition-all shadow-[0_10px_30px_rgba(0,174,239,0.3)] hover:scale-105 active:scale-95">
               Book a Demo
             </button>
           </Link>
@@ -390,7 +390,7 @@ export default function Navbar() {
 
         <div className="mt-auto pt-10">
           <Link href="/book-a-demo" onClick={() => setIsMobileMenuOpen(false)}>
-            <button className="w-full py-4 bg-[#00AEEF] text-white text-base font-bold rounded-2xl shadow-xl hover:scale-[1.02] active:scale-[0.98] transition-all">
+            <button className="w-full py-4 bg-[#00AEEF] text-white text-base font-bold rounded-md shadow-xl hover:scale-[1.02] active:scale-[0.98] transition-all">
               Book a Demo
             </button>
           </Link>

@@ -100,7 +100,7 @@ export default function BookADemoPage() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="bg-zinc-900/40 backdrop-blur-3xl border border-white/5 rounded-[48px] p-8 md:p-12 shadow-2xl"
+              className="bg-zinc-900/40 backdrop-blur-3xl border border-white/5 rounded-2xl p-8 md:p-12 shadow-2xl"
             >
               <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
                 
@@ -175,7 +175,7 @@ export default function BookADemoPage() {
                     </select>
                   </div>
 
-                  <button type="submit" className="w-full py-4 bg-[#00AEEF] text-white font-black rounded-2xl hover:bg-[#0092E6] transition-all shadow-xl shadow-[#00AEEF]/20 uppercase tracking-widest text-xs mt-4 active:scale-95">
+                  <button type="submit" className="w-full py-4 bg-[#00AEEF] text-white font-black rounded-md hover:bg-[#0092E6] transition-all shadow-xl shadow-[#00AEEF]/20 uppercase tracking-widest text-xs mt-4 active:scale-95">
                     Confirm Booking
                   </button>
                 </form>

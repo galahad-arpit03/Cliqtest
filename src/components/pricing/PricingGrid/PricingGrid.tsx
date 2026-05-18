@@ -94,7 +94,7 @@ export default function PricingGrid() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1, duration: 0.6 }}
-              className={`relative p-8 rounded-[32px] border transition-all duration-500 group flex flex-col h-full ${
+              className={`relative p-8 rounded-xl border transition-all duration-500 group flex flex-col h-full ${
                 tier.highlighted 
                 ? 'bg-zinc-900 border-purple-500/50 shadow-[0_20px_50px_rgba(145,91,255,0.1)]' 
                 : 'bg-zinc-900/40 border-white/5 hover:border-white/20 hover:bg-zinc-900/60'
@@ -131,7 +131,7 @@ export default function PricingGrid() {
                 ))}
               </ul>
 
-              <button className={`w-full py-3.5 rounded-2xl font-bold text-[11px] tracking-widest uppercase transition-all ${
+              <button className={`w-full py-3.5 rounded-md font-bold text-[11px] tracking-widest uppercase transition-all ${
                 tier.highlighted 
                 ? 'bg-purple-500 text-white hover:bg-purple-600 shadow-lg shadow-purple-500/20' 
                 : 'bg-white/5 text-white hover:bg-white/10 border border-white/10'

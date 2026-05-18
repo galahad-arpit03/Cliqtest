@@ -91,14 +91,14 @@ export default function Hero() {
             <motion.button 
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="w-full sm:w-auto px-8 py-3.5 rounded-full border border-[#00AEEF] text-white font-bold text-[12px] tracking-widest uppercase hover:bg-[#00AEEF]/10 transition-all backdrop-blur-sm"
+              className="w-full sm:w-auto px-8 py-3.5 rounded-md border border-[#00AEEF] text-white font-bold text-[12px] tracking-widest uppercase hover:bg-[#00AEEF]/10 transition-all backdrop-blur-sm"
             >
               Platform Overview
             </motion.button>
             <motion.button 
               whileHover={{ scale: 1.05, boxShadow: "0 0 30px rgba(0,174,239,0.5)" }}
               whileTap={{ scale: 0.95 }}
-              className="w-full sm:w-auto px-10 py-3.5 rounded-full bg-[#00AEEF] text-white font-bold text-[12px] tracking-widest uppercase hover:bg-[#0092E6] transition-all shadow-[0_0_20px_rgba(0,174,239,0.3)]"
+              className="w-full sm:w-auto px-10 py-3.5 rounded-md bg-[#00AEEF] text-white font-bold text-[12px] tracking-widest uppercase hover:bg-[#0092E6] transition-all shadow-[0_0_20px_rgba(0,174,239,0.3)]"
             >
               Demo
             </motion.button>

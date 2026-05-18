@@ -37,7 +37,7 @@ export default function AboutHero() {
 
         {/* CTA */}
         <div className="flex flex-col sm:flex-row gap-3">
-          <button className="px-6 py-3 bg-[#00AEEF] text-white font-bold rounded-full hover:bg-[#0092E6] hover:scale-105 transition-all text-sm tracking-[0.15em] uppercase shadow-lg shadow-[#00AEEF]/30">
+          <button className="px-6 py-3 bg-[#00AEEF] text-white font-bold rounded-md hover:bg-[#0092E6] hover:scale-105 transition-all text-sm tracking-[0.15em] uppercase shadow-lg shadow-[#00AEEF]/30">
             Explore Platform
           </button>
         </div>

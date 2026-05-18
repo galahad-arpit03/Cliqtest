@@ -117,7 +117,7 @@ export default function KeyBenefits() {
               <h3 className="text-2xl font-bold text-black mb-2">Ready to accelerate?</h3>
               <p className="text-zinc-500">Join the elite teams building the future with cliQTest.</p>
             </div>
-            <button className="px-10 py-4 bg-black text-white font-black rounded-full hover:bg-[#00AEEF] transition-all shadow-xl active:scale-95">
+            <button className="px-10 py-4 bg-black text-white font-black rounded-md hover:bg-[#00AEEF] transition-all shadow-xl active:scale-95">
               Book a Demo
             </button>
           </motion.div>
