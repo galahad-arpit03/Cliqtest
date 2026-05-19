@@ -50,7 +50,7 @@ const benefits = [
 
 export default function KeyBenefits() {
   return (
-    <section className="bg-white py-32 px-6 md:px-12 lg:px-24">
+    <section className="bg-white py-16 px-6 md:px-12 lg:px-24">
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-20">
         
         {/* Left Side: Sticky Heading */}
@@ -61,7 +61,7 @@ export default function KeyBenefits() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-black text-5xl md:text-6xl font-black tracking-tight mb-8 leading-[1.1]">
+            <h2 className="text-black text-4xl md:text-[44px] font-bold tracking-tight mb-8 leading-[1.1]">
               Key <br />
               <span className="text-[#00AEEF]">Benefits</span>
             </h2>

@@ -9,24 +9,87 @@ export default function OverviewPage() {
   const [activeFeature, setActiveFeature] = useState(0);
 
   const featuresData = [
-    { title: "No-code Automation", desc: "Automate tests, no coding required.", color: "bg-[#00AEEF]", content: {
-        title: "No-Code Automation",
-        desc: "Build robust test scripts instantly without writing code. Leverage AI to generate automated test cases from natural language, drastically reducing maintenance and technical debt.",
-        metrics: [{ val: "10x", label: "Faster Testing", color: "text-[#00AEEF]" }, { val: "Zero", label: "Coding Needed", color: "text-[#00F2B0]" }],
-        bullets: ["Natural Language to Test Scripts", "Self-Healing Element Locators", "Cross-Browser Parallel Execution"]
-    }},
-    { title: "Device Lab", desc: "Access a diverse device pool.", color: "bg-[#a855f7]", content: {
-        title: "Real Device Cloud",
-        desc: "Ensure pixel-perfect experiences across all screen sizes and OS versions. Access thousands of real mobile and desktop devices securely from your browser.",
-        metrics: [{ val: "5000+", label: "Real Devices", color: "text-[#a855f7]" }, { val: "99.9%", label: "Availability", color: "text-[#00AEEF]" }],
-        bullets: ["Native iOS & Android Support", "Automated Application Installs", "Network Throttling & Simulation"]
-    }},
-    { title: "Centralized Management", desc: "Unified data storage and analysis.", color: "bg-[#00F2B0]", content: {
-        title: "Centralized Management",
-        desc: "From requirements management to version control, review workflows, user-role management, and test data maintenance, cliQTest streamlines every aspect of project handling.",
-        metrics: [{ val: "100%", label: "TRACEABILITY", color: "text-[#00AEEF]" }, { val: "Secure", label: "AES-256", color: "text-[#00F2B0]" }],
-        bullets: ["Role-Based Access Control", "Version Control Integrations", "Comprehensive Audit Trails"]
-    }}
+    {
+      id: "management",
+      category: "Management",
+      title: "Centralized Management",
+      subtitle: "Organize, track, and optimize your testing lifecycle with a unified platform designed for collaboration.",
+      items: [
+        {
+          title: "Effortless Test Management",
+          desc: "Organize test cases, manage releases, and execute seamlessly from a single unified workspace.",
+          icon: Users
+        },
+        {
+          title: "Complete Traceability",
+          desc: "Link automated tests to Jira requirements, ensuring total visibility into QA coverage and software quality.",
+          icon: Shield
+        },
+        {
+          title: "Actionable Analytics",
+          desc: "Gain deep insights into your testing processes with comprehensive reports and defect tracking.",
+          icon: BarChart3
+        }
+      ],
+      image: "/assets/66fc49416a607a9c02f4bd04_card-tall-complex-flows-hq-p-500.webp",
+      color: "from-[#00AEEF] to-[#00F2B0]",
+      accent: "text-[#00AEEF]",
+      bgAccent: "bg-[#00AEEF]/10"
+    },
+    {
+      id: "nocode",
+      category: "Automation",
+      title: "No-Code Automation",
+      subtitle: "Build robust test scripts instantly without writing code. Leverage AI to generate automated test cases from natural language.",
+      items: [
+        {
+          title: "Natural Language to Code",
+          desc: "Type what you want to test in plain English, and our AI instantly generates robust automation scripts.",
+          icon: Zap
+        },
+        {
+          title: "Self-Healing Locators",
+          desc: "When UI elements change, our intelligent engine automatically heals the locators without manual intervention.",
+          icon: Cpu
+        },
+        {
+          title: "Cross-Browser Execution",
+          desc: "Run your codeless tests in parallel across Chrome, Firefox, Safari, and Edge with a single click.",
+          icon: Globe
+        }
+      ],
+      image: "/assets/6852f436ba19260e1e1f1bfe_card-agent-action.webp",
+      color: "from-[#a855f7] to-[#ec4899]",
+      accent: "text-[#a855f7]",
+      bgAccent: "bg-[#a855f7]/10"
+    },
+    {
+      id: "devicelab",
+      category: "Infrastructure",
+      title: "Real Device Cloud",
+      subtitle: "Ensure pixel-perfect experiences across all screen sizes and OS versions. Access thousands of real devices securely.",
+      items: [
+        {
+          title: "5000+ Real Devices",
+          desc: "Test on a massive matrix of real iOS and Android smartphones, tablets, and desktop browsers.",
+          icon: Globe
+        },
+        {
+          title: "Live Debugging",
+          desc: "Access real-time device logs, network payloads, and crash reports to debug issues instantly.",
+          icon: Check
+        },
+        {
+          title: "Network Throttling",
+          desc: "Simulate various network conditions (3G, 4G, offline) to ensure your app performs flawlessly everywhere.",
+          icon: BarChart3
+        }
+      ],
+      image: "/assets/68e97727a405c7cd4f58ca37_card-test-horizontal-stack.webp",
+      color: "from-[#f59e0b] to-[#ef4444]",
+      accent: "text-[#f59e0b]",
+      bgAccent: "bg-[#f59e0b]/10"
+    }
   ];
 
   return (
@@ -145,7 +208,7 @@ export default function OverviewPage() {
       </section>
 
       {/* 2. INFINITY LOOP SECTION: Testing Simplified */}
-      <section className="py-32 px-6 relative overflow-hidden">
+      <section className="py-16 px-6 relative overflow-hidden">
         <div className="max-w-7xl mx-auto text-center mb-4">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
@@ -244,113 +307,113 @@ export default function OverviewPage() {
       </section>
 
       {/* 3. CORE FEATURES SECTION: Dynamic Features */}
-      <section className="w-full px-6 md:px-12 py-20">
+      <section className="w-full px-6 md:px-12 py-16 bg-[#050505]">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.3fr] gap-12 lg:gap-24 items-center">
+          
+          {/* Top Navigation Pills */}
+          <div className="flex flex-wrap items-center justify-center gap-4 mb-12">
+            {featuresData.map((item, i) => (
+              <button
+                key={i}
+                onClick={() => setActiveFeature(i)}
+                className={`px-8 py-3 rounded-[12px] text-[15px] font-bold transition-all duration-300 ${
+                  activeFeature === i 
+                  ? 'bg-white text-black shadow-[0_0_20px_rgba(255,255,255,0.2)] scale-105' 
+                  : 'bg-white/5 text-zinc-400 hover:bg-white/10 hover:text-white border border-white/5'
+                }`}
+              >
+                {item.category}
+              </button>
+            ))}
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-16 lg:gap-24 items-center">
             
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="max-w-md"
-            >
-              <h2 className="text-4xl md:text-[44px] font-bold tracking-tight mb-16 leading-[1.1]">
-                Features of <br />
-                <span className="text-[#00AEEF]">cliQTest.</span>
-              </h2>
-              
-              <div className="space-y-4">
-                {featuresData.map((item, i) => (
-                  <div 
-                    key={i}
-                    onClick={() => setActiveFeature(i)}
-                    className={`flex gap-5 group cursor-pointer items-start p-5 rounded-2xl border transition-all duration-300 ${activeFeature === i ? 'bg-white/[0.03] border-white/10 shadow-lg scale-[1.02]' : 'border-transparent hover:bg-white/[0.02]'}`}
-                  >
-                    <div className={`w-1 h-12 mt-1 ${item.color} rounded-full transition-all duration-500 ${activeFeature === i ? 'opacity-100 shadow-[0_0_15px_currentColor]' : 'opacity-20'}`} />
-                    <div>
-                      <h4 className={`text-[18px] font-bold mb-1.5 leading-tight transition-colors ${activeFeature === i ? 'text-white' : 'text-[#8b92b2]'}`}>{item.title}</h4>
-                      <p className={`text-[14px] leading-relaxed transition-colors ${activeFeature === i ? 'text-[#a1a8c2]' : 'text-[#8b92b2]/50'}`}>{item.desc}</p>
-                    </div>
+            {/* Left Side: Content */}
+            <div className="flex flex-col">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={activeFeature}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: 20 }}
+                  transition={{ duration: 0.4 }}
+                >
+                  <h2 className="text-4xl md:text-[44px] font-bold tracking-tight mb-5 leading-[1.1] text-white">
+                    {featuresData[activeFeature].title}
+                  </h2>
+                  <p className="text-[#8b92b2] text-[15px] md:text-[17px] leading-relaxed mb-10 max-w-[650px]">
+                    {featuresData[activeFeature].subtitle}
+                  </p>
+
+                  <div className="flex flex-col gap-6">
+                    {featuresData[activeFeature].items.map((subItem, idx) => (
+                      <motion.div 
+                        key={idx}
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.4, delay: idx * 0.1 }}
+                        className="flex items-start gap-4 group"
+                      >
+                        <div className={`w-12 h-12 rounded-xl ${featuresData[activeFeature].bgAccent} border border-white/5 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
+                          <subItem.icon className={`w-5 h-5 ${featuresData[activeFeature].accent}`} />
+                        </div>
+                        <div className="mt-0.5">
+                          <h4 className="text-[17px] font-bold text-white mb-1.5 tracking-tight group-hover:text-[#00AEEF] transition-colors">
+                            {subItem.title}
+                          </h4>
+                          <p className="text-[#8b92b2] text-[14px] leading-relaxed max-w-[550px]">
+                            {subItem.desc}
+                          </p>
+                        </div>
+                      </motion.div>
+                    ))}
                   </div>
-                ))}
-              </div>
-            </motion.div>
+                </motion.div>
+              </AnimatePresence>
+            </div>
 
-            <motion.div 
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="relative w-full h-[540px]"
-            >
-              <div className="bg-[#0a0a0c] border border-white/5 rounded-[32px] p-10 lg:p-14 relative overflow-hidden h-full flex flex-col justify-center shadow-2xl transition-all duration-500 group">
-                {/* Dynamic Background Glow based on active feature */}
-                <div className={`absolute top-[-20%] right-[-20%] w-[600px] h-[600px] rounded-full blur-[120px] pointer-events-none transition-all duration-700 opacity-20 ${featuresData[activeFeature].color.replace('bg-', '')}`} />
-                <div className="absolute inset-0 bg-[url('/assets/grid.svg')] opacity-[0.03] bg-center pointer-events-none mix-blend-screen" />
-                
-                <div className="relative z-10">
-                  <AnimatePresence mode="wait">
-                    <motion.div
-                      key={activeFeature}
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: -20 }}
-                      transition={{ duration: 0.4 }}
-                    >
-                      <h3 className="text-3xl lg:text-[40px] font-black text-white mb-6 leading-tight tracking-tight">
-                        {featuresData[activeFeature].content.title}
-                      </h3>
-                      
-                      <p className="text-[#8b92b2] leading-[1.8] text-[15px] mb-12 max-w-[420px]">
-                        {featuresData[activeFeature].content.desc}
-                      </p>
-                      
-                      <div className="flex flex-wrap gap-4 mb-10">
-                        {featuresData[activeFeature].content.metrics.map((m, idx) => (
-                          <div 
-                            key={idx}
-                            className="bg-white/[0.02] p-6 rounded-2xl border border-white/5 w-[160px] flex flex-col items-center justify-center hover:bg-white/[0.04] transition-colors shadow-xl backdrop-blur-md"
-                          >
-                            <span className={`block font-black text-[32px] mb-2 ${m.color}`}>{m.val}</span>
-                            <span className="text-[10px] text-[#8b92b2] uppercase font-bold tracking-[0.2em] text-center">{m.label}</span>
-                          </div>
-                        ))}
-                      </div>
-
-                      <div className="grid grid-cols-1 gap-4">
-                        {featuresData[activeFeature].content.bullets.map((bullet, idx) => (
-                          <motion.div 
-                            key={`bullet-${activeFeature}-${idx}`}
-                            initial={{ opacity: 0, x: -10 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            transition={{ duration: 0.3, delay: 0.3 + (idx * 0.1) }}
-                            className="flex items-center gap-4"
-                          >
-                            <div className="w-6 h-6 rounded-full bg-white/[0.03] border border-white/10 flex items-center justify-center flex-shrink-0">
-                               <Check size={12} className={featuresData[activeFeature].color.replace('bg-', 'text-')} /> 
-                            </div>
-                            <span className="text-[#8b92b2] text-[14.5px] font-medium tracking-wide">{bullet}</span>
-                          </motion.div>
-                        ))}
-                      </div>
-                    </motion.div>
-                  </AnimatePresence>
-                </div>
-              </div>
-            </motion.div>
+            {/* Right Side: Image/Visual */}
+            <div className="relative w-full h-[400px] lg:h-[520px] max-w-[460px] ml-auto">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={activeFeature}
+                  initial={{ opacity: 0, scale: 0.95, filter: "blur(10px)" }}
+                  animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
+                  exit={{ opacity: 0, scale: 1.05, filter: "blur(10px)" }}
+                  transition={{ duration: 0.5, ease: "easeInOut" }}
+                  className="absolute inset-0"
+                >
+                  <div className="w-full h-full rounded-[12px] overflow-hidden bg-[#0A0A0A] border border-white/10 shadow-2xl relative group">
+                    <Image 
+                      src={featuresData[activeFeature].image}
+                      alt={featuresData[activeFeature].title}
+                      fill
+                      className="object-cover object-left-top scale-[1.02] group-hover:scale-110 transition-transform duration-[2s] ease-out"
+                      sizes="(max-width: 1024px) 100vw, 50vw"
+                    />
+                    
+                    {/* Atmospheric Glow */}
+                    <div className={`absolute inset-0 bg-gradient-to-tr ${featuresData[activeFeature].color} opacity-20 mix-blend-screen pointer-events-none`} />
+                    <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500 pointer-events-none" />
+                  </div>
+                </motion.div>
+              </AnimatePresence>
+            </div>
 
           </div>
         </div>
       </section>
 
       {/* 4. WHY CHOOSE SECTION + STATS: Image 4 Content */}
-      <section className="w-full px-6 md:px-12 py-20 relative">
+      <section className="w-full px-6 md:px-12 py-16 relative">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-20">
+          <div className="text-center mb-10">
             <h2 className="text-4xl md:text-[44px] font-bold tracking-tight mb-6 leading-[1.1]">Why Choose <span className="text-[#00AEEF]">cliQTest?</span></h2>
             <div className="w-16 h-1 bg-gradient-to-r from-[#00AEEF] to-[#3b82f6] mx-auto rounded-full" />
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-24">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-14">
             {[
               { 
                 title: "Multi-Platform Testing", 
@@ -388,7 +451,7 @@ export default function OverviewPage() {
               <motion.div
                 key={i}
                 whileHover={{ scale: 0.98 }}
-                className={`${card.span} group relative bg-[#0a0a0c] border border-white/5 rounded-[32px] overflow-hidden transition-all shadow-xl flex flex-col p-8 min-h-[280px]`}
+                className={`${card.span} group relative bg-[#0a0a0c] border border-white/5 rounded-[12px] overflow-hidden transition-all shadow-xl flex flex-col p-8 min-h-[280px]`}
               >
                 {/* Background ambient glow */}
                 <div className={`absolute -right-20 -bottom-20 w-64 h-64 bg-gradient-to-br ${card.color} opacity-[0.03] blur-[80px] group-hover:opacity-[0.15] transition-opacity duration-500`} />
@@ -418,7 +481,7 @@ export default function OverviewPage() {
           </div>
 
           {/* STATS COUNTER */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 bg-[#0a0a0c] p-12 rounded-[32px] border border-white/5 shadow-2xl relative overflow-hidden">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 bg-[#0a0a0c] py-8 px-10 rounded-[12px] border border-white/5 shadow-2xl relative overflow-hidden">
             <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#00AEEF]/5 blur-[100px] pointer-events-none" />
             
             {[
@@ -437,7 +500,7 @@ export default function OverviewPage() {
       </section>
 
       {/* 5. COLLABORATION & QUOTE: Image 5 Content */}
-      <section className="w-full px-6 md:px-12 py-20 relative overflow-hidden">
+      <section className="w-full px-6 md:px-12 py-16 relative overflow-hidden">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#00AEEF]/5 blur-[150px] rounded-full pointer-events-none" />
         
         <div className="max-w-7xl mx-auto relative z-10 text-center">

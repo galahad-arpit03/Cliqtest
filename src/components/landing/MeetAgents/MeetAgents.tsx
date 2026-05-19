@@ -15,13 +15,13 @@ const reasons = [
 
 export default function MeetAgents() {
   return (
-    <section className="w-full px-6 md:px-12 py-20 text-center relative overflow-hidden bg-black">
+    <section className="w-full px-6 md:px-12 py-16 text-center relative overflow-hidden bg-black">
       <motion.h2 
         initial={{ opacity: 0, scale: 0.9 }}
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
-        className="text-4xl md:text-6xl font-bold text-white mb-16 tracking-tight"
+        className="text-4xl md:text-[44px] font-bold text-white mb-16 tracking-tight leading-[1.1]"
       >
         Why Choose cliQTest?
       </motion.h2>
@@ -43,9 +43,9 @@ export default function MeetAgents() {
           </div>
           <motion.span 
             initial={{ opacity: 0 }}
-            whileInView={{ opacity: 0.2 }}
+            whileInView={{ opacity: 0.8 }}
             transition={{ delay: 0.5 }}
-            className="absolute -bottom-8 lg:-bottom-10 text-white/20 text-[10px] font-bold tracking-[0.3em] uppercase"
+            className="absolute -bottom-8 lg:-bottom-10 text-white text-[10px] font-bold tracking-[0.3em] uppercase"
           >
             The Cliqtest Advantage
           </motion.span>
@@ -70,7 +70,7 @@ export default function MeetAgents() {
                   delay: i * 0.5,
                   ease: "easeInOut" 
                 }}
-                className="bg-white rounded-full px-6 md:px-8 py-3 mb-4 flex items-center gap-3 shadow-[0_0_40px_rgba(255,255,255,0.1)] group-hover:scale-110 group-hover:shadow-[0_0_50px_rgba(0,174,239,0.4)] transition-all duration-300 whitespace-nowrap cursor-default"
+                className="bg-white rounded-xl px-6 md:px-8 py-3 mb-4 flex items-center gap-3 shadow-[0_0_40px_rgba(255,255,255,0.1)] group-hover:scale-110 group-hover:shadow-[0_0_50px_rgba(0,174,239,0.4)] transition-all duration-300 whitespace-nowrap cursor-default"
               >
                 <div className="w-5 h-5 rounded-full bg-[#00AEEF]/10 flex items-center justify-center text-[#00AEEF]">
                   <span className="text-[10px]">✦</span>

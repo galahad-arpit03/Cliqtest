@@ -46,7 +46,7 @@ export default function CloudFirst() {
   };
 
   return (
-    <section className="relative w-full bg-black py-20 overflow-hidden">
+    <section className="relative w-full bg-black py-16 px-8 overflow-hidden">
       {/* Radial Gradient Background */}
       <div 
         className="absolute inset-0 z-0 pointer-events-none"
@@ -56,14 +56,14 @@ export default function CloudFirst() {
         }}
       />
       
-      <div className="relative z-10 w-full px-6 md:px-12 text-center">
+      <div className="relative z-10 w-full max-w-7xl mx-auto text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 tracking-tight">
+          <h2 className="text-4xl md:text-[44px] font-bold text-white mb-6 tracking-tight leading-[1.1]">
             Features of cliQTest.
           </h2>
           
@@ -101,11 +101,11 @@ export default function CloudFirst() {
               key={i} 
               variants={itemVariants}
               whileHover={{ y: -10 }}
-              className="flex flex-col group text-left"
+              className="flex flex-col group text-left rounded-[12px] bg-[#0A0A0A] border border-white/10 hover:border-[#00AEEF]/40 hover:bg-[#111] transition-all duration-500 overflow-hidden shadow-2xl hover:shadow-[0_20px_40px_rgba(0,174,239,0.1)]"
             >
-              <div className={`w-full aspect-[16/10] rounded-[32px] mb-8 ${feature.color} border border-white/5 transition-all duration-700 group-hover:border-[#00AEEF]/40 relative overflow-hidden shadow-xl`}>
+              <div className="w-full aspect-[16/10] relative overflow-hidden border-b border-white/5">
                  {/* High-fidelity Zoomed Image */}
-                 <div className="absolute inset-0 z-0">
+                 <div className="absolute inset-0 z-0 bg-black">
                    <Image
                      src={feature.image}
                      alt={feature.title}
@@ -116,14 +116,14 @@ export default function CloudFirst() {
                  </div>
                  
                  {/* Subtle Overlay */}
-                 <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-700 z-10" />
+                 <div className="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors duration-700 z-10 pointer-events-none" />
               </div>
 
-              <div className="px-2">
-                <h3 className="text-2xl font-bold text-white mb-3 leading-tight group-hover:text-[#00AEEF] transition-colors">
+              <div className="p-6 md:p-8 flex flex-col flex-1 relative z-20">
+                <h3 className="text-xl md:text-2xl font-bold text-white mb-3 leading-tight group-hover:text-[#00AEEF] transition-colors">
                   {feature.title}
                 </h3>
-                <p className="text-zinc-400 text-[15px] leading-relaxed">
+                <p className="text-zinc-400 text-[15px] leading-relaxed font-medium">
                   {feature.description}
                 </p>
               </div>

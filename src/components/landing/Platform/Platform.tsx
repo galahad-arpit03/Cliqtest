@@ -6,14 +6,14 @@ import { motion } from 'framer-motion';
 
 export default function Platform() {
   return (
-    <section className="w-full px-6 md:px-12 py-20 text-center">
+    <section className="w-full px-6 md:px-12 py-16 text-center">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
-        <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 tracking-tight">
+        <h2 className="text-4xl md:text-[44px] font-bold text-white mb-6 tracking-tight leading-[1.1]">
           The Cliqtest Agentic Platform
         </h2>
         

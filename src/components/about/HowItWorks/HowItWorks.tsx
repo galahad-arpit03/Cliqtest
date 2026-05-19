@@ -37,9 +37,9 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <section className="bg-black py-32 px-6 md:px-12 lg:px-24 border-t border-white/5">
+    <section className="bg-black py-16 px-6 md:px-12 lg:px-24 border-t border-white/5">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-white text-center text-4xl md:text-6xl font-black mb-24 tracking-tight">
+        <h2 className="text-white text-center text-4xl md:text-[44px] font-bold tracking-tight mb-12 leading-[1.1]">
           How cliQTest Works
         </h2>
 

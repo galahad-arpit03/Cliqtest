@@ -65,7 +65,7 @@ export default function PricingGrid() {
   ];
 
   return (
-    <section className="bg-black py-32 px-6 md:px-12 lg:px-24 relative overflow-hidden">
+    <section className="bg-black py-16 px-6 md:px-12 lg:px-24 relative overflow-hidden">
       {/* Background Decor */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none z-0">
         <div className="absolute top-[20%] right-[-10%] w-[50%] h-[50%] bg-blue-600/10 blur-[150px] rounded-full" />
@@ -77,10 +77,10 @@ export default function PricingGrid() {
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-20"
+          className="text-center mb-12"
         >
           <span className="text-[#00AEEF] text-sm font-black uppercase tracking-[0.3em] mb-4 block">Pricing Plans</span>
-          <h2 className="text-white text-4xl md:text-6xl font-black tracking-tight mb-6">
+          <h2 className="text-white text-4xl md:text-[44px] font-bold tracking-tight mb-6 leading-[1.1]">
             Scalable Solutions for Modern Teams
           </h2>
           <div className="w-24 h-1.5 bg-[#00AEEF] mx-auto rounded-full" />

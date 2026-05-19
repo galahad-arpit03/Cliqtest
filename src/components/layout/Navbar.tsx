@@ -130,7 +130,8 @@ export default function Navbar() {
       isScrolled || isMobileMenuOpen 
       ? 'bg-black/95 backdrop-blur-md h-20 border-b border-white/5 shadow-2xl' 
       : 'bg-transparent h-24'
-    } px-6 md:px-12 flex justify-between items-center font-rubik`}>
+    } px-8 font-rubik`}>
+      <div className="max-w-7xl mx-auto w-full h-full flex justify-between items-center">
       
       {/* Logo Section */}
       <Link href="/" className="flex items-center gap-2 cursor-pointer group z-[110]">
@@ -306,6 +307,7 @@ export default function Navbar() {
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
+      </div>
       </div>
     </nav>
 

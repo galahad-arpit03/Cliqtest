@@ -44,7 +44,7 @@ export default function AboutPlatform() {
   };
 
   return (
-    <section className="bg-white py-32 px-6 md:px-12">
+    <section className="bg-white py-16 px-6 md:px-12">
       <div className="max-w-7xl mx-auto">
 
         {/* Section Heading */}
@@ -53,7 +53,7 @@ export default function AboutPlatform() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-black text-center text-4xl md:text-6xl font-black mb-24 tracking-tight"
+          className="text-black text-center text-4xl md:text-[44px] font-bold mb-12 tracking-tight leading-[1.1]"
         >
           cliQTest Core Features
         </motion.h2>
@@ -69,7 +69,7 @@ export default function AboutPlatform() {
             className="relative"
           >
             {/* Big Image */}
-            <div className="w-full aspect-[4/5] md:aspect-[4/4.5] rounded-[24px] overflow-hidden relative shadow-xl bg-zinc-900">
+            <div className="w-full max-w-[480px] aspect-square rounded-[12px] overflow-hidden relative shadow-xl bg-zinc-900">
               <Image
                 src="/assets/brain.png"
                 alt="cliQTest Platform Overview"

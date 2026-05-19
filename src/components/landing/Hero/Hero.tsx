@@ -71,7 +71,7 @@ export default function Hero() {
         >
         <motion.h1
             variants={itemVariants}
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-[68px] font-bold tracking-tight text-white leading-[1.1] mb-8 max-w-2xl drop-shadow-2xl"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-[68px] font-bold tracking-tight text-white leading-[1.1] mb-4 max-w-2xl drop-shadow-2xl"
         >
             The AI-Powered <br className="hidden sm:block" />
             Automated Testing Platform
@@ -79,7 +79,7 @@ export default function Hero() {
 
         <motion.p
             variants={itemVariants}
-            className="text-lg sm:text-xl md:text-[22px] text-[#00F2B0] font-medium mb-12 leading-relaxed max-w-xl mx-auto md:mx-0 drop-shadow-md"
+            className="text-base sm:text-lg md:text-xl text-[#00F2B0] font-medium mb-8 leading-relaxed max-w-xl mx-auto md:mx-0 drop-shadow-md"
         >
             Accelerate release cycles and ensure flawless quality. Automate web, mobile, and API testing, access real device clouds, and manage QA workflows—all from one intelligent platform.
         </motion.p>
