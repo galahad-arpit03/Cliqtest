@@ -18,7 +18,7 @@ export default function AboutHero() {
       <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black to-transparent pointer-events-none" />
 
       {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto w-full px-6 md:px-12 pt-32 pb-20">
+      <div className="relative z-10 max-w-7xl mx-auto w-full px-8 pt-32 pb-20">
 
         {/* Heading */}
         <h1 className="text-white text-4xl md:text-5xl lg:text-[64px] font-black leading-[1.1] tracking-tight mb-8 max-w-3xl">
@@ -37,7 +37,7 @@ export default function AboutHero() {
 
         {/* CTA */}
         <div className="flex flex-col sm:flex-row gap-3">
-          <button className="px-6 py-3 bg-[#00AEEF] text-white font-bold rounded-md hover:bg-[#0092E6] hover:scale-105 transition-all text-sm tracking-[0.15em] uppercase shadow-lg shadow-[#00AEEF]/30">
+          <button className="px-6 py-3 bg-[#6843B7] text-white font-bold rounded-md hover:bg-[#6843B7] hover:scale-105 transition-all text-sm tracking-[0.15em] uppercase shadow-lg shadow-[#6843B7]/30">
             Explore Platform
           </button>
         </div>

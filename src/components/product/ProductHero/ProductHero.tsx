@@ -37,7 +37,7 @@ export default function ProductHero() {
                  <div key={i} className="w-1 h-1 bg-[#00F2B0] rounded-full" />
                ))}
             </div>
-            <div className="absolute w-40 h-40 bg-[#00AEEF]/20 rounded-full blur-[60px] animate-pulse" />
+            <div className="absolute w-40 h-40 bg-[#6843B7]/20 rounded-full blur-[60px] animate-pulse" />
           </div>
         </div>
       </div>
@@ -51,7 +51,7 @@ export default function ProductHero() {
               onClick={() => setActiveTab(tab)}
               className={`px-8 lg:px-10 py-3 rounded-full text-[12px] font-black tracking-widest transition-all duration-300 ${
                 activeTab === tab 
-                ? 'bg-[#00AEEF] text-white shadow-lg' 
+                ? 'bg-[#6843B7] text-white shadow-lg' 
                 : 'text-white/50 hover:text-white hover:bg-white/5'
               }`}
             >

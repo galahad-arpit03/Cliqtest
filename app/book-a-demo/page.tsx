@@ -67,7 +67,7 @@ export default function BookADemoPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <span className="text-[#00AEEF] text-sm font-black uppercase tracking-[0.3em] mb-6 block">Personalized Demo</span>
+            <span className="text-[#6843B7] text-sm font-black uppercase tracking-[0.3em] mb-6 block">Personalized Demo</span>
             <h1 className="text-white text-5xl md:text-6xl font-black tracking-tight mb-8 leading-[1.1]">
               See the <br />
               <span className="text-white/40">Future of</span><br />
@@ -81,7 +81,7 @@ export default function BookADemoPage() {
                 { title: "Architecture Deep-Dive", desc: "Understand how our AI-native engine scales across your stack." }
               ].map((item, i) => (
                 <div key={i} className="flex gap-4 items-start group">
-                  <div className="w-1.5 h-1.5 rounded-full bg-[#00AEEF] mt-2.5 group-hover:scale-150 transition-transform" />
+                  <div className="w-1.5 h-1.5 rounded-full bg-[#6843B7] mt-2.5 group-hover:scale-150 transition-transform" />
                   <div>
                     <h4 className="text-white font-bold text-lg mb-1">{item.title}</h4>
                     <p className="text-zinc-500 text-sm leading-relaxed">{item.desc}</p>
@@ -100,7 +100,7 @@ export default function BookADemoPage() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="bg-zinc-900/40 backdrop-blur-3xl border border-white/5 rounded-2xl p-8 md:p-12 shadow-2xl"
+              className="bg-zinc-900/40 backdrop-blur-3xl border border-white/5 rounded-md p-8 md:p-12 shadow-2xl"
             >
               <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
                 
@@ -112,9 +112,9 @@ export default function BookADemoPage() {
                   </h3>
                   
                   <div className="flex items-center justify-between mb-8">
-                    <button onClick={handlePrevMonth} className="p-2 hover:bg-white/5 rounded-lg transition-colors"><ChevronLeft size={18} className="text-white/60" /></button>
+                    <button onClick={handlePrevMonth} className="p-2 hover:bg-white/5 rounded-md transition-colors"><ChevronLeft size={18} className="text-white/60" /></button>
                     <h4 className="text-white text-sm font-black uppercase tracking-widest">{monthNames[currentMonth]} {currentYear}</h4>
-                    <button onClick={handleNextMonth} className="p-2 hover:bg-white/5 rounded-lg transition-colors"><ChevronRight size={18} className="text-white/60" /></button>
+                    <button onClick={handleNextMonth} className="p-2 hover:bg-white/5 rounded-md transition-colors"><ChevronRight size={18} className="text-white/60" /></button>
                   </div>
 
                   <div className="grid grid-cols-7 gap-2 mb-4">
@@ -126,11 +126,11 @@ export default function BookADemoPage() {
                         key={i}
                         disabled={!date}
                         onClick={() => date && setSelectedDate(date)}
-                        className={`aspect-square rounded-xl flex items-center justify-center text-xs font-bold transition-all ${
+                        className={`aspect-square rounded-md flex items-center justify-center text-xs font-bold transition-all ${
                           !date ? 'invisible' : ''
                         } ${
                           date && isSelected(date) 
-                          ? 'bg-[#00AEEF] text-white shadow-lg shadow-[#00AEEF]/20 scale-110' 
+                          ? 'bg-[#6843B7] text-white shadow-lg shadow-[#6843B7]/20 scale-110' 
                           : date && isAvailable(date)
                             ? 'text-white hover:bg-white/10'
                             : 'text-zinc-700 pointer-events-none'
@@ -152,22 +152,22 @@ export default function BookADemoPage() {
                   <div className="grid grid-cols-2 gap-4">
                     <div className="space-y-2">
                       <label className="text-zinc-500 text-[10px] font-black uppercase tracking-widest">First Name</label>
-                      <input required type="text" className="w-full bg-black/40 border border-white/5 rounded-xl px-4 py-3 text-sm text-white focus:border-[#00AEEF] outline-none transition-all" />
+                      <input required type="text" className="w-full bg-black/40 border border-white/5 rounded-md px-4 py-3 text-sm text-white focus:border-[#6843B7] outline-none transition-all" />
                     </div>
                     <div className="space-y-2">
                       <label className="text-zinc-500 text-[10px] font-black uppercase tracking-widest">Last Name</label>
-                      <input required type="text" className="w-full bg-black/40 border border-white/5 rounded-xl px-4 py-3 text-sm text-white focus:border-[#00AEEF] outline-none transition-all" />
+                      <input required type="text" className="w-full bg-black/40 border border-white/5 rounded-md px-4 py-3 text-sm text-white focus:border-[#6843B7] outline-none transition-all" />
                     </div>
                   </div>
 
                   <div className="space-y-2">
                     <label className="text-zinc-500 text-[10px] font-black uppercase tracking-widest">Work Email</label>
-                    <input required type="email" className="w-full bg-black/40 border border-white/5 rounded-xl px-4 py-3 text-sm text-white focus:border-[#00AEEF] outline-none transition-all" />
+                    <input required type="email" className="w-full bg-black/40 border border-white/5 rounded-md px-4 py-3 text-sm text-white focus:border-[#6843B7] outline-none transition-all" />
                   </div>
 
                   <div className="space-y-2">
                     <label className="text-zinc-500 text-[10px] font-black uppercase tracking-widest">Meeting Time</label>
-                    <select required className="w-full bg-black/40 border border-white/5 rounded-xl px-4 py-3 text-sm text-white focus:border-[#00AEEF] outline-none appearance-none transition-all">
+                    <select required className="w-full bg-black/40 border border-white/5 rounded-md px-4 py-3 text-sm text-white focus:border-[#6843B7] outline-none appearance-none transition-all">
                       <option value="">Select a slot</option>
                       <option value="10:00">10:00 AM — 10:30 AM</option>
                       <option value="14:00">02:00 PM — 02:30 PM</option>
@@ -175,7 +175,7 @@ export default function BookADemoPage() {
                     </select>
                   </div>
 
-                  <button type="submit" className="w-full py-4 bg-[#00AEEF] text-white font-black rounded-md hover:bg-[#0092E6] transition-all shadow-xl shadow-[#00AEEF]/20 uppercase tracking-widest text-xs mt-4 active:scale-95">
+                  <button type="submit" className="w-full py-4 bg-[#6843B7] text-white font-black rounded-md hover:bg-[#6843B7] transition-all shadow-xl shadow-[#6843B7]/20 uppercase tracking-widest text-xs mt-4 active:scale-95">
                     Confirm Booking
                   </button>
                 </form>
@@ -188,7 +188,7 @@ export default function BookADemoPage() {
               className="bg-zinc-900/40 backdrop-blur-3xl border border-white/5 rounded-[48px] p-20 text-center"
             >
               <div className="w-20 h-20 bg-blue-500/10 rounded-full flex items-center justify-center mx-auto mb-8">
-                <CheckCircle2 size={40} className="text-[#00AEEF]" />
+                <CheckCircle2 size={40} className="text-[#6843B7]" />
               </div>
               <h2 className="text-3xl font-black text-white mb-4 tracking-tight">Demo Scheduled!</h2>
               <p className="text-zinc-400 max-w-sm mx-auto mb-10 leading-relaxed">
@@ -196,7 +196,7 @@ export default function BookADemoPage() {
               </p>
               <button 
                 onClick={() => setIsSubmitted(false)}
-                className="px-8 py-3 border border-white/10 text-white text-xs font-black uppercase tracking-widest rounded-xl hover:bg-white/5 transition-all"
+                className="px-8 py-3 border border-white/10 text-white text-xs font-black uppercase tracking-widest rounded-md hover:bg-white/5 transition-all"
               >
                 Schedule Another
               </button>

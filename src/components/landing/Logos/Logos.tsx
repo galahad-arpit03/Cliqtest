@@ -24,7 +24,7 @@ export default function Logos() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
-        className="max-w-7xl mx-auto px-6 md:px-12 mb-10 text-center"
+        className="max-w-7xl mx-auto px-8 mb-10 text-center"
       >
         <h2 className="text-sm md:text-base font-bold text-zinc-500 tracking-[0.2em] uppercase">
           Seamless Collaboration via Integration

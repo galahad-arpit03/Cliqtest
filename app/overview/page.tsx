@@ -32,9 +32,9 @@ export default function OverviewPage() {
         }
       ],
       image: "/assets/66fc49416a607a9c02f4bd04_card-tall-complex-flows-hq-p-500.webp",
-      color: "from-[#00AEEF] to-[#00F2B0]",
-      accent: "text-[#00AEEF]",
-      bgAccent: "bg-[#00AEEF]/10"
+      color: "from-[#6843B7] to-[#8f81eb]",
+      accent: "text-[#6843B7]",
+      bgAccent: "bg-[#6843B7]/10"
     },
     {
       id: "nocode",
@@ -121,16 +121,16 @@ export default function OverviewPage() {
             
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 items-start">
               <motion.button 
-                whileHover={{ scale: 1.05, boxShadow: "0 0 30px rgba(0,174,239,0.5)" }}
+                whileHover={{ scale: 1.05, boxShadow: "0 0 30px rgba(104,67,183,0.5)" }}
                 whileTap={{ scale: 0.95 }}
-                className="w-full sm:w-auto px-8 py-3.5 rounded-md bg-gradient-to-r from-[#00AEEF] to-[#00F2B0] text-black font-bold text-[12px] tracking-widest uppercase transition-all"
+                className="w-full sm:w-auto px-8 py-3.5 rounded-md bg-gradient-to-r from-[#6843B7] to-[#8f81eb] text-black font-bold text-[12px] tracking-widest uppercase transition-all"
               >
                 Launch Demo
               </motion.button>
               <motion.button 
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="w-full sm:w-auto px-8 py-3.5 rounded-md border border-[#00AEEF] text-white font-bold text-[12px] tracking-widest uppercase hover:bg-[#00AEEF]/10 transition-all backdrop-blur-sm"
+                className="w-full sm:w-auto px-8 py-3.5 rounded-md border border-[#6843B7] text-white font-bold text-[12px] tracking-widest uppercase hover:bg-[#6843B7]/10 transition-all backdrop-blur-sm"
               >
                 Explore Platform
               </motion.button>
@@ -167,7 +167,7 @@ export default function OverviewPage() {
               <motion.div 
                 animate={{ y: [-5, 5, -5] }}
                 transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute top-[10%] left-[8%] w-[220px] bg-[#0a0a0a]/90 backdrop-blur-xl border border-white/5 rounded-2xl p-5 shadow-2xl pointer-events-auto"
+                className="absolute top-[10%] left-[8%] w-[220px] bg-[#0a0a0a]/90 backdrop-blur-xl border border-white/5 rounded-md p-5 shadow-2xl pointer-events-auto"
               >
                 <h4 className="text-white font-bold text-[14px] mb-2 leading-tight">No-Code<br/>Automation</h4>
                 <p className="text-[#8b92b2] text-[12px] leading-relaxed">Create enterprise-grade automation without writing code.</p>
@@ -177,7 +177,7 @@ export default function OverviewPage() {
               <motion.div 
                 animate={{ y: [5, -5, 5] }}
                 transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                className="absolute bottom-[20%] left-[5%] w-[220px] bg-[#0a0a0a]/90 backdrop-blur-xl border border-white/5 rounded-2xl p-5 shadow-2xl pointer-events-auto"
+                className="absolute bottom-[20%] left-[5%] w-[220px] bg-[#0a0a0a]/90 backdrop-blur-xl border border-white/5 rounded-md p-5 shadow-2xl pointer-events-auto"
               >
                 <h4 className="text-white font-bold text-[14px] mb-2 leading-tight">Real Device<br/>Cloud</h4>
                 <p className="text-[#8b92b2] text-[12px] leading-relaxed">Test across mobile, browser, desktop and APIs.</p>
@@ -187,7 +187,7 @@ export default function OverviewPage() {
               <motion.div 
                 animate={{ y: [5, -5, 5] }}
                 transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-                className="absolute top-[20%] right-[5%] w-[220px] bg-[#0a0a0a]/90 backdrop-blur-xl border border-white/5 rounded-2xl p-5 shadow-2xl pointer-events-auto"
+                className="absolute top-[20%] right-[5%] w-[220px] bg-[#0a0a0a]/90 backdrop-blur-xl border border-white/5 rounded-md p-5 shadow-2xl pointer-events-auto"
               >
                 <h4 className="text-white font-bold text-[14px] mb-2 leading-tight">AI Insights</h4>
                 <p className="text-[#8b92b2] text-[12px] leading-relaxed">Analyze failures instantly with predictive diagnostics.</p>
@@ -197,7 +197,7 @@ export default function OverviewPage() {
               <motion.div 
                 animate={{ y: [-5, 5, -5] }}
                 transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
-                className="absolute bottom-[25%] right-[2%] w-[220px] bg-[#0a0a0a]/90 backdrop-blur-xl border border-white/5 rounded-2xl p-5 shadow-2xl pointer-events-auto"
+                className="absolute bottom-[25%] right-[2%] w-[220px] bg-[#0a0a0a]/90 backdrop-blur-xl border border-white/5 rounded-md p-5 shadow-2xl pointer-events-auto"
               >
                 <h4 className="text-white font-bold text-[14px] mb-2 leading-tight">Self-Healing</h4>
                 <p className="text-[#8b92b2] text-[12px] leading-relaxed">Automatic adaptation to UI and locator changes.</p>
@@ -217,7 +217,7 @@ export default function OverviewPage() {
             className="text-4xl md:text-[44px] font-bold tracking-tight leading-[1.1]"
           >
             Testing Simplified, <br />
-            <span className="text-[#00AEEF]">Integrations Unlimited.</span>
+            <span className="text-[#6843B7]">Integrations Unlimited.</span>
           </motion.h2>
         </div>
 
@@ -233,9 +233,9 @@ export default function OverviewPage() {
             />
             <defs>
               <linearGradient id="infinity-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="#00AEEF" stopOpacity="0.1" />
+                <stop offset="0%" stopColor="#6843B7" stopOpacity="0.1" />
                 <stop offset="50%" stopColor="#00F2B0" stopOpacity="0.8" />
-                <stop offset="100%" stopColor="#00AEEF" stopOpacity="0.1" />
+                <stop offset="100%" stopColor="#6843B7" stopOpacity="0.1" />
               </linearGradient>
             </defs>
           </svg>
@@ -255,11 +255,11 @@ export default function OverviewPage() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1, type: "spring", stiffness: 100 }}
-              className={`absolute ${node.pos} w-[260px] bg-[#0a0a0c] border border-white/5 p-5 rounded-2xl shadow-[0_20px_40px_rgba(0,0,0,0.4)] hover:border-[#00AEEF]/30 hover:bg-white/[0.02] transition-all cursor-pointer group backdrop-blur-xl z-20`}
+              className={`absolute ${node.pos} w-[260px] bg-[#0a0a0c] border border-white/5 p-5 rounded-md shadow-[0_20px_40px_rgba(0,0,0,0.4)] hover:border-[#6843B7]/30 hover:bg-white/[0.02] transition-all cursor-pointer group backdrop-blur-xl z-20`}
             >
               <div className="flex items-center gap-4 mb-2">
-                <div className="w-10 h-10 rounded-xl bg-white/[0.03] border border-white/5 flex items-center justify-center group-hover:bg-[#00AEEF]/10 group-hover:border-[#00AEEF]/30 transition-all shadow-inner">
-                  <node.icon className="w-5 h-5 text-[#8b92b2] group-hover:text-[#00AEEF] transition-colors" />
+                <div className="w-10 h-10 rounded-md bg-white/[0.03] border border-white/5 flex items-center justify-center group-hover:bg-[#6843B7]/10 group-hover:border-[#6843B7]/30 transition-all shadow-inner">
+                  <node.icon className="w-5 h-5 text-[#8b92b2] group-hover:text-[#6843B7] transition-colors" />
                 </div>
                 <span className="block text-white font-bold text-[14px] leading-tight">{node.label}</span>
               </div>
@@ -269,16 +269,16 @@ export default function OverviewPage() {
           
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center z-10">
             {/* Outer animated rings */}
-            <div className="absolute w-56 h-56 rounded-full border border-[#00AEEF]/20 animate-[spin_10s_linear_infinite]" />
+            <div className="absolute w-56 h-56 rounded-full border border-[#6843B7]/20 animate-[spin_10s_linear_infinite]" />
             <div className="absolute w-[300px] h-[300px] rounded-full border border-dashed border-[#00F2B0]/20 animate-[spin_20s_linear_infinite_reverse]" />
             
             {/* Glowing core ambient */}
-            <div className="absolute w-40 h-40 bg-gradient-to-r from-[#00AEEF] to-[#00F2B0] rounded-full blur-[60px] opacity-20 animate-pulse" />
+            <div className="absolute w-40 h-40 bg-gradient-to-r from-[#6843B7] to-[#8f81eb] rounded-full blur-[60px] opacity-20 animate-pulse" />
             
             {/* Center Core Pill */}
-            <div className="relative w-36 h-36 rounded-full bg-[#0a0a0c] border border-white/10 flex flex-col items-center justify-center shadow-[0_0_50px_rgba(0,174,239,0.15)] group hover:border-[#00AEEF]/50 transition-colors">
-              <span className="text-white font-black tracking-tight text-3xl mb-1 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-[#00AEEF] group-hover:to-[#00F2B0] transition-all">cliQTest</span>
-              <span className="text-[9px] text-[#00AEEF] tracking-[0.3em] uppercase font-bold">Platform</span>
+            <div className="relative w-36 h-36 rounded-full bg-[#0a0a0c] border border-white/10 flex flex-col items-center justify-center shadow-[0_0_50px_rgba(104,67,183,0.15)] group hover:border-[#6843B7]/50 transition-colors">
+              <span className="text-white font-black tracking-tight text-3xl mb-1 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-[#6843B7] group-hover:to-[#00F2B0] transition-all">cliQTest</span>
+              <span className="text-[9px] text-[#6843B7] tracking-[0.3em] uppercase font-bold">Platform</span>
             </div>
           </div>
         </div>
@@ -293,9 +293,9 @@ export default function OverviewPage() {
             { label: "UI/UX Performance", desc: "Visual regression tracking", icon: BarChart3 },
             { label: "Centralized Reporting", desc: "Unified analytics dashboard", icon: Users }
           ].map((node, i) => (
-            <div key={i} className="bg-[#0a0a0c] border border-white/5 p-6 rounded-2xl flex items-start gap-4">
-              <div className="w-12 h-12 rounded-xl bg-white/[0.03] border border-white/5 flex items-center justify-center shrink-0">
-                <node.icon className="w-6 h-6 text-[#00AEEF]" />
+            <div key={i} className="bg-[#0a0a0c] border border-white/5 p-6 rounded-md flex items-start gap-4">
+              <div className="w-12 h-12 rounded-md bg-white/[0.03] border border-white/5 flex items-center justify-center shrink-0">
+                <node.icon className="w-6 h-6 text-[#6843B7]" />
               </div>
               <div>
                 <span className="text-white font-bold block mb-1 text-[15px]">{node.label}</span>
@@ -355,11 +355,11 @@ export default function OverviewPage() {
                         transition={{ duration: 0.4, delay: idx * 0.1 }}
                         className="flex items-start gap-4 group"
                       >
-                        <div className={`w-12 h-12 rounded-xl ${featuresData[activeFeature].bgAccent} border border-white/5 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
+                        <div className={`w-12 h-12 rounded-md ${featuresData[activeFeature].bgAccent} border border-white/5 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
                           <subItem.icon className={`w-5 h-5 ${featuresData[activeFeature].accent}`} />
                         </div>
                         <div className="mt-0.5">
-                          <h4 className="text-[17px] font-bold text-white mb-1.5 tracking-tight group-hover:text-[#00AEEF] transition-colors">
+                          <h4 className="text-[17px] font-bold text-white mb-1.5 tracking-tight group-hover:text-[#6843B7] transition-colors">
                             {subItem.title}
                           </h4>
                           <p className="text-[#8b92b2] text-[14px] leading-relaxed max-w-[550px]">
@@ -409,8 +409,8 @@ export default function OverviewPage() {
       <section className="w-full px-6 md:px-12 py-16 relative">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-10">
-            <h2 className="text-4xl md:text-[44px] font-bold tracking-tight mb-6 leading-[1.1]">Why Choose <span className="text-[#00AEEF]">cliQTest?</span></h2>
-            <div className="w-16 h-1 bg-gradient-to-r from-[#00AEEF] to-[#3b82f6] mx-auto rounded-full" />
+            <h2 className="text-4xl md:text-[44px] font-bold tracking-tight mb-6 leading-[1.1]">Why Choose <span className="text-[#6843B7]">cliQTest?</span></h2>
+            <div className="w-16 h-1 bg-gradient-to-r from-[#6843B7] to-[#3b82f6] mx-auto rounded-full" />
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-14">
@@ -420,7 +420,7 @@ export default function OverviewPage() {
                 desc: "Run cross-platform automated scripts simultaneously across an expansive device matrix without ever maintaining a single framework.",
                 items: ["Mobile", "API", "Web", "Desktop"], 
                 icon: Globe, 
-                color: "from-[#00AEEF] to-[#3b82f6]", 
+                color: "from-[#6843B7] to-[#3b82f6]", 
                 span: "md:col-span-2" 
               },
               { 
@@ -444,7 +444,7 @@ export default function OverviewPage() {
                 desc: "Enterprise-grade security natively integrated. Execute flows with automated OTP bypassing.",
                 items: ["Secured Access", "OTP/Code Auth"], 
                 icon: Shield, 
-                color: "from-[#10b981] to-[#059669]", 
+                color: "from-[#6843B7] to-[#059669]", 
                 span: "md:col-span-2" 
               }
             ].map((card, i) => (
@@ -460,7 +460,7 @@ export default function OverviewPage() {
                 <card.icon className="absolute -right-4 -bottom-4 w-40 h-40 text-white/[0.02] group-hover:scale-110 group-hover:-rotate-12 transition-transform duration-700 pointer-events-none" />
 
                 <div className="flex justify-between items-start mb-auto relative z-10">
-                  <div className={`w-12 h-12 rounded-2xl flex items-center justify-center bg-white/[0.03] border border-white/5 group-hover:bg-gradient-to-br ${card.color} shadow-lg transition-all duration-500`}>
+                  <div className={`w-12 h-12 rounded-md flex items-center justify-center bg-white/[0.03] border border-white/5 group-hover:bg-gradient-to-br ${card.color} shadow-lg transition-all duration-500`}>
                     <card.icon className="w-6 h-6 text-[#8b92b2] group-hover:text-white transition-colors" />
                   </div>
                 </div>
@@ -470,7 +470,7 @@ export default function OverviewPage() {
                   <p className="text-[#8b92b2] text-[14.5px] leading-relaxed mb-6 max-w-[90%] md:max-w-[85%]">{card.desc}</p>
                   <div className="flex flex-wrap gap-2">
                     {card.items.map((item, idx) => (
-                      <span key={idx} className="px-4 py-2 rounded-xl bg-white/[0.03] border border-white/5 text-[#8b92b2] text-[13px] font-medium group-hover:bg-white/[0.08] group-hover:text-white transition-colors">
+                      <span key={idx} className="px-4 py-2 rounded-md bg-white/[0.03] border border-white/5 text-[#8b92b2] text-[13px] font-medium group-hover:bg-white/[0.08] group-hover:text-white transition-colors">
                         {item}
                       </span>
                     ))}
@@ -482,7 +482,7 @@ export default function OverviewPage() {
 
           {/* STATS COUNTER */}
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 bg-[#0a0a0c] py-8 px-10 rounded-[12px] border border-white/5 shadow-2xl relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#00AEEF]/5 blur-[100px] pointer-events-none" />
+            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#6843B7]/5 blur-[100px] pointer-events-none" />
             
             {[
               { val: "12,000+", label: "Test Runs" },
@@ -491,7 +491,7 @@ export default function OverviewPage() {
               { val: "10,000+", label: "Device Support" }
             ].map((stat, i) => (
               <div key={i} className="text-center relative z-10">
-                <span className="block text-4xl md:text-[44px] font-black text-transparent bg-clip-text bg-gradient-to-r from-[#00AEEF] to-[#3b82f6] mb-3">{stat.val}</span>
+                <span className="block text-4xl md:text-[44px] font-black text-transparent bg-clip-text bg-gradient-to-r from-[#6843B7] to-[#3b82f6] mb-3">{stat.val}</span>
                 <span className="text-[#8b92b2] text-[11px] font-bold uppercase tracking-[0.2em]">{stat.label}</span>
               </div>
             ))}
@@ -501,10 +501,10 @@ export default function OverviewPage() {
 
       {/* 5. COLLABORATION & QUOTE: Image 5 Content */}
       <section className="w-full px-6 md:px-12 py-16 relative overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#00AEEF]/5 blur-[150px] rounded-full pointer-events-none" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#6843B7]/5 blur-[150px] rounded-full pointer-events-none" />
         
         <div className="max-w-7xl mx-auto relative z-10 text-center">
-          <h2 className="text-4xl md:text-[44px] font-bold tracking-tight mb-6 leading-[1.1]">Seamless Collaboration via <span className="text-[#00AEEF]">Integration</span></h2>
+          <h2 className="text-4xl md:text-[44px] font-bold tracking-tight mb-6 leading-[1.1]">Seamless Collaboration via <span className="text-[#6843B7]">Integration</span></h2>
           <p className="text-[#8b92b2] text-[16px] mb-16 max-w-xl mx-auto leading-relaxed">Connect to dozens of applications to test directly with cliQTest. Explore all Integrations</p>
 
           <div className="flex flex-wrap justify-center gap-12 opacity-40 grayscale hover:grayscale-0 transition-all duration-700">

@@ -32,9 +32,23 @@ export default function Resources() {
   return (
     <section className="w-full bg-black py-16 overflow-hidden relative">
       {/* Background Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#00AEEF]/5 blur-[120px] rounded-full pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#6843B7]/5 blur-[120px] rounded-full pointer-events-none z-0" />
 
-      <div className="max-w-7xl mx-auto px-6 md:px-8 relative z-10">
+      {/* Dynamic Background Beams */}
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none opacity-30 z-0">
+        <motion.div 
+          animate={{ x: ['-100%', '100%'] }}
+          transition={{ repeat: Infinity, duration: 15, ease: "linear" }}
+          className="absolute top-1/4 left-0 w-[200%] h-[1px] bg-gradient-to-r from-transparent via-[#6843B7] to-transparent transform -rotate-12"
+        />
+        <motion.div 
+          animate={{ x: ['100%', '-100%'] }}
+          transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
+          className="absolute bottom-1/3 right-0 w-[200%] h-[1px] bg-gradient-to-r from-transparent via-[#00F2B0] to-transparent transform rotate-12"
+        />
+      </div>
+
+      <div className="max-w-7xl mx-auto px-8 relative z-10">
 
         {/* Section Header */}
         <motion.div 
@@ -42,12 +56,12 @@ export default function Resources() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="mb-12 text-center lg:text-left"
+          className="mb-12 text-center"
         >
           <h2 className="text-4xl md:text-[44px] font-bold tracking-tight text-white mb-2 leading-[1.1]">
-            Platform Impact
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6843B7] to-[#8f81eb]">cliQTest</span> Impact
           </h2>
-          <p className="text-[#00F2B0] text-sm font-bold uppercase tracking-[0.2em]">
+          <p className="text-[#ffffff] text-sm font-bold uppercase tracking-[0.2em]">
             Driving the future of QA
           </p>
         </motion.div>
@@ -62,7 +76,7 @@ export default function Resources() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
             whileHover={{ y: -5 }}
-            className="flex flex-col rounded-[12px] overflow-hidden bg-[#0A0A0A] border border-white/10 shadow-2xl hover:border-[#00AEEF]/40 hover:bg-[#111] hover:shadow-[0_20px_40px_rgba(0,174,239,0.1)] transition-all duration-500 cursor-pointer group"
+            className="flex flex-col rounded-[12px] overflow-hidden bg-[#0A0A0A] border border-white/10 shadow-2xl hover:border-[#6843B7]/40 hover:bg-[#111] hover:shadow-[0_20px_40px_rgba(104,67,183,0.1)] transition-all duration-500 cursor-pointer group"
           >
             {/* Featured Image */}
             <div className="relative w-full h-[280px] md:h-[340px] bg-black overflow-hidden border-b border-white/5">
@@ -78,13 +92,13 @@ export default function Resources() {
 
             {/* Featured Text Content */}
             <div className="p-8 md:p-10 flex flex-col gap-4 flex-1 relative z-20">
-              <h3 className="text-3xl md:text-4xl font-bold text-white leading-tight tracking-tight group-hover:text-[#00AEEF] transition-colors duration-300">
+              <h3 className="text-3xl md:text-4xl font-bold text-white leading-tight tracking-tight group-hover:text-[#6843B7] transition-colors duration-300">
                 12,000+<br />Test Runs
               </h3>
               <p className="text-zinc-400 text-[15px] leading-relaxed font-medium flex-1">
                 Scale your quality engineering with a platform built for massive parallel execution and enterprise-grade reliability. Run thousands of tests simultaneously without compromising speed or accuracy.
               </p>
-              <div className="text-[#00F2B0] font-bold text-sm inline-flex items-center gap-2 group-hover:text-[#00AEEF] transition-colors duration-300 mt-2">
+              <div className="text-[#00F2B0] font-bold text-sm inline-flex items-center gap-2 group-hover:text-[#6843B7] transition-colors duration-300 mt-2">
                 Learn More <span className="group-hover:translate-x-1 transition-transform">→</span>
               </div>
             </div>
@@ -100,7 +114,7 @@ export default function Resources() {
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.15, duration: 0.6 }}
                 whileHover={{ x: -5 }}
-                className="flex flex-row rounded-[14px] overflow-hidden bg-[#0A0A0A] border border-white/10 shadow-lg hover:border-[#00AEEF]/40 hover:bg-[#111] hover:shadow-[0_10px_30px_rgba(0,174,239,0.1)] transition-all duration-500 cursor-pointer group flex-1"
+                className="flex flex-row rounded-[14px] overflow-hidden bg-[#0A0A0A] border border-white/10 shadow-lg hover:border-[#6843B7]/40 hover:bg-[#111] hover:shadow-[0_10px_30px_rgba(104,67,183,0.1)] transition-all duration-500 cursor-pointer group flex-1"
               >
                 {/* Thumbnail */}
                 <div className="relative w-[130px] md:w-[180px] flex-shrink-0 bg-black flex items-center justify-center overflow-hidden border-r border-white/5">
@@ -117,14 +131,14 @@ export default function Resources() {
                 {/* Card Text */}
                 <div className="flex-1 p-5 md:p-6 flex flex-col justify-center relative z-20">
                   <div>
-                    <h4 className="text-lg md:text-xl font-bold text-white mb-2 leading-snug tracking-tight group-hover:text-[#00AEEF] transition-colors duration-300">
+                    <h4 className="text-lg md:text-xl font-bold text-white mb-2 leading-snug tracking-tight group-hover:text-[#6843B7] transition-colors duration-300">
                       {card.title}
                     </h4>
                     <p className="text-zinc-400 text-[13px] md:text-[14px] font-medium leading-relaxed line-clamp-3">
                       {card.desc}
                     </p>
                   </div>
-                  <div className="text-[#00F2B0] font-bold text-xs md:text-sm mt-3 inline-flex items-center gap-1 group-hover:text-[#00AEEF] transition-colors duration-300">
+                  <div className="text-[#00F2B0] font-bold text-xs md:text-sm mt-3 inline-flex items-center gap-1 group-hover:text-[#6843B7] transition-colors duration-300">
                     Learn More <span className="group-hover:translate-x-1 transition-transform">→</span>
                   </div>
                 </div>

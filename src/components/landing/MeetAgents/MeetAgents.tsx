@@ -15,15 +15,29 @@ const reasons = [
 
 export default function MeetAgents() {
   return (
-    <section className="w-full px-6 md:px-12 py-16 text-center relative overflow-hidden bg-black">
+    <section className="w-full px-8 py-16 text-center relative overflow-hidden bg-black">
+      {/* Dynamic Background Beams */}
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none opacity-30 z-0">
+        <motion.div 
+          animate={{ x: ['-100%', '100%'] }}
+          transition={{ repeat: Infinity, duration: 15, ease: "linear" }}
+          className="absolute top-1/4 left-0 w-[200%] h-[1px] bg-gradient-to-r from-transparent via-[#6843B7] to-transparent transform -rotate-12"
+        />
+        <motion.div 
+          animate={{ x: ['100%', '-100%'] }}
+          transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
+          className="absolute bottom-1/3 right-0 w-[200%] h-[1px] bg-gradient-to-r from-transparent via-[#00F2B0] to-transparent transform rotate-12"
+        />
+      </div>
+
       <motion.h2 
         initial={{ opacity: 0, scale: 0.9 }}
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
-        className="text-4xl md:text-[44px] font-bold text-white mb-16 tracking-tight leading-[1.1]"
+        className="relative z-10 text-4xl md:text-[44px] font-bold text-white mb-16 tracking-tight leading-[1.1]"
       >
-        Why Choose cliQTest?
+        Why Choose <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6843B7] to-[#8f81eb]"> cliQTest?</span>
       </motion.h2>
       
       <div className="relative w-full max-w-7xl mx-auto min-h-[600px] flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-0">
@@ -33,7 +47,7 @@ export default function MeetAgents() {
             <div className="w-full h-full relative">
               <Image
                 src="/assets/brain.png"
-                alt="Cliqtest AI Brain"
+                alt="cliQTest AI Brain"
                 fill
                 className="object-contain"
                 sizes="(max-width: 768px) 256px, (max-width: 1024px) 320px, 500px"
@@ -47,7 +61,7 @@ export default function MeetAgents() {
             transition={{ delay: 0.5 }}
             className="absolute -bottom-8 lg:-bottom-10 text-white text-[10px] font-bold tracking-[0.3em] uppercase"
           >
-            The Cliqtest Advantage
+            The cliQTest Advantage
           </motion.span>
         </div>
         
@@ -70,18 +84,18 @@ export default function MeetAgents() {
                   delay: i * 0.5,
                   ease: "easeInOut" 
                 }}
-                className="bg-white rounded-xl px-6 md:px-8 py-3 mb-4 flex items-center gap-3 shadow-[0_0_40px_rgba(255,255,255,0.1)] group-hover:scale-110 group-hover:shadow-[0_0_50px_rgba(0,174,239,0.4)] transition-all duration-300 whitespace-nowrap cursor-default"
+                className="bg-white rounded-md px-8 py-3 mb-4 flex items-center gap-3 shadow-[0_0_40px_rgba(255,255,255,0.1)] group-hover:scale-110 group-hover:shadow-[0_0_50px_rgba(104,67,183,0.4)] transition-all duration-300 whitespace-nowrap cursor-default"
               >
-                <div className="w-5 h-5 rounded-full bg-[#00AEEF]/10 flex items-center justify-center text-[#00AEEF]">
+                {/* <div className="w-5 h-5 rounded-full bg-[#6843B7]/10 flex items-center justify-center text-[#6843B7]">
                   <span className="text-[10px]">✦</span>
-                </div>
+                </div> */}
                 <span className="text-black font-bold text-[14px] md:text-[16px] tracking-tight">{reason.name}</span>
               </motion.div>
               <motion.p 
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{ delay: i * 0.1 + 0.3 }}
-                className="text-[#00F2B0] text-xs md:text-sm font-semibold max-w-[220px] leading-snug drop-shadow-sm text-center"
+                className="text-[#b6b3bb] text-xs md:text-sm font-semibold max-w-[220px] leading-snug drop-shadow-sm text-center"
               >
                 {reason.desc}
               </motion.p>

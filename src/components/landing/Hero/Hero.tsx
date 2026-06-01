@@ -60,7 +60,7 @@ export default function Hero() {
       </motion.div>
 
       {/* Main Container */}
-      <div className="relative z-20 w-full max-w-[1440px] mx-auto px-6 md:px-16 flex flex-col md:flex-row items-center">
+      <div className="relative z-20 w-full max-w-7xl mx-auto px-8 flex flex-col md:flex-row items-center">
         
         {/* Left Side Content */}
         <motion.div
@@ -74,35 +74,36 @@ export default function Hero() {
             className="text-4xl sm:text-5xl md:text-6xl lg:text-[68px] font-bold tracking-tight text-white leading-[1.1] mb-4 max-w-2xl drop-shadow-2xl"
         >
             The AI-Powered <br className="hidden sm:block" />
-            Automated Testing Platform
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6843B7] to-[#8f81eb]">Automated Testing </span> Platform
         </motion.h1>
 
         <motion.p
             variants={itemVariants}
-            className="text-base sm:text-lg md:text-xl text-[#00F2B0] font-medium mb-8 leading-relaxed max-w-xl mx-auto md:mx-0 drop-shadow-md"
+            className="text-base sm:text-lg md:text-xl text-white/60 font-medium mb-8 leading-relaxed max-w-xl mx-auto md:mx-0 drop-shadow-md"
         >
-            Accelerate release cycles and ensure flawless quality. Automate web, mobile, and API testing, access real device clouds, and manage QA workflows—all from one intelligent platform.
+            Accelerate release cycles with flawless quality. Automate web, mobile, and API testing—all from one intelligent AI-driven platform.
         </motion.p>
 
         <motion.div
-            variants={itemVariants}
-            className="flex flex-col sm:flex-row gap-4 sm:gap-6 items-center justify-center md:justify-start"
+          variants={itemVariants}
+          className="flex flex-col sm:flex-row gap-8 items-center justify-center md:justify-start mt-4"
+        >
+          <motion.button 
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="w-full sm:w-auto px-8 py-3 rounded-md bg-[#6843B7] text-white font-bold text-[13px] hover:bg-[#6843B7] transition-all"
           >
-            <motion.button 
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="w-full sm:w-auto px-8 py-3.5 rounded-md border border-[#00AEEF] text-white font-bold text-[12px] tracking-widest uppercase hover:bg-[#00AEEF]/10 transition-all backdrop-blur-sm"
-            >
-              Platform Overview
-            </motion.button>
-            <motion.button 
-              whileHover={{ scale: 1.05, boxShadow: "0 0 30px rgba(0,174,239,0.5)" }}
-              whileTap={{ scale: 0.95 }}
-              className="w-full sm:w-auto px-10 py-3.5 rounded-md bg-[#00AEEF] text-white font-bold text-[12px] tracking-widest uppercase hover:bg-[#0092E6] transition-all shadow-[0_0_20px_rgba(0,174,239,0.3)]"
-            >
-              Demo
-            </motion.button>
-          </motion.div>
+            Book Demo
+          </motion.button>
+
+          <motion.a 
+            href="/contact"
+            className="group flex items-center gap-2 text-white font-medium text-[16px] cursor-pointer"
+          >
+            <span className="border-b border-white/40 pb-0.5 group-hover:border-white transition-colors">Contact Us</span>
+            <span className="group-hover:translate-x-1 transition-transform">→</span>
+          </motion.a>
+        </motion.div>
         </motion.div>
 
       {/* Right side spacer to push content left */}
@@ -115,7 +116,7 @@ export default function Hero() {
         transition={{ repeat: Infinity, duration: 2 }}
         className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-30"
       >
-        <div className="w-[1px] h-12 bg-gradient-to-b from-transparent to-[#00AEEF]" />
+        <div className="w-[1px] h-12 bg-gradient-to-b from-transparent to-[#6843B7]" />
         <span className="text-[10px] font-black text-white uppercase tracking-[0.4em]">Scroll</span>
       </motion.div>
 

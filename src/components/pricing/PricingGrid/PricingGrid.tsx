@@ -65,7 +65,7 @@ export default function PricingGrid() {
   ];
 
   return (
-    <section className="bg-black py-16 px-6 md:px-12 lg:px-24 relative overflow-hidden">
+    <section className="bg-black py-16 px-8 relative overflow-hidden">
       {/* Background Decor */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none z-0">
         <div className="absolute top-[20%] right-[-10%] w-[50%] h-[50%] bg-blue-600/10 blur-[150px] rounded-full" />
@@ -79,11 +79,11 @@ export default function PricingGrid() {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <span className="text-[#00AEEF] text-sm font-black uppercase tracking-[0.3em] mb-4 block">Pricing Plans</span>
+          <span className="text-[#6843B7] text-sm font-black uppercase tracking-[0.3em] mb-4 block">Pricing Plans</span>
           <h2 className="text-white text-4xl md:text-[44px] font-bold tracking-tight mb-6 leading-[1.1]">
             Scalable Solutions for Modern Teams
           </h2>
-          <div className="w-24 h-1.5 bg-[#00AEEF] mx-auto rounded-full" />
+          <div className="w-24 h-1.5 bg-[#6843B7] mx-auto rounded-full" />
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -94,7 +94,7 @@ export default function PricingGrid() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1, duration: 0.6 }}
-              className={`relative p-8 rounded-xl border transition-all duration-500 group flex flex-col h-full ${
+              className={`relative p-8 rounded-md border transition-all duration-500 group flex flex-col h-full ${
                 tier.highlighted 
                 ? 'bg-zinc-900 border-purple-500/50 shadow-[0_20px_50px_rgba(145,91,255,0.1)]' 
                 : 'bg-zinc-900/40 border-white/5 hover:border-white/20 hover:bg-zinc-900/60'

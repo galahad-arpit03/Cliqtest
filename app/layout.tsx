@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     "AI software testing",
     "continuous testing platform"
   ],
-  authors: [{ name: "cliQTest Team", url: "https://cliqtest.com" }],
+  authors: [{ name: "cliQTest Team", url: "https://cliQTest.com" }],
   creator: "cliQTest",
   publisher: "cliQTest",
   robots: {
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "cliQTest | AI-Powered Automated Testing & QA Platform",
     description: "Accelerate your release cycles with our all-in-one QA automation platform. Automate web, mobile, and API testing, access real devices, and ship faster.",
-    url: "https://cliqtest.com",
+    url: "https://cliQTest.com",
     siteName: "cliQTest",
     images: [
       {
@@ -78,7 +78,7 @@ export const metadata: Metadata = {
     creator: "@cliQTest",
   },
   alternates: {
-    canonical: "https://cliqtest.com",
+    canonical: "https://cliQTest.com",
   },
 };
 

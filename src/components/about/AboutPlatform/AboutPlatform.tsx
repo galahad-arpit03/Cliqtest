@@ -44,7 +44,7 @@ export default function AboutPlatform() {
   };
 
   return (
-    <section className="bg-white py-16 px-6 md:px-12">
+    <section className="bg-white py-16 px-8">
       <div className="max-w-7xl mx-auto">
 
         {/* Section Heading */}
@@ -98,13 +98,13 @@ export default function AboutPlatform() {
                   "Intuitive drag-and-drop interface for faster test creation.",
                   "Supports reusable test components for streamlined processes."
                 ].map((li, i) => (
-                  <li key={i} className="flex gap-2 text-sm text-[#00AEEF] font-semibold leading-snug">
+                  <li key={i} className="flex gap-2 text-sm text-[#6843B7] font-semibold leading-snug">
                     <span className="mt-0.5">•</span>
                     {li}
                   </li>
                 ))}
               </ul>
-              <button className="flex items-center gap-2 text-[#00AEEF] font-bold text-xs uppercase tracking-widest hover:gap-3 transition-all">
+              <button className="flex items-center gap-2 text-[#6843B7] font-bold text-xs uppercase tracking-widest hover:gap-3 transition-all">
                 Learn More <ArrowRight size={13} />
               </button>
             </motion.div>
@@ -126,7 +126,7 @@ export default function AboutPlatform() {
                 className="bg-white rounded-[20px] border border-zinc-100 shadow-[0_2px_16px_rgba(0,0,0,0.04)] transition-all flex gap-5 items-start p-5 group cursor-pointer"
               >
                 {/* Thumbnail */}
-                <div className="shrink-0 w-[110px] h-[100px] rounded-xl overflow-hidden bg-zinc-100 relative">
+                <div className="shrink-0 w-[110px] h-[100px] rounded-md overflow-hidden bg-zinc-100 relative">
                   <Image
                     src={card.img}
                     alt={card.title}
@@ -138,14 +138,14 @@ export default function AboutPlatform() {
                 {/* Text */}
                 <div className="flex-1 flex flex-col justify-between min-h-[100px]">
                   <div>
-                    <h4 className="text-base font-bold text-black mb-2 leading-snug group-hover:text-[#00AEEF] transition-colors">
+                    <h4 className="text-base font-bold text-black mb-2 leading-snug group-hover:text-[#6843B7] transition-colors">
                       {card.title}
                     </h4>
                     <p className="text-zinc-500 text-[13px] leading-relaxed line-clamp-3">
                       {card.description}
                     </p>
                   </div>
-                  <button className="flex items-center gap-1.5 text-[#00AEEF] font-bold text-[10px] uppercase tracking-widest mt-3 hover:gap-2.5 transition-all">
+                  <button className="flex items-center gap-1.5 text-[#6843B7] font-bold text-[10px] uppercase tracking-widest mt-3 hover:gap-2.5 transition-all">
                     Learn More <ArrowRight size={11} />
                   </button>
                 </div>

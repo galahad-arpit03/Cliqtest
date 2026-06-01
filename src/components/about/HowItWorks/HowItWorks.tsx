@@ -7,7 +7,7 @@ const steps = [
     number: "01",
     title: "Test Script",
     description: "Use the no-code engine to design and customize test cases tailored to your application.",
-    color: "from-[#00AEEF] to-[#0092E6]"
+    color: "from-[#6843B7] to-[#0092E6]"
   },
   {
     number: "02",
@@ -25,7 +25,7 @@ const steps = [
     number: "04",
     title: "Monitoring & Debugging",
     description: "Leverage real-time monitoring tools to identify and resolve issues promptly.",
-    color: "from-[#00AEEF] to-[#0092E6]"
+    color: "from-[#6843B7] to-[#0092E6]"
   },
   {
     number: "05",
@@ -37,7 +37,7 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <section className="bg-black py-16 px-6 md:px-12 lg:px-24 border-t border-white/5">
+    <section className="bg-black py-16 px-8 border-t border-white/5">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-white text-center text-4xl md:text-[44px] font-bold tracking-tight mb-12 leading-[1.1]">
           How cliQTest Works
@@ -50,13 +50,13 @@ export default function HowItWorks() {
           {steps.map((step, i) => (
             <div key={i} className="relative z-10 flex flex-col items-center text-center group">
               {/* Number Circle with Glow */}
-              <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${step.color} flex items-center justify-center text-white font-black text-xl mb-8 shadow-xl group-hover:scale-110 transition-all duration-500 rotate-3 group-hover:rotate-0`}>
+              <div className={`w-16 h-16 rounded-md bg-gradient-to-br ${step.color} flex items-center justify-center text-white font-black text-xl mb-8 shadow-xl group-hover:scale-110 transition-all duration-500 rotate-3 group-hover:rotate-0`}>
                 {step.number}
               </div>
 
               {/* Content Card (Dark Theme) */}
-              <div className="bg-zinc-900/40 backdrop-blur-sm rounded-[32px] p-8 border border-white/5 hover:border-[#00AEEF]/30 hover:bg-zinc-900/60 transition-all duration-500 flex-1 flex flex-col group">
-                <h3 className="text-white text-lg font-bold mb-3 leading-tight group-hover:text-[#00AEEF] transition-colors">
+              <div className="bg-zinc-900/40 backdrop-blur-sm rounded-[32px] p-8 border border-white/5 hover:border-[#6843B7]/30 hover:bg-zinc-900/60 transition-all duration-500 flex-1 flex flex-col group">
+                <h3 className="text-white text-lg font-bold mb-3 leading-tight group-hover:text-[#6843B7] transition-colors">
                   {step.title}
                 </h3>
                 <p className="text-zinc-400 text-sm leading-relaxed">

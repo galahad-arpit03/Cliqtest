@@ -50,7 +50,7 @@ const benefits = [
 
 export default function KeyBenefits() {
   return (
-    <section className="bg-white py-16 px-6 md:px-12 lg:px-24">
+    <section className="bg-white py-16 px-8">
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-20">
         
         {/* Left Side: Sticky Heading */}
@@ -63,7 +63,7 @@ export default function KeyBenefits() {
           >
             <h2 className="text-black text-4xl md:text-[44px] font-bold tracking-tight mb-8 leading-[1.1]">
               Key <br />
-              <span className="text-[#00AEEF]">Benefits</span>
+              <span className="text-[#6843B7]">Benefits</span>
             </h2>
             <p className="text-zinc-500 text-lg leading-relaxed mb-10 max-w-sm">
               Discover how cliQTest transforms your engineering workflow with these essential advantages.
@@ -84,12 +84,12 @@ export default function KeyBenefits() {
               className={`py-12 border-b border-zinc-100 last:border-0 group cursor-pointer`}
             >
               <div className="flex flex-col md:flex-row gap-8 items-start">
-                <div className={`w-14 h-14 ${benefit.bg} rounded-2xl flex-shrink-0 flex items-center justify-center group-hover:scale-110 transition-transform duration-500`}>
+                <div className={`w-14 h-14 ${benefit.bg} rounded-md flex-shrink-0 flex items-center justify-center group-hover:scale-110 transition-transform duration-500`}>
                   <benefit.icon className={`w-7 h-7 ${benefit.color}`} />
                 </div>
                 
                 <div className="flex-1">
-                  <h3 className="text-2xl md:text-3xl font-bold text-black mb-4 tracking-tight group-hover:text-[#00AEEF] transition-colors">
+                  <h3 className="text-2xl md:text-3xl font-bold text-black mb-4 tracking-tight group-hover:text-[#6843B7] transition-colors">
                     {benefit.title}
                   </h3>
                   <p className="text-zinc-500 text-lg leading-relaxed max-w-2xl">
@@ -98,7 +98,7 @@ export default function KeyBenefits() {
                 </div>
 
                 <div className="hidden md:flex items-center self-center">
-                  <div className="w-10 h-10 rounded-full border border-zinc-200 flex items-center justify-center group-hover:bg-[#00AEEF] group-hover:border-[#00AEEF] transition-all duration-500">
+                  <div className="w-10 h-10 rounded-full border border-zinc-200 flex items-center justify-center group-hover:bg-[#6843B7] group-hover:border-[#6843B7] transition-all duration-500">
                     <Zap className="w-4 h-4 text-zinc-300 group-hover:text-white transition-colors" />
                   </div>
                 </div>
@@ -117,7 +117,7 @@ export default function KeyBenefits() {
               <h3 className="text-2xl font-bold text-black mb-2">Ready to accelerate?</h3>
               <p className="text-zinc-500">Join the elite teams building the future with cliQTest.</p>
             </div>
-            <button className="px-10 py-4 bg-black text-white font-black rounded-md hover:bg-[#00AEEF] transition-all shadow-xl active:scale-95">
+            <button className="px-8 py-3 bg-black text-white text-[13px] font-bold rounded-md hover:bg-[#6843B7] transition-all shadow-xl active:scale-95">
               Book a Demo
             </button>
           </motion.div>
