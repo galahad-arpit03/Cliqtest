@@ -49,7 +49,6 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
-  viewport: "width=device-width, initial-scale=1, maximum-scale=5",
   icons: {
     icon: "/logo/bglogo.png",
     apple: "/logo/bglogo.png",
@@ -82,6 +81,12 @@ export const metadata: Metadata = {
   },
 };
 
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -92,7 +97,7 @@ export default function RootLayout({
       lang="en"
       className={`${spaceGrotesk.variable} ${alata.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-[#030303]" suppressHydrationWarning>
+      <body className="min-h-full flex flex-col bg-[#030303] overflow-x-hidden" suppressHydrationWarning>
         <LoadingScreen>
           <Navbar />
           <main className="flex-1 flex flex-col">

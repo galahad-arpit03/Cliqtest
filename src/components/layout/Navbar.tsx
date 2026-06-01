@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import { 
@@ -158,14 +159,6 @@ const menuItems = [
     }
   },
   {
-    title: "Pricing",
-    href: "/pricing"
-  },
-  {
-    title: "Resources",
-    href: "/resources"
-  },
-  {
     title: "Company",
     dropdownType: "tabbed",
     content: {
@@ -213,10 +206,21 @@ const menuItems = [
       ]
     }
   },
+  
+  
   {
     title: "Integrations",
     href: "/integrations"
-  }
+  },
+  
+  {
+    title: "Resources",
+    href: "/resources"
+  },
+  {
+    title: "Pricing",
+    href: "/pricing"
+  },
 ];
 
 export default function Navbar() {
@@ -286,7 +290,7 @@ export default function Navbar() {
             
             const ItemLabel = (
               <div className={`flex items-center gap-1 text-[15px] font-medium tracking-wide transition-colors ${
-                activeMenu === item.title ? 'text-[#00AEEF]' : 'text-white/70 hover:text-white'
+                activeMenu === item.title ? 'text-[#6843B7]' : 'text-white/70 hover:text-white'
               }`}>
                 {item.title}
                 {hasDropdown && <ChevronDown size={14} className={`transition-transform duration-300 ${activeMenu === item.title ? 'rotate-180' : ''}`} />}
@@ -318,8 +322,15 @@ export default function Navbar() {
                 ) : ItemLabel}
 
                 {/* Desktop Dropdown - Minimal Theme Matched */}
+                <AnimatePresence>
                 {hasDropdown && activeMenu === item.title && (
-                  <div className="fixed top-20 left-0 w-full animate-in fade-in slide-in-from-top-2 duration-200 z-[120]">
+                  <motion.div 
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    transition={{ duration: 0.2, ease: "easeOut" }}
+                    className="fixed top-20 left-0 w-full z-[120]"
+                  >
                     <div className="bg-[#030303]/95 backdrop-blur-xl border-y border-white/5 shadow-2xl overflow-hidden flex min-h-[350px]">
                       
                       <div className="w-full flex px-8 max-w-[1600px] mx-auto">
@@ -328,49 +339,51 @@ export default function Navbar() {
                           {item.content?.tabs?.filter((t: NavTab) => !t.description).map((tab: NavTab) => {
                             const isActive = activeTab === tab.id;
                             return (
-                              <div
+                              <Link
+                                href={`/${tab.id}`}
                                 key={tab.id}
                                 onMouseEnter={() => setActiveTab(tab.id)}
+                                onClick={() => setActiveMenu(null)}
                                 className={`flex items-center justify-between px-10 py-[14px] transition-all duration-300 cursor-pointer ${
                                   isActive 
-                                  ? 'bg-white/5 border-l-[3px] border-[#00AEEF] text-white' 
+                                  ? 'bg-white/5 border-l-[3px] border-[#6843B7] text-white' 
                                   : 'text-white/60 hover:text-white border-l-[3px] border-transparent'
                                 }`}
                               >
-                                <span className={`text-[15px] tracking-wide font-medium ${isActive ? 'text-[#00AEEF]' : 'text-white/60'}`}>{tab.label}</span>
-                                <ChevronRight size={16} className={`transition-transform duration-300 ${isActive ? 'opacity-100 text-[#00AEEF]' : 'opacity-100 text-white/30'}`} />
-                              </div>
+                                <span className={`text-[15px] tracking-wide font-medium ${isActive ? 'text-[#6843B7]' : 'text-white/60'}`}>{tab.label}</span>
+                                <ChevronRight size={16} className={`transition-transform duration-300 ${isActive ? 'opacity-100 text-[#6843B7]' : 'opacity-100 text-white/30'}`} />
+                              </Link>
                             );
                           })}
-                        </div>
-
-                        {/* Right Column (Content) */}
+                        </div>                        {/* Right Column (Content) */}
                         <div className="flex-1 py-10 px-16 bg-transparent">
-                          {item.content?.tabs?.filter((t: NavTab) => !t.description).map((tab: NavTab) => (
-                            <div 
-                              key={tab.id} 
-                              className={`transition-all duration-300 ${
-                                activeTab === tab.id 
-                                ? 'opacity-100 block' 
-                                : 'opacity-0 hidden'
-                              }`}
-                            >
-                              <div className="grid grid-cols-2 md:grid-cols-3 gap-x-12 gap-y-6">
-                                {tab.features?.map((feat: { label: string; desc: string }, idx: number) => (
-                                  <Link href="#" key={idx} className="group/feat flex flex-col gap-1.5 py-2">
-                                    <h4 className="text-white/90 group-hover/feat:text-[#00AEEF] font-medium text-[15px] transition-colors">{feat.label}</h4>
-                                    <p className="text-white/50 text-[13px] leading-relaxed group-hover/feat:text-white/70 transition-colors line-clamp-2">{feat.desc}</p>
-                                  </Link>
-                                ))}
-                              </div>
-                            </div>
-                          ))}
+                          <AnimatePresence mode="wait">
+                            {item.content?.tabs?.filter((t: NavTab) => !t.description && t.id === activeTab).map((tab: NavTab) => (
+                              <motion.div 
+                                key={tab.id}
+                                initial={{ opacity: 0, y: 5 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                exit={{ opacity: 0, y: -5 }}
+                                transition={{ duration: 0.15 }}
+                                className="w-full"
+                              >
+                                <div className="grid grid-cols-2 md:grid-cols-3 gap-x-12 gap-y-6">
+                                  {tab.features?.map((feat: { label: string; desc: string }, idx: number) => (
+                                    <Link href="#" key={idx} className="group/feat flex flex-col gap-1.5 py-2">
+                                      <h4 className="text-white/90 group-hover/feat:text-[#6843B7] font-medium text-[15px] transition-colors">{feat.label}</h4>
+                                      <p className="text-white/50 text-[13px] leading-relaxed group-hover/feat:text-white/70 transition-colors line-clamp-2">{feat.desc}</p>
+                                    </Link>
+                                  ))}
+                                </div>
+                              </motion.div>
+                            ))}
+                          </AnimatePresence>
                         </div>
                       </div>
-
                     </div>
-                  </div>
+                  </motion.div>
                 )}
+                </AnimatePresence>
               </div>
             );
           })}
@@ -379,14 +392,14 @@ export default function Navbar() {
         {/* Right: Action Buttons & Mobile Toggle */}
         <div className="flex-1 flex justify-end items-center gap-4">
           <Link href="/book-a-demo" className="hidden sm:block">
-            <button className="px-8 py-3 bg-[#00AEEF] text-white text-[13px] font-bold rounded-md hover:bg-[#0092E6] transition-all shadow-[0_10px_30px_rgba(0,174,239,0.3)] hover:scale-105 active:scale-95">
+            <button className="px-8 py-3 bg-[#6843B7] text-white text-[13px] font-bold rounded-md hover:bg-[#6843B7] transition-all shadow-[0_10px_30px_rgba(104,67,183,0.3)] hover:scale-105 active:scale-95">
               Book a Demo
             </button>
           </Link>
 
           {/* Mobile Menu Toggle Button */}
           <button 
-            className="lg:hidden text-white p-3 bg-white/5 rounded-2xl hover:bg-white/10 transition-all z-[110] active:scale-90"
+            className="lg:hidden text-white p-3 bg-white/5 rounded-md hover:bg-white/10 transition-all z-[110] active:scale-90"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle Menu"
           >
@@ -430,7 +443,7 @@ export default function Navbar() {
                   <Link 
                     href={item.href}
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="text-3xl font-bold text-white hover:text-[#00AEEF] transition-colors py-1 tracking-tight"
+                    className="text-3xl font-bold text-white hover:text-[#6843B7] transition-colors py-1 tracking-tight"
                   >
                     {item.title}
                   </Link>
@@ -439,10 +452,10 @@ export default function Navbar() {
                     className="flex items-center justify-between py-1 cursor-pointer group"
                     onClick={() => setExpandedItem(isExpanded ? null : item.title)}
                   >
-                    <span className={`text-3xl font-bold transition-colors tracking-tight ${isExpanded ? 'text-[#00AEEF]' : 'text-white'}`}>{item.title}</span>
+                    <span className={`text-3xl font-bold transition-colors tracking-tight ${isExpanded ? 'text-[#6843B7]' : 'text-white'}`}>{item.title}</span>
                     {hasDropdown && (
-                      <div className={`p-2 rounded-xl transition-all ${isExpanded ? 'bg-[#00AEEF]/10 rotate-180' : 'bg-white/5'}`}>
-                        {isExpanded ? <Minus size={20} className="text-[#00AEEF]" /> : <Plus size={20} className="text-white/40" />}
+                      <div className={`p-2 rounded-md transition-all ${isExpanded ? 'bg-[#6843B7]/10 rotate-180' : 'bg-white/5'}`}>
+                        {isExpanded ? <Minus size={20} className="text-[#6843B7]" /> : <Plus size={20} className="text-white/40" />}
                       </div>
                     )}
                   </div>
@@ -450,10 +463,10 @@ export default function Navbar() {
                 
                 {/* Mobile Dropdown Expanded Accordion */}
                 {hasDropdown && isExpanded && (
-                  <div className="flex flex-col gap-6 mt-6 ml-4 border-l-2 border-[#00AEEF]/40 pl-6 animate-in slide-in-from-left-4 duration-300">
+                  <div className="flex flex-col gap-6 mt-6 ml-4 border-l-2 border-[#6843B7]/40 pl-6 animate-in slide-in-from-left-4 duration-300">
                     <button 
                       onClick={() => setExpandedItem(null)}
-                      className="flex items-center gap-2 text-[#00AEEF] text-xs font-bold uppercase tracking-widest mb-2"
+                      className="flex items-center gap-2 text-[#6843B7] text-xs font-bold uppercase tracking-widest mb-2"
                     >
                       <ChevronRight size={14} className="rotate-180" /> Back
                     </button>
@@ -464,7 +477,7 @@ export default function Navbar() {
                         onClick={() => setIsMobileMenuOpen(false)}
                         className="flex flex-col gap-1 group active:opacity-70"
                       >
-                        <span className="text-xl font-bold text-white group-hover:text-[#00AEEF] transition-colors tracking-tight">{tab.label}</span>
+                        <span className="text-xl font-bold text-white group-hover:text-[#6843B7] transition-colors tracking-tight">{tab.label}</span>
                         <span className="text-xs text-white/30 leading-relaxed font-normal pr-4 line-clamp-1">{tab.header || tab.description}</span>
                       </Link>
                     ))}
@@ -477,15 +490,15 @@ export default function Navbar() {
 
         <div className="mt-auto pt-10">
           <Link href="/book-a-demo" onClick={() => setIsMobileMenuOpen(false)}>
-            <button className="w-full py-4 bg-[#00AEEF] text-white text-base font-bold rounded-md shadow-xl hover:scale-[1.02] active:scale-[0.98] transition-all">
+            <button className="w-full py-3 bg-[#6843B7] text-white text-[13px] font-bold rounded-md shadow-xl hover:scale-[1.02] active:scale-[0.98] transition-all">
               Book a Demo
             </button>
           </Link>
           <div className="flex justify-between items-center mt-12 px-2">
-            <p className="text-white/10 text-[10px] font-bold tracking-[0.4em] uppercase">© 2026 Cliqtest</p>
+            {/* <p className="text-white/10 text-[10px] font-bold tracking-[0.4em] uppercase">© 2026 cliQTest</p> */}
             <div className="flex gap-4">
-              <div className="w-8 h-px bg-white/10" />
-              <div className="w-2 h-px bg-white/10" />
+              {/* <div className="w-8 h-px bg-white/10" />
+              <div className="w-2 h-px bg-white/10" /> */}
             </div>
           </div>
         </div>
