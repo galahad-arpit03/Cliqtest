@@ -61,7 +61,7 @@ export default function ByTeam() {
   return (
     <div className="bg-[#050505] text-white min-h-screen">
       {/* 1. Hero Section */}
-      <section className="relative pt-32 pb-20 px-8 border-b border-white/5 overflow-hidden">
+      <section className="relative pt-32 pb-20 border-b border-white/5 overflow-hidden">
         {/* Background Image/Gradient */}
         <div className="absolute top-0 right-0 w-full md:w-[60%] h-full opacity-30 pointer-events-none">
           <div className="absolute inset-0 bg-gradient-to-r from-[#050505] via-transparent to-transparent z-10" />
@@ -74,17 +74,13 @@ export default function ByTeam() {
           />
         </div>
 
-        <div className="relative z-20 max-w-7xl mx-auto">
+        <div className="relative z-20 max-w-7xl mx-auto px-8">
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             className="max-w-3xl"
           >
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-md mb-6">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#00F2B0] animate-pulse" />
-              <span className="text-white/80 text-[10px] font-bold tracking-[0.2em] uppercase">Solutions By Team</span>
-            </div>
             
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight leading-[1.1] mb-6">
               Precision Quality Engineering for <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6843B7] to-[#8f81eb]">Every Team Tier</span>
@@ -139,7 +135,7 @@ export default function ByTeam() {
                   The platform simplifies test design, execution, traceability, and reporting through intuitive workflows and AI-assisted capabilities. QA teams can create structured test cases, organize suites, manage environments, monitor execution outcomes, and analyze quality metrics without relying on fragmented tools or disconnected workflows.
                 </p>
                 
-                <div className="mt-auto">
+                <div className="mt-8">
                   <h4 className="text-white font-bold mb-4 flex items-center gap-2">
                     <span className="w-2 h-2 rounded-full bg-[#6843B7]" />
                     Key Benefits
