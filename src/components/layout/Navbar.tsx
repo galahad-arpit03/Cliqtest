@@ -369,7 +369,7 @@ export default function Navbar() {
                               >
                                 <div className="grid grid-cols-2 md:grid-cols-3 gap-x-12 gap-y-6">
                                   {tab.features?.map((feat: { label: string; desc: string }, idx: number) => (
-                                    <Link href="#" key={idx} className="group/feat flex flex-col gap-1.5 py-2">
+                                    <Link href={`/${tab.id}#${feat.label.toLowerCase().replace(/\s+/g, '-')}`} onClick={() => setActiveMenu(null)} key={idx} className="group/feat flex flex-col gap-1.5 py-2">
                                       <h4 className="text-white/90 group-hover/feat:text-[#6843B7] font-medium text-[15px] transition-colors">{feat.label}</h4>
                                       <p className="text-white/50 text-[13px] leading-relaxed group-hover/feat:text-white/70 transition-colors line-clamp-2">{feat.desc}</p>
                                     </Link>
