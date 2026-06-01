@@ -119,18 +119,18 @@ export default function OverviewPage() {
               integrations — all inside one futuristic platform.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 items-start">
+            <div className="flex flex-row w-full sm:w-auto gap-3 sm:gap-6 items-start">
               <motion.button 
                 whileHover={{ scale: 1.05, boxShadow: "0 0 30px rgba(104,67,183,0.5)" }}
                 whileTap={{ scale: 0.95 }}
-                className="w-full sm:w-auto px-8 py-3.5 rounded-md bg-gradient-to-r from-[#6843B7] to-[#8f81eb] text-black font-bold text-[12px] tracking-widest uppercase transition-all"
+                className="flex-1 sm:flex-none w-full sm:w-auto px-4 sm:px-8 py-3.5 rounded-md bg-gradient-to-r from-[#6843B7] to-[#8f81eb] text-black font-bold text-[11px] sm:text-[12px] tracking-widest uppercase transition-all whitespace-nowrap text-center"
               >
                 Launch Demo
               </motion.button>
               <motion.button 
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="w-full sm:w-auto px-8 py-3.5 rounded-md border border-[#6843B7] text-white font-bold text-[12px] tracking-widest uppercase hover:bg-[#6843B7]/10 transition-all backdrop-blur-sm"
+                className="flex-1 sm:flex-none w-full sm:w-auto px-4 sm:px-8 py-3.5 rounded-md border border-[#6843B7] text-white font-bold text-[11px] sm:text-[12px] tracking-widest uppercase hover:bg-[#6843B7]/10 transition-all backdrop-blur-sm whitespace-nowrap text-center"
               >
                 Explore Platform
               </motion.button>

@@ -473,7 +473,7 @@ export default function Navbar() {
                     {item.content?.tabs?.map((tab: NavTab) => (
                       <Link 
                         key={tab.id}
-                        href="/overview"
+                        href={`/${tab.id}`}
                         onClick={() => setIsMobileMenuOpen(false)}
                         className="flex flex-col gap-1 group active:opacity-70"
                       >

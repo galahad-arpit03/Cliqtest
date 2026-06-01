@@ -86,19 +86,19 @@ export default function Hero() {
 
         <motion.div
           variants={itemVariants}
-          className="flex flex-col sm:flex-row gap-8 items-center justify-center md:justify-start mt-4"
+          className="flex flex-row w-full sm:w-auto gap-4 sm:gap-8 items-center justify-center md:justify-start mt-4"
         >
           <motion.button 
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="w-full sm:w-auto px-8 py-3 rounded-md bg-[#6843B7] text-white font-bold text-[13px] hover:bg-[#6843B7] transition-all"
+            className="flex-1 sm:flex-none w-full sm:w-auto px-4 sm:px-8 py-3 rounded-md bg-[#6843B7] text-white font-bold text-[12px] sm:text-[13px] hover:bg-[#6843B7] transition-all whitespace-nowrap"
           >
             Book Demo
           </motion.button>
 
           <motion.a 
             href="/contact"
-            className="group flex items-center gap-2 text-white font-medium text-[16px] cursor-pointer"
+            className="group flex-1 sm:flex-none flex items-center justify-center sm:justify-start gap-2 text-white font-medium text-[14px] sm:text-[16px] cursor-pointer whitespace-nowrap"
           >
             <span className="border-b border-white/40 pb-0.5 group-hover:border-white transition-colors">Contact Us</span>
             <span className="group-hover:translate-x-1 transition-transform">→</span>
