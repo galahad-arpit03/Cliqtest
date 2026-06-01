@@ -431,19 +431,19 @@ export default function Navbar() {
         </button>
       </div>
 
-      <div className="flex flex-col h-full pt-28 px-10 pb-12 overflow-y-auto">
-        <div className="flex flex-col gap-6">
+      <div className="flex flex-col h-full pt-24 px-6 pb-8 overflow-y-auto">
+        <div className="flex flex-col gap-4">
           {menuItems.map((item) => {
             const hasDropdown = !!item.content;
             const isExpanded = expandedItem === item.title;
 
             return (
-              <div key={item.title} className="flex flex-col border-b border-white/5 pb-6 last:border-0">
+              <div key={item.title} className="flex flex-col border-b border-white/5 pb-4 last:border-0">
                 {item.href ? (
                   <Link 
                     href={item.href}
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="text-3xl font-bold text-white hover:text-[#6843B7] transition-colors py-1 tracking-tight"
+                    className="text-2xl font-bold text-white hover:text-[#6843B7] transition-colors py-1 tracking-tight"
                   >
                     {item.title}
                   </Link>
@@ -452,7 +452,7 @@ export default function Navbar() {
                     className="flex items-center justify-between py-1 cursor-pointer group"
                     onClick={() => setExpandedItem(isExpanded ? null : item.title)}
                   >
-                    <span className={`text-3xl font-bold transition-colors tracking-tight ${isExpanded ? 'text-[#6843B7]' : 'text-white'}`}>{item.title}</span>
+                    <span className={`text-2xl font-bold transition-colors tracking-tight ${isExpanded ? 'text-[#6843B7]' : 'text-white'}`}>{item.title}</span>
                     {hasDropdown && (
                       <div className={`p-2 rounded-md transition-all ${isExpanded ? 'bg-[#6843B7]/10 rotate-180' : 'bg-white/5'}`}>
                         {isExpanded ? <Minus size={20} className="text-[#6843B7]" /> : <Plus size={20} className="text-white/40" />}
@@ -463,22 +463,22 @@ export default function Navbar() {
                 
                 {/* Mobile Dropdown Expanded Accordion */}
                 {hasDropdown && isExpanded && (
-                  <div className="flex flex-col gap-6 mt-6 ml-4 border-l-2 border-[#6843B7]/40 pl-6 animate-in slide-in-from-left-4 duration-300">
+                  <div className="flex flex-col gap-4 mt-4 ml-3 border-l-2 border-[#6843B7]/40 pl-5 animate-in slide-in-from-left-4 duration-300">
                     <button 
                       onClick={() => setExpandedItem(null)}
-                      className="flex items-center gap-2 text-[#6843B7] text-xs font-bold uppercase tracking-widest mb-2"
+                      className="flex items-center gap-1.5 text-[#6843B7] text-[10px] font-bold uppercase tracking-widest mb-1"
                     >
-                      <ChevronRight size={14} className="rotate-180" /> Back
+                      <ChevronRight size={12} className="rotate-180" /> Back
                     </button>
                     {item.content?.tabs?.map((tab: NavTab) => (
                       <Link 
                         key={tab.id}
                         href={`/${tab.id}`}
                         onClick={() => setIsMobileMenuOpen(false)}
-                        className="flex flex-col gap-1 group active:opacity-70"
+                        className="flex flex-col gap-0.5 group active:opacity-70"
                       >
-                        <span className="text-xl font-bold text-white group-hover:text-[#6843B7] transition-colors tracking-tight">{tab.label}</span>
-                        <span className="text-xs text-white/30 leading-relaxed font-normal pr-4 line-clamp-1">{tab.header || tab.description}</span>
+                        <span className="text-[17px] font-bold text-white group-hover:text-[#6843B7] transition-colors tracking-tight">{tab.label}</span>
+                        <span className="text-[11px] text-white/40 leading-relaxed font-normal pr-4 line-clamp-1">{tab.header || tab.description}</span>
                       </Link>
                     ))}
                   </div>

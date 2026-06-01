@@ -67,7 +67,7 @@ export default function Hero() {
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="flex-1 pt-20 md:pt-0 text-center md:text-left"
+          className="flex-1 pt-4 md:pt-0 text-center md:text-left"
         >
         <motion.h1
             variants={itemVariants}

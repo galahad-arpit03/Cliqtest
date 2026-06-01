@@ -34,7 +34,7 @@ export default function DeviceLabHero() {
         <div className="absolute inset-0 bg-[#6843B7]/10 mix-blend-overlay pointer-events-none" />
       </motion.div>
 
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-8 flex flex-col items-start justify-center">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-8 flex flex-col items-center md:items-start justify-center text-center md:text-left">
         {/* <motion.div
           initial={{ opacity: 0, scale: 0.8, filter: 'blur(10px)' }}
           animate={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
@@ -70,7 +70,7 @@ export default function DeviceLabHero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
-          className="mt-12 flex flex-row w-full sm:w-auto gap-3 sm:gap-6"
+          className="mt-12 flex flex-row w-full sm:w-auto gap-3 sm:gap-6 justify-center md:justify-start"
         >
           <button className="flex-1 sm:flex-none px-4 sm:px-10 py-3.5 sm:py-4 bg-[#6843B7] text-white text-[12px] sm:text-[15px] font-bold rounded-md shadow-[0_0_40px_rgba(104,67,183,0.5)] hover:scale-105 active:scale-95 transition-all whitespace-nowrap">
             Access Device Lab

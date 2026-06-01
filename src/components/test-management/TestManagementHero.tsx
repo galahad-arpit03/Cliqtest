@@ -34,7 +34,7 @@ export default function TestManagementHero() {
         <div className="absolute inset-0 bg-[#6843B7]/10 mix-blend-overlay pointer-events-none" />
       </motion.div>
 
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-8 flex flex-col items-start justify-center">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-8 flex flex-col items-center md:items-start justify-center text-center md:text-left">
         <motion.h1
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
