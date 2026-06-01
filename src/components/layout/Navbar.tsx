@@ -215,7 +215,7 @@ const menuItems = [
   
   {
     title: "Resources",
-    href: "/resources"
+    href: "https://docs.cliqtest.com/"
   },
   {
     title: "Pricing",
