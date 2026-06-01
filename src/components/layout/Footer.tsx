@@ -1,11 +1,21 @@
 "use client";
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion, Variants } from 'framer-motion';
 
 export default function Footer() {
+  const [globalFont, setGlobalFont] = useState("Space Grotesk");
+
+  useEffect(() => {
+    if (globalFont === 'Alata') {
+      document.body.style.setProperty('font-family', 'var(--font-alata), sans-serif', 'important');
+    } else {
+      document.body.style.setProperty('font-family', 'var(--font-space-grotesk), sans-serif', 'important');
+    }
+  }, [globalFont]);
+
   const containerVariants: Variants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
@@ -32,9 +42,9 @@ export default function Footer() {
       variants={containerVariants}
       className="w-full bg-[#0F1115] pt-16 pb-8 px-8 border-t border-white/5"
     >
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-5 gap-8 mb-16">
         {/* Brand Section */}
-        <motion.div variants={itemVariants} className="flex flex-col gap-4">
+        <motion.div variants={itemVariants} className="flex flex-col gap-4 md:col-span-1">
           <Link href="/" className="inline-block">
             <div className="relative w-40 h-12 overflow-hidden transition-transform hover:scale-105">
               <Image
@@ -48,21 +58,20 @@ export default function Footer() {
           <p className="text-zinc-500 text-sm italic ml-2">&quot;Turning Clicks into Confidence&quot;</p>
         </motion.div>
 
-        {/* Quick Links */}
+        {/* Platform */}
         <motion.div variants={itemVariants} className="flex flex-col gap-6">
-          <h3 className="text-white font-medium text-lg">Quick Links</h3>
+          <h3 className="text-white font-medium text-lg">Platform</h3>
           <ul className="flex flex-col gap-3 text-zinc-500 text-sm">
             {[
               { name: "Platform Overview", href: "/overview" },
-              { name: "Pricing", href: "/pricing" },
-              { name: "About Us", href: "/about" },
-              { name: "Book a Demo", href: "/book-a-demo" },
+              { name: "No Code Automation", href: "#" },
+              { name: "Test Management", href: "#" },
+              { name: "Device Labs", href: "#" },
+              { name: "Analytics & Reporting", href: "#" },
+              { name: "AI Capabilities", href: "#" },
             ].map((link) => (
               <li key={link.name}>
-                <Link 
-                  href={link.href}
-                  className="hover:text-white hover:translate-x-1 transition-all inline-block cursor-pointer"
-                >
+                <Link href={link.href} className="hover:text-white hover:translate-x-1 transition-all inline-block cursor-pointer">
                   {link.name}
                 </Link>
               </li>
@@ -70,23 +79,64 @@ export default function Footer() {
           </ul>
         </motion.div>
 
-        {/* Contact Us */}
+        {/* Solutions */}
         <motion.div variants={itemVariants} className="flex flex-col gap-6">
-          <h3 className="text-white font-medium text-lg">Contact Us</h3>
+          <h3 className="text-white font-medium text-lg">Solutions</h3>
           <ul className="flex flex-col gap-3 text-zinc-500 text-sm">
-            <li className="flex gap-2">
-              <span className="text-zinc-400">Email :</span>
-              <motion.a 
-                href="mailto:support@cliQTest.com" 
-                whileHover={{ color: "#ffffff" }}
-                className="hover:text-white transition-colors"
-              >
+            {[
+              { name: "Solutions Overview", href: "/overview" },
+              { name: "By Team", href: "#" },
+              { name: "By Use Case", href: "#" },
+              { name: "By Industry", href: "#" },
+            ].map((link) => (
+              <li key={link.name}>
+                <Link href={link.href} className="hover:text-white hover:translate-x-1 transition-all inline-block cursor-pointer">
+                  {link.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </motion.div>
+
+        {/* Company */}
+        <motion.div variants={itemVariants} className="flex flex-col gap-6">
+          <h3 className="text-white font-medium text-lg">Company</h3>
+          <ul className="flex flex-col gap-3 text-zinc-500 text-sm">
+            {[
+              { name: "Company Overview", href: "/overview" },
+              { name: "About Us", href: "#" },
+              { name: "Leadership", href: "#" },
+              { name: "Clients", href: "#" },
+            ].map((link) => (
+              <li key={link.name}>
+                <Link href={link.href} className="hover:text-white hover:translate-x-1 transition-all inline-block cursor-pointer">
+                  {link.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </motion.div>
+
+        {/* Resources & Contact */}
+        <motion.div variants={itemVariants} className="flex flex-col gap-6">
+          <h3 className="text-white font-medium text-lg">Resources</h3>
+          <ul className="flex flex-col gap-3 text-zinc-500 text-sm">
+            {[
+              { name: "Pricing", href: "/pricing" },
+              { name: "Integrations", href: "/integrations" },
+              { name: "Book a Demo", href: "/book-a-demo" },
+            ].map((link) => (
+              <li key={link.name}>
+                <Link href={link.href} className="hover:text-white hover:translate-x-1 transition-all inline-block cursor-pointer">
+                  {link.name}
+                </Link>
+              </li>
+            ))}
+            <li className="flex flex-col gap-1 mt-2">
+              <span className="text-zinc-400">Support:</span>
+              <motion.a href="mailto:support@cliQTest.com" whileHover={{ color: "#ffffff" }} className="hover:text-white transition-colors">
                 support@cliQTest.com
               </motion.a>
-            </li>
-            <li className="flex gap-2">
-              <span className="text-zinc-400">Phone :</span>
-              <span className="text-white/80">+91 2241-222-250</span>
             </li>
           </ul>
         </motion.div>
@@ -100,6 +150,18 @@ export default function Footer() {
         <p className="text-zinc-500 text-sm">
           Copyright © 2025 All Rights Reserved by <span className="text-zinc-400">cliQTest</span>.
         </p>
+        
+        <div className="flex items-center gap-4 hidden md:flex">
+          <span className="text-zinc-500 text-sm">Font:</span>
+          <select 
+            value={globalFont} 
+            onChange={(e) => setGlobalFont(e.target.value)}
+            className="bg-[#1a1a1a] border border-white/10 rounded-md px-3 py-1 text-zinc-300 text-sm outline-none cursor-pointer hover:border-white/30 focus:border-[#00AEEF] transition-colors"
+          >
+            <option value="Space Grotesk">Space Grotesk</option>
+            <option value="Alata">Alata</option>
+          </select>
+        </div>
         
         <div className="flex gap-4">
           {[
