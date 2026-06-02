@@ -42,7 +42,7 @@ export default function CloudFirst() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="flex flex-col sm:flex-row rounded-md bg-[#0A0A0A] border border-white/10 overflow-hidden group"
           >
-            <div className="relative w-full sm:w-[45%] h-[250px] sm:h-auto bg-black border-b sm:border-b-0 sm:border-r border-white/5 overflow-hidden">
+            <div className="hidden sm:block relative w-full sm:w-[45%] h-[250px] sm:h-auto bg-black border-b sm:border-b-0 sm:border-r border-white/5 overflow-hidden">
               <Image
                 src="/assets/66fc49416a607a9c02f4bd04_card-tall-complex-flows-hq-p-500.webp"
                 alt="Test Runs"
@@ -71,7 +71,7 @@ export default function CloudFirst() {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="flex flex-col sm:flex-row rounded-md bg-[#0A0A0A] border border-white/10 overflow-hidden group"
           >
-            <div className="relative w-full sm:w-[45%] h-[250px] sm:h-auto bg-black overflow-hidden border-b sm:border-b-0 sm:border-r border-white/5">
+            <div className="hidden sm:block relative w-full sm:w-[45%] h-[250px] sm:h-auto bg-black overflow-hidden border-b sm:border-b-0 sm:border-r border-white/5">
               <div className="absolute inset-0 opacity-30 group-hover:opacity-40 transition-opacity duration-700 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCI+PHBhdGggZD0iTTEwIDBWMjBNMCAxMEgyMCIgc3Ryb2tlPSIjMDBGMkIwIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiIG9wYWNpdHk9IjAuMSIvPjwvc3ZnPg==')] bg-[length:20px_20px]" />
               <div className="absolute inset-0 bg-gradient-to-tr from-black via-black/80 to-transparent z-10" />
             </div>
@@ -94,7 +94,7 @@ export default function CloudFirst() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="flex flex-col sm:flex-row rounded-md bg-[#0A0A0A] border border-white/10 overflow-hidden group"
           >
-            <div className="relative w-full sm:w-[45%] h-[250px] sm:h-auto bg-black border-b sm:border-b-0 sm:border-r border-white/5">
+            <div className="hidden sm:block relative w-full sm:w-[45%] h-[250px] sm:h-auto bg-black border-b sm:border-b-0 sm:border-r border-white/5">
               <Image
                 src="/assets/6852f436ba19260e1e1f1bfe_card-agent-action.webp"
                 alt="Platform Support"
@@ -122,7 +122,7 @@ export default function CloudFirst() {
             transition={{ duration: 0.8, delay: 0.5 }}
             className="flex flex-col sm:flex-row rounded-md bg-[#0A0A0A] border border-white/10 overflow-hidden group"
           >
-            <div className="relative w-full sm:w-[45%] h-[250px] sm:h-auto bg-black border-b sm:border-b-0 sm:border-r border-white/5">
+            <div className="hidden sm:block relative w-full sm:w-[45%] h-[250px] sm:h-auto bg-black border-b sm:border-b-0 sm:border-r border-white/5">
               <Image
                 src="/assets/68e97727a405c7cd4f58ca37_card-test-horizontal-stack.webp"
                 alt="Device Supports"
