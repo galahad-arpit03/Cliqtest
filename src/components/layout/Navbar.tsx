@@ -392,7 +392,7 @@ export default function Navbar() {
         {/* Right: Action Buttons & Mobile Toggle */}
         <div className="flex-1 flex justify-end items-center gap-4">
           <Link href="/book-a-demo" className="hidden sm:block">
-            <button className="px-8 py-3 bg-[#6843B7] text-white text-[13px] font medium rounded-sm hover:bg-[#6843B7] transition-all shadow-[0_10px_30px_rgba(104,67,183,0.3)] hover:scale-105 active:scale-95">
+            <button className="px-8 py-3 bg-[#6843B7] text-white text-[14px] font medium rounded-sm hover:bg-[#6843B7] transition-all shadow-[0_10px_30px_rgba(104,67,183,0.3)] hover:scale-105 active:scale-95">
               Book a Demo
             </button>
           </Link>
