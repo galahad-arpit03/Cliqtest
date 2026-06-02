@@ -53,9 +53,15 @@ const menuItems = [
           intro: "Empower your entire organization with autonomous, intelligent test generation. Our advanced visual recorder and predictive self-healing locators seamlessly automate complex testing scenarios across Web, Mobile, API, and Desktop environments without writing a single line of code.",
           icon: Zap,
           features: [
-            { label: "Record and Play", desc: "Effortlessly automate your tests with our intelligent visual recorder." },
-            { label: "Auto Healing", desc: "Ensure flawless execution with predictive self-healing locators." },
-            { label: "Cross-Platform", desc: "Seamlessly automate testing across Web, Mobile, API, and Desktop." }
+            { label: "Recorder", desc: "Intelligent visual recording." },
+            { label: "Scriptless Automation", desc: "No coding required." },
+            { label: "Reusable Components", desc: "Modular test design." },
+            { label: "Auto-Healing", desc: "Self-repairing test execution." },
+            { label: "API Automation", desc: "Seamless API testing." },
+            { label: "Desktop Automation", desc: "Desktop application support." },
+            { label: "Smart Authentication Automation", desc: "Handle complex logins." },
+            { label: "Environment Management", desc: "Manage configurations." },
+            { label: "Distributed Execution", desc: "Scale across nodes." }
           ]
         },
         { 
@@ -65,9 +71,15 @@ const menuItems = [
           intro: "Streamline your entire quality operations through a powerful, centralized hub. From precision test planning to full requirement traceability and comprehensive version control, our management suite brings absolute clarity and governance to your entire testing lifecycle.",
           icon: Globe,
           features: [
-            { label: "Test Planning", desc: "Define, track, and manage your testing cycles with precision." },
-            { label: "Requirement Traceability", desc: "Link tests to business requirements for full coverage." },
-            { label: "Version Control", desc: "Manage test case versions and execution history." }
+            { label: "Test Cases", desc: "Comprehensive case authoring." },
+            { label: "Test Suites", desc: "Organize and group test scenarios." },
+            { label: "Test Plans", desc: "Strategic testing blueprints." },
+            { label: "Traceability", desc: "End-to-end requirement mapping." },
+            { label: "Test Data Management", desc: "Centralized data control." },
+            { label: "Dynamic Reports", desc: "Real-time actionable insights." },
+            { label: "Live Logs & Debugging", desc: "Instant issue identification." },
+            { label: "Manual Test Operations", desc: "Track manual executions." },
+            { label: "Smart Bug Raiser", desc: "Automated defect logging." }
           ]
         },
         { 
@@ -77,9 +89,15 @@ const menuItems = [
           intro: "Deploy your applications with absolute confidence by testing securely across thousands of real devices, browsers, and platforms. Leverage deep performance diagnostics and real-time live debugging to ensure a flawless experience for every single user, everywhere.",
           icon: Cpu,
           features: [
-            { label: "Real Device Cloud", desc: "Test securely on thousands of real devices, browsers, and platforms." },
-            { label: "Deep Diagnostics", desc: "Evaluate performance, memory, UI/UX, and native functionality." },
-            { label: "Live Debugging", desc: "Access real-time logs and debug insights directly through our console." }
+            { label: "Protean Device Farm", desc: "Extensive real device network." },
+            { label: "Mobile Automation", desc: "Native and hybrid app testing." },
+            { label: "Parallel Execution", desc: "Concurrent testing capabilities." },
+            { label: "Geolocation Testing", desc: "Location-aware validation." },
+            { label: "Interactive Debugging", desc: "Real-time remote access." },
+            { label: "Network Throttling", desc: "Simulate bandwidth conditions." },
+            { label: "Performance Tracking (App Profiling)", desc: "Deep application profiling." },
+            { label: "Browser Testing", desc: "Cross-browser compatibility." },
+            { label: "Cross Platform Testing", desc: "Unified multi-platform support." }
           ]
         },
         { 
@@ -89,9 +107,16 @@ const menuItems = [
           intro: "Transform raw testing data into actionable, strategic intelligence. Our unified analytics engine provides highly customizable, real-time dashboards and automated reports that instantly identify bottlenecks and dramatically optimize your execution performance.",
           icon: Database,
           features: [
-            { label: "Custom Dashboards", desc: "Visualize key metrics and testing trends in real-time." },
-            { label: "Actionable Insights", desc: "Identify bottlenecks and optimize test execution performance." },
-            { label: "Automated Reporting", desc: "Generate and share comprehensive quality reports instantly." }
+            { label: "Execution Analytics", desc: "Detailed run statistics." },
+            { label: "Visual Dashboards", desc: "Interactive data visualization." },
+            { label: "Execution History", desc: "Comprehensive historical logs." },
+            { label: "Tree View Reporting", desc: "Hierarchical test results." },
+            { label: "Real-Time Monitoring", desc: "Live operational insights." },
+            { label: "Failure Analysis", desc: "Intelligent error categorization." },
+            { label: "Customizable Reports", desc: "Tailored stakeholder updates." },
+            { label: "Quality Trend Analysis", desc: "Long-term quality tracking." },
+            { label: "Audit & Compliance Reporting", desc: "Regulatory readiness." },
+            { label: "Quality Metrics", desc: "Standardized QA measurements." }
           ]
         },
         { 
@@ -101,9 +126,20 @@ const menuItems = [
           intro: "Harness the absolute cutting edge of artificial intelligence to supercharge your quality engineering. From smart natural language test generation to pixel-perfect visual validation and predictive failure analysis, our AI acts as a continuous force multiplier for your team.",
           icon: Zap,
           features: [
-            { label: "Smart Test Generation", desc: "Automatically generate test cases from natural language." },
-            { label: "Visual Validation", desc: "Detect UI discrepancies with pixel-perfect AI vision." },
-            { label: "Predictive Analysis", desc: "Anticipate potential failures before they impact production." }
+            { label: "AI Testing & Evaluation", desc: "Intelligent quality assessment." },
+            { label: "GenAI Test Case Generation", desc: "Automated scenario creation." },
+            { label: "AI Test Data Generator", desc: "Synthetic data provisioning." },
+            { label: "AI X-Path Finder", desc: "Smart locator discovery." },
+            { label: "Agentic AI Function Generator", desc: "Autonomous function building." },
+            { label: "AI-Powered Auto Healing", desc: "Self-correcting test scripts." },
+            { label: "MCP Automation", desc: "Machine Control Protocol support." },
+            { label: "Agentic Automation", desc: "Goal-driven test execution." },
+            // { label: "AI SQL Query Agent", desc: "Automated database testing." },
+            // { label: "AI CAPTCHA Automation", desc: "Intelligent challenge resolution." },
+            // { label: "AI Report Summarization", desc: "Natural language insights." },
+            // { label: "AI System Validation", desc: "Comprehensive architecture checks." },
+            // { label: "Defect Insights", desc: "Root cause analysis." },
+            // { label: "Smart Recommendations", desc: "Proactive quality suggestions." }
           ]
         }
       ]
@@ -150,11 +186,22 @@ const menuItems = [
           intro: "Our enterprise platform is uniquely tailored to meet the strict demands of your specific sector. We ensure absolute regulatory compliance, rigorous data privacy, and unshakeable transaction reliability for critical industries including FinTech, Healthcare, Retail, and Telecom.",
           icon: Database,
           features: [
-            { label: "FinTech", desc: "Ensure compliance, security, and transaction reliability." },
-            { label: "Healthcare", desc: "Maintain data privacy and HIPAA regulatory compliance." },
+            { label: "FinTech", desc: "Ensure secure and compliant financial workflows." },
+            { label: "Healthcare", desc: "Maintain HIPAA and data privacy compliance." },
             { label: "Retail", desc: "Ensure smooth customer journeys during peak times." },
-            { label: "E-Commerce", desc: "Test complex user journeys and shopping carts reliably." },
-            { label: "Telecom", desc: "Test network configurations and customer portals." }
+            { label: "E-Commerce", desc: "Validate complex carts and user flows." },
+            { label: "Telecom", desc: "Test massive networks and billing systems." },
+            { label: "Banking", desc: "Secure core banking and transaction platforms." },
+            { label: "Insurance", desc: "Automate policy and claims lifecycle testing." },
+            { label: "Capital Markets", desc: "High-frequency trade platform validation." },
+            { label: "Payments & Remittance", desc: "Secure global payment gateways." },
+            { label: "Wealth Management", desc: "Validate investment and portfolio tools." },
+            { label: "Enterprise CRM", desc: "Automate Salesforce and SAP testing." },
+            { label: "Transportation & Mobility", desc: "Logistics and fleet management QA." },
+            { label: "Railway & Reservation Systems", desc: "High-load booking system testing." },
+            { label: "Financial Services", desc: "Broad financial application validation." },
+            { label: "Public Sector & Government", desc: "Secure citizen and agency portals." },
+            { label: "Logistics & Supply Chain", desc: "End-to-end supply chain tracking validation." }
           ]
         }
       ]
@@ -342,7 +389,7 @@ export default function Navbar() {
   }, []);
 
   useEffect(() => {
-    if (isMobileMenuOpen) {
+    if (isMobileMenuOpen || activeMenu) {
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = 'unset';
@@ -350,7 +397,7 @@ export default function Navbar() {
     return () => {
       document.body.style.overflow = 'unset';
     };
-  }, [isMobileMenuOpen]);
+  }, [isMobileMenuOpen, activeMenu]);
 
   return (
     <>
@@ -423,7 +470,7 @@ export default function Navbar() {
                     transition={{ duration: 0.2, ease: "easeOut" }}
                     className="fixed top-20 left-0 w-full z-[120]"
                   >
-                    <div className="bg-[#030303]/95 backdrop-blur-xl  border-white/5 shadow-2xl overflow-hidden flex min-h-[350px]">
+                    <div className="bg-black border-white/5 shadow-2xl overflow-hidden flex min-h-[350px]">
                       
                       <div className="w-full flex px-8 max-w-[1600px] mx-auto">
                         {/* Left Column (Tabs) */}
