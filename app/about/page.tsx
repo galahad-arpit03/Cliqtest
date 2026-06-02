@@ -18,8 +18,8 @@ export default function AboutPage() {
     <main className="bg-black">
       <AboutHero />
       {/* <AboutPlatform /> */}
-      <MissionVision />
       <Logos />
+      <MissionVision />
       <KeyBenefits />
       <HowItWorks />
     </main>

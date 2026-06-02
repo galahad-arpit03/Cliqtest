@@ -3,10 +3,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-export default function AboutHero() {
+export default function WhyCliqtestHero() {
   return (
     <section
-      className="relative min-h-[80vh] md:min-h-screen flex flex-col justify-center overflow-hidden px-6 md:px-12 lg:px-24"
+      className="relative min-h-[60vh] md:min-h-[80vh] flex flex-col justify-center overflow-hidden mb-20"
       style={{
         backgroundImage: "url('/about/hero.png')",
         backgroundSize: "cover",
@@ -20,30 +20,31 @@ export default function AboutHero() {
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#050505] to-transparent pointer-events-none" />
 
       {/* Content */}
-      <div className="relative z-10 max-w-7xl w-full pt-32 pb-20">
+      <div className="relative z-10 max-w-7xl mx-auto w-full px-8 pt-32 pb-20">
         
         <motion.div 
           initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
-          className="max-w-4xl -ml-8"
+          className="max-w-4xl"
         >
+          {/* <span className="text-[#6843B7] text-sm font-semibold uppercase tracking-[0.3em] mb-4 block">Platform Value</span> */}
           
           <h1 className="text-white text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 leading-[1.1]">
-            What is <br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6843B7] to-[#ffffff]">cliQTest?</span>
+            Why <br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6843B7] to-[#ffffff]">cliQTest?</span>
           </h1>
 
           <p className="text-white/90 text-base md:text-lg font-semibold leading-relaxed max-w-2xl mb-6">
-            cliQTest was built with a vision to simplify and modernize enterprise quality engineering in an increasingly complex digital ecosystem.
+            Discover why modern enterprises choose cliQTest as their unified quality engineering platform.
           </p>
 
           <p className="text-white/60 text-sm md:text-base leading-relaxed max-w-3xl mb-10">
-            As organizations accelerate digital transformation, traditional approaches struggle to keep pace. cliQTest emerged as a unified, AI-driven platform designed to centralize test management, intelligent automation, and device labs—empowering enterprises to accelerate delivery, improve reliability, and reduce operational complexity.
+            By eliminating fragmented workflows and disconnected tools, cliQTest empowers organizations to accelerate releases, improve operational stability, and seamlessly integrate AI-driven testing capabilities across the entire digital ecosystem.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
             <button className="px-8 py-4 bg-[#6843B7] text-white font-semibold rounded-sm hover:bg-[#6843B7]/90 transition-all shadow-[0_0_20px_rgba(104,67,183,0.3)] text-[14px]">
-              Explore Platform
+              See The Value
             </button>
           </div>
         </motion.div>

@@ -26,7 +26,7 @@ export default function Logos() {
         transition={{ duration: 0.8 }}
         className="max-w-7xl mx-auto px-8 mb-10 text-center"
       >
-        <h2 className="text-sm md:text-base font medium text-zinc-500 tracking-[0.2em] uppercase">
+        <h2 className="text-sm md:text-base font medium text-white tracking-[0.2em] uppercase">
           Seamless Collaboration via Integration
         </h2>
       </motion.div>

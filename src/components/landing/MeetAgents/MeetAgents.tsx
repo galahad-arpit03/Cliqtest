@@ -37,7 +37,7 @@ export default function MeetAgents() {
         transition={{ duration: 0.8 }}
         className="relative z-10 text-4xl md:text-[44px] font-semibold text-white mb-16 tracking-tight leading-[1.1]"
       >
-        Why Choose <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6843B7] to-[#8f81eb]"> cliQTest?</span>
+        Why Choose <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6843B7] to-[#ffffff]"> cliQTest?</span>
       </motion.h2>
       
       <div className="relative w-full max-w-7xl mx-auto min-h-[600px] flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-0">
