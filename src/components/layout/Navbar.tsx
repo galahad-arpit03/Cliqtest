@@ -50,6 +50,7 @@ const menuItems = [
           id: "nocode", 
           label: "No Code Automation", 
           header: "Autonomous Test Generation",
+          intro: "Empower your entire organization with autonomous, intelligent test generation. Our advanced visual recorder and predictive self-healing locators seamlessly automate complex testing scenarios across Web, Mobile, API, and Desktop environments without writing a single line of code.",
           icon: Zap,
           features: [
             { label: "Record and Play", desc: "Effortlessly automate your tests with our intelligent visual recorder." },
@@ -61,6 +62,7 @@ const menuItems = [
           id: "test-management", 
           label: "Test Management", 
           header: "Centralized Quality Operations",
+          intro: "Streamline your entire quality operations through a powerful, centralized hub. From precision test planning to full requirement traceability and comprehensive version control, our management suite brings absolute clarity and governance to your entire testing lifecycle.",
           icon: Globe,
           features: [
             { label: "Test Planning", desc: "Define, track, and manage your testing cycles with precision." },
@@ -72,6 +74,7 @@ const menuItems = [
           id: "devicelabs", 
           label: "Device Labs", 
           header: "Enterprise Device Lab",
+          intro: "Deploy your applications with absolute confidence by testing securely across thousands of real devices, browsers, and platforms. Leverage deep performance diagnostics and real-time live debugging to ensure a flawless experience for every single user, everywhere.",
           icon: Cpu,
           features: [
             { label: "Real Device Cloud", desc: "Test securely on thousands of real devices, browsers, and platforms." },
@@ -83,6 +86,7 @@ const menuItems = [
           id: "analytics", 
           label: "Analytics & Reporting", 
           header: "Unified Analytics",
+          intro: "Transform raw testing data into actionable, strategic intelligence. Our unified analytics engine provides highly customizable, real-time dashboards and automated reports that instantly identify bottlenecks and dramatically optimize your execution performance.",
           icon: Database,
           features: [
             { label: "Custom Dashboards", desc: "Visualize key metrics and testing trends in real-time." },
@@ -94,6 +98,7 @@ const menuItems = [
           id: "ai-capabilities", 
           label: "AI Capabilities", 
           header: "Next-Gen AI Intelligence",
+          intro: "Harness the absolute cutting edge of artificial intelligence to supercharge your quality engineering. From smart natural language test generation to pixel-perfect visual validation and predictive failure analysis, our AI acts as a continuous force multiplier for your team.",
           icon: Zap,
           features: [
             { label: "Smart Test Generation", desc: "Automatically generate test cases from natural language." },
@@ -113,6 +118,7 @@ const menuItems = [
           id: "by-team",
           label: "By Team",
           header: "Empowering Every Team",
+          intro: "We specifically engineer our platform to empower every single member of your software development lifecycle. Whether you are scaling QA automation, integrating CI/CD DevOps pipelines, or governing enterprise ecosystems, cliQTest provides the exact tools your team needs to succeed.",
           icon: Zap,
           features: [
             { label: "QA Teams", desc: "Automate complex scenarios and scale your testing." },
@@ -126,6 +132,7 @@ const menuItems = [
           id: "by-use-case",
           label: "By Use Case",
           header: "Comprehensive Coverage",
+          intro: "Achieve comprehensive, uncompromised quality coverage across your entire digital portfolio. From functional cross-browser automation and flawless mobile testing to deep API validation and instantaneous regression detection, we handle your most critical testing use cases.",
           icon: Cpu,
           features: [
             { label: "Web Testing", desc: "Automate cross-browser functional testing." },
@@ -140,6 +147,7 @@ const menuItems = [
           id: "by-industry",
           label: "By Industry",
           header: "Tailored for Your Sector",
+          intro: "Our enterprise platform is uniquely tailored to meet the strict demands of your specific sector. We ensure absolute regulatory compliance, rigorous data privacy, and unshakeable transaction reliability for critical industries including FinTech, Healthcare, Retail, and Telecom.",
           icon: Database,
           features: [
             { label: "FinTech", desc: "Ensure compliance, security, and transaction reliability." },
