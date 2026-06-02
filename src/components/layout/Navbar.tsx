@@ -109,13 +109,6 @@ const menuItems = [
     content: {
       tabs: [
         {
-          id: "solutions-overview",
-          label: "Solutions Overview",
-          title: "Tailored for Your Teams",
-          description: "Discover how cliQTest accelerates delivery for every role and industry, from developers and QA engineers to entire enterprises.",
-          icon: Globe
-        },
-        {
           id: "by-team",
           label: "By Team",
           header: "Empowering Every Team",
