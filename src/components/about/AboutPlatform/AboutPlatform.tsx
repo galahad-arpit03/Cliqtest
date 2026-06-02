@@ -44,13 +44,13 @@ export default function AboutPlatform() {
   };
 
   return (
-    <section className="bg-[#050505] py-24 md:py-32 px-6 md:px-12 lg:px-24 relative overflow-hidden">
+    <section className="bg-[#050505] py-24 md:py-32 relative overflow-hidden">
       {/* Background Gradients */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none z-0">
         <div className="absolute top-[20%] left-[-10%] w-[50%] h-[50%] bg-[#6843B7]/10 blur-[150px] rounded-full" />
       </div>
 
-      <div className="max-w-6xl mx-auto relative z-10">
+      <div className="max-w-7xl mx-auto px-8 relative z-10">
 
         {/* Section Heading */}
         <div className="mb-16">

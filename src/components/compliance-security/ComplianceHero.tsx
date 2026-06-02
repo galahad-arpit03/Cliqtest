@@ -3,11 +3,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-export default function AboutHero() {
+export default function ComplianceHero() {
   return (
     <section
-      id="our-story"
-      className="relative min-h-[80vh] md:min-h-screen flex flex-col justify-center overflow-hidden"
+      className="relative min-h-[60vh] md:min-h-[80vh] flex flex-col justify-center overflow-hidden mb-20"
       style={{
         backgroundImage: "url('/about/hero.png')",
         backgroundSize: "cover",
@@ -29,24 +28,16 @@ export default function AboutHero() {
           transition={{ duration: 0.8 }}
           className="max-w-4xl"
         >
+          <span className="text-[#6843B7] text-sm font-semibold uppercase tracking-[0.3em] mb-4 block">Compliance & Security</span>
           
           <h1 className="text-white text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 leading-[1.1]">
-            What is <br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6843B7] to-[#ffffff]">cliQTest?</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6843B7] to-[#ffffff]">Compliance & Security</span>
           </h1>
 
           <p className="text-white/90 text-base md:text-lg font-semibold leading-relaxed max-w-2xl mb-6">
-            cliQTest was built with a vision to simplify and modernize enterprise quality engineering in an increasingly complex digital ecosystem.
+            Enterprise Security, Governance & Traceability, and Compliance Readiness.
           </p>
 
-          <p className="text-white/60 text-sm md:text-base leading-relaxed max-w-3xl mb-10">
-            As organizations accelerate digital transformation, traditional approaches struggle to keep pace. cliQTest emerged as a unified, AI-driven platform designed to centralize test management, intelligent automation, and device labs—empowering enterprises to accelerate delivery, improve reliability, and reduce operational complexity.
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-4">
-            <button className="px-8 py-4 bg-[#6843B7] text-white font-semibold rounded-sm hover:bg-[#6843B7]/90 transition-all shadow-[0_0_20px_rgba(104,67,183,0.3)] text-[14px]">
-              Explore Platform
-            </button>
-          </div>
         </motion.div>
 
       </div>

@@ -50,8 +50,8 @@ const benefits = [
 
 export default function KeyBenefits() {
   return (
-    <section className="bg-[#050505] py-24 md:py-32 px-6 md:px-12 lg:px-24">
-      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-20 relative z-10">
+    <section id="core-values" className="bg-[#050505] py-24 md:py-32">
+      <div className="max-w-7xl mx-auto px-8 flex flex-col lg:flex-row gap-20 relative z-10">
         
         {/* Left Side: Sticky Heading */}
         <div className="lg:w-1/3 lg:sticky lg:top-32 h-fit">

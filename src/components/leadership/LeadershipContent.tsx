@@ -21,7 +21,7 @@ export default function LeadershipContent() {
     <div className="max-w-7xl mx-auto px-8">
       
       {/* Executive Team Section */}
-      <section className="mb-32">
+      <section id="executive-teams" className="mb-32">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -59,7 +59,7 @@ export default function LeadershipContent() {
       </section>
 
       {/* Board of Directors Section */}
-      <section className="mb-32">
+      <section id="board-of-directors" className="mb-32">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -91,7 +91,7 @@ export default function LeadershipContent() {
       </section>
 
       {/* Investors Section */}
-      <section>
+      <section id="investors">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

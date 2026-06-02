@@ -39,6 +39,7 @@ export default function WhyCliqtestContent() {
         {reasons.map((reason, index) => (
           <motion.div
             key={index}
+            id={reason.title.toLowerCase().replace(/\s+/g, '-')}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}

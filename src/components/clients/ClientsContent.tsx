@@ -8,7 +8,7 @@ export default function ClientsContent() {
     <div className="max-w-7xl mx-auto px-8">
       
       {/* Success Stories Section */}
-      <section className="mb-20">
+      <section id="success-stories" className="mb-20">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -30,7 +30,7 @@ export default function ClientsContent() {
       </section>
 
       {/* Case Studies Section */}
-      <section className="mb-20">
+      <section id="case-studies" className="mb-20">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -52,7 +52,7 @@ export default function ClientsContent() {
       </section>
 
       {/* Testimonials Section */}
-      <section>
+      <section id="testimonials">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

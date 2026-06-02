@@ -217,7 +217,7 @@ const menuItems = [
             { label: "Testimonials", desc: "What industry leaders say about us." }
           ]
         },
-        {
+        /* {
           id: "partners-alliances",
           label: "Partners & Alliances",
           header: "Stronger Together",
@@ -227,7 +227,7 @@ const menuItems = [
             { label: "Technology Partners", desc: "Integrations that power our platform." },
             { label: "Strategic Alliances", desc: "Collaborations driving innovation." }
           ]
-        },
+        }, */
         {
           id: "compliance-security",
           label: "Compliance and Security",
@@ -240,7 +240,7 @@ const menuItems = [
             { label: "Compliance Readiness", desc: "Meeting global regulatory standards." }
           ]
         },
-        {
+        /* {
           id: "csr-community",
           label: "CSR & Community",
           header: "Giving Back",
@@ -272,7 +272,7 @@ const menuItems = [
             { label: "Events & Webinars", desc: "Inputs for Events & Webinars section to be provided." },
             { label: "Media Coverage", desc: "Inputs for Media Coverage section to be provided." }
           ]
-        }
+        } */
       ]
     }
   },

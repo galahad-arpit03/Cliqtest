@@ -5,12 +5,13 @@ import { motion } from 'framer-motion';
 
 export default function MissionVision() {
   return (
-    <section className="bg-[#050505] py-24 px-6 md:px-12 lg:px-24">
-      <div className="max-w-6xl mx-auto">
+    <section className="bg-[#050505] py-24">
+      <div className="max-w-7xl mx-auto px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
           
           {/* Mission Card */}
           <motion.div 
+            id="mission"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -30,6 +31,7 @@ export default function MissionVision() {
 
           {/* Vision Card */}
           <motion.div 
+            id="vision"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
