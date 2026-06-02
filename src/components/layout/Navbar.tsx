@@ -166,7 +166,7 @@ const menuItems = [
     content: {
       tabs: [
         {
-          id: "about-us",
+          id: "about",
           label: "About Us",
           header: "Company Story",
           intro: "Discover the origins, core values, and ambitious vision that are driving cliQTest to completely redefine the software quality engineering landscape. We are committed to empowering teams globally with a platform that transforms complex testing into a seamless, intelligent, and scalable experience.",
@@ -280,7 +280,29 @@ const menuItems = [
   
   {
     title: "Integrations",
-    href: "/integrations"
+    dropdownType: "tabbed",
+    content: {
+      tabs: [
+        {
+          id: "integrations",
+          label: "Integrations",
+          header: "Seamless Enterprise Integrations",
+          intro: "Connect cliQTest with your favorite tools and platforms to create a unified, automated, and highly efficient software development lifecycle.",
+          icon: Zap,
+          features: [
+            { label: "CI/CD Integrations", desc: "Automate testing within your continuous integration pipelines." },
+            { label: "Project & Workflow Integrations", desc: "Sync testing data with Jira, Asana, and more." },
+            { label: "Device Lab Integrations", desc: "Connect with BrowserStack, Sauce Labs, and others." },
+            { label: "TMT Integrations", desc: "Test Management Tool sync and bidirectional updates." },
+            { label: "SBOM Integrations", desc: "Software Bill of Materials security and compliance tracking." },
+            { label: "CBOM Integrations", desc: "Cloud Bill of Materials visibility and management." },
+            { label: "SOC Room Integrations", desc: "Real-time alerts and security operations center sync." },
+            { label: "Cloud & Infrastructure Integrations", desc: "AWS, Azure, and Google Cloud native deployments." },
+            { label: "API & Automation Integrations", desc: "REST, GraphQL, and extensive webhook support." }
+          ]
+        }
+      ]
+    }
   },
   
   {

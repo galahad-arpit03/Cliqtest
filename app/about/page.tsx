@@ -5,6 +5,7 @@ import Logos from "@/components/landing/Logos/Logos";
 import AboutPlatform from '@/components/about/AboutPlatform/AboutPlatform';
 import HowItWorks from '@/components/about/HowItWorks/HowItWorks';
 import KeyBenefits from '@/components/about/KeyBenefits/KeyBenefits';
+import MissionVision from '@/components/about/MissionVision/MissionVision';
 
 export const metadata: Metadata = {
   title: 'About Us',
@@ -16,7 +17,8 @@ export default function AboutPage() {
   return (
     <main className="bg-black">
       <AboutHero />
-      <AboutPlatform />
+      {/* <AboutPlatform /> */}
+      <MissionVision />
       <Logos />
       <KeyBenefits />
       <HowItWorks />

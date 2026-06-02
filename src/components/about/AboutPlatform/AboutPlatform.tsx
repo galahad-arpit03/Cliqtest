@@ -44,21 +44,29 @@ export default function AboutPlatform() {
   };
 
   return (
-    <section className="bg-white py-16 px-8">
-      <div className="max-w-7xl mx-auto">
+    <section className="bg-[#050505] py-24 md:py-32 px-6 md:px-12 lg:px-24 relative overflow-hidden">
+      {/* Background Gradients */}
+      <div className="absolute top-0 left-0 w-full h-full pointer-events-none z-0">
+        <div className="absolute top-[20%] left-[-10%] w-[50%] h-[50%] bg-[#6843B7]/10 blur-[150px] rounded-full" />
+      </div>
+
+      <div className="max-w-6xl mx-auto relative z-10">
 
         {/* Section Heading */}
-        <motion.h2 
-          initial={{ opacity: 0, y: -20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="text-black text-center text-4xl md:text-[44px] font medium mb-12 tracking-tight leading-[1.1]"
-        >
-          cliQTest Core Features
-        </motion.h2>
+        <div className="mb-16">
+          <motion.div 
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <h2 className="text-white text-4xl md:text-5xl font-bold tracking-tight mb-4 leading-[1.1]">
+              cliQTest <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6843B7] to-[#8f81eb]">Core Features</span>
+            </h2>
+          </motion.div>
+        </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
           {/* Left: Large Featured Card */}
           <motion.div 
@@ -66,17 +74,17 @@ export default function AboutPlatform() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="relative"
+            className="relative max-w-[480px] mx-auto lg:mx-0 w-full"
           >
             {/* Big Image */}
-            <div className="w-full max-w-[480px] aspect-square rounded-[12px] overflow-hidden relative shadow-xl bg-zinc-900">
+            <div className="w-full aspect-square rounded-md overflow-hidden relative shadow-2xl bg-[#0A0A0A] border border-white/10">
               <Image
                 src="/assets/brain.png"
                 alt="cliQTest Platform Overview"
                 fill
-                className="object-cover object-center"
+                className="object-cover object-center opacity-80"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/20 to-transparent" />
             </div>
  
             {/* Floating Info Card */}
@@ -85,26 +93,26 @@ export default function AboutPlatform() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.4, duration: 0.6 }}
-              className="relative md:absolute md:bottom-[-20px] md:right-[-20px] mt-6 md:mt-0 w-full md:w-[320px] bg-white rounded-[20px] p-6 shadow-[0_20px_50px_rgba(0,0,0,0.12)] border border-zinc-100 z-10"
+              className="relative md:absolute md:bottom-[-20px] md:right-[-20px] mt-6 md:mt-0 w-full md:w-[300px] bg-[#0A0A0A] rounded-md p-6 shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-white/10 z-10"
             >
-              <h3 className="text-xl font medium text-black mb-3 leading-snug">
+              <h3 className="text-lg font-semibold text-white mb-2 leading-snug">
                 No-Code Automation Engine
               </h3>
-              <p className="text-zinc-500 text-sm mb-4 leading-relaxed">
+              <p className="text-white/60 text-[13px] mb-5 leading-relaxed">
                 Create, execute, and manage test cases without writing a single line of code.
               </p>
-              <ul className="space-y-2 mb-5">
+              <ul className="space-y-2.5 mb-5">
                 {[
                   "Intuitive drag-and-drop interface for faster test creation.",
                   "Supports reusable test components for streamlined processes."
                 ].map((li, i) => (
-                  <li key={i} className="flex gap-2 text-sm text-[#6843B7] font medium leading-snug">
-                    <span className="mt-0.5">•</span>
+                  <li key={i} className="flex gap-2 text-[13px] text-white/80 font-medium leading-relaxed">
+                    <span className="text-[#6843B7] mt-0.5">•</span>
                     {li}
                   </li>
                 ))}
               </ul>
-              <button className="flex items-center gap-2 text-[#6843B7] font medium text-xs uppercase tracking-widest hover:gap-3 transition-all">
+              <button className="flex items-center gap-2 text-[#6843B7] font-semibold text-xs uppercase tracking-widest hover:gap-3 transition-all">
                 Learn More <ArrowRight size={13} />
               </button>
             </motion.div>
@@ -116,37 +124,35 @@ export default function AboutPlatform() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="flex flex-col gap-5 mt-24 lg:mt-0"
+            className="flex flex-col gap-4 mt-16 lg:mt-0"
           >
             {cards.map((card, idx) => (
               <motion.div
                 key={idx}
                 variants={itemVariants}
-                whileHover={{ x: 5, boxShadow: "0 12px 40px rgba(0,0,0,0.09)" }}
-                className="bg-white rounded-[20px] border border-zinc-100 shadow-[0_2px_16px_rgba(0,0,0,0.04)] transition-all flex gap-5 items-start p-5 group cursor-pointer"
+                whileHover={{ x: 5, backgroundColor: "rgba(104,67,183,0.05)", borderColor: "rgba(104,67,183,0.3)" }}
+                className="bg-[#0A0A0A] rounded-md border border-white/10 shadow-xl transition-all duration-300 flex flex-col sm:flex-row gap-5 items-center p-5 group cursor-pointer"
               >
                 {/* Thumbnail */}
-                <div className="shrink-0 w-[110px] h-[100px] rounded-md overflow-hidden bg-zinc-100 relative">
+                <div className="shrink-0 w-full sm:w-[110px] h-[120px] sm:h-[90px] rounded-sm overflow-hidden bg-[#050505] relative">
                   <Image
                     src={card.img}
                     alt={card.title}
                     fill
-                    className="object-cover object-center group-hover:scale-110 transition-transform duration-500"
+                    className="object-cover object-center group-hover:scale-110 transition-transform duration-500 opacity-70 group-hover:opacity-100"
                   />
                 </div>
 
                 {/* Text */}
-                <div className="flex-1 flex flex-col justify-between min-h-[100px]">
-                  <div>
-                    <h4 className="text-base font medium text-black mb-2 leading-snug group-hover:text-[#6843B7] transition-colors">
-                      {card.title}
-                    </h4>
-                    <p className="text-zinc-500 text-[13px] leading-relaxed line-clamp-3">
-                      {card.description}
-                    </p>
-                  </div>
-                  <button className="flex items-center gap-1.5 text-[#6843B7] font medium text-[10px] uppercase tracking-widest mt-3 hover:gap-2.5 transition-all">
-                    Learn More <ArrowRight size={11} />
+                <div className="flex-1 flex flex-col justify-center">
+                  <h4 className="text-base font-semibold text-white mb-1.5 leading-snug group-hover:text-[#6843B7] transition-colors">
+                    {card.title}
+                  </h4>
+                  <p className="text-white/60 text-[13px] leading-relaxed line-clamp-2 mb-3">
+                    {card.description}
+                  </p>
+                  <button className="flex items-center gap-1.5 text-[#6843B7] font-semibold text-[11px] uppercase tracking-widest hover:gap-2.5 transition-all w-fit">
+                    Learn More <ArrowRight size={12} />
                   </button>
                 </div>
               </motion.div>

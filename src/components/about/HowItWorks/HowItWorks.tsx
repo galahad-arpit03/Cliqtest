@@ -2,70 +2,95 @@
 
 import React from 'react';
 
+import { motion } from 'framer-motion';
+
 const steps = [
   {
     number: "01",
     title: "Test Script",
-    description: "Use the no-code engine to design and customize test cases tailored to your application.",
-    color: "from-[#6843B7] to-[#0092E6]"
+    description: "Use the no-code engine to design and customize test cases tailored to your application."
   },
   {
     number: "02",
-    title: "Device & Browser Selection",
-    description: "Choose from a wide range of real devices and browsers available in the lab.",
-    color: "from-[#00F2B0] to-[#00D19A]"
+    title: "Device & Browser",
+    description: "Choose from a wide range of real devices and browsers available in the lab."
   },
   {
     number: "03",
     title: "Test Execution",
-    description: "Run parallel automation tests across multiple devices and browsers.",
-    color: "from-purple-500 to-purple-700"
+    description: "Run parallel automation tests across multiple devices and browsers."
   },
   {
     number: "04",
-    title: "Monitoring & Debugging",
-    description: "Leverage real-time monitoring tools to identify and resolve issues promptly.",
-    color: "from-[#6843B7] to-[#0092E6]"
+    title: "Monitor & Debug",
+    description: "Leverage real-time monitoring tools to identify and resolve issues promptly."
   },
   {
     number: "05",
-    title: "Analytics & Reporting",
-    description: "Generate comprehensive reports to analyze performance and identify areas for improvement.",
-    color: "from-[#00F2B0] to-[#00D19A]"
+    title: "Analytics",
+    description: "Generate comprehensive reports to analyze performance and identify areas for improvement."
   }
 ];
 
 export default function HowItWorks() {
-  return (
-    <section className="bg-black py-16 px-8 border-t border-white/5">
-      <div className="max-w-7xl mx-auto">
-        <h2 className="text-white text-center text-4xl md:text-[44px] font medium tracking-tight mb-12 leading-[1.1]">
-          How cliQTest Works
-        </h2>
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.15 }
+    }
+  };
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 relative">
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+  };
+
+  return (
+    <section className="bg-[#050505] pt-8 pb-24 px-6 md:px-12 lg:px-24">
+      <div className="max-w-7xl mx-auto">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-20"
+        >
+          <span className="text-[#6843B7] text-sm font-semibold uppercase tracking-[0.3em] mb-4 block">Workflow</span>
+          <h2 className="text-white text-4xl md:text-5xl font-bold tracking-tight mb-4">
+            How <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6843B7] to-[#8f81eb]">cliQTest</span> Works
+          </h2>
+        </motion.div>
+
+        <motion.div 
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 relative"
+        >
           {/* Connecting line (Desktop) */}
-          <div className="hidden lg:block absolute top-[40px] left-[10%] right-[10%] h-[1px] bg-white/10 z-0" />
+          <div className="hidden lg:block absolute top-[28px] left-[10%] right-[10%] h-[1px] bg-white/10 z-0" />
 
           {steps.map((step, i) => (
-            <div key={i} className="relative z-10 flex flex-col items-center text-center group">
-              {/* Number Circle with Glow */}
-              <div className={`w-16 h-16 rounded-md bg-gradient-to-br ${step.color} flex items-center justify-center text-white font-black text-xl mb-8 shadow-xl group-hover:scale-110 transition-all duration-500 rotate-3 group-hover:rotate-0`}>
+            <motion.div variants={itemVariants} key={i} className="relative z-10 flex flex-col items-center text-center group">
+              {/* Number Box */}
+              <div className="w-14 h-14 rounded-md bg-[#0A0A0A] border border-white/10 flex items-center justify-center text-white font-bold text-lg mb-8 group-hover:border-[#6843B7]/50 group-hover:bg-[#6843B7]/10 transition-all duration-300">
                 {step.number}
               </div>
 
               {/* Content Card (Dark Theme) */}
-              <div className="bg-zinc-900/40 backdrop-blur-sm rounded-[32px] p-8 border border-white/5 hover:border-[#6843B7]/30 hover:bg-zinc-900/60 transition-all duration-500 flex-1 flex flex-col group">
-                <h3 className="text-white text-lg font medium mb-3 leading-tight group-hover:text-[#6843B7] transition-colors">
+              <div className="bg-[#0A0A0A] rounded-md p-6 border border-white/10 hover:border-[#6843B7]/30 hover:bg-white/[0.02] transition-all duration-300 flex-1 flex flex-col w-full shadow-lg">
+                <h3 className="text-white text-base font-semibold mb-3 leading-tight group-hover:text-[#6843B7] transition-colors">
                   {step.title}
                 </h3>
-                <p className="text-zinc-400 text-sm leading-relaxed">
+                <p className="text-white/60 text-[13px] leading-relaxed">
                   {step.description}
                 </p>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

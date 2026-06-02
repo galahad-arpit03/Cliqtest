@@ -1,48 +1,52 @@
 "use client";
 
 import React from 'react';
+import { motion } from 'framer-motion';
 
 export default function AboutHero() {
   return (
     <section
-      className="relative min-h-[80vh] md:min-h-screen flex flex-col justify-center overflow-hidden"
+      className="relative min-h-[80vh] md:min-h-screen flex flex-col justify-center overflow-hidden px-6 md:px-12 lg:px-24"
       style={{
         backgroundImage: "url('/about/hero.png')",
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
+        backgroundAttachment: "fixed",
       }}
     >
       {/* Dark overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-black/30 pointer-events-none" />
-      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black to-transparent pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[#050505]/95 via-[#050505]/80 to-[#050505]/30 pointer-events-none" />
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#050505] to-transparent pointer-events-none" />
 
       {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto w-full px-8 pt-32 pb-20">
+      <div className="relative z-10 max-w-7xl w-full pt-32 pb-20">
+        
+        <motion.div 
+          initial={{ opacity: 0, x: -30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+          className="max-w-4xl -ml-8"
+        >
+          
+          <h1 className="text-white text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 leading-[1.1]">
+            What is <br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6843B7] to-[#8f81eb]">cliQTest?</span>
+          </h1>
 
-        {/* Heading */}
-        <h1 className="text-white text-4xl md:text-5xl lg:text-[64px] font-black leading-[1.1] tracking-tight mb-8 max-w-3xl">
-          What is <br /><span className="text-white">cliQTest</span>?
-        </h1>
+          <p className="text-white/90 text-base md:text-lg font-semibold leading-relaxed max-w-2xl mb-6">
+            cliQTest was built with a vision to simplify and modernize enterprise quality engineering in an increasingly complex digital ecosystem.
+          </p>
 
-        {/* Para 1 — Cyan */}
-        <p className="text-[#00F2B0] text-lg md:text-xl font-medium leading-relaxed max-w-full md:max-w-[60%] mb-6">
-          cliQTest is an innovative all-in-one platform designed to revolutionize Quality Assurance for software applications, combining no-code automation, real-device access, and seamless workflow management into a cohesive, game-changing solution.
-        </p>
+          <p className="text-white/60 text-sm md:text-base leading-relaxed max-w-3xl mb-10">
+            As organizations accelerate digital transformation, traditional approaches struggle to keep pace. cliQTest emerged as a unified, AI-driven platform designed to centralize test management, intelligent automation, and device labs—empowering enterprises to accelerate delivery, improve reliability, and reduce operational complexity.
+          </p>
 
-        {/* Para 2 — White */}
-        <p className="text-white/70 text-base md:text-lg leading-relaxed max-w-full md:max-w-[60%] mb-12">
-          At its core, cliQTest empowers QA teams with intelligent tools that eliminate complexity. Whether you&apos;re testing websites, mobile apps, APIs, or desktops — cliQTest provides a robust environment to conduct automated and manual testing with precision. Its self-healing automation, real-time device lab, and centralized test management ensure your team ships faster without compromising quality.
-        </p>
-
-        {/* CTA */}
-        <div className="flex flex-col sm:flex-row gap-3">
-          <button className="px-6 py-3 bg-[#6843B7] text-white font medium rounded-sm hover:bg-[#6843B7] hover:scale-105 transition-all text-sm tracking-[0.15em] uppercase shadow-lg shadow-[#6843B7]/30">
-            Explore Platform
-          </button>
-        </div>
-
-
+          <div className="flex flex-col sm:flex-row gap-4">
+            <button className="px-8 py-4 bg-[#6843B7] text-white font-semibold rounded-sm hover:bg-[#6843B7]/90 transition-all shadow-[0_0_20px_rgba(104,67,183,0.3)] text-[14px]">
+              Explore Platform
+            </button>
+          </div>
+        </motion.div>
 
       </div>
     </section>

@@ -63,7 +63,7 @@ export default function ByTeam() {
   return (
     <div className="bg-[#050505] text-white min-h-screen">
       {/* 1. Hero Section */}
-      <section className="relative pt-40 pb-24 min-h-[60vh] flex flex-col justify-center border-b border-white/5 overflow-hidden">
+      <section className="relative pt-20 pb-24 min-h-[60vh] flex flex-col justify-center border-b border-white/5 overflow-hidden">
         {/* Background Image/Gradient */}
         <motion.div style={{ y }} className="absolute top-0 right-0 w-full md:w-[60%] h-full opacity-30 pointer-events-none">
           <div className="absolute inset-0 bg-gradient-to-r from-[#050505] via-transparent to-transparent z-10" />
