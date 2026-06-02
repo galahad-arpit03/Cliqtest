@@ -19,7 +19,7 @@ export default function SmartRecommendations() {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-4xl md:text-[44px] font-black text-white mb-8 tracking-tight leading-[1.1]">
+          <h2 className="text-4xl md:text-[44px] font-semibold text-white mb-8 tracking-tight leading-[1.1]">
             Smart <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6843B7] to-[#8f81eb]">Recommendations</span>
           </h2>
           <div className="space-y-6 text-lg text-zinc-400 font-light leading-relaxed mb-10">
@@ -31,7 +31,7 @@ export default function SmartRecommendations() {
             </p>
           </div>
           
-          <button className="px-10 py-4 bg-[#6843B7] text-white text-[15px] font-bold rounded-md hover:scale-105 transition-all shadow-[0_0_30px_rgba(104,67,183,0.3)]">
+          <button className="px-10 py-4 bg-[#6843B7] text-white text-[15px] font medium rounded-sm hover:scale-105 transition-all shadow-[0_0_30px_rgba(104,67,183,0.3)]">
             Proactive Optimization
           </button>
         </motion.div>
@@ -49,7 +49,7 @@ export default function SmartRecommendations() {
               <Lightbulb className="text-[#6843B7]" size={20} strokeWidth={1.5} />
             </div>
             <div>
-              <h4 className="text-white font-bold mb-1">Coverage Gap Detected</h4>
+              <h4 className="text-white font medium mb-1">Coverage Gap Detected</h4>
               <p className="text-zinc-500 text-sm">AI suggests generating 3 new test cases for recently updated payment flow.</p>
             </div>
           </div>
@@ -59,7 +59,7 @@ export default function SmartRecommendations() {
               <Zap className="text-[#00F2B0]" size={20} strokeWidth={1.5} />
             </div>
             <div>
-              <h4 className="text-white font-bold mb-1">Execution Prioritization</h4>
+              <h4 className="text-white font medium mb-1">Execution Prioritization</h4>
               <p className="text-zinc-500 text-sm">Reordering test suites to run high-risk impact modules first, saving 25% execution time.</p>
             </div>
           </div>
@@ -69,7 +69,7 @@ export default function SmartRecommendations() {
               <Settings className="text-white/60" size={20} strokeWidth={1.5} />
             </div>
             <div>
-              <h4 className="text-white/80 font-bold mb-1">Maintenance Recommended</h4>
+              <h4 className="text-white/80 font medium mb-1">Maintenance Recommended</h4>
               <p className="text-zinc-500 text-sm">Clean up 15 redundant locators in the authentication module to improve stability.</p>
             </div>
           </div>

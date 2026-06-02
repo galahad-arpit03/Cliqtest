@@ -61,7 +61,7 @@ export default function TestSuitesFeature() {
             transition={{ duration: 0.8 }}
             className="order-1 lg:order-2"
           >
-            <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 tracking-tight">Hierarchical Test Suites</h2>
+            <h2 className="text-3xl md:text-5xl font-semibold text-white mb-6 tracking-tight">Hierarchical <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6843B7] to-[#8f81eb]">Test Suites</span></h2>
             <p className="text-white/60 text-[17px] leading-relaxed mb-6">
               Test Suites in cliQTest provide a structured mechanism for grouping related test cases based on modules, business functionalities, release cycles, execution goals, or regression requirements.
             </p>

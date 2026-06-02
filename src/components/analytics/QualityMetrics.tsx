@@ -35,7 +35,7 @@ export default function QualityMetrics() {
           <div className="col-span-2 bg-gradient-to-br from-[#6843B7]/20 to-transparent p-[1px] rounded-md overflow-hidden">
             <div className="w-full h-full bg-[#050505] backdrop-blur-xl rounded-md p-8 flex items-center justify-between hover:bg-[#0a0a0a] transition-colors">
               <div>
-                <div className="text-white/50 text-xs font-bold uppercase tracking-widest mb-1">Execution Success</div>
+                <div className="text-white/50 text-xs font medium uppercase tracking-widest mb-1">Execution Success</div>
                 <div className="text-4xl font-black text-white">99.4%</div>
               </div>
               {/* <div className="w-16 h-16 rounded-full border-4 border-[#00F2B0] border-t-transparent animate-spin-slow" /> */}
@@ -43,12 +43,12 @@ export default function QualityMetrics() {
           </div>
           
           <div className="bg-white/[0.02] border border-white/5 p-6 rounded-md flex flex-col justify-center hover:bg-white/[0.04] transition-colors">
-            <div className="text-white/50 text-xs font-bold uppercase tracking-widest mb-1">Defect Density</div>
+            <div className="text-white/50 text-xs font medium uppercase tracking-widest mb-1">Defect Density</div>
             <div className="text-2xl font-black text-[#6843B7]">Low Risk</div>
           </div>
 
           <div className="bg-white/[0.02] border border-white/5 p-6 rounded-md flex flex-col justify-center hover:bg-white/[0.04] transition-colors">
-            <div className="text-white/50 text-xs font-bold uppercase tracking-widest mb-1">Test Coverage</div>
+            <div className="text-white/50 text-xs font medium uppercase tracking-widest mb-1">Test Coverage</div>
             <div className="text-2xl font-black text-[#6843B7]">Automated</div>
           </div>
         </motion.div>
@@ -61,7 +61,7 @@ export default function QualityMetrics() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="lg:col-span-6"
         >
-          <h2 className="text-4xl md:text-[44px] font-black text-white mb-8 tracking-tight leading-[1.1]">
+          <h2 className="text-4xl md:text-[44px] font-semibold text-white mb-8 tracking-tight leading-[1.1]">
             Critical <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6843B7] to-[#8f81eb]">Quality Metrics</span>
           </h2>
           <div className="space-y-6 text-lg text-zinc-400 font-light leading-relaxed mb-10">
@@ -73,7 +73,7 @@ export default function QualityMetrics() {
             </p>
           </div>
           
-          <button className="px-10 py-4 bg-[#6843B7] text-white text-[15px] font-bold rounded-md hover:bg-[#6843B7]/80 hover:scale-105 transition-all shadow-[0_0_30px_rgba(104,67,183,0.3)]">
+          <button className="px-10 py-4 bg-[#6843B7] text-white text-[15px] font medium rounded-sm hover:bg-[#6843B7]/80 hover:scale-105 transition-all shadow-[0_0_30px_rgba(104,67,183,0.3)]">
             Establish Data-Driven QA
           </button>
         </motion.div>

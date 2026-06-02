@@ -24,7 +24,7 @@ export default function AdvancedFeatures() {
             
 
             
-            <h3 className="text-3xl font-bold text-white mb-5 relative z-10 tracking-tight">Reusable Components</h3>
+            <h3 className="text-3xl font medium text-white mb-5 relative z-10 tracking-tight">Reusable Components</h3>
             <p className="text-white/60 text-[16px] leading-relaxed mb-8 relative z-10">
               Enhance automation efficiency by standardizing common actions, workflows, test data, and validation steps across projects. Leverage centralized repositories to create modular assets that reduce duplication.
             </p>
@@ -51,7 +51,7 @@ export default function AdvancedFeatures() {
             
 
             
-            <h3 className="text-3xl font-bold text-white mb-5 relative z-10 tracking-tight">AI Auto-Healing</h3>
+            <h3 className="text-3xl font medium text-white mb-5 relative z-10 tracking-tight">AI Auto-Healing</h3>
             <p className="text-white/80 text-[16px] leading-relaxed mb-8 relative z-10">
               Ensure stable and resilient execution even when applications undergo UI changes. Our AI intelligently detects broken locators, identifies alternative object attributes, and automatically repairs scripts during runtime.
             </p>

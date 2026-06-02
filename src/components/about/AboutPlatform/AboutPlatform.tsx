@@ -53,7 +53,7 @@ export default function AboutPlatform() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-black text-center text-4xl md:text-[44px] font-bold mb-12 tracking-tight leading-[1.1]"
+          className="text-black text-center text-4xl md:text-[44px] font medium mb-12 tracking-tight leading-[1.1]"
         >
           cliQTest Core Features
         </motion.h2>
@@ -87,7 +87,7 @@ export default function AboutPlatform() {
               transition={{ delay: 0.4, duration: 0.6 }}
               className="relative md:absolute md:bottom-[-20px] md:right-[-20px] mt-6 md:mt-0 w-full md:w-[320px] bg-white rounded-[20px] p-6 shadow-[0_20px_50px_rgba(0,0,0,0.12)] border border-zinc-100 z-10"
             >
-              <h3 className="text-xl font-bold text-black mb-3 leading-snug">
+              <h3 className="text-xl font medium text-black mb-3 leading-snug">
                 No-Code Automation Engine
               </h3>
               <p className="text-zinc-500 text-sm mb-4 leading-relaxed">
@@ -98,13 +98,13 @@ export default function AboutPlatform() {
                   "Intuitive drag-and-drop interface for faster test creation.",
                   "Supports reusable test components for streamlined processes."
                 ].map((li, i) => (
-                  <li key={i} className="flex gap-2 text-sm text-[#6843B7] font-semibold leading-snug">
+                  <li key={i} className="flex gap-2 text-sm text-[#6843B7] font medium leading-snug">
                     <span className="mt-0.5">•</span>
                     {li}
                   </li>
                 ))}
               </ul>
-              <button className="flex items-center gap-2 text-[#6843B7] font-bold text-xs uppercase tracking-widest hover:gap-3 transition-all">
+              <button className="flex items-center gap-2 text-[#6843B7] font medium text-xs uppercase tracking-widest hover:gap-3 transition-all">
                 Learn More <ArrowRight size={13} />
               </button>
             </motion.div>
@@ -138,14 +138,14 @@ export default function AboutPlatform() {
                 {/* Text */}
                 <div className="flex-1 flex flex-col justify-between min-h-[100px]">
                   <div>
-                    <h4 className="text-base font-bold text-black mb-2 leading-snug group-hover:text-[#6843B7] transition-colors">
+                    <h4 className="text-base font medium text-black mb-2 leading-snug group-hover:text-[#6843B7] transition-colors">
                       {card.title}
                     </h4>
                     <p className="text-zinc-500 text-[13px] leading-relaxed line-clamp-3">
                       {card.description}
                     </p>
                   </div>
-                  <button className="flex items-center gap-1.5 text-[#6843B7] font-bold text-[10px] uppercase tracking-widest mt-3 hover:gap-2.5 transition-all">
+                  <button className="flex items-center gap-1.5 text-[#6843B7] font medium text-[10px] uppercase tracking-widest mt-3 hover:gap-2.5 transition-all">
                     Learn More <ArrowRight size={11} />
                   </button>
                 </div>

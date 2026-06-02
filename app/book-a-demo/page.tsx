@@ -83,7 +83,7 @@ export default function BookADemoPage() {
                 <div key={i} className="flex gap-4 items-start group">
                   <div className="w-1.5 h-1.5 rounded-full bg-[#6843B7] mt-2.5 group-hover:scale-150 transition-transform" />
                   <div>
-                    <h4 className="text-white font-bold text-lg mb-1">{item.title}</h4>
+                    <h4 className="text-white font medium text-lg mb-1">{item.title}</h4>
                     <p className="text-zinc-500 text-sm leading-relaxed">{item.desc}</p>
                   </div>
                 </div>
@@ -106,7 +106,7 @@ export default function BookADemoPage() {
                 
                 {/* Calendar Column */}
                 <div>
-                  <h3 className="text-white text-xl font-bold mb-10 flex items-center gap-3">
+                  <h3 className="text-white text-xl font medium mb-10 flex items-center gap-3">
                     <span className="w-8 h-8 rounded-full bg-blue-500/10 flex items-center justify-center text-blue-500 text-sm">1</span>
                     Select a Date
                   </h3>
@@ -126,7 +126,7 @@ export default function BookADemoPage() {
                         key={i}
                         disabled={!date}
                         onClick={() => date && setSelectedDate(date)}
-                        className={`aspect-square rounded-md flex items-center justify-center text-xs font-bold transition-all ${
+                        className={`aspect-square rounded-md flex items-center justify-center text-xs font medium transition-all ${
                           !date ? 'invisible' : ''
                         } ${
                           date && isSelected(date) 
@@ -144,7 +144,7 @@ export default function BookADemoPage() {
 
                 {/* Form Column */}
                 <form onSubmit={handleSubmit} className="space-y-6">
-                  <h3 className="text-white text-xl font-bold mb-4 flex items-center gap-3">
+                  <h3 className="text-white text-xl font medium mb-4 flex items-center gap-3">
                     <span className="w-8 h-8 rounded-full bg-blue-500/10 flex items-center justify-center text-blue-500 text-sm">2</span>
                     Your Details
                   </h3>

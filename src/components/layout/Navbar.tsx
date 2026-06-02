@@ -331,7 +331,7 @@ export default function Navbar() {
                     transition={{ duration: 0.2, ease: "easeOut" }}
                     className="fixed top-20 left-0 w-full z-[120]"
                   >
-                    <div className="bg-[#030303]/95 backdrop-blur-xl border-y border-white/5 shadow-2xl overflow-hidden flex min-h-[350px]">
+                    <div className="bg-[#030303]/95 backdrop-blur-xl  border-white/5 shadow-2xl overflow-hidden flex min-h-[350px]">
                       
                       <div className="w-full flex px-8 max-w-[1600px] mx-auto">
                         {/* Left Column (Tabs) */}
@@ -392,7 +392,7 @@ export default function Navbar() {
         {/* Right: Action Buttons & Mobile Toggle */}
         <div className="flex-1 flex justify-end items-center gap-4">
           <Link href="/book-a-demo" className="hidden sm:block">
-            <button className="px-8 py-3 bg-[#6843B7] text-white text-[13px] font-bold rounded-md hover:bg-[#6843B7] transition-all shadow-[0_10px_30px_rgba(104,67,183,0.3)] hover:scale-105 active:scale-95">
+            <button className="px-8 py-3 bg-[#6843B7] text-white text-[13px] font medium rounded-sm hover:bg-[#6843B7] transition-all shadow-[0_10px_30px_rgba(104,67,183,0.3)] hover:scale-105 active:scale-95">
               Book a Demo
             </button>
           </Link>
@@ -443,7 +443,7 @@ export default function Navbar() {
                   <Link 
                     href={item.href}
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="text-2xl font-bold text-white hover:text-[#6843B7] transition-colors py-1 tracking-tight"
+                    className="text-2xl font medium text-white hover:text-[#6843B7] transition-colors py-1 tracking-tight"
                   >
                     {item.title}
                   </Link>
@@ -452,7 +452,7 @@ export default function Navbar() {
                     className="flex items-center justify-between py-1 cursor-pointer group"
                     onClick={() => setExpandedItem(isExpanded ? null : item.title)}
                   >
-                    <span className={`text-2xl font-bold transition-colors tracking-tight ${isExpanded ? 'text-[#6843B7]' : 'text-white'}`}>{item.title}</span>
+                    <span className={`text-2xl font medium transition-colors tracking-tight ${isExpanded ? 'text-[#6843B7]' : 'text-white'}`}>{item.title}</span>
                     {hasDropdown && (
                       <div className={`p-2 rounded-md transition-all ${isExpanded ? 'bg-[#6843B7]/10 rotate-180' : 'bg-white/5'}`}>
                         {isExpanded ? <Minus size={20} className="text-[#6843B7]" /> : <Plus size={20} className="text-white/40" />}
@@ -466,7 +466,7 @@ export default function Navbar() {
                   <div className="flex flex-col gap-4 mt-4 ml-3 border-l-2 border-[#6843B7]/40 pl-5 animate-in slide-in-from-left-4 duration-300">
                     <button 
                       onClick={() => setExpandedItem(null)}
-                      className="flex items-center gap-1.5 text-[#6843B7] text-[10px] font-bold uppercase tracking-widest mb-1"
+                      className="flex items-center gap-1.5 text-[#6843B7] text-[10px] font medium uppercase tracking-widest mb-1"
                     >
                       <ChevronRight size={12} className="rotate-180" /> Back
                     </button>
@@ -477,7 +477,7 @@ export default function Navbar() {
                         onClick={() => setIsMobileMenuOpen(false)}
                         className="flex flex-col gap-0.5 group active:opacity-70"
                       >
-                        <span className="text-[17px] font-bold text-white group-hover:text-[#6843B7] transition-colors tracking-tight">{tab.label}</span>
+                        <span className="text-[17px] font medium text-white group-hover:text-[#6843B7] transition-colors tracking-tight">{tab.label}</span>
                         <span className="text-[11px] text-white/40 leading-relaxed font-normal pr-4 line-clamp-1">{tab.header || tab.description}</span>
                       </Link>
                     ))}
@@ -490,12 +490,12 @@ export default function Navbar() {
 
         <div className="mt-auto pt-10">
           <Link href="/book-a-demo" onClick={() => setIsMobileMenuOpen(false)}>
-            <button className="w-full py-3 bg-[#6843B7] text-white text-[13px] font-bold rounded-md shadow-xl hover:scale-[1.02] active:scale-[0.98] transition-all">
+            <button className="w-full py-3 bg-[#6843B7] text-white text-[13px] font medium rounded-sm shadow-xl hover:scale-[1.02] active:scale-[0.98] transition-all">
               Book a Demo
             </button>
           </Link>
           <div className="flex justify-between items-center mt-12 px-2">
-            {/* <p className="text-white/10 text-[10px] font-bold tracking-[0.4em] uppercase">© 2026 cliQTest</p> */}
+            {/* <p className="text-white/10 text-[10px] font medium tracking-[0.4em] uppercase">© 2026 cliQTest</p> */}
             <div className="flex gap-4">
               {/* <div className="w-8 h-px bg-white/10" />
               <div className="w-2 h-px bg-white/10" /> */}

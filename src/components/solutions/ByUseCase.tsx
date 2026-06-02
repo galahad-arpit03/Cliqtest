@@ -19,93 +19,51 @@ export default function ByUseCase() {
     <div className="bg-[#050505] min-h-screen text-white flex flex-col font-sans overflow-x-hidden">
       
       {/* 1. Hero Section */}
-      <section ref={containerRef} className="relative w-full h-screen min-h-[800px] flex items-center justify-center overflow-hidden bg-black border-b border-white/5">
-        {/* Background Image Parallax */}
-        <motion.div 
-          style={{ y, opacity }}
-          className="absolute inset-0 w-full h-full z-0"
-        >
-          <Image
-            src="/assets/landing hero.png"
-            alt="Solutions Hero Background"
-            fill
-            priority
-            className="object-cover object-center scale-110"
+      <section ref={containerRef} className="relative pt-40 pb-24 min-h-[60vh] flex flex-col justify-center border-b border-white/5 overflow-hidden">
+        {/* Background Image/Gradient */}
+        <motion.div style={{ y }} className="absolute top-0 right-0 w-full md:w-[60%] h-full opacity-30 pointer-events-none">
+          <div className="absolute inset-0 bg-gradient-to-r from-[#050505] via-transparent to-transparent z-10" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-[#050505] z-10" />
+          <Image 
+            src="/assets/landing hero.png" 
+            alt="Hero Background" 
+            fill 
+            className="object-cover object-right"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/40 to-black pointer-events-none" />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-transparent to-black/80 pointer-events-none" />
-          <div className="absolute inset-0 bg-[#6843B7]/10 mix-blend-overlay pointer-events-none" />
         </motion.div>
 
-        <div className="relative z-20 w-full max-w-7xl mx-auto px-8 flex flex-col md:flex-row items-center">
-          <div className="flex-1 pt-4 md:pt-0 text-center md:text-left">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8, filter: 'blur(10px)' }}
-              animate={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
-              transition={{ duration: 1, ease: "easeOut" }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-white/5 border border-white/10 backdrop-blur-md mb-8"
-            >
-              <span className="w-2 h-2 rounded-md bg-[#00F2B0] animate-pulse" />
-              <span className="text-white/80 text-xs font-bold tracking-[0.2em] uppercase">Enterprise Testing</span>
-            </motion.div>
-
-            <motion.h1
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-[68px] font-bold tracking-tight text-white leading-[1.1] mb-4 max-w-2xl drop-shadow-2xl"
-            >
+        <div className="relative z-20 max-w-7xl mx-auto px-8 w-full">
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="max-w-3xl"
+          >
+            
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight leading-[1.1] mb-6">
               Solutions <br className="hidden sm:block" />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6843B7] via-[#9e7be9] to-[#ffffff]">
-                By Use Case
-              </span>
-            </motion.h1>
-
-            <motion.p
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-              className="text-base sm:text-lg md:text-xl text-white/60 font-medium mb-8 leading-relaxed max-w-xl mx-auto md:mx-0 drop-shadow-md"
-            >
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6843B7] to-[#8f81eb]">By Use Case</span>
+            </h1>
+            
+            <p className="text-lg md:text-xl text-white/60 leading-relaxed max-w-2xl mb-10">
               We deliver purpose-built infrastructure for targeted use cases, ensuring your engineering teams can validate quality at every tier of the modern tech stack.
-            </motion.p>
+            </p>
 
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
-              className="flex flex-row w-full sm:w-auto gap-4 sm:gap-8 items-center justify-center md:justify-start mt-4"
+              transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <Link href="#web-testing" className="flex-1 sm:flex-none w-full sm:w-auto px-4 sm:px-8 py-3 bg-[#6843B7] text-white text-[12px] sm:text-[13px] font-bold rounded-md shadow-[0_0_40px_rgba(104,67,183,0.5)] hover:bg-[#6843B7]/90 transition-all whitespace-nowrap text-center">
-                Explore Solutions
-              </Link>
-              <Link href="/book-a-demo" className="flex-1 sm:flex-none w-full sm:w-auto px-4 sm:px-8 py-3 bg-white/5 backdrop-blur-md border border-white/10 text-white text-[12px] sm:text-[13px] font-bold rounded-md hover:bg-white/10 hover:border-white/30 transition-all whitespace-nowrap text-center">
-                Book a Demo
-              </Link>
+              <a href="#web-testing" className="inline-flex items-center gap-2 px-8 py-3 bg-[#6843B7] text-white font medium rounded-sm hover:bg-[#6843B7]/90 transition-all shadow-[0_0_20px_rgba(104,67,183,0.3)]">
+                Explore
+              </a>
             </motion.div>
-          </div>
+          </motion.div>
         </div>
-
-        {/* Scroll Indicator */}
-        <motion.div 
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.5, duration: 1 }}
-          className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 z-20"
-        >
-          <div className="w-[1px] h-16 relative overflow-hidden bg-white/10">
-            <motion.div 
-              animate={{ y: [-64, 64] }}
-              transition={{ repeat: Infinity, duration: 1.5, ease: "linear" }}
-              className="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-transparent via-[#6843B7] to-transparent"
-            />
-          </div>
-          <span className="text-[10px] font-black text-white/40 uppercase tracking-[0.4em]">Scroll</span>
-        </motion.div>
       </section>
 
       {/* Sub-Navbar */}
-      <div className="sticky top-20 z-40 bg-[#0A0A0A]/95 backdrop-blur-xl border-y border-white/10 text-white/70 py-4 px-8 flex justify-center gap-6 sm:gap-10 text-[10px] sm:text-xs font-bold tracking-widest uppercase overflow-x-auto whitespace-nowrap shadow-xl">
+      <div className="sticky top-20 z-40 bg-[#0A0A0A]/95 backdrop-blur-xl border-y border-white/10 text-white/70 py-4 px-8 flex justify-center gap-6 sm:gap-10 text-[10px] sm:text-xs font medium tracking-widest uppercase overflow-x-auto whitespace-nowrap shadow-xl">
         <a href="#web-testing" className="hover:text-[#00F2B0] transition-colors">Web</a>
         <a href="#mobile-testing" className="hover:text-[#00F2B0] transition-colors">Mobile</a>
         <a href="#api-testing" className="hover:text-[#00F2B0] transition-colors">API</a>
@@ -118,7 +76,7 @@ export default function ByUseCase() {
         
         {/* Section 1: Web Testing */}
         <section id="web-testing" className="scroll-mt-32">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">Web <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6843B7] to-[#8f81eb]">Testing</span></h2>
+          <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">Web <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6843B7] to-[#8f81eb]">Testing</span></h2>
           <p className="text-white/60 leading-relaxed text-lg md:text-xl mb-12 max-w-4xl">
             Modern web applications operate across multiple browsers, environments, frameworks, and user workflows, making consistent validation increasingly complex. cliQTest enables comprehensive web testing through intelligent automation, cross-browser execution, real-device validation, and AI-powered automation management.
           </p>
@@ -135,7 +93,7 @@ export default function ByUseCase() {
               </div>
               
               <div className="mt-8 bg-white/5 border border-white/10 rounded-md p-6">
-                <h4 className="text-white font-bold mb-5 flex items-center gap-3">
+                <h4 className="text-white font medium mb-5 flex items-center gap-3">
                   <span className="w-2 h-2 rounded-md bg-[#00F2B0] shadow-[0_0_10px_#00F2B0]" />
                   Key Benefits
                 </h4>
@@ -148,7 +106,7 @@ export default function ByUseCase() {
                     'Centralized execution analytics'
                   ].map((benefit, i) => (
                     <div key={i} className="flex items-start gap-3 text-sm text-white/80">
-                      <div className="mt-0.5 text-[#00F2B0] font-bold">✓</div>
+                      <div className="mt-0.5 text-[#00F2B0] font medium">✓</div>
                       <span className="leading-snug">{benefit}</span>
                     </div>
                   ))}
@@ -168,7 +126,7 @@ export default function ByUseCase() {
                     <div className="w-3 h-3 rounded-md bg-yellow-500/80" />
                     <div className="w-3 h-3 rounded-md bg-green-500/80" />
                   </div>
-                  <div className="text-[#00F2B0] text-[10px] font-bold tracking-[0.2em] uppercase border border-[#00F2B0]/30 bg-[#00F2B0]/10 px-3 py-1 rounded-md backdrop-blur-md">
+                  <div className="text-[#00F2B0] text-[10px] font medium tracking-[0.2em] uppercase border border-[#00F2B0]/30 bg-[#00F2B0]/10 px-3 py-1 rounded-md backdrop-blur-md">
                     EXECUTION MATRIX
                   </div>
                 </div>
@@ -190,8 +148,8 @@ export default function ByUseCase() {
                     <div className="text-white">&#125;);</div>
                     
                     <div className="absolute bottom-6 right-6 flex gap-2">
-                      <div className="px-3 py-1.5 bg-green-500/20 text-green-400 border border-green-500/30 rounded text-xs font-bold shadow-[0_0_15px_rgba(34,197,94,0.2)]">Chrome: PASSED</div>
-                      <div className="px-3 py-1.5 bg-green-500/20 text-green-400 border border-green-500/30 rounded text-xs font-bold shadow-[0_0_15px_rgba(34,197,94,0.2)]">Safari: PASSED</div>
+                      <div className="px-3 py-1.5 bg-green-500/20 text-green-400 border border-green-500/30 rounded text-xs font medium shadow-[0_0_15px_rgba(34,197,94,0.2)]">Chrome: PASSED</div>
+                      <div className="px-3 py-1.5 bg-green-500/20 text-green-400 border border-green-500/30 rounded text-xs font medium shadow-[0_0_15px_rgba(34,197,94,0.2)]">Safari: PASSED</div>
                     </div>
                   </div>
                 </div>
@@ -202,7 +160,7 @@ export default function ByUseCase() {
 
         {/* Section 2: Mobile Testing */}
         <section id="mobile-testing" className="scroll-mt-32">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">Mobile <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00F2B0] to-[#00b382]">Testing</span></h2>
+          <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">Mobile <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00F2B0] to-[#00b382]">Testing</span></h2>
           <p className="text-white/60 leading-relaxed text-lg md:text-xl mb-12 max-w-4xl">
             Mobile applications demand seamless experiences across devices, operating systems, screen sizes, and network conditions. cliQTest’s real device lab enables organizations to validate mobile applications on actual Android and iOS devices, ensuring accurate production-level testing.
           </p>
@@ -226,7 +184,7 @@ export default function ByUseCase() {
                       <div className="w-full h-32 rounded-md bg-gradient-to-br from-[#6843B7]/40 to-[#00F2B0]/40 animate-pulse" />
                       <div className="w-3/4 h-4 rounded bg-zinc-800" />
                       <div className="w-1/2 h-4 rounded bg-zinc-800" />
-                      <div className="w-full h-12 rounded-md bg-[#00F2B0]/20 border border-[#00F2B0]/30 mt-auto flex items-center justify-center text-[#00F2B0] font-bold text-xs shadow-[0_0_15px_rgba(0,242,176,0.2)]">
+                      <div className="w-full h-12 rounded-md bg-[#00F2B0]/20 border border-[#00F2B0]/30 mt-auto flex items-center justify-center text-[#00F2B0] font medium text-xs shadow-[0_0_15px_rgba(0,242,176,0.2)]">
                         Validating OTP...
                       </div>
                     </div>
@@ -246,7 +204,7 @@ export default function ByUseCase() {
               </div>
               
               <div className="mt-8 bg-white/5 border border-white/10 rounded-md p-6">
-                <h4 className="text-white font-bold mb-5 flex items-center gap-3">
+                <h4 className="text-white font medium mb-5 flex items-center gap-3">
                   <span className="w-2 h-2 rounded-md bg-[#6843B7] shadow-[0_0_10px_#6843B7]" />
                   Key Benefits
                 </h4>
@@ -259,7 +217,7 @@ export default function ByUseCase() {
                     'Scalable mobile automation workflows'
                   ].map((benefit, i) => (
                     <div key={i} className="flex items-start gap-3 text-sm text-white/80">
-                      <div className="mt-0.5 text-[#6843B7] font-bold">✓</div>
+                      <div className="mt-0.5 text-[#6843B7] font medium">✓</div>
                       <span className="leading-snug">{benefit}</span>
                     </div>
                   ))}
@@ -271,7 +229,7 @@ export default function ByUseCase() {
 
         {/* Section 3: API Testing */}
         <section id="api-testing" className="scroll-mt-32">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">API <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#A855F7] to-[#818cf8]">Testing</span></h2>
+          <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">API <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#A855F7] to-[#818cf8]">Testing</span></h2>
           <p className="text-white/60 leading-relaxed text-lg md:text-xl mb-12 max-w-4xl">
             Enterprise applications rely heavily on APIs to power integrations, workflows, transactions, and real-time communication across systems. cliQTest enables comprehensive API testing to validate functionality, response accuracy, business logic, and data consistency across interconnected ecosystems.
           </p>
@@ -288,7 +246,7 @@ export default function ByUseCase() {
               </div>
               
               <div className="mt-8 bg-white/5 border border-white/10 rounded-md p-6">
-                <h4 className="text-white font-bold mb-5 flex items-center gap-3">
+                <h4 className="text-white font medium mb-5 flex items-center gap-3">
                   <span className="w-2 h-2 rounded-md bg-[#A855F7] shadow-[0_0_10px_#A855F7]" />
                   Key Benefits
                 </h4>
@@ -301,7 +259,7 @@ export default function ByUseCase() {
                     'Faster defect identification and debugging'
                   ].map((benefit, i) => (
                     <div key={i} className="flex items-start gap-3 text-sm text-white/80">
-                      <div className="mt-0.5 text-[#A855F7] font-bold">✓</div>
+                      <div className="mt-0.5 text-[#A855F7] font medium">✓</div>
                       <span className="leading-snug">{benefit}</span>
                     </div>
                   ))}
@@ -314,8 +272,8 @@ export default function ByUseCase() {
               
               <div className="relative z-10 p-8 w-full">
                 <div className="flex gap-4 mb-6">
-                  <div className="px-3 py-1 rounded bg-[#A855F7]/20 border border-[#A855F7]/40 text-[#A855F7] text-xs font-bold tracking-widest uppercase">REST</div>
-                  <div className="px-3 py-1 rounded bg-white/5 border border-white/10 text-white/50 text-xs font-bold tracking-widest uppercase">GRAPHQL</div>
+                  <div className="px-3 py-1 rounded bg-[#A855F7]/20 border border-[#A855F7]/40 text-[#A855F7] text-xs font medium tracking-widest uppercase">REST</div>
+                  <div className="px-3 py-1 rounded bg-white/5 border border-white/10 text-white/50 text-xs font medium tracking-widest uppercase">GRAPHQL</div>
                 </div>
                 
                 <div className="bg-black/80 border border-white/10 rounded-md p-6 shadow-2xl backdrop-blur-xl">
@@ -323,7 +281,7 @@ export default function ByUseCase() {
                     {/* Mock API Request */}
                     <div className="bg-white/5 border border-white/5 rounded-lg p-4">
                       <div className="flex items-center gap-3 mb-3">
-                        <span className="px-2 py-0.5 rounded bg-blue-500/20 text-blue-400 text-xs font-bold">POST</span>
+                        <span className="px-2 py-0.5 rounded bg-blue-500/20 text-blue-400 text-xs font medium">POST</span>
                         <span className="text-white/80 font-mono text-sm">/api/v1/transactions/process</span>
                       </div>
                       <div className="font-mono text-xs text-white/40 pl-4 border-l-2 border-white/10">
@@ -335,8 +293,8 @@ export default function ByUseCase() {
                     <div className="bg-white/5 border border-[#00F2B0]/30 rounded-lg p-4 relative overflow-hidden">
                       <div className="absolute top-0 right-0 w-2 h-full bg-[#00F2B0]" />
                       <div className="flex items-center justify-between mb-3">
-                        <span className="text-white/60 text-xs uppercase tracking-widest font-bold">Response</span>
-                        <span className="px-2 py-0.5 rounded bg-[#00F2B0]/20 text-[#00F2B0] text-xs font-bold shadow-[0_0_10px_rgba(0,242,176,0.3)]">200 OK</span>
+                        <span className="text-white/60 text-xs uppercase tracking-widest font medium">Response</span>
+                        <span className="px-2 py-0.5 rounded bg-[#00F2B0]/20 text-[#00F2B0] text-xs font medium shadow-[0_0_10px_rgba(0,242,176,0.3)]">200 OK</span>
                       </div>
                       <div className="font-mono text-xs text-[#00F2B0] pl-4 border-l-2 border-[#00F2B0]/30">
                         &#123;<br/>
@@ -355,7 +313,7 @@ export default function ByUseCase() {
 
         {/* Section 4: Desktop Testing */}
         <section id="desktop-testing" className="scroll-mt-32">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">Desktop <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00F2B0] to-[#00b382]">Testing</span></h2>
+          <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">Desktop <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00F2B0] to-[#00b382]">Testing</span></h2>
           <p className="text-white/60 leading-relaxed text-lg md:text-xl mb-12 max-w-4xl">
             Enterprise desktop applications often involve complex workflows, legacy systems, and environment-specific dependencies that require reliable and scalable validation. cliQTest enables organizations to automate and manage desktop application testing through centralized execution workflows and intelligent automation capabilities.
           </p>
@@ -402,7 +360,7 @@ export default function ByUseCase() {
                        </motion.div>
                        
                       <div className="w-full h-10 rounded bg-[#00F2B0]/20 border border-[#00F2B0]/50 relative overflow-hidden flex items-center px-4">
-                        <span className="text-[#00F2B0] text-xs font-bold z-10">Validating Native Form...</span>
+                        <span className="text-[#00F2B0] text-xs font medium z-10">Validating Native Form...</span>
                         <div className="absolute left-0 top-0 h-full w-full bg-[#00F2B0]/10 animate-pulse" />
                       </div>
                       <div className="w-full h-10 rounded bg-zinc-800" />
@@ -423,7 +381,7 @@ export default function ByUseCase() {
               </div>
               
               <div className="mt-8 bg-white/5 border border-white/10 rounded-md p-6">
-                <h4 className="text-white font-bold mb-5 flex items-center gap-3">
+                <h4 className="text-white font medium mb-5 flex items-center gap-3">
                   <span className="w-2 h-2 rounded-md bg-[#00F2B0] shadow-[0_0_10px_#00F2B0]" />
                   Key Benefits
                 </h4>
@@ -436,7 +394,7 @@ export default function ByUseCase() {
                     'Improved execution consistency'
                   ].map((benefit, i) => (
                     <div key={i} className="flex items-start gap-3 text-sm text-white/80">
-                      <div className="mt-0.5 text-[#00F2B0] font-bold">✓</div>
+                      <div className="mt-0.5 text-[#00F2B0] font medium">✓</div>
                       <span className="leading-snug">{benefit}</span>
                     </div>
                   ))}
@@ -453,7 +411,7 @@ export default function ByUseCase() {
             <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#00F2B0] opacity-10 blur-[120px] rounded-md pointer-events-none" />
             
             <div className="relative z-10 text-center max-w-4xl mx-auto mb-12">
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">Regression <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6843B7] to-[#8f81eb]">Testing</span></h2>
+              <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">Regression <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6843B7] to-[#8f81eb]">Testing</span></h2>
               <p className="text-white/60 leading-relaxed text-lg md:text-xl">
                 Frequent releases and evolving applications make regression testing critical for maintaining application stability and business continuity. cliQTest enables scalable and intelligent regression testing across web, mobile, desktop, and API ecosystems through centralized orchestration and AI-powered automation.
               </p>
@@ -471,7 +429,7 @@ export default function ByUseCase() {
                 </div>
                 
                 <div className="bg-black/50 border border-white/10 rounded-md p-6 backdrop-blur-sm">
-                  <h4 className="text-white font-bold mb-5 flex items-center gap-3">
+                  <h4 className="text-white font medium mb-5 flex items-center gap-3">
                     <span className="w-2 h-2 rounded-md bg-white" />
                     Key Benefits
                   </h4>
@@ -484,7 +442,7 @@ export default function ByUseCase() {
                       'Continuous validation across releases'
                     ].map((benefit, i) => (
                       <div key={i} className="flex items-start gap-3 text-sm text-white/80">
-                        <div className="mt-0.5 text-white font-bold">✓</div>
+                        <div className="mt-0.5 text-white font medium">✓</div>
                         <span className="leading-snug">{benefit}</span>
                       </div>
                     ))}
@@ -497,8 +455,8 @@ export default function ByUseCase() {
                   <div className="absolute top-0 right-0 w-32 h-32 bg-[#00F2B0]/10 blur-[50px] rounded-md pointer-events-none" />
                   
                   <div className="flex items-center justify-between mb-8 relative z-10">
-                    <div className="text-white/40 text-xs font-bold tracking-[0.2em] uppercase">Test Pipeline</div>
-                    <div className="px-3 py-1 bg-[#00F2B0]/10 text-[#00F2B0] border border-[#00F2B0]/30 text-[10px] font-bold rounded-md animate-pulse shadow-[0_0_10px_rgba(0,242,176,0.2)]">STABLE</div>
+                    <div className="text-white/40 text-xs font medium tracking-[0.2em] uppercase">Test Pipeline</div>
+                    <div className="px-3 py-1 bg-[#00F2B0]/10 text-[#00F2B0] border border-[#00F2B0]/30 text-[10px] font medium rounded-md animate-pulse shadow-[0_0_10px_rgba(0,242,176,0.2)]">STABLE</div>
                   </div>
                   
                   <div className="space-y-5 relative z-10">
@@ -523,7 +481,7 @@ export default function ByUseCase() {
                             <div className={`h-full ${run.bar} rounded-md`} />
                           </div>
                         </div>
-                        <div className={`text-[9px] uppercase font-bold tracking-wider ${run.color} w-16 text-right`}>
+                        <div className={`text-[9px] uppercase font medium tracking-wider ${run.color} w-16 text-right`}>
                           {run.status}
                         </div>
                       </div>
@@ -537,7 +495,7 @@ export default function ByUseCase() {
 
         {/* Section 6: Performance Testing */}
         <section id="performance-testing" className="scroll-mt-32">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">Performance <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#A855F7] to-[#818cf8]">Testing</span></h2>
+          <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">Performance <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#A855F7] to-[#818cf8]">Testing</span></h2>
           <p className="text-white/60 leading-relaxed text-lg md:text-xl mb-12 max-w-4xl">
             High-performing applications are critical for delivering seamless digital experiences and maintaining operational reliability under varying workloads. cliQTest supports scalable performance validation by enabling organizations to monitor execution behavior, application responsiveness, and system reliability across enterprise environments.
           </p>
@@ -554,7 +512,7 @@ export default function ByUseCase() {
               </div>
               
               <div className="mt-8 bg-white/5 border border-white/10 rounded-md p-6">
-                <h4 className="text-white font-bold mb-5 flex items-center gap-3">
+                <h4 className="text-white font medium mb-5 flex items-center gap-3">
                   <span className="w-2 h-2 rounded-md bg-[#A855F7] shadow-[0_0_10px_#A855F7]" />
                   Key Benefits
                 </h4>
@@ -567,7 +525,7 @@ export default function ByUseCase() {
                     'Enhanced release confidence'
                   ].map((benefit, i) => (
                     <div key={i} className="flex items-start gap-3 text-sm text-white/80">
-                      <div className="mt-0.5 text-[#A855F7] font-bold">✓</div>
+                      <div className="mt-0.5 text-[#A855F7] font medium">✓</div>
                       <span className="leading-snug">{benefit}</span>
                     </div>
                   ))}
@@ -576,10 +534,10 @@ export default function ByUseCase() {
             </div>
             
             <div className="bg-[#080808] border border-white/10 rounded-md relative overflow-hidden flex flex-col justify-end min-h-[400px] p-8">
-               <div className="absolute top-6 right-6 text-white/40 text-[10px] font-bold tracking-[0.2em] uppercase z-10">Load Simulation Metrics</div>
+               <div className="absolute top-6 right-6 text-white/40 text-[10px] font medium tracking-[0.2em] uppercase z-10">Load Simulation Metrics</div>
                <div className="absolute top-6 left-6 z-10">
                  <div className="text-3xl font-black text-white">10,000+</div>
-                 <div className="text-xs text-[#00F2B0] font-bold uppercase tracking-widest">Virtual Users</div>
+                 <div className="text-xs text-[#00F2B0] font medium uppercase tracking-widest">Virtual Users</div>
                </div>
                
                <div className="flex items-end justify-between gap-3 h-56 w-full mt-auto relative z-10">
@@ -589,14 +547,14 @@ export default function ByUseCase() {
                      className="w-full bg-gradient-to-t from-[#A855F7]/10 via-[#A855F7]/60 to-[#A855F7] rounded-t-sm opacity-90 hover:opacity-100 transition-all cursor-crosshair group relative shadow-[0_0_15px_rgba(168,85,247,0.3)]" 
                      style={{ height: `${h}%` }}
                    >
-                     <div className="absolute -top-10 left-1/2 -translate-x-1/2 bg-white text-black text-[10px] font-bold py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap shadow-xl">
+                     <div className="absolute -top-10 left-1/2 -translate-x-1/2 bg-white text-black text-[10px] font medium py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap shadow-xl">
                        {h * 100} TPS
                      </div>
                    </div>
                  ))}
                </div>
                <div className="w-full border-t-2 border-red-500/50 mt-4 relative z-10 border-dashed">
-                 <div className="absolute left-2 -top-6 text-red-400 text-[10px] font-bold tracking-widest uppercase bg-black/80 px-2 py-0.5 rounded">SLA Threshold</div>
+                 <div className="absolute left-2 -top-6 text-red-400 text-[10px] font medium tracking-widest uppercase bg-black/80 px-2 py-0.5 rounded">SLA Threshold</div>
                </div>
             </div>
           </div>
@@ -605,18 +563,17 @@ export default function ByUseCase() {
       </div>
 
       {/* Footer CTA */}
-      <section className="py-24 px-8 mt-12 border-t border-white/10 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[#6843B7]/5 z-0" />
-        <div className="max-w-4xl mx-auto text-center relative z-10">
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">Ready to Scale <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6843B7] to-[#8f81eb]">Your Quality?</span></h2>
-          <p className="text-white/60 mb-10 text-lg md:text-xl max-w-2xl mx-auto">
+      <section className="py-24 px-8 mt-12">
+        <div className="max-w-4xl mx-auto text-center bg-white/5 border border-white/10 rounded-md p-12 relative overflow-hidden">
+          <h2 className="text-4xl md:text-4xl font-semibold text-white mb-4">Ready to Scale <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6843B7] to-[#8f81eb]">Your Quality?</span></h2>
+          <p className="text-white/60 mb-8 max-w-2xl mx-auto">
             Join enterprise engineering teams who trust cliQTest to automate their most complex and business-critical testing workflows.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link href="/book-a-demo" className="w-full sm:w-auto px-8 py-4 bg-[#6843B7] text-white font-bold rounded-md hover:scale-105 active:scale-95 transition-all shadow-[0_0_30px_rgba(104,67,183,0.4)]">
+            <Link href="/book-a-demo" className="w-full sm:w-auto px-8 py-3 bg-[#6843B7] text-white font medium rounded-sm hover:scale-105 active:scale-95 transition-all shadow-[0_0_20px_rgba(104,67,183,0.4)]">
               Contact Sales
             </Link>
-            <Link href="/pricing" className="w-full sm:w-auto px-8 py-4 border border-white/20 text-white font-bold rounded-md hover:bg-white/5 transition-colors">
+            <Link href="/pricing" className="w-full sm:w-auto px-8 py-3 border border-white/20 text-white font medium rounded-sm hover:bg-white/5 transition-colors">
               View Enterprise Plans
             </Link>
           </div>

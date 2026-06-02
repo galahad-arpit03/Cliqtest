@@ -80,7 +80,7 @@ export default function PricingGrid() {
           className="text-center mb-12"
         >
           <span className="text-[#6843B7] text-sm font-black uppercase tracking-[0.3em] mb-4 block">Pricing Plans</span>
-          <h2 className="text-white text-4xl md:text-[44px] font-bold tracking-tight mb-6 leading-[1.1]">
+          <h2 className="text-white text-4xl md:text-[44px] font medium tracking-tight mb-6 leading-[1.1]">
             Scalable Solutions for Modern Teams
           </h2>
           <div className="w-24 h-1.5 bg-[#6843B7] mx-auto rounded-full" />
@@ -131,7 +131,7 @@ export default function PricingGrid() {
                 ))}
               </ul>
 
-              <button className={`w-full py-3.5 rounded-md font-bold text-[11px] tracking-widest uppercase transition-all ${
+              <button className={`w-full py-3.5 rounded-sm font medium text-[11px] tracking-widest uppercase transition-all ${
                 tier.highlighted 
                 ? 'bg-purple-500 text-white hover:bg-purple-600 shadow-lg shadow-purple-500/20' 
                 : 'bg-white/5 text-white hover:bg-white/10 border border-white/10'

@@ -1,10 +1,12 @@
 "use client";
 
 import React, { useRef, useEffect } from 'react';
-import { motion, Variants } from 'framer-motion';
+import { motion, Variants, useScroll, useTransform } from 'framer-motion';
 
 export default function Hero() {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const { scrollY } = useScroll();
+  const y = useTransform(scrollY, [0, 1000], ['0%', '30%']);
 
   useEffect(() => {
     if (videoRef.current) {
@@ -38,6 +40,7 @@ export default function Hero() {
       
       {/* Background Video Layer */}
       <motion.div 
+        style={{ y }}
         initial={{ opacity: 0 }}
         animate={{ opacity: 0.6 }}
         transition={{ duration: 2 }}
@@ -71,10 +74,10 @@ export default function Hero() {
         >
         <motion.h1
             variants={itemVariants}
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-[68px] font-bold tracking-tight text-white leading-[1.1] mb-4 max-w-2xl drop-shadow-2xl"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-[68px] font-semibold tracking-tight text-white leading-[1.1] mb-4 max-w-2xl drop-shadow-2xl"
         >
             The AI-Powered <br className="hidden sm:block" />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6843B7] to-[#8f81eb]">Automated Testing </span> Platform
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6843B7] to-[#9e7be9]">Automated Testing </span> Platform
         </motion.h1>
 
         <motion.p
@@ -91,7 +94,7 @@ export default function Hero() {
           <motion.button 
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="flex-1 sm:flex-none w-full sm:w-auto px-4 sm:px-8 py-3 rounded-md bg-[#6843B7] text-white font-bold text-[12px] sm:text-[13px] hover:bg-[#6843B7] transition-all whitespace-nowrap"
+            className="flex-1 sm:flex-none w-full sm:w-auto px-4 sm:px-8 py-3 rounded-md bg-[#6843B7] text-white font-semibold text-[12px] sm:text-[13px] hover:bg-[#6843B7] transition-all whitespace-nowrap"
           >
             Book Demo
           </motion.button>

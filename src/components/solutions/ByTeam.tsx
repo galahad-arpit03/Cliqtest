@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -15,6 +15,8 @@ const sections = [
 
 export default function ByTeam() {
   const [activeSection, setActiveSection] = useState('qa-teams');
+  const { scrollY } = useScroll();
+  const y = useTransform(scrollY, [0, 1000], ['0%', '30%']);
 
   // Handle intersection observer to update active sidebar link
   useEffect(() => {
@@ -61,9 +63,9 @@ export default function ByTeam() {
   return (
     <div className="bg-[#050505] text-white min-h-screen">
       {/* 1. Hero Section */}
-      <section className="relative pt-32 pb-20 border-b border-white/5 overflow-hidden">
+      <section className="relative pt-40 pb-24 min-h-[60vh] flex flex-col justify-center border-b border-white/5 overflow-hidden">
         {/* Background Image/Gradient */}
-        <div className="absolute top-0 right-0 w-full md:w-[60%] h-full opacity-30 pointer-events-none">
+        <motion.div style={{ y }} className="absolute top-0 right-0 w-full md:w-[60%] h-full opacity-30 pointer-events-none">
           <div className="absolute inset-0 bg-gradient-to-r from-[#050505] via-transparent to-transparent z-10" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-[#050505] z-10" />
           <Image 
@@ -72,9 +74,9 @@ export default function ByTeam() {
             fill 
             className="object-cover object-right"
           />
-        </div>
+        </motion.div>
 
-        <div className="relative z-20 max-w-7xl mx-auto px-8">
+        <div className="relative z-20 max-w-7xl mx-auto px-8 w-full">
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -86,9 +88,19 @@ export default function ByTeam() {
               Precision Quality Engineering for <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6843B7] to-[#8f81eb]">Every Team Tier</span>
             </h1>
             
-            <p className="text-lg md:text-xl text-white/60 leading-relaxed max-w-2xl">
+            <p className="text-lg md:text-xl text-white/60 leading-relaxed max-w-2xl mb-10">
               Our robust platforms and tools align perfectly with your team dynamics, providing dedicated workspaces, customized analytics, and workflows tailored for individual roles and broad enterprise structures alike.
             </p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              <a href="#qa-teams" className="inline-flex items-center gap-2 px-8 py-3 bg-[#6843B7] text-white font medium rounded-sm hover:bg-[#6843B7]/90 transition-all shadow-[0_0_20px_rgba(104,67,183,0.3)]">
+                Explore
+              </a>
+            </motion.div>
           </motion.div>
         </div>
       </section>
@@ -105,7 +117,7 @@ export default function ByTeam() {
                 onClick={() => scrollToSection(id)}
                 className={`text-left px-4 py-3 rounded-md transition-all font-medium text-[15px] ${
                   activeSection === id 
-                    ? 'bg-white/10 text-white font-bold' 
+                    ? 'bg-white/10 text-white font medium' 
                     : 'text-white/40 hover:text-white/80 hover:bg-white/5'
                 }`}
               >
@@ -120,10 +132,10 @@ export default function ByTeam() {
           
           {/* QA Teams Section */}
           <div id="qa-teams" className="scroll-mt-32">
-            {/* <div className="inline-block px-3 py-1 rounded bg-[#6843B7]/20 text-[#6843B7] text-xs font-bold tracking-widest uppercase mb-6 border border-[#6843B7]/30">
+            {/* <div className="inline-block px-3 py-1 rounded bg-[#6843B7]/20 text-[#6843B7] text-xs font medium tracking-widest uppercase mb-6 border border-[#6843B7]/30">
               For Quality Assurance
             </div> */}
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">QA Teams: <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6843B7] to-[#8f81eb]">Clinical Precision & Controlled Mastery</span></h2>
+            <h2 className="text-3xl md:text-4xl font medium mb-6">QA Teams: <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6843B7] to-[#8f81eb]">Clinical Precision & Controlled Mastery</span></h2>
             
             <p className="text-white/60 leading-relaxed text-lg mb-10">
               Modern QA teams are under constant pressure to accelerate releases while maintaining high quality across increasingly complex digital ecosystems. cliQTest empowers QA teams with a unified quality engineering platform that centralizes manual testing, automation, reporting, and execution management into a single ecosystem.
@@ -136,7 +148,7 @@ export default function ByTeam() {
                 </p>
                 
                 <div className="mt-8">
-                  <h4 className="text-white font-bold mb-4 flex items-center gap-2">
+                  <h4 className="text-white font medium mb-4 flex items-center gap-2">
                     <span className="w-2 h-2 rounded-full bg-[#6843B7]" />
                     Key Benefits
                   </h4>
@@ -161,7 +173,7 @@ export default function ByTeam() {
               <div className="bg-[#0A0A0A] border border-white/10 rounded-xl p-6 relative overflow-hidden h-full min-h-[350px] flex flex-col">
                   <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#00F2B0] to-transparent" />
                   <div className="flex justify-between items-center mb-8">
-                    <h5 className="text-white/80 font-semibold text-sm">Test Execution</h5>
+                    <h5 className="text-white/80 font medium text-sm">Test Execution</h5>
                     <span className="text-xs bg-white/10 px-2 py-1 rounded text-white/60">This Week</span>
                   </div>
                   
@@ -187,10 +199,10 @@ export default function ByTeam() {
 
           {/* Automation Engineers Section */}
           <div id="automation-engineers" className="scroll-mt-32">
-            {/* <div className="inline-block px-3 py-1 rounded bg-[#6843B7]/20 text-[#6843B7] text-xs font-bold tracking-widest uppercase mb-6 border border-[#6843B7]/30">
+            {/* <div className="inline-block px-3 py-1 rounded bg-[#6843B7]/20 text-[#6843B7] text-xs font medium tracking-widest uppercase mb-6 border border-[#6843B7]/30">
               For Automation
             </div> */}
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">Automation Engineers: <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00F2B0] to-[#00b382]">Unrestricted & Low-Code Flexibility</span></h2>
+            <h2 className="text-3xl md:text-4xl font medium mb-6">Automation Engineers: <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00F2B0] to-[#00b382]">Unrestricted & Low-Code Flexibility</span></h2>
             <p className="text-white/60 leading-relaxed text-lg mb-10">
               Automation engineers require scalable, maintainable, and resilient automation frameworks capable of handling dynamic enterprise applications and complex workflows. cliQTest provides a powerful low-code/no-code automation ecosystem designed to simplify script creation, optimize execution, and reduce maintenance overhead.
             </p>
@@ -202,7 +214,7 @@ export default function ByTeam() {
                 </p>
                 
                 <div className="mt-auto mb-8">
-                  <h4 className="text-white font-bold mb-4 flex items-center gap-2">
+                  <h4 className="text-white font medium mb-4 flex items-center gap-2">
                     <span className="w-2 h-2 rounded-full bg-[#00F2B0]" />
                     Key Benefits
                   </h4>
@@ -222,7 +234,7 @@ export default function ByTeam() {
                   </div>
                 </div>
                 
-                <Link href="/nocode" className="inline-flex items-center gap-2 px-6 py-3 bg-white text-black font-bold rounded-md hover:bg-white/90 transition-colors text-sm w-fit mt-auto">
+                <Link href="/nocode" className="inline-flex items-center gap-2 px-6 py-3 bg-white text-black font medium rounded-sm hover:bg-white/90 transition-colors text-sm w-fit mt-auto">
                   Explore Test Automation →
                 </Link>
               </div>
@@ -258,10 +270,10 @@ export default function ByTeam() {
 
           {/* DevOps Teams Section */}
           <div id="devops-teams" className="scroll-mt-32">
-            {/* <div className="inline-block px-3 py-1 rounded bg-[#6843B7]/20 text-[#6843B7] text-xs font-bold tracking-widest uppercase mb-6 border border-[#6843B7]/30">
+            {/* <div className="inline-block px-3 py-1 rounded bg-[#6843B7]/20 text-[#6843B7] text-xs font medium tracking-widest uppercase mb-6 border border-[#6843B7]/30">
               For Pipeline Integration
             </div> */}
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">DevOps Teams: <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#A855F7] to-[#818cf8]">Pipeline Integrity & Orchestration</span></h2>
+            <h2 className="text-3xl md:text-4xl font medium mb-6">DevOps Teams: <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#A855F7] to-[#818cf8]">Pipeline Integrity & Orchestration</span></h2>
             <p className="text-white/60 leading-relaxed text-lg mb-10">
               Continuous delivery demands faster feedback cycles, reliable automation, and seamless integration across development and deployment pipelines. cliQTest enables DevOps teams to integrate testing directly into CI/CD workflows, ensuring continuous validation throughout the software delivery lifecycle.
             </p>
@@ -273,7 +285,7 @@ export default function ByTeam() {
                 </p>
                 
                 <div className="mt-auto mb-8">
-                  <h4 className="text-white font-bold mb-4 flex items-center gap-2">
+                  <h4 className="text-white font medium mb-4 flex items-center gap-2">
                     <span className="w-2 h-2 rounded-full bg-[#A855F7]" />
                     Key Benefits
                   </h4>
@@ -310,12 +322,12 @@ export default function ByTeam() {
                       <div className="w-3 h-3 rounded-full bg-green-500 animate-pulse" />
                     </div>
                     <div>
-                      <h4 className="text-white text-sm font-bold">Pipeline Stable</h4>
+                      <h4 className="text-white text-sm font medium">Pipeline Stable</h4>
                       <p className="text-white/40 text-[11px]">Last run: 2 mins ago</p>
                     </div>
                   </div>
                   <div className="text-right">
-                    <div className="text-[#00F2B0] font-bold">99.8%</div>
+                    <div className="text-[#00F2B0] font medium">99.8%</div>
                     <div className="text-white/40 text-[10px] uppercase">Pass Rate</div>
                   </div>
                 </div>
@@ -336,10 +348,10 @@ export default function ByTeam() {
 
           {/* Product Teams Section */}
           <div id="product-teams" className="scroll-mt-32">
-            {/* <div className="inline-block px-3 py-1 rounded bg-[#6843B7]/20 text-[#6843B7] text-xs font-bold tracking-widest uppercase mb-6 border border-[#6843B7]/30">
+            {/* <div className="inline-block px-3 py-1 rounded bg-[#6843B7]/20 text-[#6843B7] text-xs font medium tracking-widest uppercase mb-6 border border-[#6843B7]/30">
               For Leadership
             </div> */}
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">Product Teams: <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6843B7] to-[#8f81eb]">Business Intelligence & Release Readiness</span></h2>
+            <h2 className="text-3xl md:text-4xl font medium mb-6">Product Teams: <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6843B7] to-[#8f81eb]">Business Intelligence & Release Readiness</span></h2>
             
             <p className="text-white/60 leading-relaxed text-lg mb-10">
               Product teams require real-time visibility into release quality, testing progress, and business risk before delivering applications to customers. cliQTest provides centralized quality insights that help product teams align testing strategies with business objectives and release priorities.
@@ -352,7 +364,7 @@ export default function ByTeam() {
                 </p>
                 
                 <div className="mt-auto mb-8">
-                  <h4 className="text-white font-bold mb-4 flex items-center gap-2">
+                  <h4 className="text-white font medium mb-4 flex items-center gap-2">
                     <span className="w-2 h-2 rounded-full bg-[#6843B7]" />
                     Key Benefits
                   </h4>
@@ -388,15 +400,15 @@ export default function ByTeam() {
 
                 <div className="grid grid-cols-3 gap-6 w-full mt-10 border-t border-white/10 pt-6">
                   <div className="text-center">
-                    <div className="text-white font-bold text-lg mb-1">45k</div>
+                    <div className="text-white font medium text-lg mb-1">45k</div>
                     <div className="text-white/40 text-[10px] uppercase">Test Runs</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-white font-bold text-lg mb-1">12</div>
+                    <div className="text-white font medium text-lg mb-1">12</div>
                     <div className="text-white/40 text-[10px] uppercase">Open Bugs</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-[#00F2B0] font-bold text-lg mb-1">98%</div>
+                    <div className="text-[#00F2B0] font medium text-lg mb-1">98%</div>
                     <div className="text-white/40 text-[10px] uppercase">Coverage</div>
                   </div>
                 </div>
@@ -406,10 +418,10 @@ export default function ByTeam() {
 
           {/* Enterprises Section */}
           <div id="enterprises" className="scroll-mt-32">
-            {/* <div className="inline-block px-3 py-1 rounded bg-[#6843B7]/20 text-[#6843B7] text-xs font-bold tracking-widest uppercase mb-6 border border-[#6843B7]/30">
+            {/* <div className="inline-block px-3 py-1 rounded bg-[#6843B7]/20 text-[#6843B7] text-xs font medium tracking-widest uppercase mb-6 border border-[#6843B7]/30">
               For Scale
             </div> */}
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">Enterprises: <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00F2B0] to-[#00b382]">Global Governance & Scale</span></h2>
+            <h2 className="text-3xl md:text-4xl font medium mb-6">Enterprises: <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00F2B0] to-[#00b382]">Global Governance & Scale</span></h2>
             <p className="text-white/60 leading-relaxed text-lg mb-10">
               Large enterprises operate across complex application ecosystems, distributed teams, multiple environments, and evolving compliance requirements. cliQTest provides an enterprise-grade quality engineering platform built to support scalability, governance, security, and operational efficiency.
             </p>
@@ -421,7 +433,7 @@ export default function ByTeam() {
                 </p>
                 
                 <div className="mt-auto mb-8">
-                  <h4 className="text-white font-bold mb-4 flex items-center gap-2">
+                  <h4 className="text-white font medium mb-4 flex items-center gap-2">
                     <span className="w-2 h-2 rounded-full bg-[#00F2B0]" />
                     Key Benefits
                   </h4>
@@ -456,7 +468,7 @@ export default function ByTeam() {
                   ].map((feature, i) => (
                     <div key={i} className="bg-white/5 border border-white/10 rounded-lg p-4 text-center hover:bg-white/10 transition-colors cursor-default">
                       <div className="text-2xl mb-2">{feature.icon}</div>
-                      <div className="text-white/80 font-bold text-[11px] uppercase tracking-wider">{feature.label}</div>
+                      <div className="text-white/80 font medium text-[11px] uppercase tracking-wider">{feature.label}</div>
                     </div>
                   ))}
                 </div>
@@ -469,16 +481,16 @@ export default function ByTeam() {
 
       {/* 3. CTA Section */}
       <section className="py-24 px-8">
-        <div className="max-w-4xl mx-auto text-center bg-white/5 border border-white/10 rounded-2xl p-12 relative overflow-hidden">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Ready for <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6843B7] to-[#8f81eb]">Enterprise-Grade Quality?</span></h2>
+        <div className="max-w-4xl mx-auto text-center bg-white/5 border border-white/10 rounded-md p-12 relative overflow-hidden">
+          <h2 className="text-4xl md:text-4xl font-semibold text-white mb-4">Ready for <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6843B7] to-[#8f81eb]">Enterprise-Grade Quality?</span></h2>
           <p className="text-white/60 mb-8 max-w-2xl mx-auto">
             Contact us to see how cliQTest can seamlessly integrate into your team&apos;s workflow and scale your testing infrastructure.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link href="/book-a-demo" className="w-full sm:w-auto px-8 py-3 bg-[#6843B7] text-white font-bold rounded-md hover:scale-105 active:scale-95 transition-all shadow-[0_0_20px_rgba(104,67,183,0.4)]">
+            <Link href="/book-a-demo" className="w-full sm:w-auto px-8 py-3 bg-[#6843B7] text-white font medium rounded-sm hover:scale-105 active:scale-95 transition-all shadow-[0_0_20px_rgba(104,67,183,0.4)]">
               Book a Free Demo
             </Link>
-            <Link href="/pricing" className="w-full sm:w-auto px-8 py-3 border border-white/20 text-white font-bold rounded-md hover:bg-white/5 transition-colors">
+            <Link href="/pricing" className="w-full sm:w-auto px-8 py-3 border border-white/20 text-white font medium rounded-sm hover:bg-white/5 transition-colors">
               View Enterprise Pricing
             </Link>
           </div>

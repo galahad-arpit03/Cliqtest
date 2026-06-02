@@ -33,7 +33,7 @@ export default function TestCasesFeature() {
             className="relative z-10"
           >
 
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 tracking-tight leading-[1.1]">
+            <h2 className="text-3xl md:text-5xl font-semibold text-white mb-6 tracking-tight leading-[1.1]">
               Structured <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6843B7] to-[#8f81eb]">Validation Units</span>
             </h2>
@@ -54,7 +54,7 @@ export default function TestCasesFeature() {
                     <CheckCircle2 size={12} className="text-[#6843B7] group-hover:text-white transition-colors" />
                   </div>
                   <div>
-                    <h4 className="text-white/90 font-bold text-[16px] mb-1">{item.title}</h4>
+                    <h4 className="text-white/90 font medium text-[16px] mb-1">{item.title}</h4>
                     <p className="text-white/50 text-[14px]">{item.desc}</p>
                   </div>
                 </div>

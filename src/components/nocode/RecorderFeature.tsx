@@ -18,7 +18,7 @@ export default function RecorderFeature() {
             transition={{ duration: 0.8 }}
           >
 
-            <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 tracking-tight">Intelligent Recorder</h2>
+            <h2 className="text-3xl md:text-5xl font-semibold text-white mb-6 tracking-tight">Intelligent<span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6843B7] to-[#8f81eb]"> Recorder</span></h2>
             <p className="text-white/60 text-[17px] leading-relaxed mb-6">
               Simplify the automation journey by capturing application workflows, user interactions, and business processes in real time—without extensive coding expertise.
             </p>
@@ -61,7 +61,7 @@ export default function RecorderFeature() {
                   { action: "Verify", target: "Dashboard Title", detail: "Text equals 'Welcome'", color: "text-purple-400" }
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 p-5 rounded-md bg-white/[0.02] border border-white/5 hover:bg-white/[0.04] transition-colors cursor-pointer group">
-                    <div className="w-8 h-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/50 text-xs font-bold mt-0.5 group-hover:bg-white/10 group-hover:text-white transition-all">
+                    <div className="w-8 h-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/50 text-xs font medium mt-0.5 group-hover:bg-white/10 group-hover:text-white transition-all">
                       {i + 1}
                     </div>
                     <div>

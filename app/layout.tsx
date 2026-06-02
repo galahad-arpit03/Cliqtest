@@ -97,7 +97,7 @@ export default function RootLayout({
       lang="en"
       className={`${spaceGrotesk.variable} ${alata.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-[#030303] overflow-x-hidden" suppressHydrationWarning>
+      <body className="min-h-full flex flex-col bg-[#030303] overflow-x-clip" suppressHydrationWarning>
         <LoadingScreen>
           <Navbar />
           <main className="flex-1 flex flex-col">

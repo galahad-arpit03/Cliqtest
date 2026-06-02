@@ -35,7 +35,7 @@ export default function Reports() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="text-4xl md:text-[44px] font-black text-white mb-6 tracking-tight leading-[1.1]"
+            className="text-4xl md:text-[44px] font-semibold text-white mb-6 tracking-tight leading-[1.1]"
           >
             Configurable <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6843B7] to-[#8f81eb]">Reporting</span>
           </motion.h2>
@@ -63,7 +63,7 @@ export default function Reports() {
               <div className="w-12 h-12 rounded-full bg-[#6843B7]/20 flex items-center justify-center text-[#6843B7] mb-6 group-hover:scale-110 transition-transform">
                 <feat.icon size={24} strokeWidth={1.5} />
               </div>
-              <h3 className="text-white font-bold text-lg mb-3">{feat.title}</h3>
+              <h3 className="text-white font medium text-lg mb-3">{feat.title}</h3>
               <p className="text-zinc-500 text-sm leading-relaxed">{feat.desc}</p>
             </motion.div>
           ))}

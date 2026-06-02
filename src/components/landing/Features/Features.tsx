@@ -3,7 +3,7 @@ import React from 'react';
 export default function Features() {
   return (
     <section className="w-full px-12 py-20 text-center">
-      <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 tracking-tight">
+      <h2 className="text-4xl md:text-6xl font medium text-white mb-6 tracking-tight">
         Features of cliQTest.
       </h2>
       
@@ -19,7 +19,7 @@ export default function Features() {
       </div>
 
       <div className="flex justify-center">
-        <button className="px-10 py-3 bg-[#6843B7] text-white text-xs font-bold tracking-[0.2em] rounded-md uppercase shadow-[0_0_20px_rgba(104,67,183,0.4)] hover:scale-105 transition-transform">
+        <button className="px-10 py-3 bg-[#6843B7] text-white text-xs font medium tracking-[0.2em] rounded-sm uppercase shadow-[0_0_20px_rgba(104,67,183,0.4)] hover:scale-105 transition-transform">
           Enterprise App Intelligence
         </button>
       </div>

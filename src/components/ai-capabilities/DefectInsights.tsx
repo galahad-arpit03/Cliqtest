@@ -37,7 +37,7 @@ export default function DefectInsights() {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-4xl md:text-[44px] font-black text-white mb-6 tracking-tight leading-[1.1]">
+          <h2 className="text-4xl md:text-[44px] font-semibold text-white mb-6 tracking-tight leading-[1.1]">
             AI-Driven <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6843B7] to-[#8f81eb]">Defect Insights</span>
           </h2>
           <p className="text-lg text-zinc-400 font-light leading-relaxed mb-10">
@@ -60,8 +60,8 @@ export default function DefectInsights() {
                   <card.icon size={20} strokeWidth={1.5} />
                 </div>
                 <div>
-                  <h3 className="text-zinc-500 font-semibold text-[11px] uppercase tracking-wider mb-1">{card.title}</h3>
-                  <p className="text-white text-base font-bold">{card.value}</p>
+                  <h3 className="text-zinc-500 font medium text-[11px] uppercase tracking-wider mb-1">{card.title}</h3>
+                  <p className="text-white text-base font medium">{card.value}</p>
                 </div>
               </motion.div>
             ))}

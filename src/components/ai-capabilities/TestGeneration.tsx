@@ -31,7 +31,7 @@ export default function TestGeneration() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-4xl md:text-[44px] font-black text-white mb-6 tracking-tight leading-[1.1]">
+            <h2 className="text-4xl md:text-[44px] font-semibold text-white mb-6 tracking-tight leading-[1.1]">
               Automated <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6843B7] to-[#8f81eb]">Test Generation</span>
             </h2>
             <div className="space-y-6 text-lg text-zinc-400 font-light leading-relaxed">
@@ -59,7 +59,7 @@ export default function TestGeneration() {
             />
             
             <div className="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-black/80 to-transparent">
-              <div className="text-white font-bold text-xl mb-1">Transform Requirements</div>
+              <div className="text-white font medium text-xl mb-1">Transform Requirements</div>
               <div className="text-white/70 text-sm">Turn BRDs and Figma designs directly into executable validation scenarios instantly.</div>
             </div>
           </motion.div>

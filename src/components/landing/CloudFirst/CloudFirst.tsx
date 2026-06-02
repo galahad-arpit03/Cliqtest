@@ -16,16 +16,16 @@ export default function CloudFirst() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="text-4xl md:text-[44px] font-bold text-white mb-4 tracking-tight leading-[1.1]"
+            className="text-4xl md:text-[44px] font-semibold text-white mb-4 tracking-tight leading-[1.1]"
           >
-            <span className='text-[#6843B7] font-semibold'>cliQTest</span> Impact
+            <span className=' bg-gradient-to-r from-[#6843B7] to-[#9e7be9] bg-clip-text text-transparent font-semibold'>cliQTest</span> Impact
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.1 }}
-            className="text-white font-bold tracking-[0.2em] text-[11px] uppercase"
+            className="text-white font-semibold tracking-[0.2em] text-[11px] uppercase"
           >
             DRIVING THE FUTURE OF QA
           </motion.p>
@@ -52,12 +52,12 @@ export default function CloudFirst() {
               />
             </div>
             <div className="p-6 md:p-8 flex-1 flex flex-col justify-center">
-              <h3 className="text-[28px] font-bold text-white mb-1 leading-tight tracking-tight">12,000+</h3>
-              <h4 className="text-xl font-bold text-white mb-3 leading-tight tracking-tight">Test Runs</h4>
+              <h3 className="text-[28px] font medium text-white mb-1 leading-tight tracking-tight">12,000+</h3>
+              <h4 className="text-xl font medium text-white mb-3 leading-tight tracking-tight">Test Runs</h4>
               <p className="text-zinc-400 text-[13px] leading-relaxed mb-6">
                 Scale your quality engineering with a platform built for massive parallel execution and enterprise-grade reliability.
               </p>
-              <a href="#" className="text-[#00F2B0] font-bold text-[13px] hover:text-white transition-colors mt-auto">
+              <a href="#" className="text-[#00F2B0] font medium text-[13px] hover:text-white transition-colors mt-auto">
                 Learn More ...
               </a>
             </div>
@@ -76,11 +76,11 @@ export default function CloudFirst() {
               <div className="absolute inset-0 bg-gradient-to-tr from-black via-black/80 to-transparent z-10" />
             </div>
             <div className="p-6 md:p-8 flex-1 flex flex-col justify-center relative z-20">
-              <h4 className="text-xl font-bold text-white mb-3 leading-tight tracking-tight">50+ Enterprises</h4>
+              <h4 className="text-xl font medium text-white mb-3 leading-tight tracking-tight">50+ Enterprises</h4>
               <p className="text-zinc-400 text-[13px] leading-relaxed mb-6">
                 Trusted by global leaders to automate their most critical workflows and ensure seamless user experiences at scale.
               </p>
-              <a href="#" className="text-[#00F2B0] font-bold text-[13px] hover:text-white transition-colors mt-auto">
+              <a href="#" className="text-[#00F2B0] font medium text-[13px] hover:text-white transition-colors mt-auto">
                 Learn More ...
               </a>
             </div>
@@ -104,11 +104,11 @@ export default function CloudFirst() {
               />
             </div>
             <div className="p-6 md:p-8 flex-1 flex flex-col justify-center">
-              <h4 className="text-xl font-bold text-white mb-3 leading-tight tracking-tight">4+ Platform Support</h4>
+              <h4 className="text-xl font medium text-white mb-3 leading-tight tracking-tight">4+ Platform Support</h4>
               <p className="text-zinc-400 text-[13px] leading-relaxed mb-6">
                 Comprehensive coverage for Web, Mobile, API, and Desktop testing in one intelligent ecosystem.
               </p>
-              <a href="#" className="text-[#00F2B0] font-bold text-[13px] hover:text-white transition-colors mt-auto">
+              <a href="#" className="text-[#00F2B0] font medium text-[13px] hover:text-white transition-colors mt-auto">
                 Learn More ...
               </a>
             </div>
@@ -132,11 +132,11 @@ export default function CloudFirst() {
               />
             </div>
             <div className="p-6 md:p-8 flex-1 flex flex-col justify-center">
-              <h4 className="text-xl font-bold text-white mb-3 leading-tight tracking-tight">10,000+ Device Supports</h4>
+              <h4 className="text-xl font medium text-white mb-3 leading-tight tracking-tight">10,000+ Device Supports</h4>
               <p className="text-zinc-400 text-[13px] leading-relaxed mb-6">
                 Test on real devices and browsers to ensure perfection on every screen and operating system.
               </p>
-              <a href="#" className="text-[#00F2B0] font-bold text-[13px] hover:text-white transition-colors mt-auto">
+              <a href="#" className="text-[#00F2B0] font medium text-[13px] hover:text-white transition-colors mt-auto">
                 Learn More ...
               </a>
             </div>

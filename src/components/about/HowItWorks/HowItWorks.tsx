@@ -39,7 +39,7 @@ export default function HowItWorks() {
   return (
     <section className="bg-black py-16 px-8 border-t border-white/5">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-white text-center text-4xl md:text-[44px] font-bold tracking-tight mb-12 leading-[1.1]">
+        <h2 className="text-white text-center text-4xl md:text-[44px] font medium tracking-tight mb-12 leading-[1.1]">
           How cliQTest Works
         </h2>
 
@@ -56,7 +56,7 @@ export default function HowItWorks() {
 
               {/* Content Card (Dark Theme) */}
               <div className="bg-zinc-900/40 backdrop-blur-sm rounded-[32px] p-8 border border-white/5 hover:border-[#6843B7]/30 hover:bg-zinc-900/60 transition-all duration-500 flex-1 flex flex-col group">
-                <h3 className="text-white text-lg font-bold mb-3 leading-tight group-hover:text-[#6843B7] transition-colors">
+                <h3 className="text-white text-lg font medium mb-3 leading-tight group-hover:text-[#6843B7] transition-colors">
                   {step.title}
                 </h3>
                 <p className="text-zinc-400 text-sm leading-relaxed">

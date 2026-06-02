@@ -47,8 +47,8 @@ export default function SelfHealing() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="lg:col-span-6"
         >
-          <h2 className="text-4xl md:text-[44px] font-black text-white mb-8 tracking-tight leading-[1.1]">
-            Intelligent <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00F2B0] to-[#00d09c]">Self-Healing</span>
+          <h2 className="text-4xl md:text-[44px] font-semibold text-white mb-8 tracking-tight leading-[1.1]">
+            Intelligent <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6843B7] to-[#8f81eb]">Self-Healing</span>
           </h2>
           <div className="space-y-6 text-lg text-zinc-400 font-light leading-relaxed mb-10">
             <p>
@@ -59,7 +59,7 @@ export default function SelfHealing() {
             </p>
           </div>
           
-          <button className="px-10 py-4 bg-white/5 border border-white/10 text-white text-[15px] font-bold rounded-md hover:bg-white/10 transition-all">
+          <button className="px-10 py-4 bg-white/5 border border-white/10 text-white text-[15px] font medium rounded-sm hover:bg-white/10 transition-all">
             Reduce Maintenance
           </button>
         </motion.div>

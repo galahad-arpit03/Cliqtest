@@ -64,7 +64,7 @@ export default function BrowserTesting() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-white mb-8 leading-[1.1]">
+            <h2 className="text-4xl md:text-5xl font-semibold tracking-tight text-white mb-8 leading-[1.1]">
               Enterprise-Grade <br />
               Browser <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6843B7] to-[#8f81eb]">Compatibility</span>
             </h2>

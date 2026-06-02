@@ -18,7 +18,7 @@ export default function ProductHero() {
           <h4 className="text-zinc-500 text-[13px] font-black tracking-[0.3em] uppercase mb-10">
             GO BEYOND SIMPLE TASK AUTOMATION WITH THE
           </h4>
-          <h1 className="text-white text-5xl md:text-[72px] font-bold leading-[1] tracking-tight mb-8">
+          <h1 className="text-white text-5xl md:text-[72px] font medium leading-[1] tracking-tight mb-8">
             Functionize <br />
             Agentic Digital <br />
             Worker Platform

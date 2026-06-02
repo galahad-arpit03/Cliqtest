@@ -28,12 +28,12 @@ export default function CrossPlatform() {
           transition={{ duration: 0.8 }}
         >
           {/* <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-md mb-8">
-            <span className="text-white/80 text-xs font-bold tracking-[0.2em] uppercase">Cross Platform Testing</span>
+            <span className="text-white/80 text-xs font medium tracking-[0.2em] uppercase">Cross Platform Testing</span>
           </div> */}
           
-          <h2 className="text-4xl md:text-6xl font-black tracking-tight text-white mb-10 leading-[1.1] drop-shadow-xl">
+          <h2 className="text-4xl md:text-5xl font-semibold tracking-tight text-white mb-10 leading-[1.1] drop-shadow-xl">
             A Unified Ecosystem for <br className="hidden md:block"/>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6843B7] to-[#ffffff]">Every Application Layer</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6843B7] to-[#8f81eb]">Every Application Layer</span>
           </h2>
         </motion.div>
 
@@ -56,7 +56,7 @@ export default function CrossPlatform() {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="mt-16"
         >
-          <button className="px-12 py-5 bg-white text-black text-lg font-black tracking-wide rounded-md hover:bg-[#6843B7] hover:text-white transition-all shadow-[0_0_40px_rgba(255,255,255,0.2)] hover:shadow-[0_0_40px_rgba(104,67,183,0.5)] active:scale-95">
+          <button className="px-12 py-5 bg-white text-black text-lg font-black tracking-wide rounded-sm hover:bg-[#6843B7] hover:text-white transition-all shadow-[0_0_40px_rgba(255,255,255,0.2)] hover:shadow-[0_0_40px_rgba(104,67,183,0.5)] active:scale-95">
             Start Testing Today
           </button>
         </motion.div>

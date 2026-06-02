@@ -41,7 +41,7 @@ export default function RealDevices() {
                 <div className="w-10 h-10 rounded-full bg-[#6843B7]/20 flex items-center justify-center text-[#6843B7]">
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><path d="M12 18h.01"/></svg>
                 </div>
-                <div className="text-white font-bold text-lg">Real Insights</div>
+                <div className="text-white font medium text-lg">Real Insights</div>
               </div>
               <p className="text-white/60 text-sm font-medium leading-relaxed">
                 Identify device-specific issues early in the testing lifecycle.
@@ -58,7 +58,7 @@ export default function RealDevices() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-white mb-8 leading-[1.1]">
+            <h2 className="text-4xl md:text-5xl font-semibold tracking-tight text-white mb-8 leading-[1.1]">
               Reliable Insights into <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6843B7] to-[#8f81eb]">Real-World Usage</span>
             </h2>
@@ -78,11 +78,11 @@ export default function RealDevices() {
             <div className="mt-8 pt-8 border-t border-white/10 flex flex-wrap gap-12">
               <div>
                 <div className="text-4xl font-black text-white mb-2">10k+</div>
-                <div className="text-sm font-bold text-[#6843B7] uppercase tracking-wider">Device Combinations</div>
+                <div className="text-sm font medium text-[#6843B7] uppercase tracking-wider">Device Combinations</div>
               </div>
               <div>
                 <div className="text-4xl font-black text-white mb-2">100%</div>
-                <div className="text-sm font-bold text-[#6843B7] uppercase tracking-wider">Real Environments</div>
+                <div className="text-sm font medium text-[#6843B7] uppercase tracking-wider">Real Environments</div>
               </div>
             </div>
           </motion.div>

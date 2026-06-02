@@ -61,7 +61,7 @@ export default function KeyBenefits() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-black text-4xl md:text-[44px] font-bold tracking-tight mb-8 leading-[1.1]">
+            <h2 className="text-black text-4xl md:text-[44px] font medium tracking-tight mb-8 leading-[1.1]">
               Key <br />
               <span className="text-[#6843B7]">Benefits</span>
             </h2>
@@ -89,7 +89,7 @@ export default function KeyBenefits() {
                 </div>
                 
                 <div className="flex-1">
-                  <h3 className="text-2xl md:text-3xl font-bold text-black mb-4 tracking-tight group-hover:text-[#6843B7] transition-colors">
+                  <h3 className="text-2xl md:text-3xl font medium text-black mb-4 tracking-tight group-hover:text-[#6843B7] transition-colors">
                     {benefit.title}
                   </h3>
                   <p className="text-zinc-500 text-lg leading-relaxed max-w-2xl">
@@ -114,10 +114,10 @@ export default function KeyBenefits() {
             className="mt-20 p-10 rounded-[40px] bg-zinc-50 border border-zinc-100 flex flex-col md:flex-row items-center justify-between gap-8 group"
           >
             <div>
-              <h3 className="text-2xl font-bold text-black mb-2">Ready to accelerate?</h3>
+              <h3 className="text-2xl font medium text-black mb-2">Ready to accelerate?</h3>
               <p className="text-zinc-500">Join the elite teams building the future with cliQTest.</p>
             </div>
-            <button className="px-8 py-3 bg-black text-white text-[13px] font-bold rounded-md hover:bg-[#6843B7] transition-all shadow-xl active:scale-95">
+            <button className="px-8 py-3 bg-black text-white text-[13px] font medium rounded-sm hover:bg-[#6843B7] transition-all shadow-xl active:scale-95">
               Book a Demo
             </button>
           </motion.div>

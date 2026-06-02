@@ -11,7 +11,7 @@ export default function SuccessStoryForm() {
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
         {/* Left Side Content */}
         <div>
-          <h2 className="text-white text-5xl md:text-7xl font-bold mb-10 leading-[1.1]">
+          <h2 className="text-white text-5xl md:text-7xl font medium mb-10 leading-[1.1]">
             The Power of Agentic AI, <br />
             Your Success Story
           </h2>
@@ -25,29 +25,29 @@ export default function SuccessStoryForm() {
           <form className="space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="space-y-2">
-                <label className="text-[13px] font-bold text-zinc-500 uppercase tracking-wider">First name<span className="text-red-500">*</span></label>
+                <label className="text-[13px] font medium text-zinc-500 uppercase tracking-wider">First name<span className="text-red-500">*</span></label>
                 <input type="text" className="w-full bg-zinc-100 border-none rounded-md p-4 text-zinc-900 focus:ring-2 focus:ring-[#6843B7] outline-none" required />
               </div>
               <div className="space-y-2">
-                <label className="text-[13px] font-bold text-zinc-500 uppercase tracking-wider">Last name<span className="text-red-500">*</span></label>
+                <label className="text-[13px] font medium text-zinc-500 uppercase tracking-wider">Last name<span className="text-red-500">*</span></label>
                 <input type="text" className="w-full bg-zinc-100 border-none rounded-md p-4 text-zinc-900 focus:ring-2 focus:ring-[#6843B7] outline-none" required />
               </div>
             </div>
 
             <div className="space-y-2">
-              <label className="text-[13px] font-bold text-zinc-500 uppercase tracking-wider">Business Email<span className="text-red-500">*</span></label>
+              <label className="text-[13px] font medium text-zinc-500 uppercase tracking-wider">Business Email<span className="text-red-500">*</span></label>
               <input type="email" className="w-full bg-zinc-100 border-none rounded-md p-4 text-zinc-900 focus:ring-2 focus:ring-[#6843B7] outline-none" required />
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="space-y-2">
-                <label className="text-[13px] font-bold text-zinc-500 uppercase tracking-wider">Job Role<span className="text-red-500">*</span></label>
+                <label className="text-[13px] font medium text-zinc-500 uppercase tracking-wider">Job Role<span className="text-red-500">*</span></label>
                 <select className="w-full bg-zinc-100 border-none rounded-md p-4 text-zinc-900 focus:ring-2 focus:ring-[#6843B7] outline-none appearance-none" required>
                   <option value="">Please Select</option>
                 </select>
               </div>
               <div className="space-y-2">
-                <label className="text-[13px] font-bold text-zinc-500 uppercase tracking-wider">Company Revenue<span className="text-red-500">*</span></label>
+                <label className="text-[13px] font medium text-zinc-500 uppercase tracking-wider">Company Revenue<span className="text-red-500">*</span></label>
                 <select className="w-full bg-zinc-100 border-none rounded-md p-4 text-zinc-900 focus:ring-2 focus:ring-[#6843B7] outline-none appearance-none" required>
                   <option value="">Please Select</option>
                 </select>
@@ -55,7 +55,7 @@ export default function SuccessStoryForm() {
             </div>
 
             <div className="space-y-4">
-              <label className="text-[13px] font-bold text-zinc-500 uppercase tracking-wider block">
+              <label className="text-[13px] font medium text-zinc-500 uppercase tracking-wider block">
                 Which areas of your application landscape would benefit most from AI-based testing? (Select all that apply)<span className="text-red-500">*</span>
               </label>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -69,26 +69,26 @@ export default function SuccessStoryForm() {
             </div>
 
             <div className="space-y-2">
-              <label className="text-[13px] font-bold text-zinc-500 uppercase tracking-wider">Are you using any test automation tools today?<span className="text-red-500">*</span></label>
+              <label className="text-[13px] font medium text-zinc-500 uppercase tracking-wider">Are you using any test automation tools today?<span className="text-red-500">*</span></label>
               <select className="w-full bg-zinc-100 border-none rounded-md p-4 text-zinc-900 focus:ring-2 focus:ring-[#6843B7] outline-none appearance-none" required>
                 <option value="">Please Select</option>
               </select>
             </div>
 
             <div className="space-y-2">
-              <label className="text-[13px] font-bold text-zinc-500 uppercase tracking-wider">What is the size of your QA or testing team?<span className="text-red-500">*</span></label>
+              <label className="text-[13px] font medium text-zinc-500 uppercase tracking-wider">What is the size of your QA or testing team?<span className="text-red-500">*</span></label>
               <select className="w-full bg-zinc-100 border-none rounded-md p-4 text-zinc-900 focus:ring-2 focus:ring-[#6843B7] outline-none appearance-none" required>
                 <option value="">Please Select</option>
               </select>
             </div>
 
             <div className="space-y-2">
-              <label className="text-[13px] font-bold text-zinc-500 uppercase tracking-wider">What testing challenges are you hoping to solve with AI test automation?</label>
+              <label className="text-[13px] font medium text-zinc-500 uppercase tracking-wider">What testing challenges are you hoping to solve with AI test automation?</label>
               <textarea className="w-full bg-zinc-100 border-none rounded-md p-4 text-zinc-900 focus:ring-2 focus:ring-[#6843B7] outline-none min-h-[100px] resize-none" />
             </div>
 
             <div className="pt-4 flex justify-end">
-              <button type="submit" className="bg-[#6843B7] text-white font-bold py-4 px-12 rounded-md hover:bg-[#0091c7] transition-colors uppercase tracking-widest text-sm">
+              <button type="submit" className="bg-[#6843B7] text-white font medium py-4 px-12 rounded-sm hover:bg-[#0091c7] transition-colors uppercase tracking-widest text-sm">
                 Submit
               </button>
             </div>

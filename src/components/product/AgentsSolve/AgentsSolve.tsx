@@ -30,7 +30,7 @@ export default function AgentsSolve() {
   return (
     <section className="bg-black py-24 px-12">
       <div className="max-w-7xl mx-auto">
-        <h4 className="text-white text-center font-bold mb-16 text-sm uppercase tracking-widest">
+        <h4 className="text-white text-center font medium mb-16 text-sm uppercase tracking-widest">
           Agents solve
         </h4>
 
@@ -43,7 +43,7 @@ export default function AgentsSolve() {
               <div className="mb-8">
                 {item.icon}
               </div>
-              <h3 className="text-white text-3xl font-bold mb-6">{item.title}</h3>
+              <h3 className="text-white text-3xl font medium mb-6">{item.title}</h3>
               <p className="text-zinc-400 leading-relaxed text-lg">
                 {item.description}
               </p>

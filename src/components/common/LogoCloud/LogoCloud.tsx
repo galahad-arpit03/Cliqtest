@@ -9,10 +9,10 @@ export default function LogoCloud() {
     { name: "uponor", font: "font-sans lowercase" },
     { name: "banjo", font: "font-sans lowercase font-light" },
     { name: "norstella", font: "font-serif italic" },
-    { name: "Syneos", font: "font-sans font-bold" },
-    { name: "pwc", font: "font-serif font-bold lowercase" },
+    { name: "Syneos", font: "font-sans font medium" },
+    { name: "pwc", font: "font-serif font medium lowercase" },
     { name: "MARKEL", font: "font-sans uppercase font-black tracking-widest" },
-    { name: "GE HealthCare", font: "font-sans font-bold" },
+    { name: "GE HealthCare", font: "font-sans font medium" },
     { name: "alight", font: "font-sans lowercase" },
     { name: "MacArthur Foundation", font: "font-serif italic" }
   ];
@@ -20,7 +20,7 @@ export default function LogoCloud() {
   return (
     <section className="bg-white py-16 px-12 lg:px-24 border-y border-zinc-100">
       <div className="max-w-7xl mx-auto">
-        <h3 className="text-zinc-900 text-center text-xl md:text-2xl font-semibold mb-12 tracking-tight">
+        <h3 className="text-zinc-900 text-center text-xl md:text-2xl font medium mb-12 tracking-tight">
           Trusted by the World&apos;s Boldest Engineering Teams
         </h3>
         

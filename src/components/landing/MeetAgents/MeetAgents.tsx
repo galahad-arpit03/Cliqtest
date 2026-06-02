@@ -35,7 +35,7 @@ export default function MeetAgents() {
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
-        className="relative z-10 text-4xl md:text-[44px] font-bold text-white mb-16 tracking-tight leading-[1.1]"
+        className="relative z-10 text-4xl md:text-[44px] font-semibold text-white mb-16 tracking-tight leading-[1.1]"
       >
         Why Choose <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6843B7] to-[#8f81eb]"> cliQTest?</span>
       </motion.h2>
@@ -59,7 +59,7 @@ export default function MeetAgents() {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 0.8 }}
             transition={{ delay: 0.5 }}
-            className="absolute -bottom-8 lg:-bottom-10 text-white text-[10px] font-bold tracking-[0.3em] uppercase"
+            className="absolute -bottom-8 lg:-bottom-10 text-white text-[10px] font medium tracking-[0.3em] uppercase"
           >
             The cliQTest Advantage
           </motion.span>
@@ -89,13 +89,13 @@ export default function MeetAgents() {
                 {/* <div className="w-5 h-5 rounded-full bg-[#6843B7]/10 flex items-center justify-center text-[#6843B7]">
                   <span className="text-[10px]">✦</span>
                 </div> */}
-                <span className="text-black font-bold text-[14px] md:text-[16px] tracking-tight">{reason.name}</span>
+                <span className="text-black font medium text-[14px] md:text-[16px] tracking-tight">{reason.name}</span>
               </motion.div>
               <motion.p 
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{ delay: i * 0.1 + 0.3 }}
-                className="text-[#b6b3bb] text-xs md:text-sm font-semibold max-w-[220px] leading-snug drop-shadow-sm text-center"
+                className="text-[#b6b3bb] text-xs md:text-sm font medium max-w-[220px] leading-snug drop-shadow-sm text-center"
               >
                 {reason.desc}
               </motion.p>

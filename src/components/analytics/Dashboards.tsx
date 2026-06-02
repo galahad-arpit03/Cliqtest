@@ -20,7 +20,7 @@ export default function Dashboards() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-4xl md:text-[44px] font-black text-white mb-8 tracking-tight leading-[1.1]">
+            <h2 className="text-4xl md:text-[44px] font-semibold text-white mb-8 tracking-tight leading-[1.1]">
               Centralized, Real-Time <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6843B7] to-[#8f81eb]">Dashboards</span>
             </h2>
@@ -39,8 +39,8 @@ export default function Dashboards() {
                 { label: 'Trend Analysis', val: 'Historical' }
               ].map((stat, i) => (
                 <div key={i} className="flex flex-col gap-2 border-l-2 border-[#6843B7]/50 pl-4">
-                  <span className="text-white text-xl font-bold">{stat.val}</span>
-                  <span className="text-white/50 text-sm uppercase tracking-wider font-bold">{stat.label}</span>
+                  <span className="text-white text-xl font medium">{stat.val}</span>
+                  <span className="text-white/50 text-sm uppercase tracking-wider font medium">{stat.label}</span>
                 </div>
               ))}
             </div>
@@ -68,7 +68,7 @@ export default function Dashboards() {
               className="absolute bottom-6 left-6 p-6 rounded-md bg-[#00F2B0]/10 backdrop-blur-2xl border border-[#00F2B0]/20 shadow-[0_0_30px_rgba(0,242,176,0.15)] z-20"
             >
               <div className="text-[#00F2B0] font-black text-3xl mb-1">99.9%</div>
-              <div className="text-white/70 text-xs uppercase tracking-widest font-bold">Release Readiness</div>
+              <div className="text-white/70 text-xs uppercase tracking-widest font medium">Release Readiness</div>
             </motion.div>
           </motion.div>
         </div>

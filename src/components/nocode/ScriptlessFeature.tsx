@@ -64,7 +64,7 @@ export default function ScriptlessFeature() {
             className="order-1 lg:order-2"
           >
 
-            <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 tracking-tight">  </h2>
+            <h2 className="text-3xl md:text-5xl font medium text-white mb-6 tracking-tight">  </h2>
             <p className="text-white/60 text-[17px] leading-relaxed mb-6">
               Build scalable, enterprise-grade automation workflows without relying on complex programming languages or fragile custom frameworks.
             </p>

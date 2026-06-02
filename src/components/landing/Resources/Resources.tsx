@@ -58,10 +58,10 @@ export default function Resources() {
           transition={{ duration: 0.8 }}
           className="mb-12 text-center"
         >
-          <h2 className="text-4xl md:text-[44px] font-bold tracking-tight text-white mb-2 leading-[1.1]">
+          <h2 className="text-4xl md:text-[44px] font-semibold tracking-tight text-white mb-2 leading-[1.1]">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6843B7] to-[#8f81eb]">cliQTest</span> Impact
           </h2>
-          <p className="text-[#ffffff] text-sm font-bold uppercase tracking-[0.2em]">
+          <p className="text-[#ffffff] text-sm font-semibold uppercase tracking-[0.2em]">
             Driving the future of QA
           </p>
         </motion.div>
@@ -92,13 +92,13 @@ export default function Resources() {
 
             {/* Featured Text Content */}
             <div className="p-8 md:p-10 flex flex-col gap-4 flex-1 relative z-20">
-              <h3 className="text-3xl md:text-4xl font-bold text-white leading-tight tracking-tight group-hover:text-[#6843B7] transition-colors duration-300">
+              <h3 className="text-3xl md:text-4xl font medium text-white leading-tight tracking-tight group-hover:text-[#6843B7] transition-colors duration-300">
                 12,000+<br />Test Runs
               </h3>
               <p className="text-zinc-400 text-[15px] leading-relaxed font-medium flex-1">
                 Scale your quality engineering with a platform built for massive parallel execution and enterprise-grade reliability. Run thousands of tests simultaneously without compromising speed or accuracy.
               </p>
-              <div className="text-[#00F2B0] font-bold text-sm inline-flex items-center gap-2 group-hover:text-[#6843B7] transition-colors duration-300 mt-2">
+              <div className="text-[#00F2B0] font medium text-sm inline-flex items-center gap-2 group-hover:text-[#6843B7] transition-colors duration-300 mt-2">
                 Learn More <span className="group-hover:translate-x-1 transition-transform">→</span>
               </div>
             </div>
@@ -131,14 +131,14 @@ export default function Resources() {
                 {/* Card Text */}
                 <div className="flex-1 p-5 md:p-6 flex flex-col justify-center relative z-20">
                   <div>
-                    <h4 className="text-lg md:text-xl font-bold text-white mb-2 leading-snug tracking-tight group-hover:text-[#6843B7] transition-colors duration-300">
+                    <h4 className="text-lg md:text-xl font medium text-white mb-2 leading-snug tracking-tight group-hover:text-[#6843B7] transition-colors duration-300">
                       {card.title}
                     </h4>
                     <p className="text-zinc-400 text-[13px] md:text-[14px] font-medium leading-relaxed line-clamp-3">
                       {card.desc}
                     </p>
                   </div>
-                  <div className="text-[#00F2B0] font-bold text-xs md:text-sm mt-3 inline-flex items-center gap-1 group-hover:text-[#6843B7] transition-colors duration-300">
+                  <div className="text-[#00F2B0] font medium text-xs md:text-sm mt-3 inline-flex items-center gap-1 group-hover:text-[#6843B7] transition-colors duration-300">
                     Learn More <span className="group-hover:translate-x-1 transition-transform">→</span>
                   </div>
                 </div>

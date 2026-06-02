@@ -28,7 +28,7 @@ export default function Platform() {
         transition={{ duration: 0.8, ease: "easeOut" }}
         className="relative z-10"
       >
-        <h2 className="text-4xl md:text-[44px] font-bold text-white mb-6 tracking-tight leading-[1.1]">
+        <h2 className="text-4xl md:text-[44px] font-semibold text-white mb-6 tracking-tight leading-[1.1]">
           The <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6843B7] to-[#8f81eb]">cliQTest</span> Agentic Platform
         </h2>
         
@@ -38,7 +38,7 @@ export default function Platform() {
 
         <div className="w-full max-w-7xl mx-auto">
           <p className="text-zinc-300 text-lg md:text-xl leading-relaxed font-light">
-            cliQTest is the first <span className="text-white font-bold">AI-native testing platform </span> powered by specialized agents that think, adapt, and act. 
+            cliQTest is the first <span className="text-white font-semibold">AI-native testing platform </span> powered by specialized agents that think, adapt, and act. 
             These aren&apos;t scripts or plug-ins, they are intelligent systems built to eliminate the grind of test creation and maintenance, 
             so engineering teams can finally move at the speed of innovation.
           </p>

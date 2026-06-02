@@ -30,7 +30,7 @@ export default function NotFound() {
           <motion.button
             whileHover={{ scale: 1.05, boxShadow: "0 0 30px rgba(104,67,183,0.3)" }}
             whileTap={{ scale: 0.95 }}
-            className="px-10 py-4 rounded-md bg-[#6843B7] text-white font-bold text-[14px] hover:bg-[#6843B7] transition-all shadow-[0_0_20px_rgba(104,67,183,0.2)] uppercase tracking-wider"
+            className="px-10 py-4 rounded-md bg-[#6843B7] text-white font medium text-[14px] hover:bg-[#6843B7] transition-all shadow-[0_0_20px_rgba(104,67,183,0.2)] uppercase tracking-wider"
           >
             Return Home
           </motion.button>
