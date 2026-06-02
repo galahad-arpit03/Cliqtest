@@ -38,13 +38,12 @@ export default function Hero() {
       {/* Top Gradient Overlay for Navbar Legibility */}
       <div className="absolute top-0 left-0 w-full h-40 bg-gradient-to-b from-black/80 to-transparent z-10 pointer-events-none" />
       
-      {/* Background Video Layer */}
       <motion.div 
         style={{ y }}
         initial={{ opacity: 0 }}
-        animate={{ opacity: 0.6 }}
+        animate={{ opacity: 1 }}
         transition={{ duration: 2 }}
-        className="absolute top-0 right-0 h-full w-full md:w-[50%] lg:w-[70%] z-0 pointer-events-none overflow-hidden"
+        className="absolute inset-0 w-full h-full z-0"
       >
         <video
           ref={videoRef}
@@ -53,13 +52,13 @@ export default function Hero() {
           muted
           playsInline
           aria-label="cliQTest AI-powered automated testing platform visualization"
-          className="w-full h-full object-cover md:object-contain object-center md:object-right md:opacity-100 scale-150 md:scale-120 transition-all duration-700"
+          className="w-full h-full object-cover object-center"
         >
           <source src="/landing page/brain.mp4" type="video/mp4" />
         </video>
-        {/* Gradients to blend video better */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black md:hidden" />
-        <div className="absolute inset-0 bg-gradient-to-l from-transparent via-black/20 to-black" />
+        {/* Dark overlays matching other pages */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#050505]/95 via-[#050505]/80 to-[#050505]/30 pointer-events-none" />
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#050505] to-transparent pointer-events-none" />
       </motion.div>
 
       {/* Main Container */}
@@ -94,7 +93,7 @@ export default function Hero() {
           <motion.button 
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="flex-1 sm:flex-none w-full sm:w-auto px-4 sm:px-8 py-3 rounded-md bg-[#6843B7] text-white font-semibold text-[12px] sm:text-[13px] hover:bg-[#6843B7] transition-all whitespace-nowrap"
+            className="flex-1 sm:flex-none w-full sm:w-auto px-4 sm:px-8 py-3 rounded-sm bg-[#6843B7] text-white font-semibold text-[12px] sm:text-[13px] hover:bg-[#6843B7] transition-all whitespace-nowrap"
           >
             Book Demo
           </motion.button>

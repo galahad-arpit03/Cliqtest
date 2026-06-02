@@ -35,7 +35,8 @@ export default function TestManagementHero() {
       </motion.div>
 
       <div className="relative z-10 w-full max-w-7xl mx-auto px-8 flex flex-col items-center md:items-start justify-center text-center md:text-left">
-        <motion.h1
+        <span className="text-[#6843B7] text-[10px] md:text-sm font-semibold uppercase tracking-[0.3em] mb-4 block md:hidden">Centralize Quality. Orchestrate Everything</span>
+          <motion.h1
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
@@ -62,10 +63,10 @@ export default function TestManagementHero() {
           transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
           className="mt-12 flex flex-row w-full sm:w-auto gap-3 sm:gap-6"
         >
-          <button className="flex-1 sm:flex-none px-4 sm:px-10 py-3.5 sm:py-4 bg-[#6843B7] text-white text-[12px] sm:text-[15px] font medium rounded-sm shadow-[0_0_40px_rgba(104,67,183,0.5)] hover:scale-105 active:scale-95 transition-all whitespace-nowrap">
+          <button className="flex-1 sm:flex-none px-4 sm:px-10 py-3.5 sm:py-4 bg-[#6843B7] text-white text-[12px] sm:text-[15px] font medium rounded-full shadow-[0_0_40px_rgba(104,67,183,0.5)] hover:scale-105 active:scale-95 transition-all whitespace-nowrap">
             Manage Testing
           </button>
-          <button className="flex-1 sm:flex-none px-4 sm:px-10 py-3.5 sm:py-4 bg-white/5 backdrop-blur-md border border-white/10 text-white text-[12px] sm:text-[15px] font medium rounded-sm hover:bg-white/10 hover:border-white/30 transition-all active:scale-95 whitespace-nowrap">
+          <button className="flex-1 sm:flex-none px-4 sm:px-10 py-3.5 sm:py-4 bg-white/5 backdrop-blur-md border border-white/10 text-white text-[12px] sm:text-[15px] font medium rounded-full hover:bg-white/10 hover:border-white/30 transition-all active:scale-95 whitespace-nowrap">
             View Features
           </button>
         </motion.div>

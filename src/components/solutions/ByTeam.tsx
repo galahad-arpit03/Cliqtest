@@ -97,7 +97,7 @@ export default function ByTeam() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <a href="#qa-teams" className="inline-flex items-center gap-2 px-8 py-3 bg-[#6843B7] text-white font medium rounded-sm hover:bg-[#6843B7]/90 transition-all shadow-[0_0_20px_rgba(104,67,183,0.3)]">
+              <a href="#qa-teams" className="inline-flex items-center gap-2 px-8 py-3 bg-[#6843B7] text-white font medium rounded-full hover:bg-[#6843B7]/90 transition-all shadow-[0_0_20px_rgba(104,67,183,0.3)]">
                 Explore
               </a>
             </motion.div>
@@ -234,7 +234,7 @@ export default function ByTeam() {
                   </div>
                 </div>
                 
-                <Link href="/nocode" className="inline-flex items-center gap-2 px-6 py-3 bg-white text-black font medium rounded-sm hover:bg-white/90 transition-colors text-sm w-fit mt-auto">
+                <Link href="/nocode" className="inline-flex items-center gap-2 px-6 py-3 bg-white text-black font medium rounded-full hover:bg-white/90 transition-colors text-sm w-fit mt-auto">
                   Explore Test Automation →
                 </Link>
               </div>
@@ -487,10 +487,10 @@ export default function ByTeam() {
             Contact us to see how cliQTest can seamlessly integrate into your team&apos;s workflow and scale your testing infrastructure.
           </p>
           <div className="flex flex-row flex-wrap items-center justify-start sm:justify-center gap-3 sm:gap-4">
-            <Link href="/book-a-demo" className="flex-1 sm:flex-none text-center px-4 sm:px-8 py-3 bg-[#6843B7] text-white font medium rounded-sm hover:scale-105 active:scale-95 transition-all shadow-[0_0_20px_rgba(104,67,183,0.4)] text-[13px] sm:text-base whitespace-nowrap">
+            <Link href="/book-a-demo" className="flex-1 sm:flex-none text-center px-4 sm:px-8 py-3 bg-[#6843B7] text-white font medium rounded-full hover:scale-105 active:scale-95 transition-all shadow-[0_0_20px_rgba(104,67,183,0.4)] text-[13px] sm:text-base whitespace-nowrap">
               Book a Demo
             </Link>
-            <Link href="/pricing" className="flex-1 sm:flex-none text-center px-4 sm:px-8 py-3 border border-white/20 text-white font medium rounded-sm hover:bg-white/5 transition-colors text-[13px] sm:text-base whitespace-nowrap">
+            <Link href="/pricing" className="flex-1 sm:flex-none text-center px-4 sm:px-8 py-3 border border-white/20 text-white font medium rounded-full hover:bg-white/5 transition-colors text-[13px] sm:text-base whitespace-nowrap">
               View Pricing
             </Link>
           </div>

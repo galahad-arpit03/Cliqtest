@@ -56,7 +56,7 @@ export default function CrossPlatform() {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="mt-16"
         >
-          <button className="px-12 py-5 bg-white text-black text-lg font-black tracking-wide rounded-sm hover:bg-[#6843B7] hover:text-white transition-all shadow-[0_0_40px_rgba(255,255,255,0.2)] hover:shadow-[0_0_40px_rgba(104,67,183,0.5)] active:scale-95">
+          <button className="px-12 py-5 bg-white text-black text-lg font-black tracking-wide rounded-full hover:bg-[#6843B7] hover:text-white transition-all shadow-[0_0_40px_rgba(255,255,255,0.2)] hover:shadow-[0_0_40px_rgba(104,67,183,0.5)] active:scale-95">
             Start Testing Today
           </button>
         </motion.div>

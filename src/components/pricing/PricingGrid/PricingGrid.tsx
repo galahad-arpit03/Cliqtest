@@ -131,7 +131,7 @@ export default function PricingGrid() {
                 ))}
               </ul>
 
-              <button className={`w-full py-3.5 rounded-sm font-semibold text-[14px] transition-all ${
+              <button className={`w-full py-3.5 rounded-full font-semibold text-[14px] transition-all ${
                 tier.highlighted 
                 ? 'bg-[#6843B7] text-white hover:bg-[#6843B7]/90 shadow-[0_0_20px_rgba(104,67,183,0.3)]' 
                 : 'bg-white/5 text-white hover:bg-white/10 border border-white/10'

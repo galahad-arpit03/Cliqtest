@@ -68,7 +68,7 @@ export default function ByIndustry() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <a href="#fintech" className="inline-flex items-center gap-2 px-8 py-3 bg-[#6843B7] text-white font medium rounded-sm hover:bg-[#6843B7]/90 transition-all shadow-[0_0_20px_rgba(104,67,183,0.3)]">
+              <a href="#fintech" className="inline-flex items-center gap-2 px-8 py-3 bg-[#6843B7] text-white font medium rounded-full hover:bg-[#6843B7]/90 transition-all shadow-[0_0_20px_rgba(104,67,183,0.3)]">
                 Explore
               </a>
             </motion.div>

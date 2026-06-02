@@ -30,6 +30,7 @@ export default function AboutHero() {
           className="max-w-4xl"
         >
           
+          <span className="text-[#6843B7] text-[10px] md:text-sm font-semibold uppercase tracking-[0.3em] mb-4 block md:hidden">What is cliQTest?</span>
           <h1 className="text-white text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 leading-[1.1]">
             What is <br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6843B7] to-[#ffffff]">cliQTest?</span>
           </h1>
@@ -43,7 +44,7 @@ export default function AboutHero() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
-            <button className="px-8 py-4 bg-[#6843B7] text-white font-semibold rounded-sm hover:bg-[#6843B7]/90 transition-all shadow-[0_0_20px_rgba(104,67,183,0.3)] text-[14px]">
+            <button className="px-8 py-4 bg-[#6843B7] text-white font-semibold rounded-full hover:bg-[#6843B7]/90 transition-all shadow-[0_0_20px_rgba(104,67,183,0.3)] text-[14px]">
               Explore Platform
             </button>
           </div>

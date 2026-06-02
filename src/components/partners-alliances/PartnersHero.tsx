@@ -28,7 +28,7 @@ export default function PartnersHero() {
           transition={{ duration: 0.8 }}
           className="max-w-4xl"
         >
-          <span className="text-[#6843B7] text-sm font-semibold uppercase tracking-[0.3em] mb-4 block">Partners & Alliances</span>
+          <span className="text-[#6843B7] text-[10px] md:text-sm font-semibold uppercase tracking-[0.3em] mb-4 block md:hidden">Partners & Alliances</span>
           
           <h1 className="text-white text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 leading-[1.1]">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6843B7] to-[#ffffff]">Partners & Alliances</span>

@@ -88,7 +88,7 @@ export default function SuccessStoryForm() {
             </div>
 
             <div className="pt-4 flex justify-end">
-              <button type="submit" className="bg-[#6843B7] text-white font medium py-4 px-12 rounded-sm hover:bg-[#0091c7] transition-colors uppercase tracking-widest text-sm">
+              <button type="submit" className="bg-[#6843B7] text-white font medium py-4 px-12 rounded-full hover:bg-[#0091c7] transition-colors uppercase tracking-widest text-sm">
                 Submit
               </button>
             </div>
