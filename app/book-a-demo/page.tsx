@@ -5,8 +5,8 @@ import { ChevronLeft, ChevronRight, CheckCircle2 } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export default function BookADemoPage() {
-  const [selectedDate, setSelectedDate] = useState<Date | null>(new Date(2026, 4, 13));
-  const [viewDate, setViewDate] = useState(new Date(2026, 4, 1));
+  const [selectedDate, setSelectedDate] = useState<Date | null>(new Date());
+  const [viewDate, setViewDate] = useState(new Date(new Date().getFullYear(), new Date().getMonth(), 1));
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
@@ -32,10 +32,16 @@ export default function BookADemoPage() {
   };
 
   const isAvailable = (date: Date) => {
-    if (currentYear === 2026 && currentMonth === 4) {
-      return date.getDate() >= 13;
-    }
-    return true;
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    return date >= today;
+  };
+
+  const isToday = (date: Date) => {
+    const today = new Date();
+    return date.getDate() === today.getDate() && 
+           date.getMonth() === today.getMonth() && 
+           date.getFullYear() === today.getFullYear();
   };
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -49,12 +55,12 @@ export default function BookADemoPage() {
   ];
 
   return (
-    <main className="min-h-screen bg-black pt-32 md:pt-40 pb-20 px-6 md:px-12 lg:px-24 relative overflow-hidden">
+    <main className="min-h-screen bg-[#050505] pt-32 md:pt-40 pb-20 px-6 md:px-12 lg:px-24 relative overflow-hidden">
       
       {/* Dynamic Background Gradients */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none z-0">
-        <div className="absolute top-[10%] left-[-10%] w-[60%] h-[60%] bg-blue-600/10 blur-[160px] rounded-full" />
-        <div className="absolute bottom-[10%] right-[-10%] w-[60%] h-[60%] bg-cyan-400/10 blur-[160px] rounded-full" />
+        <div className="absolute top-[10%] left-[-10%] w-[60%] h-[60%] bg-[#6843B7]/10 blur-[160px] rounded-full" />
+        <div className="absolute bottom-[10%] right-[-10%] w-[60%] h-[60%] bg-[#00F2B0]/5 blur-[160px] rounded-full" />
       </div>
 
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-20 relative z-10">
@@ -67,10 +73,10 @@ export default function BookADemoPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <span className="text-[#6843B7] text-sm font-black uppercase tracking-[0.3em] mb-6 block">Personalized Demo</span>
-            <h1 className="text-white text-5xl md:text-6xl font-black tracking-tight mb-8 leading-[1.1]">
+            <span className="text-[#6843B7] text-sm font-semibold uppercase tracking-[0.3em] mb-6 block">Personalized Demo</span>
+            <h1 className="text-white text-5xl md:text-6xl font-bold tracking-tight mb-8 leading-[1.1]">
               See the <br />
-              <span className="text-white/40">Future of</span><br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6843B7] to-[#8f81eb]">Future of</span><br />
               Testing
             </h1>
             
@@ -83,8 +89,8 @@ export default function BookADemoPage() {
                 <div key={i} className="flex gap-4 items-start group">
                   <div className="w-1.5 h-1.5 rounded-full bg-[#6843B7] mt-2.5 group-hover:scale-150 transition-transform" />
                   <div>
-                    <h4 className="text-white font medium text-lg mb-1">{item.title}</h4>
-                    <p className="text-zinc-500 text-sm leading-relaxed">{item.desc}</p>
+                    <h4 className="text-white font-semibold text-lg mb-1">{item.title}</h4>
+                    <p className="text-white/60 text-sm leading-relaxed">{item.desc}</p>
                   </div>
                 </div>
               ))}
@@ -100,40 +106,42 @@ export default function BookADemoPage() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="bg-zinc-900/40 backdrop-blur-3xl border border-white/5 rounded-md p-8 md:p-12 shadow-2xl"
+              className="bg-[#0A0A0A] border border-white/10 rounded-md p-8 md:p-12 shadow-2xl"
             >
               <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
                 
                 {/* Calendar Column */}
                 <div>
-                  <h3 className="text-white text-xl font medium mb-10 flex items-center gap-3">
-                    <span className="w-8 h-8 rounded-full bg-blue-500/10 flex items-center justify-center text-blue-500 text-sm">1</span>
+                  <h3 className="text-white text-xl font-semibold mb-10 flex items-center gap-3">
+                    <span className="w-8 h-8 rounded-sm bg-[#6843B7]/20 flex items-center justify-center text-[#6843B7] text-sm">1</span>
                     Select a Date
                   </h3>
                   
                   <div className="flex items-center justify-between mb-8">
                     <button onClick={handlePrevMonth} className="p-2 hover:bg-white/5 rounded-md transition-colors"><ChevronLeft size={18} className="text-white/60" /></button>
-                    <h4 className="text-white text-sm font-black uppercase tracking-widest">{monthNames[currentMonth]} {currentYear}</h4>
+                    <h4 className="text-white text-sm font-bold uppercase tracking-widest">{monthNames[currentMonth]} {currentYear}</h4>
                     <button onClick={handleNextMonth} className="p-2 hover:bg-white/5 rounded-md transition-colors"><ChevronRight size={18} className="text-white/60" /></button>
                   </div>
 
                   <div className="grid grid-cols-7 gap-2 mb-4">
                     {days.map(day => (
-                      <div key={day} className="text-zinc-600 text-[10px] font-black uppercase text-center mb-2">{day[0]}</div>
+                      <div key={day} className="text-white/40 text-[10px] font-bold uppercase text-center mb-2">{day[0]}</div>
                     ))}
                     {calendarDates.map((date, i) => (
                       <button 
                         key={i}
                         disabled={!date}
                         onClick={() => date && setSelectedDate(date)}
-                        className={`aspect-square rounded-md flex items-center justify-center text-xs font medium transition-all ${
+                        className={`aspect-square rounded-sm flex items-center justify-center text-xs font-semibold transition-all ${
                           !date ? 'invisible' : ''
                         } ${
                           date && isSelected(date) 
                           ? 'bg-[#6843B7] text-white shadow-lg shadow-[#6843B7]/20 scale-110' 
-                          : date && isAvailable(date)
-                            ? 'text-white hover:bg-white/10'
-                            : 'text-zinc-700 pointer-events-none'
+                          : date && isToday(date)
+                            ? 'border border-[#6843B7] text-[#6843B7] bg-[#6843B7]/10'
+                            : date && isAvailable(date)
+                              ? 'text-white hover:bg-white/10'
+                              : 'text-zinc-700 pointer-events-none'
                         }`}
                       >
                         {date?.getDate()}
@@ -144,30 +152,30 @@ export default function BookADemoPage() {
 
                 {/* Form Column */}
                 <form onSubmit={handleSubmit} className="space-y-6">
-                  <h3 className="text-white text-xl font medium mb-4 flex items-center gap-3">
-                    <span className="w-8 h-8 rounded-full bg-blue-500/10 flex items-center justify-center text-blue-500 text-sm">2</span>
+                  <h3 className="text-white text-xl font-semibold mb-4 flex items-center gap-3">
+                    <span className="w-8 h-8 rounded-sm bg-[#6843B7]/20 flex items-center justify-center text-[#6843B7] text-sm">2</span>
                     Your Details
                   </h3>
 
                   <div className="grid grid-cols-2 gap-4">
                     <div className="space-y-2">
-                      <label className="text-zinc-500 text-[10px] font-black uppercase tracking-widest">First Name</label>
-                      <input required type="text" className="w-full bg-black/40 border border-white/5 rounded-md px-4 py-3 text-sm text-white focus:border-[#6843B7] outline-none transition-all" />
+                      <label className="text-white/60 text-[10px] font-bold uppercase tracking-widest">First Name</label>
+                      <input required type="text" className="w-full bg-[#050505] border border-white/10 rounded-sm px-4 py-3 text-sm text-white focus:border-[#6843B7] outline-none transition-all" />
                     </div>
                     <div className="space-y-2">
-                      <label className="text-zinc-500 text-[10px] font-black uppercase tracking-widest">Last Name</label>
-                      <input required type="text" className="w-full bg-black/40 border border-white/5 rounded-md px-4 py-3 text-sm text-white focus:border-[#6843B7] outline-none transition-all" />
+                      <label className="text-white/60 text-[10px] font-bold uppercase tracking-widest">Last Name</label>
+                      <input required type="text" className="w-full bg-[#050505] border border-white/10 rounded-sm px-4 py-3 text-sm text-white focus:border-[#6843B7] outline-none transition-all" />
                     </div>
                   </div>
 
                   <div className="space-y-2">
-                    <label className="text-zinc-500 text-[10px] font-black uppercase tracking-widest">Work Email</label>
-                    <input required type="email" className="w-full bg-black/40 border border-white/5 rounded-md px-4 py-3 text-sm text-white focus:border-[#6843B7] outline-none transition-all" />
+                    <label className="text-white/60 text-[10px] font-bold uppercase tracking-widest">Work Email</label>
+                    <input required type="email" className="w-full bg-[#050505] border border-white/10 rounded-sm px-4 py-3 text-sm text-white focus:border-[#6843B7] outline-none transition-all" />
                   </div>
 
                   <div className="space-y-2">
-                    <label className="text-zinc-500 text-[10px] font-black uppercase tracking-widest">Meeting Time</label>
-                    <select required className="w-full bg-black/40 border border-white/5 rounded-md px-4 py-3 text-sm text-white focus:border-[#6843B7] outline-none appearance-none transition-all">
+                    <label className="text-white/60 text-[10px] font-bold uppercase tracking-widest">Meeting Time</label>
+                    <select required className="w-full bg-[#050505] border border-white/10 rounded-sm px-4 py-3 text-sm text-white focus:border-[#6843B7] outline-none appearance-none transition-all">
                       <option value="">Select a slot</option>
                       <option value="10:00">10:00 AM — 10:30 AM</option>
                       <option value="14:00">02:00 PM — 02:30 PM</option>
@@ -175,7 +183,7 @@ export default function BookADemoPage() {
                     </select>
                   </div>
 
-                  <button type="submit" className="w-full py-4 bg-[#6843B7] text-white font-black rounded-md hover:bg-[#6843B7] transition-all shadow-xl shadow-[#6843B7]/20 uppercase tracking-widest text-xs mt-4 active:scale-95">
+                  <button type="submit" className="w-full py-4 bg-[#6843B7] text-white font-semibold rounded-sm hover:bg-[#6843B7]/90 transition-all shadow-[0_0_20px_rgba(104,67,183,0.3)] text-[14px] mt-4 active:scale-95">
                     Confirm Booking
                   </button>
                 </form>
@@ -185,18 +193,18 @@ export default function BookADemoPage() {
             <motion.div 
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
-              className="bg-zinc-900/40 backdrop-blur-3xl border border-white/5 rounded-[48px] p-20 text-center"
+              className="bg-[#0A0A0A] border border-white/10 rounded-md p-16 md:p-20 text-center shadow-[0_0_40px_rgba(104,67,183,0.15)]"
             >
-              <div className="w-20 h-20 bg-blue-500/10 rounded-full flex items-center justify-center mx-auto mb-8">
+              <div className="w-20 h-20 bg-[#6843B7]/20 rounded-full flex items-center justify-center mx-auto mb-8 shadow-[0_0_20px_rgba(104,67,183,0.2)]">
                 <CheckCircle2 size={40} className="text-[#6843B7]" />
               </div>
-              <h2 className="text-3xl font-black text-white mb-4 tracking-tight">Demo Scheduled!</h2>
-              <p className="text-zinc-400 max-w-sm mx-auto mb-10 leading-relaxed">
+              <h2 className="text-3xl font-bold text-white mb-4 tracking-tight">Demo Scheduled!</h2>
+              <p className="text-white/60 max-w-sm mx-auto mb-10 leading-relaxed">
                 Check your inbox for the calendar invite and meeting link. We can&apos;t wait to show you cliQTest.
               </p>
               <button 
                 onClick={() => setIsSubmitted(false)}
-                className="px-8 py-3 border border-white/10 text-white text-xs font-black uppercase tracking-widest rounded-md hover:bg-white/5 transition-all"
+                className="px-8 py-3 border border-white/20 text-white text-[14px] font-semibold rounded-sm hover:bg-white/5 transition-all"
               >
                 Schedule Another
               </button>

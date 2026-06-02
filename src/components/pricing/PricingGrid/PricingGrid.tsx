@@ -65,11 +65,11 @@ export default function PricingGrid() {
   ];
 
   return (
-    <section className="bg-black py-16 px-8 relative overflow-hidden">
+    <section className="bg-[#050505] py-24 px-8 relative overflow-hidden">
       {/* Background Decor */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none z-0">
-        <div className="absolute top-[20%] right-[-10%] w-[50%] h-[50%] bg-blue-600/10 blur-[150px] rounded-full" />
-        <div className="absolute bottom-[20%] left-[-10%] w-[50%] h-[50%] bg-purple-600/10 blur-[150px] rounded-full" />
+        <div className="absolute top-[20%] right-[-10%] w-[50%] h-[50%] bg-[#6843B7]/10 blur-[150px] rounded-full" />
+        <div className="absolute bottom-[20%] left-[-10%] w-[50%] h-[50%] bg-[#00F2B0]/5 blur-[150px] rounded-full" />
       </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
@@ -77,11 +77,11 @@ export default function PricingGrid() {
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-12"
+          className="text-center mb-16"
         >
-          <span className="text-[#6843B7] text-sm font-black uppercase tracking-[0.3em] mb-4 block">Pricing Plans</span>
-          <h2 className="text-white text-4xl md:text-[44px] font medium tracking-tight mb-6 leading-[1.1]">
-            Scalable Solutions for Modern Teams
+          <span className="text-[#6843B7] text-sm font-semibold uppercase tracking-[0.3em] mb-4 block">Pricing Plans</span>
+          <h2 className="text-white text-4xl md:text-5xl font-bold tracking-tight mb-6 leading-[1.1]">
+            Scalable Solutions for <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6843B7] to-[#8f81eb]">Modern Teams</span>
           </h2>
           <div className="w-24 h-1.5 bg-[#6843B7] mx-auto rounded-full" />
         </motion.div>
@@ -94,46 +94,46 @@ export default function PricingGrid() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1, duration: 0.6 }}
-              className={`relative p-8 rounded-md border transition-all duration-500 group flex flex-col h-full ${
+              className={`relative p-8 rounded-md transition-all duration-500 group flex flex-col h-full ${
                 tier.highlighted 
-                ? 'bg-zinc-900 border-purple-500/50 shadow-[0_20px_50px_rgba(145,91,255,0.1)]' 
-                : 'bg-zinc-900/40 border-white/5 hover:border-white/20 hover:bg-zinc-900/60'
+                ? 'bg-[#0A0A0A] border-2 border-[#6843B7] shadow-[0_0_40px_rgba(104,67,183,0.15)]' 
+                : 'bg-[#0A0A0A] border border-white/10 hover:border-white/20 hover:bg-[#0C0C0C]'
               }`}
             >
               {tier.highlighted && (
-                <span className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-purple-500 text-white text-[10px] font-black uppercase tracking-widest rounded-full">
+                <span className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-[#6843B7] text-white text-[10px] font-bold uppercase tracking-widest rounded-full shadow-[0_0_15px_rgba(104,67,183,0.4)] whitespace-nowrap">
                   Most Popular
                 </span>
               )}
 
               <div className="mb-8">
-                <h3 className={`text-2xl font-black mb-2 ${tier.highlighted ? 'text-purple-400' : 'text-white'}`}>
+                <h3 className={`text-2xl font-bold mb-2 ${tier.highlighted ? 'text-transparent bg-clip-text bg-gradient-to-r from-[#6843B7] to-[#8f81eb]' : 'text-white'}`}>
                   {tier.name}
                 </h3>
-                <p className="text-zinc-500 text-xs font-medium leading-relaxed min-h-[40px]">
+                <p className="text-white/60 text-xs font-medium leading-relaxed min-h-[40px]">
                   {tier.tagline}
                 </p>
                 <div className="mt-6 flex items-baseline gap-1">
-                  <span className="text-3xl font-black text-white">Contact Us</span>
+                  <span className="text-3xl font-bold text-white">Contact Us</span>
                 </div>
               </div>
 
               <ul className="space-y-4 mb-10 flex-1">
-                {tier.features.slice(0, 6).map((feature, fIdx) => (
+                {tier.features.map((feature, fIdx) => (
                   <li key={fIdx} className="flex gap-3 items-start group/feat">
-                    <div className={`mt-1 flex-shrink-0 w-4 h-4 rounded-full flex items-center justify-center ${tier.highlighted ? 'bg-purple-500/20' : 'bg-white/10'}`}>
-                      <Check size={10} className="text-white" strokeWidth={3} />
+                    <div className={`mt-1 flex-shrink-0 w-4 h-4 rounded-full flex items-center justify-center ${tier.highlighted ? 'bg-[#6843B7]/20' : 'bg-white/10'}`}>
+                      <Check size={10} className={tier.highlighted ? "text-[#6843B7]" : "text-white/70"} strokeWidth={3} />
                     </div>
-                    <span className="text-zinc-400 text-[13px] leading-snug group-hover/feat:text-white transition-colors">
+                    <span className="text-white/70 text-[13px] leading-snug group-hover/feat:text-white transition-colors">
                       {feature}
                     </span>
                   </li>
                 ))}
               </ul>
 
-              <button className={`w-full py-3.5 rounded-sm font medium text-[11px] tracking-widest uppercase transition-all ${
+              <button className={`w-full py-3.5 rounded-sm font-semibold text-[14px] transition-all ${
                 tier.highlighted 
-                ? 'bg-purple-500 text-white hover:bg-purple-600 shadow-lg shadow-purple-500/20' 
+                ? 'bg-[#6843B7] text-white hover:bg-[#6843B7]/90 shadow-[0_0_20px_rgba(104,67,183,0.3)]' 
                 : 'bg-white/5 text-white hover:bg-white/10 border border-white/10'
               }`}>
                 Get Started
