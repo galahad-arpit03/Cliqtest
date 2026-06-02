@@ -260,6 +260,18 @@ const menuItems = [
           features: [
             { label: "Delivery & Support", desc: "24/7 global support and operations." }
           ]
+        },
+        {
+          id: "newsroom",
+          label: "Newsroom",
+          header: "Latest Updates",
+          intro: "Stay up to date with the latest product announcements, upcoming events, and media coverage highlighting how cliQTest is shaping the future of software quality engineering.",
+          icon: Zap,
+          features: [
+            { label: "Product Announcements", desc: "Inputs for Product Announcements section to be provided." },
+            { label: "Events & Webinars", desc: "Inputs for Events & Webinars section to be provided." },
+            { label: "Media Coverage", desc: "Inputs for Media Coverage section to be provided." }
+          ]
         }
       ]
     }
