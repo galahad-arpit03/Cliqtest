@@ -82,7 +82,7 @@ export default function ByIndustry() {
         {/* FinTech Section */}
         <section 
           id="fintech" 
-          className="scroll-mt-20 sticky top-20 z-10 bg-[#050505] py-4"
+          className="scroll-mt-20 lg:sticky top-20 z-10 bg-[#050505] py-4"
         >
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-4">
             
@@ -149,7 +149,7 @@ export default function ByIndustry() {
         {/* Healthcare Section */}
         <section 
           id="healthcare" 
-          className="scroll-mt-40 sticky top-20 z-20 bg-[#050505] py-4 shadow-[0_-20px_40px_rgba(5,5,5,1)]"
+          className="scroll-mt-40 lg:sticky top-20 z-20 bg-[#050505] py-4 lg:shadow-[0_-20px_40px_rgba(5,5,5,1)]"
         >
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-4">
             
@@ -222,7 +222,7 @@ export default function ByIndustry() {
         {/* Retail Section */}
         <section 
           id="retail" 
-          className="scroll-mt-40 sticky top-20 z-30 bg-[#050505] py-4 shadow-[0_-20px_40px_rgba(5,5,5,1)]"
+          className="scroll-mt-40 lg:sticky top-20 z-30 bg-[#050505] py-4 lg:shadow-[0_-20px_40px_rgba(5,5,5,1)]"
         >
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-4">
             
@@ -294,7 +294,7 @@ export default function ByIndustry() {
         {/* E-Commerce Section */}
         <section 
           id="ecommerce" 
-          className="scroll-mt-40 sticky top-20 z-40 bg-[#050505] py-4 shadow-[0_-20px_40px_rgba(5,5,5,1)]"
+          className="scroll-mt-40 lg:sticky top-20 z-40 bg-[#050505] py-4 lg:shadow-[0_-20px_40px_rgba(5,5,5,1)]"
         >
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-4">
             
@@ -360,7 +360,7 @@ export default function ByIndustry() {
         {/* Telecom Section */}
         <section 
           id="telecom" 
-          className="scroll-mt-40 sticky top-20 z-50 bg-[#050505] py-4 shadow-[0_-20px_40px_rgba(5,5,5,1)]"
+          className="scroll-mt-40 lg:sticky top-20 z-50 bg-[#050505] py-4 lg:shadow-[0_-20px_40px_rgba(5,5,5,1)]"
         >
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-4">
             

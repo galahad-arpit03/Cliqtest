@@ -564,17 +564,17 @@ export default function ByUseCase() {
 
       {/* Footer CTA */}
       <section className="py-24 px-8 mt-12">
-        <div className="max-w-4xl mx-auto text-center bg-white/5 border border-white/10 rounded-md p-12 relative overflow-hidden">
-          <h2 className="text-4xl md:text-4xl font-semibold text-white mb-4">Ready to Scale <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6843B7] to-[#8f81eb]">Your Quality?</span></h2>
-          <p className="text-white/60 mb-8 max-w-2xl mx-auto">
+        <div className="max-w-4xl mx-auto text-left sm:text-center bg-white/5 border border-white/10 rounded-md p-8 sm:p-12 relative overflow-hidden">
+          <h2 className="text-3xl md:text-4xl font-semibold text-white mb-4 leading-tight">Ready to Scale <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6843B7] to-[#8f81eb]">Your Quality?</span></h2>
+          <p className="text-white/60 mb-8 max-w-2xl mx-auto text-sm sm:text-base">
             Join enterprise engineering teams who trust cliQTest to automate their most complex and business-critical testing workflows.
           </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link href="/book-a-demo" className="w-full sm:w-auto px-8 py-3 bg-[#6843B7] text-white font medium rounded-sm hover:scale-105 active:scale-95 transition-all shadow-[0_0_20px_rgba(104,67,183,0.4)]">
+          <div className="flex flex-row flex-wrap items-center justify-start sm:justify-center gap-3 sm:gap-4">
+            <Link href="/book-a-demo" className="flex-1 sm:flex-none text-center px-4 sm:px-8 py-3 bg-[#6843B7] text-white font medium rounded-sm hover:scale-105 active:scale-95 transition-all shadow-[0_0_20px_rgba(104,67,183,0.4)] text-[13px] sm:text-base whitespace-nowrap">
               Contact Sales
             </Link>
-            <Link href="/pricing" className="w-full sm:w-auto px-8 py-3 border border-white/20 text-white font medium rounded-sm hover:bg-white/5 transition-colors">
-              View Enterprise Plans
+            <Link href="/pricing" className="flex-1 sm:flex-none text-center px-4 sm:px-8 py-3 border border-white/20 text-white font medium rounded-sm hover:bg-white/5 transition-colors text-[13px] sm:text-base whitespace-nowrap">
+              View Plans
             </Link>
           </div>
         </div>

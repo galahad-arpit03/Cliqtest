@@ -481,17 +481,17 @@ export default function ByTeam() {
 
       {/* 3. CTA Section */}
       <section className="py-24 px-8">
-        <div className="max-w-4xl mx-auto text-center bg-white/5 border border-white/10 rounded-md p-12 relative overflow-hidden">
-          <h2 className="text-4xl md:text-4xl font-semibold text-white mb-4">Ready for <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6843B7] to-[#8f81eb]">Enterprise-Grade Quality?</span></h2>
-          <p className="text-white/60 mb-8 max-w-2xl mx-auto">
+        <div className="max-w-4xl mx-auto text-left sm:text-center bg-white/5 border border-white/10 rounded-md p-8 sm:p-12 relative overflow-hidden">
+          <h2 className="text-3xl md:text-4xl font-semibold text-white mb-4 leading-tight">Ready for <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6843B7] to-[#8f81eb]">Enterprise-Grade Quality?</span></h2>
+          <p className="text-white/60 mb-8 max-w-2xl mx-auto text-sm sm:text-base">
             Contact us to see how cliQTest can seamlessly integrate into your team&apos;s workflow and scale your testing infrastructure.
           </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link href="/book-a-demo" className="w-full sm:w-auto px-8 py-3 bg-[#6843B7] text-white font medium rounded-sm hover:scale-105 active:scale-95 transition-all shadow-[0_0_20px_rgba(104,67,183,0.4)]">
-              Book a Free Demo
+          <div className="flex flex-row flex-wrap items-center justify-start sm:justify-center gap-3 sm:gap-4">
+            <Link href="/book-a-demo" className="flex-1 sm:flex-none text-center px-4 sm:px-8 py-3 bg-[#6843B7] text-white font medium rounded-sm hover:scale-105 active:scale-95 transition-all shadow-[0_0_20px_rgba(104,67,183,0.4)] text-[13px] sm:text-base whitespace-nowrap">
+              Book a Demo
             </Link>
-            <Link href="/pricing" className="w-full sm:w-auto px-8 py-3 border border-white/20 text-white font medium rounded-sm hover:bg-white/5 transition-colors">
-              View Enterprise Pricing
+            <Link href="/pricing" className="flex-1 sm:flex-none text-center px-4 sm:px-8 py-3 border border-white/20 text-white font medium rounded-sm hover:bg-white/5 transition-colors text-[13px] sm:text-base whitespace-nowrap">
+              View Pricing
             </Link>
           </div>
         </div>
