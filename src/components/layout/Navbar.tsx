@@ -27,6 +27,7 @@ interface NavTab {
   label: string;
   title?: string;
   description?: string;
+  intro?: string;
   header?: string;
   features?: Feature[];
   icon?: React.ElementType;
@@ -157,20 +158,15 @@ const menuItems = [
     content: {
       tabs: [
         {
-          id: "company-overview",
-          label: "Company Overview",
-          title: "Our Mission",
-          description: "We are redefining the future of software quality. Learn more about our vision, our leadership, and the values that drive us forward.",
-          icon: Globe
-        },
-        {
           id: "about-us",
           label: "About Us",
           header: "Company Story",
+          intro: "Discover the origins, core values, and ambitious vision that are driving cliQTest to completely redefine the software quality engineering landscape. We are committed to empowering teams globally with a platform that transforms complex testing into a seamless, intelligent, and scalable experience.",
           icon: Zap,
           features: [
             { label: "Our Story", desc: "Discover how we started and where we're going." },
-            { label: "Mission & Vision", desc: "Our core purpose and future aspirations." },
+            { label: "Mission", desc: "Our core purpose and aspirations." },
+            { label: "Vision", desc: "Our vision for the future of testing." },
             { label: "Core Values", desc: "The principles that guide everything we do." }
           ]
         },
@@ -178,22 +174,83 @@ const menuItems = [
           id: "leadership",
           label: "Leadership",
           header: "Leadership Profiles",
+          intro: "Meet the visionary executive team, our seasoned board of directors, and the strategic investors who are guiding cliQTest towards continuous innovation. Their combined decades of enterprise software experience are dedicated to ensuring our platform remains at the absolute cutting edge of the industry.",
           icon: Cpu,
           features: [
-            { label: "Executive Team", desc: "Meet the people leading our vision." },
+            { label: "Executive Teams", desc: "Meet the people leading our vision." },
             { label: "Board of Directors", desc: "Our advisors and board members." },
             { label: "Investors", desc: "The partners backing our growth." }
+          ]
+        },
+        {
+          id: "why-cliqtest",
+          label: "Why cliQTest?",
+          header: "The cliQTest Advantage",
+          intro: "Explore exactly how our AI-native, unified quality engineering platform delivers unparalleled enterprise-grade scalability and performance. By completely transforming traditional testing paradigms, we empower your development teams to dramatically accelerate their release cycles and time-to-market.",
+          icon: Globe,
+          features: [
+            { label: "Unified Quality Engineering Platform", desc: "Centralized testing lifecycle." },
+            { label: "AI-Native Automation", desc: "Intelligent, resilient testing." },
+            { label: "Enterprise-Grade Scalability", desc: "Built for complex architectures." },
+            { label: "Faster Time-to-Market", desc: "Accelerate your release cycles." },
+            { label: "Cross-Platform Testing Ecosystem", desc: "Web, Mobile, and API testing." },
+            { label: "Intelligent Insights & Reporting", desc: "Data-driven quality metrics." }
           ]
         },
         {
           id: "clients",
           label: "Clients",
           header: "Our Trusted Partners",
+          intro: "See how leading global enterprises and innovative startups leverage our comprehensive platform to seamlessly achieve and exceed their quality goals. Read through our proven success stories, in-depth case studies, and glowing testimonials from industry leaders who trust cliQTest every single day.",
           icon: Database,
           features: [
             { label: "Success Stories", desc: "How our clients achieve their goals." },
             { label: "Case Studies", desc: "In-depth looks at our enterprise solutions." },
             { label: "Testimonials", desc: "What industry leaders say about us." }
+          ]
+        },
+        {
+          id: "partners-alliances",
+          label: "Partners & Alliances",
+          header: "Stronger Together",
+          intro: "Learn about our strategic collaborations and deep technology integrations that create a stronger, more connected, and highly efficient testing ecosystem. We partner with the best in the industry to ensure our platform seamlessly plugs into your existing infrastructure and CI/CD pipelines.",
+          icon: Zap,
+          features: [
+            { label: "Technology Partners", desc: "Integrations that power our platform." },
+            { label: "Strategic Alliances", desc: "Collaborations driving innovation." }
+          ]
+        },
+        {
+          id: "compliance-security",
+          label: "Compliance and Security",
+          header: "Built on Trust",
+          intro: "Rest easy knowing your organization's sensitive data is fully protected by our rigorous, enterprise-grade security protocols. We guarantee full auditability, complete governance, absolute traceability, and strict continuous adherence to the highest global regulatory compliance standards.",
+          icon: Cpu,
+          features: [
+            { label: "Enterprise Security", desc: "Protecting your data at every layer." },
+            { label: "Governance & Traceability", desc: "Full auditability and control." },
+            { label: "Compliance Readiness", desc: "Meeting global regulatory standards." }
+          ]
+        },
+        {
+          id: "csr-community",
+          label: "CSR & Community",
+          header: "Giving Back",
+          intro: "We fundamentally believe in giving back and empowering the next generation. Read about our diverse community initiatives, impactful open-source contributions, and our unwavering corporate commitment to fostering global tech education, continuous learning, and sustainable innovation.",
+          icon: Globe,
+          features: [
+            { label: "Community Initiatives", desc: "Supporting the global tech ecosystem." },
+            { label: "Innovation & Learning", desc: "Fostering growth and education." }
+          ]
+        },
+        {
+          id: "global-presence",
+          label: "Global Presence",
+          header: "Worldwide Reach",
+          intro: "With robust 24/7 delivery and comprehensive support operations distributed worldwide, our dedicated engineering teams are always ready to assist you. No matter where your enterprise is located, we ensure your continuous success with uninterrupted service and rapid, localized response times.",
+          icon: Database,
+          features: [
+            { label: "Delivery & Support", desc: "24/7 global support and operations." }
           ]
         }
       ]
@@ -360,10 +417,15 @@ export default function Navbar() {
                                 transition={{ duration: 0.15 }}
                                 className="w-full"
                               >
+                                {tab.intro && (
+                                  <p className="text-white/60 text-base leading-relaxed mb-10">
+                                    {tab.intro}
+                                  </p>
+                                )}
                                 <div className="grid grid-cols-2 md:grid-cols-3 gap-x-12 gap-y-6">
                                   {tab.features?.map((feat: { label: string; desc: string }, idx: number) => (
                                     <Link href={`/${tab.id}#${feat.label.toLowerCase().replace(/\s+/g, '-')}`} onClick={() => setActiveMenu(null)} key={idx} className="group/feat flex flex-col gap-1.5 py-2">
-                                      <h4 className="text-white/90 group-hover/feat:text-[#6843B7] font-medium text-[15px] transition-colors">{feat.label}</h4>
+                                      <h4 className="text-transparent bg-clip-text bg-gradient-to-r from-[#6843B7] to-[#ffffff] font-semibold text-[15px] transition-colors">{feat.label}</h4>
                                       <p className="text-white/50 text-[13px] leading-relaxed group-hover/feat:text-white/70 transition-colors line-clamp-2">{feat.desc}</p>
                                     </Link>
                                   ))}
