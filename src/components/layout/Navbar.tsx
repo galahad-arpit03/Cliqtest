@@ -432,7 +432,7 @@ export default function Navbar() {
                             const isActive = activeTab === tab.id;
                             return (
                               <Link
-                                href={`/${tab.id}`}
+                                href={`/${item.title.toLowerCase().replace(/\s+/g, '-')}/${tab.id}`}
                                 key={tab.id}
                                 onMouseEnter={() => setActiveTab(tab.id)}
                                 onClick={() => setActiveMenu(null)}
@@ -466,7 +466,7 @@ export default function Navbar() {
                                 )}
                                 <div className="grid grid-cols-2 md:grid-cols-3 gap-x-12 gap-y-6">
                                   {tab.features?.map((feat: { label: string; desc: string }, idx: number) => (
-                                    <Link href={`/${tab.id}#${feat.label.toLowerCase().replace(/\s+/g, '-')}`} onClick={() => setActiveMenu(null)} key={idx} className="group/feat flex flex-col gap-1.5 py-2">
+                                    <Link href={`/${item.title.toLowerCase().replace(/\s+/g, '-')}/${tab.id}#${feat.label.toLowerCase().replace(/\s+/g, '-')}`} onClick={() => setActiveMenu(null)} key={idx} className="group/feat flex flex-col gap-1.5 py-2">
                                       <h4 className="text-transparent bg-clip-text bg-gradient-to-r from-[#6843B7] to-[#ffffff] font-semibold text-[15px] transition-colors">{feat.label}</h4>
                                       <p className="text-white/50 text-[13px] leading-relaxed group-hover/feat:text-white/70 transition-colors line-clamp-2">{feat.desc}</p>
                                     </Link>
@@ -570,7 +570,7 @@ export default function Navbar() {
                     {item.content?.tabs?.map((tab: NavTab) => (
                       <Link 
                         key={tab.id}
-                        href={`/${tab.id}`}
+                        href={`/${item.title.toLowerCase().replace(/\s+/g, '-')}/${tab.id}`}
                         onClick={() => setIsMobileMenuOpen(false)}
                         className="flex flex-col gap-0.5 group active:opacity-70"
                       >
