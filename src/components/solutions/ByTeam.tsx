@@ -97,7 +97,7 @@ export default function ByTeam() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <a href="#qa-teams" className="inline-flex items-center gap-2 px-8 py-3 bg-[#6843B7] text-white font medium rounded-full hover:bg-[#6843B7]/90 transition-all shadow-[0_0_20px_rgba(104,67,183,0.3)]">
+              <a href="#qa-teams" className="inline-flex items-center gap-2 px-8 py-3 bg-[#6843B7] text-white font medium rounded-sm hover:bg-[#6843B7]/90 transition-all shadow-[0_0_20px_rgba(104,67,183,0.3)]">
                 Explore
               </a>
             </motion.div>
@@ -234,7 +234,7 @@ export default function ByTeam() {
                   </div>
                 </div>
                 
-                <Link href="/nocode" className="inline-flex items-center gap-2 px-6 py-3 bg-white text-black font medium rounded-full hover:bg-white/90 transition-colors text-sm w-fit mt-auto">
+                <Link href="/nocode" className="inline-flex items-center gap-2 px-6 py-3 bg-white text-black font medium rounded-sm hover:bg-white/90 transition-colors text-sm w-fit mt-auto">
                   Explore Test Automation →
                 </Link>
               </div>
@@ -244,9 +244,9 @@ export default function ByTeam() {
                 <div className="absolute inset-0 bg-[#0A0A0A] p-6 flex flex-col justify-center">
                   <div className="w-full bg-black border border-white/10 rounded-md p-4 mb-6 shadow-2xl">
                     <div className="flex items-center gap-2 mb-4 pb-4 border-b border-white/5">
-                      <div className="w-3 h-3 rounded-full bg-red-500/50" />
-                      <div className="w-3 h-3 rounded-full bg-yellow-500/50" />
-                      <div className="w-3 h-3 rounded-full bg-green-500/50" />
+                      <div className="w-3 h-3 rounded-sm bg-red-500/50" />
+                      <div className="w-3 h-3 rounded-sm bg-yellow-500/50" />
+                      <div className="w-3 h-3 rounded-sm bg-green-500/50" />
                       <span className="text-white/30 text-xs ml-2 font-mono">IDE.tsx</span>
                     </div>
                     <div className="font-mono text-xs text-[#00F2B0] mb-2">{`// Wait for element to be visible`}</div>
@@ -258,7 +258,7 @@ export default function ByTeam() {
                   <ul className="space-y-3">
                     {['Zero Setup Required', 'Self-Healing Locators', 'Parallel Execution Grid'].map((item, i) => (
                       <li key={i} className="flex items-center gap-3 text-sm text-white/70">
-                        <div className="w-4 h-4 rounded-full bg-[#6843B7]/20 flex items-center justify-center text-[#6843B7]">✓</div>
+                        <div className="w-4 h-4 rounded-sm bg-[#6843B7]/20 flex items-center justify-center text-[#6843B7]">✓</div>
                         {item}
                       </li>
                     ))}
@@ -307,7 +307,7 @@ export default function ByTeam() {
                 
                 <div className="flex flex-wrap gap-2 mt-auto">
                   {['Jenkins', 'GitLab CI', 'GitHub Actions', 'Azure DevOps', 'AWS CodePipeline'].map((tool) => (
-                    <div key={tool} className="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-[11px] font-medium text-white/80">
+                    <div key={tool} className="px-3 py-1 bg-white/5 border border-white/10 rounded-sm text-[11px] font-medium text-white/80">
                       {tool}
                     </div>
                   ))}
@@ -318,8 +318,8 @@ export default function ByTeam() {
               <div className="bg-[#0A0A0A] border border-white/10 rounded-xl p-8 relative overflow-hidden flex flex-col justify-center gap-6 h-full min-h-[350px]">
                 <div className="flex items-center justify-between p-4 bg-black rounded-lg border border-white/5">
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-full bg-green-500/20 flex items-center justify-center">
-                      <div className="w-3 h-3 rounded-full bg-green-500 animate-pulse" />
+                    <div className="w-10 h-10 rounded-sm bg-green-500/20 flex items-center justify-center">
+                      <div className="w-3 h-3 rounded-sm bg-green-500 animate-pulse" />
                     </div>
                     <div>
                       <h4 className="text-white text-sm font medium">Pipeline Stable</h4>
@@ -487,10 +487,10 @@ export default function ByTeam() {
             Contact us to see how cliQTest can seamlessly integrate into your team&apos;s workflow and scale your testing infrastructure.
           </p>
           <div className="flex flex-row flex-wrap items-center justify-start sm:justify-center gap-3 sm:gap-4">
-            <Link href="/book-a-demo" className="flex-1 sm:flex-none text-center px-4 sm:px-8 py-3 bg-[#6843B7] text-white font medium rounded-full hover:scale-105 active:scale-95 transition-all shadow-[0_0_20px_rgba(104,67,183,0.4)] text-[13px] sm:text-base whitespace-nowrap">
+            <Link href="/book-a-demo" className="flex-1 sm:flex-none text-center px-4 sm:px-8 py-3 bg-[#6843B7] text-white font medium rounded-sm hover:scale-105 active:scale-95 transition-all shadow-[0_0_20px_rgba(104,67,183,0.4)] text-[13px] sm:text-base whitespace-nowrap">
               Book a Demo
             </Link>
-            <Link href="/pricing" className="flex-1 sm:flex-none text-center px-4 sm:px-8 py-3 border border-white/20 text-white font medium rounded-full hover:bg-white/5 transition-colors text-[13px] sm:text-base whitespace-nowrap">
+            <Link href="/pricing" className="flex-1 sm:flex-none text-center px-4 sm:px-8 py-3 border border-white/20 text-white font medium rounded-sm hover:bg-white/5 transition-colors text-[13px] sm:text-base whitespace-nowrap">
               View Pricing
             </Link>
           </div>

@@ -1,9 +1,60 @@
 "use client";
 
-import React from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { motion, Variants } from 'framer-motion';
+import { motion, Variants, AnimatePresence } from 'framer-motion';
+import { ChevronDown, ChevronUp } from 'lucide-react';
+import { menuItems } from './Navbar';
+
+const FooterAccordionItem = ({ tab, parentTitle }: { tab: any, parentTitle: string }) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const hasFeatures = tab.features && tab.features.length > 0;
+  const linkHref = `/${parentTitle.toLowerCase().replace(/\s+/g, '-')}/${tab.id}`;
+
+  return (
+    <div className="flex flex-col">
+      <div className="flex items-center justify-between group">
+        <Link href={linkHref} className="text-zinc-500 hover:text-white transition-colors text-sm py-1.5 flex-1">
+          {tab.label}
+        </Link>
+        {hasFeatures && (
+          <button 
+            onClick={(e) => {
+              e.preventDefault();
+              setIsOpen(!isOpen);
+            }}
+            className="p-1.5 text-zinc-500 hover:text-white transition-colors cursor-pointer"
+          >
+            {isOpen ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
+          </button>
+        )}
+      </div>
+      
+      <AnimatePresence>
+        {isOpen && hasFeatures && (
+          <motion.ul 
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            className="overflow-hidden pl-3 border-l border-white/10 ml-1 flex flex-col gap-1.5 mt-1 mb-2"
+          >
+            {tab.features.map((feat: any, idx: number) => (
+              <li key={idx}>
+                <Link 
+                  href={`${linkHref}#${feat.label.toLowerCase().replace(/\s+/g, '-')}`}
+                  className="text-zinc-600 hover:text-zinc-400 transition-colors text-[13px] block py-0.5"
+                >
+                  {feat.label}
+                </Link>
+              </li>
+            ))}
+          </motion.ul>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+};
 
 export default function Footer() {
   const containerVariants: Variants = {
@@ -48,88 +99,18 @@ export default function Footer() {
           <p className="text-zinc-500 text-sm italic ml-2">&quot;Turning Clicks into Confidence&quot;</p>
         </motion.div>
 
-        {/* Platform */}
-        <motion.div variants={itemVariants} className="flex flex-col gap-6">
-          <h3 className="text-white font-medium text-lg">Platform</h3>
-          <ul className="flex flex-col gap-3 text-zinc-500 text-sm">
-            {[
-              { name: "Platform Overview", href: "/overview" },
-              { name: "No Code Automation", href: "#" },
-              { name: "Test Management", href: "#" },
-              { name: "Device Labs", href: "#" },
-              { name: "Analytics & Reporting", href: "#" },
-              { name: "AI Capabilities", href: "#" },
-            ].map((link) => (
-              <li key={link.name}>
-                <Link href={link.href} className="hover:text-white hover:translate-x-1 transition-all inline-block cursor-pointer">
-                  {link.name}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </motion.div>
+        {/* Dynamic Menu Columns */}
+        {menuItems.filter(item => item.content?.tabs).map((item) => (
+          <motion.div key={item.title} variants={itemVariants} className="flex flex-col gap-6">
+            <h3 className="text-white font-bold text-sm uppercase tracking-wider">{item.title}</h3>
+            <div className="flex flex-col gap-1">
+              {item.content!.tabs.map((tab: any) => (
+                <FooterAccordionItem key={tab.id} tab={tab} parentTitle={item.title} />
+              ))}
+            </div>
+          </motion.div>
+        ))}
 
-        {/* Solutions */}
-        <motion.div variants={itemVariants} className="flex flex-col gap-6">
-          <h3 className="text-white font-medium text-lg">Solutions</h3>
-          <ul className="flex flex-col gap-3 text-zinc-500 text-sm">
-            {[
-              { name: "Solutions Overview", href: "/overview" },
-              { name: "By Team", href: "#" },
-              { name: "By Use Case", href: "#" },
-              { name: "By Industry", href: "#" },
-            ].map((link) => (
-              <li key={link.name}>
-                <Link href={link.href} className="hover:text-white hover:translate-x-1 transition-all inline-block cursor-pointer">
-                  {link.name}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </motion.div>
-
-        {/* Company */}
-        <motion.div variants={itemVariants} className="flex flex-col gap-6">
-          <h3 className="text-white font-medium text-lg">Company</h3>
-          <ul className="flex flex-col gap-3 text-zinc-500 text-sm">
-            {[
-              { name: "Company Overview", href: "/overview" },
-              { name: "About Us", href: "#" },
-              { name: "Leadership", href: "#" },
-              { name: "Clients", href: "#" },
-            ].map((link) => (
-              <li key={link.name}>
-                <Link href={link.href} className="hover:text-white hover:translate-x-1 transition-all inline-block cursor-pointer">
-                  {link.name}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </motion.div>
-
-        {/* Resources & Contact */}
-        <motion.div variants={itemVariants} className="flex flex-col gap-6">
-          <h3 className="text-white font-medium text-lg">Resources</h3>
-          <ul className="flex flex-col gap-3 text-zinc-500 text-sm">
-            {[
-              { name: "Pricing", href: "/pricing" },
-              { name: "Integrations", href: "/integrations" },
-              { name: "Book a Demo", href: "/book-a-demo" },
-            ].map((link) => (
-              <li key={link.name}>
-                <Link href={link.href} className="hover:text-white hover:translate-x-1 transition-all inline-block cursor-pointer">
-                  {link.name}
-                </Link>
-              </li>
-            ))}
-            <li className="flex flex-col gap-1 mt-2">
-              <span className="text-zinc-400">Support:</span>
-              <motion.a href="mailto:support@cliQTest.com" whileHover={{ color: "#ffffff" }} className="hover:text-white transition-colors">
-                support@cliQTest.com
-              </motion.a>
-            </li>
-          </ul>
-        </motion.div>
       </div>
 
       {/* Bottom Bar */}
@@ -172,7 +153,7 @@ export default function Footer() {
               rel="noopener noreferrer"
               aria-label={social.name}
               whileHover={{ y: -5, backgroundColor: "#3f3f46", color: "#ffffff" }}
-              className="w-10 h-10 rounded-full bg-zinc-800/50 flex items-center justify-center text-zinc-400 transition-all"
+              className="w-10 h-10 rounded-sm bg-zinc-800/50 flex items-center justify-center text-zinc-400 transition-all"
             >
               <svg 
                 viewBox="0 0 24 24" 

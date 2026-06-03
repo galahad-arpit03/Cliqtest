@@ -68,7 +68,7 @@ export default function ByIndustry() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <a href="#fintech" className="inline-flex items-center gap-2 px-8 py-3 bg-[#6843B7] text-white font medium rounded-full hover:bg-[#6843B7]/90 transition-all shadow-[0_0_20px_rgba(104,67,183,0.3)]">
+              <a href="#fintech" className="inline-flex items-center gap-2 px-8 py-3 bg-[#6843B7] text-white font medium rounded-sm hover:bg-[#6843B7]/90 transition-all shadow-[0_0_20px_rgba(104,67,183,0.3)]">
                 Explore
               </a>
             </motion.div>
@@ -426,6 +426,50 @@ export default function ByIndustry() {
 
           </div>
         </section>
+
+      {/* Additional Industries Generated for Anchor Links */}
+      {[
+        { id: "banking", name: "Banking", icon: Landmark, desc: "Secure core banking and transaction platforms with comprehensive quality engineering. cliQTest enables organizations to validate complex financial ecosystems, ensuring regulatory compliance and seamless consumer banking experiences." },
+        { id: "insurance", name: "Insurance", icon: ShieldCheck, desc: "Automate policy and claims lifecycle testing for flawless operations. Test complex quoting engines and underwriter portals with data-driven AI capabilities." },
+        { id: "capital-markets", name: "Capital Markets", icon: Landmark, desc: "High-frequency trade platform validation ensuring zero-downtime execution and rapid response times under extreme market volatility." },
+        { id: "payments-&-remittance", name: "Payments & Remittance", icon: CreditCard, desc: "Secure global payment gateways, validate POS integrations, and ensure seamless cross-border transactions with comprehensive API testing." },
+        { id: "wealth-management", name: "Wealth Management", icon: Landmark, desc: "Validate investment and portfolio tools with precision, ensuring accurate real-time data synchronization and client portal security." },
+        { id: "enterprise-crm", name: "Enterprise CRM", icon: Store, desc: "Automate Salesforce, SAP, and other enterprise CRM testing workflows to maintain continuous operational alignment across massive organizations." },
+        { id: "transportation-&-mobility", name: "Transportation & Mobility", icon: RadioTower, desc: "Logistics and fleet management QA for real-time operational continuity, geolocation testing, and mobile workforce app validation." },
+        { id: "railway-&-reservation-systems", name: "Railway & Reservation Systems", icon: CheckCircle2, desc: "High-load booking system testing to handle massive concurrent traffic, complex scheduling logic, and multi-channel ticketing interfaces." },
+        { id: "financial-services", name: "Financial Services", icon: Landmark, desc: "Broad financial application validation across diverse ecosystems, ensuring end-to-end transaction integrity and unshakeable consumer trust." },
+        { id: "public-sector-&-government", name: "Public Sector & Government", icon: ShieldCheck, desc: "Secure citizen and agency portals with highly compliant, accessible, and strictly governed testing protocols." },
+        { id: "logistics-&-supply-chain", name: "Logistics & Supply Chain", icon: Store, desc: "End-to-end supply chain tracking validation, warehouse management system (WMS) testing, and automated workflow integration." }
+      ].map((industry, idx) => (
+        <section 
+          key={industry.id}
+          id={industry.id} 
+          className="scroll-mt-40 lg:sticky top-20 z-50 bg-[#050505] py-4 lg:shadow-[0_-20px_40px_rgba(5,5,5,1)]"
+        >
+          <div className="bg-[#0A0A0A] border border-white/10 rounded-md p-8 md:p-10 relative overflow-hidden group">
+            <div className={`absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-[${idx % 2 === 0 ? '#6843B7' : '#00F2B0'}] to-transparent opacity-50`} />
+            <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent_0%,rgba(104,67,183,0.02)_50%,transparent_100%)] pointer-events-none" />
+            
+            <div className="relative z-10 flex flex-col lg:flex-row gap-8 items-center">
+              <div className="flex-1">
+                <div className="mb-6">
+                  <h2 className={`text-4xl md:text-5xl font-semibold tracking-tight text-transparent bg-clip-text bg-gradient-to-r ${idx % 2 === 0 ? 'from-[#6843B7] to-[#9e7be9]' : 'from-[#00F2B0] to-[#00b382]'}`}>{industry.name}</h2>
+                </div>
+                
+                <div className="space-y-4 text-white/60 leading-relaxed text-sm md:text-base max-w-3xl">
+                  <p>{industry.desc}</p>
+                </div>
+              </div>
+              
+              <div className="w-full lg:w-[300px] shrink-0">
+                <div className="bg-[#080808] border border-white/10 rounded-md p-8 relative overflow-hidden h-full min-h-[200px] flex items-center justify-center">
+                   <industry.icon size={80} className={`${idx % 2 === 0 ? 'text-[#6843B7]' : 'text-[#00F2B0]'} opacity-30 group-hover:scale-110 transition-transform duration-700 relative z-10`} />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      ))}
 
       </div>
     </div>

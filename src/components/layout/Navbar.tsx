@@ -33,7 +33,7 @@ interface NavTab {
   icon?: React.ElementType;
 }
 
-const menuItems = [
+export const menuItems = [
   {
     title: "Platform",
     dropdownType: "tabbed",
@@ -134,12 +134,12 @@ const menuItems = [
             { label: "AI-Powered Auto Healing", desc: "Self-correcting test scripts." },
             { label: "MCP Automation", desc: "Machine Control Protocol support." },
             { label: "Agentic Automation", desc: "Goal-driven test execution." },
-            // { label: "AI SQL Query Agent", desc: "Automated database testing." },
-            // { label: "AI CAPTCHA Automation", desc: "Intelligent challenge resolution." },
-            // { label: "AI Report Summarization", desc: "Natural language insights." },
-            // { label: "AI System Validation", desc: "Comprehensive architecture checks." },
-            // { label: "Defect Insights", desc: "Root cause analysis." },
-            // { label: "Smart Recommendations", desc: "Proactive quality suggestions." }
+            { label: "AI SQL Query Agent", desc: "Automated database testing." },
+            { label: "AI CAPTCHA Automation", desc: "Intelligent challenge resolution." },
+            { label: "AI Report Summarization", desc: "Natural language insights." },
+            { label: "AI System Validation", desc: "Comprehensive architecture checks." },
+            { label: "Defect Insights", desc: "Root cause analysis." },
+            { label: "Smart Recommendations", desc: "Proactive quality suggestions." }
           ]
         }
       ]
@@ -264,7 +264,7 @@ const menuItems = [
             { label: "Testimonials", desc: "What industry leaders say about us." }
           ]
         },
-        /* {
+        {
           id: "partners-alliances",
           label: "Partners & Alliances",
           header: "Stronger Together",
@@ -274,7 +274,7 @@ const menuItems = [
             { label: "Technology Partners", desc: "Integrations that power our platform." },
             { label: "Strategic Alliances", desc: "Collaborations driving innovation." }
           ]
-        }, */
+        },
         {
           id: "compliance-security",
           label: "Compliance and Security",
@@ -287,7 +287,7 @@ const menuItems = [
             { label: "Compliance Readiness", desc: "Meeting global regulatory standards." }
           ]
         },
-        /* {
+        {
           id: "csr-community",
           label: "CSR & Community",
           header: "Giving Back",
@@ -319,7 +319,7 @@ const menuItems = [
             { label: "Events & Webinars", desc: "Inputs for Events & Webinars section to be provided." },
             { label: "Media Coverage", desc: "Inputs for Media Coverage section to be provided." }
           ]
-        } */
+        } 
       ]
     }
   },
@@ -365,6 +365,7 @@ const menuItems = [
 export default function Navbar() {
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const [activeTab, setActiveTab] = useState("overview");
+  const [showMoreFeatures, setShowMoreFeatures] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [expandedItem, setExpandedItem] = useState<string | null>(null);
@@ -449,6 +450,7 @@ export default function Navbar() {
                       const featureTabs = item.content?.tabs?.filter((t: NavTab) => !t.description);
                       if (featureTabs && featureTabs.length > 0) {
                         setActiveTab(featureTabs[0].id);
+                        setShowMoreFeatures(false);
                       }
                     }
                   }
@@ -469,6 +471,7 @@ export default function Navbar() {
                     exit={{ opacity: 0, y: -10 }}
                     transition={{ duration: 0.2, ease: "easeOut" }}
                     className="fixed top-20 left-0 w-full z-[120]"
+                    onClick={(e) => e.stopPropagation()}
                   >
                     <div className="bg-black border-white/5 shadow-2xl overflow-hidden flex min-h-[350px]">
                       
@@ -481,7 +484,7 @@ export default function Navbar() {
                               <Link
                                 href={`/${item.title.toLowerCase().replace(/\s+/g, '-')}/${tab.id}`}
                                 key={tab.id}
-                                onMouseEnter={() => setActiveTab(tab.id)}
+                                onMouseEnter={() => { setActiveTab(tab.id); setShowMoreFeatures(false); }}
                                 onClick={() => setActiveMenu(null)}
                                 className={`flex items-center justify-between px-10 py-[14px] transition-all duration-300 cursor-pointer ${
                                   isActive 
@@ -512,12 +515,58 @@ export default function Navbar() {
                                   </p>
                                 )}
                                 <div className="grid grid-cols-2 md:grid-cols-3 gap-x-12 gap-y-6">
-                                  {tab.features?.map((feat: { label: string; desc: string }, idx: number) => (
-                                    <Link href={`/${item.title.toLowerCase().replace(/\s+/g, '-')}/${tab.id}#${feat.label.toLowerCase().replace(/\s+/g, '-')}`} onClick={() => setActiveMenu(null)} key={idx} className="group/feat flex flex-col gap-1.5 py-2">
-                                      <h4 className="text-transparent bg-clip-text bg-gradient-to-r from-[#6843B7] to-[#ffffff] font-semibold text-[15px] transition-colors">{feat.label}</h4>
-                                      <p className="text-white/50 text-[13px] leading-relaxed group-hover/feat:text-white/70 transition-colors line-clamp-2">{feat.desc}</p>
-                                    </Link>
-                                  ))}
+                                  {tab.features && (
+                                    <>
+                                      {tab.features.slice(
+                                        showMoreFeatures ? 8 : 0, 
+                                        showMoreFeatures ? undefined : 8
+                                      ).map((feat: { label: string; desc: string }, idx: number) => {
+                                        const targetPath = `/${item.title.toLowerCase().replace(/\s+/g, '-')}/${tab.id}`;
+                                        const targetHash = feat.label.toLowerCase().replace(/\s+/g, '-');
+                                        
+                                        return (
+                                        <Link 
+                                          href={`${targetPath}#${targetHash}`} 
+                                          onClick={(e) => {
+                                            setActiveMenu(null);
+                                            if (typeof window !== 'undefined' && window.location.pathname === targetPath) {
+                                              const el = document.getElementById(targetHash);
+                                              if (el) {
+                                                e.preventDefault();
+                                                el.scrollIntoView({ behavior: 'smooth' });
+                                                window.history.pushState(null, '', `${targetPath}#${targetHash}`);
+                                              }
+                                            }
+                                          }} 
+                                          key={idx} 
+                                          className="group/feat flex flex-col gap-1.5 py-2"
+                                        >
+                                          <h4 className="text-transparent bg-clip-text bg-gradient-to-r from-[#6843B7] to-[#ffffff] font-semibold text-[15px] transition-colors">{feat.label}</h4>
+                                          <p className="text-white/50 text-[13px] leading-relaxed group-hover/feat:text-white/70 transition-colors line-clamp-2">{feat.desc}</p>
+                                        </Link>
+                                      )})}
+                                      
+                                      {tab.features.length > 8 && !showMoreFeatures && (
+                                        <button 
+                                          onClick={() => setShowMoreFeatures(true)}
+                                          className="group/feat flex flex-col justify-center items-start gap-1.5 py-2 cursor-pointer h-full"
+                                        >
+                                          <h4 className="text-[#6843B7] font-semibold text-[15px] transition-colors group-hover/feat:text-white">More <span className="group-hover/feat:translate-x-1 inline-block transition-transform">→</span></h4>
+                                          <p className="text-white/30 text-[13px] leading-relaxed group-hover/feat:text-white/50 transition-colors">View remaining features</p>
+                                        </button>
+                                      )}
+
+                                      {tab.features.length > 8 && showMoreFeatures && (
+                                        <button 
+                                          onClick={() => setShowMoreFeatures(false)}
+                                          className="group/feat flex flex-col justify-center items-start gap-1.5 py-2 cursor-pointer h-full"
+                                        >
+                                          <h4 className="text-[#6843B7] font-semibold text-[15px] transition-colors group-hover/feat:text-white"><span className="group-hover/feat:-translate-x-1 inline-block transition-transform">←</span> Back</h4>
+                                          <p className="text-white/30 text-[13px] leading-relaxed group-hover/feat:text-white/50 transition-colors">Return to previous</p>
+                                        </button>
+                                      )}
+                                    </>
+                                  )}
                                 </div>
                               </motion.div>
                             ))}

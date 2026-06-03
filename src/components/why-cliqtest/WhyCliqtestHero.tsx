@@ -43,7 +43,7 @@ export default function WhyCliqtestHero() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
-            <button className="px-8 py-4 bg-[#6843B7] text-white font-semibold rounded-full hover:bg-[#6843B7]/90 transition-all shadow-[0_0_20px_rgba(104,67,183,0.3)] text-[14px]">
+ <button className="px-8 py-4 bg-[#6843B7] text-white rounded-sm hover:bg-[#6843B7]/90 transition-all shadow-[0_0_20px_rgba(104,67,183,0.3)] text-[14px]">
               See The Value
             </button>
           </div>

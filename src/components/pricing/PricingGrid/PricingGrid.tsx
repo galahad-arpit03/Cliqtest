@@ -101,7 +101,7 @@ export default function PricingGrid() {
               }`}
             >
               {tier.highlighted && (
-                <span className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-[#6843B7] text-white text-[10px] font-bold uppercase tracking-widest rounded-full shadow-[0_0_15px_rgba(104,67,183,0.4)] whitespace-nowrap">
+                <span className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-[#6843B7] text-white text-[10px] font-bold uppercase tracking-widest rounded-sm shadow-[0_0_15px_rgba(104,67,183,0.4)] whitespace-nowrap">
                   Most Popular
                 </span>
               )}
@@ -121,7 +121,7 @@ export default function PricingGrid() {
               <ul className="space-y-4 mb-10 flex-1">
                 {tier.features.map((feature, fIdx) => (
                   <li key={fIdx} className="flex gap-3 items-start group/feat">
-                    <div className={`mt-1 flex-shrink-0 w-4 h-4 rounded-full flex items-center justify-center ${tier.highlighted ? 'bg-[#6843B7]/20' : 'bg-white/10'}`}>
+                    <div className={`mt-1 flex-shrink-0 w-4 h-4 rounded-sm flex items-center justify-center ${tier.highlighted ? 'bg-[#6843B7]/20' : 'bg-white/10'}`}>
                       <Check size={10} className={tier.highlighted ? "text-[#6843B7]" : "text-white/70"} strokeWidth={3} />
                     </div>
                     <span className="text-white/70 text-[13px] leading-snug group-hover/feat:text-white transition-colors">
@@ -131,7 +131,7 @@ export default function PricingGrid() {
                 ))}
               </ul>
 
-              <button className={`w-full py-3.5 rounded-full font-semibold text-[14px] transition-all ${
+ <button className={`w-full py-3.5 rounded-sm text-[14px] transition-all ${
                 tier.highlighted 
                 ? 'bg-[#6843B7] text-white hover:bg-[#6843B7]/90 shadow-[0_0_20px_rgba(104,67,183,0.3)]' 
                 : 'bg-white/5 text-white hover:bg-white/10 border border-white/10'

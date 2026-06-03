@@ -276,7 +276,7 @@ export default function OverviewPage() {
             <div className="absolute w-40 h-40 bg-gradient-to-r from-[#6843B7] to-[#8f81eb] rounded-full blur-[60px] opacity-20 animate-pulse" />
             
             {/* Center Core Pill */}
-            <div className="relative w-36 h-36 rounded-full bg-[#0a0a0c] border border-white/10 flex flex-col items-center justify-center shadow-[0_0_50px_rgba(104,67,183,0.15)] group hover:border-[#6843B7]/50 transition-colors">
+            <div className="relative w-36 h-36 rounded-sm bg-[#0a0a0c] border border-white/10 flex flex-col items-center justify-center shadow-[0_0_50px_rgba(104,67,183,0.15)] group hover:border-[#6843B7]/50 transition-colors">
               <span className="text-white font-black tracking-tight text-3xl mb-1 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-[#6843B7] group-hover:to-[#00F2B0] transition-all">cliQTest</span>
               <span className="text-[9px] text-[#6843B7] tracking-[0.3em] uppercase font medium">Platform</span>
             </div>
@@ -410,7 +410,7 @@ export default function OverviewPage() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-10">
             <h2 className="text-4xl md:text-[44px] font medium tracking-tight mb-6 leading-[1.1]">Why Choose <span className="text-[#6843B7]">cliQTest?</span></h2>
-            <div className="w-16 h-1 bg-gradient-to-r from-[#6843B7] to-[#3b82f6] mx-auto rounded-full" />
+            <div className="w-16 h-1 bg-gradient-to-r from-[#6843B7] to-[#3b82f6] mx-auto rounded-sm" />
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-14">

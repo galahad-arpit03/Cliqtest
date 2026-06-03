@@ -112,7 +112,7 @@ export default function AboutPlatform() {
                   </li>
                 ))}
               </ul>
-              <button className="flex items-center gap-2 text-[#6843B7] font-semibold text-xs uppercase tracking-widest hover:gap-3 transition-all">
+ <button className="flex items-center gap-2 text-[#6843B7] text-xs uppercase tracking-widest hover:gap-3 transition-all">
                 Learn More <ArrowRight size={13} />
               </button>
             </motion.div>
@@ -151,7 +151,7 @@ export default function AboutPlatform() {
                   <p className="text-white/60 text-[13px] leading-relaxed line-clamp-2 mb-3">
                     {card.description}
                   </p>
-                  <button className="flex items-center gap-1.5 text-[#6843B7] font-semibold text-[11px] uppercase tracking-widest hover:gap-2.5 transition-all w-fit">
+ <button className="flex items-center gap-1.5 text-[#6843B7] text-[11px] uppercase tracking-widest hover:gap-2.5 transition-all w-fit">
                     Learn More <ArrowRight size={12} />
                   </button>
                 </div>

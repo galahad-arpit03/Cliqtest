@@ -19,7 +19,7 @@ export default function Features() {
       </div>
 
       <div className="flex justify-center">
-        <button className="px-10 py-3 bg-[#6843B7] text-white text-xs font medium tracking-[0.2em] rounded-full uppercase shadow-[0_0_20px_rgba(104,67,183,0.4)] hover:scale-105 transition-transform">
+        <button className="px-10 py-3 bg-[#6843B7] text-white text-xs font medium tracking-[0.2em] rounded-sm uppercase shadow-[0_0_20px_rgba(104,67,183,0.4)] hover:scale-105 transition-transform">
           Enterprise App Intelligence
         </button>
       </div>

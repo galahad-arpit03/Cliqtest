@@ -73,7 +73,7 @@ export default function QualityMetrics() {
             </p>
           </div>
           
-          <button className="px-10 py-4 bg-[#6843B7] text-white text-[15px] font medium rounded-full hover:bg-[#6843B7]/80 hover:scale-105 transition-all shadow-[0_0_30px_rgba(104,67,183,0.3)]">
+          <button className="px-10 py-4 bg-[#6843B7] text-white text-[15px] font medium rounded-sm hover:bg-[#6843B7]/80 hover:scale-105 transition-all shadow-[0_0_30px_rgba(104,67,183,0.3)]">
             Establish Data-Driven QA
           </button>
         </motion.div>

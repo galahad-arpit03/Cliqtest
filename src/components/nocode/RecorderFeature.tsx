@@ -61,7 +61,7 @@ export default function RecorderFeature() {
                   { action: "Verify", target: "Dashboard Title", detail: "Text equals 'Welcome'", color: "text-purple-400" }
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-4 p-5 rounded-md bg-white/[0.02] border border-white/5 hover:bg-white/[0.04] transition-colors cursor-pointer group">
-                    <div className="w-8 h-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/50 text-xs font medium mt-0.5 group-hover:bg-white/10 group-hover:text-white transition-all">
+                    <div className="w-8 h-8 rounded-sm bg-white/5 border border-white/10 flex items-center justify-center text-white/50 text-xs font medium mt-0.5 group-hover:bg-white/10 group-hover:text-white transition-all">
                       {i + 1}
                     </div>
                     <div>

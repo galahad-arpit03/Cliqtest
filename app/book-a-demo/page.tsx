@@ -87,7 +87,7 @@ export default function BookADemoPage() {
                 { title: "Architecture Deep-Dive", desc: "Understand how our AI-native engine scales across your stack." }
               ].map((item, i) => (
                 <div key={i} className="flex gap-4 items-start group">
-                  <div className="w-1.5 h-1.5 rounded-full bg-[#6843B7] mt-2.5 group-hover:scale-150 transition-transform" />
+                  <div className="w-1.5 h-1.5 rounded-sm bg-[#6843B7] mt-2.5 group-hover:scale-150 transition-transform" />
                   <div>
                     <h4 className="text-white font-semibold text-lg mb-1">{item.title}</h4>
                     <p className="text-white/60 text-sm leading-relaxed">{item.desc}</p>
@@ -132,7 +132,7 @@ export default function BookADemoPage() {
                         key={i}
                         disabled={!date}
                         onClick={() => date && setSelectedDate(date)}
-                        className={`aspect-square rounded-sm flex items-center justify-center text-xs font-semibold transition-all ${
+ className={`aspect-square rounded-sm flex items-center justify-center text-xs transition-all ${
                           !date ? 'invisible' : ''
                         } ${
                           date && isSelected(date) 
@@ -183,7 +183,7 @@ export default function BookADemoPage() {
                     </select>
                   </div>
 
-                  <button type="submit" className="w-full py-4 bg-[#6843B7] text-white font-semibold rounded-sm hover:bg-[#6843B7]/90 transition-all shadow-[0_0_20px_rgba(104,67,183,0.3)] text-[14px] mt-4 active:scale-95">
+ <button type="submit" className="w-full py-4 bg-[#6843B7] text-white rounded-sm hover:bg-[#6843B7]/90 transition-all shadow-[0_0_20px_rgba(104,67,183,0.3)] text-[14px] mt-4 active:scale-95">
                     Confirm Booking
                   </button>
                 </form>
@@ -204,7 +204,7 @@ export default function BookADemoPage() {
               </p>
               <button 
                 onClick={() => setIsSubmitted(false)}
-                className="px-8 py-3 border border-white/20 text-white text-[14px] font-semibold rounded-sm hover:bg-white/5 transition-all"
+ className="px-8 py-3 border border-white/20 text-white text-[14px] rounded-sm hover:bg-white/5 transition-all"
               >
                 Schedule Another
               </button>

@@ -79,7 +79,7 @@ export default function ScriptlessFeature() {
                 "Enterprise-level maintainability and governance"
               ].map((point, i) => (
                 <li key={i} className="flex items-center gap-4">
-                  <div className="w-7 h-7 rounded-full bg-[#00F2B0]/10 flex items-center justify-center border border-[#00F2B0]/20 shrink-0">
+                  <div className="w-7 h-7 rounded-sm bg-[#00F2B0]/10 flex items-center justify-center border border-[#00F2B0]/20 shrink-0">
                     <div className="w-2 h-2 rounded-full bg-[#00F2B0]" />
                   </div>
                   <span className="text-white/80 font-medium text-[15px]">{point}</span>

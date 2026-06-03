@@ -68,7 +68,7 @@ export default function KeyBenefits() {
             <p className="text-white/60 text-lg leading-relaxed mb-10 max-w-sm">
               The foundational principles that guide our team, shape our product, and drive our commitment to excellence.
             </p>
-            <div className="w-16 h-1 bg-[#6843B7]/30 rounded-full" />
+            <div className="w-16 h-1 bg-[#6843B7]/30 rounded-sm" />
           </motion.div>
         </div>
 
@@ -108,7 +108,7 @@ export default function KeyBenefits() {
               <h3 className="text-2xl font-bold text-white mb-2">Ready to accelerate?</h3>
               <p className="text-white/60">Join the elite teams building the future with cliQTest.</p>
             </div>
-            <button className="relative z-10 px-8 py-4 bg-[#6843B7] text-white text-[14px] font-semibold rounded-full hover:bg-[#6843B7]/90 transition-all shadow-[0_0_20px_rgba(104,67,183,0.3)] whitespace-nowrap">
+ <button className="relative z-10 px-8 py-4 bg-[#6843B7] text-white text-[14px] rounded-sm hover:bg-[#6843B7]/90 transition-all shadow-[0_0_20px_rgba(104,67,183,0.3)] whitespace-nowrap">
               Book a Demo
             </button>
           </motion.div>

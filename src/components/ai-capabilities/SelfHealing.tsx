@@ -59,7 +59,7 @@ export default function SelfHealing() {
             </p>
           </div>
           
-          <button className="px-10 py-4 bg-white/5 border border-white/10 text-white text-[15px] font medium rounded-full hover:bg-white/10 transition-all">
+          <button className="px-10 py-4 bg-white/5 border border-white/10 text-white text-[15px] font medium rounded-sm hover:bg-white/10 transition-all">
             Reduce Maintenance
           </button>
         </motion.div>

@@ -93,7 +93,7 @@ export default function Hero() {
           <motion.button 
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="flex-1 sm:flex-none w-full sm:w-auto px-4 sm:px-8 py-3 rounded-sm bg-[#6843B7] text-white font-semibold text-[12px] sm:text-[13px] hover:bg-[#6843B7] transition-all whitespace-nowrap"
+ className="flex-1 sm:flex-none w-full sm:w-auto px-4 sm:px-8 py-3 rounded-sm bg-[#6843B7] text-white text-[12px] sm:text-[13px] hover:bg-[#6843B7] transition-all whitespace-nowrap"
           >
             Book Demo
           </motion.button>

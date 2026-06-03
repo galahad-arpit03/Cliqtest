@@ -50,7 +50,7 @@ export default function TestCasesFeature() {
                 { title: "Audit & Compliance Readiness", desc: "Always be ready for regulatory reviews." }
               ].map((item, i) => (
                 <div key={i} className="flex items-start gap-4 group">
-                  <div className="mt-1 w-6 h-6 rounded-full bg-[#6843B7]/10 flex items-center justify-center border border-[#6843B7]/20 shrink-0 group-hover:bg-[#6843B7] transition-colors">
+                  <div className="mt-1 w-6 h-6 rounded-sm bg-[#6843B7]/10 flex items-center justify-center border border-[#6843B7]/20 shrink-0 group-hover:bg-[#6843B7] transition-colors">
                     <CheckCircle2 size={12} className="text-[#6843B7] group-hover:text-white transition-colors" />
                   </div>
                   <div>

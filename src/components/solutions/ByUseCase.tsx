@@ -54,7 +54,7 @@ export default function ByUseCase() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <a href="#web-testing" className="inline-flex items-center gap-2 px-8 py-3 bg-[#6843B7] text-white font medium rounded-full hover:bg-[#6843B7]/90 transition-all shadow-[0_0_20px_rgba(104,67,183,0.3)]">
+              <a href="#web-testing" className="inline-flex items-center gap-2 px-8 py-3 bg-[#6843B7] text-white font medium rounded-sm hover:bg-[#6843B7]/90 transition-all shadow-[0_0_20px_rgba(104,67,183,0.3)]">
                 Explore
               </a>
             </motion.div>
@@ -570,10 +570,10 @@ export default function ByUseCase() {
             Join enterprise engineering teams who trust cliQTest to automate their most complex and business-critical testing workflows.
           </p>
           <div className="flex flex-row flex-wrap items-center justify-start sm:justify-center gap-3 sm:gap-4">
-            <Link href="/book-a-demo" className="flex-1 sm:flex-none text-center px-4 sm:px-8 py-3 bg-[#6843B7] text-white font medium rounded-full hover:scale-105 active:scale-95 transition-all shadow-[0_0_20px_rgba(104,67,183,0.4)] text-[13px] sm:text-base whitespace-nowrap">
+            <Link href="/book-a-demo" className="flex-1 sm:flex-none text-center px-4 sm:px-8 py-3 bg-[#6843B7] text-white font medium rounded-sm hover:scale-105 active:scale-95 transition-all shadow-[0_0_20px_rgba(104,67,183,0.4)] text-[13px] sm:text-base whitespace-nowrap">
               Contact Sales
             </Link>
-            <Link href="/pricing" className="flex-1 sm:flex-none text-center px-4 sm:px-8 py-3 border border-white/20 text-white font medium rounded-full hover:bg-white/5 transition-colors text-[13px] sm:text-base whitespace-nowrap">
+            <Link href="/pricing" className="flex-1 sm:flex-none text-center px-4 sm:px-8 py-3 border border-white/20 text-white font medium rounded-sm hover:bg-white/5 transition-colors text-[13px] sm:text-base whitespace-nowrap">
               View Plans
             </Link>
           </div>

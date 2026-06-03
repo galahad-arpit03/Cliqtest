@@ -70,7 +70,7 @@ export default function ClientsContent() {
                 </p>
                 
                 <div className="flex items-center gap-4 relative z-10">
-                  <div className="w-12 h-12 rounded-full bg-[#111] border border-white/10 flex items-center justify-center">
+                  <div className="w-12 h-12 rounded-sm bg-[#111] border border-white/10 flex items-center justify-center">
                     <span className="text-white/20 text-xs font-bold uppercase">Pic</span>
                   </div>
                   <div>

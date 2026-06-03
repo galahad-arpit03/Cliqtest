@@ -34,7 +34,7 @@ export default function ProductHero() {
           <div className="absolute inset-0 bg-zinc-900/40 border border-white/10 rounded-[40px] backdrop-blur-3xl flex items-center justify-center overflow-hidden">
             <div className="grid grid-cols-10 gap-2 opacity-10">
                {Array.from({ length: 100 }).map((_, i) => (
-                 <div key={i} className="w-1 h-1 bg-[#00F2B0] rounded-full" />
+                 <div key={i} className="w-1 h-1 bg-[#00F2B0] rounded-sm" />
                ))}
             </div>
             <div className="absolute w-40 h-40 bg-[#6843B7]/20 rounded-full blur-[60px] animate-pulse" />
@@ -44,12 +44,12 @@ export default function ProductHero() {
 
       {/* Tab Navigation (Bottom Centered) */}
       <div className="w-full flex justify-center pb-8 mt-12 lg:mt-0">
-        <div className="flex items-center p-1.5 bg-white/5 backdrop-blur-xl rounded-full border border-white/10 shadow-2xl">
+        <div className="flex items-center p-1.5 bg-white/5 backdrop-blur-xl rounded-sm border border-white/10 shadow-2xl">
           {tabs.map((tab) => (
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
-              className={`px-8 lg:px-10 py-3 rounded-full text-[12px] font-black tracking-widest transition-all duration-300 ${
+              className={`px-8 lg:px-10 py-3 rounded-sm text-[12px] font-black tracking-widest transition-all duration-300 ${
                 activeTab === tab 
                 ? 'bg-[#6843B7] text-white shadow-lg' 
                 : 'text-white/50 hover:text-white hover:bg-white/5'

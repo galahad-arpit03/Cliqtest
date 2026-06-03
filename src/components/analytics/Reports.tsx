@@ -60,7 +60,7 @@ export default function Reports() {
               transition={{ duration: 0.6, delay: i * 0.1 }}
               className="bg-white/[0.02] backdrop-blur-xl border border-white/10 p-8 rounded-md hover:bg-white/[0.05] transition-all group"
             >
-              <div className="w-12 h-12 rounded-full bg-[#6843B7]/20 flex items-center justify-center text-[#6843B7] mb-6 group-hover:scale-110 transition-transform">
+              <div className="w-12 h-12 rounded-sm bg-[#6843B7]/20 flex items-center justify-center text-[#6843B7] mb-6 group-hover:scale-110 transition-transform">
                 <feat.icon size={24} strokeWidth={1.5} />
               </div>
               <h3 className="text-white font medium text-lg mb-3">{feat.title}</h3>
