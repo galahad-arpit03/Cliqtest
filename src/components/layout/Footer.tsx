@@ -1,134 +1,57 @@
 "use client";
 
-import React, { useState } from 'react';
+import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { motion, Variants, AnimatePresence } from 'framer-motion';
-import { ChevronDown, ChevronUp } from 'lucide-react';
-import { menuItems } from './Navbar';
-
-const FooterAccordionItem = ({ tab, parentTitle }: { tab: any, parentTitle: string }) => {
-  const [isOpen, setIsOpen] = useState(false);
-  const hasFeatures = tab.features && tab.features.length > 0;
-  const linkHref = `/${parentTitle.toLowerCase().replace(/\s+/g, '-')}/${tab.id}`;
-
-  return (
-    <div className="flex flex-col">
-      <div className="flex items-center justify-between group">
-        <Link href={linkHref} className="text-zinc-500 hover:text-white transition-colors text-sm py-1.5 flex-1">
-          {tab.label}
-        </Link>
-        {hasFeatures && (
-          <button 
-            onClick={(e) => {
-              e.preventDefault();
-              setIsOpen(!isOpen);
-            }}
-            className="p-1.5 text-zinc-500 hover:text-white transition-colors cursor-pointer"
-          >
-            {isOpen ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
-          </button>
-        )}
-      </div>
-      
-      <AnimatePresence>
-        {isOpen && hasFeatures && (
-          <motion.ul 
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            className="overflow-hidden pl-3 border-l border-white/10 ml-1 flex flex-col gap-1.5 mt-1 mb-2"
-          >
-            {tab.features.map((feat: any, idx: number) => (
-              <li key={idx}>
-                <Link 
-                  href={`${linkHref}#${feat.label.toLowerCase().replace(/\s+/g, '-')}`}
-                  className="text-zinc-600 hover:text-zinc-400 transition-colors text-[13px] block py-0.5"
-                >
-                  {feat.label}
-                </Link>
-              </li>
-            ))}
-          </motion.ul>
-        )}
-      </AnimatePresence>
-    </div>
-  );
-};
+import { motion } from 'framer-motion';
 
 export default function Footer() {
-  const containerVariants: Variants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        staggerChildren: 0.1,
-        duration: 0.8,
-        ease: "easeOut"
-      }
-    }
-  };
-
-  const itemVariants: Variants = {
-    hidden: { opacity: 0, y: 10 },
-    visible: { opacity: 1, y: 0 }
-  };
-
   return (
-    <motion.footer 
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true }}
-      variants={containerVariants}
-      className="w-full bg-[#0F1115] pt-16 pb-8 px-8 border-t border-white/5"
-    >
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-5 gap-8 mb-16">
-        {/* Brand Section */}
-        <motion.div variants={itemVariants} className="flex flex-col gap-4 md:col-span-1">
+    <footer className="w-full bg-black py-8 px-8 border-t border-white/5">
+      <div className="max-w-[1400px] mx-auto flex flex-col xl:flex-row justify-between items-center gap-8">
+        
+        {/* Left: Logo */}
+        <div className="flex-shrink-0 flex flex-col items-center">
           <Link href="/" className="inline-block">
-            <div className="relative w-40 h-12 overflow-hidden transition-transform hover:scale-105">
+            <div className="relative w-32 h-10 overflow-hidden flex items-center justify-center">
               <Image
                 src="/logo/logo.png"
                 alt="cliQTest"
                 fill
-                className="object-cover scale-[1.2] object-center"
+                className="object-cover scale-[1.10] object-center"
+                style={{ clipPath: 'inset(0 0 4px 0)' }}
               />
             </div>
           </Link>
-          <p className="text-zinc-500 text-sm italic ml-2">&quot;Turning Clicks into Confidence&quot;</p>
-        </motion.div>
+        </div>
 
-        {/* Dynamic Menu Columns */}
-        {menuItems.filter(item => item.content?.tabs).map((item) => (
-          <motion.div key={item.title} variants={itemVariants} className="flex flex-col gap-6">
-            <h3 className="text-white font-bold text-sm uppercase tracking-wider">{item.title}</h3>
-            <div className="flex flex-col gap-1">
-              {item.content!.tabs.map((tab: any) => (
-                <FooterAccordionItem key={tab.id} tab={tab} parentTitle={item.title} />
-              ))}
-            </div>
-          </motion.div>
-        ))}
+        {/* Center: Copyright & Links */}
+        <div className="flex flex-col items-center xl:items-start gap-4 flex-grow xl:ml-12">
+          <div className="text-[#a0a0a0] text-[13px] font-normal tracking-wide">
+            ©2026 cliQTest Limited
+          </div>
+          <div className="flex flex-wrap justify-center xl:justify-start gap-x-6 gap-y-3 text-[#a0a0a0] text-[13px] font-normal">
+            <Link href="#" className="hover:text-white transition-colors">Privacy Notice</Link>
+            <Link href="#" className="hover:text-white transition-colors">Cookie Policy</Link>
+            <Link href="#" className="hover:text-white transition-colors">Accessibility Declaration</Link>
+            <Link href="#" className="hover:text-white transition-colors">Disclaimer</Link>
+            <Link href="#" className="hover:text-white transition-colors">Security Policy</Link>
+            <Link href="#" className="hover:text-white transition-colors">California Notice at Collection</Link>
+          </div>
+        </div>
 
-      </div>
-
-      {/* Bottom Bar */}
-      <motion.div 
-        variants={itemVariants}
-        className="max-w-7xl mx-auto pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6"
-      >
-        <p className="text-zinc-500 text-sm">
-          Copyright © 2025 All Rights Reserved by <span className="text-zinc-400">cliQTest</span>.
-        </p>
-        
-        
-        <div className="flex gap-4">
+        {/* Right: Socials */}
+        <div className="flex items-center gap-5 flex-shrink-0">
           {[
             { 
               name: 'Facebook', 
               href: 'https://facebook.com/cliQTest',
               path: 'M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z' 
+            },
+            {
+              name: 'YouTube',
+              href: 'https://youtube.com/cliQTest',
+              path: 'M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.5 12 3.5 12 3.5s-7.505 0-9.377.55a3.016 3.016 0 0 0-2.122 2.136C0 8.083 0 12 0 12s0 3.917.501 5.814a3.016 3.016 0 0 0 2.122 2.136c1.872.55 9.377.55 9.377.55s7.505 0 9.377-.55a3.016 3.016 0 0 0 2.122-2.136C24 15.917 24 12 24 12s0-3.917-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z'
             },
             { 
               name: 'X', 
@@ -152,20 +75,21 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={social.name}
-              whileHover={{ y: -5, backgroundColor: "#3f3f46", color: "#ffffff" }}
-              className="w-10 h-10 rounded-sm bg-zinc-800/50 flex items-center justify-center text-zinc-400 transition-all"
+              whileHover={{ scale: 1.1, color: "#ffffff" }}
+              className="text-white hover:text-gray-300 transition-colors flex items-center justify-center"
             >
               <svg 
                 viewBox="0 0 24 24" 
                 fill="currentColor" 
-                className="w-5 h-5"
+                className="w-4 h-4 md:w-5 md:h-5"
               >
                 <path d={social.path} />
               </svg>
             </motion.a>
           ))}
         </div>
-      </motion.div>
-    </motion.footer>
+      </div>
+    </footer>
   );
 }
+
