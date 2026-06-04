@@ -202,7 +202,7 @@ export default function ByTeam() {
             {/* <div className="inline-block px-3 py-1 rounded bg-[#6843B7]/20 text-[#6843B7] text-xs font medium tracking-widest uppercase mb-6 border border-[#6843B7]/30">
               For Automation
             </div> */}
-            <h2 className="text-3xl md:text-4xl font medium mb-6">Automation Engineers: <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00F2B0] to-[#00b382]">Unrestricted & Low-Code Flexibility</span></h2>
+            <h2 className="text-3xl md:text-4xl font medium mb-6">Automation Engineers: <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00F2B0] to-[#ffffff]">Unrestricted & Low-Code Flexibility</span></h2>
             <p className="text-white/60 leading-relaxed text-lg mb-10">
               Automation engineers require scalable, maintainable, and resilient automation frameworks capable of handling dynamic enterprise applications and complex workflows. cliQTest provides a powerful low-code/no-code automation ecosystem designed to simplify script creation, optimize execution, and reduce maintenance overhead.
             </p>
@@ -421,7 +421,7 @@ export default function ByTeam() {
             {/* <div className="inline-block px-3 py-1 rounded bg-[#6843B7]/20 text-[#6843B7] text-xs font medium tracking-widest uppercase mb-6 border border-[#6843B7]/30">
               For Scale
             </div> */}
-            <h2 className="text-3xl md:text-4xl font medium mb-6">Enterprises: <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00F2B0] to-[#00b382]">Global Governance & Scale</span></h2>
+            <h2 className="text-3xl md:text-4xl font medium mb-6">Enterprises: <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00F2B0] to-[#ffffff]">Global Governance & Scale</span></h2>
             <p className="text-white/60 leading-relaxed text-lg mb-10">
               Large enterprises operate across complex application ecosystems, distributed teams, multiple environments, and evolving compliance requirements. cliQTest provides an enterprise-grade quality engineering platform built to support scalability, governance, security, and operational efficiency.
             </p>

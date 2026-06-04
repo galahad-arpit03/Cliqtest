@@ -510,7 +510,7 @@ export default function Navbar() {
                                 className="w-full"
                               >
                                 {tab.intro && (
-                                  <p className="text-white/60 text-base leading-relaxed mb-10">
+                                  <p className="text-white/70 text-base leading-relaxed mb-10">
                                     {tab.intro}
                                   </p>
                                 )}

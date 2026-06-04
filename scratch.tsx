@@ -190,7 +190,7 @@
               <div className="relative z-10 flex flex-col lg:flex-row gap-8 items-center">
                 <div className="flex-1">
                   <div className="mb-6">
-                    <h2 className={`text-4xl md:text-5xl font-semibold tracking-tight text-transparent bg-clip-text bg-gradient-to-r ${idx % 2 === 0 ? 'from-[#6843B7] to-[#9e7be9]' : 'from-[#00F2B0] to-[#00b382]'}`}>{industry.name}</h2>
+                    <h2 className={`text-4xl md:text-5xl font-semibold tracking-tight text-transparent bg-clip-text bg-gradient-to-r ${idx % 2 === 0 ? 'from-[#6843B7] to-[#9e7be9]' : 'from-[#00F2B0] to-[#ffffff]'}`}>{industry.name}</h2>
                   </div>
                   
                   <div className="space-y-4 text-white/60 leading-relaxed text-sm md:text-base max-w-3xl">

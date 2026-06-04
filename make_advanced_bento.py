@@ -1,4 +1,6 @@
-"use client";
+import sys
+
+content = """\"use client\";
 
 import React from 'react';
 import { motion } from 'framer-motion';
@@ -119,11 +121,11 @@ export default function AdvancedFeatures() {
   ];
 
   return (
-    <div className="bg-[#050505] relative flex flex-col pb-24">
+    <div className="bg-[#050505] relative z-20 flex flex-col pb-24">
       {features.map((feature, idx) => {
         const isLeft = idx % 2 === 0;
         const colorClass = feature.color === "#6843B7" ? "text-[#6843B7]" : "text-[#00F2B0]";
-        const bgGradientTo = feature.color === "#6843B7" ? "to-[#9e7be9]" : "to-[#ffffff]";
+        const bgGradientTo = feature.color === "#6843B7" ? "to-[#9e7be9]" : "to-[#00b382]";
         const shadowColor = feature.color === "#6843B7" ? "shadow-[0_0_10px_#6843B7]" : "shadow-[0_0_10px_#00F2B0]";
         const dotBg = feature.color === "#6843B7" ? "bg-[#6843B7]" : "bg-[#00F2B0]";
         const viaColor = feature.color === "#6843B7" ? "via-[#6843B7]" : "via-[#00F2B0]";
@@ -138,7 +140,7 @@ export default function AdvancedFeatures() {
                 {feature.title.split(' ')[0]} <span className={`text-transparent bg-clip-text bg-gradient-to-r ${feature.bgGradient} ${bgGradientTo}`}>{feature.title.split(' ').slice(1).join(' ')}</span>
               </h2>
               
-              <div className="space-y-4 text-white/60 text-[16px] leading-relaxed max-w-3xl">
+              <div className="space-y-6 text-white/60 text-[16px] leading-relaxed max-w-3xl">
                 {feature.desc.map((p, i) => (
                   <p key={i}>{p}</p>
                 ))}
@@ -151,7 +153,7 @@ export default function AdvancedFeatures() {
           <>
             {isLeft ? (
               <>
-                <div className="h-48 bg-[#080808] border border-white/10 rounded-md relative overflow-hidden flex items-center justify-center group">
+                <div className="h-64 bg-[#080808] border border-white/10 rounded-md relative overflow-hidden flex items-center justify-center group">
                   <div className={`absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,${feature.color === "#6843B7" ? 'rgba(104,67,183,0.15)' : 'rgba(0,242,176,0.15)'}_50%,transparent_75%)] pointer-events-none`} />
                   <feature.icon size={80} className={`${colorClass} opacity-30 group-hover:scale-110 transition-transform duration-700 relative z-10`} />
                 </div>
@@ -186,7 +188,7 @@ export default function AdvancedFeatures() {
                     ))}
                   </div>
                 </div>
-                <div className="h-48 bg-[#080808] border border-white/10 rounded-md relative overflow-hidden flex items-center justify-center group">
+                <div className="h-64 bg-[#080808] border border-white/10 rounded-md relative overflow-hidden flex items-center justify-center group">
                   <div className={`absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,${feature.color === "#6843B7" ? 'rgba(104,67,183,0.15)' : 'rgba(0,242,176,0.15)'}_50%,transparent_75%)] pointer-events-none`} />
                   <feature.icon size={80} className={`${colorClass} opacity-30 group-hover:scale-110 transition-transform duration-700 relative z-10`} />
                 </div>
@@ -196,9 +198,9 @@ export default function AdvancedFeatures() {
         );
 
         return (
-          <section key={idx} className="lg:sticky top-20 z-30 bg-[#050505] py-4 lg:shadow-[0_-20px_40px_rgba(5,5,5,1)]">
+          <section key={idx} className="bg-[#050505] py-4">
             <div className="max-w-7xl mx-auto px-8">
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 lg:h-[520px]">
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-4">
                 {isLeft ? (
                   <>
                     <motion.div
@@ -206,7 +208,7 @@ export default function AdvancedFeatures() {
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.6 }}
-                      className="lg:col-span-8 bg-[#0A0A0A] border border-white/10 rounded-md p-8 md:p-10 relative overflow-hidden group"
+                      className="lg:col-span-8 bg-[#0A0A0A] border border-white/10 rounded-md p-8 md:p-12 relative overflow-hidden group"
                     >
                       {MainContent}
                     </motion.div>
@@ -236,7 +238,7 @@ export default function AdvancedFeatures() {
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.6 }}
-                      className="lg:col-span-8 bg-[#0A0A0A] border border-white/10 rounded-md p-8 md:p-10 relative overflow-hidden group order-1 lg:order-2 flex flex-col justify-center"
+                      className="lg:col-span-8 bg-[#0A0A0A] border border-white/10 rounded-md p-8 md:p-12 relative overflow-hidden group order-1 lg:order-2 flex flex-col justify-center"
                     >
                       {MainContent}
                     </motion.div>
@@ -250,3 +252,7 @@ export default function AdvancedFeatures() {
     </div>
   );
 }
+"""
+
+with open("src/components/nocode/AdvancedFeatures.tsx", "w") as f:
+    f.write(content)

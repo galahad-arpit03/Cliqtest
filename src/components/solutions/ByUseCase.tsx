@@ -160,7 +160,7 @@ export default function ByUseCase() {
 
         {/* Section 2: Mobile Testing */}
         <section id="mobile-testing" className="scroll-mt-32">
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">Mobile <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00F2B0] to-[#00b382]">Testing</span></h2>
+          <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">Mobile <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00F2B0] to-[#ffffff]">Testing</span></h2>
           <p className="text-white/60 leading-relaxed text-lg md:text-xl mb-12 max-w-4xl">
             Mobile applications demand seamless experiences across devices, operating systems, screen sizes, and network conditions. cliQTest’s real device lab enables organizations to validate mobile applications on actual Android and iOS devices, ensuring accurate production-level testing.
           </p>
@@ -313,7 +313,7 @@ export default function ByUseCase() {
 
         {/* Section 4: Desktop Testing */}
         <section id="desktop-testing" className="scroll-mt-32">
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">Desktop <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00F2B0] to-[#00b382]">Testing</span></h2>
+          <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">Desktop <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00F2B0] to-[#ffffff]">Testing</span></h2>
           <p className="text-white/60 leading-relaxed text-lg md:text-xl mb-12 max-w-4xl">
             Enterprise desktop applications often involve complex workflows, legacy systems, and environment-specific dependencies that require reliable and scalable validation. cliQTest enables organizations to automate and manage desktop application testing through centralized execution workflows and intelligent automation capabilities.
           </p>

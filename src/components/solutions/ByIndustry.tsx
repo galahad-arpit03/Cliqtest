@@ -199,7 +199,7 @@ export default function ByIndustry() {
               
               <div className="relative z-10 flex flex-col h-full justify-center">
                 <div className="mb-6">
-                  <h2 className="text-4xl md:text-5xl font-semibold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-[#00F2B0] to-[#00b382]">Healthcare</h2>
+                  <h2 className="text-4xl md:text-5xl font-semibold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-[#00F2B0] to-[#ffffff]">Healthcare</h2>
                 </div>
                 
                 <div className="space-y-4 text-white/60 leading-relaxed text-sm md:text-base">
@@ -307,7 +307,7 @@ export default function ByIndustry() {
               
               <div className="relative z-10">
                 <div className="mb-6">
-                  <h2 className="text-4xl md:text-5xl font-semibold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-[#00F2B0] to-[#00b382]">E-Commerce</h2>
+                  <h2 className="text-4xl md:text-5xl font-semibold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-[#00F2B0] to-[#ffffff]">E-Commerce</h2>
                 </div>
                 
                 <div className="space-y-4 text-white/60 leading-relaxed text-sm md:text-base">

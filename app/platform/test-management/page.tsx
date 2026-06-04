@@ -1,8 +1,6 @@
 import React from 'react';
 import TestManagementHero from '@/components/test-management/TestManagementHero';
-import TestCasesFeature from '@/components/test-management/TestCasesFeature';
-import TestSuitesFeature from '@/components/test-management/TestSuitesFeature';
-import AdvancedManagement from '@/components/test-management/AdvancedManagement';
+import TestManagementFeatures from '@/components/test-management/TestManagementFeatures';
 
 export const metadata = {
   title: 'Test Management | cliQTest',
@@ -13,9 +11,7 @@ export default function TestManagementPage() {
   return (
     <>
       <TestManagementHero />
-      <TestCasesFeature />
-      <TestSuitesFeature />
-      <AdvancedManagement />
+      <TestManagementFeatures />
     </>
   );
 }
