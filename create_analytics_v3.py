@@ -1,4 +1,6 @@
-"use client";
+import sys
+
+content = """\"use client\";
 
 import React, { useRef, useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -195,7 +197,7 @@ export default function AnalyticsFeatures() {
               <div className="relative z-10 flex flex-col items-center text-center p-12">
                 {React.createElement(features[activeIndex].icon, {
                   size: 100,
-                  className: "text-[#6843B7] mb-12 drop-shadow-[0_0_40px_rgba(104,67,183,0.8)] animate-pulse"
+                  className: "text-[#6843B7] mb-12 drop-shadow-[0_0_40px_rgba(104,67,183,0.8)] animate-pulse-slow"
                 })}
                 
                 <h4 className="text-7xl font-black text-white tracking-tighter mb-4 drop-shadow-xl">
@@ -208,8 +210,8 @@ export default function AnalyticsFeatures() {
 
               {/* Decorative Tech Rings */}
               <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-20">
-                <div className="w-[300px] h-[300px] border border-[#6843B7] rounded-full animate-[spin_10s_linear_infinite]" />
-                <div className="absolute w-[400px] h-[400px] border border-dashed border-[#6843B7]/50 rounded-full animate-[spin_15s_linear_infinite_reverse]" />
+                <div className="w-[300px] h-[300px] border border-[#6843B7] rounded-full animate-spin-slow" />
+                <div className="absolute w-[400px] h-[400px] border border-dashed border-[#6843B7]/50 rounded-full animate-reverse-spin-slow" />
               </div>
 
             </motion.div>
@@ -220,3 +222,9 @@ export default function AnalyticsFeatures() {
     </section>
   );
 }
+"""
+
+with open("src/components/analytics/AnalyticsFeatures.tsx", "w") as f:
+    f.write(content)
+
+print("Updated design to Apple Sticky Split layout.")
