@@ -1,8 +1,6 @@
 import React from 'react';
 import DeviceLabHero from '@/components/devicelabs/DeviceLabHero';
-import RealDevices from '@/components/devicelabs/RealDevices';
-import BrowserTesting from '@/components/devicelabs/BrowserTesting';
-import CrossPlatform from '@/components/devicelabs/CrossPlatform';
+import DeviceLabFeatures from '@/components/devicelabs/DeviceLabFeatures';
 
 export const metadata = {
   title: "Device Lab | cliQTest",
@@ -13,9 +11,7 @@ export default function DeviceLabsPage() {
   return (
     <div className="flex flex-col min-h-screen bg-black">
       <DeviceLabHero />
-      <RealDevices />
-      <BrowserTesting />
-      <CrossPlatform />
+      <DeviceLabFeatures />
     </div>
   );
 }

@@ -391,7 +391,7 @@ export default function Navbar() {
   }, []);
 
   useEffect(() => {
-    if (isMobileMenuOpen || activeMenu) {
+    if (isMobileMenuOpen) {
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = 'unset';
@@ -399,7 +399,7 @@ export default function Navbar() {
     return () => {
       document.body.style.overflow = 'unset';
     };
-  }, [isMobileMenuOpen, activeMenu]);
+  }, [isMobileMenuOpen]);
 
   return (
     <>
