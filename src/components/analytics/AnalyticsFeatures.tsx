@@ -171,9 +171,9 @@ export default function AnalyticsFeatures() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6"
+            className="text-4xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-6"
           >
-            Intelligence at <span className="text-[#6843B7]">Every Layer</span>
+            Intelligence at <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6843B7] to-[#ffffff]">Every Layer</span>
           </motion.h2>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
