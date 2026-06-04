@@ -103,7 +103,7 @@ export default function CloudFirst() {
           >
             <div className="hidden sm:block relative w-full sm:w-[45%] h-[250px] sm:h-auto bg-black border-b sm:border-b-0 sm:border-r border-white/5">
               <Image
-                src="/landing page/ai agent.png "
+                src="/landing page/ai agent.png"
                 alt="Platform Support"
                 fill
                 className="object-cover object-center transition-transform duration-700 group-hover:scale-[1.03]"
