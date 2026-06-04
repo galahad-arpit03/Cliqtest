@@ -22,12 +22,12 @@ export default function NoCodeHero() {
         className="absolute inset-0 grayscale-[0.10] bg-black/10 w-full h-full z-0"
       >
         <Image
-          src="/nocode-automation/automation.png"
+          src="/nocode-automation/automation1.png"
           alt="No-Code Automation Background"
           fill
           priority
-          className="object-cover object-center  opacity-[0.45] scale-100"
-        />
+          className="object-cover object-center  opacity-[0.4] scale-100"
+        />  
         {/* Rich Gradient Overlays for depth and text legibility */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/40 to-black pointer-events-none" />
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-transparent to-black/80 pointer-events-none" />
