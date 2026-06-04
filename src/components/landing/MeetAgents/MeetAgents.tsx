@@ -5,17 +5,17 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 
 const reasons = [
-  { name: "Multi-Platform Testing", desc: "Mobile | API | Web | Desktop", pos: "lg:top-[0%] lg:left-[10%]" },
-  { name: "Flexible Deployment", desc: "On-Prem | Local Hosted | Hybrid", pos: "lg:top-[0%] lg:right-[10%]" },
-  { name: "Real Device Access", desc: "Real Device over SaaS | Device Rack (Hardware)", pos: "lg:top-[40%] lg:left-[2%]" },
-  { name: "Secure & Automated", desc: "Secured Access | OTP/Code Automation", pos: "lg:top-[40%] lg:right-[2%]" },
-  { name: "AI-Driven Insights", desc: "Intelligent Reporting | Anomaly Detection", pos: "lg:bottom-[5%] lg:left-[10%]" },
-  { name: "Scale with Ease", desc: "Parallel Execution | Cloud Elasticity", pos: "lg:bottom-[5%] lg:right-[10%]" }
+  { name: "Self-Healing Automation", desc: "Dynamically adapts to UI changes", pos: "lg:top-[0%] lg:left-[10%]" },
+  { name: "Autonomous Generation", desc: "AI writes tests from requirements", pos: "lg:top-[0%] lg:right-[10%]" },
+  { name: "No-Code Intelligence", desc: "Create complex flows effortlessly", pos: "lg:top-[40%] lg:left-[2%]" },
+  { name: "Omnichannel Execution", desc: "Web, Mobile, API & Desktop agents", pos: "lg:top-[40%] lg:right-[2%]" },
+  { name: "Anomaly Detection", desc: "Catch regressions before they ship", pos: "lg:bottom-[5%] lg:left-[10%]" },
+  { name: "Massive Parallel Scale", desc: "Run thousands of tests in seconds", pos: "lg:bottom-[5%] lg:right-[10%]" }
 ];
 
 export default function MeetAgents() {
   return (
-    <section className="w-full px-8 py-16 text-center relative overflow-hidden bg-black">
+    <section className="w-full px-4 md:px-8 py-16 text-center relative overflow-hidden bg-black">
       {/* Dynamic Background Beams */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none opacity-30 z-0">
         <motion.div 
@@ -37,21 +37,21 @@ export default function MeetAgents() {
         transition={{ duration: 0.8 }}
         className="relative z-10 text-4xl md:text-[44px] font-semibold text-white mb-16 tracking-tight leading-[1.1]"
       >
-        Why Choose <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6843B7] to-[#ffffff]"> cliQTest?</span>
+        The <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6843B7] to-[#ffffff]"> Agentic QA</span> Advantage
       </motion.h2>
       
       <div className="relative w-full max-w-7xl mx-auto min-h-[600px] flex flex-col items-center justify-center gap-2">
         {/* Central Brand Area */}
-        <div className="relative flex items-center justify-center mx-auto w-48 h-48 md:w-64 md:h-64 z-0">
+        <div className="relative flex items-center justify-center mx-auto w-64 h-64 md:w-80 md:h-80 lg:w-[500px] lg:h-[500px] z-0">
           <div className="relative w-full h-full">
             <div className="w-full h-full relative">
-              <Image
-                src="/logo/bglogo.png"
-                alt="cliQTest AI Brain"
-                fill
-                className="object-contain"
-                sizes="(max-width: 768px) 256px, (max-width: 1024px) 320px, 500px"
-                priority
+              <video
+                src="/assets/b.mp4"
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="w-full h-full object-contain"
               />
             </div>
           </div>
@@ -61,7 +61,7 @@ export default function MeetAgents() {
             transition={{ delay: 0.5 }}
             className="absolute -bottom-8 lg:-bottom-10 text-white text-[10px] font medium tracking-[0.3em] uppercase"
           >
-            The cliQTest Advantage
+            Intelligent Core
           </motion.span>
         </div>
         

@@ -4,149 +4,112 @@ import React from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 
-const smallCards = [
+const resourcesData = [
   {
-    title: "50+ Enterprises",
-    desc: "Trusted by global leaders to automate their most critical workflows and ensure seamless user experiences at scale.",
-    img: "/assets/66fc49416a607a9c02f4bd04_card-tall-complex-flows-hq-p-500.webp",
-    icon: "🏢",
-    href: "#"
-  },
-  { 
-    title: "4+ Platform Support",
-    desc: "Comprehensive coverage for Web, Mobile, API, and Desktop testing in one intelligent ecosystem.",
-    img: "/assets/6852f436ba19260e1e1f1bfe_card-agent-action.webp",
-    icon: "🌐",
-    href: "#"
+    category: "Whitepaper",
+    title: "The Ultimate Guide to Agentic QA",
+    desc: "Discover how AI agents are transforming test automation, from self-healing scripts to autonomous generation.",
+    img: "/landing page/2.png",
+    color: "#00F2B0"
   },
   {
-    title: "10,000+ Device Supports",
-    desc: "Test on real devices and browsers to ensure perfection on every screen and operating system.",
-    img: "/assets/68e97727a405c7cd4f58ca37_card-test-horizontal-stack.webp",
-    icon: "📱",
-    href: "#"
+    category: "Case Study",
+    title: "Global FinTech Cuts QA Time by 80%",
+    desc: "Learn how a leading financial institution integrated cliQTest to achieve seamless continuous delivery.",
+    img: "/landing page/enterprise.png",
+    color: "#6843B7"
+  },
+  {
+    category: "Blog Post",
+    title: "Scaling Test Infrastructure in 2026",
+    desc: "Best practices for managing parallel execution across thousands of devices and dynamic environments.",
+    img: "/landing page/env.png",
+    color: "#FF6F61"
   }
 ];
 
 export default function Resources() {
   return (
-    <section className="w-full bg-black py-16 overflow-hidden relative">
-      {/* Background Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#6843B7]/5 blur-[120px] rounded-full pointer-events-none z-0" />
+    <section className="w-full bg-[#030303] py-24 overflow-hidden relative">
+      {/* Background Decor */}
+      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#6843B7]/5 blur-[120px] rounded-full pointer-events-none z-0" />
+      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#00F2B0]/5 blur-[120px] rounded-full pointer-events-none z-0" />
 
-      {/* Dynamic Background Beams */}
-      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none opacity-30 z-0">
-        <motion.div 
-          animate={{ x: ['-100%', '100%'] }}
-          transition={{ repeat: Infinity, duration: 15, ease: "linear" }}
-          className="absolute top-1/4 left-0 w-[200%] h-[1px] bg-gradient-to-r from-transparent via-[#6843B7] to-transparent transform -rotate-12"
-        />
-        <motion.div 
-          animate={{ x: ['100%', '-100%'] }}
-          transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
-          className="absolute bottom-1/3 right-0 w-[200%] h-[1px] bg-gradient-to-r from-transparent via-[#00F2B0] to-transparent transform rotate-12"
-        />
-      </div>
-
-      <div className="max-w-7xl mx-auto px-8 relative z-10">
-
-        {/* Section Header */}
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="mb-12 text-center"
-        >
-          <h2 className="text-4xl md:text-[44px] font-semibold tracking-tight text-white mb-2 leading-[1.1]">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6843B7] to-[#8f81eb]">cliQTest</span> Impact
-          </h2>
-          <p className="text-[#ffffff] text-sm font-semibold uppercase tracking-[0.2em]">
-            Driving the future of QA
-          </p>
-        </motion.div>
-
-        {/* Two-Column Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-
-          {/* Left: Featured Large Card */}
+      <div className="max-w-7xl mx-auto px-4 md:px-8 relative z-10">
+        
+        {/* Header */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <motion.div 
-            initial={{ opacity: 0, x: -30 }}
+            initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            whileHover={{ y: -5 }}
-            className="flex flex-col rounded-[12px] overflow-hidden bg-[#0A0A0A] border border-white/10 shadow-2xl hover:border-[#6843B7]/40 hover:bg-[#111] hover:shadow-[0_20px_40px_rgba(104,67,183,0.1)] transition-all duration-500 cursor-pointer group"
           >
-            {/* Featured Image */}
-            <div className="relative w-full h-[280px] md:h-[340px] bg-black overflow-hidden border-b border-white/5">
-              <Image 
-                src="/assets/69176c0974b136817d51ddff_Driving-QA-Transformation-thumb-p-500.webp"
-                alt="Featured Impact"
-                fill
-                className="object-cover group-hover:scale-105 transition-transform duration-[1s] ease-out"
-                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 600px"
-              />
-              <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500 pointer-events-none" />
-            </div>
-
-            {/* Featured Text Content */}
-            <div className="p-8 md:p-10 flex flex-col gap-4 flex-1 relative z-20">
-              <h3 className="text-3xl md:text-4xl font medium text-white leading-tight tracking-tight group-hover:text-[#6843B7] transition-colors duration-300">
-                12,000+<br />Test Runs
-              </h3>
-              <p className="text-zinc-400 text-[15px] leading-relaxed font-medium flex-1">
-                Scale your quality engineering with a platform built for massive parallel execution and enterprise-grade reliability. Run thousands of tests simultaneously without compromising speed or accuracy.
-              </p>
-              <div className="text-[#00F2B0] font medium text-sm inline-flex items-center gap-2 group-hover:text-[#6843B7] transition-colors duration-300 mt-2">
-                Learn More <span className="group-hover:translate-x-1 transition-transform">→</span>
-              </div>
-            </div>
+           
+            <h2 className="text-4xl md:text-5xl font-semibold text-white tracking-tight leading-[1.1]">
+              Latest Insights & <br className="hidden md:block" />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6843B7] to-[#8f81eb]">Knowledge Base</span>
+            </h2>
           </motion.div>
-
-          {/* Right: Three Stacked Cards */}
-          <div className="flex flex-col gap-5">
-            {smallCards.map((card, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, x: 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.15, duration: 0.6 }}
-                whileHover={{ x: -5 }}
-                className="flex flex-row rounded-[14px] overflow-hidden bg-[#0A0A0A] border border-white/10 shadow-lg hover:border-[#6843B7]/40 hover:bg-[#111] hover:shadow-[0_10px_30px_rgba(104,67,183,0.1)] transition-all duration-500 cursor-pointer group flex-1"
-              >
-                {/* Thumbnail */}
-                <div className="relative w-[130px] md:w-[180px] flex-shrink-0 bg-black flex items-center justify-center overflow-hidden border-r border-white/5">
-                  <Image 
-                    src={card.img}
-                    alt={card.title}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-[1s] ease-out"
-                    sizes="(max-width: 768px) 130px, 180px"
-                  />
-                  <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500 pointer-events-none" />
-                </div>
-
-                {/* Card Text */}
-                <div className="flex-1 p-5 md:p-6 flex flex-col justify-center relative z-20">
-                  <div>
-                    <h4 className="text-lg md:text-xl font medium text-white mb-2 leading-snug tracking-tight group-hover:text-[#6843B7] transition-colors duration-300">
-                      {card.title}
-                    </h4>
-                    <p className="text-zinc-400 text-[13px] md:text-[14px] font-medium leading-relaxed line-clamp-3">
-                      {card.desc}
-                    </p>
-                  </div>
-                  <div className="text-[#00F2B0] font medium text-xs md:text-sm mt-3 inline-flex items-center gap-1 group-hover:text-[#6843B7] transition-colors duration-300">
-                    Learn More <span className="group-hover:translate-x-1 transition-transform">→</span>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+            <a href="https://docs.cliqtest.com/" className="inline-flex items-center gap-2 px-6 py-3 rounded-sm bg-white/10 text-white font-medium hover:bg-white/20 transition-colors border border-white/10">
+              View All Resources
+              <span className="text-lg">→</span>
+            </a>
+          </motion.div>
         </div>
+
+        {/* Resource Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {resourcesData.map((resource, idx) => (
+            <motion.div
+              key={idx}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: idx * 0.15 }}
+              className="group flex flex-col bg-[#0A0A0A] border border-white/10 rounded-md overflow-hidden hover:border-white/20 transition-colors"
+            >
+              <div className="relative w-full h-[240px] bg-black overflow-hidden border-b border-white/5">
+                <Image
+                  src={resource.img}
+                  alt={resource.title}
+                  fill
+                  className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out opacity-80 group-hover:opacity-100"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-transparent to-transparent opacity-90" />
+                
+                {/* Badge */}
+                <div 
+                  className="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-semibold tracking-wide backdrop-blur-md"
+                  style={{ backgroundColor: `${resource.color}20`, color: resource.color, border: `1px solid ${resource.color}40` }}
+                >
+                  {resource.category}
+                </div>
+              </div>
+              
+              <div className="p-8 flex flex-col flex-1">
+                <h3 className="text-xl font-semibold text-white mb-4 leading-snug group-hover:text-[#6843B7] transition-colors duration-300">
+                  {resource.title}
+                </h3>
+                <p className="text-zinc-400 text-sm leading-relaxed mb-8 flex-1">
+                  {resource.desc}
+                </p>
+                <div className="inline-flex items-center gap-2 text-[#6843B7] font-medium text-sm group-hover:text-white transition-colors mt-auto">
+                  Read Article
+                  <span className="group-hover:translate-x-1 transition-transform">→</span>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
       </div>
     </section>
   );

@@ -6,7 +6,8 @@ import { motion, Variants, useScroll, useTransform } from 'framer-motion';
 export default function Hero() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const { scrollY } = useScroll();
-  const y = useTransform(scrollY, [0, 1000], ['0%', '30%']);
+  const yBg = useTransform(scrollY, [0, 1000], ['0%', '30%']);
+    const yText = useTransform(scrollY, [0, 1000], ['0%', '10%']);
 
   useEffect(() => {
     if (videoRef.current) {
@@ -39,7 +40,7 @@ export default function Hero() {
       <div className="absolute top-0 left-0 w-full h-40 bg-gradient-to-b from-black/80 to-transparent z-10 pointer-events-none" />
       
       <motion.div 
-        style={{ y }}
+        style={{ y: yBg }}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 2 }}
@@ -62,7 +63,7 @@ export default function Hero() {
       </motion.div>
 
       {/* Main Container */}
-      <div className="relative z-20 w-full max-w-7xl mx-auto px-8 flex flex-col md:flex-row items-center">
+      <motion.div style={{ y: yText }} className="relative z-20 w-full max-w-7xl mx-auto px-4 md:px-8 flex flex-col md:flex-row items-center">
         
         {/* Left Side Content */}
         <motion.div
@@ -110,7 +111,7 @@ export default function Hero() {
 
       {/* Right side spacer to push content left */}
         <div className="flex-1 hidden md:block" />
-      </div>
+      </motion.div>
 
       {/* Scroll Indicator */}
       <motion.div 
