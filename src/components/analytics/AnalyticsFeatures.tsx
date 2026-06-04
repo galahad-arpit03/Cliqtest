@@ -123,7 +123,7 @@ export default function AnalyticsFeatures() {
   }, [activeIndex]);
 
   return (
-    <section className="bg-black min-h-screen relative text-white font-sans selection:bg-[#6843B7] selection:text-white pb-32">
+    <section className="bg-black min-h-[800px] relative text-white font-sans selection:bg-[#6843B7] selection:text-white pb-32">
       
       <div className="w-full max-w-7xl mx-auto px-8 flex flex-col lg:flex-row relative items-start gap-12 lg:gap-24 pt-20">
         

@@ -34,7 +34,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative w-full bg-black min-h-screen flex items-center pt-20 overflow-hidden">
+    <section className="relative w-full bg-black min-h-[800px] flex items-center pt-0 overflow-hidden">
       {/* Top Gradient Overlay for Navbar Legibility */}
       <div className="absolute top-0 left-0 w-full h-40 bg-gradient-to-b from-black/80 to-transparent z-10 pointer-events-none" />
       

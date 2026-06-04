@@ -40,13 +40,13 @@ export default function MeetAgents() {
         Why Choose <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6843B7] to-[#ffffff]"> cliQTest?</span>
       </motion.h2>
       
-      <div className="relative w-full max-w-7xl mx-auto min-h-[600px] flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-0">
+      <div className="relative w-full max-w-7xl mx-auto min-h-[600px] flex flex-col items-center justify-center gap-2">
         {/* Central Brand Area */}
-        <div className="relative lg:absolute w-64 h-64 md:w-80 md:h-80 lg:w-[500px] lg:h-[500px] flex items-center justify-center z-0 order-first lg:order-none">
+        <div className="relative flex items-center justify-center mx-auto w-48 h-48 md:w-64 md:h-64 z-0">
           <div className="relative w-full h-full">
             <div className="w-full h-full relative">
               <Image
-                src="/assets/brain.png"
+                src="/logo/bglogo.png"
                 alt="cliQTest AI Brain"
                 fill
                 className="object-contain"
@@ -66,7 +66,7 @@ export default function MeetAgents() {
         </div>
         
         {/* Floating Reason Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:block w-full gap-6 z-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:block w-full gap-2 z-10 -mt-8">
           {reasons.map((reason, i) => (
             <motion.div 
               key={i} 

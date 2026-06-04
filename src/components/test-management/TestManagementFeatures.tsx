@@ -196,7 +196,7 @@ export default function TestManagementFeatures() {
   };
 
   return (
-    <div className="bg-[#050505] text-white min-h-screen">
+    <div className="bg-[#050505] text-white min-">
       
       {/* 2. Main Layout: Sticky Sidebar + Scrolling Content */}
       <section className="relative max-w-7xl mx-auto px-8 py-20 flex flex-col lg:flex-row gap-16">

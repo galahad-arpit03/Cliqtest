@@ -7,7 +7,7 @@ export default function AboutHero() {
   return (
     <section
       id="our-story"
-      className="relative min-h-[80vh] md:min-h-screen flex flex-col justify-center overflow-hidden"
+      className="relative min-h-[80vh] md:min-flex flex-col justify-center overflow-hidden"
       style={{
         backgroundImage: "url('/about/hero.png')",
         backgroundSize: "cover",

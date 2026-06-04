@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import LoadingScreen from "@/components/layout/LoadingScreen";
+import DynamicBeams from "@/components/common/DynamicBeams";
 
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-space-grotesk",

@@ -61,7 +61,7 @@ export default function ByTeam() {
   };
 
   return (
-    <div className="bg-[#050505] text-white min-h-screen">
+    <div className="bg-[#050505] text-white min-">
       {/* 1. Hero Section */}
       <section className="relative pt-20 pb-24 min-h-[60vh] flex flex-col justify-center border-b border-white/5 overflow-hidden">
         {/* Background Image/Gradient */}

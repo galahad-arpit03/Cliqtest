@@ -8,7 +8,7 @@ import Resources from "@/components/landing/Resources/Resources";
 
 export default function LandingPage() {
   return (
-    <div className="relative min-h-screen flex flex-col overflow-hidden bg-black">
+    <div className="relative min-h-[800px] flex flex-col overflow-hidden bg-black">
       <Hero />
       <Logos />
       <Platform />

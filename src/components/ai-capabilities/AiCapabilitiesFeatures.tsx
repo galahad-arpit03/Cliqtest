@@ -109,7 +109,7 @@ export default function AiCapabilitiesFeatures() {
   const [activeIndex, setActiveIndex] = React.useState(0);
 
   return (
-    <section className="bg-black min-h-screen py-14  md:py-24 relative text-white font-sans selection:bg-[#6843B7] selection:text-white">
+    <section className="bg-black min-py-14  md:py-24 relative text-white font-sans selection:bg-[#6843B7] selection:text-white">
       
       {/* Background Ambience */}
       <div className="absolute inset-0 z-0 opacity-20 pointer-events-none bg-black">

@@ -15,7 +15,7 @@ export default function AnalyticsHero() {
   const opacity = useTransform(scrollYProgress, [0, 1], [1, 0]);
 
   return (
-    <section ref={containerRef} className="relative w-full h-screen min-h-[800px] flex items-center justify-center overflow-hidden bg-black">
+    <section ref={containerRef} className="relative w-full min-h-[800px] flex items-center justify-center overflow-hidden bg-black">
       {/* Background Image Parallax */}
       <motion.div 
         style={{ y, opacity }}
