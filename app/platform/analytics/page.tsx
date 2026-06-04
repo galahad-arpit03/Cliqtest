@@ -1,21 +1,17 @@
 import React from 'react';
-import AnalyticsHero from "@/components/analytics/AnalyticsHero";
-import Dashboards from "@/components/analytics/Dashboards";
-import Reports from "@/components/analytics/Reports";
-import QualityMetrics from "@/components/analytics/QualityMetrics";
+import AnalyticsHero from '@/components/analytics/AnalyticsHero';
+import AnalyticsFeatures from '@/components/analytics/AnalyticsFeatures';
 
 export const metadata = {
-  title: 'Analytics & Reporting | cliQTest',
-  description: 'Transform complex testing data into actionable business insights with real-time dashboards and configurable reporting.',
+  title: "Analytics & Reporting | cliQTest",
+  description: "Gain complete visibility into your testing ecosystem with real-time execution analytics and comprehensive dashboards.",
 };
 
 export default function AnalyticsPage() {
   return (
-    <div className="relative min-h-screen flex flex-col overflow-hidden bg-black">
+    <div className="flex flex-col min-h-screen bg-[#050505]">
       <AnalyticsHero />
-      <Dashboards />
-      <Reports />
-      <QualityMetrics />
+      <AnalyticsFeatures />
     </div>
   );
 }

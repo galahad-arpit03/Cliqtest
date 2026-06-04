@@ -10,10 +10,10 @@ export default function Footer() {
     <footer className="w-full bg-black py-8 px-8 border-t border-white/5">
       <div className="max-w-[1400px] mx-auto flex flex-col xl:flex-row justify-between items-center gap-8">
         
-        {/* Left: Logo */}
-        <div className="flex-shrink-0 flex flex-col items-center">
-          <Link href="/" className="flex items-center gap-2 cursor-pointer group">
-            <div className="relative w-32 h-10 md:w-36 md:h-11 overflow-hidden transition-transform duration-300 group-hover:scale-105">
+        {/* Left: Logo & Copyright */}
+        <div className="flex flex-col xl:flex-row items-center xl:items-center gap-4 xl:gap-8 flex-shrink-0">
+          <Link href="/" className="group cursor-pointer">
+            <div className="relative w-28 h-8 md:w-32 md:h-10 overflow-hidden transition-transform duration-300 group-hover:scale-105">
               <Image
                 src="/logo/logo.png"
                 alt="cliQTest"
@@ -22,20 +22,18 @@ export default function Footer() {
               />
             </div>
           </Link>
+          <div className="text-[#a0a0a0] text-[13px] font-normal tracking-wide">
+            © 2026 cliQTest Limited
+          </div>
         </div>
 
-        {/* Center: Copyright & Links */}
-        <div className="flex flex-col items-center xl:items-start gap-4 flex-grow xl:ml-12">
-          <div className="text-[#a0a0a0] text-[13px] font-normal tracking-wide">
-            ©2026 cliQTest Limited
-          </div>
-          <div className="flex flex-wrap justify-center xl:justify-start gap-x-6 gap-y-3 text-[#a0a0a0] text-[13px] font-normal">
+        {/* Center: Links */}
+        <div className="flex justify-center items-center flex-grow">
+          <div className="flex flex-wrap justify-center gap-x-6 gap-y-3 text-[#a0a0a0] text-[13px] font-normal">
             <Link href="#" className="hover:text-white transition-colors">Privacy Notice</Link>
             <Link href="#" className="hover:text-white transition-colors">Cookie Policy</Link>
-            <Link href="#" className="hover:text-white transition-colors">Accessibility Declaration</Link>
             <Link href="#" className="hover:text-white transition-colors">Disclaimer</Link>
             <Link href="#" className="hover:text-white transition-colors">Security Policy</Link>
-            <Link href="#" className="hover:text-white transition-colors">California Notice at Collection</Link>
           </div>
         </div>
 

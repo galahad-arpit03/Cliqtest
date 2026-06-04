@@ -187,11 +187,11 @@ export default function DeviceLabFeatures() {
     <div className="bg-[#050505] text-white flex flex-col font-sans overflow-x-hidden">
       
       {/* Sub-Navbar */}
-      <div className="sticky top-20 z-40 bg-[#0A0A0A]/95 backdrop-blur-xl border-y border-white/10 text-white/70 py-4 px-8 flex justify-start sm:justify-center gap-6 sm:gap-10 text-[10px] sm:text-xs font-medium tracking-widest uppercase overflow-x-auto whitespace-nowrap shadow-xl">
+      {/* <div className="sticky top-20 z-40 bg-[#0A0A0A]/95 backdrop-blur-xl border-y border-white/10 text-white/70 py-4 px-8 flex justify-start sm:justify-center gap-6 sm:gap-10 text-[10px] sm:text-xs font-medium tracking-widest uppercase overflow-x-auto whitespace-nowrap shadow-xl">
         {features.map((f) => (
           <a key={f.id} href={`#${f.id}`} className="hover:text-[#00F2B0] transition-colors">{f.label}</a>
         ))}
-      </div>
+      </div> */}
 
       <div className="max-w-7xl mx-auto px-8 py-24 flex flex-col gap-32">
         

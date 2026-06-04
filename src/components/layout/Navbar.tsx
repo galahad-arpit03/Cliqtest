@@ -4,8 +4,8 @@ import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
-import { 
-  ChevronDown, 
+import {
+  ChevronDown,
   ChevronRight,
   Menu,
   X,
@@ -39,16 +39,16 @@ export const menuItems = [
     dropdownType: "tabbed",
     content: {
       tabs: [
-        { 
-          id: "overview", 
-          label: "Platform Overview", 
+        {
+          id: "overview",
+          label: "Platform Overview",
           title: "Intelligent Testing Infrastructure",
           description: "cliQTest is an innovative platform designed to unify your testing ecosystem. Whether you’re working on websites, mobile apps, or APIs, cliQTest provides a robust, AI-powered environment to conduct automated testing with absolute precision.",
           icon: Globe
         },
-        { 
-          id: "test-management", 
-          label: "Test Management", 
+        {
+          id: "test-management",
+          label: "Test Management",
           header: "Centralized Quality Operations",
           intro: "Streamline your entire quality operations through a powerful, centralized hub. From precision test planning to full requirement traceability and comprehensive version control, our management suite brings absolute clarity and governance to your entire testing lifecycle.",
           icon: Globe,
@@ -64,28 +64,11 @@ export const menuItems = [
             { label: "Smart Bug Raiser", desc: "Automated defect logging." }
           ]
         },
-        { 
-          id: "nocode", 
-          label: "No Code Automation", 
-          header: "Autonomous Test Generation",
-          intro: "Empower your entire organization with autonomous, intelligent test generation. Our advanced visual recorder and predictive self-healing locators seamlessly automate complex testing scenarios across Web, Mobile, API, and Desktop environments without writing a single line of code.",
-          icon: Zap,
-          features: [
-            { label: "Recorder", desc: "Intelligent visual recording." },
-            { label: "Scriptless Automation", desc: "No coding required." },
-            { label: "Reusable Components", desc: "Modular test design." },
-            { label: "Auto-Healing", desc: "Self-repairing test execution." },
-            { label: "API Automation", desc: "Seamless API testing." },
-            { label: "Desktop Automation", desc: "Desktop application support." },
-            { label: "Smart Authentication Automation", desc: "Handle complex logins." },
-            { label: "Environment Management", desc: "Manage configurations." },
-            { label: "Distributed Execution", desc: "Scale across nodes." }
-          ]
-        },
-        
-        { 
-          id: "devicelabs", 
-          label: "Device Labs", 
+
+
+        {
+          id: "devicelabs",
+          label: "Device Labs",
           header: "Enterprise Device Lab",
           intro: "Deploy your applications with absolute confidence by testing securely across thousands of real devices, browsers, and platforms. Leverage deep performance diagnostics and real-time live debugging to ensure a flawless experience for every single user, everywhere.",
           icon: Cpu,
@@ -101,9 +84,27 @@ export const menuItems = [
             { label: "Cross Platform Testing", desc: "Unified multi-platform support." }
           ]
         },
-        { 
-          id: "analytics", 
-          label: "Analytics & Reporting", 
+        {
+          id: "nocode",
+          label: "No Code Automation",
+          header: "Autonomous Test Generation",
+          intro: "Empower your entire organization with autonomous, intelligent test generation. Our advanced visual recorder and predictive self-healing locators seamlessly automate complex testing scenarios across Web, Mobile, API, and Desktop environments without writing a single line of code.",
+          icon: Zap,
+          features: [
+            { label: "Recorder", desc: "Intelligent visual recording." },
+            { label: "Scriptless Automation", desc: "No coding required." },
+            { label: "Reusable Components", desc: "Modular test design." },
+            { label: "Auto-Healing", desc: "Self-repairing test execution." },
+            { label: "API Automation", desc: "Seamless API testing." },
+            { label: "Desktop Automation", desc: "Desktop application support." },
+            { label: "Smart Authentication Automation", desc: "Handle complex logins." },
+            { label: "Environment Management", desc: "Manage configurations." },
+            { label: "Distributed Execution", desc: "Scale across nodes." }
+          ]
+        },
+        {
+          id: "analytics",
+          label: "Analytics & Reporting",
           header: "Unified Analytics",
           intro: "Transform raw testing data into actionable, strategic intelligence. Our unified analytics engine provides highly customizable, real-time dashboards and automated reports that instantly identify bottlenecks and dramatically optimize your execution performance.",
           icon: Database,
@@ -120,9 +121,9 @@ export const menuItems = [
             { label: "Quality Metrics", desc: "Standardized QA measurements." }
           ]
         },
-        { 
-          id: "ai-capabilities", 
-          label: "AI Capabilities", 
+        {
+          id: "ai-capabilities",
+          label: "AI Capabilities",
           header: "Next-Gen AI Intelligence",
           intro: "Harness the absolute cutting edge of artificial intelligence to supercharge your quality engineering. From smart natural language test generation to pixel-perfect visual validation and predictive failure analysis, our AI acts as a continuous force multiplier for your team.",
           icon: Zap,
@@ -277,39 +278,6 @@ export const menuItems = [
           ]
         },
         {
-          id: "compliance-security",
-          label: "Compliance and Security",
-          header: "Built on Trust",
-          intro: "Rest easy knowing your organization's sensitive data is fully protected by our rigorous, enterprise-grade security protocols. We guarantee full auditability, complete governance, absolute traceability, and strict continuous adherence to the highest global regulatory compliance standards.",
-          icon: Cpu,
-          features: [
-            { label: "Enterprise Security", desc: "Protecting your data at every layer." },
-            { label: "Governance & Traceability", desc: "Full auditability and control." },
-            { label: "Compliance Readiness", desc: "Meeting global regulatory standards." }
-          ]
-        },
-        {
-          id: "csr-community",
-          label: "CSR & Community",
-          header: "Giving Back",
-          intro: "We fundamentally believe in giving back and empowering the next generation. Read about our diverse community initiatives, impactful open-source contributions, and our unwavering corporate commitment to fostering global tech education, continuous learning, and sustainable innovation.",
-          icon: Globe,
-          features: [
-            { label: "Community Initiatives", desc: "Supporting the global tech ecosystem." },
-            { label: "Innovation & Learning", desc: "Fostering growth and education." }
-          ]
-        },
-        {
-          id: "global-presence",
-          label: "Global Presence",
-          header: "Worldwide Reach",
-          intro: "With robust 24/7 delivery and comprehensive support operations distributed worldwide, our dedicated engineering teams are always ready to assist you. No matter where your enterprise is located, we ensure your continuous success with uninterrupted service and rapid, localized response times.",
-          icon: Database,
-          features: [
-            { label: "Delivery & Support", desc: "24/7 global support and operations." }
-          ]
-        },
-        {
           id: "newsroom",
           label: "Newsroom",
           header: "Latest Updates",
@@ -320,12 +288,12 @@ export const menuItems = [
             { label: "Events & Webinars", desc: "Inputs for Events & Webinars section to be provided." },
             { label: "Media Coverage", desc: "Inputs for Media Coverage section to be provided." }
           ]
-        } 
+        }
       ]
     }
   },
-  
-  
+
+
   {
     title: "Integrations",
     dropdownType: "tabbed",
@@ -352,7 +320,7 @@ export const menuItems = [
       ]
     }
   },
-  
+
   {
     title: "Resources",
     href: "https://docs.cliqtest.com/"
@@ -403,301 +371,298 @@ export default function Navbar() {
 
   return (
     <>
-    <nav ref={navRef} className={`fixed top-0 w-full z-[100] transition-all duration-500 ${
-      isScrolled || isMobileMenuOpen 
-      ? 'bg-black/95 backdrop-blur-md h-20 border-b border-white/5 shadow-2xl' 
-      : 'bg-transparent h-24'
-    } px-8`}>
-      <div className="max-w-7xl mx-auto w-full h-full flex justify-between items-center">
-      
-      {/* Left: Logo Section */}
-      <div className="flex-1 flex justify-start">
-        <Link href="/" className="flex items-center gap-2 cursor-pointer group z-[110]">
-          <div className="relative w-32 h-10 md:w-36 md:h-11 overflow-hidden transition-transform duration-300 group-hover:scale-105">
+      <nav ref={navRef} className={`fixed top-0 w-full z-[100] transition-all duration-500 ${isScrolled || isMobileMenuOpen
+          ? 'bg-black/95 backdrop-blur-md h-20 border-b border-white/5 shadow-2xl'
+          : 'bg-transparent h-24'
+        } px-8`}>
+        <div className="max-w-7xl mx-auto w-full h-full flex justify-between items-center">
+
+          {/* Left: Logo Section */}
+          <div className="flex-1 flex justify-start">
+            <Link href="/" className="flex items-center gap-2 cursor-pointer group z-[110]">
+              <div className="relative w-32 h-10 md:w-36 md:h-11 overflow-hidden transition-transform duration-300 group-hover:scale-105">
+                <Image
+                  src="/logo/logo.png"
+                  alt="cliQTest"
+                  fill
+                  className="object-cover scale-[1.2] object-center"
+                  priority
+                />
+              </div>
+            </Link>
+          </div>
+          {/* Center: Main Navigation Group */}
+          <div className="hidden lg:flex flex-[2] justify-center items-center gap-6">
+            {menuItems.map((item) => {
+              const hasDropdown = !!item.content;
+
+              const ItemLabel = (
+                <div className={`flex items-center gap-1 text-[15px] font-medium tracking-wide transition-colors ${activeMenu === item.title ? 'text-[#6843B7]' : 'text-white/70 hover:text-white'
+                  }`}>
+                  {item.title}
+                  {hasDropdown && <ChevronDown size={14} className={`transition-transform duration-300 ${activeMenu === item.title ? 'rotate-180' : ''}`} />}
+                </div>
+              );
+
+              return (
+                <div
+                  key={item.title}
+                  className="relative h-20 flex items-center cursor-pointer"
+                  onClick={() => {
+                    if (hasDropdown) {
+                      if (activeMenu === item.title) {
+                        setActiveMenu(null);
+                      } else {
+                        setActiveMenu(item.title);
+                        const featureTabs = item.content?.tabs?.filter((t: NavTab) => !t.description);
+                        if (featureTabs && featureTabs.length > 0) {
+                          setActiveTab(featureTabs[0].id);
+                          setShowMoreFeatures(false);
+                        }
+                      }
+                    }
+                  }}
+                >
+                  {item.href ? (
+                    <Link href={item.href}>
+                      {ItemLabel}
+                    </Link>
+                  ) : ItemLabel}
+
+                  {/* Desktop Dropdown - Minimal Theme Matched */}
+                  <AnimatePresence>
+                    {hasDropdown && activeMenu === item.title && (
+                      <motion.div
+                        initial={{ opacity: 0, y: -10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -10 }}
+                        transition={{ duration: 0.2, ease: "easeOut" }}
+                        className="fixed top-20 left-0 w-full z-[120]"
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        <div className="bg-black border-white/5 shadow-2xl overflow-hidden flex min-h-[350px]">
+
+                          <div className="w-full flex px-8 max-w-[1600px] mx-auto">
+                            {/* Left Column (Tabs) */}
+                            <div className="w-[30%] py-10 px-0 flex flex-col border-r border-white/5">
+                              {item.content?.tabs?.filter((t: NavTab) => !t.description).map((tab: NavTab) => {
+                                const isActive = activeTab === tab.id;
+                                return (
+                                  <Link
+                                    href={`/${item.title.toLowerCase().replace(/\s+/g, '-')}/${tab.id}`}
+                                    key={tab.id}
+                                    onMouseEnter={() => { setActiveTab(tab.id); setShowMoreFeatures(false); }}
+                                    onClick={() => setActiveMenu(null)}
+                                    className={`flex items-center justify-between px-10 py-[14px] transition-all duration-300 cursor-pointer ${isActive
+                                        ? 'bg-white/5 border-l-[3px] border-[#6843B7] text-white'
+                                        : 'text-white/60 hover:text-white border-l-[3px] border-transparent'
+                                      }`}
+                                  >
+                                    <span className={`text-[15px] tracking-wide font-medium ${isActive ? 'text-[#6843B7]' : 'text-white/60'}`}>{tab.label}</span>
+                                    <ChevronRight size={16} className={`transition-transform duration-300 ${isActive ? 'opacity-100 text-[#6843B7]' : 'opacity-100 text-white/30'}`} />
+                                  </Link>
+                                );
+                              })}
+                            </div>                        {/* Right Column (Content) */}
+                            <div className="flex-1 py-10 px-16 bg-transparent">
+                              <AnimatePresence mode="wait">
+                                {item.content?.tabs?.filter((t: NavTab) => !t.description && t.id === activeTab).map((tab: NavTab) => (
+                                  <motion.div
+                                    key={tab.id}
+                                    initial={{ opacity: 0, y: 5 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    exit={{ opacity: 0, y: -5 }}
+                                    transition={{ duration: 0.15 }}
+                                    className="w-full"
+                                  >
+                                    {tab.intro && (
+                                      <p className="text-white/70 text-base leading-relaxed mb-10">
+                                        {tab.intro}
+                                      </p>
+                                    )}
+                                    <div className="grid grid-cols-2 md:grid-cols-3 gap-x-12 gap-y-6">
+                                      {tab.features && (
+                                        <>
+                                          {tab.features.slice(
+                                            showMoreFeatures ? 8 : 0,
+                                            showMoreFeatures ? undefined : 8
+                                          ).map((feat: { label: string; desc: string }, idx: number) => {
+                                            const targetPath = `/${item.title.toLowerCase().replace(/\s+/g, '-')}/${tab.id}`;
+                                            const targetHash = feat.label.toLowerCase().replace(/\s+/g, '-');
+
+                                            return (
+                                              <Link
+                                                href={`${targetPath}#${targetHash}`}
+                                                onClick={(e) => {
+                                                  setActiveMenu(null);
+                                                  if (typeof window !== 'undefined' && window.location.pathname === targetPath) {
+                                                    const el = document.getElementById(targetHash);
+                                                    if (el) {
+                                                      e.preventDefault();
+                                                      el.scrollIntoView({ behavior: 'smooth' });
+                                                      window.history.pushState(null, '', `${targetPath}#${targetHash}`);
+                                                    }
+                                                  }
+                                                }}
+                                                key={idx}
+                                                className="group/feat flex flex-col gap-1.5 py-2"
+                                              >
+                                                <h4 className="text-transparent bg-clip-text bg-gradient-to-r from-[#6843B7] to-[#ffffff] font-semibold text-[15px] transition-colors">{feat.label}</h4>
+                                                <p className="text-white/50 text-[13px] leading-relaxed group-hover/feat:text-white/70 transition-colors line-clamp-2">{feat.desc}</p>
+                                              </Link>
+                                            )
+                                          })}
+
+                                          {tab.features.length > 8 && !showMoreFeatures && (
+                                            <button
+                                              onClick={() => setShowMoreFeatures(true)}
+                                              className="group/feat flex flex-col justify-center items-start gap-1.5 py-2 cursor-pointer h-full"
+                                            >
+                                              <h4 className="text-[#6843B7] font-semibold text-[15px] transition-colors group-hover/feat:text-white">More <span className="group-hover/feat:translate-x-1 inline-block transition-transform">→</span></h4>
+                                              <p className="text-white/30 text-[13px] leading-relaxed group-hover/feat:text-white/50 transition-colors">View remaining features</p>
+                                            </button>
+                                          )}
+
+                                          {tab.features.length > 8 && showMoreFeatures && (
+                                            <button
+                                              onClick={() => setShowMoreFeatures(false)}
+                                              className="group/feat flex flex-col justify-center items-start gap-1.5 py-2 cursor-pointer h-full"
+                                            >
+                                              <h4 className="text-[#6843B7] font-semibold text-[15px] transition-colors group-hover/feat:text-white"><span className="group-hover/feat:-translate-x-1 inline-block transition-transform">←</span> Back</h4>
+                                              <p className="text-white/30 text-[13px] leading-relaxed group-hover/feat:text-white/50 transition-colors">Return to previous</p>
+                                            </button>
+                                          )}
+                                        </>
+                                      )}
+                                    </div>
+                                  </motion.div>
+                                ))}
+                              </AnimatePresence>
+                            </div>
+                          </div>
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              );
+            })}
+          </div>
+
+          {/* Right: Action Buttons & Mobile Toggle */}
+          <div className="flex-1 flex justify-end items-center gap-4">
+            <Link href="/book-a-demo" className="hidden sm:block">
+              <button className="px-8 py-3 bg-[#6843B7] text-white text-[14px] font medium rounded-sm hover:bg-[#6843B7] transition-all shadow-[0_10px_30px_rgba(104,67,183,0.3)] hover:scale-105 active:scale-95">
+                Book a Demo
+              </button>
+            </Link>
+
+            {/* Mobile Menu Toggle Button */}
+            <button
+              className="lg:hidden text-white p-3 bg-white/5 rounded-md hover:bg-white/10 transition-all z-[110] active:scale-90"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-label="Toggle Menu"
+            >
+              {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
+        </div>
+      </nav>
+
+      {/* 3. Mobile Menu Overlay - Solid, High-Fidelity Design */}
+      <div className={`fixed inset-0 bg-[#030303] z-[150] lg:hidden transition-all duration-500 ease-in-out ${isMobileMenuOpen ? 'opacity-100 pointer-events-auto translate-y-0' : 'opacity-0 pointer-events-none -translate-y-4'
+        }`}>
+        {/* Top Bar with Close Button */}
+        <div className="absolute top-0 w-full h-20 px-6 flex justify-between items-center border-b border-white/5">
+          <div className="relative w-28 h-8">
             <Image
               src="/logo/logo.png"
               alt="cliQTest"
               fill
               className="object-cover scale-[1.2] object-center"
-              priority
             />
           </div>
-        </Link>
-      </div>
-      {/* Center: Main Navigation Group */}
-      <div className="hidden lg:flex flex-[2] justify-center items-center gap-6">
-          {menuItems.map((item) => {
-            const hasDropdown = !!item.content;
-            
-            const ItemLabel = (
-              <div className={`flex items-center gap-1 text-[15px] font-medium tracking-wide transition-colors ${
-                activeMenu === item.title ? 'text-[#6843B7]' : 'text-white/70 hover:text-white'
-              }`}>
-                {item.title}
-                {hasDropdown && <ChevronDown size={14} className={`transition-transform duration-300 ${activeMenu === item.title ? 'rotate-180' : ''}`} />}
-              </div>
-            );
-
-            return (
-              <div
-                key={item.title}
-                className="relative h-20 flex items-center cursor-pointer"
-                onClick={() => {
-                  if (hasDropdown) {
-                    if (activeMenu === item.title) {
-                      setActiveMenu(null);
-                    } else {
-                      setActiveMenu(item.title);
-                      const featureTabs = item.content?.tabs?.filter((t: NavTab) => !t.description);
-                      if (featureTabs && featureTabs.length > 0) {
-                        setActiveTab(featureTabs[0].id);
-                        setShowMoreFeatures(false);
-                      }
-                    }
-                  }
-                }}
-              >
-                {item.href ? (
-                  <Link href={item.href}>
-                    {ItemLabel}
-                  </Link>
-                ) : ItemLabel}
-
-                {/* Desktop Dropdown - Minimal Theme Matched */}
-                <AnimatePresence>
-                {hasDropdown && activeMenu === item.title && (
-                  <motion.div 
-                    initial={{ opacity: 0, y: -10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -10 }}
-                    transition={{ duration: 0.2, ease: "easeOut" }}
-                    className="fixed top-20 left-0 w-full z-[120]"
-                    onClick={(e) => e.stopPropagation()}
-                  >
-                    <div className="bg-black border-white/5 shadow-2xl overflow-hidden flex min-h-[350px]">
-                      
-                      <div className="w-full flex px-8 max-w-[1600px] mx-auto">
-                        {/* Left Column (Tabs) */}
-                        <div className="w-[30%] py-10 px-0 flex flex-col border-r border-white/5">
-                          {item.content?.tabs?.filter((t: NavTab) => !t.description).map((tab: NavTab) => {
-                            const isActive = activeTab === tab.id;
-                            return (
-                              <Link
-                                href={`/${item.title.toLowerCase().replace(/\s+/g, '-')}/${tab.id}`}
-                                key={tab.id}
-                                onMouseEnter={() => { setActiveTab(tab.id); setShowMoreFeatures(false); }}
-                                onClick={() => setActiveMenu(null)}
-                                className={`flex items-center justify-between px-10 py-[14px] transition-all duration-300 cursor-pointer ${
-                                  isActive 
-                                  ? 'bg-white/5 border-l-[3px] border-[#6843B7] text-white' 
-                                  : 'text-white/60 hover:text-white border-l-[3px] border-transparent'
-                                }`}
-                              >
-                                <span className={`text-[15px] tracking-wide font-medium ${isActive ? 'text-[#6843B7]' : 'text-white/60'}`}>{tab.label}</span>
-                                <ChevronRight size={16} className={`transition-transform duration-300 ${isActive ? 'opacity-100 text-[#6843B7]' : 'opacity-100 text-white/30'}`} />
-                              </Link>
-                            );
-                          })}
-                        </div>                        {/* Right Column (Content) */}
-                        <div className="flex-1 py-10 px-16 bg-transparent">
-                          <AnimatePresence mode="wait">
-                            {item.content?.tabs?.filter((t: NavTab) => !t.description && t.id === activeTab).map((tab: NavTab) => (
-                              <motion.div 
-                                key={tab.id}
-                                initial={{ opacity: 0, y: 5 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                exit={{ opacity: 0, y: -5 }}
-                                transition={{ duration: 0.15 }}
-                                className="w-full"
-                              >
-                                {tab.intro && (
-                                  <p className="text-white/70 text-base leading-relaxed mb-10">
-                                    {tab.intro}
-                                  </p>
-                                )}
-                                <div className="grid grid-cols-2 md:grid-cols-3 gap-x-12 gap-y-6">
-                                  {tab.features && (
-                                    <>
-                                      {tab.features.slice(
-                                        showMoreFeatures ? 8 : 0, 
-                                        showMoreFeatures ? undefined : 8
-                                      ).map((feat: { label: string; desc: string }, idx: number) => {
-                                        const targetPath = `/${item.title.toLowerCase().replace(/\s+/g, '-')}/${tab.id}`;
-                                        const targetHash = feat.label.toLowerCase().replace(/\s+/g, '-');
-                                        
-                                        return (
-                                        <Link 
-                                          href={`${targetPath}#${targetHash}`} 
-                                          onClick={(e) => {
-                                            setActiveMenu(null);
-                                            if (typeof window !== 'undefined' && window.location.pathname === targetPath) {
-                                              const el = document.getElementById(targetHash);
-                                              if (el) {
-                                                e.preventDefault();
-                                                el.scrollIntoView({ behavior: 'smooth' });
-                                                window.history.pushState(null, '', `${targetPath}#${targetHash}`);
-                                              }
-                                            }
-                                          }} 
-                                          key={idx} 
-                                          className="group/feat flex flex-col gap-1.5 py-2"
-                                        >
-                                          <h4 className="text-transparent bg-clip-text bg-gradient-to-r from-[#6843B7] to-[#ffffff] font-semibold text-[15px] transition-colors">{feat.label}</h4>
-                                          <p className="text-white/50 text-[13px] leading-relaxed group-hover/feat:text-white/70 transition-colors line-clamp-2">{feat.desc}</p>
-                                        </Link>
-                                      )})}
-                                      
-                                      {tab.features.length > 8 && !showMoreFeatures && (
-                                        <button 
-                                          onClick={() => setShowMoreFeatures(true)}
-                                          className="group/feat flex flex-col justify-center items-start gap-1.5 py-2 cursor-pointer h-full"
-                                        >
-                                          <h4 className="text-[#6843B7] font-semibold text-[15px] transition-colors group-hover/feat:text-white">More <span className="group-hover/feat:translate-x-1 inline-block transition-transform">→</span></h4>
-                                          <p className="text-white/30 text-[13px] leading-relaxed group-hover/feat:text-white/50 transition-colors">View remaining features</p>
-                                        </button>
-                                      )}
-
-                                      {tab.features.length > 8 && showMoreFeatures && (
-                                        <button 
-                                          onClick={() => setShowMoreFeatures(false)}
-                                          className="group/feat flex flex-col justify-center items-start gap-1.5 py-2 cursor-pointer h-full"
-                                        >
-                                          <h4 className="text-[#6843B7] font-semibold text-[15px] transition-colors group-hover/feat:text-white"><span className="group-hover/feat:-translate-x-1 inline-block transition-transform">←</span> Back</h4>
-                                          <p className="text-white/30 text-[13px] leading-relaxed group-hover/feat:text-white/50 transition-colors">Return to previous</p>
-                                        </button>
-                                      )}
-                                    </>
-                                  )}
-                                </div>
-                              </motion.div>
-                            ))}
-                          </AnimatePresence>
-                        </div>
-                      </div>
-                    </div>
-                  </motion.div>
-                )}
-                </AnimatePresence>
-              </div>
-            );
-          })}
-        </div>
-
-        {/* Right: Action Buttons & Mobile Toggle */}
-        <div className="flex-1 flex justify-end items-center gap-4">
-          <Link href="/book-a-demo" className="hidden sm:block">
-            <button className="px-8 py-3 bg-[#6843B7] text-white text-[14px] font medium rounded-sm hover:bg-[#6843B7] transition-all shadow-[0_10px_30px_rgba(104,67,183,0.3)] hover:scale-105 active:scale-95">
-              Book a Demo
-            </button>
-          </Link>
-
-          {/* Mobile Menu Toggle Button */}
-          <button 
-            className="lg:hidden text-white p-3 bg-white/5 rounded-md hover:bg-white/10 transition-all z-[110] active:scale-90"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-label="Toggle Menu"
+          <button
+            onClick={() => setIsMobileMenuOpen(false)}
+            className="p-3 bg-white/5 rounded-2xl text-white active:scale-90 transition-all"
           >
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            <X size={24} />
           </button>
         </div>
-      </div>
-    </nav>
 
-    {/* 3. Mobile Menu Overlay - Solid, High-Fidelity Design */}
-    <div className={`fixed inset-0 bg-[#030303] z-[150] lg:hidden transition-all duration-500 ease-in-out ${
-      isMobileMenuOpen ? 'opacity-100 pointer-events-auto translate-y-0' : 'opacity-0 pointer-events-none -translate-y-4'
-    }`}>
-      {/* Top Bar with Close Button */}
-      <div className="absolute top-0 w-full h-20 px-6 flex justify-between items-center border-b border-white/5">
-        <div className="relative w-28 h-8">
-          <Image
-            src="/logo/logo.png"
-            alt="cliQTest"
-            fill
-            className="object-cover scale-[1.2] object-center"
-          />
-        </div>
-        <button 
-          onClick={() => setIsMobileMenuOpen(false)}
-          className="p-3 bg-white/5 rounded-2xl text-white active:scale-90 transition-all"
-        >
-          <X size={24} />
-        </button>
-      </div>
+        <div className="flex flex-col h-full pt-24 px-6 pb-8 overflow-y-auto">
+          <div className="flex flex-col gap-4">
+            {menuItems.map((item) => {
+              const hasDropdown = !!item.content;
+              const isExpanded = expandedItem === item.title;
 
-      <div className="flex flex-col h-full pt-24 px-6 pb-8 overflow-y-auto">
-        <div className="flex flex-col gap-4">
-          {menuItems.map((item) => {
-            const hasDropdown = !!item.content;
-            const isExpanded = expandedItem === item.title;
-
-            return (
-              <div key={item.title} className="flex flex-col border-b border-white/5 pb-4 last:border-0">
-                {item.href ? (
-                  <Link 
-                    href={item.href}
-                    onClick={() => setIsMobileMenuOpen(false)}
-                    className="text-2xl font medium text-white hover:text-[#6843B7] transition-colors py-1 tracking-tight"
-                  >
-                    {item.title}
-                  </Link>
-                ) : (
-                  <div 
-                    className="flex items-center justify-between py-1 cursor-pointer group"
-                    onClick={() => setExpandedItem(isExpanded ? null : item.title)}
-                  >
-                    <span className={`text-2xl font medium transition-colors tracking-tight ${isExpanded ? 'text-[#6843B7]' : 'text-white'}`}>{item.title}</span>
-                    {hasDropdown && (
-                      <div className={`p-2 rounded-md transition-all ${isExpanded ? 'bg-[#6843B7]/10 rotate-180' : 'bg-white/5'}`}>
-                        {isExpanded ? <Minus size={20} className="text-[#6843B7]" /> : <Plus size={20} className="text-white/40" />}
-                      </div>
-                    )}
-                  </div>
-                )}
-                
-                {/* Mobile Dropdown Expanded Accordion */}
-                {hasDropdown && isExpanded && (
-                  <div className="flex flex-col gap-4 mt-4 ml-3 border-l-2 border-[#6843B7]/40 pl-5 animate-in slide-in-from-left-4 duration-300">
-                    <button 
-                      onClick={() => setExpandedItem(null)}
-                      className="flex items-center gap-1.5 text-[#6843B7] text-[10px] font medium uppercase tracking-widest mb-1"
+              return (
+                <div key={item.title} className="flex flex-col border-b border-white/5 pb-4 last:border-0">
+                  {item.href ? (
+                    <Link
+                      href={item.href}
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      className="text-2xl font medium text-white hover:text-[#6843B7] transition-colors py-1 tracking-tight"
                     >
-                      <ChevronRight size={12} className="rotate-180" /> Back
-                    </button>
-                    {item.content?.tabs?.map((tab: NavTab) => (
-                      <Link 
-                        key={tab.id}
-                        href={`/${item.title.toLowerCase().replace(/\s+/g, '-')}/${tab.id}`}
-                        onClick={() => setIsMobileMenuOpen(false)}
-                        className="flex flex-col gap-0.5 group active:opacity-70"
-                      >
-                        <span className="text-[17px] font medium text-white group-hover:text-[#6843B7] transition-colors tracking-tight">{tab.label}</span>
-                        <span className="text-[11px] text-white/40 leading-relaxed font-normal pr-4 line-clamp-1">{tab.header || tab.description}</span>
-                      </Link>
-                    ))}
-                  </div>
-                )}
-              </div>
-            );
-          })}
-        </div>
+                      {item.title}
+                    </Link>
+                  ) : (
+                    <div
+                      className="flex items-center justify-between py-1 cursor-pointer group"
+                      onClick={() => setExpandedItem(isExpanded ? null : item.title)}
+                    >
+                      <span className={`text-2xl font medium transition-colors tracking-tight ${isExpanded ? 'text-[#6843B7]' : 'text-white'}`}>{item.title}</span>
+                      {hasDropdown && (
+                        <div className={`p-2 rounded-md transition-all ${isExpanded ? 'bg-[#6843B7]/10 rotate-180' : 'bg-white/5'}`}>
+                          {isExpanded ? <Minus size={20} className="text-[#6843B7]" /> : <Plus size={20} className="text-white/40" />}
+                        </div>
+                      )}
+                    </div>
+                  )}
 
-        <div className="mt-auto pt-10">
-          <Link href="/book-a-demo" onClick={() => setIsMobileMenuOpen(false)}>
-            <button className="w-full py-3 bg-[#6843B7] text-white text-[13px] font medium rounded-sm shadow-xl hover:scale-[1.02] active:scale-[0.98] transition-all">
-              Book a Demo
-            </button>
-          </Link>
-          <div className="flex justify-between items-center mt-12 px-2">
-            {/* <p className="text-white/10 text-[10px] font medium tracking-[0.4em] uppercase">© 2026 cliQTest</p> */}
-            <div className="flex gap-4">
-              {/* <div className="w-8 h-px bg-white/10" />
+                  {/* Mobile Dropdown Expanded Accordion */}
+                  {hasDropdown && isExpanded && (
+                    <div className="flex flex-col gap-4 mt-4 ml-3 border-l-2 border-[#6843B7]/40 pl-5 animate-in slide-in-from-left-4 duration-300">
+                      <button
+                        onClick={() => setExpandedItem(null)}
+                        className="flex items-center gap-1.5 text-[#6843B7] text-[10px] font medium uppercase tracking-widest mb-1"
+                      >
+                        <ChevronRight size={12} className="rotate-180" /> Back
+                      </button>
+                      {item.content?.tabs?.map((tab: NavTab) => (
+                        <Link
+                          key={tab.id}
+                          href={`/${item.title.toLowerCase().replace(/\s+/g, '-')}/${tab.id}`}
+                          onClick={() => setIsMobileMenuOpen(false)}
+                          className="flex flex-col gap-0.5 group active:opacity-70"
+                        >
+                          <span className="text-[17px] font medium text-white group-hover:text-[#6843B7] transition-colors tracking-tight">{tab.label}</span>
+                          <span className="text-[11px] text-white/40 leading-relaxed font-normal pr-4 line-clamp-1">{tab.header || tab.description}</span>
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+
+          <div className="mt-auto pt-10">
+            <Link href="/book-a-demo" onClick={() => setIsMobileMenuOpen(false)}>
+              <button className="w-full py-3 bg-[#6843B7] text-white text-[13px] font medium rounded-sm shadow-xl hover:scale-[1.02] active:scale-[0.98] transition-all">
+                Book a Demo
+              </button>
+            </Link>
+            <div className="flex justify-between items-center mt-12 px-2">
+              {/* <p className="text-white/10 text-[10px] font medium tracking-[0.4em] uppercase">© 2026 cliQTest</p> */}
+              <div className="flex gap-4">
+                {/* <div className="w-8 h-px bg-white/10" />
               <div className="w-2 h-px bg-white/10" /> */}
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
     </>
   );
 }
