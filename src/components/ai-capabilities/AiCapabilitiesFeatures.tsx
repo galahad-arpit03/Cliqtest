@@ -169,11 +169,11 @@ export default function AiCapabilitiesFeatures() {
           <AnimatePresence mode="wait">
             <motion.div
               key={activeIndex}
-              initial={{ opacity: 0, x: 50, scale: 0.95 }}
-              animate={{ opacity: 1, x: 0, scale: 1 }}
-              exit={{ opacity: 0, x: -50, scale: 0.95 }}
-              transition={{ duration: 0.4, ease: "easeOut" }}
-              className="relative w-full min-h-[500px] bg-[#080808] border border-white/10 rounded-sm p-8 md:p-10 overflow-hidden shadow-2xl flex flex-col justify-between"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -30 }}
+              transition={{ duration: 0.4, ease: "easeInOut" }}
+              className="relative w-full min-h-[420px] bg-[#080808] border border-white/10 rounded-sm p-8 md:p-10 overflow-hidden shadow-2xl flex flex-col justify-between"
             >
 
               <div className="relative z-10 flex items-center gap-4 mb-6">

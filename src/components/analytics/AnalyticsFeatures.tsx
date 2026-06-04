@@ -125,7 +125,7 @@ export default function AnalyticsFeatures() {
   return (
     <section className="bg-black min-h-screen relative text-white font-sans selection:bg-[#6843B7] selection:text-white pb-32">
       
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-12 flex flex-col lg:flex-row relative items-start gap-12 lg:gap-24 pt-20">
+      <div className="w-full max-w-7xl mx-auto px-8 flex flex-col lg:flex-row relative items-start gap-12 lg:gap-24 pt-20">
         
         {/* Left Side: Scrolling Content */}
         <div className="w-full lg:w-1/2 flex flex-col z-10">
@@ -135,7 +135,7 @@ export default function AnalyticsFeatures() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight mb-6 leading-tight"
+              className="text-2xl md:text-4xl lg:text-5xl font-black tracking-tight mb-6 leading-tight"
             >
               Intelligence at <br/>
               <span className="text-[#6843B7]">Every Layer</span>
@@ -156,15 +156,23 @@ export default function AnalyticsFeatures() {
               <div 
                 key={feat.id} 
                 id={feat.id}
-                ref={el => sectionRefs.current[idx] = el}
+                ref={el => { sectionRefs.current[idx] = el; }}
                 className={`transition-all duration-700 \${activeIndex === idx ? 'opacity-100 scale-100' : 'opacity-30 scale-95'}`}
               >
                 <div className="flex items-center gap-4 mb-6">
-                  <div className={`w-12 h-12 rounded-xl flex items-center justify-center transition-colors duration-500 \${activeIndex === idx ? 'bg-[#6843B7] text-white shadow-[0_0_30px_rgba(104,67,183,0.5)]' : 'bg-white/5 text-white/30'}`}>
-                    <feat.icon size={24} />
-                  </div>
-                  <h3 className="text-3xl md:text-4xl font-bold tracking-tight">
-                    {feat.title}
+                  <h3 className="text-3xl md:text-4xl font-bold tracking-tight text-white">
+                    {(() => {
+                      const words = feat.title.split(' ');
+                      const lastWord = words.pop();
+                      return (
+                        <>
+                          {words.length > 0 && words.join(' ') + ' '}
+                          <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6843B7] to-white">
+                            {lastWord}
+                          </span>
+                        </>
+                      );
+                    })()}
                   </h3>
                 </div>
                 <p className="text-white/60 leading-relaxed text-[16px] md:text-lg">
