@@ -47,24 +47,6 @@ export const menuItems = [
           icon: Globe
         },
         { 
-          id: "nocode", 
-          label: "No Code Automation", 
-          header: "Autonomous Test Generation",
-          intro: "Empower your entire organization with autonomous, intelligent test generation. Our advanced visual recorder and predictive self-healing locators seamlessly automate complex testing scenarios across Web, Mobile, API, and Desktop environments without writing a single line of code.",
-          icon: Zap,
-          features: [
-            { label: "Recorder", desc: "Intelligent visual recording." },
-            { label: "Scriptless Automation", desc: "No coding required." },
-            { label: "Reusable Components", desc: "Modular test design." },
-            { label: "Auto-Healing", desc: "Self-repairing test execution." },
-            { label: "API Automation", desc: "Seamless API testing." },
-            { label: "Desktop Automation", desc: "Desktop application support." },
-            { label: "Smart Authentication Automation", desc: "Handle complex logins." },
-            { label: "Environment Management", desc: "Manage configurations." },
-            { label: "Distributed Execution", desc: "Scale across nodes." }
-          ]
-        },
-        { 
           id: "test-management", 
           label: "Test Management", 
           header: "Centralized Quality Operations",
@@ -82,6 +64,25 @@ export const menuItems = [
             { label: "Smart Bug Raiser", desc: "Automated defect logging." }
           ]
         },
+        { 
+          id: "nocode", 
+          label: "No Code Automation", 
+          header: "Autonomous Test Generation",
+          intro: "Empower your entire organization with autonomous, intelligent test generation. Our advanced visual recorder and predictive self-healing locators seamlessly automate complex testing scenarios across Web, Mobile, API, and Desktop environments without writing a single line of code.",
+          icon: Zap,
+          features: [
+            { label: "Recorder", desc: "Intelligent visual recording." },
+            { label: "Scriptless Automation", desc: "No coding required." },
+            { label: "Reusable Components", desc: "Modular test design." },
+            { label: "Auto-Healing", desc: "Self-repairing test execution." },
+            { label: "API Automation", desc: "Seamless API testing." },
+            { label: "Desktop Automation", desc: "Desktop application support." },
+            { label: "Smart Authentication Automation", desc: "Handle complex logins." },
+            { label: "Environment Management", desc: "Manage configurations." },
+            { label: "Distributed Execution", desc: "Scale across nodes." }
+          ]
+        },
+        
         { 
           id: "devicelabs", 
           label: "Device Labs", 
