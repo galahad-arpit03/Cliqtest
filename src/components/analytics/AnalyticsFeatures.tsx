@@ -1,7 +1,7 @@
 "use client";
 
-import React, { useRef, useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React from 'react';
+import { motion } from 'framer-motion';
 import { BarChart2, LayoutDashboard, History, Network, Activity, SearchX, FileText, TrendingUp, ShieldCheck, Target } from 'lucide-react';
 
 const features = [
@@ -88,140 +88,70 @@ const features = [
 ];
 
 export default function AnalyticsFeatures() {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const sectionRefs = useRef<(HTMLDivElement | null)[]>([]);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      // Find which section is currently mostly in view
-      const viewportCenter = window.innerHeight / 2;
-      
-      let closestIndex = 0;
-      let minDistance = Infinity;
-
-      sectionRefs.current.forEach((ref, index) => {
-        if (!ref) return;
-        const rect = ref.getBoundingClientRect();
-        // Calculate distance from center of viewport to center of the element
-        const elementCenter = rect.top + rect.height / 2;
-        const distance = Math.abs(viewportCenter - elementCenter);
-        
-        if (distance < minDistance) {
-          minDistance = distance;
-          closestIndex = index;
-        }
-      });
-
-      if (closestIndex !== activeIndex) {
-        setActiveIndex(closestIndex);
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll(); // Init
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [activeIndex]);
-
   return (
-    <section className="bg-black min-h-[800px] relative text-white font-sans selection:bg-[#6843B7] selection:text-white pb-32">
+    <section className="bg-black min-h-screen relative text-white font-sans selection:bg-[#6843B7] selection:text-white pb-32">
       
-      <div className="w-full max-w-7xl mx-auto px-8 flex flex-col lg:flex-row relative items-start gap-12 lg:gap-24 pt-20">
-        
-        {/* Left Side: Scrolling Content */}
-        <div className="w-full lg:w-1/2 flex flex-col z-10">
-          
-          <div className="mb-20 lg:mb-32">
-            <motion.h2 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-2xl md:text-4xl lg:text-5xl font-black tracking-tight mb-6 leading-tight"
-            >
-              Intelligence at <br/>
-              <span className="text-[#6843B7]">Every Layer</span>
-            </motion.h2>
-            <motion.p 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="text-lg text-white/50 leading-relaxed max-w-xl"
-            >
-              Transform raw execution data into actionable strategic insights through a powerful, centralized analytics ecosystem.
-            </motion.p>
-          </div>
+      {/* Decorative background glow */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-[400px] bg-[#6843B7] opacity-5 blur-[120px] rounded-full pointer-events-none" />
 
-          <div className="flex flex-col gap-32 pb-32">
-            {features.map((feat, idx) => (
-              <div 
-                key={feat.id} 
-                id={feat.id}
-                ref={el => { sectionRefs.current[idx] = el; }}
-                className={`transition-all duration-700 \${activeIndex === idx ? 'opacity-100 scale-100' : 'opacity-30 scale-95'}`}
-              >
-                <div className="flex items-center gap-4 mb-6">
-                  <h3 className="text-3xl md:text-4xl font-bold tracking-tight text-white">
-                    {(() => {
-                      const words = feat.title.split(' ');
-                      const lastWord = words.pop();
-                      return (
-                        <>
-                          {words.length > 0 && words.join(' ') + ' '}
-                          <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6843B7] to-white">
-                            {lastWord}
-                          </span>
-                        </>
-                      );
-                    })()}
-                  </h3>
-                </div>
-                <p className="text-white/60 leading-relaxed text-[16px] md:text-lg">
-                  {feat.desc}
-                </p>
-              </div>
-            ))}
-          </div>
+      <div className="w-full max-w-7xl mx-auto px-6 md:px-8 pt-20 relative z-10">
+        
+        {/* Header Section */}
+        <div className="mb-16 max-w-3xl">
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-4xl md:text-5xl font-bold tracking-tight mb-4 leading-tight text-white"
+          >
+            Intelligence at <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6843B7] to-[#8f81eb]">Every Layer</span>
+          </motion.h2>
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="text-base md:text-lg text-white/50 leading-relaxed"
+          >
+            Transform raw execution data into actionable strategic insights through a powerful, centralized analytics ecosystem.
+          </motion.p>
         </div>
 
-        {/* Right Side: Sticky Visualizer */}
-        <div className="w-full lg:w-1/2 hidden lg:flex flex-col sticky top-32 h-[calc(100vh-12rem)] items-center justify-center z-0 perspective-1000">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={activeIndex}
-              initial={{ opacity: 0, y: 40, rotateX: 10, scale: 0.9 }}
-              animate={{ opacity: 1, y: 0, rotateX: 0, scale: 1 }}
-              exit={{ opacity: 0, y: -40, rotateX: -10, scale: 0.9 }}
-              transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-              className="w-full h-full max-h-[700px] bg-[#050505] border border-white/10 rounded-2xl shadow-2xl relative overflow-hidden flex flex-col items-center justify-center group"
+        {/* Features Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          {features.map((feat, idx) => (
+            <motion.div 
+              layout
+              key={feat.id}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ delay: idx * 0.05, duration: 0.5, layout: { duration: 0.3, ease: "easeOut" } }}
+              className="bg-[#0A0A0A] border border-white/5 hover:border-white/20 rounded-md p-8 flex flex-col h-full group transition-colors duration-500 hover:bg-[#0c0c0c] relative overflow-hidden"
             >
-              {/* Dynamic Glow */}
-              <div className="absolute inset-0 bg-[#6843B7]/10 opacity-50 blur-[100px] transition-opacity duration-1000 group-hover:opacity-100" />
+              {/* Subtle hover glow */}
+              <div className="absolute inset-0 bg-gradient-to-br from-[#6843B7]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
               
-              {/* Grid Lines */}
-              <div className="absolute inset-0 z-0 opacity-[0.03]" style={{ backgroundImage: 'linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)', backgroundSize: '30px 30px' }} />
-
-              <div className="relative z-10 flex flex-col items-center text-center p-12">
-                {React.createElement(features[activeIndex].icon, {
-                  size: 100,
-                  className: "text-[#6843B7] mb-12 drop-shadow-[0_0_40px_rgba(104,67,183,0.8)] animate-pulse"
-                })}
-                
-                <h4 className="text-7xl font-black text-white tracking-tighter mb-4 drop-shadow-xl">
-                  {features[activeIndex].stat}
-                </h4>
-                <p className="text-xl text-[#6843B7] font-semibold tracking-widest uppercase">
-                  {features[activeIndex].statLabel}
-                </p>
+              <h3 className="text-xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-[#6843B7] to-white/60 mb-4 tracking-tight">
+                {feat.title}
+              </h3>
+              
+              <p className="text-white/50 text-sm leading-relaxed mb-8 flex-1">
+                {feat.desc}
+              </p>
+              
+              <div className="mt-auto pt-6 border-t border-white/10 flex items-center justify-between">
+                <div>
+                  <div className="text-3xl font-black text-white tracking-tighter mb-1">
+                    {feat.stat}
+                  </div>
+                  <div className="text-[10px] font-medium uppercase tracking-widest text-white/40">
+                    {feat.statLabel}
+                  </div>
+                </div>
               </div>
-
-              {/* Decorative Tech Rings */}
-              <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-20">
-                <div className="w-[300px] h-[300px] border border-[#6843B7] rounded-full animate-[spin_10s_linear_infinite]" />
-                <div className="absolute w-[400px] h-[400px] border border-dashed border-[#6843B7]/50 rounded-full animate-[spin_15s_linear_infinite_reverse]" />
-              </div>
-
             </motion.div>
-          </AnimatePresence>
+          ))}
         </div>
 
       </div>
