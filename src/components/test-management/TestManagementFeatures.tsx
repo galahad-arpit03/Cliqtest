@@ -247,52 +247,21 @@ export default function TestManagementFeatures() {
                   {feat.desc[0]}
                 </p>
                 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-stretch">
-                  <div className="flex flex-col h-full">
-                    <p className="text-white/60 leading-relaxed mb-10">
-                      {feat.desc[1]}
-                    </p>
-                    
-                    <div className="mt-auto mb-8">
-                      <h4 className="text-white font medium mb-4 flex items-center gap-2">
-                        <span className={`w-2 h-2 rounded-full ${dotColorClass}`} />
-                        Key Benefits
-                      </h4>
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        {feat.benefits.map((benefit, i) => (
-                          <div key={i} className="flex items-start gap-2 text-sm text-white/70">
-                            <div className={`mt-0.5 ${checkColorClass}`}>✓</div>
-                            <span className="leading-snug">{benefit}</span>
-                          </div>
-                        ))}
+                <p className="text-white/60 leading-relaxed mb-10">
+                  {feat.desc[1]}
+                </p>
+                
+                <div className="bg-[#0A0A0A] border border-white/10 rounded-md p-6 md:p-8 mt-auto mb-8">
+                  <h4 className="text-white font medium mb-6">
+                    Key Benefits
+                  </h4>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
+                    {feat.benefits.map((benefit, i) => (
+                      <div key={i} className="flex items-start gap-3 text-sm text-white/80">
+                        <div className={`mt-0.5 ${checkColorClass}`}>✓</div>
+                        <span className="leading-snug">{benefit}</span>
                       </div>
-                    </div>
-                  </div>
-                  
-                  {/* Right Column: Visual Card */}
-                  <div className="bg-[#0A0A0A] border border-white/10 rounded-xl p-8 relative flex flex-col items-center justify-center h-full min-h-[350px]">
-                    <div className={`absolute top-0 right-0 w-32 h-32 ${isPurple ? 'bg-[#6843B7]' : 'bg-[#00F2B0]'} opacity-10 blur-[60px] rounded-full`} />
-                    <div className={`absolute bottom-0 left-0 w-32 h-32 ${isPurple ? 'bg-[#00F2B0]' : 'bg-[#6843B7]'} opacity-5 blur-[60px] rounded-full`} />
-                    
-                    <div className="relative z-10 w-48 h-48 flex items-center justify-center">
-                      <svg className="absolute inset-0 w-full h-full transform -rotate-90">
-                        <circle cx="96" cy="96" r="80" fill="none" stroke="#ffffff10" strokeWidth="12" />
-                        <circle cx="96" cy="96" r="80" fill="none" stroke={isPurple ? "#6843B7" : "#00F2B0"} strokeWidth="12" strokeDasharray="502" strokeDashoffset={idx % 2 === 0 ? "100" : "200"} strokeLinecap="round" />
-                      </svg>
-                      <feat.icon size={48} className={isPurple ? "text-[#6843B7]" : "text-[#00F2B0]"} />
-                    </div>
-
-                    <div className="grid grid-cols-2 gap-6 w-full mt-10 border-t border-white/10 pt-6 text-center">
-                      <div>
-                        <div className="text-white font medium text-lg mb-1">{isPurple ? '100%' : '24/7'}</div>
-                        <div className="text-white/40 text-[10px] uppercase">Coverage</div>
-                      </div>
-                      <div>
-                        <div className={`font medium text-lg mb-1 ${isPurple ? "text-[#00F2B0]" : "text-[#6843B7]"}`}>{isPurple ? 'Active' : 'Synced'}</div>
-                        <div className="text-white/40 text-[10px] uppercase">Status</div>
-                      </div>
-                    </div>
-
+                    ))}
                   </div>
                 </div>
               </div>
