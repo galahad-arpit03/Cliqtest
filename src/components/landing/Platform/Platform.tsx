@@ -83,7 +83,7 @@ export default function Platform() {
           
           <div className="w-full h-full relative group">
             <Image
-              src="/images/bn.png"
+              src="/images/bn1.png"
               alt="cliQTest Platform Monitor"
               fill
               className="object-contain mix-blend-screen group-hover:scale-105 transition-transform duration-700 ease-out"
