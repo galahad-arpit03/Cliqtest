@@ -51,8 +51,8 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: "/logo/bglogo.png",
-    apple: "/logo/bglogo.png",
+    icon: "/logos/bglogo.png",
+    apple: "/logos/bglogo.png",
   },
   openGraph: {
     title: "cliQTest | AI-Powered Automated Testing & QA Platform",
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
     siteName: "cliQTest",
     images: [
       {
-        url: "/logo/logo.png",
+        url: "/logos/logo.png",
         width: 1200,
         height: 630,
         alt: "cliQTest - The Ultimate AI-Powered Automated Testing Platform",
@@ -74,7 +74,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "cliQTest | Next-Gen Automated Testing Platform",
     description: "The all-in-one platform for manual and automated testing across all digital surfaces. Accelerate release cycles today.",
-    images: ["/logo/logo.png"],
+    images: ["/logos/logo.png"],
     creator: "@cliQTest",
   },
   alternates: {

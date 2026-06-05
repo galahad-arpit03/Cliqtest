@@ -8,7 +8,7 @@ export default function NewsroomHero() {
     <section
       className="relative min-h-[60vh] md:min-h-[80vh] flex flex-col justify-center overflow-hidden mb-20"
       style={{
-        backgroundImage: "url('/about/hero.png')",
+        backgroundImage: "url('/images/about-hero.png')",
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",

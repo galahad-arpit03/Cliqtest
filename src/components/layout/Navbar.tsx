@@ -382,9 +382,10 @@ export default function Navbar() {
             <Link href="/" className="flex items-center gap-2 cursor-pointer group z-[110]">
               <div className="relative w-32 h-10 md:w-36 md:h-11 overflow-hidden transition-transform duration-300 group-hover:scale-105">
                 <Image
-                  src="/logo/logo.png"
+                  src="/logos/logo.png"
                   alt="cliQTest"
                   fill
+                  sizes="144px"
                   className="object-cover scale-[1.2] object-center"
                   priority
                 />
@@ -576,9 +577,10 @@ export default function Navbar() {
         <div className="absolute top-0 w-full h-20 px-6 flex justify-between items-center border-b border-white/5">
           <div className="relative w-28 h-8">
             <Image
-              src="/logo/logo.png"
+              src="/logos/logo.png"
               alt="cliQTest"
               fill
+              sizes="112px"
               className="object-cover scale-[1.2] object-center"
             />
           </div>

@@ -46,7 +46,7 @@ export default function MeetAgents() {
           <div className="relative w-full h-full">
             <div className="w-full h-full relative">
               <video
-                src="/assets/b.mp4"
+                src="/videos/b.mp4"
                 autoPlay
                 loop
                 muted

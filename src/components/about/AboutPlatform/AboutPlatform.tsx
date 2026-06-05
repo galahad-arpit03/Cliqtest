@@ -79,7 +79,7 @@ export default function AboutPlatform() {
             {/* Big Image */}
             <div className="w-full aspect-square rounded-md overflow-hidden relative shadow-2xl bg-[#0A0A0A] border border-white/10">
               <Image
-                src="/assets/brain.png"
+                src="/images/brain.png"
                 alt="cliQTest Platform Overview"
                 fill
                 className="object-cover object-center opacity-80"

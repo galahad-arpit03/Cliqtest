@@ -15,9 +15,10 @@ export default function Footer() {
           <Link href="/" className="group cursor-pointer">
             <div className="relative w-28 h-8 md:w-32 md:h-10 overflow-hidden transition-transform duration-300 group-hover:scale-105">
               <Image
-                src="/logo/logo.png"
+                src="/logos/logo.png"
                 alt="cliQTest"
                 fill
+                sizes="128px"
                 className="object-cover scale-[1.2] object-center"
               />
             </div>

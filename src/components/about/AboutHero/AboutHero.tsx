@@ -9,7 +9,7 @@ export default function AboutHero() {
       id="our-story"
       className="relative min-h-[80vh] md:min-flex flex-col justify-center overflow-hidden"
       style={{
-        backgroundImage: "url('/about/hero.png')",
+        backgroundImage: "url('/images/about-hero.png')",
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",

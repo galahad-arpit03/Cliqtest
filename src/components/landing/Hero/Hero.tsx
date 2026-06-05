@@ -55,7 +55,7 @@ export default function Hero() {
           aria-label="cliQTest AI-powered automated testing platform visualization"
           className="w-full h-full object-cover object-center"
         >
-          <source src="/landing page/brain.mp4" type="video/mp4" />
+          <source src="/videos/landing-brain.mp4" type="video/mp4" />
         </video>
         {/* Dark overlays matching other pages */}
         <div className="absolute inset-0 bg-gradient-to-r from-[#050505]/95 via-[#050505]/80 to-[#050505]/30 pointer-events-none" />

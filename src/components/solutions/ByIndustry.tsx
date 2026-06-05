@@ -35,15 +35,16 @@ export default function ByIndustry() {
       {/* Hero Section */}
       <section className="relative pt-40 pb-24 min-h-[60vh] flex flex-col justify-center border-b border-white/5 overflow-hidden">
         {/* Background Image/Gradient */}
-        <motion.div style={{ y }} className="absolute top-0 right-0 w-full md:w-[60%] h-full opacity-30 pointer-events-none">
-          <div className="absolute inset-0 bg-gradient-to-r from-[#050505] via-transparent to-transparent z-10" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-[#050505] z-10" />
+        <motion.div style={{ y }} className="absolute inset-0 w-full h-full z-0 pointer-events-none">
           <Image 
-            src="/assets/landing hero.png" 
+            src="/images/by-industry-hero.png" 
             alt="Hero Background" 
             fill 
-            className="object-cover object-right"
+            priority
+            className="object-cover object-center opacity-[0.6] scale-95"
           />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#050505]/80 via-[#050505]/40 to-[#050505] pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#050505]/80 via-transparent to-[#050505]/80 pointer-events-none" />
         </motion.div>
 
         <div className="relative z-20 max-w-7xl mx-auto px-8 w-full">

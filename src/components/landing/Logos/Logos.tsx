@@ -5,12 +5,12 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 
 const integrations = [
-  { name: "Jira", src: "/logos/jira-removebg-preview.png" },
-  { name: "Docker", src: "/logos/docker-removebg-preview.png" },
-  { name: "AWS", src: "/logos/aws-removebg-preview.png" },
-  { name: "Jenkins", src: "/logos/jenkins-removebg-preview.png" },
-  { name: "Git", src: "/logos/git-removebg-preview.png" },
-  { name: "VS Code", src: "/logos/vscode-removebg-preview.png" }
+  { name: "Jira", src: "/logos/jira.png" },
+  { name: "Docker", src: "/logos/docker.png" },
+  { name: "AWS", src: "/logos/aws.png" },
+  { name: "Jenkins", src: "/logos/jenkins.png" },
+  { name: "Git", src: "/logos/git.png" },
+  { name: "VS Code", src: "/logos/vscode.png" }
 ];
 
 export default function Logos() {

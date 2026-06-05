@@ -15,23 +15,23 @@ export default function TestManagementHero() {
   const opacity = useTransform(scrollYProgress, [0, 1], [1, 0]);
 
   return (
-    <section ref={containerRef} className="relative w-full min-h-[800px] flex items-center justify-center overflow-hidden bg-black">
+    <section ref={containerRef} style={{ position: 'relative' }} className="relative w-full min-h-[800px] flex items-center justify-center overflow-hidden bg-black">
       {/* Background Image Parallax */}
       <motion.div 
         style={{ y, opacity }}
         className="absolute inset-0 w-full h-full z-0"
       >
         <Image
-          src="/assets/landing hero.png"
+          src="/images/test-hero.png"
           alt="Test Management Background"
           fill
           priority
-          className="object-cover object-center scale-110"
+          className="object-cover object-center scale-95 opacity-[.4]"
         />
         {/* Rich Gradient Overlays for depth and text legibility */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/40 to-black pointer-events-none" />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-transparent to-black/80 pointer-events-none" />
-        <div className="absolute inset-0 bg-[#6843B7]/10 mix-blend-overlay pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/20 to-black/90 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-transparent to-black/60 pointer-events-none" />
+        <div className="absolute inset-0 bg-[#6843B7]/20 mix-blend-overlay pointer-events-none" />
       </motion.div>
 
       <div className="relative z-10 w-full max-w-7xl mx-auto px-8 flex flex-col items-center md:items-start justify-center text-center md:text-left">

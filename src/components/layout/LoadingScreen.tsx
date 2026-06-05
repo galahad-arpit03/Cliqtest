@@ -54,9 +54,10 @@ export default function LoadingScreen({ children }: { children: React.ReactNode 
                 className="w-full h-full relative"
               >
                 <Image
-                  src="/logo/bglogo.png"
+                  src="/logos/bglogo.png"
                   alt="Loading"
                   fill
+                  sizes="(max-width: 768px) 100vw, 300px"
                   className="object-contain"
                   priority
                 />

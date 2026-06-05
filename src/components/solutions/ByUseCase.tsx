@@ -21,15 +21,16 @@ export default function ByUseCase() {
       {/* 1. Hero Section */}
       <section ref={containerRef} className="relative pt-40 pb-24 min-h-[60vh] flex flex-col justify-center border-b border-white/5 overflow-hidden">
         {/* Background Image/Gradient */}
-        <motion.div style={{ y }} className="absolute top-0 right-0 w-full md:w-[60%] h-full opacity-30 pointer-events-none">
-          <div className="absolute inset-0 bg-gradient-to-r from-[#050505] via-transparent to-transparent z-10" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-[#050505] z-10" />
+        <motion.div style={{ y }} className="absolute inset-0 w-full h-full z-0 pointer-events-none">
           <Image 
-            src="/assets/landing hero.png" 
+            src="/images/solution-by-usecase-hero.png" 
             alt="Hero Background" 
             fill 
-            className="object-cover object-right"
+            priority
+            className="object-cover object-center opacity-[0.6] scale-95"
           />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#050505]/80 via-[#050505]/40 to-[#050505] pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#050505]/80 via-transparent to-[#050505]/80 pointer-events-none" />
         </motion.div>
 
         <div className="relative z-20 max-w-7xl mx-auto px-8 w-full">
@@ -40,7 +41,7 @@ export default function ByUseCase() {
             className="max-w-3xl"
           >
             
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight leading-[1.1] mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[1.1] mb-6">
               Solutions <br className="hidden sm:block" />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6843B7] to-[#8f81eb]">By Use Case</span>
             </h1>
@@ -64,7 +65,7 @@ export default function ByUseCase() {
 
       {/* Sub-Navbar */}
       <div className="sticky top-20 z-40 bg-[#0A0A0A]/95 backdrop-blur-xl border-y border-white/10 text-white/70 py-4 px-8 flex justify-center gap-6 sm:gap-10 text-[10px] sm:text-xs font medium tracking-widest uppercase overflow-x-auto whitespace-nowrap shadow-xl">
-        <a href="#web-testing" className="hover:text-[#00F2B0] transition-colors">Web</a>
+        <a href="#web-testing" className="hover:text-[#00F2B0]  transition-colors">Web</a>
         <a href="#mobile-testing" className="hover:text-[#00F2B0] transition-colors">Mobile</a>
         <a href="#api-testing" className="hover:text-[#00F2B0] transition-colors">API</a>
         <a href="#desktop-testing" className="hover:text-[#00F2B0] transition-colors">Desktop</a>
@@ -76,7 +77,7 @@ export default function ByUseCase() {
         
         {/* Section 1: Web Testing */}
         <section id="web-testing" className="scroll-mt-32">
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">Web <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6843B7] to-[#8f81eb]">Testing</span></h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-white tracking-tight mb-6">Web <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6843B7] to-[#8f81eb]">Testing</span></h2>
           <p className="text-white/60 leading-relaxed text-lg md:text-xl mb-12 max-w-4xl">
             Modern web applications operate across multiple browsers, environments, frameworks, and user workflows, making consistent validation increasingly complex. cliQTest enables comprehensive web testing through intelligent automation, cross-browser execution, real-device validation, and AI-powered automation management.
           </p>
@@ -160,7 +161,7 @@ export default function ByUseCase() {
 
         {/* Section 2: Mobile Testing */}
         <section id="mobile-testing" className="scroll-mt-32">
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">Mobile <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00F2B0] to-[#ffffff]">Testing</span></h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-white tracking-tight mb-6">Mobile <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00F2B0] to-[#ffffff]">Testing</span></h2>
           <p className="text-white/60 leading-relaxed text-lg md:text-xl mb-12 max-w-4xl">
             Mobile applications demand seamless experiences across devices, operating systems, screen sizes, and network conditions. cliQTest’s real device lab enables organizations to validate mobile applications on actual Android and iOS devices, ensuring accurate production-level testing.
           </p>
@@ -229,7 +230,7 @@ export default function ByUseCase() {
 
         {/* Section 3: API Testing */}
         <section id="api-testing" className="scroll-mt-32">
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">API <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#A855F7] to-[#818cf8]">Testing</span></h2>
+          <h2 className="text-4xl md:text-5xl  text-white font-bold tracking-tight mb-6">API <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#A855F7] to-[#818cf8]">Testing</span></h2>
           <p className="text-white/60 leading-relaxed text-lg md:text-xl mb-12 max-w-4xl">
             Enterprise applications rely heavily on APIs to power integrations, workflows, transactions, and real-time communication across systems. cliQTest enables comprehensive API testing to validate functionality, response accuracy, business logic, and data consistency across interconnected ecosystems.
           </p>
@@ -313,7 +314,7 @@ export default function ByUseCase() {
 
         {/* Section 4: Desktop Testing */}
         <section id="desktop-testing" className="scroll-mt-32">
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">Desktop <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00F2B0] to-[#ffffff]">Testing</span></h2>
+          <h2 className="text-4xl md:text-5xl text-white font-bold tracking-tight mb-6">Desktop <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00F2B0] to-[#ffffff]">Testing</span></h2>
           <p className="text-white/60 leading-relaxed text-lg md:text-xl mb-12 max-w-4xl">
             Enterprise desktop applications often involve complex workflows, legacy systems, and environment-specific dependencies that require reliable and scalable validation. cliQTest enables organizations to automate and manage desktop application testing through centralized execution workflows and intelligent automation capabilities.
           </p>
@@ -406,7 +407,7 @@ export default function ByUseCase() {
 
         {/* Section 5: Regression Testing */}
         <section id="regression-testing" className="scroll-mt-32">
-          <div className="bg-[#0A0A0A] border border-white/10 rounded-md p-8 md:p-12 relative overflow-hidden">
+          <div className="bg-[#0A0A0A] text-white border border-white/10 rounded-md p-8 md:p-12 relative overflow-hidden">
             <div className="absolute top-0 right-0 w-96 h-96 bg-[#6843B7] opacity-10 blur-[120px] rounded-md pointer-events-none" />
             <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#00F2B0] opacity-10 blur-[120px] rounded-md pointer-events-none" />
             
@@ -495,7 +496,7 @@ export default function ByUseCase() {
 
         {/* Section 6: Performance Testing */}
         <section id="performance-testing" className="scroll-mt-32">
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">Performance <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#A855F7] to-[#818cf8]">Testing</span></h2>
+          <h2 className="text-4xl text-white md:text-5xl font-bold tracking-tight mb-6">Performance <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#A855F7] to-[#818cf8]">Testing</span></h2>
           <p className="text-white/60 leading-relaxed text-lg md:text-xl mb-12 max-w-4xl">
             High-performing applications are critical for delivering seamless digital experiences and maintaining operational reliability under varying workloads. cliQTest supports scalable performance validation by enabling organizations to monitor execution behavior, application responsiveness, and system reliability across enterprise environments.
           </p>

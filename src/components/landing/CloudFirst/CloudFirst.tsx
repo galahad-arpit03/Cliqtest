@@ -44,7 +44,7 @@ export default function CloudFirst() {
           >
             <div className="hidden sm:block relative w-full sm:w-[45%] h-[250px] sm:h-auto bg-black border-b sm:border-b-0 sm:border-r border-white/5 overflow-hidden">
               <Image
-                src="/landing page/Testcase.png"
+                src="/images/testcase.png"
                 alt="Test Runs"
                 fill
                 className="object-cover object-center transition-transform duration-700 group-hover:scale-[1.03]"
@@ -73,7 +73,7 @@ export default function CloudFirst() {
           >
             <div className="hidden sm:block relative w-full sm:w-[45%] h-[250px] sm:h-auto bg-black overflow-hidden border-b sm:border-b-0 sm:border-r border-white/5">
               <Image
-                src="/landing page/enterprise.png"
+                src="/images/enterprise.png"
                 alt="50+ Enterprises"
                 fill
                 className="object-cover object-center transition-transform duration-700 group-hover:scale-[1]"
@@ -103,7 +103,7 @@ export default function CloudFirst() {
           >
             <div className="hidden sm:block relative w-full sm:w-[45%] h-[250px] sm:h-auto bg-black border-b sm:border-b-0 sm:border-r border-white/5">
               <Image
-                src="/landing page/ai agent.png"
+                src="/images/ai-agent.png"
                 alt="Platform Support"
                 fill
                 className="object-cover object-center transition-transform duration-700 group-hover:scale-[1.03]"
@@ -131,7 +131,7 @@ export default function CloudFirst() {
           >
             <div className="hidden sm:block relative w-full sm:w-[45%] h-[250px] sm:h-auto bg-black border-b sm:border-b-0 sm:border-r border-white/5">
               <Image
-                src="/landing page/env.png"
+                src="/images/env.png"
                 alt="Device Supports"
                 fill
                 className="object-cover object-left transition-transform duration-700 group-hover:scale-[1.03]"

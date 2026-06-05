@@ -9,21 +9,21 @@ const resourcesData = [
     category: "Whitepaper",
     title: "The Ultimate Guide to Agentic QA",
     desc: "Discover how AI agents are transforming test automation, from self-healing scripts to autonomous generation.",
-    img: "/landing page/2.png",
+    img: "/images/2.png",
     color: "#00F2B0"
   },
   {
     category: "Case Study",
     title: "Global FinTech Cuts QA Time by 80%",
     desc: "Learn how a leading financial institution integrated cliQTest to achieve seamless continuous delivery.",
-    img: "/landing page/enterprise.png",
+    img: "/images/enterprise.png",
     color: "#6843B7"
   },
   {
     category: "Blog Post",
     title: "Scaling Test Infrastructure in 2026",
     desc: "Best practices for managing parallel execution across thousands of devices and dynamic environments.",
-    img: "/landing page/env.png",
+    img: "/images/env.png",
     color: "#FF6F61"
   }
 ];

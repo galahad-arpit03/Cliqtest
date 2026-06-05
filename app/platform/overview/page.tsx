@@ -153,7 +153,7 @@ export default function OverviewPage() {
             {/* Brain Image */}
             <div className="relative z-20 mix-blend-screen">
               <Image 
-                src="/assets/brain.png" 
+                src="/images/brain.png" 
                 alt="AI Brain" 
                 width={400} 
                 height={400}

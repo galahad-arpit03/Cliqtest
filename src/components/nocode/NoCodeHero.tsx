@@ -22,11 +22,11 @@ export default function NoCodeHero() {
         className="absolute inset-0 grayscale-[0.10] bg-black/10 w-full h-full z-0"
       >
         <Image
-          src="/nocode-automation/automation1.png"
+          src="/images/nocode-hero.png"
           alt="No-Code Automation Background"
           fill
           priority
-          className="object-cover object-center  opacity-[0.4] scale-100"
+          className="object-cover object-center  opacity-[0.7] scale-100"
         />  
         {/* Rich Gradient Overlays for depth and text legibility */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/40 to-black pointer-events-none" />
@@ -63,7 +63,7 @@ export default function NoCodeHero() {
           transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
           className="mt-12 flex flex-row w-full sm:w-auto gap-3 sm:gap-6 justify-center md:justify-start"
         >
-          <button className="flex-1 sm:flex-none px-4 sm:px-10 py-3.5 sm:py-4 bg-[#6843B7] text-white text-[12px] sm:text-[15px] font medium rounded-sm shadow-[0_0_40px_rgba(104,67,183,0.5)] hover:scale-105 active:scale-95 transition-all whitespace-nowrap">
+          <button className="flex-1 sm:flex-none px-4 sm:px-10 py-3.5 sm:py-4 bg-[#6843B7] text-white text-[12px] sm:text-[15px] font medium rounded-sm active:scale-95 transition-all whitespace-nowrap">
             Start Automating
           </button>
           <button className="flex-1 sm:flex-none px-4 sm:px-10 py-3.5 sm:py-4 bg-white/5 backdrop-blur-md border border-white/10 text-white text-[12px] sm:text-[15px] font medium rounded-sm hover:bg-white/10 hover:border-white/30 transition-all active:scale-95 whitespace-nowrap">
