@@ -89,6 +89,7 @@ export default function Platform() {
               className="object-contain mix-blend-screen group-hover:scale-105 transition-transform duration-700 ease-out"
               sizes="(max-width: 768px) 100vw, 50vw"
               priority
+          unoptimized
             />
           </div>
         </motion.div>

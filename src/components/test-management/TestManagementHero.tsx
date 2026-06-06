@@ -26,6 +26,7 @@ export default function TestManagementHero() {
           alt="Test Management Background"
           fill
           priority
+          unoptimized
           className="object-contain object-right md:object-right-top opacity-60"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-[#060411]/80 via-[#060411]/40 to-[#060411] pointer-events-none" />

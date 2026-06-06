@@ -60,6 +60,7 @@ export default function LoadingScreen({ children }: { children: React.ReactNode 
                   sizes="(max-width: 768px) 100vw, 300px"
                   className="object-contain"
                   priority
+          unoptimized
                 />
               </motion.div>
             </motion.div>

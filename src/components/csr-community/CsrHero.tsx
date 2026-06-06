@@ -24,6 +24,7 @@ export default function CsrHero() {
           alt="Hero Background"
           fill
           priority
+          unoptimized
           className="object-cover object-center"
         />
       </motion.div>

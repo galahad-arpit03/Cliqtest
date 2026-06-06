@@ -388,6 +388,7 @@ export default function Navbar() {
                   sizes="144px"
                   className="object-cover scale-[1.2] object-center"
                   priority
+          unoptimized
                 />
               </div>
             </Link>

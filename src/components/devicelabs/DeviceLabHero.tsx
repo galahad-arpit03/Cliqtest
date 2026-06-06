@@ -26,6 +26,7 @@ export default function DeviceLabHero() {
           alt="Device Lab Hero Background"
           fill
           priority
+          unoptimized
           className="object-cover object-center scale-100"
         />
         {/* Rich Gradient Overlays for depth and text legibility */}

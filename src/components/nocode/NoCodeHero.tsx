@@ -26,6 +26,7 @@ export default function NoCodeHero() {
           alt="No-Code Automation Background"
           fill
           priority
+          unoptimized
           className="object-cover object-center  opacity-[0.7] scale-100"
         />  
         {/* Rich Gradient Overlays for depth and text legibility */}

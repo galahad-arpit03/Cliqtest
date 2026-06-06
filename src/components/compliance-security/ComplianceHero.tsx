@@ -24,6 +24,7 @@ export default function ComplianceHero() {
           alt="Hero Background"
           fill
           priority
+          unoptimized
           className="object-cover object-center"
         />
       </motion.div>

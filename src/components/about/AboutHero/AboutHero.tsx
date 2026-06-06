@@ -24,6 +24,7 @@ export default function AboutHero() {
           alt="Hero Background"
           fill
           priority
+          unoptimized
           className="object-contain object-right md:object-right-top opacity-60"
         />
       </motion.div>

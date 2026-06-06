@@ -26,6 +26,7 @@ export default function AiHero() {
           alt="AI Capabilities Background"
           fill
           priority
+          unoptimized
           className="object-cover object-center scale-100"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/40 to-black pointer-events-none" />
