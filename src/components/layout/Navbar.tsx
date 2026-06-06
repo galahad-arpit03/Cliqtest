@@ -39,13 +39,13 @@ export const menuItems = [
     dropdownType: "tabbed",
     content: {
       tabs: [
-        {
-          id: "overview",
-          label: "Platform Overview",
-          title: "Intelligent Testing Infrastructure",
-          description: "cliQTest is an innovative platform designed to unify your testing ecosystem. Whether you’re working on websites, mobile apps, or APIs, cliQTest provides a robust, AI-powered environment to conduct automated testing with absolute precision.",
-          icon: Globe
-        },
+        // {
+        //   id: "overview",
+        //   label: "Platform Overview",
+        //   title: "Intelligent Testing Infrastructure",
+        //   description: "cliQTest is an innovative platform designed to unify your testing ecosystem. Whether you’re working on websites, mobile apps, or APIs, cliQTest provides a robust, AI-powered environment to conduct automated testing with absolute precision.",
+        //   icon: Globe
+        // },
         {
           id: "test-management",
           label: "Test Management",
