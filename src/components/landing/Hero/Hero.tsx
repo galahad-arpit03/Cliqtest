@@ -103,8 +103,8 @@ export default function Hero() {
             href="/contact"
             className="group flex-1 sm:flex-none flex items-center justify-center sm:justify-start gap-2 text-white font-medium text-[14px] sm:text-[16px] cursor-pointer whitespace-nowrap"
           >
-            <span className="border-b border-white/40 pb-0.5 group-hover:border-white transition-colors">Contact Us</span>
-            <span className="group-hover:translate-x-1 transition-transform">→</span>
+            {/* <span className="border-b border-white/40 pb-0.5 group-hover:border-white transition-colors">Contact Us</span> */}
+            {/* <span className="group-hover:translate-x-1 transition-transform">→</span> */}
           </motion.a>
         </motion.div>
         </motion.div>
