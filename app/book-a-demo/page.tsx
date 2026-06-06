@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { ChevronLeft, ChevronRight, CheckCircle2, QrCode } from 'lucide-react';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 export default function BookADemoPage() {
   const [selectedDate, setSelectedDate] = useState<Date | null>(new Date());
@@ -114,27 +115,6 @@ export default function BookADemoPage() {
               {/* Contact Type Selection */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
                 <div 
-                  onClick={() => setContactType(contactType === 'presales' ? null : 'presales')}
-                  className={`p-5 rounded-md border cursor-pointer flex flex-col justify-between transition-all ${contactType === 'presales' ? 'bg-[#6843B7]/10 border-[#6843B7] shadow-[0_0_20px_rgba(104,67,183,0.15)]' : 'bg-[#050505] border-white/10 hover:border-white/20'}`}
-                >
-                  <div>
-                    <div className="flex items-center justify-between mb-4">
-                      <h4 className="text-white font-bold text-sm">Contact Pre-Sales Team</h4>
-                      <div className={`w-4 h-4 rounded-sm flex items-center justify-center border ${contactType === 'presales' ? 'border-[#6843B7] bg-[#6843B7]' : 'border-white/30'}`}>
-                        {contactType === 'presales' && <CheckCircle2 size={12} className="text-white" />}
-                      </div>
-                    </div>
-                    <div className="text-white/60 text-xs space-y-2 mb-6">
-                      <p>Phone: <span className="font-medium text-white/90">+91 89768 19122</span></p>
-                    </div>
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="text-[10px] text-[#6843B7] bg-[#6843B7]/10 px-2 py-1 rounded-sm border border-[#6843B7]/20 font-medium">#Featured discussion</span>
-                    <span className="text-[10px] text-[#6843B7] bg-[#6843B7]/10 px-2 py-1 rounded-sm border border-[#6843B7]/20 font-medium">#Tool capability</span>
-                  </div>
-                </div>
-
-                <div 
                   onClick={() => setContactType(contactType === 'sales' ? null : 'sales')}
                   className={`p-5 rounded-md border cursor-pointer flex flex-col justify-between transition-all ${contactType === 'sales' ? 'bg-[#6843B7]/10 border-[#6843B7] shadow-[0_0_20px_rgba(104,67,183,0.15)]' : 'bg-[#050505] border-white/10 hover:border-white/20'}`}
                 >
@@ -153,6 +133,27 @@ export default function BookADemoPage() {
                   <div className="flex flex-wrap gap-2">
                     <span className="text-[10px] text-[#6843B7] bg-[#6843B7]/10 px-2 py-1 rounded-sm border border-[#6843B7]/20 font-medium">#Enterprise license</span>
                     <span className="text-[10px] text-[#6843B7] bg-[#6843B7]/10 px-2 py-1 rounded-sm border border-[#6843B7]/20 font-medium">#Quotation</span>
+                  </div>
+                </div>
+
+                <div 
+                  onClick={() => setContactType(contactType === 'presales' ? null : 'presales')}
+                  className={`p-5 rounded-md border cursor-pointer flex flex-col justify-between transition-all ${contactType === 'presales' ? 'bg-[#6843B7]/10 border-[#6843B7] shadow-[0_0_20px_rgba(104,67,183,0.15)]' : 'bg-[#050505] border-white/10 hover:border-white/20'}`}
+                >
+                  <div>
+                    <div className="flex items-center justify-between mb-4">
+                      <h4 className="text-white font-bold text-sm">Contact Pre-Sales Team</h4>
+                      <div className={`w-4 h-4 rounded-sm flex items-center justify-center border ${contactType === 'presales' ? 'border-[#6843B7] bg-[#6843B7]' : 'border-white/30'}`}>
+                        {contactType === 'presales' && <CheckCircle2 size={12} className="text-white" />}
+                      </div>
+                    </div>
+                    <div className="text-white/60 text-xs space-y-2 mb-6">
+                      <p>Phone: <span className="font-medium text-white/90">+91 89768 19122</span></p>
+                    </div>
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="text-[10px] text-[#6843B7] bg-[#6843B7]/10 px-2 py-1 rounded-sm border border-[#6843B7]/20 font-medium">#Featured discussion</span>
+                    <span className="text-[10px] text-[#6843B7] bg-[#6843B7]/10 px-2 py-1 rounded-sm border border-[#6843B7]/20 font-medium">#Tool capability</span>
                   </div>
                 </div>
               </div>
@@ -252,8 +253,10 @@ export default function BookADemoPage() {
               animate={{ opacity: 1, scale: 1 }}
               className="bg-[#0A0A0A] border border-white/10 rounded-md p-16 md:p-20 text-center shadow-[0_0_40px_rgba(37,211,102,0.15)] flex flex-col items-center"
             >
-              <div className="w-48 h-48 bg-white p-4 rounded-md flex items-center justify-center mx-auto mb-8 shadow-2xl relative group">
-                <QrCode size={160} className="text-black" />
+              <div className="w-48 h-48 bg-white p-2 rounded-md flex items-center justify-center mx-auto mb-8 shadow-2xl relative group">
+                <div className="relative w-full h-full">
+                  <Image src="/qr/image.png" alt="WhatsApp QR Code" fill sizes="192px" className="object-contain" />
+                </div>
                 <div className="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-md">
                   <span className="text-white text-xs font-bold bg-[#25D366] px-3 py-1 rounded-full">WhatsApp</span>
                 </div>
