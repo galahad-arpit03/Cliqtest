@@ -1,4 +1,6 @@
-"use client";
+import re
+
+content = """"use client";
 
 import React from 'react';
 import { motion } from 'framer-motion';
@@ -103,3 +105,8 @@ export default function ClientsContent() {
     </div>
   );
 }
+"""
+
+with open("src/components/clients/ClientsContent.tsx", "w") as f:
+    f.write(content)
+
