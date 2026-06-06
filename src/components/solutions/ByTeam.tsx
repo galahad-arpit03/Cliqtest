@@ -5,6 +5,7 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ShieldCheck, Code2, GitBranch, LineChart, Building2 } from 'lucide-react';
+import CustomerMarquee from '@/components/common/CustomerMarquee';
 
 const features = [
   {
@@ -130,6 +131,8 @@ export default function ByTeam() {
           </motion.div>
         </div>
       </section>
+
+     
 
       {/* 2. Main Content - Sticky Bento Layout */}
       <div className="bg-[#050505] text-white py-20 flex flex-col gap-8">
