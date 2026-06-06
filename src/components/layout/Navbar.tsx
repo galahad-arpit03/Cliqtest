@@ -314,6 +314,11 @@ export const menuItems = [
     title: "Resources",
     href: "https://docs.cliqtest.com/"
   },
+
+  {
+    title: "Blogs",
+    href: "/blogs"
+  }
   // {
   //   title: "Pricing",
   //   href: "/pricing"
