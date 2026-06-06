@@ -58,10 +58,10 @@ export default function BookADemoPage() {
     <main className="min-h-screen bg-[#050505] pt-32 md:pt-40 pb-20 px-6 md:px-12 lg:px-24 relative overflow-hidden">
       
       {/* Dynamic Background Gradients */}
-      <div className="absolute top-0 left-0 w-full h-full pointer-events-none z-0">
+      {/* <div className="absolute top-0 left-0 w-full h-full pointer-events-none z-0">
         <div className="absolute top-[10%] left-[-10%] w-[60%] h-[60%] bg-[#6843B7]/10 blur-[160px] rounded-full" />
         <div className="absolute bottom-[10%] right-[-10%] w-[60%] h-[60%] bg-[#00F2B0]/5 blur-[160px] rounded-full" />
-      </div>
+      </div> */}
 
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-20 relative z-10">
         
@@ -183,7 +183,7 @@ export default function BookADemoPage() {
                     </select>
                   </div>
 
- <button type="submit" className="w-full py-4 bg-[#6843B7] text-white rounded-sm hover:bg-[#6843B7]/90 transition-all shadow-[0_0_20px_rgba(104,67,183,0.3)] text-[14px] mt-4 active:scale-95">
+ <button type="submit" className="w-full py-4 bg-[#6843B7] text-white rounded-sm hover:bg-[#6843B7]/90 transition-all  text-[14px] mt-4 active:scale-95">
                     Confirm Booking
                   </button>
                 </form>

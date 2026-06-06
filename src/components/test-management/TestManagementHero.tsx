@@ -15,23 +15,21 @@ export default function TestManagementHero() {
   const opacity = useTransform(scrollYProgress, [0, 1], [1, 0]);
 
   return (
-    <section ref={containerRef} style={{ position: 'relative' }} className="relative w-full min-h-[800px] flex items-center justify-center overflow-hidden bg-black">
+    <section ref={containerRef} className="relative min-h-[85vh] md:min-h-screen bg-[#060411] flex flex-col justify-center border-b border-white/5 overflow-hidden">
       {/* Background Image Parallax */}
       <motion.div 
         style={{ y, opacity }}
-        className="absolute inset-0 w-full h-full z-0"
+        className="absolute inset-0 w-full h-full z-0 pointer-events-none"
       >
         <Image
           src="/images/test-hero.png"
           alt="Test Management Background"
           fill
           priority
-          className="object-cover object-center scale-95 opacity-[.4]"
+          className="object-contain object-right md:object-right-top opacity-60"
         />
-        {/* Rich Gradient Overlays for depth and text legibility */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/20 to-black/90 pointer-events-none" />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-transparent to-black/60 pointer-events-none" />
-        <div className="absolute inset-0 bg-[#6843B7]/20 mix-blend-overlay pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#060411]/80 via-[#060411]/40 to-[#060411] pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#060411]/80 via-transparent to-[#060411]/80 pointer-events-none" />
       </motion.div>
 
       <div className="relative z-10 w-full max-w-7xl mx-auto px-8 flex flex-col items-center md:items-start justify-center text-center md:text-left">
@@ -63,7 +61,7 @@ export default function TestManagementHero() {
           transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
           className="mt-12 flex flex-row w-full sm:w-auto gap-3 sm:gap-6"
         >
-          <button className="flex-1 sm:flex-none px-4 sm:px-10 py-3.5 sm:py-4 bg-[#6843B7] text-white text-[12px] sm:text-[15px] font medium rounded-sm shadow-[0_0_40px_rgba(104,67,183,0.5)] hover:scale-105 active:scale-95 transition-all whitespace-nowrap">
+          <button className="flex-1 sm:flex-none px-4 sm:px-10 py-3.5 sm:py-4 bg-[#6843B7] text-white text-[12px] sm:text-[15px] font medium rounded-sm hover:scale-105 active:scale-95 transition-all whitespace-nowrap">
             Manage Testing
           </button>
           <button className="flex-1 sm:flex-none px-4 sm:px-10 py-3.5 sm:py-4 bg-white/5 backdrop-blur-md border border-white/10 text-white text-[12px] sm:text-[15px] font medium rounded-sm hover:bg-white/10 hover:border-white/30 transition-all active:scale-95 whitespace-nowrap">

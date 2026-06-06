@@ -227,18 +227,18 @@ export const menuItems = [
             { label: "Core Values", desc: "The principles that guide everything we do." }
           ]
         },
-        {
-          id: "leadership",
-          label: "Leadership",
-          header: "Leadership Profiles",
-          intro: "Meet the visionary executive team, our seasoned board of directors, and the strategic investors who are guiding cliQTest towards continuous innovation. Their combined decades of enterprise software experience are dedicated to ensuring our platform remains at the absolute cutting edge of the industry.",
-          icon: Cpu,
-          features: [
-            { label: "Executive Teams", desc: "Meet the people leading our vision." },
-            { label: "Board of Directors", desc: "Our advisors and board members." },
-            { label: "Investors", desc: "The partners backing our growth." }
-          ]
-        },
+        // {
+        //   id: "leadership",
+        //   label: "Leadership",
+        //   header: "Leadership Profiles",
+        //   intro: "Meet the visionary executive team, our seasoned board of directors, and the strategic investors who are guiding cliQTest towards continuous innovation. Their combined decades of enterprise software experience are dedicated to ensuring our platform remains at the absolute cutting edge of the industry.",
+        //   icon: Cpu,
+        //   features: [
+        //     { label: "Executive Teams", desc: "Meet the people leading our vision." },
+        //     { label: "Board of Directors", desc: "Our advisors and board members." },
+        //     { label: "Investors", desc: "The partners backing our growth." }
+        //   ]
+        // },
         {
           id: "why-cliqtest",
           label: "Why cliQTest?",
@@ -262,7 +262,7 @@ export const menuItems = [
           icon: Database,
           features: [
             { label: "Success Stories", desc: "How our clients achieve their goals." },
-            { label: "Case Studies", desc: "In-depth looks at our enterprise solutions." },
+            // { label: "Case Studies", desc: "In-depth looks at our enterprise solutions." },
             { label: "Testimonials", desc: "What industry leaders say about us." }
           ]
         },
@@ -325,10 +325,10 @@ export const menuItems = [
     title: "Resources",
     href: "https://docs.cliqtest.com/"
   },
-  {
-    title: "Pricing",
-    href: "/pricing"
-  },
+  // {
+  //   title: "Pricing",
+  //   href: "/pricing"
+  // },
 ];
 
 export default function Navbar() {
@@ -371,7 +371,7 @@ export default function Navbar() {
 
   return (
     <>
-      <nav ref={navRef} className={`fixed top-0 w-full z-[100] transition-all duration-500 ${isScrolled || isMobileMenuOpen
+      <nav ref={navRef} className={`fixed top-0 w-full z-[100] transition-all duration-500 ${isScrolled || isMobileMenuOpen || activeMenu !== null
           ? 'bg-black/95 backdrop-blur-md h-20 border-b border-white/5 shadow-2xl'
           : 'bg-transparent h-24'
         } px-8`}>

@@ -61,9 +61,9 @@ export default function ByTeam() {
   };
 
   return (
-    <div className="bg-[#050505] text-white min-">
+    <div className="bg-[#06050C] text-white min-">
       {/* 1. Hero Section */}
-      <section className="relative pt-20 pb-24 min-h-[60vh] flex flex-col justify-center border-b border-white/5 overflow-hidden">
+      <section className="relative min-h-[85vh] md:min-h-screen bg-[#06050C] flex flex-col justify-center border-b border-white/5 overflow-hidden">
         {/* Background Image/Gradient */}
         <motion.div style={{ y }} className="absolute inset-0 w-full h-full z-0 pointer-events-none">
           <Image 
@@ -71,10 +71,10 @@ export default function ByTeam() {
             alt="Hero Background" 
             fill 
             priority
-            className="object-cover object-center opacity-[0.6] scale-95"
+            className="object-contain object-right md:object-right-top opacity-60"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#050505]/80 via-[#050505]/40 to-[#050505] pointer-events-none" />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#050505]/80 via-transparent to-[#050505]/80 pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#06050C]/80 via-[#06050C]/40 to-[#06050C] pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#06050C]/80 via-transparent to-[#06050C]/80 pointer-events-none" />
         </motion.div>
 
         <div className="relative z-20 max-w-7xl mx-auto px-8 w-full">
@@ -98,7 +98,7 @@ export default function ByTeam() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <a href="#qa-teams" className="inline-flex items-center gap-2 px-8 py-3 bg-[#6843B7] text-white font medium rounded-sm hover:bg-[#6843B7]/90 transition-all shadow-[0_0_20px_rgba(104,67,183,0.3)]">
+              <a href="#qa-teams" className="inline-flex items-center gap-2 px-8 py-3 bg-[#6843B7] text-white font medium rounded-sm hover:bg-[#6843B7]/90 transition-all ">
                 Explore
               </a>
             </motion.div>

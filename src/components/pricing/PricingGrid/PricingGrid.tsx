@@ -133,7 +133,7 @@ export default function PricingGrid() {
 
  <button className={`w-full py-3.5 rounded-sm text-[14px] transition-all ${
                 tier.highlighted 
-                ? 'bg-[#6843B7] text-white hover:bg-[#6843B7]/90 shadow-[0_0_20px_rgba(104,67,183,0.3)]' 
+                ? 'bg-[#6843B7] text-white hover:bg-[#6843B7]/90 ' 
                 : 'bg-white/5 text-white hover:bg-white/10 border border-white/10'
               }`}>
                 Get Started

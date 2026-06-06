@@ -1,23 +1,35 @@
 "use client";
 
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useRef } from 'react';
+import Image from 'next/image';
+import { motion, useScroll, useTransform } from 'framer-motion';
 
 export default function NewsroomHero() {
+
+  const containerRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end start"]
+  });
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
+  const opacity = useTransform(scrollYProgress, [0, 1], [1, 0]);
   return (
     <section
-      className="relative min-h-[60vh] md:min-h-[80vh] flex flex-col justify-center overflow-hidden mb-20"
-      style={{
-        backgroundImage: "url('/images/about-hero.png')",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-        backgroundAttachment: "fixed",
-      }}
+      ref={containerRef}
+      className="relative min-h-[85vh] md:min-h-screen flex flex-col justify-center overflow-hidden"
     >
+      <motion.div style={{ y, opacity }} className="absolute inset-0 w-full h-full z-0">
+        <Image
+          src="/images/newsroom-hero.png"
+          alt="Hero Background"
+          fill
+          priority
+          className="object-contain object-right md:object-right-top opacity-60"
+        />
+      </motion.div>
       {/* Dark overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#050505]/95 via-[#050505]/80 to-[#050505]/30 pointer-events-none" />
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#050505] to-transparent pointer-events-none" />
+      <div className="absolute z-0 inset-0 bg-gradient-to-r from-[#050505]/95 via-[#050505]/80 to-[#050505]/30 pointer-events-none" />
+      <div className="absolute z-0 bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#050505] to-transparent pointer-events-none" />
 
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto w-full px-8 pt-32 pb-20">
@@ -35,7 +47,11 @@ export default function NewsroomHero() {
           </h1>
 
           <p className="text-white/90 text-base md:text-lg font-semibold leading-relaxed max-w-2xl mb-6">
-            Product Announcements, Events & Webinars, and Media Coverage.
+            Stay updated with Product Announcements, Events & Webinars, and Media Coverage.
+          </p>
+
+          <p className="text-white/60 text-sm md:text-base leading-relaxed max-w-3xl mb-10">
+            Welcome to the cliQTest Newsroom. Here you will find the latest insights into our cutting-edge quality engineering platform. Dive into our major feature releases, register for upcoming interactive masterclasses, and explore how industry leaders and top tech publications are recognizing cliQTest for revolutionizing software automation. Stay informed, stay ahead.
           </p>
 
         </motion.div>
