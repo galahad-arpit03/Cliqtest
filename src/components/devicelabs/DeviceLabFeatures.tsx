@@ -17,7 +17,6 @@ const features = [
     desc: [
       "Protean is cliQTest's advanced Device Lab Management Platform designed to simplify and scale end-to-end mobile and web application testing on real devices through a unified cloud-based ecosystem. The platform provides remote access to physical devices across multiple brands, operating systems, screen sizes, and configurations while integrating automation, observability, debugging, and performance analysis into a single interface.",
       "Protean eliminates the operational challenges associated with maintaining physical device labs, handling OTP and SIM-based workflows, reproducing device-specific issues, and debugging application crashes by enabling centralized real-device execution, live streaming, shell-level access, session recording, and intelligent reporting.",
-      "With capabilities such as parallel execution, geolocation testing, network throttling, interactive debugging, performance profiling, and real-time log monitoring, Protean empowers enterprise teams to execute reliable, scalable, and production-ready mobile testing workflows with improved visibility and faster issue resolution."
     ],
     benefits: [
       "Remote access to global real devices",
@@ -36,7 +35,7 @@ const features = [
     textAccent: "text-[#00F2B0]",
     desc: [
       "Protean simplifies mobile automation through an intelligent low-code/no-code automation framework that enables teams to create, execute, and manage mobile test scripts seamlessly across real devices and environments. The platform supports streamlined device onboarding, application configuration, reusable automation workflows, and recorder-based script generation that significantly reduce manual scripting effort and accelerate automation adoption.",
-      "By automatically capturing user interactions and converting them into structured executable test cases, Protean enables teams to build scalable automation workflows without requiring extensive coding expertise. Combined with real-device execution, OTP handling, debugging visibility, and centralized reporting, Protean delivers faster mobile test execution, improved automation reliability, and enterprise-grade scalability for modern mobile application ecosystems."
+      "By automatically capturing user interactions and converting them into structured executable test cases, Protean enables teams to build scalable automation workflows without requiring extensive coding expertise."
     ],
     benefits: [
       "Low-code/no-code mobile automation",
@@ -151,7 +150,6 @@ const features = [
     desc: [
       "cliQTest supports enterprise-grade browser testing across leading browsers including Chrome, Firefox, Safari, Edge, and other modern browser environments. The platform enables teams to validate application compatibility, responsiveness, UI behavior, and functionality across diverse browser configurations.",
       "Cross-browser execution capabilities help organizations identify rendering inconsistencies, browser-specific defects, and user experience issues before production deployment. Teams can execute tests in parallel across multiple browser combinations, significantly reducing testing timelines while improving validation coverage.",
-      "Integrated reporting and execution analytics provide detailed insights into browser-specific failures, enabling faster debugging, improved release confidence, and consistent digital experiences for end users."
     ],
     benefits: [
       "Enterprise-grade cross-browser compatibility",
@@ -184,77 +182,134 @@ const features = [
 
 export default function DeviceLabFeatures() {
   return (
-    <div className="bg-[#050505] text-white flex flex-col font-sans overflow-x-hidden">
-      
-      {/* Sub-Navbar */}
-      {/* <div className="sticky top-20 z-40 bg-[#0A0A0A]/95 backdrop-blur-xl border-y border-white/10 text-white/70 py-4 px-8 flex justify-start sm:justify-center gap-6 sm:gap-10 text-[10px] sm:text-xs font-medium tracking-widest uppercase overflow-x-auto whitespace-nowrap shadow-xl">
-        {features.map((f) => (
-          <a key={f.id} href={`#${f.id}`} className="hover:text-[#00F2B0] transition-colors">{f.label}</a>
-        ))}
-      </div> */}
-
-      <div className="max-w-7xl mx-auto px-8 py-24 flex flex-col gap-32">
-        
-        {features.map((feat, idx) => {
-          const isEven = idx % 2 === 0;
-          const words = feat.title.split(' ');
-          const firstWord = words[0];
-          const restWords = words.slice(1).join(' ');
-          
-          return (
-            <section key={feat.id} id={feat.id} className="scroll-mt-32">
-              <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">
-                {firstWord} <span className={`text-transparent bg-clip-text bg-gradient-to-r ${feat.theme}`}>{restWords}</span>
-              </h2>
-              <p className="text-white/60 leading-relaxed text-lg md:text-xl mb-12 max-w-4xl">
-                {feat.desc[0]}
-              </p>
-              
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-stretch">
-                <div className={`flex flex-col h-full ${isEven ? 'order-1' : 'order-1 lg:order-2'}`}>
-                  <div className="space-y-6 text-white/60 leading-relaxed">
-                    {feat.desc.slice(1).map((p, i) => (
-                      <p key={i}>{p}</p>
-                    ))}
-                  </div>
-                  
-                  <div className="mt-auto pt-8">
-                    <div className="bg-white/5 border border-white/10 rounded-md p-6">
-                      <h4 className="text-white font-medium mb-5 flex items-center gap-3">
-                        <span className={`w-2 h-2 rounded-md ${feat.accent} shadow-[0_0_10px_currentColor]`} style={{ color: feat.accent === 'bg-[#6843B7]' ? '#6843B7' : '#00F2B0' }} />
-                        Key Benefits
-                      </h4>
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-6">
-                        {feat.benefits.map((benefit, i) => (
-                          <div key={i} className="flex items-start gap-3 text-sm text-white/80">
-                            <div className={`mt-0.5 font-medium ${feat.textAccent}`}>✓</div>
-                            <span className="leading-snug">{benefit}</span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                
-                {/* Visual Card */}
-                <div className={`bg-[#080808] border border-white/10 rounded-md relative overflow-hidden flex flex-col justify-center min-h-[400px] ${isEven ? 'order-2' : 'order-2 lg:order-1'}`}>
-                  <div className={`absolute top-0 right-0 w-64 h-64 ${feat.accent === 'bg-[#6843B7]' ? 'bg-[#6843B7]' : 'bg-[#00F2B0]'} opacity-10 blur-[80px] rounded-md pointer-events-none`} />
-                  <div className={`absolute bottom-0 left-0 w-48 h-48 ${feat.accent === 'bg-[#6843B7]' ? 'bg-[#00F2B0]' : 'bg-[#6843B7]'} opacity-5 blur-[60px] rounded-md pointer-events-none`} />
-                  
-                  <div className="relative z-10 w-full h-full flex items-center justify-center p-8 group">
-                    <div className="relative w-48 h-48 rounded-3xl bg-white/[0.02] border border-white/5 backdrop-blur-xl shadow-2xl flex items-center justify-center hover:border-white/20 transition-all duration-500">
-                      <feat.icon size={80} className={`${feat.textAccent} opacity-60 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700`} />
-                      <div className="absolute w-full h-full animate-[spin_10s_linear_infinite] pointer-events-none">
-                        <div className={`absolute top-0 left-0 w-2 h-2 rounded-full shadow-[0_0_10px_currentColor] ${feat.accent}`} style={{ color: feat.accent === 'bg-[#6843B7]' ? '#6843B7' : '#00F2B0' }} />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </section>
-          );
-        })}
+    <div className="bg-[#050505] text-white py-20 flex flex-col gap-8">
+      {/* Header Section */}
+      <div className="w-full px-8 md:px-16 lg:px-32 xl:px-16 mb-16 text-left">
+        <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4 leading-tight text-white">
+          Real Devices. <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00F2B0] to-[#ffffff]">Real Results.</span>
+        </h2>
+        <p className="text-base md:text-lg text-white/50 leading-relaxed max-w-2xl">
+          Access a global cloud of physical devices to execute end-to-end mobile and web validation with zero latency and enterprise-grade observability.
+        </p>
       </div>
+
+      {features.map((feat, idx) => {
+        const words = feat.title.split(' ');
+        const firstWord = words[0];
+        const restWords = words.slice(1).join(' ');
+        
+        const isPurple = feat.theme === "from-[#6843B7] to-[#8f81eb]";
+        const accentColor = isPurple ? "#6843B7" : "#00F2B0";
+        const gradientClass = feat.theme;
+        
+        const Icon = feat.icon;
+
+        return (
+          <section key={feat.id} id={feat.id} className="lg:sticky top-20 z-20 bg-[#050505] py-4 lg:shadow-[0_-20px_40px_rgba(5,5,5,1)]">
+            <div className="max-w-7xl mx-auto px-8">
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 lg:h-[520px]">
+                
+                {/* Left Column Stack */}
+                <div className={`lg:col-span-4 flex flex-col gap-4 order-2 ${idx % 2 === 0 ? 'lg:order-1' : 'lg:order-2'}`}>
+                  
+                  {/* Visual Demo Card */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: 0.1 }}
+                    className="h-48 bg-[#080808] border border-white/10 rounded-md relative overflow-hidden flex items-center justify-center group"
+                  >
+                    <div 
+                      className="absolute inset-0 pointer-events-none" 
+                      style={{ background: `linear-gradient(45deg,transparent 25%,${isPurple ? 'rgba(104,67,183,0.15)' : 'rgba(0,242,176,0.15)'} 50%,transparent 75%)`}} 
+                    />
+                    {/* Mock data lines */}
+                    <div className="absolute inset-0 flex flex-col gap-3 p-6 opacity-[0.08] pointer-events-none overflow-hidden justify-center">
+                      <div className="h-2 w-full bg-white rounded-full" />
+                      <div className="h-2 w-3/4 bg-white rounded-full" />
+                      <div className="h-2 w-5/6 bg-white rounded-full" />
+                      <div className="h-2 w-1/2 bg-white rounded-full" />
+                      <div className="h-2 w-full bg-white rounded-full" />
+                      <div className="h-2 w-2/3 bg-white rounded-full" />
+                    </div>
+                    <Icon size={80} color={accentColor} className="opacity-30 group-hover:scale-110 transition-transform duration-700 relative z-10" />
+                  </motion.div>
+                  
+                  {/* Benefits Card */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: 0.2 }}
+                    className="flex-1 bg-[#0A0A0A] border border-white/10 rounded-md p-6 relative overflow-hidden group"
+                  >
+                    <h4 className="text-white font-semibold mb-5 flex items-center gap-3">
+                      <span className="w-2 h-2 rounded-md shadow-[0_0_10px]" style={{ backgroundColor: accentColor, color: accentColor }} />
+                      Key Capabilities
+                    </h4>
+                    <div className="space-y-4">
+                      {feat.benefits.map((benefit, i) => (
+                        <div key={i} className="flex items-start gap-3 text-sm text-white/80">
+                          <div className="shrink-0 mt-0.5" style={{ color: accentColor }}>✓</div>
+                          <span className="leading-snug">{benefit}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </motion.div>
+
+                </div>
+
+                {/* Main Content */}
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6 }}
+                  className={`lg:col-span-8 bg-[#0A0A0A] border border-white/10 rounded-md p-8 md:p-10 relative overflow-hidden group order-1 flex flex-col justify-center ${idx % 2 === 0 ? 'lg:order-2' : 'lg:order-1'}`}
+                >
+                  <div className="absolute top-0 inset-x-0 h-px opacity-50" style={{ background: `linear-gradient(to right, transparent, ${accentColor}, transparent)` }} />
+                  <div className="absolute inset-0 pointer-events-none" style={{ background: `linear-gradient(-90deg,transparent 0%,${isPurple ? 'rgba(104,67,183,0.02)' : 'rgba(0,242,176,0.02)'} 50%,transparent 100%)`}} />
+                  
+                  <div className="relative z-10 h-full flex flex-col justify-center">
+                    <h2 className="text-3xl md:text-5xl font-semibold text-white mb-8 tracking-tight">
+                      {firstWord} <span className={`text-transparent bg-clip-text bg-gradient-to-r ${gradientClass}`}>{restWords}</span>
+                    </h2>
+                    
+                    <div className="space-y-4 text-white/60 text-[16px] leading-relaxed max-w-3xl">
+                      {feat.desc.map((p, i) => (
+                        <p key={i}>{p}</p>
+                      ))}
+                    </div>
+                    
+                    {/* Metrics Strip */}
+                    <div className="mt-8 pt-8 border-t border-white/10 grid grid-cols-2 md:grid-cols-4 gap-4">
+                      <div className="flex flex-col">
+                        <span className="text-2xl font-bold text-white mb-1">500+</span>
+                        <span className="text-xs text-white/40 uppercase tracking-wider">Real Devices</span>
+                      </div>
+                      <div className="flex flex-col">
+                        <span className="text-2xl font-bold text-white mb-1">Zero</span>
+                        <span className="text-xs text-white/40 uppercase tracking-wider">Latency</span>
+                      </div>
+                      <div className="flex flex-col">
+                        <span className="text-2xl font-bold text-white mb-1">Global</span>
+                        <span className="text-xs text-white/40 uppercase tracking-wider">Availability</span>
+                      </div>
+                      <div className="flex flex-col">
+                        <span className="text-2xl font-bold text-white mb-1">100%</span>
+                        <span className="text-xs text-white/40 uppercase tracking-wider">Secure</span>
+                      </div>
+                    </div>
+                    
+                  </div>
+                </motion.div>
+
+              </div>
+            </div>
+          </section>
+        );
+      })}
     </div>
   );
 }

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from 'react';
+import React from "react";
 import { motion } from 'framer-motion';
 import { FileText, FolderTree, CalendarDays, Route, Database, BarChart3, TerminalSquare, UserCheck, Bug } from 'lucide-react';
 
@@ -152,124 +152,135 @@ const features = [
 ];
 
 export default function TestManagementFeatures() {
-  const [activeSection, setActiveSection] = useState('test-cases');
-
-  useEffect(() => {
-    const observers = new Map();
-    
-    const observerCallback = (entries: IntersectionObserverEntry[]) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          setActiveSection(entry.target.id);
-        }
-      });
-    };
-
-    const observerOptions = {
-      root: null,
-      rootMargin: '-100px 0px -50% 0px',
-      threshold: 0
-    };
-
-    const observer = new IntersectionObserver(observerCallback, observerOptions);
-
-    features.forEach(({ id }) => {
-      const element = document.getElementById(id);
-      if (element) {
-        observer.observe(element);
-        observers.set(id, element);
-      }
-    });
-
-    return () => {
-      observer.disconnect();
-    };
-  }, []);
-
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      const yOffset = -100;
-      const y = element.getBoundingClientRect().top + window.scrollY + yOffset;
-      window.scrollTo({ top: y, behavior: 'smooth' });
-    }
-  };
-
   return (
-    <div className="bg-[#050505] text-white min-">
-      
-      {/* 2. Main Layout: Sticky Sidebar + Scrolling Content */}
-      <section className="relative max-w-7xl mx-auto px-8 py-20 flex flex-col lg:flex-row gap-16">
+    <div className="bg-[#050505] text-white py-20 flex flex-col gap-8">
+      {/* Header Section */}
+      <div className="w-full px-8 md:px-16 lg:px-32 xl:px-16 mb-16 text-left">
+        <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4 leading-tight text-white">
+          Complete <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6843B7] to-[#8f81eb]">Test Control</span>
+        </h2>
+        <p className="text-base md:text-lg text-white/50 leading-relaxed max-w-2xl">
+          Orchestrate your entire quality lifecycle from a single, unified interface designed for scale, precision, and complete traceability.
+        </p>
+      </div>
+
+      {features.map((feat, idx) => {
+        const words = feat.title.split(' ');
+        const firstWord = words[0];
+        const restWords = words.slice(1).join(' ');
         
-        {/* Sticky Sidebar */}
-        <div className="hidden lg:block w-[280px] shrink-0">
-          <div className="sticky top-32 flex flex-col gap-2 border-l border-white/10 pl-6">
-            {features.map(({ id, title }) => (
-              <button
-                key={id}
-                onClick={() => scrollToSection(id)}
-                className={`text-left px-4 py-3 rounded-md transition-all font medium text-[15px] ${
-                  activeSection === id 
-                    ? 'bg-white/10 text-white font medium' 
-                    : 'text-white/40 hover:text-white/80 hover:bg-white/5'
-                }`}
-              >
-                {title}
-              </button>
-            ))}
-          </div>
-        </div>
+        const isPurple = feat.theme === 'purple';
+        const accentColor = isPurple ? "#6843B7" : "#00F2B0";
+        const gradientClass = isPurple 
+          ? "from-[#6843B7] to-[#8f81eb]" 
+          : "from-[#00F2B0] to-[#ffffff]";
+        
+        const Icon = feat.icon;
 
-        {/* Content Sections */}
-        <div className="flex-1 flex flex-col gap-32">
-          
-          {features.map((feat, idx) => {
-             const words = feat.title.split(' ');
-             const firstWord = words[0];
-             const restWords = words.slice(1).join(' ');
+        return (
+          <section key={feat.id} id={feat.id} className="lg:sticky top-20 z-20 bg-[#050505] py-4 lg:shadow-[0_-20px_40px_rgba(5,5,5,1)]">
+            <div className="max-w-7xl mx-auto px-8">
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 lg:h-[520px]">
+                
+                {/* Left Column Stack */}
+                <div className={`lg:col-span-4 flex flex-col gap-4 order-2 ${idx % 2 === 0 ? 'lg:order-1' : 'lg:order-2'}`}>
+                  
+                  {/* Visual Demo Card */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: 0.1 }}
+                    className="h-48 bg-[#080808] border border-white/10 rounded-md relative overflow-hidden flex items-center justify-center group"
+                  >
+                    <div 
+                      className="absolute inset-0 pointer-events-none" 
+                      style={{ background: `linear-gradient(45deg,transparent 25%,${isPurple ? 'rgba(104,67,183,0.15)' : 'rgba(0,242,176,0.15)'} 50%,transparent 75%)`}} 
+                    />
+                    {/* Mock data lines */}
+                    <div className="absolute inset-0 flex flex-col gap-3 p-6 opacity-[0.08] pointer-events-none overflow-hidden justify-center">
+                      <div className="h-2 w-full bg-white rounded-full" />
+                      <div className="h-2 w-3/4 bg-white rounded-full" />
+                      <div className="h-2 w-5/6 bg-white rounded-full" />
+                      <div className="h-2 w-1/2 bg-white rounded-full" />
+                      <div className="h-2 w-full bg-white rounded-full" />
+                      <div className="h-2 w-2/3 bg-white rounded-full" />
+                    </div>
+                    <Icon size={80} color={accentColor} className="opacity-30 group-hover:scale-110 transition-transform duration-700 relative z-10" />
+                  </motion.div>
+                  
+                  {/* Benefits Card */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: 0.2 }}
+                    className="flex-1 bg-[#0A0A0A] border border-white/10 rounded-md p-6 relative overflow-hidden group"
+                  >
+                    <h4 className="text-white font-semibold mb-5 flex items-center gap-3">
+                      <span className="w-2 h-2 rounded-md shadow-[0_0_10px]" style={{ backgroundColor: accentColor, color: accentColor }} />
+                      Key Capabilities
+                    </h4>
+                    <div className="space-y-4">
+                      {feat.benefits.map((benefit, i) => (
+                        <div key={i} className="flex items-start gap-3 text-sm text-white/80">
+                          <div className="shrink-0 mt-0.5" style={{ color: accentColor }}>✓</div>
+                          <span className="leading-snug">{benefit}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </motion.div>
 
-             const isPurple = feat.theme === 'purple';
-             
-             const gradientClass = isPurple 
-                ? "from-[#6843B7] to-[#8f81eb]" 
-                : "from-[#00F2B0] to-[#ffffff]";
-                
-             const dotColorClass = isPurple ? "bg-[#6843B7]" : "bg-[#00F2B0]";
-             const checkColorClass = isPurple ? "text-[#00F2B0]" : "text-[#6843B7]";
-
-             return (
-              <div key={feat.id} id={feat.id} className="scroll-mt-32">
-                <h2 className="text-3xl md:text-4xl font medium mb-6">
-                  {firstWord} <span className={`text-transparent bg-clip-text bg-gradient-to-r ${gradientClass}`}>{restWords}</span>
-                </h2>
-                
-                <p className="text-white/60 leading-relaxed text-lg mb-10">
-                  {feat.desc[0]}
-                </p>
-                
-                <p className="text-white/60 leading-relaxed mb-10">
-                  {feat.desc[1]}
-                </p>
-                
-                <div className="bg-[#0A0A0A] border border-white/10 rounded-md p-6 md:p-8 mt-auto mb-8">
-                  <h4 className="text-white font medium mb-6">
-                    Key Benefits
-                  </h4>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
-                    {feat.benefits.map((benefit, i) => (
-                      <div key={i} className="flex items-start gap-3 text-sm text-white/80">
-                        <div className={`mt-0.5 ${checkColorClass}`}>✓</div>
-                        <span className="leading-snug">{benefit}</span>
-                      </div>
-                    ))}
-                  </div>
                 </div>
-              </div>
-            );
-          })}
 
-        </div>
-      </section>
+                {/* Main Content */}
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6 }}
+                  className={`lg:col-span-8 bg-[#0A0A0A] border border-white/10 rounded-md p-8 md:p-10 relative overflow-hidden group order-1 flex flex-col justify-center ${idx % 2 === 0 ? 'lg:order-2' : 'lg:order-1'}`}
+                >
+                  <div className="absolute top-0 inset-x-0 h-px opacity-50" style={{ background: `linear-gradient(to right, transparent, ${accentColor}, transparent)` }} />
+                  <div className="absolute inset-0 pointer-events-none" style={{ background: `linear-gradient(-90deg,transparent 0%,${isPurple ? 'rgba(104,67,183,0.02)' : 'rgba(0,242,176,0.02)'} 50%,transparent 100%)`}} />
+                  
+                  <div className="relative z-10 h-full flex flex-col justify-center">
+                    <h2 className="text-3xl md:text-5xl font-semibold text-white mb-8 tracking-tight">
+                      {firstWord} <span className={`text-transparent bg-clip-text bg-gradient-to-r ${gradientClass}`}>{restWords}</span>
+                    </h2>
+                    
+                    <div className="space-y-4 text-white/60 text-[16px] leading-relaxed max-w-3xl">
+                      {feat.desc.map((p, i) => (
+                        <p key={i}>{p}</p>
+                      ))}
+                    </div>
+                    
+                    <div className="mt-8 pt-8 border-t border-white/10 grid grid-cols-2 md:grid-cols-4 gap-4">
+                      <div className="flex flex-col">
+                        <span className="text-2xl font-bold text-white mb-1">100k+</span>
+                        <span className="text-xs text-white/40 uppercase tracking-wider">Executions</span>
+                      </div>
+                      <div className="flex flex-col">
+                        <span className="text-2xl font-bold text-white mb-1">99.9%</span>
+                        <span className="text-xs text-white/40 uppercase tracking-wider">Reliability</span>
+                      </div>
+                      <div className="flex flex-col">
+                        <span className="text-2xl font-bold text-white mb-1">10x</span>
+                        <span className="text-xs text-white/40 uppercase tracking-wider">Faster</span>
+                      </div>
+                      <div className="flex flex-col">
+                        <span className="text-2xl font-bold text-white mb-1">24/7</span>
+                        <span className="text-xs text-white/40 uppercase tracking-wider">Monitoring</span>
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+
+              </div>
+            </div>
+          </section>
+        );
+      })}
     </div>
   );
 }

@@ -52,7 +52,7 @@ export default function AiHero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-          className="text-base md:text-lg text-white/60 max-w-2xl leading-relaxed"
+          className="text-base md:text-lg text-white/80 max-w-2xl leading-relaxed"
         >
           Leverage Generative AI to automate and accelerate test creation. Intelligently interpret functional flows, self-heal broken references in real-time, and transform execution data into actionable quality insights.
         </motion.p>
