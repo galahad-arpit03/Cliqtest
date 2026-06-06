@@ -24,7 +24,7 @@ export default function Footer() {
             </div>
           </Link>
           <div className="text-[#a0a0a0] text-[13px] font-normal tracking-wide">
-            © 2026 cliQTest Limited
+            © 2026 ap2l.ai
           </div>
         </div>
 
