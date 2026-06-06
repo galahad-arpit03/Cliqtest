@@ -1,46 +1,9 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
-
-const featuredPosts = [
-  {
-    type: "Whitepaper",
-    title: "The Ultimate Guide to Agentic QA",
-    excerpt:
-      "Discover how AI agents are transforming test automation, from self-healing scripts to autonomous generation.",
-    image: "/images/2.png",
-    readTime: "8 min read",
-  },
-  {
-    type: "Case Study",
-    title: "Global FinTech Cuts QA Time by 80%",
-    excerpt:
-      "Learn how a leading financial institution integrated cliQTest to achieve seamless continuous delivery.",
-    image: "/images/enterprise.png",
-    readTime: "6 min read",
-  },
-];
-
-const trendingTopics = [
-  "Agentic QA",
-  "AI Testing",
-  "Automation",
-  "Self-Healing",
-  "DevOps",
-  "Quality Engineering",
-];
-
-const recentPosts = [
-  {
-    date: "2026-06-01",
-    title: "Future of AI-Powered Quality Engineering",
-  },
-  {
-    date: "2026-05-24",
-    title: "Performance Engineering at Scale",
-  },
-];
+import { getFeaturedPosts, getRecentPosts, trendingTopics } from "@/data/blogs";
 
 export default function FeaturedBlog() {
   return (
@@ -72,7 +35,7 @@ export default function FeaturedBlog() {
             </h2>
 
             <div className="grid md:grid-cols-2 gap-8">
-              {featuredPosts.map((post, index) => (
+              {getFeaturedPosts().map((post, index) => (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, y: 30 }}
@@ -85,11 +48,11 @@ export default function FeaturedBlog() {
                       src={post.image}
                       alt={post.title}
                       fill
-                      className="object-cover grayscale brightness-75 opacity-80 group-hover:grayscale-0 group-hover:brightness-100 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
+                      className="object-cover"
                     />
                   </div>
 
-                  <div className="mt-5">
+                  <Link href={`/blogs/${post.slug}`} className="mt-5 block group-hover:opacity-90 transition-opacity">
                     <div className="flex justify-between items-center mb-3">
                       <span className="text-[#9e7be9] text-xs uppercase tracking-[0.15em]">
                         {post.type}
@@ -100,14 +63,14 @@ export default function FeaturedBlog() {
                       </span>
                     </div>
 
-                    <h3 className="text-white text-2xl font-semibold mb-4 group-hover:text-[#6843B7] transition-colors">
+                    <h3 className="text-white text-2xl font-semibold mb-4">
                       {post.title}
                     </h3>
 
                     <p className="text-zinc-400 text-sm leading-relaxed">
                       {post.excerpt}
                     </p>
-                  </div>
+                  </Link>
                 </motion.div>
               ))}
             </div>
@@ -125,7 +88,7 @@ export default function FeaturedBlog() {
                 {trendingTopics.map((topic) => (
                   <span
                     key={topic}
-                    className="px-4 py-2 rounded-full bg-[#0A0A0A] border border-white/10 text-zinc-300 text-sm hover:border-[#6843B7] transition-colors cursor-pointer"
+                    className="px-4 py-2 rounded-full bg-[#0A0A0A] border border-white/10 text-zinc-300 text-sm cursor-pointer"
                   >
                     #{topic}
                   </span>
@@ -139,11 +102,12 @@ export default function FeaturedBlog() {
               </h3>
 
               <div className="bg-[#0A0A0A] border border-white/10 rounded-md">
-                {recentPosts.map((post, index) => (
-                  <div
+                {getRecentPosts().map((post, index) => (
+                  <Link
+                    href={`/blogs/${post.slug}`}
                     key={index}
-                    className={`p-6 ${
-                      index !== recentPosts.length - 1
+                    className={`p-6 block hover:bg-[#111111] transition-colors ${
+                      index !== getRecentPosts().length - 1
                         ? "border-b border-white/10"
                         : ""
                     }`}
@@ -152,10 +116,10 @@ export default function FeaturedBlog() {
                       {post.date}
                     </p>
 
-                    <h4 className="text-white font-medium leading-relaxed hover:text-[#6843B7] cursor-pointer transition-colors">
+                    <h4 className="text-white font-medium leading-relaxed cursor-pointer">
                       {post.title}
                     </h4>
-                  </div>
+                  </Link>
                 ))}
               </div>
             </div>

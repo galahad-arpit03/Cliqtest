@@ -3,58 +3,15 @@
 import { useState } from "react";
 import BlogCard from "./BlogCard";
 
-const blogs = [
-  {
-    type: "Whitepaper",
-    title: "The Ultimate Guide to Agentic QA",
-    excerpt:
-      "Discover how AI agents are transforming test automation.",
-    image: "/images/2.png",
-  },
-  {
-    type: "Case Study",
-    title: "Global FinTech Cuts QA Time by 80%",
-    excerpt:
-      "Learn how a leading financial institution integrated cliQTest.",
-    image: "/images/enterprise.png",
-  },
-  {
-    type: "Blog Post",
-    title: "Scaling Test Infrastructure in 2026",
-    excerpt:
-      "Best practices for managing parallel execution.",
-    image: "/images/env.png",
-  },
-  {
-    type: "Whitepaper",
-    title: "Self-Healing Automation Handbook",
-    excerpt:
-      "Reduce maintenance overhead with AI-powered automation.",
-    image: "/images/testcase.png",
-  },
-  {
-    type: "Case Study",
-    title: "Insurance Enterprise Accelerates Delivery",
-    excerpt:
-      "See how agentic QA transformed release cycles.",
-    image: "/images/analytics-hero.png",
-  },
-  {
-    type: "Blog Post",
-    title: "Future of Autonomous Testing",
-    excerpt:
-      "Exploring the next evolution of software quality.",
-    image: "/images/ai-agent.png",
-  },
-];
+import { blogsData } from "@/data/blogs";
 
 export default function BlogGrid() {
   const [activeFilter, setActiveFilter] = useState("All");
 
   const filteredBlogs =
     activeFilter === "All"
-      ? blogs
-      : blogs.filter((blog) => blog.type === activeFilter);
+      ? blogsData
+      : blogsData.filter((blog) => blog.type === activeFilter);
 
   const filters = [
     "All",

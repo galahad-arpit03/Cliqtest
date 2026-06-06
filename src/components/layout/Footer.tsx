@@ -32,9 +32,9 @@ export default function Footer() {
         <div className="flex justify-center items-center flex-grow">
           <div className="flex flex-wrap justify-center gap-x-6 gap-y-3 text-[#a0a0a0] text-[13px] font-normal">
             <Link href="/privacy-policy" className="hover:text-white transition-colors">Privacy Notice</Link>
-            <Link href="#" className="hover:text-white transition-colors">Cookie Policy</Link>
+            <Link href="/cookie-policy" className="hover:text-white transition-colors">Cookie Policy</Link>
             <Link href="/terms-conditions" className="hover:text-white transition-colors">Terms & Conditions</Link>
-            <Link href="#" className="hover:text-white transition-colors">Security Policy</Link>
+            <Link href="/security-policy" className="hover:text-white transition-colors">Security Policy</Link>
           </div>
         </div>
 

@@ -1,8 +1,8 @@
 import React from 'react';
-import Link from 'next/link';
+
 export const metadata = {
-  title: 'Privacy Policy | cliQTest by ApMoSys',
-  description: 'Privacy Policy for ApMoSys and cliQTest services.',
+  title: 'Privacy Notice | cliQTest by ApMoSys',
+  description: 'Privacy Notice for ApMoSys and cliQTest services.',
 };
 
 export default function PrivacyPolicyPage() {
@@ -12,122 +12,147 @@ export default function PrivacyPolicyPage() {
         <header className="mb-16 border-b border-white/10 pb-12">
           <span className="text-[#6843B7] text-sm font-semibold uppercase tracking-[0.3em] mb-6 block">Legal Documentation</span>
           <h1 className="text-white text-4xl md:text-5xl font-bold tracking-tight mb-6 leading-[1.1]">
-            Privacy Policy
+            Privacy Notice
           </h1>
           <div className="flex flex-wrap items-center gap-4 text-white/50 text-sm">
-            <span>By ApMoSys</span>
+            <span>By ApMoSys Product Private Limited</span>
             <span className="w-1.5 h-1.5 rounded-full bg-white/20"></span>
-            <span>December 2, 2021</span>
-            <span className="w-1.5 h-1.5 rounded-full bg-white/20"></span>
-            <span>Last updated: March 30, 2022</span>
+            <span>Last updated: June 6, 2026</span>
           </div>
         </header>
 
         <div className="space-y-12 text-white/70 leading-relaxed text-[15px] md:text-[16px]">
           <section className="space-y-4">
+            <h2 className="text-white text-2xl font-bold tracking-tight mb-6">Introduction</h2>
             <p>
-              <strong className="text-white font-medium">ApMoSys Technologies Private Limited</strong> (“us”, “we”, or “our”) operates the ApMoSys website (the “Service”).
+              This Privacy Notice describes how <strong className="text-white font-medium">ApMoSys Product Private Limited</strong> ("APPPL", "Company", "we", "our", or "us") collects, processes, stores, protects, and manages information through CliQTest®, an AI-powered Quality Engineering platform offering Test Automation, Test Management, Device Lab Management, AI-assisted Testing, Analytics, Reporting, and related services.
             </p>
             <p>
-              This page informs you of our policies regarding the collection, use and disclosure of Personal Information when you use our Service.
-            </p>
-            <p>
-              We will not use or share your information with anyone except as described in this Privacy Policy.
-            </p>
-            <p>
-              We use your Personal Information for providing and improving the Service. By using the Service, you agree to the collection and use of information in accordance with this policy. Unless otherwise defined in this Privacy Policy, terms used in this Privacy Policy have the same meanings as in our Terms and Conditions, accessible at <a href="https://ap2l.ai" className="text-[#6843B7] hover:underline" target="_blank" rel="noopener noreferrer">https://ap2l.ai</a>.
+              CliQTest® is a proprietary software platform owned by ApMoSys Product Private Limited and supported by ApMoSys Technologies Private Limited.
             </p>
           </section>
 
+          <section className="space-y-6">
+            <h2 className="text-white text-2xl font-bold tracking-tight mb-6">Information We Collect</h2>
+            <p>The Platform may collect:</p>
+
+            <div className="space-y-6 pl-4 border-l-2 border-white/10">
+              <div>
+                <h3 className="text-white text-lg font-semibold mb-3">Account Information</h3>
+                <ul className="list-disc pl-6 space-y-1 text-white/80">
+                  <li>Name</li>
+                  <li>Business Email Address</li>
+                  <li>Contact Number</li>
+                  <li>Organization Name</li>
+                  <li>Designation</li>
+                </ul>
+              </div>
+
+              <div>
+                <h3 className="text-white text-lg font-semibold mb-3">Platform Usage Information</h3>
+                <ul className="list-disc pl-6 space-y-1 text-white/80">
+                  <li>Login activities</li>
+                  <li>User interactions</li>
+                  <li>Audit logs</li>
+                  <li>Session information</li>
+                  <li>Workflow activities</li>
+                  <li>Test execution history</li>
+                </ul>
+              </div>
+
+              <div>
+                <h3 className="text-white text-lg font-semibold mb-3">Technical Information</h3>
+                <ul className="list-disc pl-6 space-y-1 text-white/80">
+                  <li>IP addresses</li>
+                  <li>Browser information</li>
+                  <li>Device identifiers</li>
+                  <li>Operating system details</li>
+                  <li>Access timestamps</li>
+                </ul>
+              </div>
+
+              <div>
+                <h3 className="text-white text-lg font-semibold mb-3">Customer Content</h3>
+                <ul className="list-disc pl-6 space-y-1 text-white/80">
+                  <li>Test cases</li>
+                  <li>Automation scripts</li>
+                  <li>Requirements</li>
+                  <li>Defects</li>
+                  <li>Reports</li>
+                  <li>Uploaded documents</li>
+                  <li>Configurations</li>
+                </ul>
+              </div>
+
+              <div>
+                <h3 className="text-white text-lg font-semibold mb-3">AI Interaction Data</h3>
+                <p className="text-white/80">
+                  Where AI-enabled capabilities are utilized, prompts, inputs, outputs, recommendations, and associated metadata may be processed solely for service delivery and platform improvement purposes.
+                </p>
+              </div>
+            </div>
+          </section>
+
           <section className="space-y-4">
-            <h2 className="text-white text-2xl font-bold tracking-tight mb-6 mt-12">Information Collection And Use</h2>
-            <p>
-              While using our Service, we may ask you to provide us with certain personally identifiable information that can be used to contact or identify you. Personally identifiable information (“Personal Information”) may include, but is not limited to:
-            </p>
-            <ul className="list-disc pl-6 space-y-2 mt-4 text-white/80">
-              <li>Name</li>
-              <li>Email address</li>
-              <li>Telephone number</li>
+            <h2 className="text-white text-2xl font-bold tracking-tight mb-6">Purpose of Processing</h2>
+            <p>Information may be processed to:</p>
+            <ul className="list-disc pl-6 space-y-2 text-white/80">
+              <li>Deliver and operate services</li>
+              <li>Authenticate users</li>
+              <li>Maintain platform security</li>
+              <li>Provide customer support</li>
+              <li>Generate analytics and reporting</li>
+              <li>Improve product functionality</li>
+              <li>Comply with contractual, legal, and regulatory obligations</li>
             </ul>
           </section>
 
           <section className="space-y-4">
-            <h2 className="text-white text-xl font-bold tracking-tight mb-4 mt-8">Log Data</h2>
+            <h2 className="text-white text-2xl font-bold tracking-tight mb-6">Data Ownership</h2>
             <p>
-              We collect information that your browser sends whenever you visit our Service (“Log Data”). This Log Data may include information such as your computer’s Internet Protocol (“IP”) address, browser type, browser version, the pages of our Service that you visit, the time and date of your visit, the time spent on those pages and other statistics.
+              Customers retain ownership of all customer-provided business information, test assets, uploaded documents, automation scripts, and associated content.
+            </p>
+            <p>
+              ApMoSys acquires no ownership rights over customer business data except to the extent necessary to provide contracted services.
             </p>
           </section>
 
           <section className="space-y-4">
-            <h2 className="text-white text-xl font-bold tracking-tight mb-4 mt-8">Cookies</h2>
+            <h2 className="text-white text-2xl font-bold tracking-tight mb-6">AI Data Protection</h2>
             <p>
-              Cookies are files with small amount of data, which may include an anonymous unique identifier. Cookies are sent to your browser from a web site and stored on your computer’s hard drive.
-            </p>
-            <p>
-              We use “cookies” to collect information. You can instruct your browser to refuse all cookies or to indicate when a cookie is being sent. However, if you do not accept cookies, you may not be able to use some portions of our Service.
+              Customer data shall not be used to train publicly available Artificial Intelligence models without explicit customer authorization.
             </p>
           </section>
 
           <section className="space-y-4">
-            <h2 className="text-white text-2xl font-bold tracking-tight mb-6 mt-12">Service Providers</h2>
+            <h2 className="text-white text-2xl font-bold tracking-tight mb-6">Data Retention</h2>
             <p>
-              We may employ third party companies and individuals to facilitate our Service, to provide the Service on our behalf, to perform Service-related services or to assist us in analyzing how our Service is used.
-            </p>
-            <p>
-              These third parties have access to your Personal Information only to perform these tasks on our behalf and are obligated not to disclose or use it for any other purpose.
+              Information shall be retained only for legitimate business, contractual, operational, audit, legal, and regulatory purposes.
             </p>
           </section>
 
           <section className="space-y-4">
-            <h2 className="text-white text-2xl font-bold tracking-tight mb-6 mt-12">Security</h2>
+            <h2 className="text-white text-2xl font-bold tracking-tight mb-6">Disclosure of Information</h2>
             <p>
-              The security of your Personal Information is important to us, but remember that no method of transmission over the Internet, or method of electronic storage is 100% secure. While we strive to use commercially acceptable means to protect your Personal Information, we cannot guarantee its absolute security.
+              ApMoSys does not sell customer information.
+            </p>
+            <p>
+              Information may be disclosed only where required by law, regulatory obligations, contractual commitments, security investigations, or authorized service delivery requirements.
             </p>
           </section>
 
           <section className="space-y-4">
-            <h2 className="text-white text-2xl font-bold tracking-tight mb-6 mt-12">Links To Other Sites</h2>
+            <h2 className="text-white text-2xl font-bold tracking-tight mb-6">Contact</h2>
             <p>
-              Our Service may contain links to other sites that are not operated by us. If you click on a third party link, you will be directed to that third party’s site. We strongly advise you to review the Privacy Policy of every site you visit.
-            </p>
-            <p>
-              We have no control over, and assume no responsibility for the content, privacy policies or practices of any third party sites or services.
+              For questions regarding this Privacy Notice, please contact: <a href="mailto:sales@apmosys.com" className="text-[#6843B7] hover:underline font-medium">sales@apmosys.com</a>
             </p>
           </section>
-
-          <section className="space-y-4">
-            <h2 className="text-white text-2xl font-bold tracking-tight mb-6 mt-12">Children’s Privacy</h2>
+          
+          <div className="pt-8 border-t border-white/10 text-white/50 text-sm">
             <p>
-              Our Service does not address anyone under the age of 18 (“Children”).
+              CliQTest® is a proprietary software platform owned by ApMoSys Product Private Limited and supported by ApMoSys Technologies Private Limited.
             </p>
-            <p>
-              We do not knowingly collect personally identifiable information from children under 18. If you are a parent or guardian and you are aware that your child has provided us with Personal Information, please contact us. If we discover that a child under 18 has provided us with Personal Information, we will delete such information from our servers immediately.
-            </p>
-          </section>
-
-          <section className="space-y-4">
-            <h2 className="text-white text-2xl font-bold tracking-tight mb-6 mt-12">Compliance With Laws</h2>
-            <p>
-              We will disclose your Personal Information where required to do so by law or subpoena.
-            </p>
-          </section>
-
-          <section className="space-y-4">
-            <h2 className="text-white text-2xl font-bold tracking-tight mb-6 mt-12">Changes To This Privacy Policy</h2>
-            <p>
-              We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page.
-            </p>
-            <p>
-              You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted on this page.
-            </p>
-          </section>
-
-          <section className="space-y-4">
-            <h2 className="text-white text-2xl font-bold tracking-tight mb-6 mt-12">Contact Us</h2>
-            <p>
-              If you have any questions about this Privacy Policy, please <Link href="/book-a-demo" className="text-[#6843B7] hover:underline">contact us</Link>.
-            </p>
-          </section>
+          </div>
         </div>
       </div>
     </main>

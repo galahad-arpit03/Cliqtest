@@ -20,7 +20,7 @@ export default function NewsletterCTA() {
 
         <div className="bg-[#0A0A0A] border border-white/10 rounded-md p-10 md:p-16 text-center">
 
-          <h2 className="text-4xl md:text-5xl font-semibold text-white tracking-tight mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-white tracking-tight mb-6">
             Stay Ahead of
             <br />
             <span className="bg-gradient-to-r from-[#6843B7] to-[#9e7be9] bg-clip-text text-transparent">
@@ -28,19 +28,17 @@ export default function NewsletterCTA() {
             </span>
           </h2>
 
-          <p className="text-zinc-400 max-w-2xl mx-auto mb-10 leading-relaxed">
-            Get the latest insights on Agentic QA,
-            autonomous testing, quality engineering
-            and enterprise automation.
+          <p className="text-zinc-400 max-w-2xl mx-auto mb-10 leading-relaxed text-[15px]">
+            Get the latest insights on Agentic QA, autonomous testing, quality engineering and enterprise automation.
           </p>
 
           <div className="flex flex-col md:flex-row gap-4 max-w-xl mx-auto">
             <input
               placeholder="Enter your email"
-              className="flex-1 bg-black border border-white/10 rounded-sm px-4 py-3 text-white outline-none"
+              className="flex-1 bg-black border border-white/10 rounded-sm px-4 py-3 text-white text-[14px] outline-none focus:border-[#6843B7] focus:ring-1 focus:ring-[#6843B7]/50 transition-all"
             />
 
-            <button className="px-8 py-3 bg-[#6843B7] text-white rounded-sm hover:scale-105 transition-transform">
+            <button className="px-8 py-3 bg-[#6843B7] text-white text-[14px] rounded-sm hover:bg-[#6843B7]/90 transition-all active:scale-95 font-medium">
               Subscribe
             </button>
           </div>
