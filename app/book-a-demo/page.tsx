@@ -1,13 +1,15 @@
 "use client";
 
 import React, { useState } from 'react';
-import { ChevronLeft, ChevronRight, CheckCircle2 } from 'lucide-react';
+import { ChevronLeft, ChevronRight, CheckCircle2, QrCode } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export default function BookADemoPage() {
   const [selectedDate, setSelectedDate] = useState<Date | null>(new Date());
   const [viewDate, setViewDate] = useState(new Date(new Date().getFullYear(), new Date().getMonth(), 1));
   const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const [contactType, setContactType] = useState<'presales' | 'sales' | null>(null);
 
   const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
   
@@ -80,7 +82,7 @@ export default function BookADemoPage() {
               Testing
             </h1>
             
-            <div className="space-y-8 mt-12">
+            <div className="space-y-8 mt-12 mb-12">
               {[
                 { title: "Personalized Walkthrough", desc: "A tailored session focused on your team's unique testing challenges." },
                 { title: "Live Agent Interaction", desc: "Watch our specialized agents think, adapt, and execute in real-time." },
@@ -96,6 +98,7 @@ export default function BookADemoPage() {
               ))}
             </div>
 
+
           </motion.div>
         </div>
 
@@ -108,7 +111,60 @@ export default function BookADemoPage() {
               viewport={{ once: true }}
               className="bg-[#0A0A0A] border border-white/10 rounded-md p-8 md:p-12 shadow-2xl"
             >
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
+              {/* Contact Type Selection */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
+                <div 
+                  onClick={() => setContactType(contactType === 'presales' ? null : 'presales')}
+                  className={`p-5 rounded-md border cursor-pointer flex flex-col justify-between transition-all ${contactType === 'presales' ? 'bg-[#6843B7]/10 border-[#6843B7] shadow-[0_0_20px_rgba(104,67,183,0.15)]' : 'bg-[#050505] border-white/10 hover:border-white/20'}`}
+                >
+                  <div>
+                    <div className="flex items-center justify-between mb-4">
+                      <h4 className="text-white font-bold text-sm">Contact Pre-Sales Team</h4>
+                      <div className={`w-4 h-4 rounded-sm flex items-center justify-center border ${contactType === 'presales' ? 'border-[#6843B7] bg-[#6843B7]' : 'border-white/30'}`}>
+                        {contactType === 'presales' && <CheckCircle2 size={12} className="text-white" />}
+                      </div>
+                    </div>
+                    <div className="text-white/60 text-xs space-y-2 mb-6">
+                      <p>Phone: <span className="font-medium text-white/90">+91 89768 19122</span></p>
+                    </div>
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="text-[10px] text-[#6843B7] bg-[#6843B7]/10 px-2 py-1 rounded-sm border border-[#6843B7]/20 font-medium">#Featured discussion</span>
+                    <span className="text-[10px] text-[#6843B7] bg-[#6843B7]/10 px-2 py-1 rounded-sm border border-[#6843B7]/20 font-medium">#Tool capability</span>
+                  </div>
+                </div>
+
+                <div 
+                  onClick={() => setContactType(contactType === 'sales' ? null : 'sales')}
+                  className={`p-5 rounded-md border cursor-pointer flex flex-col justify-between transition-all ${contactType === 'sales' ? 'bg-[#6843B7]/10 border-[#6843B7] shadow-[0_0_20px_rgba(104,67,183,0.15)]' : 'bg-[#050505] border-white/10 hover:border-white/20'}`}
+                >
+                  <div>
+                    <div className="flex items-center justify-between mb-4">
+                      <h4 className="text-white font-bold text-sm">Contact Sales</h4>
+                      <div className={`w-4 h-4 rounded-sm flex items-center justify-center border ${contactType === 'sales' ? 'border-[#6843B7] bg-[#6843B7]' : 'border-white/30'}`}>
+                        {contactType === 'sales' && <CheckCircle2 size={12} className="text-white" />}
+                      </div>
+                    </div>
+                    <div className="text-white/60 text-xs space-y-2 mb-6">
+                      <p>Email: <a href="mailto:sales@apmosys.com" className="text-[#6843B7] hover:underline font-medium">sales@apmosys.com</a></p>
+                      <p>Phone: <span className="font-medium text-white/90">+91-22-4122 2250 / 2251</span></p>
+                    </div>
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="text-[10px] text-[#6843B7] bg-[#6843B7]/10 px-2 py-1 rounded-sm border border-[#6843B7]/20 font-medium">#Enterprise license</span>
+                    <span className="text-[10px] text-[#6843B7] bg-[#6843B7]/10 px-2 py-1 rounded-sm border border-[#6843B7]/20 font-medium">#Quotation</span>
+                  </div>
+                </div>
+              </div>
+              <div className={`transition-all duration-500 ${contactType === null ? 'opacity-30 pointer-events-none filter blur-[2px]' : 'opacity-100'}`}>
+                {contactType === null && (
+                  <div className="absolute inset-0 z-20 flex items-center justify-center mt-32">
+                    <span className="bg-black/80 px-6 py-3 rounded-md text-white font-medium border border-white/10 backdrop-blur-md">
+                      Please select a contact option above to proceed
+                    </span>
+                  </div>
+                )}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-16 relative">
                 
                 {/* Calendar Column */}
                 <div>
@@ -187,7 +243,31 @@ export default function BookADemoPage() {
                     Confirm Booking
                   </button>
                 </form>
+                </div>
               </div>
+            </motion.div>
+          ) : contactType === 'presales' ? (
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              className="bg-[#0A0A0A] border border-white/10 rounded-md p-16 md:p-20 text-center shadow-[0_0_40px_rgba(37,211,102,0.15)] flex flex-col items-center"
+            >
+              <div className="w-48 h-48 bg-white p-4 rounded-md flex items-center justify-center mx-auto mb-8 shadow-2xl relative group">
+                <QrCode size={160} className="text-black" />
+                <div className="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-md">
+                  <span className="text-white text-xs font-bold bg-[#25D366] px-3 py-1 rounded-full">WhatsApp</span>
+                </div>
+              </div>
+              <h2 className="text-3xl font-bold text-white mb-4 tracking-tight">Connect Immediately</h2>
+              <p className="text-white/60 max-w-sm mx-auto mb-10 leading-relaxed">
+                Scan this QR code to instantly start a WhatsApp chat with our technical Pre-Sales team and get your questions answered right away.
+              </p>
+              <button 
+                onClick={() => { setIsSubmitted(false); setContactType(null); }}
+                className="px-8 py-3 border border-white/20 text-white text-[14px] rounded-sm hover:bg-white/5 transition-all"
+              >
+                Go Back
+              </button>
             </motion.div>
           ) : (
             <motion.div 

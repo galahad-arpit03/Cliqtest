@@ -276,18 +276,6 @@ export const menuItems = [
             { label: "Technology Partners", desc: "Integrations that power our platform." },
             { label: "Strategic Alliances", desc: "Collaborations driving innovation." }
           ]
-        },
-        {
-          id: "newsroom",
-          label: "Newsroom",
-          header: "Latest Updates",
-          intro: "Stay up to date with the latest product announcements, upcoming events, and media coverage highlighting how cliQTest is shaping the future of software quality engineering.",
-          icon: Zap,
-          features: [
-            { label: "Product Announcements", desc: "Inputs for Product Announcements section to be provided." },
-            { label: "Events & Webinars", desc: "Inputs for Events & Webinars section to be provided." },
-            { label: "Media Coverage", desc: "Inputs for Media Coverage section to be provided." }
-          ]
         }
       ]
     }
