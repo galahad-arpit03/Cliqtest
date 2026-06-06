@@ -11,20 +11,20 @@ export default function Footer() {
       <div className="max-w-[1400px] mx-auto flex flex-col xl:flex-row justify-between items-center gap-8">
         
         {/* Left: Logo & Copyright */}
-        <div className="flex flex-col xl:flex-row items-center xl:items-center gap-4 xl:gap-8 flex-shrink-0">
-          <Link href="/" className="group cursor-pointer">
-            <div className="relative w-28 h-8 md:w-32 md:h-10 overflow-hidden transition-transform duration-300 group-hover:scale-105">
+        <div className="flex flex-col xl:flex-row items-center xl:items-center gap-2 xl:gap-4 flex-shrink-0">
+          <Link href="https://ap2l.ai/" target="_blank" rel="noopener noreferrer" className="group cursor-pointer">
+            <div className="relative w-24 h-8 md:w-28 md:h-10 overflow-hidden transition-transform duration-300 group-hover:scale-105">
               <Image
-                src="/logos/logo.png"
-                alt="cliQTest"
+                src="/logos/ap2l.png"
+                alt="AP2L"
                 fill
                 sizes="128px"
-                className="object-cover scale-[1.2] object-center"
+                className="object-contain object-left xl:object-center"
               />
             </div>
           </Link>
           <div className="text-[#a0a0a0] text-[13px] font-normal tracking-wide">
-            © 2026 <Link href="https://ap2l.ai/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">ap2l.ai</Link>
+            © 2026 <Link href="https://ap2l.ai/" target="_blank" rel="noopener noreferrer" className="hover:text-white text-[#6843B7] transition-colors">ap2l.ai</Link>
           </div>
         </div>
 

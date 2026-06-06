@@ -2,19 +2,23 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Landmark } from 'lucide-react';
+import Image from 'next/image';
 
 const customers = [
-  { name: "Axis Bank" },
-  { name: "CRIS" },
-  { name: "NSDL Payment Bank" },
-  { name: "UCO Bank" },
-  { name: "Generali Central Insurance" }
+  { name: "Bank of Maharashtra", logo: "/clients/bank-of-maharashtra.svg" },
+  { name: "NSDL Payment Bank", logo: "/clients/nsdl-bank.png" },
+  { name: "UCO Bank", logo: "/clients/uco-bank.svg" },
+  { name: "Generali", logo: "/clients/Generali_Central_Life_Insurance_Company_Limited.svg" },
+  // { name: "IDBI Bank", logo: "/clients/idbi-bank.svg" },
+  { name: "L&T", logo: "/clients/lt.svg" },
+  { name: "Protean", logo: "/clients/protean.svg" },
+  { name: "RBL Bank", logo: "/clients/rbl-bank.svg" },
+  // { name: "FDC", logo: "/clients/fdc.jpeg" },
 ];
 
 export default function CustomerMarquee() {
   // Duplicate enough times to ensure it fills even ultrawide screens
-  const duplicatedCustomers = [...customers, ...customers, ...customers, ...customers, ...customers];
+  const duplicatedCustomers = [...customers, ...customers, ...customers, ...customers];
 
   return (
     <section className="w-full py-12 md:py-16 bg-[#000000] border-y border-white/5 overflow-hidden">
@@ -37,22 +41,25 @@ export default function CustomerMarquee() {
 
         <motion.div
           className="flex whitespace-nowrap items-center w-max"
-          animate={{ x: ["0%", "-20%"] }}
+          animate={{ x: ["0%", "-50%"] }}
           transition={{
             repeat: Infinity,
             ease: "linear",
-            duration: 40,
+            duration: 120,
           }}
         >
           {duplicatedCustomers.map((item, i) => (
             <div 
               key={i}
-              className="flex items-center justify-center mx-8 md:mx-12 gap-3 opacity-50 hover:opacity-100 transition-all duration-300 cursor-pointer"
+              className="flex items-center justify-center mx-4 md:mx-8 opacity-50 hover:opacity-100 transition-all duration-300 cursor-pointer relative h-12 w-36"
             >
-              <Landmark className="text-white/40" size={24} />
-              <span className="text-white font-medium text-lg md:text-xl tracking-tight">
-                {item.name}
-              </span>
+              <Image 
+                src={item.logo} 
+                alt={item.name} 
+                fill
+                className="object-contain filter grayscale hover:grayscale-0 transition-all duration-300" 
+                sizes="(max-width: 768px) 100px, 150px"
+              />
             </div>
           ))}
         </motion.div>
