@@ -15,7 +15,7 @@ export default function TestManagementHero() {
   const opacity = useTransform(scrollYProgress, [0, 1], [1, 0]);
 
   return (
-    <section ref={containerRef} className="relative w-full min-h-[800px] flex items-start pt-[260px] justify-center overflow-hidden bg-[#060411] border-b border-white/5">
+    <section ref={containerRef} className="relative min-h-[85vh] md:min-h-screen bg-[#060411] flex flex-col justify-center border-b border-white/5 overflow-hidden">
       {/* Background Image Parallax */}
       <motion.div 
         style={{ y, opacity }}
@@ -30,7 +30,7 @@ export default function TestManagementHero() {
           className="object-contain object-right md:object-right-top opacity-60"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-[#060411]/80 via-[#060411]/40 to-[#060411] pointer-events-none" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#060411]/80 via-transparent to-[#060411]/80 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/50 to-transparent pointer-events-none" />
       </motion.div>
 
       <div className="relative z-10 w-full max-w-7xl mx-auto px-8 flex flex-col items-center md:items-start justify-center text-center md:text-left">

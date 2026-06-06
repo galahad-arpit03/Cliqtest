@@ -27,7 +27,7 @@ export default function IntegrationsHero() {
           className="object-contain object-right md:object-right-top opacity-60"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-[#06050C]/80 via-[#06050C]/40 to-[#06050C] pointer-events-none" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#06050C]/80 via-transparent to-[#06050C]/80 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/50 to-transparent pointer-events-none" />
       </motion.div>
 
       <div className="relative z-20 max-w-7xl mx-auto px-8 w-full">

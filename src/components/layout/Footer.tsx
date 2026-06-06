@@ -24,7 +24,7 @@ export default function Footer() {
             </div>
           </Link>
           <div className="text-[#a0a0a0] text-[13px] font-normal tracking-wide">
-            © 2026 ap2l.ai
+            © 2026 <Link href="https://ap2l.ai/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">ap2l.ai</Link>
           </div>
         </div>
 

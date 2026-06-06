@@ -15,7 +15,7 @@ export default function NoCodeHero() {
   const opacity = useTransform(scrollYProgress, [0, 1], [1, 0]);
 
   return (
-    <section ref={containerRef} className="relative w-full min-h-[800px] flex items-start pt-[260px] justify-center overflow-hidden bg-black">
+    <section ref={containerRef} className="relative min-h-[85vh] md:min-h-screen bg-black flex flex-col justify-center border-b border-white/5 overflow-hidden">
       {/* Background Image Parallax */}
       <motion.div 
         style={{ y, opacity }}
@@ -31,7 +31,7 @@ export default function NoCodeHero() {
         />  
         {/* Rich Gradient Overlays for depth and text legibility */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/40 to-black pointer-events-none" />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-transparent to-black/80 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/50 to-transparent pointer-events-none" />
         <div className="absolute inset-0 bg-[#6843B7]/10 mix-blend-overlay pointer-events-none" />
       </motion.div>
 
