@@ -4,7 +4,7 @@ import React, { useRef } from 'react';
 import Link from 'next/link';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import Image from 'next/image';
-import { Globe, Smartphone, Network, Monitor, RefreshCw, Activity } from 'lucide-react';
+import { Globe, Smartphone, Network, Monitor, RefreshCw, Activity, Brain } from 'lucide-react';
 
 const features = [
   {
@@ -114,6 +114,24 @@ const features = [
     ],
     theme: 'teal',
     icon: Activity
+  },
+  {
+    id: 'ai-testing',
+    title: 'AI Testing',
+    desc: [
+      "Artificial Intelligence models and AI-driven applications require a fundamentally different validation approach compared to traditional software. cliQTest enables organizations to test AI and Machine Learning systems by evaluating model accuracy, testing edge cases, and ensuring consistent output quality.",
+      "The platform supports automated validation of AI responses, algorithmic behaviors, conversational agents (LLMs), and data processing pipelines. With built-in AI evaluation metrics, teams can measure hallucination rates, contextual accuracy, and performance drift over time.",
+      "cliQTest helps enterprises build trust in their AI initiatives by ensuring models remain reliable, safe, and highly performant under real-world usage."
+    ],
+    benefits: [
+      'Automated LLM and chatbot validation',
+      'Model accuracy and drift monitoring',
+      'Reduced hallucination risks',
+      'Edge-case evaluation workflows',
+      'Improved AI reliability and safety'
+    ],
+    theme: 'purple',
+    icon: Brain
   }
 ];
 

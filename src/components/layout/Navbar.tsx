@@ -179,7 +179,8 @@ export const menuItems = [
             { label: "API Testing", desc: "Validate endpoints, data, and performance." },
             { label: "Desktop Testing", desc: "Test native Windows and macOS applications." },
             { label: "Regression Testing", desc: "Catch regressions instantly with AI visual validation." },
-            { label: "Performance Testing", desc: "Analyze application stability under load." }
+            { label: "Performance Testing", desc: "Analyze application stability under load." },
+            { label: "AI Testing", desc: "Evaluate model accuracy and algorithm behavior." }
           ]
         },
         {
