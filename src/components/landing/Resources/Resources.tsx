@@ -32,8 +32,8 @@ export default function Resources() {
   return (
     <section className="w-full bg-[#030303] py-24 overflow-hidden relative">
       {/* Background Decor */}
-      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#6843B7]/5 blur-[120px] rounded-full pointer-events-none z-0" />
-      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#00F2B0]/5 blur-[120px] rounded-full pointer-events-none z-0" />
+      {/* <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#6843B7]/5 blur-[120px] rounded-full pointer-events-none z-0" />
+      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#00F2B0]/5 blur-[120px] rounded-full pointer-events-none z-0" /> */}
 
       <div className="max-w-7xl mx-auto px-4 md:px-8 relative z-10">
         
