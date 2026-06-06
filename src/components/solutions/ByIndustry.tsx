@@ -30,7 +30,7 @@ export default function ByIndustry() {
   if (!mounted) return null;
 
   return (
-    <div className="bg-[#060411] text-white overflow-x-clip selection:bg-[#00F2B0]/30 selection:text-white">
+    <div className="bg-[#050505] text-white overflow-x-clip selection:bg-[#00F2B0]/30 selection:text-white">
       
       {/* Hero Section */}
       <section className="relative min-h-[85vh] md:min-h-screen bg-[#060411] flex flex-col justify-center border-b border-white/5 overflow-hidden">

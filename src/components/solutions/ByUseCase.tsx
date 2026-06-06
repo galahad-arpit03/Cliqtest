@@ -16,7 +16,7 @@ export default function ByUseCase() {
   const opacity = useTransform(scrollYProgress, [0, 1], [1, 0]);
 
   return (
-    <div className="bg-[#06050C] min-text-white flex flex-col font-sans overflow-x-hidden">
+    <div className="bg-[#090A0A] min-text-white flex flex-col font-sans overflow-x-hidden">
       
       {/* 1. Hero Section */}
       <section ref={containerRef} className="relative min-h-[85vh] md:min-h-screen bg-[#06050C] flex flex-col justify-center border-b border-white/5 overflow-hidden">

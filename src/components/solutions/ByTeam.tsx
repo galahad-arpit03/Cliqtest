@@ -61,9 +61,9 @@ export default function ByTeam() {
   };
 
   return (
-    <div className="bg-[#06050C] text-white min-">
+    <div className="bg-[#090A0A] text-white min-">
       {/* 1. Hero Section */}
-      <section className="relative min-h-[85vh] md:min-h-screen bg-[#06050C] flex flex-col justify-center border-b border-white/5 overflow-hidden">
+      <section className="relative min-h-[85vh] md:min-h-screen bg-[#060412] flex flex-col justify-center border-b border-white/5 overflow-hidden">
         {/* Background Image/Gradient */}
         <motion.div style={{ y }} className="absolute inset-0 w-full h-full z-0 pointer-events-none">
           <Image 
