@@ -1,6 +1,6 @@
 "use client";
 
-import React from 'react';
+import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -87,19 +87,19 @@ export default function ByTeam() {
   return (
     <div className="bg-[#090A0A] text-white min-h-screen">
       {/* 1. Hero Section */}
-      <section className="relative min-h-[85vh] md:min-h-screen bg-[#060412] flex flex-col justify-center border-b border-white/5 overflow-hidden">
+      <section className="relative min-h-[85vh] md:min-h-screen bg-[#060411] flex flex-col justify-center border-b border-white/5 overflow-hidden">
         {/* Background Image/Gradient */}
         <motion.div style={{ y }} className="absolute inset-0 w-full h-full z-0 pointer-events-none">
           <Image 
-            src="/images/solution-by-team-hero.png" 
+            src="/images/sol-by-team.png" 
             alt="Hero Background" 
             fill 
             priority
             unoptimized
             className="object-contain object-right md:object-right-top opacity-60"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#06050C]/80 via-[#06050C]/40 to-[#06050C] pointer-events-none" />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#06050C]/80 via-transparent to-[#06050C]/80 pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#060411]/80 via-[#060411]/40 to-[#060411] pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#060411]/80 via-transparent to-[#060411]/80 pointer-events-none" />
         </motion.div>
 
         <div className="relative z-20 max-w-7xl mx-auto px-8 w-full">
@@ -111,7 +111,7 @@ export default function ByTeam() {
           >
             
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight leading-[1.1] mb-6">
-              Precision Quality Engineering for <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6843B7] to-[#8f81eb]">Every Team Tier</span>
+              Precision Quality Engineering for <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6843B7] to-[#8f81eb]">Every Team</span>
             </h1>
             
             <p className="text-lg md:text-xl text-white/60 leading-relaxed max-w-2xl mb-10">

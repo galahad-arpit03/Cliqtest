@@ -139,7 +139,7 @@ export default function ByUseCase() {
             fill 
             priority
             unoptimized
-            className="object-contain object-right md:object-right-top opacity-60"
+            className="object-cover object-right opacity-60"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-[#06050C]/80 via-[#06050C]/40 to-[#06050C] pointer-events-none" />
           <div className="absolute inset-0 bg-gradient-to-r from-[#06050C]/80 via-transparent to-[#06050C]/80 pointer-events-none" />

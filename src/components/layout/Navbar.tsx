@@ -451,7 +451,7 @@ export default function Navbar() {
                                 const isActive = activeTab === tab.id;
                                 return (
                                   <Link
-                                    href={`/${item.title.toLowerCase().replace(/\s+/g, '-')}/${tab.id}`}
+                                    href={item.title === 'Integrations' && tab.id === 'integrations' ? '/integrations' : `/${item.title.toLowerCase().replace(/\s+/g, '-')}/${tab.id}`}
                                     key={tab.id}
                                     onMouseEnter={() => { setActiveTab(tab.id); setShowMoreFeatures(false); }}
                                     onClick={() => setActiveMenu(null)}
@@ -489,7 +489,7 @@ export default function Navbar() {
                                             showMoreFeatures ? 8 : 0,
                                             showMoreFeatures ? undefined : 8
                                           ).map((feat: { label: string; desc: string }, idx: number) => {
-                                            const targetPath = `/${item.title.toLowerCase().replace(/\s+/g, '-')}/${tab.id}`;
+                                            const targetPath = item.title === 'Integrations' && tab.id === 'integrations' ? '/integrations' : `/${item.title.toLowerCase().replace(/\s+/g, '-')}/${tab.id}`;
                                             const targetHash = feat.label.toLowerCase().replace(/\s+/g, '-');
 
                                             return (
@@ -635,7 +635,7 @@ export default function Navbar() {
                       {item.content?.tabs?.map((tab: NavTab) => (
                         <Link
                           key={tab.id}
-                          href={`/${item.title.toLowerCase().replace(/\s+/g, '-')}/${tab.id}`}
+                          href={item.title === 'Integrations' && tab.id === 'integrations' ? '/integrations' : `/${item.title.toLowerCase().replace(/\s+/g, '-')}/${tab.id}`}
                           onClick={() => setIsMobileMenuOpen(false)}
                           className="flex flex-col gap-0.5 group active:opacity-70"
                         >

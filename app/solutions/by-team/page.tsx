@@ -10,12 +10,8 @@ export const metadata = {
 
 export default function ByTeamPage() {
   return (
-    <>
-      <Navbar />
-      <main className="flex-1 bg-black pt-20">
-        <ByTeam />
-      </main>
-      <Footer />
-    </>
+    <div className="min-h-screen bg-[#050505] selection:bg-[#00F2B0]/30 selection:text-white">
+      <ByTeam />
+    </div>
   );
 }
