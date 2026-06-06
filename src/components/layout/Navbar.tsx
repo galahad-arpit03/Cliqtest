@@ -14,7 +14,8 @@ import {
   Zap,
   Globe,
   Database,
-  Cpu
+  Cpu,
+  ShieldCheck
 } from 'lucide-react';
 
 interface Feature {
@@ -205,6 +206,19 @@ export const menuItems = [
             { label: "Public Sector & Government", desc: "Secure citizen and agency portals." },
             { label: "Logistics & Supply Chain", desc: "End-to-end supply chain tracking validation." }
           ]
+        },
+        {
+          id: "success-stories",
+          label: "Success Stories",
+          header: "Proven Client Success",
+          intro: "Discover how leading enterprises across the globe leverage cliQTest to modernize their quality engineering practices through intelligent automation and unified ecosystem capabilities.",
+          icon: ShieldCheck,
+          features: [
+            { label: "Banking", desc: "Axis Bank, Bank of Maharashtra, & more." },
+            { label: "FinTech & Payments", desc: "CRIS, Protean, NSDL Payments Bank." },
+            { label: "Financial Services", desc: "Muscat Finance, L&T Finance." },
+            { label: "Insurance & Pharma", desc: "Generali Central Life Insurance, FDC India." }
+          ]
         }
       ]
     }
@@ -227,18 +241,6 @@ export const menuItems = [
             { label: "Core Values", desc: "The principles that guide everything we do." }
           ]
         },
-        // {
-        //   id: "leadership",
-        //   label: "Leadership",
-        //   header: "Leadership Profiles",
-        //   intro: "Meet the visionary executive team, our seasoned board of directors, and the strategic investors who are guiding cliQTest towards continuous innovation. Their combined decades of enterprise software experience are dedicated to ensuring our platform remains at the absolute cutting edge of the industry.",
-        //   icon: Cpu,
-        //   features: [
-        //     { label: "Executive Teams", desc: "Meet the people leading our vision." },
-        //     { label: "Board of Directors", desc: "Our advisors and board members." },
-        //     { label: "Investors", desc: "The partners backing our growth." }
-        //   ]
-        // },
         {
           id: "why-cliqtest",
           label: "Why cliQTest?",
@@ -258,11 +260,9 @@ export const menuItems = [
           id: "clients",
           label: "Clients",
           header: "Our Trusted Partners",
-          intro: "See how leading global enterprises and innovative startups leverage our comprehensive platform to seamlessly achieve and exceed their quality goals. Read through our proven success stories, in-depth case studies, and glowing testimonials from industry leaders who trust cliQTest every single day.",
+          intro: "See how leading global enterprises and innovative startups leverage our comprehensive platform to seamlessly achieve and exceed their quality goals. Read through our glowing testimonials from industry leaders who trust cliQTest every single day.",
           icon: Database,
           features: [
-            { label: "Success Stories", desc: "How our clients achieve their goals." },
-            // { label: "Case Studies", desc: "In-depth looks at our enterprise solutions." },
             { label: "Testimonials", desc: "What industry leaders say about us." }
           ]
         },
