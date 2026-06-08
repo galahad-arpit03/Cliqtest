@@ -74,8 +74,8 @@ export default function AboutHero() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
- <button className="px-8 py-4 bg-[#6843B7] text-white rounded-sm hover:bg-[#6843B7]/90 transition-all  text-[14px]">
-              Explore Platform
+ <button onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })} className="px-8 py-4 bg-[#6843B7] text-white rounded-sm hover:bg-[#6843B7]/90 transition-all  text-[14px]">
+              Read
             </button>
           </div>
         </motion.div>

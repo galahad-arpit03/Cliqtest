@@ -171,9 +171,10 @@ export default function AnalyticsFeatures() {
         const Icon = feat.icon;
 
         return (
-          <section key={feat.id} id={feat.id} className="lg:sticky top-20 z-20 bg-[#050505] py-4 lg:shadow-[0_-20px_40px_rgba(5,5,5,1)]">
-            <div className="max-w-7xl mx-auto px-8">
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 lg:h-[400px]">
+          <div key={feat.id} id={feat.id} className="scroll-mt-32">
+            <section className="lg:sticky top-20 z-20 bg-[#050505] py-4 lg:shadow-[0_-20px_40px_rgba(5,5,5,1)]">
+              <div className="max-w-7xl mx-auto px-8">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 lg:h-[400px]">
                 
                 {/* Left Column Stack */}
                 <div className={`lg:col-span-4 flex flex-col gap-4 order-2 ${idx % 2 === 0 ? 'lg:order-1' : 'lg:order-2'}`}>
@@ -243,9 +244,10 @@ export default function AnalyticsFeatures() {
                   </div>
                 </motion.div>
 
+                </div>
               </div>
-            </div>
-          </section>
+            </section>
+          </div>
         );
       })}
     </div>

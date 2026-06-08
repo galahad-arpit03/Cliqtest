@@ -58,7 +58,7 @@ export default function CustomerMarquee() {
                   src={item.logo} 
                   alt={item.name} 
                   fill
-                  className="object-contain" 
+                  className="object-contain grayscale opacity-70" 
                   sizes="(max-width: 768px) 100px, 150px"
                 />
               </li>

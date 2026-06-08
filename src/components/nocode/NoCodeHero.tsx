@@ -64,12 +64,10 @@ export default function NoCodeHero() {
           transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
           className="mt-12 flex flex-row w-full sm:w-auto gap-3 sm:gap-6 justify-center md:justify-start"
         >
-          <button className="flex-1 sm:flex-none px-4 sm:px-10 py-3.5 sm:py-4 bg-[#6843B7] text-white text-[12px] sm:text-[15px] font medium rounded-sm active:scale-95 transition-all whitespace-nowrap">
-            Start Automating
+          <button onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })} className="flex-1 sm:flex-none px-4 sm:px-10 py-3.5 sm:py-4 bg-[#6843B7] text-white text-[12px] sm:text-[15px] font medium rounded-sm active:scale-95 transition-all whitespace-nowrap">
+            Explore No Code Automation
           </button>
-          <button className="flex-1 sm:flex-none px-4 sm:px-10 py-3.5 sm:py-4 bg-white/5 backdrop-blur-md border border-white/10 text-white text-[12px] sm:text-[15px] font medium rounded-sm hover:bg-white/10 hover:border-white/30 transition-all active:scale-95 whitespace-nowrap">
-            View Workflows
-          </button>
+          
         </motion.div>
       </div>
 

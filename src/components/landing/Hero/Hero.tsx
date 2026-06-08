@@ -2,6 +2,7 @@
 
 import React, { useRef, useEffect } from 'react';
 import { motion, Variants, useScroll, useTransform } from 'framer-motion';
+import Link from 'next/link';
 
 export default function Hero() {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -91,13 +92,15 @@ export default function Hero() {
           variants={itemVariants}
           className="flex flex-row w-full sm:w-auto gap-4 sm:gap-8 items-center justify-center md:justify-start mt-4"
         >
-          <motion.button 
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
- className="flex-1 sm:flex-none w-full sm:w-auto px-4 sm:px-8 py-3 rounded-sm bg-[#6843B7] text-white text-[12px] sm:text-[13px] hover:bg-[#6843B7] transition-all whitespace-nowrap"
-          >
-            Book Demo
-          </motion.button>
+          <Link href="/book-a-demo">
+            <motion.button 
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="flex-1 sm:flex-none w-full sm:w-auto px-4 sm:px-8 py-3 rounded-sm bg-[#6843B7] text-white text-[12px] sm:text-[13px] hover:bg-[#6843B7] transition-all whitespace-nowrap"
+            >
+              Book Demo
+            </motion.button>
+          </Link>
 
           <motion.a 
             href="/contact"

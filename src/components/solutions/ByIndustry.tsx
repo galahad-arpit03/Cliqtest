@@ -98,10 +98,8 @@ export default function ByIndustry() {
       <div className="max-w-7xl mx-auto px-2 py-10 space-y-32">
         
         {/* FinTech Section */}
-        <section 
-          id="fintech" 
-          className="scroll-mt-20 lg:sticky top-20 z-10 bg-[#050505] py-4"
-        >
+        <div id="fintech" className="scroll-mt-32">
+        <section className="lg:sticky top-20 z-10 bg-[#050505] py-4">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-4">
             
             {/* FinTech Main Content */}
@@ -162,13 +160,11 @@ export default function ByIndustry() {
 
             </div>
           </div>
-        </section>
+        </section></div>
 
         {/* Healthcare Section */}
-        <section 
-          id="healthcare" 
-          className="scroll-mt-40 lg:sticky top-20 z-20 bg-[#050505] py-4 lg:shadow-[0_-20px_40px_rgba(5,5,5,1)]"
-        >
+        <div id="healthcare" className="scroll-mt-32">
+        <section className="lg:sticky top-20 z-20 bg-[#050505] py-4 lg:shadow-[0_-20px_40px_rgba(5,5,5,1)]">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-4">
             
             {/* Healthcare Left Column (Bento Stack) */}
@@ -235,13 +231,11 @@ export default function ByIndustry() {
             </div>
 
           </div>
-        </section>
+        </section></div>
 
         {/* Retail Section */}
-        <section 
-          id="retail" 
-          className="scroll-mt-40 lg:sticky top-20 z-30 bg-[#050505] py-4 lg:shadow-[0_-20px_40px_rgba(5,5,5,1)]"
-        >
+        <div id="retail" className="scroll-mt-32">
+        <section className="lg:sticky top-20 z-30 bg-[#050505] py-4 lg:shadow-[0_-20px_40px_rgba(5,5,5,1)]">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-4">
             
             {/* Retail Main Content */}
@@ -307,13 +301,11 @@ export default function ByIndustry() {
             </div>
 
           </div>
-        </section>
+        </section></div>
 
         {/* E-Commerce Section */}
-        <section 
-          id="e-commerce" 
-          className="scroll-mt-40 lg:sticky top-20 z-40 bg-[#050505] py-4 lg:shadow-[0_-20px_40px_rgba(5,5,5,1)]"
-        >
+        <div id="e-commerce" className="scroll-mt-32">
+        <section className="lg:sticky top-20 z-40 bg-[#050505] py-4 lg:shadow-[0_-20px_40px_rgba(5,5,5,1)]">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-4">
             
             {/* E-Commerce Main Content */}
@@ -373,13 +365,11 @@ export default function ByIndustry() {
 
             </div>
           </div>
-        </section>
+        </section></div>
 
         {/* Telecom Section */}
-        <section 
-          id="telecom" 
-          className="scroll-mt-40 lg:sticky top-20 z-50 bg-[#050505] py-4 lg:shadow-[0_-20px_40px_rgba(5,5,5,1)]"
-        >
+        <div id="telecom" className="scroll-mt-32">
+        <section className="lg:sticky top-20 z-50 bg-[#050505] py-4 lg:shadow-[0_-20px_40px_rgba(5,5,5,1)]">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-4">
             
             {/* Telecom Main Content */}
@@ -440,7 +430,7 @@ export default function ByIndustry() {
             </div>
 
           </div>
-        </section>
+        </section></div>
 
       {/* Additional Industries Generated for Anchor Links */}
       {[
@@ -671,11 +661,8 @@ export default function ByIndustry() {
         );
 
         return (
-          <section 
-            key={industry.id}
-            id={industry.id} 
-            className="scroll-mt-40 lg:sticky top-20 z-50 bg-[#050505] py-4 lg:shadow-[0_-20px_40px_rgba(5,5,5,1)]"
-          >
+          <div key={industry.id} id={industry.id} className="scroll-mt-32">
+          <section className="lg:sticky top-20 z-50 bg-[#050505] py-4 lg:shadow-[0_-20px_40px_rgba(5,5,5,1)]">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-4">
               {layoutType === 0 && (
                 <>
@@ -731,6 +718,7 @@ export default function ByIndustry() {
               )}
             </div>
           </section>
+          </div>
         );
       })}
 

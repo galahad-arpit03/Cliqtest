@@ -118,8 +118,9 @@ function DomainSection({ feat, idx }: { feat: typeof features[0], idx: number })
   };
 
   return (
-    <section id={feat.id} className="lg:sticky top-20 z-20 bg-[#050505] py-4 lg:shadow-[0_-20px_40px_rgba(5,5,5,1)]">
-      <div className="max-w-7xl mx-auto px-8">
+    <div id={feat.id} className="scroll-mt-32">
+      <section className="lg:sticky top-20 z-20 bg-[#050505] py-4 lg:shadow-[0_-20px_40px_rgba(5,5,5,1)]">
+        <div className="max-w-7xl mx-auto px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 lg:min-h-[400px]">
           
           {/* Left Column Stack */}
@@ -241,9 +242,10 @@ function DomainSection({ feat, idx }: { feat: typeof features[0], idx: number })
             </div>
           </motion.div>
 
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
   );
 }
 
@@ -307,7 +309,7 @@ export default function SuccessStories() {
               transition={{ duration: 0.8, delay: 0.2 }}
             >
               <a href="#banking" className="inline-flex items-center gap-2 px-8 py-3 bg-[#6843B7] text-white font-medium rounded-sm hover:bg-[#6843B7]/90 transition-all">
-                Explore Stories
+                Explore
               </a>
             </motion.div>
           </motion.div>
@@ -344,9 +346,9 @@ export default function SuccessStories() {
             <Link href="/book-a-demo" className="flex-1 sm:flex-none text-center px-4 sm:px-8 py-3 bg-[#6843B7] text-white font-medium rounded-sm hover:scale-105 active:scale-95 transition-all text-[13px] sm:text-base whitespace-nowrap">
               Book a Demo
             </Link>
-            <Link href="/pricing" className="flex-1 sm:flex-none text-center px-4 sm:px-8 py-3 border border-white/20 text-white font-medium rounded-sm hover:bg-white/5 transition-colors text-[13px] sm:text-base whitespace-nowrap">
+            {/* <Link href="/pricing" className="flex-1 sm:flex-none text-center px-4 sm:px-8 py-3 border border-white/20 text-white font-medium rounded-sm hover:bg-white/5 transition-colors text-[13px] sm:text-base whitespace-nowrap">
               View Pricing
-            </Link>
+            </Link> */}
           </div>
         </div>
       </section>

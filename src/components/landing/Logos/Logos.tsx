@@ -55,7 +55,7 @@ export default function Logos() {
                   src={item.src}
                   alt={item.name}
                   fill
-                  className="object-contain"
+                  className="object-contain grayscale opacity-70"
                 />
               </div>
               <span className="text-white font medium text-base md:text-lg tracking-tight">

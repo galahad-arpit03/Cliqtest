@@ -7,42 +7,42 @@ import { Brain, Sparkles, Database, Crosshair, FunctionSquare, Wrench, Cpu, Bot,
 
 const features = [
   { 
-    id: "ai-testing", 
+    id: "ai-testing-&-evaluation", 
     title: "AI Testing & Evaluation", 
     icon: Brain,
     span: "col-span-1 md:col-span-2 lg:col-span-2",
     desc: "cliQTest provides advanced AI testing and evaluation capabilities designed to validate the performance, reliability, contextual accuracy, and consistency of modern AI systems including LLMs, RAG pipelines, machine learning models, deep learning systems, chatbots, and voicebots. The platform enables teams to upload structured datasets containing prompts, inputs, expected responses, and evaluation criteria while executing intelligent validation workflows across diverse AI models and use cases. Through flexible data mapping, built-in validation engines, semantic analysis, hallucination detection, contextual response evaluation, and scalable execution capabilities, cliQTest simplifies the complex process of AI model evaluation and ensures production-ready AI quality across enterprise environments." 
   },
   { 
-    id: "genai-test", 
+    id: "genai-test-case-generation", 
     title: "GenAI Test Case Generation", 
     icon: Sparkles,
     span: "col-span-1",
     desc: "cliQTest leverages Generative AI to automate the creation of comprehensive and context-aware test cases directly from BRDs, Jira stories, user flows, Figma designs, and business requirements. The platform intelligently interprets workflows, validation logic, UI structures, and functional dependencies to generate positive, negative, and edge-case scenarios with complete execution steps and expected outcomes. By reducing manual test authoring effort and improving coverage consistency, cliQTest accelerates test preparation, enhances traceability, and enables faster and more scalable quality engineering practices across modern application ecosystems." 
   },
   { 
-    id: "ai-test-data", 
+    id: "ai-test-data-generator", 
     title: "AI Test Data Generator", 
     icon: Database,
     span: "col-span-1",
     desc: "cliQTest’s AI-powered Test Data Generator enables organizations to create realistic, context-aware, and privacy-compliant synthetic datasets for automation, performance, regression, and AI model testing workflows. The platform intelligently generates test data aligned with business rules, field constraints, application patterns, and domain-specific scenarios while ensuring sensitive information is masked and regulatory compliance is maintained. By eliminating dependency on production data and accelerating bulk dataset generation, cliQTest improves testing scalability, coverage quality, and operational efficiency across enterprise testing environments." 
   },
   { 
-    id: "ai-xpath", 
+    id: "ai-x-path-finder", 
     title: "AI X-Path Finder", 
     icon: Crosshair,
     span: "col-span-1",
     desc: "cliQTest simplifies locator management through its intelligent AI-powered XPath Finder that automatically analyzes DOM structures and generates accurate, optimized, and resilient XPath locators for web automation workflows. The platform understands element relationships, UI hierarchies, and structural patterns to generate dynamic locators capable of adapting to minor application changes and reducing automation flakiness. By eliminating manual XPath creation and simplifying locator maintenance, cliQTest improves automation stability, accelerates script development, and reduces debugging effort across rapidly evolving applications." 
   },
   { 
-    id: "agentic-function", 
+    id: "agentic-ai-function-generator", 
     title: "Agentic AI Function Generator", 
     icon: FunctionSquare,
     span: "col-span-1 md:col-span-2 lg:col-span-2",
     desc: "cliQTest’s Agentic AI Function Generator transforms natural language instructions into production-ready automation functions and reusable code components without requiring deep scripting expertise. The platform intelligently interprets user intent, business workflows, and automation requirements to generate clean, modular, and executable functions that integrate seamlessly into existing testing frameworks and workflows. By democratizing automation development and reducing manual coding effort, cliQTest accelerates automation adoption and empowers cross-functional teams to contribute to intelligent automation initiatives." 
   },
   { 
-    id: "auto-healing", 
+    id: "ai-powered-auto-healing", 
     title: "AI-Powered Auto Healing", 
     icon: Wrench,
     span: "col-span-1",
@@ -63,28 +63,28 @@ const features = [
     desc: "cliQTest introduces next-generation Agentic Automation capabilities that enable intelligent AI agents to independently analyze, plan, generate, optimize, and execute complex automation workflows with minimal human intervention. The platform decomposes high-level testing goals into structured execution flows, orchestrates multiple specialized AI agents collaboratively, and continuously refines automation scripts based on execution feedback and application behavior. This autonomous and adaptive automation model significantly improves scalability, reduces manual effort, and transforms traditional automation into intelligent quality engineering." 
   },
   { 
-    id: "ai-sql", 
+    id: "ai-sql-query-agent", 
     title: "AI SQL Query Agent", 
     icon: DatabaseZap,
     span: "col-span-1",
     desc: "cliQTest simplifies backend validation through its AI-powered SQL Query Agent that converts natural language prompts and validation requirements into optimized SQL queries automatically. The platform enables testers and QA teams to perform complex database validations, data consistency checks, and backend verification without extensive SQL expertise. By accelerating query generation and reducing manual effort, cliQTest improves data validation efficiency, enhances defect detection accuracy, and streamlines backend testing workflows across enterprise applications." 
   },
   { 
-    id: "ai-captcha", 
+    id: "ai-captcha-automation", 
     title: "AI CAPTCHA Automation", 
     icon: ShieldCheck,
     span: "col-span-1 md:col-span-2 lg:col-span-2",
     desc: "cliQTest enables intelligent CAPTCHA automation by automatically identifying, processing, and handling CAPTCHA challenges during test execution without interrupting automation workflows. The platform uses AI-driven recognition and execution strategies to ensure uninterrupted validation across secure authentication flows, onboarding journeys, transaction processes, and enterprise applications that rely on CAPTCHA verification. This capability significantly improves end-to-end automation continuity and reduces manual intervention during critical business workflows." 
   },
   { 
-    id: "ai-report", 
+    id: "ai-report-summarization", 
     title: "AI Report Summarization", 
     icon: FileText,
     span: "col-span-1",
     desc: "cliQTest enhances reporting efficiency through AI-powered report summarization that automatically transforms complex execution reports, logs, defect insights, and testing data into concise, actionable, and stakeholder-friendly summaries. The platform intelligently extracts key trends, failure patterns, anomalies, quality risks, and execution highlights while generating executive-ready insights for faster analysis and decision-making. By reducing manual report review effort and improving visibility into testing outcomes, cliQTest accelerates release readiness assessments and enterprise quality governance." 
   },
   { 
-    id: "ai-system-val", 
+    id: "ai-system-validation", 
     title: "AI System Validation", 
     icon: Activity,
     span: "col-span-1",
@@ -98,7 +98,7 @@ const features = [
     desc: "cliQTest delivers AI-driven defect intelligence that helps organizations identify, analyze, and prioritize quality issues more effectively. The platform analyzes execution data, failure trends, defect patterns, and historical outcomes to provide deeper visibility into root causes and testing risks. AI-powered report summarization transforms large execution datasets into concise and actionable insights, enabling stakeholders to understand failures, quality trends, and release risks faster. This intelligent analysis capability improves debugging efficiency, accelerates defect resolution, and enables data-driven decision-making across quality engineering teams." 
   },
   { 
-    id: "smart-recs", 
+    id: "smart-recommendations", 
     title: "Smart Recommendations", 
     icon: Lightbulb,
     span: "col-span-1 md:col-span-1 lg:col-span-1",
@@ -152,9 +152,10 @@ export default function AiCapabilitiesFeatures() {
         const paragraphs = typeof feat.desc === 'string' ? feat.desc.split('. ').filter((p: string) => p.trim() !== '') : feat.desc;
 
         return (
-          <section key={feat.id} id={feat.title.toLowerCase().replace(/\s+/g, '-')} className="lg:sticky top-20 z-20 bg-[#050505] py-4 lg:shadow-[0_-20px_40px_rgba(5,5,5,1)]">
-            <div className="max-w-7xl mx-auto px-8">
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 lg:min-h-[400px]">
+          <div key={feat.id} id={feat.id} className="scroll-mt-32">
+            <section className="lg:sticky top-20 z-20 bg-[#050505] py-4 lg:shadow-[0_-20px_40px_rgba(5,5,5,1)]">
+              <div className="max-w-7xl mx-auto px-8">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 lg:min-h-[400px]">
                 
                 {/* Left Column Stack */}
                 <div className={`lg:col-span-4 flex flex-col gap-4 order-2 ${idx % 2 === 0 ? 'lg:order-1' : 'lg:order-2'}`}>
@@ -245,9 +246,10 @@ export default function AiCapabilitiesFeatures() {
                   </div>
                 </motion.div>
 
+                </div>
               </div>
-            </div>
-          </section>
+            </section>
+          </div>
         );
       })}
     </div>

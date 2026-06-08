@@ -52,15 +52,16 @@ export default function WhyCliqtestContent() {
       
       {/* Stacked Numbered Section */}
       <div className="space-y-6">
-        {reasons.map((reason, index) => (
-          <motion.div
-            key={index}
-            id={reason.title.toLowerCase().replace(/\s+/g, '-')}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
-            className="sticky bg-[#0A0A0A] border border-white/10 rounded-md p-8 md:p-12 overflow-hidden shadow-2xl transition-all duration-500"
+        {reasons.map((reason, index) => {
+          const sectionId = reason.title.toLowerCase().replace(/\s+/g, '-');
+          return (
+          <div key={index} id={sectionId} className="scroll-mt-32">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="sticky bg-[#0A0A0A] border border-white/10 rounded-md p-8 md:p-12 overflow-hidden shadow-2xl transition-all duration-500"
             style={{ 
               top: `calc(8rem + ${index * 2}rem)`, 
               zIndex: 10 + index 
@@ -84,7 +85,8 @@ export default function WhyCliqtestContent() {
             </div>
             
           </motion.div>
-        ))}
+          </div>
+        )})}
       </div>
 
     </div>

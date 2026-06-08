@@ -213,9 +213,10 @@ export default function AdvancedFeatures() {
         );
 
         return (
-          <section key={idx} id={feature.title.toLowerCase().replace(/\s+/g, '-')} className="lg:sticky top-20 z-30 bg-[#050505] py-4 lg:shadow-[0_-20px_40px_rgba(5,5,5,1)]">
-            <div className="max-w-7xl mx-auto px-8">
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 lg:h-[520px]">
+          <div key={idx} id={feature.title.toLowerCase().replace(/\s+/g, '-')} className="scroll-mt-32">
+            <section className="lg:sticky top-20 z-30 bg-[#050505] py-4 lg:shadow-[0_-20px_40px_rgba(5,5,5,1)]">
+              <div className="max-w-7xl mx-auto px-8">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 lg:h-[520px]">
                 {isLeft ? (
                   <>
                     <motion.div
@@ -259,9 +260,10 @@ export default function AdvancedFeatures() {
                     </motion.div>
                   </>
                 )}
+                </div>
               </div>
-            </div>
-          </section>
+            </section>
+          </div>
         );
       })}
     </div>

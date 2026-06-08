@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 import { 
   Zap, 
   BarChart3, 
@@ -108,9 +109,11 @@ export default function KeyBenefits() {
               <h3 className="text-2xl font-bold text-white mb-2">Ready to accelerate?</h3>
               <p className="text-white/60">Join the elite teams building the future with cliQTest.</p>
             </div>
- <button className="relative z-10 px-8 py-4 bg-[#6843B7] text-white text-[14px] rounded-sm hover:bg-[#6843B7]/90 transition-all  whitespace-nowrap">
-              Book a Demo
-            </button>
+            <Link href="/book-a-demo">
+              <button className="relative z-10 px-8 py-4 bg-[#6843B7] text-white text-[14px] rounded-sm hover:bg-[#6843B7]/90 transition-all  whitespace-nowrap">
+                Book a Demo
+              </button>
+            </Link>
           </motion.div>
         </div>
       </div>

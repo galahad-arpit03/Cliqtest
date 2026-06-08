@@ -84,12 +84,12 @@ export default function MeetAgents() {
                   delay: i * 0.5,
                   ease: "easeInOut" 
                 }}
-                className="bg-white rounded-md px-8 py-3 mb-4 flex items-center gap-3 shadow-[0_0_40px_rgba(255,255,255,0.1)] group-hover:scale-110 group-hover:shadow-[0_0_50px_rgba(104,67,183,0.4)] transition-all duration-300 whitespace-nowrap cursor-default"
+                className="bg-gradient-to-r from-[#6843B7] to-[#8f81eb] rounded-md px-8 py-3 mb-4 flex items-center gap-3 shadow-[0_0_40px_rgba(255,255,255,0.1)] group-hover:scale-110 group-hover:shadow-[0_0_50px_rgba(104,67,183,0.4)] transition-all duration-300 whitespace-nowrap cursor-default"
               >
                 {/* <div className="w-5 h-5 rounded-sm bg-[#6843B7]/10 flex items-center justify-center text-[#6843B7]">
                   <span className="text-[10px]">✦</span>
                 </div> */}
-                <span className="text-black font medium text-[14px] md:text-[16px] tracking-tight">{reason.name}</span>
+                <span className="text-white font medium text-[14px] md:text-[16px] tracking-tight">{reason.name}</span>
               </motion.div>
               <motion.p 
                 initial={{ opacity: 0 }}
