@@ -48,7 +48,7 @@ export default function Logos() {
           {duplicatedIntegrations.map((item, i) => (
             <div 
               key={i}
-              className="flex items-center justify-center mx-6 md:mx-8 gap-2 md:gap-3 opacity-40 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300 cursor-pointer"
+              className="flex items-center justify-center mx-6 md:mx-8 gap-2 md:gap-3"
             >
               <div className="relative w-8 h-8 md:w-10 md:h-10">
                 <Image

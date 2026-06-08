@@ -36,8 +36,8 @@ export default function CustomerMarquee() {
 
       <div className="relative w-full flex overflow-hidden group">
         {/* Fade gradients for edges */}
-        <div className="absolute top-0 left-0 w-24 md:w-48 h-full bg-gradient-to-r from-[#060411] to-transparent z-10 pointer-events-none" />
-        <div className="absolute top-0 right-0 w-24 md:w-48 h-full bg-gradient-to-l from-[#060411] to-transparent z-10 pointer-events-none" />
+        {/* <div className="absolute top-0 left-0 w-24 md:w-48 h-full bg-gradient-to-r from-[#060411] to-transparent z-10 pointer-events-none" /> */}
+        {/* <div className="absolute top-0 right-0 w-24 md:w-48 h-full bg-gradient-to-l from-[#060411] to-transparent z-10 pointer-events-none" /> */}
 
         <motion.div
           className="flex whitespace-nowrap items-center w-max"
@@ -51,13 +51,13 @@ export default function CustomerMarquee() {
           {duplicatedCustomers.map((item, i) => (
             <div 
               key={i}
-              className="flex items-center justify-center mx-4 md:mx-8 opacity-50 hover:opacity-100 transition-all duration-300 cursor-pointer relative h-12 w-36"
+              className="flex items-center justify-center mx-4 md:mx-8 relative h-12 w-36"
             >
               <Image 
                 src={item.logo} 
                 alt={item.name} 
                 fill
-                className="object-contain filter grayscale hover:grayscale-0 transition-all duration-300" 
+                className="object-contain" 
                 sizes="(max-width: 768px) 100px, 150px"
               />
             </div>
