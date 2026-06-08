@@ -1,4 +1,5 @@
 "use client";
+import { useEffect } from 'react';
 
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -106,6 +107,22 @@ const features = [
 ];
 
 export default function AiCapabilitiesFeatures() {
+  // Scroll to feature section if URL contains a hash
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const hash = window.location.hash?.substring(1);
+      if (hash) {
+        // Delay to ensure elements are rendered
+        setTimeout(() => {
+          const el = document.getElementById(hash);
+          if (el) {
+            el.scrollIntoView({ behavior: 'smooth' });
+          }
+        }, 100);
+      }
+    }
+  }, []);
+
   return (
     <div className="bg-[#050505] text-white py-20 flex flex-col gap-8">
       {/* Header Section */}
@@ -135,7 +152,7 @@ export default function AiCapabilitiesFeatures() {
         const paragraphs = typeof feat.desc === 'string' ? feat.desc.split('. ').filter((p: string) => p.trim() !== '') : feat.desc;
 
         return (
-          <section key={feat.id} id={feat.id} className="lg:sticky top-20 z-20 bg-[#050505] py-4 lg:shadow-[0_-20px_40px_rgba(5,5,5,1)]">
+          <section key={feat.id} id={feat.title.toLowerCase().replace(/\s+/g, '-')} className="lg:sticky top-20 z-20 bg-[#050505] py-4 lg:shadow-[0_-20px_40px_rgba(5,5,5,1)]">
             <div className="max-w-7xl mx-auto px-8">
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 lg:min-h-[400px]">
                 

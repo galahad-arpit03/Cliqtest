@@ -1,4 +1,5 @@
 "use client";
+import { useEffect } from 'react';
 
 import React from 'react';
 import { motion } from 'framer-motion';
@@ -29,7 +30,7 @@ const sections = [
       icon: GitBranch
     },
     {
-      id: "project-workflow-integrations",
+      id: "project-&-workflow-integrations",
       title: "Project & Workflow Integrations",
       desc: [
         "cliQTest connects with enterprise project management and collaboration platforms to streamline requirement traceability, defect management, execution tracking, and release coordination across distributed teams. These integrations help unify QA, development, and business workflows within a centralized quality ecosystem.",
@@ -101,7 +102,7 @@ const sections = [
       icon: Eye
     },
     {
-      id: "cloud-infrastructure-integrations",
+      id: "cloud-&-infrastructure-integrations",
       title: "Cloud & Infrastructure Integrations",
       desc: [
         "cliQTest integrates with enterprise cloud platforms, infrastructure ecosystems, and distributed execution environments to support scalable testing operations across cloud-native, hybrid, and on-premise deployments. These integrations ensure flexible execution management, centralized orchestration, and optimized performance across globally distributed enterprise applications.",
@@ -113,7 +114,7 @@ const sections = [
       icon: Cloud
     },
     {
-      id: "api-automation-integrations",
+      id: "api-&-automation-integrations",
       title: "API & Automation Integrations",
       desc: [
         "cliQTest enables seamless API and automation integrations that allow organizations to connect external systems, execution frameworks, automation agents, and enterprise applications into a unified quality engineering ecosystem. These integrations improve operational efficiency, execution scalability, and automation orchestration across modern software delivery pipelines.",
@@ -127,6 +128,22 @@ const sections = [
 ];
 
 export default function IntegrationsContent() {
+  // Scroll to feature section if URL contains a hash
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const hash = window.location.hash?.substring(1);
+      if (hash) {
+        // Delay to ensure elements are rendered
+        setTimeout(() => {
+          const el = document.getElementById(hash);
+          if (el) {
+            el.scrollIntoView({ behavior: 'smooth' });
+          }
+        }, 100);
+      }
+    }
+  }, []);
+
   return (
     <div className="bg-[#050505] text-white py-20 flex flex-col gap-8 pb-32">
       {/* Header Section */}

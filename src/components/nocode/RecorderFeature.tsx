@@ -6,7 +6,7 @@ import { CheckCircle2, Video } from 'lucide-react';
 
 export default function RecorderFeature() {
   return (
-    <section className="lg:sticky top-20 z-10 bg-[#000000] py-4">
+    <section id="recorder" className="lg:sticky top-20 z-10 bg-[#000000] py-4">
       <div className="max-w-7xl mx-auto px-8">
         
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 lg:h-[520px]">

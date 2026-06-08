@@ -82,7 +82,7 @@ export const menuItems = [
             { label: "Network Throttling", desc: "Simulate bandwidth conditions." },
             { label: "Performance Tracking (App Profiling)", desc: "Deep application profiling." },
             { label: "Browser Testing", desc: "Cross-browser compatibility." },
-            { label: "Cross Platform Testing", desc: "Unified multi-platform support." }
+            { label: "Cross Platform", desc: "Unified multi-platform support." },
           ]
         },
         {
@@ -95,10 +95,10 @@ export const menuItems = [
             { label: "Recorder", desc: "Intelligent visual recording." },
             { label: "Scriptless Automation", desc: "No coding required." },
             { label: "Reusable Components", desc: "Modular test design." },
-            { label: "Auto-Healing", desc: "Self-repairing test execution." },
+            { label: "AI Auto-Healing", desc: "Self-repairing test execution." },
             { label: "API Automation", desc: "Seamless API testing." },
             { label: "Desktop Automation", desc: "Desktop application support." },
-            { label: "Smart Authentication Automation", desc: "Handle complex logins." },
+            { label: "Smart Authentication", desc: "Handle complex logins." },
             { label: "Environment Management", desc: "Manage configurations." },
             { label: "Distributed Execution", desc: "Scale across nodes." }
           ]
@@ -416,6 +416,9 @@ export default function Navbar() {
                           setShowMoreFeatures(false);
                         }
                       }
+                    } else {
+                      // Direct link, close any open dropdown
+                      setActiveMenu(null);
                     }
                   }}
                 >

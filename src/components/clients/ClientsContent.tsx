@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 
@@ -49,6 +49,22 @@ const testimonialsData = categorizedStories.flatMap(cat => cat.stories);
 
 export default function ClientsContent() {
   const duplicatedTestimonials = [...testimonialsData, ...testimonialsData];
+
+  // Scroll to feature section if URL contains a hash
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const hash = window.location.hash?.substring(1);
+      if (hash) {
+        // Delay to ensure elements are rendered
+        setTimeout(() => {
+          const el = document.getElementById(hash);
+          if (el) {
+            el.scrollIntoView({ behavior: 'smooth' });
+          }
+        }, 100);
+      }
+    }
+  }, []);
 
   return (
     <div className="max-w-7xl mx-auto px-8">

@@ -6,7 +6,7 @@ import { Blocks, Users, Settings2, ShieldCheck, CheckCircle2 } from 'lucide-reac
 
 export default function ScriptlessFeature() {
   return (
-    <section className="lg:sticky top-20 z-20 bg-[#050505] py-4 lg:shadow-[0_-20px_40px_rgba(5,5,5,1)]">
+    <section id="scriptless-automation" className="lg:sticky top-20 z-20 bg-[#050505] py-4 lg:shadow-[0_-20px_40px_rgba(5,5,5,1)]">
       <div className="max-w-7xl mx-auto px-8">
         
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 lg:h-[520px]">

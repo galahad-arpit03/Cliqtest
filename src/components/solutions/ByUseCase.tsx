@@ -1,4 +1,5 @@
 'use client';
+import { useEffect } from 'react';
 
 import React, { useRef } from 'react';
 import Link from 'next/link';
@@ -143,6 +144,22 @@ export default function ByUseCase() {
   });
 
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
+
+  // Scroll to feature section if URL contains a hash
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const hash = window.location.hash?.substring(1);
+      if (hash) {
+        // Delay to ensure elements are rendered
+        setTimeout(() => {
+          const el = document.getElementById(hash);
+          if (el) {
+            el.scrollIntoView({ behavior: 'smooth' });
+          }
+        }, 100);
+      }
+    }
+  }, []);
 
   return (
     <div className="bg-[#090A0A] text-white min-h-screen">

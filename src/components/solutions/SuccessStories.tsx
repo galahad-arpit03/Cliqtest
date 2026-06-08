@@ -1,4 +1,5 @@
 "use client";
+import { useEffect } from 'react';
 
 import React, { useRef, useState } from 'react';
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
@@ -32,7 +33,7 @@ const features = [
     ]
   },
   {
-    id: "fintech",
+    id: "fintech-&-payments",
     title: "FinTech & Payments: Streamlined Execution",
     theme: "teal",
     icon: ShieldCheck,
@@ -68,7 +69,7 @@ const features = [
     ]
   },
   {
-    id: "insurance-pharma",
+    id: "insurance-&-pharma",
     title: "Insurance & Pharma: Real-Time Performance",
     theme: "teal",
     icon: Code2,
@@ -249,6 +250,22 @@ function DomainSection({ feat, idx }: { feat: typeof features[0], idx: number })
 export default function SuccessStories() {
   const { scrollY } = useScroll();
   const y = useTransform(scrollY, [0, 1000], ['0%', '30%']);
+
+  // Scroll to feature section if URL contains a hash
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const hash = window.location.hash?.substring(1);
+      if (hash) {
+        // Delay to ensure elements are rendered
+        setTimeout(() => {
+          const el = document.getElementById(hash);
+          if (el) {
+            el.scrollIntoView({ behavior: 'smooth' });
+          }
+        }, 100);
+      }
+    }
+  }, []);
 
   return (
     <div className="bg-[#090A0A] text-white min-h-screen">

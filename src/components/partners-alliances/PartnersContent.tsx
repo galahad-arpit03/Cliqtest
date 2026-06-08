@@ -1,13 +1,30 @@
 "use client";
+import { useEffect } from 'react';
 
 import React from 'react';
 import { motion } from 'framer-motion';
 
 export default function PartnersContent() {
+  // Scroll to feature section if URL contains a hash
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const hash = window.location.hash?.substring(1);
+      if (hash) {
+        // Delay to ensure elements are rendered
+        setTimeout(() => {
+          const el = document.getElementById(hash);
+          if (el) {
+            el.scrollIntoView({ behavior: 'smooth' });
+          }
+        }, 100);
+      }
+    }
+  }, []);
+
   return (
     <div className="max-w-7xl mx-auto px-8">
       
-      <section className="mb-20">
+      <section id="technology-partners" className="mb-20">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -28,7 +45,7 @@ export default function PartnersContent() {
         </motion.div>
       </section>
   
-      <section className="mb-20">
+      <section id="strategic-alliances" className="mb-20">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

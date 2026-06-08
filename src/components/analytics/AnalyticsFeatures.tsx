@@ -1,4 +1,5 @@
 "use client";
+import { useEffect } from 'react';
 
 import React from 'react';
 import { motion } from 'framer-motion';
@@ -102,7 +103,7 @@ const features = [
     statLabel: "Trend Identification"
   },
   {
-    id: "audit-compliance",
+    id: "audit-&-compliance-reporting",
     title: "Audit & Compliance Reporting",
     icon: ShieldCheck,
     desc: [
@@ -128,6 +129,22 @@ const features = [
 ];
 
 export default function AnalyticsFeatures() {
+  // Scroll to feature section if URL contains a hash
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const hash = window.location.hash?.substring(1);
+      if (hash) {
+        // Delay to ensure elements are rendered
+        setTimeout(() => {
+          const el = document.getElementById(hash);
+          if (el) {
+            el.scrollIntoView({ behavior: 'smooth' });
+          }
+        }, 100);
+      }
+    }
+  }, []);
+
   return (
     <div className="bg-[#050505] text-white py-20 flex flex-col gap-8">
       {/* Header Section */}

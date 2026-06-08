@@ -27,6 +27,22 @@ export default function ByIndustry() {
     setMounted(true);
   }, []);
 
+  // Scroll to feature section if URL contains a hash
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const hash = window.location.hash?.substring(1);
+      if (hash) {
+        // Delay to ensure elements are rendered
+        setTimeout(() => {
+          const el = document.getElementById(hash);
+          if (el) {
+            el.scrollIntoView({ behavior: 'smooth' });
+          }
+        }, 100);
+      }
+    }
+  }, []);
+
   if (!mounted) return null;
 
   return (
@@ -295,7 +311,7 @@ export default function ByIndustry() {
 
         {/* E-Commerce Section */}
         <section 
-          id="ecommerce" 
+          id="e-commerce" 
           className="scroll-mt-40 lg:sticky top-20 z-40 bg-[#050505] py-4 lg:shadow-[0_-20px_40px_rgba(5,5,5,1)]"
         >
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-4">
