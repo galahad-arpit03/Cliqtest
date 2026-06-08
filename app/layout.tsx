@@ -18,6 +18,7 @@ const alata = Alata({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://cliQTest.com'),
   title: {
     default: "cliQTest | AI-Powered Automated Testing & QA Platform",
     template: "%s | cliQTest",
