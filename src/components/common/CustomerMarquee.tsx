@@ -21,7 +21,7 @@ export default function CustomerMarquee() {
   const duplicatedCustomers = [...customers, ...customers, ...customers, ...customers];
 
   return (
-    <section className="w-full py-12 md:py-16 bg-[#000000] border-y border-white/5 overflow-hidden">
+    <section className="w-full py-12 md:py-16 bg-[#000000] border-y border-white/5 overflow-hidden" aria-label="Trusted customer logos">
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -48,20 +48,22 @@ export default function CustomerMarquee() {
             duration: 120,
           }}
         >
-          {duplicatedCustomers.map((item, i) => (
-            <div 
-              key={i}
-              className="flex items-center justify-center mx-4 md:mx-8 relative h-12 w-36"
-            >
-              <Image 
-                src={item.logo} 
-                alt={item.name} 
-                fill
-                className="object-contain" 
-                sizes="(max-width: 768px) 100px, 150px"
-              />
-            </div>
-          ))}
+          <ul className="flex whitespace-nowrap items-center w-max list-none p-0 m-0">
+            {duplicatedCustomers.map((item, i) => (
+              <li 
+                key={i}
+                className="flex items-center justify-center mx-4 md:mx-8 relative h-12 w-36"
+              >
+                <Image 
+                  src={item.logo} 
+                  alt={item.name} 
+                  fill
+                  className="object-contain" 
+                  sizes="(max-width: 768px) 100px, 150px"
+                />
+              </li>
+            ))}
+          </ul>
         </motion.div>
       </div>
     </section>
