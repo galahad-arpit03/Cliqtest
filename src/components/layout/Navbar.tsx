@@ -373,7 +373,7 @@ export default function Navbar() {
 
           {/* Left: Logo Section */}
           <div className="flex-1 flex justify-start">
-            <Link href="/" className="flex items-center gap-2 cursor-pointer group z-[110]">
+            <Link href="/" onClick={() => setActiveMenu(null)} className="flex items-center gap-2 cursor-pointer group z-[110]">
               <div className="relative w-32 h-10 md:w-36 md:h-11 overflow-hidden transition-transform duration-300 group-hover:scale-105">
                 <Image
                   src="/logos/logo.png"
