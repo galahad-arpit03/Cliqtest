@@ -57,9 +57,9 @@ export default function CloudFirst() {
               <p className="text-zinc-400 text-[13px] leading-relaxed mb-6">
                 Scale your quality engineering with AI agents that autonomously generate, execute, and self-heal massive parallel test suites without human intervention.
               </p>
-              <a href="#" className="text-[#6843B7] font medium text-[13px] hover:text-white transition-colors mt-auto">
+               {/* <a href="#" className="text-[#6843B7] font medium text-[13px] hover:text-white transition-colors mt-auto">
                 Learn More ...
-              </a>
+              </a> */}
             </div>
           </motion.div>
 
@@ -87,9 +87,9 @@ export default function CloudFirst() {
               <p className="text-zinc-400 text-[13px] leading-relaxed mb-6">
                 Trusted by forward-thinking global leaders to deploy intelligent automation, eliminating QA bottlenecks and accelerating continuous delivery.
               </p>
-              <a href="#" className="text-[#6843B7] font medium text-[13px] hover:text-white transition-colors mt-auto">
+              {/* <a href="#" className="text-[#6843B7] font medium text-[13px] hover:text-white transition-colors mt-auto">
                 Learn More ...
-              </a>
+              </a> */}
             </div>
           </motion.div>
 
@@ -115,9 +115,9 @@ export default function CloudFirst() {
               <p className="text-zinc-400 text-[13px] leading-relaxed mb-6">
                 Deploy specialized agents that seamlessly navigate Web, Mobile, API, and Desktop environments, understanding context across your entire ecosystem.
               </p>
-              <a href="#" className="text-[#6843B7] font medium text-[13px] hover:text-white transition-colors mt-auto">
+              {/* <a href="#" className="text-[#6843B7] font medium text-[13px] hover:text-white transition-colors mt-auto">
                 Learn More ...
-              </a>
+              </a> */}
             </div>
           </motion.div>
 
@@ -143,9 +143,9 @@ export default function CloudFirst() {
               <p className="text-zinc-400 text-[13px] leading-relaxed mb-6">
                 Our AI engines test across thousands of real devices and browsers, dynamically adapting to varying screen sizes, OS configurations, and network conditions.
               </p>
-              <a href="#" className="text-[#6843B7] font medium text-[13px] hover:text-white transition-colors mt-auto">
+              {/* <a href="#" className="text-[#6843B7] font medium text-[13px] hover:text-white transition-colors mt-auto">
                 Learn More ...
-              </a>
+              </a> */}
             </div>
           </motion.div>
 
