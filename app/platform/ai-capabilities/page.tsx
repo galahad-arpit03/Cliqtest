@@ -1,6 +1,6 @@
 import React from 'react';
-import AiHero from '@/components/ai-capabilities/AiHero';
-import AiCapabilitiesFeatures from '@/components/ai-capabilities/AiCapabilitiesFeatures';
+import AiHero from '@/components/platform/ai-capabilities/hero/AiHero';
+import AiCapabilitiesFeatures from '@/components/platform/ai-capabilities/features/AiCapabilitiesFeatures';
 
 export const metadata = {
   title: "AI Capabilities | cliQTest",

@@ -1,7 +1,7 @@
 import React from 'react';
 import type { Metadata } from 'next';
-import CsrContent from '@/components/csr-community/CsrContent';
-import CsrHero from '@/components/csr-community/CsrHero';
+import CsrContent from '@/components/company/csr-community/features/CsrContent';
+import CsrHero from '@/components/company/csr-community/hero/CsrHero';
 
 export const metadata: Metadata = {
   title: 'CSR & Community',

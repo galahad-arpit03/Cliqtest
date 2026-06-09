@@ -1,7 +1,7 @@
 import React from 'react';
 import type { Metadata } from 'next';
-import IntegrationsHero from '@/components/integrations/IntegrationsHero';
-import IntegrationsContent from '@/components/integrations/IntegrationsContent';
+import IntegrationsHero from '@/components/integrations/hero/IntegrationsHero';
+import IntegrationsContent from '@/components/integrations/features/IntegrationsContent';
 
 export const metadata: Metadata = {
   title: 'Integrations | cliQTest',

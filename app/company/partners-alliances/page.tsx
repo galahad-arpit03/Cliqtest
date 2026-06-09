@@ -1,7 +1,7 @@
 import React from 'react';
 import type { Metadata } from 'next';
-import PartnersContent from '@/components/partners-alliances/PartnersContent';
-import PartnersHero from '@/components/partners-alliances/PartnersHero';
+import PartnersContent from '@/components/company/partners-alliances/features/PartnersContent';
+import PartnersHero from '@/components/company/partners-alliances/hero/PartnersHero';
 
 export const metadata: Metadata = {
   title: 'Partners & Alliances',

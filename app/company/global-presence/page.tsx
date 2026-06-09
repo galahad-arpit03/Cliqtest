@@ -1,7 +1,7 @@
 import React from 'react';
 import type { Metadata } from 'next';
-import GlobalContent from '@/components/global-presence/GlobalContent';
-import GlobalHero from '@/components/global-presence/GlobalHero';
+import GlobalContent from '@/components/company/global-presence/features/GlobalContent';
+import GlobalHero from '@/components/company/global-presence/hero/GlobalHero';
 
 export const metadata: Metadata = {
   title: 'Global Presence',

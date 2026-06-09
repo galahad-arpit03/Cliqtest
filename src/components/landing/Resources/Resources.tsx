@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 
 const resourcesData = [
@@ -10,21 +11,24 @@ const resourcesData = [
     title: "The Ultimate Guide to Agentic QA",
     desc: "Discover how AI agents are transforming test automation, from self-healing scripts to autonomous generation.",
     img: "/images/2.png",
-    color: "#00F2B0"
+    color: "#00F2B0",
+    link: "/blogs/ultimate-guide-agentic-qa"
   },
   {
     category: "Case Study",
     title: "Global FinTech Cuts QA Time by 80%",
     desc: "Learn how a leading financial institution integrated cliQTest to achieve seamless continuous delivery.",
     img: "/images/enterprise.png",
-    color: "#6843B7"
+    color: "#6843B7",
+    link: "/blogs/global-fintech-cuts-qa-time"
   },
   {
     category: "Blog Post",
     title: "Scaling Test Infrastructure in 2026",
     desc: "Best practices for managing parallel execution across thousands of devices and dynamic environments.",
     img: "/images/env.png",
-    color: "#FF6F61"
+    color: "#FF6F61",
+    link: "/blogs/scaling-test-infrastructure-2026"
   }
 ];
 
@@ -57,56 +61,61 @@ export default function Resources() {
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <a href="https://docs.cliqtest.com/" className="inline-flex items-center gap-2 px-6 py-3 rounded-sm bg-white/10 text-white font-medium hover:bg-white/20 transition-colors border border-white/10">
-              View All Resources
+            <Link href="/blogs"  className="inline-flex items-center gap-2 px-6 py-3 rounded-sm bg-white/10 text-white font-medium hover:bg-white/20 transition-colors border border-white/10">
+              View All Blogs
               <span className="text-lg">→</span>
-            </a>
+            </Link>
           </motion.div>
         </div>
 
         {/* Resource Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {resourcesData.map((resource, idx) => (
-            <motion.div
-              key={idx}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: idx * 0.15 }}
-              className="group flex flex-col bg-[#0A0A0A] border border-white/10 rounded-md overflow-hidden hover:border-white/20 transition-colors"
-            >
-              <div className="relative w-full h-[240px] bg-black overflow-hidden border-b border-white/5">
-                <Image
-                  src={resource.img}
-                  alt={resource.title}
-                  fill
-                  className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out opacity-80 group-hover:opacity-100"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-transparent to-transparent opacity-90" />
-                
-                {/* Badge */}
-                <div 
-                  className="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-semibold tracking-wide backdrop-blur-md"
-                  style={{ backgroundColor: `${resource.color}20`, color: resource.color, border: `1px solid ${resource.color}40` }}
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: idx * 0.15 }}
+              >
+                <Link 
+                  href={resource.link || '/blogs'} 
+                  className="group flex flex-col h-full bg-[#0A0A0A] border border-white/10 rounded-md overflow-hidden hover:border-[#6843B7]/50 hover:shadow-[0_0_30px_rgba(104,67,183,0.4)] transition-all duration-500 cursor-pointer"
                 >
-                  {resource.category}
-                </div>
-              </div>
-              
-              <div className="p-8 flex flex-col flex-1">
-                <h3 className="text-xl font-semibold text-white mb-4 leading-snug group-hover:text-[#6843B7] transition-colors duration-300">
-                  {resource.title}
-                </h3>
-                <p className="text-zinc-400 text-sm leading-relaxed mb-8 flex-1">
-                  {resource.desc}
-                </p>
-                <div className="inline-flex items-center gap-2 text-[#6843B7] font-medium text-sm group-hover:text-white transition-colors mt-auto">
-                  Read Article
-                  <span className="group-hover:translate-x-1 transition-transform">→</span>
-                </div>
-              </div>
-            </motion.div>
+                  <div className="relative w-full h-[240px] bg-black overflow-hidden border-b border-white/5">
+                    <Image
+                      src={resource.img}
+                      alt={resource.title}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-all duration-700 ease-out opacity-80 group-hover:opacity-100"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-transparent to-transparent opacity-90" />
+                    
+                    {/* Badge */}
+                    <div 
+                      className="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-semibold tracking-wide backdrop-blur-md"
+                      style={{ backgroundColor: `${resource.color}20`, color: resource.color, border: `1px solid ${resource.color}40` }}
+                    >
+                      {resource.category}
+                    </div>
+                  </div>
+                  
+                  <div className="p-8 flex flex-col flex-1">
+                    <h3 className="text-xl font-semibold text-white mb-4 leading-snug group-hover:text-[#6843B7] transition-colors duration-300">
+                      {resource.title}
+                    </h3>
+                    <p className="text-zinc-400 text-sm leading-relaxed mb-8 flex-1">
+                      {resource.desc}
+                    </p>
+                    <div className="inline-flex items-center gap-2 text-[#6843B7] font-medium text-sm group-hover:text-white transition-colors mt-auto">
+                      Read Article
+                      <span className="group-hover:translate-x-1 transition-transform">→</span>
+                    </div>
+                  </div>
+                </Link>
+              </motion.div>
+            
           ))}
         </div>
 

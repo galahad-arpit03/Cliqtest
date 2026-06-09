@@ -1,7 +1,8 @@
 import React from 'react';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
-import ByTeam from '@/components/solutions/ByTeam';
+import ByTeamHero from '@/components/solutions/by-team/hero/ByTeamHero';
+import ByTeamFeatures from '@/components/solutions/by-team/features/ByTeamFeatures';
 
 export const metadata = {
   title: 'Solutions by Team | cliQTest',
@@ -11,7 +12,8 @@ export const metadata = {
 export default function ByTeamPage() {
   return (
     <div className="min-h-screen bg-[#050505] selection:bg-[#00F2B0]/30 selection:text-white">
-      <ByTeam />
+      <ByTeamHero />
+      <ByTeamFeatures />
     </div>
   );
 }

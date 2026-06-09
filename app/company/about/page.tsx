@@ -1,11 +1,11 @@
 import React from 'react';
 import type { Metadata } from 'next';
-import AboutHero from '@/components/about/AboutHero/AboutHero';
+import AboutHero from '@/components/company/about/AboutHero/AboutHero';
 import Logos from "@/components/landing/Logos/Logos";
-import AboutPlatform from '@/components/about/AboutPlatform/AboutPlatform';
-import HowItWorks from '@/components/about/HowItWorks/HowItWorks';
-import KeyBenefits from '@/components/about/KeyBenefits/KeyBenefits';
-import MissionVision from '@/components/about/MissionVision/MissionVision';
+import AboutPlatform from '@/components/company/about/AboutPlatform/AboutPlatform';
+import HowItWorks from '@/components/company/about/HowItWorks/HowItWorks';
+import KeyBenefits from '@/components/company/about/KeyBenefits/KeyBenefits';
+import MissionVision from '@/components/company/about/MissionVision/MissionVision';
 
 export const metadata: Metadata = {
   title: 'About Us',

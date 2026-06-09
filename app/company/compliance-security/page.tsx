@@ -1,7 +1,7 @@
 import React from 'react';
 import type { Metadata } from 'next';
-import ComplianceContent from '@/components/compliance-security/ComplianceContent';
-import ComplianceHero from '@/components/compliance-security/ComplianceHero';
+import ComplianceContent from '@/components/company/compliance-security/features/ComplianceContent';
+import ComplianceHero from '@/components/company/compliance-security/hero/ComplianceHero';
 
 export const metadata: Metadata = {
   title: 'Compliance & Security',

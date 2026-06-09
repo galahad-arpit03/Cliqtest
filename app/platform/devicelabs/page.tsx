@@ -1,6 +1,6 @@
 import React from 'react';
-import DeviceLabHero from '@/components/devicelabs/DeviceLabHero';
-import DeviceLabFeatures from '@/components/devicelabs/DeviceLabFeatures';
+import DeviceLabHero from '@/components/platform/devicelabs/hero/DeviceLabHero';
+import DeviceLabFeatures from '@/components/platform/devicelabs/features/DeviceLabFeatures';
 
 export const metadata = {
   title: "Device Lab | cliQTest",

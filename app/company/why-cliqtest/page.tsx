@@ -1,7 +1,7 @@
 import React from 'react';
 import type { Metadata } from 'next';
-import WhyCliqtestContent from '@/components/why-cliqtest/WhyCliqtestContent';
-import WhyCliqtestHero from '@/components/why-cliqtest/WhyCliqtestHero';
+import WhyCliqtestContent from '@/components/company/why-cliqtest/features/WhyCliqtestContent';
+import WhyCliqtestHero from '@/components/company/why-cliqtest/hero/WhyCliqtestHero';
 
 export const metadata: Metadata = {
   title: 'Why cliQTest?',

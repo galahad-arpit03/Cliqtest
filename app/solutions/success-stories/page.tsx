@@ -1,4 +1,5 @@
-import SuccessStories from "@/components/solutions/SuccessStories";
+import SuccessStoriesHero from '@/components/solutions/success-stories/hero/SuccessStoriesHero';
+import SuccessStoriesFeatures from '@/components/solutions/success-stories/features/SuccessStoriesFeatures';
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -7,5 +8,10 @@ export const metadata: Metadata = {
 };
 
 export default function SuccessStoriesPage() {
-  return <SuccessStories />;
+  return (
+    <div className="bg-[#050505]">
+      <SuccessStoriesHero />
+      <SuccessStoriesFeatures />
+    </div>
+  );
 }

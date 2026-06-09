@@ -1,6 +1,6 @@
 import React from 'react';
-import AnalyticsHero from '@/components/analytics/AnalyticsHero';
-import AnalyticsFeatures from '@/components/analytics/AnalyticsFeatures';
+import AnalyticsHero from '@/components/platform/analytics/hero/AnalyticsHero';
+import AnalyticsFeatures from '@/components/platform/analytics/features/AnalyticsFeatures';
 
 export const metadata = {
   title: "Analytics & Reporting | cliQTest",

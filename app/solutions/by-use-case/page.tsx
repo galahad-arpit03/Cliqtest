@@ -1,5 +1,6 @@
 import React from 'react';
-import ByUseCase from '@/components/solutions/ByUseCase';
+import ByUseCaseHero from '@/components/solutions/by-use-case/hero/ByUseCaseHero';
+import ByUseCaseFeatures from '@/components/solutions/by-use-case/features/ByUseCaseFeatures';
 
 export const metadata = {
   title: 'Solutions by Use Case | cliQTest',
@@ -9,7 +10,8 @@ export const metadata = {
 export default function ByUseCasePage() {
   return (
     <div className="min-h-screen bg-[#050505] selection:bg-[#00F2B0]/30 selection:text-white">
-      <ByUseCase />
+      <ByUseCaseHero />
+      <ByUseCaseFeatures />
     </div>
   );
 }
