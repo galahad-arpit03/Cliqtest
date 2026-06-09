@@ -20,7 +20,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/platform/devicelabs',
     '/platform/ai-capabilities',
     '/platform/nocode',
-    '/platform/overview',
     '/solutions/by-use-case',
     '/solutions/by-team',
     '/solutions/success-stories',

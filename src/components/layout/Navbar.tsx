@@ -4,6 +4,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import {
   ChevronDown,
   ChevronRight,
@@ -40,13 +41,6 @@ export const menuItems = [
     dropdownType: "tabbed",
     content: {
       tabs: [
-        // {
-        //   id: "overview",
-        //   label: "Platform Overview",
-        //   title: "Intelligent Testing Infrastructure",
-        //   description: "cliQTest is an innovative platform designed to unify your testing ecosystem. Whether you’re working on websites, mobile apps, or APIs, cliQTest provides a robust, AI-powered environment to conduct automated testing with absolute precision.",
-        //   icon: Globe
-        // },
         {
           id: "test-management",
           label: "Test Management",
@@ -319,16 +313,15 @@ export const menuItems = [
     title: "Blogs",
     href: "/blogs"
   }
-  // {
-  //   title: "Pricing",
-  //   href: "/pricing"
-  // },
 ];
 
 export default function Navbar() {
+  const pathname = usePathname();
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
-  const [activeTab, setActiveTab] = useState("overview");
+  const [activeTab, setActiveTab] = useState("test-management");
   const [showMoreFeatures, setShowMoreFeatures] = useState(false);
+  const hideTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [expandedItem, setExpandedItem] = useState<string | null>(null);

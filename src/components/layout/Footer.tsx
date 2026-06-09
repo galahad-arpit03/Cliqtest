@@ -4,8 +4,10 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import { usePathname } from 'next/navigation';
 
 export default function Footer() {
+  const pathname = usePathname();
   return (
     <footer className="w-full bg-black py-8 px-8 border-t border-white/5">
       <div className="max-w-[1400px] mx-auto flex flex-col xl:flex-row justify-between items-center gap-8">
