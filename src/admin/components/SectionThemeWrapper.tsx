@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { useContentStore } from "@/admin/store/adminStore";
+import { useContentStore, useLandingModeStore } from "@/admin/store/adminStore";
 
 interface SectionThemeWrapperProps {
   sectionId: string;
@@ -23,13 +23,16 @@ export default function SectionThemeWrapper({
   }, []);
 
   // Subscribe to dynamic themes dictionary inside the content store
-  const theme = useContentStore((state) => state.content.sectionThemes?.[sectionId]) || defaultTheme;
+  const storeTheme = useContentStore((state) => state.content.sectionThemes?.[sectionId]) || defaultTheme;
   const isVisible = useContentStore((state) => state.content.sectionVisibilities?.[sectionId] ?? true);
   const updateField = useContentStore((state) => state.updateField);
   const toggleSectionVisibility = useContentStore((state) => state.toggleSectionVisibility);
 
   // Check admin mode based on routing namespace
   const isAdmin = typeof window !== "undefined" && window.location.pathname.startsWith("/administrator");
+
+  const { landingThemeMode } = useLandingModeStore();
+  const theme = (!isAdmin && sectionId !== "hero" && landingThemeMode === "light") ? "light" : storeTheme;
 
   const toggleTheme = () => {
     const nextTheme = theme === "dark" ? "light" : "dark";

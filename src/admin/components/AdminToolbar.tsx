@@ -4,7 +4,7 @@ import React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
-import { useContentStore, useToastStore, useAdminUIStore } from "@/admin/store/adminStore";
+import { useContentStore, useToastStore, useAdminUIStore, useThemeStore } from "@/admin/store/adminStore";
 
 interface AdminToolbarProps {
   onLogout: () => void;
@@ -25,11 +25,13 @@ const pageLinks = [
 export default function AdminToolbar({ onLogout }: AdminToolbarProps) {
   const pathname = usePathname();
   const { isDirty, markSaved } = useContentStore();
+  const { markThemeSaved } = useThemeStore();
   const { addToast } = useToastStore();
   const { deviceMode, setDeviceMode, sidebarCollapsed, toggleSidebar } = useAdminUIStore();
 
   const handleSave = () => {
     markSaved();
+    markThemeSaved();
     addToast("Changes saved successfully!", "success");
   };
 

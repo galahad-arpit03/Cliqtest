@@ -56,7 +56,7 @@ export default function Logos({ theme = "dark" }: { theme?: "dark" | "light" }) 
                   src={item.src}
                   alt={item.name}
                   fill
-                  className={`object-contain grayscale transition-opacity duration-500 ${isLight ? 'opacity-90' : 'opacity-70'}`}
+                  className={`object-contain grayscale hover:grayscale-0 transition-all duration-300 ${isLight ? 'opacity-90 hover:opacity-100' : 'opacity-70 hover:opacity-100'}`}
                 />
               </div>
               <span className={`font medium text-base md:text-lg tracking-tight transition-colors duration-500 ${isLight ? 'text-black' : 'text-white'}`}>

@@ -49,14 +49,24 @@ export default function MeetAgents({ theme = "dark" }: { theme?: "dark" | "light
         <div className="relative flex items-center justify-center mx-auto w-64 h-64 md:w-80 md:h-80 lg:w-[500px] lg:h-[500px] z-0">
           <div className="relative w-full h-full">
             <div className="w-full h-full relative">
-              <video
-                src="/videos/b.mp4"
-                autoPlay
-                loop
-                muted
-                playsInline
-                className={`w-full h-full object-contain transition-opacity duration-500 ${isLight ? 'opacity-80' : 'opacity-100'}`}
-              />
+              {isLight ? (
+                <Image
+                  src="/videos/b.png"
+                  alt="Agentic QA Core"
+                  fill
+                  className="object-contain transition-opacity duration-500 opacity-90"
+                  unoptimized
+                />
+              ) : (
+                <video
+                  src="/videos/b.mp4"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="w-full h-full object-contain transition-opacity duration-500 opacity-100"
+                />
+              )}
             </div>
           </div>
           <motion.span 

@@ -94,13 +94,13 @@ export default function Platform({ theme = "dark" }: { theme?: "dark" | "light" 
           
           <div className="w-full h-full relative group">
             <Image
-              src="/images/bn1.png"
+              src={isLight ? "/images/bn12.png" : "/images/bn1.png"}
               alt="cliQTest Platform Monitor"
               fill
-              className="object-contain mix-blend-screen group-hover:scale-105 transition-transform duration-700 ease-out"
+              className={`object-contain group-hover:scale-105 transition-transform duration-700 ease-out ${isLight ? "" : "mix-blend-screen"}`}
               sizes="(max-width: 768px) 100vw, 50vw"
               priority
-          unoptimized
+              unoptimized
             />
           </div>
         </motion.div>

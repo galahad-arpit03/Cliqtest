@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { useLandingModeStore } from "@/admin/store/adminStore";
 import {
   ChevronDown,
   ChevronRight,
@@ -16,7 +17,9 @@ import {
   Globe,
   Database,
   Cpu,
-  ShieldCheck
+  ShieldCheck,
+  Sun,
+  Moon
 } from 'lucide-react';
 
 interface Feature {
@@ -322,6 +325,13 @@ export default function Navbar() {
     return null;
   }
 
+  const { landingThemeMode, toggleLandingThemeMode } = useLandingModeStore();
+  const [mounted, setMounted] = useState(false);
+  
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const [activeTab, setActiveTab] = useState("test-management");
   const [showMoreFeatures, setShowMoreFeatures] = useState(false);
@@ -548,6 +558,21 @@ export default function Navbar() {
 
           {/* Right: Action Buttons & Mobile Toggle */}
           <div className="flex-1 flex justify-end items-center gap-4">
+            {pathname === "/" && (
+              <button
+                onClick={toggleLandingThemeMode}
+                className="p-3 bg-white/5 hover:bg-white/10 text-white rounded-sm transition-all duration-300 active:scale-95 flex items-center justify-center border border-white/10"
+                aria-label="Toggle Landing Theme"
+                title="Toggle Landing Theme (Light/Dark)"
+              >
+                {!mounted || landingThemeMode === "dark" ? (
+                  <Sun size={18} className="text-white hover:text-amber-400 transition-colors" />
+                ) : (
+                  <Moon size={18} className="text-white hover:text-purple-400 transition-colors" />
+                )}
+              </button>
+            )}
+
             <Link href="/book-a-demo" className="hidden sm:block">
               <button className="px-8 py-3 bg-[#6843B7] text-white text-[14px] font medium rounded-sm hover:bg-[#6843B7] transition-all shadow-[0_10px_30px_rgba(104,67,183,0.3)] hover:scale-105 active:scale-95">
                 Book a Demo

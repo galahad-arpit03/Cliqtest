@@ -1201,8 +1201,23 @@ export const useContentStore = create<ContentState>()(
           isDirty: true,
         })),
       resetContent: () => set({ content: defaultContent, isDirty: false }),
-      markSaved: () =>
-        set({ isDirty: false, savedAt: new Date().toISOString() }),
+      markSaved: () => set((state) => {
+        if (typeof window !== "undefined") {
+          // Manually construct the persisted state object to bypass any persist debouncing/lag
+          const publishedData = {
+            state: {
+              content: state.content,
+              isDirty: false,
+              savedAt: new Date().toISOString()
+            },
+            version: 4
+          };
+          localStorage.setItem("admin-content-published", JSON.stringify(publishedData));
+          // Dispatch a custom event so the global StorageSync listener catches it
+          window.dispatchEvent(new StorageEvent('storage', { key: 'admin-content-published' }));
+        }
+        return { isDirty: false, savedAt: new Date().toISOString() };
+      }),
       addCareerPerk: () =>
         set((state) => {
           const currentItems = state.content.careers.growth.items || [];
@@ -1692,6 +1707,31 @@ export const useContentStore = create<ContentState>()(
     {
       name: "admin-content",
       version: 4,
+      storage: {
+        getItem: (name) => {
+          if (typeof window === "undefined") return null;
+          const isAdmin = window.location.pathname.startsWith("/administrator");
+          if (!isAdmin) {
+            // Main UI only sees published (saved) changes
+            return localStorage.getItem(name + "-published") || localStorage.getItem(name);
+          }
+          // Admin Panel sees the current draft
+          return localStorage.getItem(name);
+        },
+        setItem: (name, value) => {
+          if (typeof window === "undefined") return;
+          const isAdmin = window.location.pathname.startsWith("/administrator");
+          if (isAdmin) {
+            // Only admin can write to the draft store
+            localStorage.setItem(name, value);
+          }
+        },
+        removeItem: (name) => {
+          if (typeof window !== "undefined") {
+            localStorage.removeItem(name);
+          }
+        },
+      },
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       migrate: (persistedState: any, version: number) => {
         if (version <= 3) {
@@ -1748,6 +1788,7 @@ interface ThemeState {
   updateColor: (key: keyof ColorTheme, value: string) => void;
   applyPreset: (preset: string) => void;
   resetTheme: () => void;
+  markThemeSaved: () => void;
 }
 
 export const themePresets: Record<string, ColorTheme> = {
@@ -1794,8 +1835,46 @@ export const useThemeStore = create<ThemeState>()(
           activePreset: preset,
         }),
       resetTheme: () => set({ theme: defaultTheme, activePreset: "default" }),
+      markThemeSaved: () => set((state) => {
+        if (typeof window !== "undefined") {
+          const publishedData = {
+            state: {
+              theme: state.theme,
+              activePreset: state.activePreset,
+            },
+            version: 0
+          };
+          localStorage.setItem("admin-theme-published", JSON.stringify(publishedData));
+          window.dispatchEvent(new StorageEvent('storage', { key: 'admin-theme-published' }));
+        }
+        return {};
+      }),
     }),
-    { name: "admin-theme" },
+    { 
+      name: "admin-theme",
+      storage: {
+        getItem: (name) => {
+          if (typeof window === "undefined") return null;
+          const isAdmin = window.location.pathname.startsWith("/administrator");
+          if (!isAdmin) {
+            return localStorage.getItem(name + "-published") || localStorage.getItem(name);
+          }
+          return localStorage.getItem(name);
+        },
+        setItem: (name, value) => {
+          if (typeof window === "undefined") return;
+          const isAdmin = window.location.pathname.startsWith("/administrator");
+          if (isAdmin) {
+            localStorage.setItem(name, value);
+          }
+        },
+        removeItem: (name) => {
+          if (typeof window !== "undefined") {
+            localStorage.removeItem(name);
+          }
+        },
+      },
+    },
   ),
 );
 
@@ -1941,3 +2020,24 @@ export const useAdminUIStore = create<UIState>((set) => ({
   toggleSidebar: () =>
     set((state) => ({ sidebarCollapsed: !state.sidebarCollapsed })),
 }));
+
+// ─── Landing Mode Store ────────────────────────────────────────────────────────
+interface LandingModeState {
+  landingThemeMode: "dark" | "light";
+  setLandingThemeMode: (mode: "dark" | "light") => void;
+  toggleLandingThemeMode: () => void;
+}
+
+export const useLandingModeStore = create<LandingModeState>()(
+  persist(
+    (set) => ({
+      landingThemeMode: "dark",
+      setLandingThemeMode: (mode) => set({ landingThemeMode: mode }),
+      toggleLandingThemeMode: () =>
+        set((state) => ({
+          landingThemeMode: state.landingThemeMode === "dark" ? "light" : "dark",
+        })),
+    }),
+    { name: "landing-theme-mode" }
+  )
+);

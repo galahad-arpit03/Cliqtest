@@ -59,7 +59,7 @@ export default function CustomerMarquee({ theme = "dark" }: { theme?: "dark" | "
                   src={item.logo} 
                   alt={item.name} 
                   fill
-                  className="object-contain grayscale opacity-70" 
+                  className="object-contain grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-all duration-300" 
                   sizes="(max-width: 768px) 100px, 150px"
                 />
               </li>

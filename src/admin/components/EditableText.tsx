@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useRef, useEffect } from "react";
-import { useContentStore, useAuthStore } from "@/admin/store/adminStore";
+import { useContentStore, useAuthStore, defaultContent } from "@/admin/store/adminStore";
 import { usePathname } from "next/navigation";
 
 interface EditableTextProps {
@@ -50,13 +50,18 @@ export default function EditableText({
   const [localValue, setLocalValue] = useState(value);
   const inputRef = useRef<HTMLInputElement | HTMLTextAreaElement>(null);
 
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   // Keep in sync when store updates externally
   useEffect(() => {
-    if (!editing) {
+    if (!editing && mounted) {
       // eslint-disable-next-line
       setLocalValue(value);
     }
-  }, [value, editing]);
+  }, [value, editing, mounted]);
 
   const startEdit = (e: React.MouseEvent) => {
     e.stopPropagation();
@@ -89,11 +94,21 @@ export default function EditableText({
     }
   }, [editing]);
 
+  const defaultValue = getNestedValue(defaultContent as unknown as Record<string, unknown>, path) ?? fallback;
+
   // If not in edit mode route, render completely static text matching original styling
   if (!isEditRoute) {
     return (
       <Tag className={className} style={style}>
-        {localValue || fallback}
+        {!mounted ? defaultValue : (localValue || defaultValue)}
+      </Tag>
+    );
+  }
+
+  if (!mounted) {
+    return (
+      <Tag className={className} style={style}>
+        {defaultValue}
       </Tag>
     );
   }
