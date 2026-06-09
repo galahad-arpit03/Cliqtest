@@ -35,7 +35,7 @@ export default function AboutHero() {
     <section
       id="our-story"
       ref={containerRef}
-      className="relative min-h-[85vh] md:min-h-screen flex-col justify-center overflow-hidden"
+      className="relative min-h-[85vh] md:min-h-screen flex flex-col justify-center overflow-hidden"
     >
       <motion.div style={{ y, opacity }} className="absolute inset-0 w-full h-full z-0">
         <Image
@@ -52,7 +52,7 @@ export default function AboutHero() {
       <div className="absolute z-0 bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#050505] to-transparent pointer-events-none" />
 
       {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto w-full px-8 pt-32 pb-20">
+      <div className="relative z-10 max-w-7xl mx-auto w-full px-8 pt-48 pb-20">
         
         <motion.div 
           initial={{ opacity: 0, x: -30 }}
