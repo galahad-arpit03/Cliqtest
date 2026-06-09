@@ -8,6 +8,11 @@ import { usePathname } from 'next/navigation';
 
 export default function Footer() {
   const pathname = usePathname();
+
+  if (pathname?.startsWith('/administrator')) {
+    return null;
+  }
+
   return (
     <footer className="w-full bg-black py-8 px-8 border-t border-white/5">
       <div className="max-w-[1400px] mx-auto flex flex-col xl:flex-row justify-between items-center gap-8">

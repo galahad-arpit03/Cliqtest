@@ -13,12 +13,13 @@ const integrations = [
   { name: "VS Code", src: "/logos/vscode.png" }
 ];
 
-export default function Logos() {
+export default function Logos({ theme = "dark" }: { theme?: "dark" | "light" }) {
   // Duplicate 4 times to ensure it fills even ultrawide screens
   const duplicatedIntegrations = [...integrations, ...integrations, ...integrations, ...integrations];
+  const isLight = theme === "light";
 
   return (
-    <section className="w-full py-12 md:py-16 bg-black border-y border-white/5 overflow-hidden">
+    <section className={`w-full py-12 md:py-16 border-y overflow-hidden transition-colors duration-500 ${isLight ? 'bg-white border-black/5' : 'bg-black border-white/5'}`}>
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -26,15 +27,15 @@ export default function Logos() {
         transition={{ duration: 0.8 }}
         className="max-w-7xl mx-auto px-8 mb-10 text-center"
       >
-        <h2 className="text-sm md:text-base font medium text-white tracking-[0.2em] uppercase">
+        <h2 className={`text-sm md:text-base font medium tracking-[0.2em] uppercase transition-colors duration-500 ${isLight ? 'text-black' : 'text-white'}`}>
           Seamless Collaboration via Integration
         </h2>
       </motion.div>
 
       <div className="relative w-full flex overflow-hidden group">
         {/* Fade gradients for edges */}
-        <div className="absolute top-0 left-0 w-24 md:w-48 h-full bg-gradient-to-r from-black to-transparent z-10 pointer-events-none" />
-        <div className="absolute top-0 right-0 w-24 md:w-48 h-full bg-gradient-to-l from-black to-transparent z-10 pointer-events-none" />
+        <div className={`absolute top-0 left-0 w-24 md:w-48 h-full bg-gradient-to-r z-10 pointer-events-none transition-colors duration-500 ${isLight ? 'from-white to-transparent' : 'from-black to-transparent'}`} />
+        <div className={`absolute top-0 right-0 w-24 md:w-48 h-full bg-gradient-to-l z-10 pointer-events-none transition-colors duration-500 ${isLight ? 'from-white to-transparent' : 'from-black to-transparent'}`} />
 
         <motion.div
           className="flex whitespace-nowrap items-center w-max"
@@ -55,10 +56,10 @@ export default function Logos() {
                   src={item.src}
                   alt={item.name}
                   fill
-                  className="object-contain grayscale opacity-70"
+                  className={`object-contain grayscale transition-opacity duration-500 ${isLight ? 'opacity-90' : 'opacity-70'}`}
                 />
               </div>
-              <span className="text-white font medium text-base md:text-lg tracking-tight">
+              <span className={`font medium text-base md:text-lg tracking-tight transition-colors duration-500 ${isLight ? 'text-black' : 'text-white'}`}>
                 {item.name}
               </span>
             </div>

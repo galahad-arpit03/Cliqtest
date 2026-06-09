@@ -3,12 +3,17 @@
 import React from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import { useContentStore } from '@/admin/store/adminStore';
+import EditableText from '@/admin/components/EditableText';
 
-export default function Platform() {
+export default function Platform({ theme = "dark" }: { theme?: "dark" | "light" }) {
+  const content = useContentStore((state) => state.content);
+  const isLight = theme === "light";
+
   return (
-    <section className="w-full px-4 md:px-8 py-24 relative overflow-hidden bg-[#030303] flex items-center justify-center">
+    <section className={`w-full px-4 md:px-8 py-24 relative overflow-hidden flex items-center justify-center transition-colors duration-500 ${isLight ? 'bg-[#FAFAFA]' : 'bg-[#030303]'}`}>
       {/* Dynamic Background Beams */}
-      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none opacity-40 z-0">
+      <div className={`absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none z-0 transition-opacity duration-500 ${isLight ? 'opacity-20' : 'opacity-40'}`}>
         <motion.div 
           animate={{ x: ['-100%', '100%'] }}
           transition={{ repeat: Infinity, duration: 15, ease: "linear" }}
@@ -43,30 +48,36 @@ export default function Platform() {
             <span className="text-xs font-medium text-white/70 uppercase tracking-widest">Platform Overview</span>
           </div>
            */}
-          <h2 className="text-4xl md:text-5xl font-semibold text-white mb-8 tracking-tight leading-[1.2]">
-            The <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6843B7] to-[#8f81eb]">cliQTest</span> <br />
-            Agentic Platform
+          <h2 className={`text-4xl md:text-5xl font-semibold mb-8 tracking-tight leading-[1.2] transition-colors duration-500 ${isLight ? 'text-black' : 'text-white'}`}>
+            <EditableText path="home.platform.headingPrefix" fallback="The" as="span" />{" "}
+            <EditableText 
+              path="home.platform.headingHighlight" 
+              fallback="cliQTest" 
+              as="span" 
+              className="text-transparent bg-clip-text bg-gradient-to-r from-[#6843B7] to-[#8f81eb]" 
+            />{" "}
+            <br />
+            <EditableText path="home.platform.headingSuffix" fallback="Agentic Platform" as="span" />
           </h2>
           
           <div className="space-y-6">
-            <p className="text-zinc-400 text-lg md:text-xl leading-relaxed font-light">
-              cliQTest is the first <span className="text-white font-semibold">AI-native testing platform </span> powered by specialized agents that think, adapt, and act. 
+            <p className={`text-lg md:text-xl leading-relaxed font-light transition-colors duration-500 ${isLight ? 'text-zinc-700' : 'text-zinc-400'}`}>
+              <EditableText path="home.platform.body1" fallback="cliQTest is the first AI-native testing platform powered by specialized agents that think, adapt, and act." multiline />
             </p>
-            <p className="text-zinc-400 text-lg md:text-xl leading-relaxed font-light">
-              These aren&apos;t scripts or plug-ins, they are intelligent systems built to <span className="text-[#6843B7]">eliminate the grind</span> of test creation and maintenance, 
-              so engineering teams can finally move at the speed of innovation.
+            <p className={`text-lg md:text-xl leading-relaxed font-light transition-colors duration-500 ${isLight ? 'text-zinc-700' : 'text-zinc-400'}`}>
+              <EditableText path="home.platform.body2" fallback="These aren't scripts or plug-ins, they are intelligent systems built to eliminate the grind of test creation and maintenance, so engineering teams can finally move at the speed of innovation." multiline />
             </p>
           </div>
           
           <div className="mt-12 flex items-center gap-6">
             <div className="flex flex-col">
-              <span className="text-white font-bold text-3xl">10x</span>
-              <span className="text-zinc-500 text-sm uppercase tracking-wider mt-1">Faster Testing</span>
+              <span className={`font-bold text-3xl transition-colors duration-500 ${isLight ? 'text-black' : 'text-white'}`}><EditableText path="home.platform.stat1Value" fallback="10x" as="span" /></span>
+              <span className={`text-sm uppercase tracking-wider mt-1 transition-colors duration-500 ${isLight ? 'text-zinc-600' : 'text-zinc-500'}`}><EditableText path="home.platform.stat1Label" fallback="Faster Testing" as="span" /></span>
             </div>
-            <div className="w-px h-12 bg-white/10" />
+            <div className={`w-px h-12 transition-colors duration-500 ${isLight ? 'bg-black/10' : 'bg-white/10'}`} />
             <div className="flex flex-col">
-              <span className="text-white font-bold text-3xl">0</span>
-              <span className="text-zinc-500 text-sm uppercase tracking-wider mt-1">Maintenance</span>
+              <span className={`font-bold text-3xl transition-colors duration-500 ${isLight ? 'text-black' : 'text-white'}`}><EditableText path="home.platform.stat2Value" fallback="0" as="span" /></span>
+              <span className={`text-sm uppercase tracking-wider mt-1 transition-colors duration-500 ${isLight ? 'text-zinc-600' : 'text-zinc-500'}`}><EditableText path="home.platform.stat2Label" fallback="Maintenance" as="span" /></span>
             </div>
           </div>
         </motion.div>

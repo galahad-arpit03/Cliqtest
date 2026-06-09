@@ -32,9 +32,11 @@ const resourcesData = [
   }
 ];
 
-export default function Resources() {
+export default function Resources({ theme = "dark" }: { theme?: "dark" | "light" }) {
+  const isLight = theme === "light";
+
   return (
-    <section className="w-full bg-[#030303] py-24 overflow-hidden relative">
+    <section className={`w-full py-24 overflow-hidden relative transition-colors duration-500 ${isLight ? 'bg-[#FAFAFA]' : 'bg-[#030303]'}`}>
       {/* Background Decor */}
       {/* <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#6843B7]/5 blur-[120px] rounded-full pointer-events-none z-0" />
       <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#00F2B0]/5 blur-[120px] rounded-full pointer-events-none z-0" /> */}
@@ -50,7 +52,7 @@ export default function Resources() {
             transition={{ duration: 0.8 }}
           >
            
-            <h2 className="text-4xl md:text-5xl font-semibold text-white tracking-tight leading-[1.1]">
+            <h2 className={`text-4xl md:text-5xl font-semibold tracking-tight leading-[1.1] transition-colors duration-500 ${isLight ? 'text-black' : 'text-white'}`}>
               Latest Insights & <br className="hidden md:block" />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6843B7] to-[#8f81eb]">Knowledge Base</span>
             </h2>
@@ -61,7 +63,7 @@ export default function Resources() {
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <Link href="/blogs"  className="inline-flex items-center gap-2 px-6 py-3 rounded-sm bg-white/10 text-white font-medium hover:bg-white/20 transition-colors border border-white/10">
+            <Link href="/blogs"  className={`inline-flex items-center gap-2 px-6 py-3 rounded-sm font-medium transition-colors border ${isLight ? 'bg-black/5 text-black hover:bg-black/10 border-black/10' : 'bg-white/10 text-white hover:bg-white/20 border-white/10'}`}>
               View All Blogs
               <span className="text-lg">→</span>
             </Link>
@@ -80,9 +82,9 @@ export default function Resources() {
               >
                 <Link 
                   href={resource.link || '/blogs'} 
-                  className="group flex flex-col h-full bg-[#0A0A0A] border border-white/10 rounded-md overflow-hidden hover:border-[#6843B7]/50 hover:shadow-[0_0_30px_rgba(104,67,183,0.4)] transition-all duration-500 cursor-pointer"
+                  className={`group flex flex-col h-full border rounded-md overflow-hidden transition-all duration-500 cursor-pointer ${isLight ? 'bg-white border-black/10 hover:border-[#6843B7]/50 shadow-sm hover:shadow-[0_0_30px_rgba(104,67,183,0.15)]' : 'bg-[#0A0A0A] border-white/10 hover:border-[#6843B7]/50 hover:shadow-[0_0_30px_rgba(104,67,183,0.4)]'}`}
                 >
-                  <div className="relative w-full h-[240px] bg-black overflow-hidden border-b border-white/5">
+                  <div className={`relative w-full h-[240px] overflow-hidden border-b transition-colors duration-500 ${isLight ? 'bg-zinc-100 border-black/5' : 'bg-black border-white/5'}`}>
                     <Image
                       src={resource.img}
                       alt={resource.title}
@@ -90,7 +92,7 @@ export default function Resources() {
                       className="object-cover group-hover:scale-105 transition-all duration-700 ease-out opacity-80 group-hover:opacity-100"
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-transparent to-transparent opacity-90" />
+                    <div className={`absolute inset-0 bg-gradient-to-t opacity-90 transition-colors duration-500 ${isLight ? 'from-white via-transparent to-transparent' : 'from-[#0A0A0A] via-transparent to-transparent'}`} />
                     
                     {/* Badge */}
                     <div 
@@ -102,13 +104,13 @@ export default function Resources() {
                   </div>
                   
                   <div className="p-8 flex flex-col flex-1">
-                    <h3 className="text-xl font-semibold text-white mb-4 leading-snug group-hover:text-[#6843B7] transition-colors duration-300">
+                    <h3 className={`text-xl font-semibold mb-4 leading-snug transition-colors duration-300 ${isLight ? 'text-black group-hover:text-[#6843B7]' : 'text-white group-hover:text-[#6843B7]'}`}>
                       {resource.title}
                     </h3>
-                    <p className="text-zinc-400 text-sm leading-relaxed mb-8 flex-1">
+                    <p className={`text-sm leading-relaxed mb-8 flex-1 transition-colors duration-500 ${isLight ? 'text-zinc-600' : 'text-zinc-400'}`}>
                       {resource.desc}
                     </p>
-                    <div className="inline-flex items-center gap-2 text-[#6843B7] font-medium text-sm group-hover:text-white transition-colors mt-auto">
+                    <div className={`inline-flex items-center gap-2 font-medium text-sm transition-colors mt-auto ${isLight ? 'text-[#6843B7] group-hover:text-black' : 'text-[#6843B7] group-hover:text-white'}`}>
                       Read Article
                       <span className="group-hover:translate-x-1 transition-transform">→</span>
                     </div>

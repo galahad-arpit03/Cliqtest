@@ -317,6 +317,11 @@ export const menuItems = [
 
 export default function Navbar() {
   const pathname = usePathname();
+
+  if (pathname?.startsWith('/administrator')) {
+    return null;
+  }
+
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const [activeTab, setActiveTab] = useState("test-management");
   const [showMoreFeatures, setShowMoreFeatures] = useState(false);
