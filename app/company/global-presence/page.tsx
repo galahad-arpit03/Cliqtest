@@ -1,4 +1,5 @@
 import React from 'react';
+import PageThemeMenu from '@/components/common/PageThemeMenu';
 import type { Metadata } from 'next';
 import GlobalContent from '@/components/company/global-presence/features/GlobalContent';
 import GlobalHero from '@/components/company/global-presence/hero/GlobalHero';
@@ -10,9 +11,11 @@ export const metadata: Metadata = {
 
 export default function GlobalPage() {
   return (
-    <main className="bg-[#050505] min-h-screen pb-20">
-      <GlobalHero />
-      <GlobalContent />
-    </main>
+    <PageThemeMenu 
+      sections={[
+        <GlobalHero key="GlobalHero" />,
+        <GlobalContent key="GlobalContent" />
+      ]}
+    />
   );
 }

@@ -15,6 +15,12 @@ const features = [
       "Execution history & evidence attachments",
       "Reusable and version-controlled validation units",
       "Seamless collaboration across teams"
+    ],
+    stats: [
+      { value: "100k+", label: "Executions" },
+      { value: "99.9%", label: "Reliability" },
+      { value: "10x", label: "Faster" },
+      { value: "24/7", label: "Monitoring" }
     ]
   },
   {
@@ -31,6 +37,12 @@ const features = [
       "Smoke, regression & sanity organization",
       "Scalable execution orchestration",
       "Alignment with release objectives"
+    ],
+    stats: [
+      { value: "100k+", label: "Executions" },
+      { value: "99.9%", label: "Reliability" },
+      { value: "10x", label: "Faster" },
+      { value: "24/7", label: "Monitoring" }
     ]
   },
   {
@@ -47,6 +59,12 @@ const features = [
       "Resource allocation and scheduling",
       "Unified planning for manual & automated workflows",
       "Predictable delivery outcomes"
+    ],
+    stats: [
+      { value: "100k+", label: "Executions" },
+      { value: "99.9%", label: "Reliability" },
+      { value: "10x", label: "Faster" },
+      { value: "24/7", label: "Monitoring" }
     ]
   },
   {
@@ -63,6 +81,12 @@ const features = [
       "Systematic execution and defect association",
       "Data-driven release decisions",
       "Audit readiness and compliance"
+    ],
+    stats: [
+      { value: "100k+", label: "Executions" },
+      { value: "99.9%", label: "Reliability" },
+      { value: "10x", label: "Faster" },
+      { value: "24/7", label: "Monitoring" }
     ]
   },
   {
@@ -79,6 +103,12 @@ const features = [
       "Context-aware data aligned with business rules",
       "Eliminates dependency on production data",
       "Bulk dataset generation"
+    ],
+    stats: [
+      { value: "100k+", label: "Executions" },
+      { value: "99.9%", label: "Reliability" },
+      { value: "10x", label: "Faster" },
+      { value: "24/7", label: "Monitoring" }
     ]
   },
   {
@@ -95,6 +125,12 @@ const features = [
       "Local and server-level execution reporting",
       "Detailed step-level visibility and tree-view analysis",
       "Downloadable reports in multiple formats"
+    ],
+    stats: [
+      { value: "100k+", label: "Executions" },
+      { value: "99.9%", label: "Reliability" },
+      { value: "10x", label: "Faster" },
+      { value: "24/7", label: "Monitoring" }
     ]
   },
   {
@@ -111,6 +147,12 @@ const features = [
       "Centralized logs across executions & environments",
       "Detailed execution diagnostics and timestamps",
       "Reduced troubleshooting effort"
+    ],
+    stats: [
+      { value: "100k+", label: "Executions" },
+      { value: "99.9%", label: "Reliability" },
+      { value: "10x", label: "Faster" },
+      { value: "24/7", label: "Monitoring" }
     ]
   },
   {
@@ -127,6 +169,12 @@ const features = [
       "Detailed expected outcomes & defect tracking",
       "Centralized framework for scenarios",
       "Collaborative review processes"
+    ],
+    stats: [
+      { value: "100k+", label: "Executions" },
+      { value: "99.9%", label: "Reliability" },
+      { value: "10x", label: "Faster" },
+      { value: "24/7", label: "Monitoring" }
     ]
   },
   {
@@ -143,6 +191,12 @@ const features = [
       "Automatic capture of context and screenshots",
       "Real-time creation and duplicate prevention",
       "External ticketing system integration"
+    ],
+    stats: [
+      { value: "100k+", label: "Executions" },
+      { value: "99.9%", label: "Reliability" },
+      { value: "10x", label: "Faster" },
+      { value: "24/7", label: "Monitoring" }
     ]
   }
 ];

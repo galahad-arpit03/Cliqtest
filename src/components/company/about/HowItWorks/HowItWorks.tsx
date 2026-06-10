@@ -21,7 +21,7 @@ export default function HowItWorks() {
   };
 
   return (
-    <section className="bg-[#050505] pt-8 pb-24">
+    <section className="bg-app-bg pt-8 pb-24">
       <div className="max-w-7xl mx-auto px-8">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
@@ -31,7 +31,7 @@ export default function HowItWorks() {
           className="text-center mb-20"
         >
           <span className="text-[#6843B7] text-sm font-semibold uppercase tracking-[0.3em] mb-4 block">Workflow</span>
-          <h2 className="text-white text-4xl md:text-5xl font-bold tracking-tight mb-4">
+          <h2 className="text-app-fg text-4xl md:text-5xl font-bold tracking-tight mb-4">
             How <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6843B7] to-[#8f81eb]">cliQTest</span> Works
           </h2>
         </motion.div>
@@ -44,21 +44,21 @@ export default function HowItWorks() {
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 relative"
         >
           {/* Connecting line (Desktop) */}
-          <div className="hidden lg:block absolute top-[28px] left-[10%] right-[10%] h-[1px] bg-white/10 z-0" />
+          <div className="hidden lg:block absolute top-[28px] left-[10%] right-[10%] h-[1px] bg-app-fg/10 z-0" />
 
           {steps.map((step, i) => (
             <motion.div variants={itemVariants} key={i} className="relative z-10 flex flex-col items-center text-center group">
               {/* Number Box */}
-              <div className="w-14 h-14 rounded-md bg-[#0A0A0A] border border-white/10 flex items-center justify-center text-white font-bold text-lg mb-8 group-hover:border-[#6843B7]/50 group-hover:bg-[#6843B7]/10 transition-all duration-300">
+              <div className="w-14 h-14 rounded-md bg-app-surface border border-app-border flex items-center justify-center text-app-fg font-bold text-lg mb-8 group-hover:border-[#6843B7]/50 group-hover:bg-[#6843B7]/10 transition-all duration-300">
                 {step.number}
               </div>
 
               {/* Content Card (Dark Theme) */}
-              <div className="bg-[#0A0A0A] rounded-md p-6 border border-white/10 hover:border-[#6843B7]/30 hover:bg-white/[0.02] transition-all duration-300 flex-1 flex flex-col w-full shadow-lg">
-                <h3 className="text-white text-base font-semibold mb-3 leading-tight group-hover:text-[#6843B7] transition-colors">
+              <div className="bg-app-surface rounded-md p-6 border border-app-border hover:border-[#6843B7]/30 hover:bg-app-fg/[0.02] transition-all duration-300 flex-1 flex flex-col w-full shadow-lg">
+                <h3 className="text-app-fg text-base font-semibold mb-3 leading-tight group-hover:text-[#6843B7] transition-colors">
                   {step.title}
                 </h3>
-                <p className="text-white/60 text-[13px] leading-relaxed">
+                <p className="text-app-fg/60 text-[13px] leading-relaxed">
                   {step.description}
                 </p>
               </div>

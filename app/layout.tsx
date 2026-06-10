@@ -5,8 +5,6 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import LoadingScreen from "@/components/layout/LoadingScreen";
 import DynamicBeams from "@/components/common/DynamicBeams";
-import StorageSync from "@/admin/components/StorageSync";
-import ThemeApplicator from "@/admin/components/ThemeApplicator";
 
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-space-grotesk",
@@ -101,9 +99,7 @@ export default function RootLayout({
       lang="en"
       className={`${spaceGrotesk.variable} ${alata.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-[#030303] overflow-x-clip" suppressHydrationWarning>
-        <StorageSync />
-        <ThemeApplicator />
+      <body className="min-h-full flex flex-col bg-app-bg overflow-x-clip" suppressHydrationWarning>
         <LoadingScreen>
           <Navbar />
           <main className="flex-1 flex flex-col">

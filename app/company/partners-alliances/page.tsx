@@ -1,4 +1,5 @@
 import React from 'react';
+import PageThemeMenu from '@/components/common/PageThemeMenu';
 import type { Metadata } from 'next';
 import PartnersContent from '@/components/company/partners-alliances/features/PartnersContent';
 import PartnersHero from '@/components/company/partners-alliances/hero/PartnersHero';
@@ -10,9 +11,11 @@ export const metadata: Metadata = {
 
 export default function PartnersPage() {
   return (
-    <main className="bg-[#050505] min-h-screen pb-20">
-      <PartnersHero />
-      <PartnersContent />
-    </main>
+    <PageThemeMenu 
+      sections={[
+        <PartnersHero key="PartnersHero" />,
+        <PartnersContent key="PartnersContent" />
+      ]}
+    />
   );
 }

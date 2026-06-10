@@ -19,13 +19,13 @@ export default function CsrContent() {
             className="flex flex-col lg:flex-row gap-8 lg:gap-12"
           >
             <div className="lg:w-1/3">
-              <h2 className="text-3xl font-bold text-white mb-6 lg:sticky lg:top-32">
+              <h2 className="text-3xl font-bold text-app-fg mb-6 lg:sticky lg:top-32">
                 {item.title}
               </h2>
             </div>
             <div className="lg:w-2/3 space-y-4">
               {item.descriptions.map((desc, i) => (
-                <p key={i} className="text-white/60 text-base leading-relaxed">
+                <p key={i} className="text-app-fg/60 text-base leading-relaxed">
                   {desc}
                 </p>
               ))}

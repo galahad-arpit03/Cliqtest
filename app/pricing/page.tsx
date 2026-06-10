@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function PricingPage() {
   return (
-    <main className="bg-black pt-16">
+    <main className="bg-app-bg pt-16">
       <PricingGrid />
     </main>
   );

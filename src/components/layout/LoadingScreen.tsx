@@ -26,7 +26,7 @@ export default function LoadingScreen({ children }: { children: React.ReactNode 
               opacity: 0,
               transition: { duration: 0.8, ease: "easeInOut" }
             }}
-            className="fixed inset-0 z-[1000] bg-black flex items-center justify-center"
+            className="fixed inset-0 z-[1000] bg-app-bg flex items-center justify-center"
           >
             <motion.div 
               initial={{ scale: 0.8, opacity: 0 }}

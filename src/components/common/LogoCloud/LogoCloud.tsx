@@ -18,7 +18,7 @@ export default function LogoCloud() {
   ];
 
   return (
-    <section className="bg-white py-16 px-12 lg:px-24 border-y border-zinc-100">
+    <section className="bg-app-fg py-16 px-12 lg:px-24 border-y border-zinc-100">
       <div className="max-w-7xl mx-auto">
         <h3 className="text-zinc-900 text-center text-xl md:text-2xl font medium mb-12 tracking-tight">
           Trusted by the World&apos;s Boldest Engineering Teams

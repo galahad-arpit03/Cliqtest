@@ -13,13 +13,12 @@ const integrations = [
   { name: "VS Code", src: "/logos/vscode.png" }
 ];
 
-export default function Logos({ theme = "dark" }: { theme?: "dark" | "light" }) {
+export default function Logos({ isLight }: { isLight?: boolean }) {
   // Duplicate 4 times to ensure it fills even ultrawide screens
   const duplicatedIntegrations = [...integrations, ...integrations, ...integrations, ...integrations];
-  const isLight = theme === "light";
 
   return (
-    <section className={`w-full py-12 md:py-16 border-y overflow-hidden transition-colors duration-500 ${isLight ? 'bg-white border-black/5' : 'bg-black border-white/5'}`}>
+    <section className={`w-full py-12 md:py-16 border-y overflow-hidden transition-colors duration-500 ${isLight ? 'bg-app-fg border-app-bg/5' : 'bg-app-bg border-app-border'}`}>
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -27,15 +26,15 @@ export default function Logos({ theme = "dark" }: { theme?: "dark" | "light" }) 
         transition={{ duration: 0.8 }}
         className="max-w-7xl mx-auto px-8 mb-10 text-center"
       >
-        <h2 className={`text-sm md:text-base font medium tracking-[0.2em] uppercase transition-colors duration-500 ${isLight ? 'text-black' : 'text-white'}`}>
+        <h2 className={`text-sm md:text-base font medium tracking-[0.2em] uppercase transition-colors duration-500 ${isLight ? 'text-app-fg-invert/80' : 'text-app-fg'}`}>
           Seamless Collaboration via Integration
         </h2>
       </motion.div>
 
       <div className="relative w-full flex overflow-hidden group">
         {/* Fade gradients for edges */}
-        <div className={`absolute top-0 left-0 w-24 md:w-48 h-full bg-gradient-to-r z-10 pointer-events-none transition-colors duration-500 ${isLight ? 'from-white to-transparent' : 'from-black to-transparent'}`} />
-        <div className={`absolute top-0 right-0 w-24 md:w-48 h-full bg-gradient-to-l z-10 pointer-events-none transition-colors duration-500 ${isLight ? 'from-white to-transparent' : 'from-black to-transparent'}`} />
+        <div className={`absolute top-0 left-0 w-24 md:w-48 h-full bg-gradient-to-r z-10 pointer-events-none transition-colors duration-500 ${isLight ? 'from-white to-transparent' : 'from-app-bg to-transparent'}`} />
+        <div className={`absolute top-0 right-0 w-24 md:w-48 h-full bg-gradient-to-l z-10 pointer-events-none transition-colors duration-500 ${isLight ? 'from-white to-transparent' : 'from-app-bg to-transparent'}`} />
 
         <motion.div
           className="flex whitespace-nowrap items-center w-max"
@@ -56,10 +55,10 @@ export default function Logos({ theme = "dark" }: { theme?: "dark" | "light" }) 
                   src={item.src}
                   alt={item.name}
                   fill
-                  className={`object-contain grayscale hover:grayscale-0 transition-all duration-300 ${isLight ? 'opacity-90 hover:opacity-100' : 'opacity-70 hover:opacity-100'}`}
+                  className={`object-contain grayscale opacity-70 transition-all duration-300 ${isLight ? 'invert' : ''}`}
                 />
               </div>
-              <span className={`font medium text-base md:text-lg tracking-tight transition-colors duration-500 ${isLight ? 'text-black' : 'text-white'}`}>
+              <span className={`font medium text-base md:text-lg tracking-tight transition-colors duration-300 ${isLight ? 'text-app-fg-invert' : 'text-app-fg'}`}>
                 {item.name}
               </span>
             </div>

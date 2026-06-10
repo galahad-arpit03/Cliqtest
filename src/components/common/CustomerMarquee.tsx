@@ -16,13 +16,12 @@ const customers = [
   // { name: "FDC", logo: "/clients/fdc.jpeg" },
 ];
 
-export default function CustomerMarquee({ theme = "dark" }: { theme?: "dark" | "light" }) {
+export default function CustomerMarquee({ isLight }: { isLight?: boolean }) {
   // Duplicate enough times to ensure it fills even ultrawide screens
   const duplicatedCustomers = [...customers, ...customers, ...customers, ...customers];
-  const isLight = theme === "light";
 
   return (
-    <section className={`w-full py-12 md:py-16 border-y overflow-hidden transition-colors duration-500 ${isLight ? 'bg-[#FAFAFA] border-black/5' : 'bg-[#000000] border-white/5'}`} aria-label="Trusted customer logos">
+    <section className={`w-full py-12 md:py-16 border-y overflow-hidden transition-colors duration-500 ${isLight ? 'bg-[#FAFAFA] border-app-bg/5' : 'bg-[#000000] border-app-border'}`} aria-label="Trusted customer logos">
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -30,7 +29,7 @@ export default function CustomerMarquee({ theme = "dark" }: { theme?: "dark" | "
         transition={{ duration: 0.8 }}
         className="max-w-7xl mx-auto px-8 mb-10 text-center"
       >
-        <h2 className={`text-sm md:text-base font-medium tracking-[0.2em] uppercase transition-colors duration-500 ${isLight ? 'text-black/50' : 'text-white/50'}`}>
+        <h2 className={`text-sm md:text-base font-medium tracking-[0.2em] uppercase transition-colors duration-500 ${isLight ? 'text-app-fg-invert/50' : 'text-app-fg/50'}`}>
           Trusted By Industry Leaders
         </h2>
       </motion.div>
@@ -59,7 +58,7 @@ export default function CustomerMarquee({ theme = "dark" }: { theme?: "dark" | "
                   src={item.logo} 
                   alt={item.name} 
                   fill
-                  className="object-contain grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-all duration-300" 
+                  className={`object-contain transition-all duration-300 opacity-70 hover:opacity-100 grayscale hover:grayscale-0 ${isLight ? 'invert' : ''}`}
                   sizes="(max-width: 768px) 100px, 150px"
                 />
               </li>

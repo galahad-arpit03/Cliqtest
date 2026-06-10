@@ -28,7 +28,7 @@ export default function AboutPlatform() {
   };
 
   return (
-    <section className="bg-[#050505] py-24 md:py-32 relative overflow-hidden">
+    <section className="bg-app-bg py-24 md:py-32 relative overflow-hidden">
       {/* Background Gradients */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none z-0">
         <div className="absolute top-[20%] left-[-10%] w-[50%] h-[50%] bg-[#6843B7]/10 blur-[150px] rounded-full" />
@@ -44,7 +44,7 @@ export default function AboutPlatform() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-white text-4xl md:text-5xl font-bold tracking-tight mb-4 leading-[1.1]">
+            <h2 className="text-app-fg text-4xl md:text-5xl font-bold tracking-tight mb-4 leading-[1.1]">
               cliQTest <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6843B7] to-[#8f81eb]">Core Features</span>
             </h2>
           </motion.div>
@@ -61,14 +61,14 @@ export default function AboutPlatform() {
             className="relative max-w-[480px] mx-auto lg:mx-0 w-full"
           >
             {/* Big Image */}
-            <div className="w-full aspect-square rounded-md overflow-hidden relative shadow-2xl bg-[#0A0A0A] border border-white/10">
+            <div className="w-full aspect-square rounded-md overflow-hidden relative shadow-2xl bg-app-surface border border-app-border">
               <Image
                 src="/images/brain.png"
                 alt="cliQTest Platform Overview"
                 fill
                 className="object-cover object-center opacity-80"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/20 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-app-bg via-app-bg/20 to-transparent" />
             </div>
  
             {/* Floating Info Card */}
@@ -77,12 +77,12 @@ export default function AboutPlatform() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.4, duration: 0.6 }}
-              className="relative md:absolute md:bottom-[-20px] md:right-[-20px] mt-6 md:mt-0 w-full md:w-[300px] bg-[#0A0A0A] rounded-md p-6 shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-white/10 z-10"
+              className="relative md:absolute md:bottom-[-20px] md:right-[-20px] mt-6 md:mt-0 w-full md:w-[300px] bg-app-surface rounded-md p-6 shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-app-border z-10"
             >
-              <h3 className="text-lg font-semibold text-white mb-2 leading-snug">
+              <h3 className="text-lg font-semibold text-app-fg mb-2 leading-snug">
                 No-Code Automation Engine
               </h3>
-              <p className="text-white/60 text-[13px] mb-5 leading-relaxed">
+              <p className="text-app-fg/60 text-[13px] mb-5 leading-relaxed">
                 Create, execute, and manage test cases without writing a single line of code.
               </p>
               <ul className="space-y-2.5 mb-5">
@@ -90,7 +90,7 @@ export default function AboutPlatform() {
                   "Intuitive drag-and-drop interface for faster test creation.",
                   "Supports reusable test components for streamlined processes."
                 ].map((li, i) => (
-                  <li key={i} className="flex gap-2 text-[13px] text-white/80 font-medium leading-relaxed">
+                  <li key={i} className="flex gap-2 text-[13px] text-app-fg/80 font-medium leading-relaxed">
                     <span className="text-[#6843B7] mt-0.5">•</span>
                     {li}
                   </li>
@@ -115,10 +115,10 @@ export default function AboutPlatform() {
                 key={idx}
                 variants={itemVariants}
                 whileHover={{ x: 5, backgroundColor: "rgba(104,67,183,0.05)", borderColor: "rgba(104,67,183,0.3)" }}
-                className="bg-[#0A0A0A] rounded-md border border-white/10 shadow-xl transition-all duration-300 flex flex-col sm:flex-row gap-5 items-center p-5 group cursor-pointer"
+                className="bg-app-surface rounded-md border border-app-border shadow-xl transition-all duration-300 flex flex-col sm:flex-row gap-5 items-center p-5 group cursor-pointer"
               >
                 {/* Thumbnail */}
-                <div className="shrink-0 w-full sm:w-[110px] h-[120px] sm:h-[90px] rounded-sm overflow-hidden bg-[#050505] relative">
+                <div className="shrink-0 w-full sm:w-[110px] h-[120px] sm:h-[90px] rounded-sm overflow-hidden bg-app-bg relative">
                   <Image
                     src={card.img}
                     alt={card.title}
@@ -129,10 +129,10 @@ export default function AboutPlatform() {
 
                 {/* Text */}
                 <div className="flex-1 flex flex-col justify-center">
-                  <h4 className="text-base font-semibold text-white mb-1.5 leading-snug group-hover:text-[#6843B7] transition-colors">
+                  <h4 className="text-base font-semibold text-app-fg mb-1.5 leading-snug group-hover:text-[#6843B7] transition-colors">
                     {card.title}
                   </h4>
-                  <p className="text-white/60 text-[13px] leading-relaxed line-clamp-2 mb-3">
+                  <p className="text-app-fg/60 text-[13px] leading-relaxed line-clamp-2 mb-3">
                     {card.description}
                   </p>
  <button className="flex items-center gap-1.5 text-[#6843B7] text-[11px] uppercase tracking-widest hover:gap-2.5 transition-all w-fit">

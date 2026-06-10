@@ -3,17 +3,22 @@
 import React from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { useContentStore } from '@/admin/store/adminStore';
-import EditableText from '@/admin/components/EditableText';
 
-export default function Platform({ theme = "dark" }: { theme?: "dark" | "light" }) {
-  const content = useContentStore((state) => state.content);
-  const isLight = theme === "light";
+const stats = [
+  { value: '10x', label: 'Faster Testing' },
+  { value: '0', label: 'Maintenance' },
+];
 
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+};
+
+export default function Platform({ isLight }: { isLight?: boolean }) {
   return (
-    <section className={`w-full px-4 md:px-8 py-24 relative overflow-hidden flex items-center justify-center transition-colors duration-500 ${isLight ? 'bg-[#FAFAFA]' : 'bg-[#030303]'}`}>
+    <section className={`w-full px-4 md:px-8 py-24 relative overflow-hidden transition-colors duration-500 ${isLight ? 'bg-app-fg' : 'bg-app-bg'} flex items-center justify-center`}>
       {/* Dynamic Background Beams */}
-      <div className={`absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none z-0 transition-opacity duration-500 ${isLight ? 'opacity-20' : 'opacity-40'}`}>
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none opacity-40 z-0">
         <motion.div 
           animate={{ x: ['-100%', '100%'] }}
           transition={{ repeat: Infinity, duration: 15, ease: "linear" }}
@@ -38,48 +43,37 @@ export default function Platform({ theme = "dark" }: { theme?: "dark" | "light" 
 
       <div className="w-full max-w-7xl mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         <motion.div
-          initial={{ opacity: 0, x: -40 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          initial="hidden"
+          whileInView="visible"
           viewport={{ once: true }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          variants={{ visible: { transition: { staggerChildren: 0.2 } } }}
         >
-          {/* <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 mb-8">
-            <span className="w-2 h-2 rounded-full bg-[#00F2B0] animate-pulse" />
-            <span className="text-xs font-medium text-white/70 uppercase tracking-widest">Platform Overview</span>
-          </div>
-           */}
-          <h2 className={`text-4xl md:text-5xl font-semibold mb-8 tracking-tight leading-[1.2] transition-colors duration-500 ${isLight ? 'text-black' : 'text-white'}`}>
-            <EditableText path="home.platform.headingPrefix" fallback="The" as="span" />{" "}
-            <EditableText 
-              path="home.platform.headingHighlight" 
-              fallback="cliQTest" 
-              as="span" 
-              className="text-transparent bg-clip-text bg-gradient-to-r from-[#6843B7] to-[#8f81eb]" 
-            />{" "}
-            <br />
-            <EditableText path="home.platform.headingSuffix" fallback="Agentic Platform" as="span" />
-          </h2>
+          <motion.h2 variants={itemVariants} className={`text-4xl md:text-5xl font-semibold tracking-tight leading-[1.2] mb-8 transition-colors duration-500 ${isLight ? 'text-app-fg-invert' : 'text-app-fg'}`}>
+            The <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6843B7] to-[#8f81eb]">cliQTest</span> <br />
+            Agentic Platform
+          </motion.h2>
           
-          <div className="space-y-6">
-            <p className={`text-lg md:text-xl leading-relaxed font-light transition-colors duration-500 ${isLight ? 'text-zinc-700' : 'text-zinc-400'}`}>
-              <EditableText path="home.platform.body1" fallback="cliQTest is the first AI-native testing platform powered by specialized agents that think, adapt, and act." multiline />
+          <motion.div variants={itemVariants} className="space-y-6">
+            <p className={`text-lg md:text-xl leading-relaxed font-light transition-colors duration-500 ${isLight ? 'text-app-fg-invert/70' : 'text-app-muted'}`}>
+              cliQTest is the first <span className={`font-semibold transition-colors duration-500 ${isLight ? 'text-app-fg-invert' : 'text-app-fg'}`}>AI-native testing platform </span> powered by specialized agents that think, adapt, and act. 
             </p>
-            <p className={`text-lg md:text-xl leading-relaxed font-light transition-colors duration-500 ${isLight ? 'text-zinc-700' : 'text-zinc-400'}`}>
-              <EditableText path="home.platform.body2" fallback="These aren't scripts or plug-ins, they are intelligent systems built to eliminate the grind of test creation and maintenance, so engineering teams can finally move at the speed of innovation." multiline />
+            <p className={`text-lg md:text-xl leading-relaxed font-light transition-colors duration-500 ${isLight ? 'text-app-fg-invert/70' : 'text-app-muted'}`}>
+              These aren&apos;t scripts or plug-ins, they are intelligent systems built to <span className="text-[#6843B7]">eliminate the grind</span> of test creation and maintenance, 
+              so engineering teams can finally move at the speed of innovation.
             </p>
-          </div>
+          </motion.div>
           
-          <div className="mt-12 flex items-center gap-6">
-            <div className="flex flex-col">
-              <span className={`font-bold text-3xl transition-colors duration-500 ${isLight ? 'text-black' : 'text-white'}`}><EditableText path="home.platform.stat1Value" fallback="10x" as="span" /></span>
-              <span className={`text-sm uppercase tracking-wider mt-1 transition-colors duration-500 ${isLight ? 'text-zinc-600' : 'text-zinc-500'}`}><EditableText path="home.platform.stat1Label" fallback="Faster Testing" as="span" /></span>
-            </div>
-            <div className={`w-px h-12 transition-colors duration-500 ${isLight ? 'bg-black/10' : 'bg-white/10'}`} />
-            <div className="flex flex-col">
-              <span className={`font-bold text-3xl transition-colors duration-500 ${isLight ? 'text-black' : 'text-white'}`}><EditableText path="home.platform.stat2Value" fallback="0" as="span" /></span>
-              <span className={`text-sm uppercase tracking-wider mt-1 transition-colors duration-500 ${isLight ? 'text-zinc-600' : 'text-zinc-500'}`}><EditableText path="home.platform.stat2Label" fallback="Maintenance" as="span" /></span>
-            </div>
-          </div>
+          <motion.div variants={itemVariants} className="mt-12 flex items-center gap-6">
+            {stats.map((stat, i) => (
+              <React.Fragment key={i}>
+                <div className="flex flex-col">
+                  <span className={`font-bold text-3xl transition-colors duration-500 ${isLight ? 'text-app-fg-invert' : 'text-app-fg'}`}>{stat.value}</span>
+                  <span className="text-app-muted text-sm uppercase tracking-wider mt-1">{stat.label}</span>
+                </div>
+                {i < stats.length - 1 && <div className="w-px h-12 bg-zinc-500/20" />}
+              </React.Fragment>
+            ))}
+          </motion.div>
         </motion.div>
 
         <motion.div 
@@ -89,15 +83,12 @@ export default function Platform({ theme = "dark" }: { theme?: "dark" | "light" 
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
           className="relative w-full aspect-video md:aspect-[4/3] lg:aspect-[4/3] max-h-[600px] flex items-center justify-center" 
         >
-          {/* Decorative Glow */}
-          {/* <div className="absolute inset-0 bg-gradient-to-tr from-[#6843B7]/30 to-[#00F2B0]/20 blur-[100px] rounded-full mix-blend-screen pointer-events-none" /> */}
-          
           <div className="w-full h-full relative group">
             <Image
               src={isLight ? "/images/bn12.png" : "/images/bn1.png"}
               alt="cliQTest Platform Monitor"
               fill
-              className={`object-contain group-hover:scale-105 transition-transform duration-700 ease-out ${isLight ? "" : "mix-blend-screen"}`}
+              className={`object-contain transition-transform duration-700 ease-out group-hover:scale-105 ${isLight ? 'mix-blend-multiply' : 'mix-blend-screen'}`}
               sizes="(max-width: 768px) 100vw, 50vw"
               priority
               unoptimized

@@ -111,7 +111,13 @@ const features = [
     benefits: ["Optimization suggestions", "Coverage gap identification", "Proactive quality coaching"], 
     icon: Lightbulb,
     span: "col-span-1 md:col-span-1 lg:col-span-1",
-    desc: "cliQTest utilizes AI-driven recommendation engines to continuously optimize testing strategies, automation coverage, and execution efficiency. By analyzing historical execution behavior, defect trends, environment performance, and test stability, the platform provides intelligent recommendations for improving quality outcomes. The platform can suggest automation optimizations, coverage improvements, execution prioritization strategies, and maintenance actions that help organizations maximize testing effectiveness while reducing operational overhead. These intelligent recommendations enable teams to proactively improve quality engineering practices, accelerate delivery cycles, and maintain higher release confidence across enterprise environments." 
+    desc: "cliQTest utilizes AI-driven recommendation engines to continuously optimize testing strategies, automation coverage, and execution efficiency. By analyzing historical execution behavior, defect trends, environment performance, and test stability, the platform provides intelligent recommendations for improving quality outcomes. The platform can suggest automation optimizations, coverage improvements, execution prioritization strategies, and maintenance actions that help organizations maximize testing effectiveness while reducing operational overhead. These intelligent recommendations enable teams to proactively improve quality engineering practices, accelerate delivery cycles, and maintain higher release confidence across enterprise environments.",
+    stats: [
+      { value: "AI", label: "Powered" },
+      { value: "10x", label: "Faster" },
+      { value: "100%", label: "Automated" },
+      { value: "Zero", label: "Maintenance" }
+    ]
   }
 ];
 

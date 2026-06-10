@@ -18,6 +18,12 @@ const features = [
       "Unified cloud-based testing ecosystem",
       "Centralized real-device execution & live streaming",
       "OTP and SIM-based workflow handling"
+    ],
+    stats: [
+      { value: "500+", label: "Real Devices" },
+      { value: "Zero", label: "Latency" },
+      { value: "Global", label: "Availability" },
+      { value: "100%", label: "Secure" }
     ]
   },
   {
@@ -37,6 +43,12 @@ const features = [
       "Recorder-based script generation",
       "Reusable automation workflows",
       "Automated capture of user interactions"
+    ],
+    stats: [
+      { value: "500+", label: "Real Devices" },
+      { value: "Zero", label: "Latency" },
+      { value: "Global", label: "Availability" },
+      { value: "100%", label: "Secure" }
     ]
   },
   {
@@ -56,6 +68,12 @@ const features = [
       "Drastically reduced testing timelines",
       "Optimized resource utilization",
       "Scalable CI/CD pipeline integration"
+    ],
+    stats: [
+      { value: "500+", label: "Real Devices" },
+      { value: "Zero", label: "Latency" },
+      { value: "Global", label: "Availability" },
+      { value: "100%", label: "Secure" }
     ]
   },
   {
@@ -75,6 +93,12 @@ const features = [
       "Simulate geo-restricted workflows",
       "No physical device movement required",
       "Ideal for fintech, logistics, and e-commerce"
+    ],
+    stats: [
+      { value: "500+", label: "Real Devices" },
+      { value: "Zero", label: "Latency" },
+      { value: "Global", label: "Availability" },
+      { value: "100%", label: "Secure" }
     ]
   },
   {
@@ -94,6 +118,12 @@ const features = [
       "Live monitoring during execution",
       "Instant root cause identification",
       "Centralized observability & diagnostics"
+    ],
+    stats: [
+      { value: "500+", label: "Real Devices" },
+      { value: "Zero", label: "Latency" },
+      { value: "Global", label: "Availability" },
+      { value: "100%", label: "Secure" }
     ]
   },
   {
@@ -113,6 +143,12 @@ const features = [
       "Validate responsiveness under constrained networks",
       "Identify real-world performance bottlenecks",
       "Improve global reliability"
+    ],
+    stats: [
+      { value: "500+", label: "Real Devices" },
+      { value: "Zero", label: "Latency" },
+      { value: "Global", label: "Availability" },
+      { value: "100%", label: "Secure" }
     ]
   },
   {
@@ -132,6 +168,12 @@ const features = [
       "Monitor response times and app behavior",
       "Analyze crashes and resource bottlenecks",
       "Real-time profiling insights"
+    ],
+    stats: [
+      { value: "500+", label: "Real Devices" },
+      { value: "Zero", label: "Latency" },
+      { value: "Global", label: "Availability" },
+      { value: "100%", label: "Secure" }
     ]
   },
   {
@@ -151,6 +193,12 @@ const features = [
       "Parallel execution across multiple browsers",
       "Identify rendering inconsistencies instantly",
       "Detailed insights into browser-specific failures"
+    ],
+    stats: [
+      { value: "500+", label: "Real Devices" },
+      { value: "Zero", label: "Latency" },
+      { value: "Global", label: "Availability" },
+      { value: "100%", label: "Secure" }
     ]
   },
   {
@@ -171,6 +219,12 @@ const features = [
       "Standardized testing workflows and governance",
       "Eliminates fragmented testing tools",
       "Scalable, future-ready quality engineering"
+    ],
+    stats: [
+      { value: "500+", label: "Real Devices" },
+      { value: "Zero", label: "Latency" },
+      { value: "Global", label: "Availability" },
+      { value: "100%", label: "Secure" }
     ]
   }
 ];

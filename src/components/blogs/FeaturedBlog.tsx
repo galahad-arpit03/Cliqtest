@@ -5,23 +5,23 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { getFeaturedPosts, getRecentPosts, trendingTopics } from "@/data/blogs";
 
-export default function FeaturedBlog() {
+export default function FeaturedBlog({ isLight }: { isLight?: boolean }) {
   return (
-    <section className="bg-black py-12 px-4 md:px-8">
+    <section className={`py-12 px-4 md:px-8 transition-colors duration-500 ${isLight ? 'bg-app-fg' : 'bg-app-bg'}`}>
       <div className="max-w-7xl mx-auto">
 
         {/* Categories */}
-        <div className="flex flex-wrap gap-8 border-b border-white/10 pb-5 mb-12 text-sm">
-          <button className="text-white border-b-2 border-[#6843B7] pb-2">
+        <div className={`flex flex-wrap gap-8 border-b pb-5 mb-12 text-sm transition-colors duration-500 ${isLight ? 'border-app-border' : 'border-app-border'}`}>
+          <button className={`border-b-2 pb-2 transition-colors duration-500 ${isLight ? 'text-app-fg-invert border-[#6843B7]' : 'text-app-fg border-[#6843B7]'}`}>
             All Resources
           </button>
-          <button className="text-zinc-500 hover:text-white">
+          <button className="text-app-muted hover:text-app-fg">
             Whitepaper
           </button>
-          <button className="text-zinc-500 hover:text-white">
+          <button className="text-app-muted hover:text-app-fg">
             Case Study
           </button>
-          <button className="text-zinc-500 hover:text-white">
+          <button className="text-app-muted hover:text-app-fg">
             Blog Post
           </button>
         </div>
@@ -30,7 +30,7 @@ export default function FeaturedBlog() {
 
           {/* Left Side */}
           <div>
-            <h2 className="text-white text-3xl font-semibold mb-8 tracking-tight">
+            <h2 className={`text-3xl font-semibold mb-8 tracking-tight transition-colors duration-500 ${isLight ? 'text-app-fg-invert' : 'text-app-fg'}`}>
               Latest Intelligence
             </h2>
 
@@ -43,7 +43,7 @@ export default function FeaturedBlog() {
                   viewport={{ once: true }}
                   className="group"
                 >
-                  <div className="relative h-[260px] rounded-md overflow-hidden border border-white/10">
+                  <div className={`relative h-[260px] rounded-md overflow-hidden border transition-colors duration-500 ${isLight ? 'border-app-border' : 'border-app-border'}`}>
                     <Image
                       src={post.image}
                       alt={post.title}
@@ -58,16 +58,16 @@ export default function FeaturedBlog() {
                         {post.type}
                       </span>
 
-                      <span className="text-zinc-500 text-xs">
+                      <span className="text-app-muted text-xs">
                         {post.readTime}
                       </span>
                     </div>
 
-                    <h3 className="text-white text-2xl font-semibold mb-4">
+                    <h3 className={`text-2xl font-semibold mb-4 transition-colors duration-500 ${isLight ? 'text-app-fg-invert group-hover:text-[#6843B7]' : 'text-app-fg'}`}>
                       {post.title}
                     </h3>
 
-                    <p className="text-zinc-400 text-sm leading-relaxed">
+                    <p className={`text-sm leading-relaxed transition-colors duration-500 ${isLight ? 'text-app-fg-invert/60' : 'text-app-muted'}`}>
                       {post.excerpt}
                     </p>
                   </Link>
@@ -77,10 +77,10 @@ export default function FeaturedBlog() {
           </div>
 
           {/* Sidebar */}
-          <div className="border-l border-white/10 pl-8">
+          <div className={`border-l pl-8 transition-colors duration-500 ${isLight ? 'border-app-border' : 'border-app-border'}`}>
 
             <div className="mb-12">
-              <h3 className="text-white text-lg font-semibold mb-6 tracking-wide">
+              <h3 className={`text-lg font-semibold mb-6 tracking-wide transition-colors duration-500 ${isLight ? 'text-app-fg-invert' : 'text-app-fg'}`}>
                 TRENDING TOPICS
               </h3>
 
@@ -88,7 +88,7 @@ export default function FeaturedBlog() {
                 {trendingTopics.map((topic) => (
                   <span
                     key={topic}
-                    className="px-4 py-2 rounded-full bg-[#0A0A0A] border border-white/10 text-zinc-300 text-sm cursor-pointer"
+                    className="px-4 py-2 rounded-full border border-[#6843B7]/30 bg-[#6843B7]/5 text-[#6843B7] text-sm cursor-pointer hover:bg-[#6843B7]/10 transition-colors duration-300"
                   >
                     #{topic}
                   </span>
@@ -97,18 +97,18 @@ export default function FeaturedBlog() {
             </div>
 
             <div>
-              <h3 className="text-white text-lg font-semibold mb-6 tracking-wide">
+              <h3 className={`text-lg font-semibold mb-6 tracking-wide transition-colors duration-500 ${isLight ? 'text-app-fg-invert' : 'text-app-fg'}`}>
                 RECENTLY PUBLISHED
               </h3>
 
-              <div className="bg-[#0A0A0A] border border-white/10 rounded-md">
+              <div className={`border rounded-md transition-colors duration-500 ${isLight ? 'bg-app-surface border-app-border' : 'bg-app-surface border-app-border'}`}>
                 {getRecentPosts().map((post, index) => (
                   <Link
                     href={`/blogs/${post.slug}`}
                     key={index}
-                    className={`p-6 block hover:bg-[#111111] transition-colors ${
+                    className={`p-6 block transition-colors ${isLight ? 'hover:bg-app-bg/5' : 'hover:bg-app-surface-hover'} ${
                       index !== getRecentPosts().length - 1
-                        ? "border-b border-white/10"
+                        ? isLight ? "border-b border-app-border" : "border-b border-app-border"
                         : ""
                     }`}
                   >
@@ -116,7 +116,7 @@ export default function FeaturedBlog() {
                       {post.date}
                     </p>
 
-                    <h4 className="text-white font-medium leading-relaxed cursor-pointer">
+                    <h4 className={`font-medium leading-relaxed cursor-pointer transition-colors duration-500 ${isLight ? 'text-app-fg-invert hover:text-[#6843B7]' : 'text-app-fg hover:text-[#6843B7]'}`}>
                       {post.title}
                     </h4>
                   </Link>

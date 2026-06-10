@@ -65,7 +65,7 @@ export default function PricingGrid() {
   ];
 
   return (
-    <section className="bg-[#050505] py-24 px-8 relative overflow-hidden">
+    <section className="bg-app-bg py-24 px-8 relative overflow-hidden">
       {/* Background Decor */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none z-0">
         <div className="absolute top-[20%] right-[-10%] w-[50%] h-[50%] bg-[#6843B7]/10 blur-[150px] rounded-full" />
@@ -80,7 +80,7 @@ export default function PricingGrid() {
           className="text-center mb-16"
         >
           <span className="text-[#6843B7] text-sm font-semibold uppercase tracking-[0.3em] mb-4 block">Pricing Plans</span>
-          <h2 className="text-white text-4xl md:text-5xl font-bold tracking-tight mb-6 leading-[1.1]">
+          <h2 className="text-app-fg text-4xl md:text-5xl font-bold tracking-tight mb-6 leading-[1.1]">
             Scalable Solutions for <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6843B7] to-[#8f81eb]">Modern Teams</span>
           </h2>
           <div className="w-24 h-1.5 bg-[#6843B7] mx-auto rounded-full" />
@@ -96,35 +96,35 @@ export default function PricingGrid() {
               transition={{ delay: i * 0.1, duration: 0.6 }}
               className={`relative p-8 rounded-md transition-all duration-500 group flex flex-col h-full ${
                 tier.highlighted 
-                ? 'bg-[#0A0A0A] border-2 border-[#6843B7] shadow-[0_0_40px_rgba(104,67,183,0.15)]' 
-                : 'bg-[#0A0A0A] border border-white/10 hover:border-white/20 hover:bg-[#0C0C0C]'
+                ? 'bg-app-surface border-2 border-[#6843B7] shadow-[0_0_40px_rgba(104,67,183,0.15)]' 
+                : 'bg-app-surface border border-app-border hover:border-app-border-hover hover:bg-[#0C0C0C]'
               }`}
             >
               {tier.highlighted && (
-                <span className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-[#6843B7] text-white text-[10px] font-bold uppercase tracking-widest rounded-sm shadow-[0_0_15px_rgba(104,67,183,0.4)] whitespace-nowrap">
+                <span className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-[#6843B7] text-app-fg text-[10px] font-bold uppercase tracking-widest rounded-sm shadow-[0_0_15px_rgba(104,67,183,0.4)] whitespace-nowrap">
                   Most Popular
                 </span>
               )}
 
               <div className="mb-8">
-                <h3 className={`text-2xl font-bold mb-2 ${tier.highlighted ? 'text-transparent bg-clip-text bg-gradient-to-r from-[#6843B7] to-[#8f81eb]' : 'text-white'}`}>
+                <h3 className={`text-2xl font-bold mb-2 ${tier.highlighted ? 'text-transparent bg-clip-text bg-gradient-to-r from-[#6843B7] to-[#8f81eb]' : 'text-app-fg'}`}>
                   {tier.name}
                 </h3>
-                <p className="text-white/60 text-xs font-medium leading-relaxed min-h-[40px]">
+                <p className="text-app-fg/60 text-xs font-medium leading-relaxed min-h-[40px]">
                   {tier.tagline}
                 </p>
                 <div className="mt-6 flex items-baseline gap-1">
-                  <span className="text-3xl font-bold text-white">Contact Us</span>
+                  <span className="text-3xl font-bold text-app-fg">Contact Us</span>
                 </div>
               </div>
 
               <ul className="space-y-4 mb-10 flex-1">
                 {tier.features.map((feature, fIdx) => (
                   <li key={fIdx} className="flex gap-3 items-start group/feat">
-                    <div className={`mt-1 flex-shrink-0 w-4 h-4 rounded-sm flex items-center justify-center ${tier.highlighted ? 'bg-[#6843B7]/20' : 'bg-white/10'}`}>
-                      <Check size={10} className={tier.highlighted ? "text-[#6843B7]" : "text-white/70"} strokeWidth={3} />
+                    <div className={`mt-1 flex-shrink-0 w-4 h-4 rounded-sm flex items-center justify-center ${tier.highlighted ? 'bg-[#6843B7]/20' : 'bg-app-fg/10'}`}>
+                      <Check size={10} className={tier.highlighted ? "text-[#6843B7]" : "text-app-fg/70"} strokeWidth={3} />
                     </div>
-                    <span className="text-white/70 text-[13px] leading-snug group-hover/feat:text-white transition-colors">
+                    <span className="text-app-fg/70 text-[13px] leading-snug group-hover/feat:text-app-fg transition-colors">
                       {feature}
                     </span>
                   </li>
@@ -133,8 +133,8 @@ export default function PricingGrid() {
 
  <button className={`w-full py-3.5 rounded-sm text-[14px] transition-all ${
                 tier.highlighted 
-                ? 'bg-[#6843B7] text-white hover:bg-[#6843B7]/90 ' 
-                : 'bg-white/5 text-white hover:bg-white/10 border border-white/10'
+                ? 'bg-[#6843B7] text-app-fg hover:bg-[#6843B7]/90 ' 
+                : 'bg-app-fg/5 text-app-fg hover:bg-app-fg/10 border border-app-border'
               }`}>
                 Get Started
               </button>

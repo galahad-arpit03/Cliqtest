@@ -1,4 +1,5 @@
 import React from 'react';
+import PageThemeMenu from '@/components/common/PageThemeMenu';
 import type { Metadata } from 'next';
 import AboutHero from '@/components/company/about/AboutHero/AboutHero';
 import Logos from "@/components/landing/Logos/Logos";
@@ -15,13 +16,14 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <main className="bg-black">
-      <AboutHero />
-      {/* <AboutPlatform /> */}
-      <Logos />
-      <MissionVision />
-      <KeyBenefits />
-      <HowItWorks />
-    </main>
+    <PageThemeMenu 
+      sections={[
+        <AboutHero key="AboutHero" />,
+        <Logos key="Logos" />,
+        <MissionVision key="MissionVision" />,
+        <KeyBenefits key="KeyBenefits" />,
+        <HowItWorks key="HowItWorks" />
+      ]}
+    />
   );
 }

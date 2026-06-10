@@ -7,25 +7,25 @@ export const metadata = {
 
 export default function PrivacyPolicyPage() {
   return (
-    <main className="min-h-screen bg-[#050505] pt-32 md:pt-40 pb-20 px-6 md:px-12 lg:px-24">
+    <main className="min-h-screen bg-app-bg pt-32 md:pt-40 pb-20 px-6 md:px-12 lg:px-24">
       <div className="max-w-4xl mx-auto">
-        <header className="mb-16 border-b border-white/10 pb-12">
+        <header className="mb-16 border-b border-app-border pb-12">
           <span className="text-[#6843B7] text-sm font-semibold uppercase tracking-[0.3em] mb-6 block">Legal Documentation</span>
-          <h1 className="text-white text-4xl md:text-5xl font-bold tracking-tight mb-6 leading-[1.1]">
+          <h1 className="text-app-fg text-4xl md:text-5xl font-bold tracking-tight mb-6 leading-[1.1]">
             Privacy Notice
           </h1>
-          <div className="flex flex-wrap items-center gap-4 text-white/50 text-sm">
+          <div className="flex flex-wrap items-center gap-4 text-app-fg/50 text-sm">
             <span>By ApMoSys Product Private Limited</span>
-            <span className="w-1.5 h-1.5 rounded-full bg-white/20"></span>
+            <span className="w-1.5 h-1.5 rounded-full bg-app-fg/20"></span>
             <span>Last updated: June 6, 2026</span>
           </div>
         </header>
 
-        <div className="space-y-12 text-white/70 leading-relaxed text-[15px] md:text-[16px]">
+        <div className="space-y-12 text-app-fg/70 leading-relaxed text-[15px] md:text-[16px]">
           <section className="space-y-4">
-            <h2 className="text-white text-2xl font-bold tracking-tight mb-6">Introduction</h2>
+            <h2 className="text-app-fg text-2xl font-bold tracking-tight mb-6">Introduction</h2>
             <p>
-              This Privacy Notice describes how <strong className="text-white font-medium">ApMoSys Product Private Limited</strong> ("APPPL", "Company", "we", "our", or "us") collects, processes, stores, protects, and manages information through CliQTest®, an AI-powered Quality Engineering platform offering Test Automation, Test Management, Device Lab Management, AI-assisted Testing, Analytics, Reporting, and related services.
+              This Privacy Notice describes how <strong className="text-app-fg font-medium">ApMoSys Product Private Limited</strong> ("APPPL", "Company", "we", "our", or "us") collects, processes, stores, protects, and manages information through CliQTest®, an AI-powered Quality Engineering platform offering Test Automation, Test Management, Device Lab Management, AI-assisted Testing, Analytics, Reporting, and related services.
             </p>
             <p>
               CliQTest® is a proprietary software platform owned by ApMoSys Product Private Limited and supported by ApMoSys Technologies Private Limited.
@@ -33,13 +33,13 @@ export default function PrivacyPolicyPage() {
           </section>
 
           <section className="space-y-6">
-            <h2 className="text-white text-2xl font-bold tracking-tight mb-6">Information We Collect</h2>
+            <h2 className="text-app-fg text-2xl font-bold tracking-tight mb-6">Information We Collect</h2>
             <p>The Platform may collect:</p>
 
-            <div className="space-y-6 pl-4 border-l-2 border-white/10">
+            <div className="space-y-6 pl-4 border-l-2 border-app-border">
               <div>
-                <h3 className="text-white text-lg font-semibold mb-3">Account Information</h3>
-                <ul className="list-disc pl-6 space-y-1 text-white/80">
+                <h3 className="text-app-fg text-lg font-semibold mb-3">Account Information</h3>
+                <ul className="list-disc pl-6 space-y-1 text-app-fg/80">
                   <li>Name</li>
                   <li>Business Email Address</li>
                   <li>Contact Number</li>
@@ -49,8 +49,8 @@ export default function PrivacyPolicyPage() {
               </div>
 
               <div>
-                <h3 className="text-white text-lg font-semibold mb-3">Platform Usage Information</h3>
-                <ul className="list-disc pl-6 space-y-1 text-white/80">
+                <h3 className="text-app-fg text-lg font-semibold mb-3">Platform Usage Information</h3>
+                <ul className="list-disc pl-6 space-y-1 text-app-fg/80">
                   <li>Login activities</li>
                   <li>User interactions</li>
                   <li>Audit logs</li>
@@ -61,8 +61,8 @@ export default function PrivacyPolicyPage() {
               </div>
 
               <div>
-                <h3 className="text-white text-lg font-semibold mb-3">Technical Information</h3>
-                <ul className="list-disc pl-6 space-y-1 text-white/80">
+                <h3 className="text-app-fg text-lg font-semibold mb-3">Technical Information</h3>
+                <ul className="list-disc pl-6 space-y-1 text-app-fg/80">
                   <li>IP addresses</li>
                   <li>Browser information</li>
                   <li>Device identifiers</li>
@@ -72,8 +72,8 @@ export default function PrivacyPolicyPage() {
               </div>
 
               <div>
-                <h3 className="text-white text-lg font-semibold mb-3">Customer Content</h3>
-                <ul className="list-disc pl-6 space-y-1 text-white/80">
+                <h3 className="text-app-fg text-lg font-semibold mb-3">Customer Content</h3>
+                <ul className="list-disc pl-6 space-y-1 text-app-fg/80">
                   <li>Test cases</li>
                   <li>Automation scripts</li>
                   <li>Requirements</li>
@@ -85,8 +85,8 @@ export default function PrivacyPolicyPage() {
               </div>
 
               <div>
-                <h3 className="text-white text-lg font-semibold mb-3">AI Interaction Data</h3>
-                <p className="text-white/80">
+                <h3 className="text-app-fg text-lg font-semibold mb-3">AI Interaction Data</h3>
+                <p className="text-app-fg/80">
                   Where AI-enabled capabilities are utilized, prompts, inputs, outputs, recommendations, and associated metadata may be processed solely for service delivery and platform improvement purposes.
                 </p>
               </div>
@@ -94,9 +94,9 @@ export default function PrivacyPolicyPage() {
           </section>
 
           <section className="space-y-4">
-            <h2 className="text-white text-2xl font-bold tracking-tight mb-6">Purpose of Processing</h2>
+            <h2 className="text-app-fg text-2xl font-bold tracking-tight mb-6">Purpose of Processing</h2>
             <p>Information may be processed to:</p>
-            <ul className="list-disc pl-6 space-y-2 text-white/80">
+            <ul className="list-disc pl-6 space-y-2 text-app-fg/80">
               <li>Deliver and operate services</li>
               <li>Authenticate users</li>
               <li>Maintain platform security</li>
@@ -108,7 +108,7 @@ export default function PrivacyPolicyPage() {
           </section>
 
           <section className="space-y-4">
-            <h2 className="text-white text-2xl font-bold tracking-tight mb-6">Data Ownership</h2>
+            <h2 className="text-app-fg text-2xl font-bold tracking-tight mb-6">Data Ownership</h2>
             <p>
               Customers retain ownership of all customer-provided business information, test assets, uploaded documents, automation scripts, and associated content.
             </p>
@@ -118,21 +118,21 @@ export default function PrivacyPolicyPage() {
           </section>
 
           <section className="space-y-4">
-            <h2 className="text-white text-2xl font-bold tracking-tight mb-6">AI Data Protection</h2>
+            <h2 className="text-app-fg text-2xl font-bold tracking-tight mb-6">AI Data Protection</h2>
             <p>
               Customer data shall not be used to train publicly available Artificial Intelligence models without explicit customer authorization.
             </p>
           </section>
 
           <section className="space-y-4">
-            <h2 className="text-white text-2xl font-bold tracking-tight mb-6">Data Retention</h2>
+            <h2 className="text-app-fg text-2xl font-bold tracking-tight mb-6">Data Retention</h2>
             <p>
               Information shall be retained only for legitimate business, contractual, operational, audit, legal, and regulatory purposes.
             </p>
           </section>
 
           <section className="space-y-4">
-            <h2 className="text-white text-2xl font-bold tracking-tight mb-6">Disclosure of Information</h2>
+            <h2 className="text-app-fg text-2xl font-bold tracking-tight mb-6">Disclosure of Information</h2>
             <p>
               ApMoSys does not sell customer information.
             </p>
@@ -142,13 +142,13 @@ export default function PrivacyPolicyPage() {
           </section>
 
           <section className="space-y-4">
-            <h2 className="text-white text-2xl font-bold tracking-tight mb-6">Contact</h2>
+            <h2 className="text-app-fg text-2xl font-bold tracking-tight mb-6">Contact</h2>
             <p>
               For questions regarding this Privacy Notice, please contact: <a href="mailto:sales@apmosys.com" className="text-[#6843B7] hover:underline font-medium">sales@apmosys.com</a>
             </p>
           </section>
           
-          <div className="pt-8 border-t border-white/10 text-white/50 text-sm">
+          <div className="pt-8 border-t border-app-border text-app-fg/50 text-sm">
             <p>
               CliQTest® is a proprietary software platform owned by ApMoSys Product Private Limited and supported by ApMoSys Technologies Private Limited.
             </p>

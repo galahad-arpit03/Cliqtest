@@ -2,18 +2,18 @@ import Image from 'next/image';
 
 export default function ProductComparison() {
   return (
-    <section className="bg-black py-32 px-12">
+    <section className="bg-app-bg py-32 px-12">
       <div className="max-w-7xl mx-auto">
-        <h4 className="text-white text-center font medium mb-20 text-[13px] uppercase tracking-[0.3em]">
+        <h4 className="text-app-fg text-center font medium mb-20 text-[13px] uppercase tracking-[0.3em]">
           Fuel Innovation with EAI Agents
         </h4>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
           {/* Traditional RPA Card */}
-          <div className="bg-[#FF3366] rounded-[40px] pt-12 pb-10 px-10 flex flex-col justify-between min-h-[580px] text-white self-stretch">
+          <div className="bg-[#FF3366] rounded-[40px] pt-12 pb-10 px-10 flex flex-col justify-between min-h-[580px] text-app-fg self-stretch">
             <div>
               <h3 className="text-3xl font medium mb-4 tracking-tight">Traditional RPA</h3>
-              <p className="text-white/90 leading-relaxed text-[15px] mb-8 font-medium">
+              <p className="text-app-fg/90 leading-relaxed text-[15px] mb-8 font-medium">
                 Traditional automation and RPA platforms have been a valuable first step, but their core limitations in sophisticated AI, scalability, and handling complex workflows have left businesses searching for more.
               </p>
             </div>
@@ -39,7 +39,7 @@ export default function ProductComparison() {
             </div>
             <div className="text-center px-4">
               <h3 className="text-[#FF3366] text-[26px] font medium mb-4 tracking-tight">Lack of Adaptability</h3>
-              <p className="text-zinc-400 leading-relaxed text-[15px] font-medium">
+              <p className="text-app-muted leading-relaxed text-[15px] font-medium">
                 Traditional automation systems struggle to handle deviations from predefined processes, requiring constant reconfigurations that result in downtime and increased maintenance costs.
               </p>
             </div>
@@ -57,7 +57,7 @@ export default function ProductComparison() {
             </div>
             <div className="text-center px-4">
               <h3 className="text-[#00F2B0] text-[26px] font medium mb-4 tracking-tight">Solution</h3>
-              <p className="text-zinc-400 leading-relaxed text-[15px] font-medium">
+              <p className="text-app-muted leading-relaxed text-[15px] font-medium">
                 EAI Agents offer the next generation of automation – they seamlessly overcome these challenges to deliver adaptable, scalable solutions that empower organizations to innovate and operate at peak efficiency.
               </p>
             </div>

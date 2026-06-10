@@ -24,20 +24,21 @@ export default function WhyCliqtestContent() {
   }, []);
 
   return (
-    <div className="max-w-7xl mx-auto px-8">
+    <div className="max-w-7xl pt-8 mx-auto px-8">
       
       {/* Stacked Numbered Section */}
       <div className="space-y-6">
         {reasons.map((reason, index) => {
           const sectionId = reason.title.toLowerCase().replace(/\s+/g, '-');
           return (
-          <div key={index} id={sectionId} className="scroll-mt-32">
             <motion.div
+              key={index}
+              id={sectionId}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="sticky bg-[#0A0A0A] border border-white/10 rounded-md p-8 md:p-12 overflow-hidden shadow-2xl transition-all duration-500"
+              className="sticky bg-app-surface border border-app-border rounded-md p-8 md:p-12 overflow-hidden shadow-2xl transition-all duration-500 scroll-mt-32"
             style={{ 
               top: `calc(8rem + ${index * 2}rem)`, 
               zIndex: 10 + index 
@@ -51,17 +52,16 @@ export default function WhyCliqtestContent() {
               
               {/* Content */}
               <div className="flex-1 mt-2">
-                <h2 className="text-2xl font-bold text-white mb-4 tracking-tight transition-colors duration-300">
+                <h2 className="text-2xl font-bold text-app-fg mb-4 tracking-tight transition-colors duration-300">
                   {reason.title}
                 </h2>
-                <p className="text-white/60 text-base leading-relaxed max-w-4xl">
+                <p className="text-app-fg/60 text-base leading-relaxed max-w-4xl">
                   {reason.desc}
                 </p>
               </div>
             </div>
             
           </motion.div>
-          </div>
         )})}
       </div>
 

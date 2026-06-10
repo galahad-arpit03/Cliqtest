@@ -1,4 +1,5 @@
 import React from 'react';
+import PageThemeMenu from '@/components/common/PageThemeMenu';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import ByTeamHero from '@/components/solutions/by-team/hero/ByTeamHero';
@@ -11,9 +12,11 @@ export const metadata = {
 
 export default function ByTeamPage() {
   return (
-    <div className="min-h-screen bg-[#050505] selection:bg-[#00F2B0]/30 selection:text-white">
-      <ByTeamHero />
-      <ByTeamFeatures />
-    </div>
+    <PageThemeMenu 
+      sections={[
+        <ByTeamHero key="ByTeamHero" />,
+        <ByTeamFeatures key="ByTeamFeatures" />
+      ]}
+    />
   );
 }

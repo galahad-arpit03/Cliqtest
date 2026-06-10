@@ -1,4 +1,5 @@
 import React from 'react';
+import PageThemeMenu from '@/components/common/PageThemeMenu';
 import type { Metadata } from 'next';
 import IntegrationsHero from '@/components/integrations/hero/IntegrationsHero';
 import IntegrationsContent from '@/components/integrations/features/IntegrationsContent';
@@ -10,9 +11,11 @@ export const metadata: Metadata = {
 
 export default function IntegrationsPage() {
   return (
-    <main className="bg-black min-h-screen">
-      <IntegrationsHero />
-      <IntegrationsContent />
-    </main>
+    <PageThemeMenu 
+      sections={[
+        <IntegrationsHero key="IntegrationsHero" />,
+        <IntegrationsContent key="IntegrationsContent" />
+      ]}
+    />
   );
 }

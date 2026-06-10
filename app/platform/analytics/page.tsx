@@ -1,4 +1,5 @@
 import React from 'react';
+import PageThemeMenu from '@/components/common/PageThemeMenu';
 import AnalyticsHero from '@/components/platform/analytics/hero/AnalyticsHero';
 import AnalyticsFeatures from '@/components/platform/analytics/features/AnalyticsFeatures';
 
@@ -9,9 +10,11 @@ export const metadata = {
 
 export default function AnalyticsPage() {
   return (
-    <div className="flex flex-col min-h-screen bg-[#050505]">
-      <AnalyticsHero />
-      <AnalyticsFeatures />
-    </div>
+    <PageThemeMenu 
+      sections={[
+        <AnalyticsHero key="hero" />,
+        <AnalyticsFeatures key="features" />
+      ]}
+    />
   );
 }

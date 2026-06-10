@@ -1,4 +1,5 @@
 import React from 'react';
+import PageThemeMenu from '@/components/common/PageThemeMenu';
 import ByUseCaseHero from '@/components/solutions/by-use-case/hero/ByUseCaseHero';
 import ByUseCaseFeatures from '@/components/solutions/by-use-case/features/ByUseCaseFeatures';
 
@@ -9,9 +10,11 @@ export const metadata = {
 
 export default function ByUseCasePage() {
   return (
-    <div className="min-h-screen bg-[#050505] selection:bg-[#00F2B0]/30 selection:text-white">
-      <ByUseCaseHero />
-      <ByUseCaseFeatures />
-    </div>
+    <PageThemeMenu 
+      sections={[
+        <ByUseCaseHero key="ByUseCaseHero" />,
+        <ByUseCaseFeatures key="ByUseCaseFeatures" />
+      ]}
+    />
   );
 }

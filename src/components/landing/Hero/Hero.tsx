@@ -1,24 +1,21 @@
 "use client";
 
 import React, { useRef, useEffect } from 'react';
+import Image from 'next/image';
 import { motion, Variants, useScroll, useTransform } from 'framer-motion';
 import Link from 'next/link';
-import { useContentStore } from '@/admin/store/adminStore';
-import EditableText from '@/admin/components/EditableText';
 
-export default function Hero({ theme = "dark" }: { theme?: "dark" | "light" }) {
+export default function Hero({ isLight }: { isLight?: boolean }) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const { scrollY } = useScroll();
   const yBg = useTransform(scrollY, [0, 1000], ['0%', '30%']);
-  const yText = useTransform(scrollY, [0, 1000], ['0%', '10%']);
+    const yText = useTransform(scrollY, [0, 1000], ['0%', '10%']);
 
   useEffect(() => {
     if (videoRef.current) {
       videoRef.current.playbackRate = 0.4;
     }
   }, []);
-
-  const content = useContentStore((state) => state.content);
   const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
@@ -39,12 +36,10 @@ export default function Hero({ theme = "dark" }: { theme?: "dark" | "light" }) {
     },
   };
 
-  const isLight = theme === "light";
-
   return (
-    <section className={`relative w-full min-h-[100svh] md:min-h-[800px] flex items-center pt-0 overflow-hidden transition-colors duration-500 ${isLight ? 'bg-white' : 'bg-black'}`}>
+    <section className={`relative w-full min-h-[100svh] md:min-h-[800px] flex items-center pt-0 overflow-hidden transition-colors duration-500 ${isLight ? 'bg-app-fg' : 'bg-app-bg'}`}>
       {/* Top Gradient Overlay for Navbar Legibility */}
-      <div className={`absolute top-0 left-0 w-full h-40 bg-gradient-to-b z-10 pointer-events-none transition-colors duration-500 ${isLight ? 'from-white/80 to-transparent' : 'from-black/80 to-transparent'}`} />
+      <div className={`absolute top-0 left-0 w-full h-40 bg-gradient-to-b z-10 pointer-events-none transition-colors duration-500 ${isLight ? 'from-white/80 to-transparent' : 'from-app-bg/80 to-transparent'}`} />
       
       <motion.div 
         style={{ y: yBg }}
@@ -53,20 +48,32 @@ export default function Hero({ theme = "dark" }: { theme?: "dark" | "light" }) {
         transition={{ duration: 2 }}
         className="absolute inset-0 w-full h-full z-0"
       >
-        <video
-          ref={videoRef}
-          autoPlay
-          loop
-          muted
-          playsInline
-          aria-label="cliQTest AI-powered automated testing platform visualization"
-          className={`w-full h-full object-cover object-center transition-opacity duration-500 ${isLight ? 'opacity-20' : 'opacity-100'}`}
-        >
-          <source src="/videos/landing-brain.mp4" type="video/mp4" />
-        </video>
+        {isLight ? (
+          <Image
+            src="/videos/landing-hero.png"
+            alt="cliQTest Platform AI"
+            fill
+            className="object-cover object-center transition-opacity duration-500 opacity-100"
+            sizes="100vw"
+            priority
+            unoptimized
+          />
+        ) : (
+          <video 
+            ref={videoRef}
+            autoPlay 
+            loop 
+            muted 
+            playsInline
+            aria-label="cliQTest AI-powered automated testing platform visualization"
+            className="w-full h-full object-cover object-center transition-opacity duration-500 opacity-100"
+          >
+            <source src="/videos/landing-brain.mp4" type="video/mp4" />
+          </video>
+        )}
         {/* Dark overlays matching other pages */}
-        <div className={`absolute inset-0 bg-gradient-to-r pointer-events-none transition-colors duration-500 ${isLight ? 'from-white/95 via-white/80 to-white/30' : 'from-[#050505]/95 via-[#050505]/80 to-[#050505]/30'}`} />
-        <div className={`absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t pointer-events-none transition-colors duration-500 ${isLight ? 'from-white to-transparent' : 'from-[#050505] to-transparent'}`} />
+        <div className={`absolute inset-0 bg-gradient-to-r pointer-events-none transition-colors duration-500 ${isLight ? 'from-white/95 via-white/80 to-white/30' : 'from-app-bg/95 via-app-bg/80 to-app-bg/30'}`} />
+        <div className={`absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t pointer-events-none transition-colors duration-500 ${isLight ? 'from-white to-transparent' : 'from-app-bg to-transparent'}`} />
       </motion.div>
 
       {/* Main Container */}
@@ -81,23 +88,17 @@ export default function Hero({ theme = "dark" }: { theme?: "dark" | "light" }) {
         >
         <motion.h1
             variants={itemVariants}
-            className={`text-4xl sm:text-5xl md:text-6xl lg:text-[68px] font-semibold tracking-tight leading-[1.1] mb-4 max-w-2xl drop-shadow-2xl transition-colors duration-500 ${isLight ? 'text-black' : 'text-white'}`}
+            className={`text-4xl sm:text-5xl md:text-6xl lg:text-[68px] font-semibold tracking-tight leading-[1.1] mb-4 max-w-2xl drop-shadow-2xl transition-colors duration-500 ${isLight ? 'text-app-fg-invert' : 'text-app-fg'}`}
         >
-            <EditableText path="home.hero.headingPrefix" fallback="The AI-Powered" as="span" /> <br className="hidden sm:block" />
-            <EditableText 
-                path="home.hero.headingHighlight" 
-                fallback="Automated Testing " 
-                as="span" 
-                className="text-transparent bg-clip-text bg-gradient-to-r from-[#6843B7] to-[#9e7be9]" 
-            />
-            <EditableText path="home.hero.headingSuffix" fallback="Platform" as="span" />
+            The AI-Powered <br className="hidden sm:block" />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6843B7] to-[#9e7be9]">Automated Testing </span> Platform
         </motion.h1>
 
         <motion.p
             variants={itemVariants}
-            className={`text-base sm:text-lg md:text-xl font-medium mb-8 leading-relaxed max-w-xl mx-auto md:mx-0 drop-shadow-md transition-colors duration-500 ${isLight ? 'text-black/60' : 'text-white/60'}`}
+            className={`text-base sm:text-lg md:text-xl font-medium mb-8 leading-relaxed max-w-xl mx-auto md:mx-0 drop-shadow-md transition-colors duration-500 ${isLight ? 'text-app-fg-invert/60' : 'text-app-fg/60'}`}
         >
-            <EditableText path="home.hero.subheading" fallback="Accelerate release cycles with flawless quality. Automate web, mobile, and API testing—all from one intelligent AI-driven platform." multiline as="span" />
+            Accelerate release cycles with flawless quality. Automate web, mobile, and API testing—all from one intelligent AI-driven platform.
         </motion.p>
 
         <motion.div
@@ -108,17 +109,17 @@ export default function Hero({ theme = "dark" }: { theme?: "dark" | "light" }) {
             <motion.button 
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="flex-1 sm:flex-none w-full sm:w-auto px-4 sm:px-8 py-3 rounded-sm bg-[#6843B7] text-white text-[12px] sm:text-[13px] hover:bg-[#523391] transition-all whitespace-nowrap"
+              className="flex-1 sm:flex-none w-full sm:w-auto px-4 sm:px-8 py-3 rounded-sm bg-[#6843B7] text-app-fg text-[12px] sm:text-[13px] hover:bg-[#6843B7] transition-all whitespace-nowrap"
             >
-              <EditableText path="home.hero.ctaSecondary" fallback="Book Demo" as="span" />
+              Book Demo
             </motion.button>
           </Link>
 
           <motion.a 
             href="/contact"
-            className={`group flex-1 sm:flex-none flex items-center justify-center sm:justify-start gap-2 font-medium text-[14px] sm:text-[16px] cursor-pointer whitespace-nowrap transition-colors duration-500 ${isLight ? 'text-black' : 'text-white'}`}
+            className={`group flex-1 sm:flex-none flex items-center justify-center sm:justify-start gap-2 font-medium text-[14px] sm:text-[16px] cursor-pointer whitespace-nowrap transition-colors duration-500 ${isLight ? 'text-app-fg-invert' : 'text-app-fg'}`}
           >
-            {/* <span className="border-b border-white/40 pb-0.5 group-hover:border-white transition-colors">Contact Us</span> */}
+            {/* <span className="border-b border-app-fg/40 pb-0.5 group-hover:border-app-fg transition-colors">Contact Us</span> */}
             {/* <span className="group-hover:translate-x-1 transition-transform">→</span> */}
           </motion.a>
         </motion.div>
@@ -135,7 +136,7 @@ export default function Hero({ theme = "dark" }: { theme?: "dark" | "light" }) {
         className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-30"
       >
         <div className="w-[1px] h-12 bg-gradient-to-b from-transparent to-[#6843B7]" />
-        <span className={`text-[10px] font-black uppercase tracking-[0.4em] transition-colors duration-500 ${isLight ? 'text-black' : 'text-white'}`}>Scroll</span>
+        <span className={`text-[10px] font-black uppercase tracking-[0.4em] transition-colors duration-500 ${isLight ? 'text-app-fg-invert' : 'text-app-fg'}`}>Scroll</span>
       </motion.div>
 
     </section>

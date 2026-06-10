@@ -1,4 +1,5 @@
 import React from 'react';
+import PageThemeMenu from '@/components/common/PageThemeMenu';
 import DeviceLabHero from '@/components/platform/devicelabs/hero/DeviceLabHero';
 import DeviceLabFeatures from '@/components/platform/devicelabs/features/DeviceLabFeatures';
 
@@ -9,9 +10,11 @@ export const metadata = {
 
 export default function DeviceLabsPage() {
   return (
-    <div className="flex flex-col min-h-screen bg-black">
-      <DeviceLabHero />
-      <DeviceLabFeatures />
-    </div>
+    <PageThemeMenu 
+      sections={[
+        <DeviceLabHero key="hero" />,
+        <DeviceLabFeatures key="features" />
+      ]}
+    />
   );
 }

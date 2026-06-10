@@ -49,12 +49,12 @@ export default function ClientsContent() {
           transition={{ duration: 0.6 }}
           className="w-full"
         >
-          <h2 className="text-3xl font-bold text-white mb-10"><span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6843B7] to-[#ffffff]">Testimonials</span></h2>
+          <h2 className="text-3xl font-bold text-app-fg mb-10"><span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6843B7] to-[#ffffff]">Testimonials</span></h2>
           
           <div className="relative w-full flex flex-col gap-6 overflow-hidden group/marquee py-4">
             {/* Fade gradients for edges */}
-            <div className="absolute top-0 left-0 w-12 md:w-32 h-full bg-gradient-to-r from-[#050505] to-transparent z-10 pointer-events-none" />
-            <div className="absolute top-0 right-0 w-12 md:w-32 h-full bg-gradient-to-l from-[#050505] to-transparent z-10 pointer-events-none" />
+            <div className="absolute top-0 left-0 w-12 md:w-32 h-full bg-gradient-to-r from-app-bg to-transparent z-10 pointer-events-none" />
+            <div className="absolute top-0 right-0 w-12 md:w-32 h-full bg-gradient-to-l from-app-bg to-transparent z-10 pointer-events-none" />
 
             {/* Row 1 */}
             <div 
@@ -64,24 +64,24 @@ export default function ClientsContent() {
               {[...testimonialsData.slice(0, 7), ...testimonialsData.slice(0, 7), ...testimonialsData.slice(0, 7)].map((item, idx) => (
                 <div 
                   key={`r1-${idx}`} 
-                  className="w-[300px] md:w-[400px] shrink-0 bg-[#0A0A0A] border border-white/10 rounded-md p-6 relative overflow-hidden group/card shadow-2xl hover:border-[#6843B7]/30 hover:bg-[#0c0c16] transition-all duration-300 flex flex-col justify-between hover:scale-105 hover:z-20 cursor-pointer"
+                  className="w-[300px] md:w-[400px] shrink-0 bg-app-surface border border-app-border rounded-md p-6 relative overflow-hidden group/card shadow-2xl hover:border-[#6843B7]/30 hover:bg-[#0c0c16] transition-all duration-300 flex flex-col justify-between hover:scale-105 hover:z-20 cursor-pointer"
                 >
                   <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-[#6843B7] to-transparent opacity-50 group-hover/card:opacity-100 transition-opacity duration-500" />
                   
-                  <p className="text-white/60 text-sm md:text-base leading-relaxed relative z-10 mb-6 italic whitespace-normal line-clamp-3 group-hover/card:line-clamp-none transition-all duration-300">
+                  <p className="text-app-fg/60 text-sm md:text-base leading-relaxed relative z-10 mb-6 italic whitespace-normal line-clamp-3 group-hover/card:line-clamp-none transition-all duration-300">
                     "{item.quote}"
                   </p>
                   
                   <div className="flex items-center gap-4 relative z-10 mt-auto whitespace-normal">
-                    <div className="w-12 h-12 rounded-sm bg-white/5 border border-white/10 flex items-center justify-center shrink-0 overflow-hidden relative">
+                    <div className="w-12 h-12 rounded-sm bg-app-fg/5 border border-app-border flex items-center justify-center shrink-0 overflow-hidden relative">
                       {item.logo ? (
                         <Image src={item.logo} alt={item.company} fill className="object-contain p-2" />
                       ) : (
-                        <span className="text-white/40 text-xs font-bold uppercase">{item.company.substring(0, 2)}</span>
+                        <span className="text-app-fg/40 text-xs font-bold uppercase">{item.company.substring(0, 2)}</span>
                       )}
                     </div>
                     <div>
-                      <h4 className="text-white font-bold text-sm">{item.company}</h4>
+                      <h4 className="text-app-fg font-bold text-sm">{item.company}</h4>
                       <p className="text-[#6843B7] text-xs font-medium uppercase tracking-wider">{item.role}</p>
                     </div>
                   </div>
@@ -97,24 +97,24 @@ export default function ClientsContent() {
               {[...testimonialsData.slice(7), ...testimonialsData.slice(7), ...testimonialsData.slice(7)].map((item, idx) => (
                 <div 
                   key={`r2-${idx}`} 
-                  className="w-[300px] md:w-[400px] shrink-0 bg-[#0A0A0A] border border-white/10 rounded-md p-6 relative overflow-hidden group/card shadow-2xl hover:border-[#6843B7]/30 hover:bg-[#0c0c16] transition-all duration-300 flex flex-col justify-between hover:scale-105 hover:z-20 cursor-pointer"
+                  className="w-[300px] md:w-[400px] shrink-0 bg-app-surface border border-app-border rounded-md p-6 relative overflow-hidden group/card shadow-2xl hover:border-[#6843B7]/30 hover:bg-[#0c0c16] transition-all duration-300 flex flex-col justify-between hover:scale-105 hover:z-20 cursor-pointer"
                 >
                   <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-[#6843B7] to-transparent opacity-50 group-hover/card:opacity-100 transition-opacity duration-500" />
                   
-                  <p className="text-white/60 text-sm md:text-base leading-relaxed relative z-10 mb-6 italic whitespace-normal line-clamp-3 group-hover/card:line-clamp-none transition-all duration-300">
+                  <p className="text-app-fg/60 text-sm md:text-base leading-relaxed relative z-10 mb-6 italic whitespace-normal line-clamp-3 group-hover/card:line-clamp-none transition-all duration-300">
                     "{item.quote}"
                   </p>
                   
                   <div className="flex items-center gap-4 relative z-10 mt-auto whitespace-normal">
-                    <div className="w-12 h-12 rounded-sm bg-white/5 border border-white/10 flex items-center justify-center shrink-0 overflow-hidden relative">
+                    <div className="w-12 h-12 rounded-sm bg-app-fg/5 border border-app-border flex items-center justify-center shrink-0 overflow-hidden relative">
                       {item.logo ? (
                         <Image src={item.logo} alt={item.company} fill className="object-contain p-2" />
                       ) : (
-                        <span className="text-white/40 text-xs font-bold uppercase">{item.company.substring(0, 2)}</span>
+                        <span className="text-app-fg/40 text-xs font-bold uppercase">{item.company.substring(0, 2)}</span>
                       )}
                     </div>
                     <div>
-                      <h4 className="text-white font-bold text-sm">{item.company}</h4>
+                      <h4 className="text-app-fg font-bold text-sm">{item.company}</h4>
                       <p className="text-[#6843B7] text-xs font-medium uppercase tracking-wider">{item.role}</p>
                     </div>
                   </div>

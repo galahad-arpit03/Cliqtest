@@ -1,4 +1,5 @@
 import React from 'react';
+import PageThemeMenu from '@/components/common/PageThemeMenu';
 import NoCodeHero from '@/components/platform/nocode/hero/NoCodeHero';
 import NoCodeFeatures from '@/components/platform/nocode/features/NoCodeFeatures';
 
@@ -9,9 +10,11 @@ export const metadata = {
 
 export default function NoCodePage() {
   return (
-    <div className="flex flex-col min-h-screen bg-[#050505]">
-      <NoCodeHero />
-      <NoCodeFeatures />
-    </div>
+    <PageThemeMenu 
+      sections={[
+        <NoCodeHero key="hero" />,
+        <NoCodeFeatures key="features" />
+      ]}
+    />
   );
 }

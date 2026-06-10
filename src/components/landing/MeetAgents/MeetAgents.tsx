@@ -3,18 +3,21 @@
 import React from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { useContentStore } from '@/admin/store/adminStore';
-import EditableText from '@/admin/components/EditableText';
 
-export default function MeetAgents({ theme = "dark" }: { theme?: "dark" | "light" }) {
-  const content = useContentStore((state) => state.content);
-  const reasons = content.home.meetAgents?.reasons || [];
-  const isLight = theme === "light";
+const reasons = [
+  { name: "Self-Healing Automation", desc: "Dynamically adapts to UI changes", pos: "lg:top-[0%] lg:left-[10%]" },
+  { name: "Autonomous Generation", desc: "AI writes tests from requirements", pos: "lg:top-[0%] lg:right-[10%]" },
+  { name: "No-Code Intelligence", desc: "Create complex flows effortlessly", pos: "lg:top-[40%] lg:left-[2%]" },
+  { name: "Omnichannel Execution", desc: "Web, Mobile, API & Desktop agents", pos: "lg:top-[40%] lg:right-[2%]" },
+  { name: "Anomaly Detection", desc: "Catch regressions before they ship", pos: "lg:bottom-[5%] lg:left-[10%]" },
+  { name: "Massive Parallel Scale", desc: "Run thousands of tests in seconds", pos: "lg:bottom-[5%] lg:right-[10%]" }
+];
 
+export default function MeetAgents({ isLight }: { isLight?: boolean }) {
   return (
-    <section className={`w-full px-4 md:px-8 py-16 text-center relative overflow-hidden transition-colors duration-500 ${isLight ? 'bg-white' : 'bg-black'}`}>
+    <section className={`w-full px-4 md:px-8 py-16 text-center relative overflow-hidden transition-colors duration-500 ${isLight ? 'bg-app-fg' : 'bg-app-bg'}`}>
       {/* Dynamic Background Beams */}
-      <div className={`absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none z-0 transition-opacity duration-500 ${isLight ? 'opacity-10' : 'opacity-30'}`}>
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none opacity-30 z-0">
         <motion.div 
           animate={{ x: ['-100%', '100%'] }}
           transition={{ repeat: Infinity, duration: 15, ease: "linear" }}
@@ -32,29 +35,23 @@ export default function MeetAgents({ theme = "dark" }: { theme?: "dark" | "light
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
-        className={`relative z-10 text-4xl md:text-[44px] font-semibold mb-16 tracking-tight leading-[1.1] transition-colors duration-500 ${isLight ? 'text-black' : 'text-white'}`}
+        className={`relative z-10 text-4xl md:text-[44px] font-semibold mb-16 tracking-tight leading-[1.1] transition-colors duration-500 ${isLight ? 'text-app-fg-invert' : 'text-app-fg'}`}
       >
-        <EditableText path="home.meetAgents.headingPrefix" fallback="The" as="span" />{" "}
-        <EditableText 
-          path="home.meetAgents.headingHighlight" 
-          fallback="Agentic QA" 
-          as="span" 
-          className="text-transparent bg-clip-text bg-gradient-to-r from-[#6843B7] to-[#8f81eb]" 
-        />{" "}
-        Advantage
+        The <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6843B7] to-[#8f81eb]"> Agentic QA</span> Advantage
       </motion.h2>
       
       <div className="relative w-full max-w-7xl mx-auto min-h-[600px] flex flex-col items-center justify-center gap-2">
         {/* Central Brand Area */}
         <div className="relative flex items-center justify-center mx-auto w-64 h-64 md:w-80 md:h-80 lg:w-[500px] lg:h-[500px] z-0">
           <div className="relative w-full h-full">
-            <div className="w-full h-full relative">
+            <div className="w-full h-full relative group">
               {isLight ? (
                 <Image
                   src="/videos/b.png"
-                  alt="Agentic QA Core"
+                  alt="cliQTest Brain Network"
                   fill
-                  className="object-contain transition-opacity duration-500 opacity-90"
+                  className="object-contain mix-blend-multiply group-hover:scale-105 transition-transform duration-700 ease-out opacity-80 group-hover:opacity-100"
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   unoptimized
                 />
               ) : (
@@ -64,7 +61,7 @@ export default function MeetAgents({ theme = "dark" }: { theme?: "dark" | "light
                   loop
                   muted
                   playsInline
-                  className="w-full h-full object-contain transition-opacity duration-500 opacity-100"
+                  className="w-full h-full object-contain mix-blend-screen group-hover:scale-105 transition-transform duration-700 ease-out opacity-80 group-hover:opacity-100"
                 />
               )}
             </div>
@@ -73,9 +70,9 @@ export default function MeetAgents({ theme = "dark" }: { theme?: "dark" | "light
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 0.8 }}
             transition={{ delay: 0.5 }}
-            className={`absolute -bottom-8 lg:-bottom-10 text-[10px] font medium tracking-[0.3em] uppercase transition-colors duration-500 ${isLight ? 'text-black' : 'text-white'}`}
+            className="absolute -bottom-8 lg:-bottom-10 text-app-fg text-[10px] font medium tracking-[0.3em] uppercase"
           >
-            <EditableText path="home.meetAgents.coreLabel" fallback="Intelligent Core" as="span" />
+            Intelligent Core
           </motion.span>
         </div>
         
@@ -103,15 +100,15 @@ export default function MeetAgents({ theme = "dark" }: { theme?: "dark" | "light
                 {/* <div className="w-5 h-5 rounded-sm bg-[#6843B7]/10 flex items-center justify-center text-[#6843B7]">
                   <span className="text-[10px]">✦</span>
                 </div> */}
-                <span className="text-white font medium text-[14px] md:text-[16px] tracking-tight"><EditableText path={`home.meetAgents.reasons.${i}.name`} fallback={reason.name} as="span" /></span>
+                <span className="text-app-fg font medium text-[14px] md:text-[16px] tracking-tight">{reason.name}</span>
               </motion.div>
               <motion.p 
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{ delay: i * 0.1 + 0.3 }}
-                className={`text-xs md:text-sm font medium max-w-[220px] leading-snug drop-shadow-sm text-center transition-colors duration-500 ${isLight ? 'text-zinc-600' : 'text-[#b6b3bb]'}`}
+                className="text-[#b6b3bb] text-xs md:text-sm font medium max-w-[220px] leading-snug drop-shadow-sm text-center"
               >
-                <EditableText path={`home.meetAgents.reasons.${i}.desc`} fallback={reason.desc} as="span" />
+                {reason.desc}
               </motion.p>
             </motion.div>
           ))}

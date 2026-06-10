@@ -48,8 +48,8 @@ export default function AboutHero() {
         />
       </motion.div>
       {/* Dark overlay */}
-      <div className="absolute z-0 inset-0 bg-gradient-to-r from-[#050505]/95 via-[#050505]/80 to-[#050505]/30 pointer-events-none" />
-      <div className="absolute z-0 bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#050505] to-transparent pointer-events-none" />
+      <div className="absolute z-0 inset-0 bg-gradient-to-r from-app-bg/95 via-app-bg/80 to-app-bg/30 pointer-events-none" />
+      <div className="absolute z-0 bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-app-bg to-transparent pointer-events-none" />
 
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto w-full px-8 pt-48 pb-20">
@@ -62,14 +62,14 @@ export default function AboutHero() {
         >
           
           <span className="text-[#6843B7] text-[10px] md:text-sm font-semibold uppercase tracking-[0.3em] mb-4 block md:hidden">{heroData.badge}</span>
-          <h1 className="text-white text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 leading-[1.1]"><span dangerouslySetInnerHTML={{ __html: heroData.titleLine1 }} /><span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6843B7] to-[#ffffff]">{heroData.titleLine2}</span></h1>
+          <h1 className="text-app-fg text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 leading-[1.1]"><span dangerouslySetInnerHTML={{ __html: heroData.titleLine1 }} /><span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6843B7] to-[#ffffff]">{heroData.titleLine2}</span></h1>
 
-          <p className="text-white/90 text-base md:text-lg font-semibold leading-relaxed max-w-2xl mb-6">{heroData.description}</p>
+          <p className="text-app-fg/90 text-base md:text-lg font-semibold leading-relaxed max-w-2xl mb-6">{heroData.description}</p>
 
           
 
           <div className="flex flex-col sm:flex-row gap-4">
- <button onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })} className="px-8 py-4 bg-[#6843B7] text-white rounded-sm hover:bg-[#6843B7]/90 transition-all  text-[14px]">
+ <button onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })} className="px-8 py-4 bg-[#6843B7] text-app-fg rounded-sm hover:bg-[#6843B7]/90 transition-all  text-[14px]">
               Read
             </button>
           </div>

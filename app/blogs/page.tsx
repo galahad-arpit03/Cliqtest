@@ -1,15 +1,24 @@
+import React from 'react';
 import BlogsHero from "@/components/blogs/BlogsHero";
 import FeaturedBlog from "@/components/blogs/FeaturedBlog";
 import BlogGrid from "@/components/blogs/BlogGrid";
 import NewsletterCTA from "@/components/blogs/NewsletterCTA";
+import PageThemeMenu from '@/components/common/PageThemeMenu';
+
+export const metadata = {
+  title: 'Blog | cliQTest',
+  description: 'Latest insights, tutorials, and updates from the cliQTest team.',
+};
 
 export default function BlogsPage() {
   return (
-    <main className="bg-black overflow-hidden">
-      <BlogsHero />
-      <FeaturedBlog />
-      <BlogGrid />
-      <NewsletterCTA />
-    </main>
+    <PageThemeMenu 
+      sections={[
+        <BlogsHero key="hero" />,
+        <FeaturedBlog key="featured" />,
+        <BlogGrid key="grid" />,
+        <NewsletterCTA key="cta" />
+      ]}
+    />
   );
 }

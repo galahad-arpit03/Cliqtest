@@ -1,4 +1,5 @@
 import React from 'react';
+import PageThemeMenu from '@/components/common/PageThemeMenu';
 import AiHero from '@/components/platform/ai-capabilities/hero/AiHero';
 import AiCapabilitiesFeatures from '@/components/platform/ai-capabilities/features/AiCapabilitiesFeatures';
 
@@ -9,9 +10,11 @@ export const metadata = {
 
 export default function AiCapabilitiesPage() {
   return (
-    <div className="flex flex-col min-h-screen bg-[#050505]">
-      <AiHero />
-      <AiCapabilitiesFeatures />
-    </div>
+    <PageThemeMenu 
+      sections={[
+        <AiHero key="hero" />,
+        <AiCapabilitiesFeatures key="features" />
+      ]}
+    />
   );
 }

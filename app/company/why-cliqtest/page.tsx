@@ -1,4 +1,5 @@
 import React from 'react';
+import PageThemeMenu from '@/components/common/PageThemeMenu';
 import type { Metadata } from 'next';
 import WhyCliqtestContent from '@/components/company/why-cliqtest/features/WhyCliqtestContent';
 import WhyCliqtestHero from '@/components/company/why-cliqtest/hero/WhyCliqtestHero';
@@ -10,9 +11,11 @@ export const metadata: Metadata = {
 
 export default function WhyCliqtestPage() {
   return (
-    <main className="bg-[#050505] min-h-screen pb-20">
-      <WhyCliqtestHero />
-      <WhyCliqtestContent />
-    </main>
+    <PageThemeMenu 
+      sections={[
+        <WhyCliqtestHero key="WhyCliqtestHero" />,
+        <WhyCliqtestContent key="WhyCliqtestContent" />
+      ]}
+    />
   );
 }

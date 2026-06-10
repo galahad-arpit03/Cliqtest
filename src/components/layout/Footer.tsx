@@ -9,12 +9,10 @@ import { usePathname } from 'next/navigation';
 export default function Footer() {
   const pathname = usePathname();
 
-  if (pathname?.startsWith('/administrator')) {
-    return null;
-  }
+
 
   return (
-    <footer className="w-full bg-black py-8 px-8 border-t border-white/5">
+    <footer className="w-full bg-app-bg py-8 px-8 border-t border-app-border">
       <div className="max-w-[1400px] mx-auto flex flex-col xl:flex-row justify-between items-center gap-8">
         
         {/* Left: Logo & Copyright */}
@@ -31,17 +29,17 @@ export default function Footer() {
             </div>
           </Link>
           <div className="text-[#a0a0a0] text-[13px] font-normal tracking-wide">
-            © 2026 <Link href="https://ap2l.ai/" target="_blank" rel="noopener noreferrer" className="hover:text-white text-[#6843B7] transition-colors">ap2l.ai</Link>
+            © 2026 <Link href="https://ap2l.ai/" target="_blank" rel="noopener noreferrer" className="hover:text-app-fg text-[#6843B7] transition-colors">ap2l.ai</Link>
           </div>
         </div>
 
         {/* Center: Links */}
         <div className="flex justify-center items-center flex-grow">
           <div className="flex flex-wrap justify-center gap-x-6 gap-y-3 text-[#a0a0a0] text-[13px] font-normal">
-            <Link href="/privacy-policy" className="hover:text-white transition-colors">Privacy Notice</Link>
-            <Link href="/cookie-policy" className="hover:text-white transition-colors">Cookie Policy</Link>
-            <Link href="/terms-conditions" className="hover:text-white transition-colors">Terms & Conditions</Link>
-            <Link href="/security-policy" className="hover:text-white transition-colors">Security Policy</Link>
+            <Link href="/privacy-policy" className="hover:text-app-fg transition-colors">Privacy Notice</Link>
+            <Link href="/cookie-policy" className="hover:text-app-fg transition-colors">Cookie Policy</Link>
+            <Link href="/terms-conditions" className="hover:text-app-fg transition-colors">Terms & Conditions</Link>
+            <Link href="/security-policy" className="hover:text-app-fg transition-colors">Security Policy</Link>
           </div>
         </div>
 
@@ -76,7 +74,7 @@ export default function Footer() {
               rel="noopener noreferrer"
               aria-label={social.name}
               whileHover={{ scale: 1.1, color: "#ffffff" }}
-              className="text-white hover:text-gray-300 transition-colors flex items-center justify-center"
+              className="text-app-fg hover:text-gray-300 transition-colors flex items-center justify-center"
             >
               <svg 
                 viewBox="0 0 24 24" 

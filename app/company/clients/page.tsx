@@ -1,4 +1,5 @@
 import React from 'react';
+import PageThemeMenu from '@/components/common/PageThemeMenu';
 import type { Metadata } from 'next';
 import ClientsContent from '@/components/company/clients/features/ClientsContent';
 import ClientsHero from '@/components/company/clients/hero/ClientsHero';
@@ -10,9 +11,11 @@ export const metadata: Metadata = {
 
 export default function ClientsPage() {
   return (
-    <main className="bg-[#050505] min-h-screen pb-20">
-      <ClientsHero />
-      <ClientsContent />
-    </main>
+    <PageThemeMenu 
+      sections={[
+        <ClientsHero key="ClientsHero" />,
+        <ClientsContent key="ClientsContent" />
+      ]}
+    />
   );
 }

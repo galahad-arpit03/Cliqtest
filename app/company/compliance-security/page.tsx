@@ -1,4 +1,5 @@
 import React from 'react';
+import PageThemeMenu from '@/components/common/PageThemeMenu';
 import type { Metadata } from 'next';
 import ComplianceContent from '@/components/company/compliance-security/features/ComplianceContent';
 import ComplianceHero from '@/components/company/compliance-security/hero/ComplianceHero';
@@ -10,9 +11,11 @@ export const metadata: Metadata = {
 
 export default function CompliancePage() {
   return (
-    <main className="bg-[#050505] min-h-screen pb-20">
-      <ComplianceHero />
-      <ComplianceContent />
-    </main>
+    <PageThemeMenu 
+      sections={[
+        <ComplianceHero key="ComplianceHero" />,
+        <ComplianceContent key="ComplianceContent" />
+      ]}
+    />
   );
 }

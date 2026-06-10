@@ -44,7 +44,7 @@ function DomainSection({ feat, idx }: { feat: typeof features[0], idx: number })
     <React.Fragment key={feat.id}>
       <div id={feat.id} className="scroll-mt-32 w-full" aria-hidden="true" />
       <section 
-        className="lg:sticky top-20 bg-[#050505] py-6 lg:shadow-[0_-20px_40px_rgba(0,0,0,0.6)] border-t border-white/5 rounded-md"
+        className="lg:sticky top-20 bg-app-bg py-6  border-t border-app-border rounded-md"
         style={{ zIndex: 20 + idx }}
       >
         <div className="max-w-7xl mx-auto px-8">
@@ -55,7 +55,7 @@ function DomainSection({ feat, idx }: { feat: typeof features[0], idx: number })
             
             {/* Visual Demo Card */}
             <motion.div 
-              className="hidden md:flex h-48 bg-[#080808] border border-white/10 rounded-md relative overflow-hidden items-center justify-center group"
+              className={`hidden md:flex h-48 bg-app-surface border border-app-border rounded-md relative overflow-hidden items-center justify-center group feature-demo-card ${isPurple ? "theme-purple" : "theme-green"} feature-demo-card ${isPurple ? "theme-purple" : "theme-green"}`}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -84,13 +84,13 @@ function DomainSection({ feat, idx }: { feat: typeof features[0], idx: number })
             
             {/* Metrics Card */}
             <motion.div 
-              className="flex-1 bg-[#0A0A0A] border border-white/10 rounded-md p-6 relative overflow-hidden group"
+              className="flex-1 bg-app-surface border border-app-border rounded-md p-6 relative overflow-hidden group"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <h4 className="text-white font-semibold mb-5 flex items-center gap-3">
+              <h4 className="text-app-fg font-semibold mb-5 flex items-center gap-3">
                 <span className={`w-2 h-2 rounded-md ${isPurple ? 'bg-[#6843B7] shadow-[0_0_10px_#6843B7]' : 'bg-[#00F2B0] shadow-[0_0_10px_#00F2B0]'}`} />
                 Key Outcomes
               </h4>
@@ -107,7 +107,7 @@ function DomainSection({ feat, idx }: { feat: typeof features[0], idx: number })
                     className="space-y-4 absolute inset-0 w-full"
                   >
                     {currentStory.benefits.map((benefit, i) => (
-                      <div key={i} className="flex items-start gap-3 text-sm text-white/80">
+                      <div key={i} className="flex items-start gap-3 text-sm text-app-fg/80">
                         <span className={`shrink-0 mt-0.5 ${isPurple ? 'text-[#6843B7]' : 'text-[#00F2B0]'}`}>✓</span>
                         <span className="leading-snug">{benefit}</span>
                       </div>
@@ -120,7 +120,7 @@ function DomainSection({ feat, idx }: { feat: typeof features[0], idx: number })
 
           {/* Main Content */}
           <motion.div
-            className={`lg:col-span-8 bg-[#0A0A0A] border border-white/10 rounded-md p-8 md:p-10 relative overflow-hidden group flex flex-col justify-center order-1 ${idx % 2 === 0 ? 'lg:order-2' : 'lg:order-1'}`}
+            className={`lg:col-span-8 bg-app-surface border border-app-border rounded-md p-8 md:p-10 relative overflow-hidden group flex flex-col justify-center order-1 ${idx % 2 === 0 ? 'lg:order-2' : 'lg:order-1'}`}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
@@ -130,16 +130,16 @@ function DomainSection({ feat, idx }: { feat: typeof features[0], idx: number })
             <div className={`absolute inset-0 bg-[linear-gradient(${idx % 2 === 0 ? '90deg' : '-90deg'},transparent_0%,${isPurple ? 'rgba(104,67,183,0.02)' : 'rgba(0,242,176,0.02)'}_50%,transparent_100%)] pointer-events-none`} />
             
             <div className="flex flex-col md:flex-row md:items-start justify-between gap-4 mb-8 relative z-10">
-              <h3 className="text-3xl md:text-4xl font-semibold text-white tracking-tight">
+              <h3 className="text-3xl md:text-4xl font-semibold text-app-fg tracking-tight">
                 {firstWord} <span className={`text-transparent bg-clip-text bg-gradient-to-r ${gradientClass}`}>{restWords}</span>
               </h3>
               
               {feat.stories.length > 1 && (
                 <div className="flex items-center gap-2 shrink-0 md:mt-2">
-                  <button onClick={prevSlide} className="w-10 h-10 rounded-md bg-white/5 hover:bg-[#6843B7] flex items-center justify-center transition-all text-white/50 hover:text-white border border-white/10">
+                  <button onClick={prevSlide} className="w-10 h-10 rounded-md bg-app-fg/5 hover:bg-[#6843B7] flex items-center justify-center transition-all text-app-fg/50 hover:text-app-fg border border-app-border">
                     <ChevronLeft size={18} />
                   </button>
-                  <button onClick={nextSlide} className="w-10 h-10 rounded-md bg-white/5 hover:bg-[#6843B7] flex items-center justify-center transition-all text-white/50 hover:text-white border border-white/10">
+                  <button onClick={nextSlide} className="w-10 h-10 rounded-md bg-app-fg/5 hover:bg-[#6843B7] flex items-center justify-center transition-all text-app-fg/50 hover:text-app-fg border border-app-border">
                     <ChevronRight size={18} />
                   </button>
                 </div>
@@ -158,10 +158,10 @@ function DomainSection({ feat, idx }: { feat: typeof features[0], idx: number })
                   transition={{ x: { type: "spring", stiffness: 300, damping: 30 }, opacity: { duration: 0.2 } }}
                   className="w-full flex-1 flex flex-col justify-start"
                 >
-                  <h4 className="text-xl md:text-2xl font-bold text-white mb-4 border-b border-white/10 pb-4 w-fit pr-8">
+                  <h4 className="text-xl md:text-2xl font-bold text-app-fg mb-4 border-b border-app-border pb-4 w-fit pr-8">
                     {currentStory.company}
                   </h4>
-                  <div className="space-y-4 text-white/60 text-base md:text-lg leading-relaxed max-w-3xl">
+                  <div className="space-y-4 text-app-fg/60 text-base md:text-lg leading-relaxed max-w-3xl">
                     <p>{currentStory.desc}</p>
                   </div>
                 </motion.div>
@@ -198,20 +198,20 @@ export default function SuccessStoriesFeatures() {
   }, []);
 
   return (
-    <div className="bg-[#090A0A] text-white min-h-screen">
+    <div className="bg-[#090A0A] text-app-fg min-h-screen">
       {/* 1. Hero Section */}
       
 
       <CustomerMarquee />
 
       {/* 2. Main Content - Sticky Bento Layout */}
-      <div className="bg-[#050505] text-white py-20 flex flex-col">
+      <div className="bg-app-bg text-app-fg py-20 flex flex-col">
         {/* Header Section */}
         <div className="w-full px-8 md:px-16 lg:px-32 xl:px-16 mb-16 text-left">
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4 leading-tight text-white">
+          <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4 leading-tight text-app-fg">
             Client <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6843B7] to-[#ffffff]">Showcases</span>
           </h2>
-          <p className="text-base md:text-lg text-white/50 leading-relaxed max-w-2xl">
+          <p className="text-base md:text-lg text-app-fg/50 leading-relaxed max-w-2xl">
             Read through our proven success stories and in-depth case studies from industry leaders who trust cliQTest every single day.
           </p>
         </div>
@@ -222,17 +222,17 @@ export default function SuccessStoriesFeatures() {
       </div>
 
       {/* 3. CTA Section */}
-      <section className="py-24 px-8 bg-[#050505]">
-        <div className="max-w-4xl mx-auto text-left sm:text-center bg-white/5 border border-white/10 rounded-md p-8 sm:p-12 relative overflow-hidden">
-          <h2 className="text-3xl md:text-4xl font-semibold text-white mb-4 leading-tight">Ready for <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6843B7] to-[#8f81eb]">Enterprise-Grade Quality?</span></h2>
-          <p className="text-white/60 mb-8 max-w-2xl mx-auto text-sm sm:text-base">
+      <section className="py-24 px-8 bg-app-bg">
+        <div className="max-w-4xl mx-auto text-left sm:text-center bg-app-fg/5 border border-app-border rounded-md p-8 sm:p-12 relative overflow-hidden">
+          <h2 className="text-3xl md:text-4xl font-semibold text-app-fg mb-4 leading-tight">Ready for <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6843B7] to-[#8f81eb]">Enterprise-Grade Quality?</span></h2>
+          <p className="text-app-fg/60 mb-8 max-w-2xl mx-auto text-sm sm:text-base">
             Contact us to see how cliQTest can seamlessly integrate into your team's workflow and scale your testing infrastructure.
           </p>
           <div className="flex flex-row flex-wrap items-center justify-start sm:justify-center gap-3 sm:gap-4">
-            <Link href="/book-a-demo" className="flex-1 sm:flex-none text-center px-4 sm:px-8 py-3 bg-[#6843B7] text-white font-medium rounded-sm hover:scale-105 active:scale-95 transition-all text-[13px] sm:text-base whitespace-nowrap">
+            <Link href="/book-a-demo" className="flex-1 sm:flex-none text-center px-4 sm:px-8 py-3 bg-[#6843B7] text-app-fg font-medium rounded-sm hover:scale-105 active:scale-95 transition-all text-[13px] sm:text-base whitespace-nowrap">
               Book a Demo
             </Link>
-            {/* <Link href="/pricing" className="flex-1 sm:flex-none text-center px-4 sm:px-8 py-3 border border-white/20 text-white font-medium rounded-sm hover:bg-white/5 transition-colors text-[13px] sm:text-base whitespace-nowrap">
+            {/* <Link href="/pricing" className="flex-1 sm:flex-none text-center px-4 sm:px-8 py-3 border border-app-border-hover text-app-fg font-medium rounded-sm hover:bg-app-fg/5 transition-colors text-[13px] sm:text-base whitespace-nowrap">
               View Pricing
             </Link> */}
           </div>
