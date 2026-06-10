@@ -58,7 +58,7 @@ export default function CustomerMarquee({ isLight }: { isLight?: boolean }) {
             {duplicatedCustomers.map((item, i) => (
               <li 
                 key={i}
-                className="flex items-center justify-center mx-4 md:mx-8 relative h-12 w-36"
+                className="flex items-center justify-center mx-2 md:mx-4 relative h-12 w-36"
               >
                 <Image 
                   src={item.logo} 
