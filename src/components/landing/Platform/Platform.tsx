@@ -88,7 +88,7 @@ export default function Platform({ isLight }: { isLight?: boolean }) {
               src={isLight ? "/images/bn1.png" : "/images/bn1.png"}
               alt="cliQTest Platform Monitor"
               fill
-              className={`object-contain  transition-transform duration-700 ease-out group-hover:scale-105 ${isLight ? 'mix-blend-multiply' : 'mix-blend-screen'}`}
+              className={`object-contain rounded-2xl transition-transform duration-700 ease-out group-hover:scale-105 ${isLight ? 'mix-blend-multiply' : 'mix-blend-screen'}`}
               sizes="(max-width: 768px) 100vw, 50vw"
               priority
               unoptimized

@@ -4,8 +4,10 @@ import React, { useState } from 'react';
 import { ChevronLeft, ChevronRight, CheckCircle2, QrCode, Sun, Moon } from 'lucide-react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 
 export default function BookADemoPage() {
+  const router = useRouter();
   const [selectedDate, setSelectedDate] = useState<Date | null>(new Date());
   const [viewDate, setViewDate] = useState(new Date(new Date().getFullYear(), new Date().getMonth(), 1));
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -85,6 +87,9 @@ export default function BookADemoPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
+            <button onClick={() => router.back()} className={`text-[#6843B7] hover:text-[#9e7be9] transition-colors text-sm font-medium mb-8 inline-flex items-center gap-2`}>
+              ← Go Back
+            </button>
             <span className="text-[#6843B7] text-sm font-semibold uppercase tracking-[0.3em] mb-6 block">Personalized Demo</span>
             <h1 className={`text-5xl md:text-6xl font-bold tracking-tight mb-8 leading-[1.1] transition-colors duration-500 ${isLight ? 'text-app-fg-invert' : 'text-app-fg'}`}>
               See the <br />
