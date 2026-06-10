@@ -12,7 +12,7 @@ import Resources from "@/components/landing/Resources/Resources";
 import CustomerMarquee from "@/components/common/CustomerMarquee";
 
 export default function LandingPage() {
-  const [themes, setThemes] = useState([false, false, false, false, false, false, false]);
+  const [themes, setThemes] = useState([false, true, true, true, true, true, true]);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleTheme = (index: number) => {

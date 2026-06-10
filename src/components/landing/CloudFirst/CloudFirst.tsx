@@ -40,7 +40,7 @@ export default function CloudFirst({ isLight }: { isLight?: boolean }) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className={`flex flex-col sm:flex-row rounded-md border overflow-hidden group transition-colors duration-500 ${isLight ? 'bg-app-surface border-zinc-200' : 'bg-app-surface border-app-border'}`}
+            className={`flex flex-col sm:flex-row rounded-md border overflow-hidden group transition-colors duration-500 ${isLight ? 'bg-app-fg border-zinc-200' : 'bg-app-surface border-app-border'}`}
           >
             <div className={`hidden sm:block relative w-full sm:w-[45%] h-[250px] sm:h-auto border-b sm:border-b-0 sm:border-r overflow-hidden transition-colors duration-500 ${isLight ? 'bg-app-fg border-zinc-200' : 'bg-app-bg border-app-border'}`}>
               <Image
@@ -69,7 +69,7 @@ export default function CloudFirst({ isLight }: { isLight?: boolean }) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className={`flex flex-col sm:flex-row rounded-md border overflow-hidden group transition-colors duration-500 ${isLight ? 'bg-app-surface border-zinc-200' : 'bg-app-surface border-app-border'}`}
+            className={`flex flex-col sm:flex-row rounded-md border overflow-hidden group transition-colors duration-500 ${isLight ? 'bg-app-fg border-zinc-200' : 'bg-app-surface border-app-border'}`}
           >
             <div className={`hidden sm:block relative w-full sm:w-[45%] h-[250px] sm:h-auto overflow-hidden border-b sm:border-b-0 sm:border-r transition-colors duration-500 ${isLight ? 'bg-app-fg border-zinc-200' : 'bg-app-bg border-app-border'}`}>
               <Image
@@ -99,7 +99,7 @@ export default function CloudFirst({ isLight }: { isLight?: boolean }) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className={`flex flex-col sm:flex-row rounded-md border overflow-hidden group transition-colors duration-500 ${isLight ? 'bg-app-surface border-zinc-200' : 'bg-app-surface border-app-border'}`}
+            className={`flex flex-col sm:flex-row rounded-md border overflow-hidden group transition-colors duration-500 ${isLight ? 'bg-app-fg border-zinc-200' : 'bg-app-surface border-app-border'}`}
           >
             <div className={`hidden sm:block relative w-full sm:w-[45%] h-[250px] sm:h-auto border-b sm:border-b-0 sm:border-r overflow-hidden transition-colors duration-500 ${isLight ? 'bg-app-fg border-zinc-200' : 'bg-app-bg border-app-border'}`}>
               <Image
@@ -127,7 +127,7 @@ export default function CloudFirst({ isLight }: { isLight?: boolean }) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className={`flex flex-col sm:flex-row rounded-md border overflow-hidden group transition-colors duration-500 ${isLight ? 'bg-app-surface border-zinc-200' : 'bg-app-surface border-app-border'}`}
+            className={`flex flex-col sm:flex-row rounded-md border overflow-hidden group transition-colors duration-500 ${isLight ? 'bg-app-fg border-zinc-200' : 'bg-app-surface border-app-border'}`}
           >
             <div className={`hidden sm:block relative w-full sm:w-[45%] h-[250px] sm:h-auto border-b sm:border-b-0 sm:border-r overflow-hidden transition-colors duration-500 ${isLight ? 'bg-app-fg border-zinc-200' : 'bg-app-bg border-app-border'}`}>
               <Image

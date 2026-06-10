@@ -9,7 +9,7 @@ export default function BookADemoPage() {
   const [selectedDate, setSelectedDate] = useState<Date | null>(new Date());
   const [viewDate, setViewDate] = useState(new Date(new Date().getFullYear(), new Date().getMonth(), 1));
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const [isLight, setIsLight] = useState(false);
+  const [isLight, setIsLight] = useState(true);
 
   const [contactType, setContactType] = useState<'presales' | 'sales' | null>(null);
 

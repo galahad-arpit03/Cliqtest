@@ -5,7 +5,7 @@ import { Sun, Moon, Settings2, X } from 'lucide-react';
 import { AnimatePresence, motion } from 'framer-motion';
 
 export default function PageThemeMenu({ sections }: { sections: React.ReactNode[] }) {
-  const [themes, setThemes] = useState(sections.map(() => false));
+  const [themes, setThemes] = useState(sections.map((_, index) => index !== 0));
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleTheme = (index: number) => {
