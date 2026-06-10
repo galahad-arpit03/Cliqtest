@@ -10,7 +10,7 @@ interface ThemeState {
 export const useLandingModeStore = create<ThemeState>()(
   persist(
     (set) => ({
-      landingThemeMode: 'dark',
+      landingThemeMode: 'light',
       setLandingThemeMode: (mode) => set({ landingThemeMode: mode }),
       toggleLandingThemeMode: () => set((state) => ({ landingThemeMode: state.landingThemeMode === 'dark' ? 'light' : 'dark' })),
     }),

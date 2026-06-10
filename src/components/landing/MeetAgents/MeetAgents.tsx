@@ -26,7 +26,7 @@ export default function MeetAgents({ isLight }: { isLight?: boolean }) {
         <motion.div 
           animate={{ x: ['100%', '-100%'] }}
           transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
-          className="absolute bottom-1/3 right-0 w-[200%] h-[1px] bg-gradient-to-r from-transparent via-[#00F2B0] to-transparent transform rotate-12"
+          className="absolute bottom-1/3 right-0 w-[200%] h-[1px] bg-gradient-to-r from-transparent via-[#6843B7] to-transparent transform rotate-12"
         />
       </div>
 

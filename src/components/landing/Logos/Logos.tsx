@@ -26,7 +26,7 @@ export default function Logos({ isLight }: { isLight?: boolean }) {
         transition={{ duration: 0.8 }}
         className="max-w-7xl mx-auto px-8 mb-10 text-center"
       >
-        <h2 className={`text-sm md:text-base font medium tracking-[0.2em] uppercase transition-colors duration-500 ${isLight ? 'text-app-fg-invert/80' : 'text-app-fg'}`}>
+        <h2 className={`text-sm md:text-base font-medium tracking-[0.2em] uppercase transition-colors duration-500 text-[#6843B7]`}>
           Seamless Collaboration via Integration
         </h2>
       </motion.div>
@@ -55,7 +55,7 @@ export default function Logos({ isLight }: { isLight?: boolean }) {
                   src={item.src}
                   alt={item.name}
                   fill
-                  className={`object-contain grayscale opacity-70 transition-all duration-300 ${isLight ? 'invert' : ''}`}
+                  className={`object-contain transition-all duration-300 ${isLight ? 'invert' : ''}`}
                 />
               </div>
               <span className={`font medium text-base md:text-lg tracking-tight transition-colors duration-300 ${isLight ? 'text-app-fg-invert' : 'text-app-fg'}`}>

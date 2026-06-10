@@ -10,54 +10,29 @@ import CloudFirst from "@/components/landing/CloudFirst/CloudFirst";
 import MeetAgents from "@/components/landing/MeetAgents/MeetAgents";
 import Resources from "@/components/landing/Resources/Resources";
 import CustomerMarquee from "@/components/common/CustomerMarquee";
+import { useLandingModeStore } from "@/store/themeStore";
 
 export default function LandingPage() {
-  const [themes, setThemes] = useState([false, true, true, true, true, true, true]);
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { landingThemeMode } = useLandingModeStore();
 
-  const toggleTheme = (index: number) => {
-    const newThemes = [...themes];
-    newThemes[index] = !newThemes[index];
-    setThemes(newThemes);
-  };
+  // If landingThemeMode is 'dark', all sections are dark (false)
+  // If 'light', it uses the default mixed setting
+  const isGlobalDark = landingThemeMode === 'dark';
+
+  const defaultThemes = [
+    false, // 0: Hero (dark)
+    true,  // 1: Logos (light)
+    true,  // 2: Platform (light)
+    true,  // 3: CloudFirst (light)
+    false, // 4: MeetAgents (dark)
+    true,  // 5: CustomerMarquee (light)
+    true   // 6: Resources (light)
+  ];
+
+  const themes = defaultThemes.map(t => isGlobalDark ? false : t);
 
   return (
     <div className="relative min-h-[800px] flex flex-col overflow-hidden bg-app-bg">
-      {/* Floating Theme Toggles */}
-      <div className="fixed top-1/2 right-4 md:right-8 transform -translate-y-1/2 z-50 flex flex-col items-center gap-3">
-        <button
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-          className={`p-3 rounded-full backdrop-blur-md border transition-all shadow-xl hover:scale-110 ${isMenuOpen ? 'bg-[#6843B7] border-[#6843B7] text-app-fg' : 'bg-app-bg/60 border-app-border-hover text-app-fg hover:bg-app-bg/80'}`}
-          title="Toggle Theme Menu"
-        >
-          {isMenuOpen ? <X size={24} /> : <Settings2 size={24} />}
-        </button>
-
-        <AnimatePresence>
-          {isMenuOpen && (
-            <motion.div 
-              initial={{ opacity: 0, height: 0, scale: 0.9 }}
-              animate={{ opacity: 1, height: 'auto', scale: 1 }}
-              exit={{ opacity: 0, height: 0, scale: 0.9 }}
-              className="flex flex-col gap-3 items-center overflow-hidden"
-            >
-              {[0, 1, 2, 3, 4, 5, 6].map((index) => (
-                <motion.button
-                  key={index}
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: index * 0.05 }}
-                  onClick={() => toggleTheme(index)}
-                  className={`p-2.5 rounded-full backdrop-blur-md border transition-all shadow-lg hover:scale-110 ${themes[index] ? 'bg-app-fg/80 border-app-bg/20 text-app-fg-invert hover:bg-app-fg' : 'bg-app-bg/40 border-app-border text-app-fg hover:bg-app-bg/60'}`}
-                  title={`Toggle Theme for Section ${index + 1}`}
-                >
-                  {themes[index] ? <Moon size={20} /> : <Sun size={20} />}
-                </motion.button>
-              ))}
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </div>
 
       <Hero isLight={themes[0]} />
       <Logos isLight={themes[1]} />

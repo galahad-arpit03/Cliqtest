@@ -58,7 +58,7 @@ export default function CustomerMarquee({ isLight }: { isLight?: boolean }) {
                   src={item.logo} 
                   alt={item.name} 
                   fill
-                  className={`object-contain transition-all duration-300 opacity-70 hover:opacity-100 grayscale hover:grayscale-0 ${isLight ? 'invert' : ''}`}
+                  className={`object-contain transition-all duration-300 ${isLight ? 'invert' : ''}`}
                   sizes="(max-width: 768px) 100px, 150px"
                 />
               </li>
