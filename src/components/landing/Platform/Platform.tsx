@@ -85,7 +85,7 @@ export default function Platform({ isLight }: { isLight?: boolean }) {
         >
           <div className="w-full h-full relative group">
             <Image
-              src={isLight ? "/images/bn12.png" : "/images/bn1.png"}
+              src={isLight ? "/images/bn1.png" : "/images/bn1.png"}
               alt="cliQTest Platform Monitor"
               fill
               className={`object-contain transition-transform duration-700 ease-out group-hover:scale-105 ${isLight ? 'mix-blend-multiply' : 'mix-blend-screen'}`}

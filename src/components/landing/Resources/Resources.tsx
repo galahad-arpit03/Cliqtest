@@ -93,12 +93,12 @@ export default function Resources({ isLight }: { isLight?: boolean }) {
                     <div className={`absolute inset-0 bg-gradient-to-t via-transparent to-transparent opacity-90 ${isLight ? 'from-white' : 'from-app-surface'}`} />
                     
                     {/* Badge */}
-                    <div 
+                    {/* <div 
                       className="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-semibold tracking-wide backdrop-blur-md"
                       style={{ backgroundColor: `${resource.color}20`, color: resource.color, border: `1px solid ${resource.color}40` }}
                     >
                       {resource.category}
-                    </div>
+                    </div> */}
                   </div>
                   
                   <div className="p-8 flex flex-col flex-1">

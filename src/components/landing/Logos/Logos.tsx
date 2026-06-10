@@ -30,10 +30,6 @@ export default function Logos({ isLight }: { isLight?: boolean }) {
           <h2 className={`text-sm md:text-base font-medium tracking-[0.2em] uppercase transition-colors duration-500 text-[#6843B7] pb-2`}>
             Seamless Collaboration via Integration
           </h2>
-          <div 
-            className="w-full h-[1px] mt-3" 
-            style={{ background: 'linear-gradient(90deg, transparent 0%, #6843B7 40%, #6843B7 60%, transparent 100%)' }}
-          />
         </div>
       </motion.div>
 
@@ -61,10 +57,10 @@ export default function Logos({ isLight }: { isLight?: boolean }) {
                   src={item.src}
                   alt={item.name}
                   fill
-                  className={`object-contain transition-all duration-300 ${isLight ? 'invert' : ''}`}
+                  className={`object-contain transition-all duration-300 grayscale opacity-80 hover:grayscale-0 hover:opacity-100 cursor-pointer ${isLight ? 'invert hover:invert-0' : ''}`}
                 />
               </div>
-              <span className={`font medium text-base md:text-lg tracking-tight transition-colors duration-300 ${isLight ? 'text-app-fg-invert' : 'text-app-fg'}`}>
+              <span className={`font-medium text-base md:text-lg tracking-tight transition-colors duration-300 opacity-60 ${isLight ? 'text-app-fg-invert' : 'text-app-fg'}`}>
                 {item.name}
               </span>
             </div>
