@@ -21,17 +21,23 @@ export default function CustomerMarquee({ isLight }: { isLight?: boolean }) {
   const duplicatedCustomers = [...customers, ...customers, ...customers, ...customers];
 
   return (
-    <section className={`w-full py-12 md:py-16 border-y overflow-hidden transition-colors duration-500 ${isLight ? 'bg-[#FAFAFA] border-app-bg/5' : 'bg-[#000000] border-app-border'}`} aria-label="Trusted customer logos">
+    <section className={`w-full py-6 md:py-8 border-y overflow-hidden transition-colors duration-500 ${isLight ? 'bg-[#FAFAFA] border-app-bg/5' : 'bg-[#000000] border-app-border'}`} aria-label="Trusted customer logos">
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
-        className="max-w-7xl mx-auto px-8 mb-10 text-center"
+        className="max-w-7xl mx-auto px-8 mb-6 text-center"
       >
-        <h2 className={`text-sm md:text-base font-medium tracking-[0.2em] uppercase transition-colors duration-500 ${isLight ? 'text-app-fg-invert/50' : 'text-app-fg/50'}`}>
-          Trusted By Industry Leaders
-        </h2>
+        <div className="inline-flex flex-col items-center">
+          <h2 className={`text-sm md:text-base font-medium tracking-[0.2em] uppercase transition-colors duration-500 text-[#6843B7] pb-2`}>
+            Trusted By Industry Leaders
+          </h2>
+          <div 
+            className="w-full h-[1px] mt-3" 
+            style={{ background: 'linear-gradient(90deg, transparent 0%, #6843B7 40%, #6843B7 60%, transparent 100%)' }}
+          />
+        </div>
       </motion.div>
 
       <div className="relative w-full flex overflow-hidden group">
