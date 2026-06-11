@@ -109,7 +109,7 @@ export default function Resources({ isLight }: { isLight?: boolean }) {
                       {resource.desc}
                     </p>
                     <div className={`inline-flex items-center gap-2 font-medium text-sm transition-colors mt-auto ${isLight ? 'text-[#6843B7] group-hover:text-app-fg-invert' : 'text-[#6843B7] group-hover:text-app-fg'}`}>
-                      Read Article
+                      Read
                       <span className="group-hover:translate-x-1 transition-transform">→</span>
                     </div>
                   </div>

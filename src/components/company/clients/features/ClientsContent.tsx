@@ -27,7 +27,7 @@ export default function ClientsContent() {
   }, []);
 
   return (
-    <div className="max-w-7xl mx-auto px-8">
+    <div className="max-w-7xl pt-12 mx-auto px-8">
       
       {/* Success Stories Section has been moved to Solutions */}
       {/* Testimonials Marquee Section */}
@@ -64,7 +64,7 @@ export default function ClientsContent() {
               {[...testimonialsData.slice(0, 7), ...testimonialsData.slice(0, 7), ...testimonialsData.slice(0, 7)].map((item, idx) => (
                 <div 
                   key={`r1-${idx}`} 
-                  className="w-[300px] md:w-[400px] shrink-0 bg-app-surface border border-app-border rounded-md p-6 relative overflow-hidden group/card shadow-2xl hover:border-[#6843B7]/30 hover:bg-[#0c0c16] transition-all duration-300 flex flex-col justify-between hover:scale-105 hover:z-20 cursor-pointer"
+                  className="w-[300px] md:w-[400px] shrink-0 bg-app-surface border border-app-border rounded-md p-6 relative overflow-hidden group/card shadow-2xl hover:border-[#6843B7]/30 hover:bg-app-surface-hover transition-all duration-300 flex flex-col justify-between hover:scale-105 hover:z-20 cursor-pointer"
                 >
                   <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-[#6843B7] to-transparent opacity-50 group-hover/card:opacity-100 transition-opacity duration-500" />
                   
@@ -97,7 +97,7 @@ export default function ClientsContent() {
               {[...testimonialsData.slice(7), ...testimonialsData.slice(7), ...testimonialsData.slice(7)].map((item, idx) => (
                 <div 
                   key={`r2-${idx}`} 
-                  className="w-[300px] md:w-[400px] shrink-0 bg-app-surface border border-app-border rounded-md p-6 relative overflow-hidden group/card shadow-2xl hover:border-[#6843B7]/30 hover:bg-[#0c0c16] transition-all duration-300 flex flex-col justify-between hover:scale-105 hover:z-20 cursor-pointer"
+                  className="w-[300px] md:w-[400px] shrink-0 bg-app-surface border border-app-border rounded-md p-6 relative overflow-hidden group/card shadow-2xl hover:border-[#6843B7]/30 hover:bg-app-surface-hover transition-all duration-300 flex flex-col justify-between hover:scale-105 hover:z-20 cursor-pointer"
                 >
                   <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-[#6843B7] to-transparent opacity-50 group-hover/card:opacity-100 transition-opacity duration-500" />
                   

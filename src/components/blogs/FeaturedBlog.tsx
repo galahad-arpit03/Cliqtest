@@ -4,8 +4,27 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { getFeaturedPosts, getRecentPosts, trendingTopics } from "@/data/blogs";
+import { useRouter, useSearchParams } from "next/navigation";
+import BlogCard from "./BlogCard";
 
 export default function FeaturedBlog({ isLight }: { isLight?: boolean }) {
+  const router = useRouter();
+  const searchParams = useSearchParams();
+  const currentTag = searchParams?.get('tag');
+
+  const handleTagClick = (topic: string) => {
+    if (currentTag === topic) {
+      router.push('/blogs', { scroll: false });
+    } else {
+      router.push(`/blogs?tag=${encodeURIComponent(topic)}`, { scroll: false });
+    }
+    
+    // Scroll to the grid section so the user can see the filtered results
+    const gridEl = document.getElementById('blog-grid-section');
+    if (gridEl) {
+      gridEl.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
   return (
     <section className={`py-12 px-4 md:px-8 transition-colors duration-500 ${isLight ? 'bg-app-fg' : 'bg-app-bg'}`}>
       <div className="max-w-7xl mx-auto">
@@ -36,42 +55,7 @@ export default function FeaturedBlog({ isLight }: { isLight?: boolean }) {
 
             <div className="grid md:grid-cols-2 gap-8">
               {getFeaturedPosts().map((post, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  className="group"
-                >
-                  <div className={`relative h-[260px] rounded-md overflow-hidden border transition-colors duration-500 ${isLight ? 'border-app-border' : 'border-app-border'}`}>
-                    <Image
-                      src={post.image}
-                      alt={post.title}
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-
-                  <Link href={`/blogs/${post.slug}`} className="mt-5 block group-hover:opacity-90 transition-opacity">
-                    <div className="flex justify-between items-center mb-3">
-                      <span className="text-[#9e7be9] text-xs uppercase tracking-[0.15em]">
-                        {post.type}
-                      </span>
-
-                      <span className="text-app-muted text-xs">
-                        {post.readTime}
-                      </span>
-                    </div>
-
-                    <h3 className={`text-2xl font-semibold mb-4 transition-colors duration-500 ${isLight ? 'text-app-fg-invert group-hover:text-[#6843B7]' : 'text-app-fg'}`}>
-                      {post.title}
-                    </h3>
-
-                    <p className={`text-sm leading-relaxed transition-colors duration-500 ${isLight ? 'text-app-fg-invert/60' : 'text-app-muted'}`}>
-                      {post.excerpt}
-                    </p>
-                  </Link>
-                </motion.div>
+                <BlogCard key={index} {...post} isLight={isLight} />
               ))}
             </div>
           </div>
@@ -85,14 +69,22 @@ export default function FeaturedBlog({ isLight }: { isLight?: boolean }) {
               </h3>
 
               <div className="flex flex-wrap gap-3">
-                {trendingTopics.map((topic) => (
-                  <span
-                    key={topic}
-                    className="px-4 py-2 rounded-full border border-[#6843B7]/30 bg-[#6843B7]/5 text-[#6843B7] text-sm cursor-pointer hover:bg-[#6843B7]/10 transition-colors duration-300"
-                  >
-                    #{topic}
-                  </span>
-                ))}
+                {trendingTopics.map((topic) => {
+                  const isActive = currentTag === topic;
+                  return (
+                    <span
+                      key={topic}
+                      onClick={() => handleTagClick(topic)}
+                      className={`px-4 py-2 rounded-full border text-sm cursor-pointer transition-colors duration-300 ${
+                        isActive 
+                          ? "bg-[#6843B7] border-[#6843B7] text-white shadow-md" 
+                          : "border-[#6843B7]/30 bg-[#6843B7]/5 text-[#6843B7] hover:bg-[#6843B7]/10"
+                      }`}
+                    >
+                      #{topic}
+                    </span>
+                  );
+                })}
               </div>
             </div>
 

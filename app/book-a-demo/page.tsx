@@ -5,13 +5,15 @@ import { ChevronLeft, ChevronRight, CheckCircle2, QrCode, Sun, Moon } from 'luci
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
+import { useLandingModeStore } from '@/store/themeStore';
 
 export default function BookADemoPage() {
   const router = useRouter();
+  const { landingThemeMode } = useLandingModeStore();
+  const isLight = landingThemeMode === 'light';
   const [selectedDate, setSelectedDate] = useState<Date | null>(new Date());
   const [viewDate, setViewDate] = useState(new Date(new Date().getFullYear(), new Date().getMonth(), 1));
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const [isLight, setIsLight] = useState(true);
 
   const [contactType, setContactType] = useState<'presales' | 'sales' | null>(null);
 
@@ -62,15 +64,7 @@ export default function BookADemoPage() {
 
   return (
     <main className={`min-h-screen pt-32 md:pt-40 pb-20 px-6 md:px-12 lg:px-24 relative overflow-hidden transition-colors duration-500 ${isLight ? 'bg-[#FAFAFA]' : 'bg-app-bg'}`}>
-      
-      {/* Floating Theme Toggle */}
-      <button
-        onClick={() => setIsLight(!isLight)}
-        className={`fixed top-1/2 right-4 md:right-8 transform -translate-y-1/2 z-50 p-3 rounded-full backdrop-blur-md border transition-all shadow-lg hover:scale-110 ${isLight ? 'bg-app-fg/60 border-app-border text-app-fg-invert hover:bg-app-fg/80' : 'bg-app-bg/40 border-app-border text-app-fg hover:bg-app-bg/60'}`}
-        title={`Switch to ${isLight ? 'Dark' : 'Light'} Theme`}
-      >
-        {isLight ? <Moon size={24} /> : <Sun size={24} />}
-      </button>
+
       {/* Dynamic Background Gradients */}
       {/* <div className="absolute top-0 left-0 w-full h-full pointer-events-none z-0">
         <div className="absolute top-[10%] left-[-10%] w-[60%] h-[60%] bg-[#6843B7]/10 blur-[160px] rounded-full" />

@@ -24,12 +24,12 @@ export default function Footer() {
                 alt="AP2L"
                 fill
                 sizes="128px"
-                className="object-contain object-left xl:object-center"
+                className="object-contain object-center"
               />
             </div>
           </Link>
           <div className="text-[#a0a0a0] text-[13px] font-normal tracking-wide">
-            © 2026 <Link href="https://ap2l.ai/" target="_blank" rel="noopener noreferrer" className="hover:text-app-fg text-[#6843B7] transition-colors">ap2l.ai</Link>
+            copyright &copy; 2026 <Link href="https://ap2l.ai/" target="_blank" rel="noopener noreferrer" className="hover:text-app-fg text-[#6843B7] transition-colors">ap2l.ai</Link>
           </div>
         </div>
 
