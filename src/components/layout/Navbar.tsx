@@ -272,7 +272,7 @@ export const menuItems = [
           icon: Zap,
           features: [
             { label: "Technology Partners", desc: "Integrations that power our platform." },
-            { label: "Strategic Alliances", desc: "Collaborations driving innovation." }
+            // { label: "Strategic Alliances", desc: "Collaborations driving innovation." }
           ]
         }
       ]

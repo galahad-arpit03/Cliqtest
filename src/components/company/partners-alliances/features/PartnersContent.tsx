@@ -105,9 +105,9 @@ export default function PartnersContent() {
           <div className="absolute top-0 right-0 w-96 h-96 bg-[#6843B7]/10 rounded-full blur-[100px] pointer-events-none" />
 
           <div className="lg:w-1/2 flex flex-col gap-6 relative z-10">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#6843B7]/10 border border-[#6843B7]/20 text-[#6843B7] text-xs font-bold uppercase tracking-widest w-fit">
+            {/* <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#6843B7]/10 border border-[#6843B7]/20 text-[#6843B7] text-xs font-bold uppercase tracking-widest w-fit">
               Strategic Technology Partner
-            </div>
+            </div> */}
             <h2 className="text-4xl md:text-5xl font-bold text-app-fg tracking-tight leading-tight">
               Accelerating Secure Digital Transformation Through Innovation
             </h2>
@@ -154,7 +154,7 @@ export default function PartnersContent() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-app-fg mb-4">Core Capabilities</h2>
+          <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-[#6843B7] to-purple-400 bg-clip-text text-transparent mb-4">Core Capabilities</h2>
           <p className="text-app-fg/60 text-lg max-w-2xl mx-auto">Driving enterprise success across critical technological domains.</p>
         </motion.div>
 
@@ -166,7 +166,7 @@ export default function PartnersContent() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="bg-app-surface border border-app-border p-8 rounded-2xl hover:border-[#6843B7]/50 transition-colors group"
+              className="bg-app-surface border border-app-border p-8 rounded-md hover:border-[#6843B7]/50 transition-colors group"
             >
               <div className="w-12 h-12 bg-[#6843B7]/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 <cap.icon className="w-6 h-6 text-[#6843B7]" />
@@ -188,7 +188,7 @@ export default function PartnersContent() {
           className="space-y-8"
         >
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold text-app-fg mb-4">Partnership Value</h2>
+            <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-[#6843B7] to-purple-400 bg-clip-text text-transparent mb-4">Partnership Value</h2>
             <p className="text-app-fg/60 text-lg">Delivering exceptional results through shared expertise.</p>
           </div>
           
@@ -244,7 +244,7 @@ export default function PartnersContent() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-app-fg mb-6">Why This Partnership Matters</h2>
+          <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-[#6843B7] to-purple-400 bg-clip-text text-transparent mb-6">Why This Partnership Matters</h2>
           <p className="text-lg text-app-fg/70 leading-relaxed font-light mb-16">
             The collaboration between Apmosys and YesPanchi brings together deep technical expertise, strategic consulting capabilities, and a shared commitment to innovation. By combining strengths in AI, cybersecurity, and enterprise transformation, we empower organizations to achieve sustainable growth, operational excellence, and long-term digital success.
           </p>
@@ -255,8 +255,8 @@ export default function PartnersContent() {
               Unlock new opportunities through secure, intelligent, and scalable technology solutions. Partner with us to accelerate innovation, strengthen resilience, and drive meaningful business transformation.
             </p>
             <Link href="/book-a-demo">
-              <button className="px-8 py-4 bg-[#6843B7] text-white text-sm font-bold tracking-wide rounded-sm hover:scale-105 transition-transform shadow-lg shadow-[#6843B7]/20 flex items-center gap-2 mx-auto">
-                Explore Solutions <ArrowRight size={16} />
+              <button className="px-8 py-3 bg-[#6843B7] text-white text-[14px] font-medium rounded-sm hover:bg-[#6843B7] transition-all shadow-[0_10px_30px_rgba(104,67,183,0.3)] hover:scale-105 active:scale-95 flex items-center gap-2 mx-auto">
+                Book a Demo <ArrowRight size={16} />
               </button>
             </Link>
           </div>
