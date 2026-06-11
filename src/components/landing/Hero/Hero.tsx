@@ -9,7 +9,7 @@ export default function Hero({ isLight }: { isLight?: boolean }) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const { scrollY } = useScroll();
   const yBg = useTransform(scrollY, [0, 1000], ['0%', '30%']);
-    const yText = useTransform(scrollY, [0, 1000], ['0%', '10%']);
+  const yText = useTransform(scrollY, [0, 1000], ['0%', '10%']);
 
   useEffect(() => {
     if (videoRef.current) {

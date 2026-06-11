@@ -29,7 +29,7 @@ export default function BlogCard({
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className={`group flex flex-col h-full border rounded-md overflow-hidden transition-colors duration-500 hover:border-[#6843B7]/50 ${isLight ? 'bg-app-surface border-app-border' : 'bg-app-surface border-app-border'}`}
+        className="group flex flex-col h-full border rounded-md overflow-hidden transition-colors duration-500 hover:border-[#6843B7]/50 bg-app-surface border-app-border"
       >
       <Link href={`/blogs/${slug}`} className="relative w-full h-[240px] overflow-hidden block">
         <Image
@@ -39,7 +39,7 @@ export default function BlogCard({
           className="object-cover"
         />
 
-        <div className={`absolute inset-0 bg-gradient-to-t via-transparent to-transparent transition-colors duration-500 ${isLight ? 'from-zinc-50' : 'from-app-surface'}`} />
+        <div className="absolute inset-0 bg-gradient-to-t via-transparent to-transparent transition-colors duration-500 from-app-surface" />
 
         <div className="absolute top-4 left-4 px-3 py-1 rounded-full bg-[#6843B7]/20 border border-[#6843B7]/30 text-[#9e7be9] text-xs font-semibold">
           {type}
@@ -48,7 +48,7 @@ export default function BlogCard({
 
       <div className="p-8 flex flex-col flex-1">
         <Link href={`/blogs/${slug}`}>
-          <h3 className={`text-xl font-semibold mb-4 leading-snug transition-colors duration-500 hover:text-[#6843B7] ${isLight ? 'text-app-fg-invert' : 'text-app-fg'}`}>
+          <h3 className="text-xl font-semibold mb-4 leading-snug transition-colors duration-500 hover:text-[#6843B7] text-app-fg">
             {title}
           </h3>
         </Link>
@@ -67,7 +67,7 @@ export default function BlogCard({
           </div>
         )}
 
-        <p className={`text-sm leading-relaxed flex-1 transition-colors duration-500 ${isLight ? 'text-app-fg-invert/60' : 'text-app-muted'}`}>
+        <p className="text-sm leading-relaxed flex-1 transition-colors duration-500 text-app-muted">
           {excerpt}
         </p>
 

@@ -33,7 +33,6 @@ export default function LandingPage() {
 
   return (
     <div className="relative min-h-[800px] flex flex-col overflow-hidden bg-app-bg">
-
       <Hero isLight={themes[0]} />
       <Logos isLight={themes[1]} />
       <Platform isLight={themes[2]} />
