@@ -3,8 +3,6 @@ import { Space_Grotesk, Alata } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
-import LoadingScreen from "@/components/layout/LoadingScreen";
-import DynamicBeams from "@/components/common/DynamicBeams";
 
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-space-grotesk",
@@ -100,13 +98,11 @@ export default function RootLayout({
       className={`${spaceGrotesk.variable} ${alata.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-app-bg overflow-x-clip" suppressHydrationWarning>
-        <LoadingScreen>
-          <Navbar />
-          <main className="flex-1 flex flex-col">
-            {children}
-          </main>
-          <Footer />
-        </LoadingScreen>
+        <Navbar />
+        <main className="flex-1 flex flex-col">
+          {children}
+        </main>
+        <Footer />
       </body>
     </html>
   );
