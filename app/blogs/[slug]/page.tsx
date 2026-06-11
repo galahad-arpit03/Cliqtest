@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { blogsData } from "@/data/blogs";
 import PageThemeMenu from "@/components/common/PageThemeMenu";
+import ShareButtons from "@/components/blogs/ShareButtons";
 
 export function generateStaticParams() {
   return blogsData.map((blog) => ({
@@ -27,6 +28,21 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   if (!blog) {
     notFound();
   }
+
+  // Generate the full URL for the current blog
+  const baseUrl = "https://cliqtest.com"; // Replace with actual live domain if different
+  const currentUrl = `${baseUrl}/blogs/${blog.slug}`;
+  
+  // URL-encode the data so it doesn't break the web links
+  const encodedUrl = encodeURIComponent(currentUrl);
+  const encodedTitle = encodeURIComponent(blog.title);
+  const encodedExcerpt = encodeURIComponent(blog.excerpt);
+  
+  // Twitter Share URL
+  const twitterShareUrl = `https://twitter.com/intent/tweet?text=${encodedTitle}%0A%0A${encodedExcerpt}&url=${encodedUrl}`;
+  
+  // LinkedIn Share URL
+  const linkedinShareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`;
 
   return (
     <PageThemeMenu 
@@ -97,15 +113,16 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           />
 
           <div className="mt-20 pt-10 border-t border-app-border text-center">
-            <h3 className="text-2xl font-semibold text-app-fg mb-6">Enjoyed this article?</h3>
-            <div className="flex justify-center gap-4">
-              <button className="px-6 py-3 bg-app-surface border border-app-border hover:bg-[#6843B7] hover:border-[#6843B7] hover:text-white text-app-fg rounded-md transition-colors text-sm font-medium">
-                Share on Twitter
-              </button>
-              <button className="px-6 py-3 bg-app-surface border border-app-border hover:bg-[#6843B7] hover:border-[#6843B7] hover:text-white text-app-fg rounded-md transition-colors text-sm font-medium">
-                Share on LinkedIn
-              </button>
-            </div>
+            <h3 className="text-2xl font-semibold text-app-fg mb-2">Enjoyed this article?</h3>
+            <p className="text-sm text-app-muted mb-6">Click a button below (it will copy the content) and paste it on your social media!</p>
+            <ShareButtons 
+              title={blog.title}
+              excerpt={blog.excerpt}
+              url={currentUrl}
+              content={blog.content as string}
+              twitterShareUrl={twitterShareUrl}
+              linkedinShareUrl={linkedinShareUrl}
+            />
           </div>
         </div>
         </section>
