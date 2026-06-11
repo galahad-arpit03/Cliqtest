@@ -26,10 +26,13 @@ export const blogsData: BlogPost[] = [
       <h2>Why Traditional QA Is No Longer Enough</h2>
       <p>Modern software teams release updates multiple times a day across web, mobile, APIs, and cloud-native applications. Traditional testing approaches depend heavily on manually created test cases, scripted automation, and constant maintenance efforts.</p>
       <p>As applications become more dynamic, QA teams spend increasing amounts of time maintaining tests rather than validating quality.</p>
+      
+      <img src="/indi-blog/agentic qa.png" alt="Agentic QA overview" className="w-full rounded-lg my-8 shadow-sm border border-app-border" />
 
       <h2>The Rise of Agentic QA</h2>
       <p>Agentic QA introduces autonomous testing agents that understand requirements, generate test scenarios, adapt to application changes, and continuously optimize testing strategies.</p>
       <p>Unlike traditional automation, agentic systems make intelligent decisions about what to test, when to test, and how to prioritize risks.</p>
+      
 
       <h2>How Intelligent Testing Agents Work</h2>
       <p>AI-powered agents analyze user stories, application behavior, execution history, and production telemetry to automatically generate and maintain test coverage.</p>
@@ -41,6 +44,7 @@ export const blogsData: BlogPost[] = [
         <li>Detect anomalies in application behavior</li>
         <li>Recommend optimal test execution paths</li>
       </ul>
+      <img src="/indi-blog/how intelegent testing work.png" alt="How intelligent testing works" className="w-full rounded-lg my-8 shadow-sm border border-app-border" />
 
       <h2>Business Impact</h2>
       <p>Organizations adopting Agentic QA are reducing testing effort, accelerating release cycles, and improving software reliability.</p>

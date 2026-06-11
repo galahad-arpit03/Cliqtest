@@ -47,7 +47,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
         {/* Hero Content */}
         <div className="relative z-10 w-full max-w-6xl mx-auto px-4 md:px-8">
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-3xl mx-auto">
             <Link href="/blogs" className="text-[#9e7be9] hover:text-app-fg transition-colors text-sm font-medium mb-8 inline-flex items-center gap-2">
               ← Back to all articles
             </Link>
@@ -77,7 +77,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
         /* Article Content Section */
         <section key="content" className="max-w-6xl mx-auto px-4 md:px-8 pt-12 pb-20">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-3xl mx-auto">
           <p className="text-lg md:text-xl text-app-fg/90 leading-snug font-light mb-10 border-l-4 border-[#6843B7] pl-5 py-1">
             {blog.excerpt}
           </p>
