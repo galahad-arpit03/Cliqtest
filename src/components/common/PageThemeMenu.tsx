@@ -3,15 +3,15 @@
 import React from 'react';
 import { useLandingModeStore } from '@/store/themeStore';
 
-export default function PageThemeMenu({ sections }: { sections: React.ReactNode[] }) {
+export default function PageThemeMenu({ sections, heroIsDark = true }: { sections: React.ReactNode[], heroIsDark?: boolean }) {
   const { landingThemeMode } = useLandingModeStore();
 
   return (
     <div className="flex flex-col min-h-screen bg-app-bg">
       {sections.map((section, index) => {
-        // In light mode, hero (index 0) is dark, rest are light.
+        // In light mode, hero (index 0) is dark if heroIsDark is true, rest are light.
         // In dark mode, everything is dark.
-        const isLightTheme = landingThemeMode === 'light' ? index !== 0 : false;
+        const isLightTheme = landingThemeMode === 'light' ? !(heroIsDark && index === 0) : false;
 
         return (
           <div 

@@ -1,4 +1,5 @@
 import React from 'react';
+import PageThemeMenu from '@/components/common/PageThemeMenu';
 
 export const metadata = {
   title: 'Security Policy | cliQTest by ApMoSys',
@@ -6,7 +7,7 @@ export const metadata = {
 };
 
 export default function SecurityPolicyPage() {
-  return (
+  const content = (
     <main className="min-h-screen bg-app-bg pt-32 md:pt-40 pb-20 px-6 md:px-12 lg:px-24">
       <div className="max-w-4xl mx-auto">
         <header className="mb-16 border-b border-app-border pb-12">
@@ -320,4 +321,6 @@ export default function SecurityPolicyPage() {
       </div>
     </main>
   );
+
+  return <PageThemeMenu sections={[content]} heroIsDark={false} />;
 }

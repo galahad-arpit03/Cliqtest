@@ -110,6 +110,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         </div>
         </section>
       ]}
+      heroIsDark={false}
     />
   );
 }
