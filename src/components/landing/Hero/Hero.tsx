@@ -84,7 +84,7 @@ export default function Hero({ isLight }: { isLight?: boolean }) {
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="flex-1 pt-4 md:pt-0 text-center md:text-left"
+          className="flex-1 pt-4 md:pt-0 text-left"
         >
         <motion.h1
             variants={itemVariants}
@@ -96,28 +96,28 @@ export default function Hero({ isLight }: { isLight?: boolean }) {
 
         <motion.p
             variants={itemVariants}
-            className={`text-base sm:text-lg md:text-xl font-medium mb-8 leading-relaxed max-w-xl mx-auto md:mx-0 drop-shadow-md transition-colors duration-500 ${isLight ? 'text-app-fg-invert/60' : 'text-app-fg/60'}`}
+            className={`text-base sm:text-lg md:text-xl font-medium mb-8 leading-relaxed max-w-xl drop-shadow-md transition-colors duration-500 ${isLight ? 'text-app-fg-invert/60' : 'text-app-fg/60'}`}
         >
             Accelerate release cycles with flawless quality. Automate web, mobile, and API testing—all from one intelligent AI-driven platform.
         </motion.p>
 
         <motion.div
           variants={itemVariants}
-          className="flex flex-row w-full sm:w-auto gap-4 sm:gap-8 items-center justify-center md:justify-start mt-4"
+          className="flex w-full justify-start mt-8"
         >
           <Link href="/book-a-demo">
             <motion.button 
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="flex-1 sm:flex-none w-full sm:w-auto px-4 sm:px-8 py-3 rounded-sm bg-[#6843B7] text-app-fg text-[12px] sm:text-[13px] hover:bg-[#6843B7] transition-all whitespace-nowrap"
+              className="px-8 sm:px-10 py-3 sm:py-4 rounded-sm bg-[#6843B7] text-app-fg text-[14px] font-medium hover:bg-[#6843B7] transition-all whitespace-nowrap shadow-lg shadow-[#6843B7]/20"
             >
-              Book Demo
+              Book a Demo
             </motion.button>
           </Link>
 
           <motion.a 
             href="/contact"
-            className={`group flex-1 sm:flex-none flex items-center justify-center sm:justify-start gap-2 font-medium text-[14px] sm:text-[16px] cursor-pointer whitespace-nowrap transition-colors duration-500 ${isLight ? 'text-app-fg-invert' : 'text-app-fg'}`}
+            className={`group hidden sm:flex items-center justify-center sm:justify-start gap-2 font-medium text-[14px] sm:text-[16px] cursor-pointer whitespace-nowrap transition-colors duration-500 ${isLight ? 'text-app-fg-invert' : 'text-app-fg'}`}
           >
             {/* <span className="border-b border-app-fg/40 pb-0.5 group-hover:border-app-fg transition-colors">Contact Us</span> */}
             {/* <span className="group-hover:translate-x-1 transition-transform">→</span> */}

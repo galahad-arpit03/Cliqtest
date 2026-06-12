@@ -659,6 +659,27 @@ export default function Navbar() {
           </div>
 
           <div className="mt-auto pt-10">
+            <div className="flex items-center justify-between mb-8 border-t border-app-border pt-6">
+              <span className="text-sm font-semibold text-app-fg tracking-tight">Theme Mode</span>
+              {mounted && (
+                <button
+                  onClick={toggleLandingThemeMode}
+                  className="flex items-center gap-2 px-4 py-2 rounded-full border border-app-border bg-app-surface text-app-fg shadow-sm active:scale-95 transition-all"
+                >
+                  {landingThemeMode === 'dark' ? (
+                    <>
+                      <Sun size={16} />
+                      <span className="text-xs font-medium">Light</span>
+                    </>
+                  ) : (
+                    <>
+                      <Moon size={16} />
+                      <span className="text-xs font-medium">Dark</span>
+                    </>
+                  )}
+                </button>
+              )}
+            </div>
             <Link href="/book-a-demo" onClick={() => setIsMobileMenuOpen(false)}>
               <button className="w-full py-2.5 bg-[#6843B7] text-white text-[13px] font medium rounded-sm shadow-xl hover:scale-[1.02] active:scale-[0.98] transition-all">
                 Book a Demo
