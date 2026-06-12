@@ -100,14 +100,13 @@ export default function ByUseCaseFeatures() {
                   transition={{ duration: 0.6, delay: 0.2 }}
                   className="flex-1 bg-app-surface border border-app-border rounded-md p-6 relative overflow-hidden group"
                 >
-                  <h4 className="text-app-fg font-semibold mb-5 flex items-center gap-3">
-                    <span className="w-2 h-2 rounded-md shadow-[0_0_10px]" style={{ backgroundColor: accentColor, color: accentColor }} />
+                  <h4 className={`font-semibold mb-5 text-transparent bg-clip-text bg-gradient-to-r ${gradientClass}`}>
                     Key Capabilities
                   </h4>
                   <div className="space-y-4">
                     {((feat as any).benefits || []).map((benefit: string, i: number) => (
                       <div key={i} className="flex items-start gap-3 text-sm text-app-fg/80">
-                        <div className="shrink-0 mt-0.5" style={{ color: accentColor }}>✓</div>
+                        <div className="shrink-0 mt-1.5 w-1.5 h-1.5 rounded-full" style={{ backgroundColor: accentColor }} />
                         <span className="leading-snug">{benefit}</span>
                       </div>
                     ))}

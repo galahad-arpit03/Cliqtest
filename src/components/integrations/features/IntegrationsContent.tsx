@@ -110,8 +110,7 @@ export default function IntegrationsContent() {
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: 0.2 }}
                   >
-                    <h4 className="text-app-fg font-semibold mb-5 flex items-center gap-3">
-                      <span className={`w-2 h-2 rounded-md ${isPurple ? 'bg-[#6843B7] shadow-[0_0_10px_#6843B7]' : 'bg-[#00F2B0] shadow-[0_0_10px_#00F2B0]'}`} />
+                    <h4 className={`font-semibold mb-5 text-transparent bg-clip-text bg-gradient-to-r ${gradientClass}`}>
                       {feat.listTitle}
                     </h4>
                     <div className="space-y-4">

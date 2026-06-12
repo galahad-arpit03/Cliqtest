@@ -93,7 +93,7 @@ export default function Logos({ isLight }: { isLight?: boolean }) {
   }, [isLight]);
 
   return (
-    <section ref={containerRef} className={`w-full py-6 md:py-8 border-y overflow-hidden transition-colors duration-500 ${isLight ? 'bg-app-fg border-app-bg/5' : 'bg-app-bg border-app-border'}`}>
+    <section ref={containerRef} className={`w-full py-6 md:py-8 border-y overflow-hidden transition-colors duration-500 ${isLight ? 'bg-[#FAFAFA] border-app-bg/5' : 'bg-app-bg border-app-border'}`}>
       <motion.div 
         initial={{ opacity: 0, y: 20 }} 
         whileInView={{ opacity: 1, y: 0 }}

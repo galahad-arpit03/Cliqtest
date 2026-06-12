@@ -212,7 +212,6 @@ const features = [
     desc: [
       "cliQTest provides a unified testing ecosystem that supports validation across web, mobile, desktop, and API applications through a single centralized platform. This cross-platform capability ensures consistent quality validation across multiple technologies, devices, environments, and operating systems.",
       "Organizations can standardize testing workflows, execution strategies, reporting mechanisms, and governance models across all application layers, eliminating the need for fragmented testing tools and disconnected processes.",
-      "By supporting integrated execution across diverse platforms, cliQTest improves operational efficiency, enhances collaboration between teams, and enables enterprises to achieve scalable, future-ready quality engineering practices."
     ],
     benefits: [
       "Unified testing across Web, Mobile, Desktop & API",

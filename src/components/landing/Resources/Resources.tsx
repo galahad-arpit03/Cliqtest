@@ -25,7 +25,7 @@ export default function Resources({ isLight }: { isLight?: boolean }) {
             transition={{ duration: 0.8 }}
           >
            
-            <h2 className={`text-4xl md:text-5xl font-semibold tracking-tight leading-[1.1] transition-colors duration-500 ${isLight ? 'text-app-fg-invert' : 'text-app-fg'}`}>
+            <h2 className={`text-4xl md:text-5xl font-semibold tracking-tight leading-[1.1] transition-colors duration-500 ${isLight ? 'text-black' : 'text-app-fg'}`}>
               Latest Insights & <br className="hidden md:block" />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6843B7] to-[#8f81eb]">Knowledge Base</span>
             </h2>
@@ -36,7 +36,7 @@ export default function Resources({ isLight }: { isLight?: boolean }) {
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <Link href="/blogs" className="inline-flex items-center gap-2 px-6 py-3 rounded-sm font-medium transition-colors border bg-app-fg/10 text-app-fg hover:bg-app-fg/20 border-app-border">
+            <Link href="/blogs" className={`inline-flex items-center gap-2 px-6 py-3 rounded-sm font-medium transition-colors border ${isLight ? 'bg-black/5 text-black hover:bg-black/10 border-black/10' : 'bg-app-fg/10 text-app-fg hover:bg-app-fg/20 border-app-border'}`}>
               View All Blogs
               <span className="text-lg">→</span>
             </Link>
