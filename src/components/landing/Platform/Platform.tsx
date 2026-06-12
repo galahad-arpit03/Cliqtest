@@ -81,9 +81,9 @@ export default function Platform({ isLight }: { isLight?: boolean }) {
           whileInView={{ opacity: 1, scale: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-          className="relative w-full aspect-video md:aspect-[4/3] lg:aspect-[4/3] max-h-[600px] flex items-center justify-center" 
+          className="relative w-full aspect-square sm:aspect-[4/3] max-h-[600px] flex items-center justify-center mt-4 md:mt-0 scale-110 sm:scale-100" 
         >
-          <div className="w-full h-full  relative group">
+          <div className="w-full h-full relative group">
             <Image
               src={isLight ? "/images/bn1.png" : "/images/bn1.png"}
               alt="cliQTest Platform Monitor"
