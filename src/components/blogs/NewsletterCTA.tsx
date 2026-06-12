@@ -38,7 +38,7 @@ export default function NewsletterCTA({ isLight }: { isLight?: boolean }) {
               className={`flex-1 border rounded-sm px-4 py-3 text-[14px] outline-none transition-all ${isLight ? 'bg-white border-transparent text-black placeholder:text-gray-500 focus:ring-2 focus:ring-white/50' : 'bg-app-bg border-app-border text-app-fg focus:border-[#6843B7] focus:ring-1 focus:ring-[#6843B7]/50'}`}
             />
 
-            <button className={`px-8 py-3 text-[14px] rounded-sm transition-all active:scale-95 font-medium ${isLight ? 'bg-white text-[#6843B7] hover:bg-white/90 shadow-md' : 'bg-[#6843B7] text-app-fg hover:bg-[#6843B7]/90'}`}>
+            <button className={`px-8 py-3 text-[14px] rounded-sm transition-all active:scale-95 font-medium ${isLight ? 'bg-white text-[#6843B7] hover:bg-white/90 shadow-md' : 'bg-[#6843B7] text-white hover:bg-[#6843B7]/90'}`}>
               Subscribe
             </button>
           </div>

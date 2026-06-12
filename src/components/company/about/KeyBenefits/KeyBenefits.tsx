@@ -74,7 +74,7 @@ export default function KeyBenefits() {
               <p className="text-app-fg/60">Join the elite teams building the future with cliQTest.</p>
             </div>
             <Link href="/book-a-demo">
-              <button className="relative z-10 px-8 py-4 bg-[#6843B7] text-app-fg text-[14px] rounded-sm hover:bg-[#6843B7]/90 transition-all  whitespace-nowrap">
+              <button className="relative z-10 px-8 py-4 bg-[#6843B7] text-white text-[14px] rounded-sm hover:bg-[#6843B7]/90 transition-all  whitespace-nowrap">
                 Book a Demo
               </button>
             </Link>

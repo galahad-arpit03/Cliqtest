@@ -56,7 +56,7 @@ export default function BlogsHero({ isLight }: { isLight?: boolean }) {
                 if(element) element.scrollIntoView({ behavior: 'smooth' });
                 else window.scrollBy({ top: window.innerHeight * 0.8, behavior: 'smooth' });
               }} 
-              className="inline-flex items-center gap-2 px-8 py-3 bg-[#6843B7] text-app-fg font-medium rounded-sm hover:bg-[#6843B7]/90 transition-all"
+              className="inline-flex items-center gap-2 px-8 py-3 bg-[#6843B7] text-white font-medium rounded-sm hover:bg-[#6843B7]/90 transition-all"
             >
               Start Reading
             </button>

@@ -160,7 +160,7 @@ export default function ByUseCaseFeatures() {
             Join enterprise engineering teams who trust cliQTest to automate their most complex and business-critical testing workflows.
           </p>
           <div className="flex flex-row flex-wrap items-center justify-start sm:justify-center gap-3 sm:gap-4">
-            <Link href="/book-a-demo" className="flex-1 sm:flex-none text-center px-4 sm:px-8 py-3 bg-[#6843B7] text-app-fg font-medium rounded-sm hover:scale-105 active:scale-95 transition-all ] text-[13px] sm:text-base whitespace-nowrap">
+            <Link href="/book-a-demo" className="flex-1 sm:flex-none text-center px-4 sm:px-8 py-3 bg-[#6843B7] text-white font-medium rounded-sm hover:scale-105 active:scale-95 transition-all ] text-[13px] sm:text-base whitespace-nowrap">
               Contact Sales
             </Link>
             {/* <Link href="/pricing" className="flex-1 sm:flex-none text-center px-4 sm:px-8 py-3 border border-app-border-hover text-app-fg font-medium rounded-sm hover:bg-app-fg/5 transition-colors text-[13px] sm:text-base whitespace-nowrap">

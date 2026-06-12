@@ -25,24 +25,50 @@ export default function FeaturedBlog({ isLight }: { isLight?: boolean }) {
       gridEl.scrollIntoView({ behavior: 'smooth' });
     }
   };
+  const currentFilter = searchParams?.get('filter') || 'All';
+
+  const handleCategoryClick = (category: string) => {
+    const newParams = new URLSearchParams(searchParams?.toString() || '');
+    // BlogGrid uses "All", FeaturedBlog uses "All Resources". Let's map it.
+    const filterValue = category === 'All Resources' ? 'All' : category;
+    
+    if (filterValue === 'All') {
+      newParams.delete('filter');
+    } else {
+      newParams.set('filter', filterValue);
+    }
+    
+    router.push(`/blogs?${newParams.toString()}`, { scroll: false });
+    
+    // Scroll to the grid section so the user can see the filtered results
+    const gridEl = document.getElementById('blog-grid-section');
+    if (gridEl) {
+      gridEl.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className={`py-12 px-4 md:px-8 transition-colors duration-500 ${isLight ? 'bg-app-fg' : 'bg-app-bg'}`}>
       <div className="max-w-7xl mx-auto">
 
         {/* Categories */}
         <div className={`flex flex-wrap gap-8 border-b pb-5 mb-12 text-sm transition-colors duration-500 ${isLight ? 'border-app-border' : 'border-app-border'}`}>
-          <button className={`border-b-2 pb-2 transition-colors duration-500 ${isLight ? 'text-app-fg-invert border-[#6843B7]' : 'text-app-fg border-[#6843B7]'}`}>
-            All Resources
-          </button>
-          <button className="text-app-muted hover:text-app-fg">
-            Whitepaper
-          </button>
-          <button className="text-app-muted hover:text-app-fg">
-            Case Study
-          </button>
-          <button className="text-app-muted hover:text-app-fg">
-            Blog Post
-          </button>
+          {['All Resources', 'Whitepaper', 'Case Study', 'Blog Post'].map((category) => {
+            const isAllAndActive = category === 'All Resources' && currentFilter === 'All';
+            const isActive = isAllAndActive || currentFilter === category;
+            
+            return (
+              <button 
+                key={category}
+                onClick={() => handleCategoryClick(category)}
+                className={isActive 
+                  ? `border-b-2 pb-2 transition-colors duration-500 ${isLight ? 'text-app-fg-invert border-[#6843B7]' : 'text-app-fg border-[#6843B7]'}` 
+                  : "text-app-muted hover:text-app-fg pb-2"}
+              >
+                {category}
+              </button>
+            );
+          })}
         </div>
 
         <div className="grid lg:grid-cols-[2fr_1fr] gap-10">

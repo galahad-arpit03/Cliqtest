@@ -64,7 +64,7 @@ export default function AiHero() {
           transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
           className="mt-12 flex flex-row w-full sm:w-auto gap-3 sm:gap-6"
         >
-          <button onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })} className={`flex-1 sm:flex-none px-4 sm:px-10 py-3.5 sm:py-4 ${heroData.theme === "purple" ? "bg-[#6843B7] text-app-fg" : "bg-[#00F2B0] text-app-fg-invert font-semibold"} text-[12px] sm:text-[15px] rounded-sm hover:scale-105 active:scale-95 transition-all whitespace-nowrap`}>
+          <button onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })} className={`flex-1 sm:flex-none px-4 sm:px-10 py-3.5 sm:py-4 ${heroData.theme === "purple" ? "bg-[#6843B7] text-white" : "bg-[#00F2B0] text-app-fg-invert font-semibold"} text-[12px] sm:text-[15px] rounded-sm hover:scale-105 active:scale-95 transition-all whitespace-nowrap`}>
             {heroData.buttonText}
           </button>
           

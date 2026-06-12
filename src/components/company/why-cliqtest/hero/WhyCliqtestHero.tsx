@@ -57,7 +57,7 @@ export default function WhyCliqtestHero() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
- <button onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })} className="px-8 py-4 bg-[#6843B7] text-app-fg rounded-sm hover:bg-[#6843B7]/90 transition-all  text-[14px]">
+ <button onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })} className="px-8 py-4 bg-[#6843B7] text-white rounded-sm hover:bg-[#6843B7]/90 transition-all  text-[14px]">
               See The Value
             </button>
           </div>

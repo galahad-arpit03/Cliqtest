@@ -54,7 +54,7 @@ export default function IntegrationsHero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <a href="#ci/cd-integrations" className="inline-flex items-center gap-2 px-8 py-3 bg-[#6843B7] text-app-fg font-medium rounded-sm hover:bg-[#6843B7]/90 transition-all">
+            <a href="#ci/cd-integrations" className="inline-flex items-center gap-2 px-8 py-3 bg-[#6843B7] text-white font-medium rounded-sm hover:bg-[#6843B7]/90 transition-all">
               Explore Ecosystem
             </a>
           </motion.div>

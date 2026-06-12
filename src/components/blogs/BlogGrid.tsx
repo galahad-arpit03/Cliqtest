@@ -7,10 +7,16 @@ import BlogCard from "./BlogCard";
 import { blogsData } from "@/data/blogs";
 
 export default function BlogGrid({ isLight }: { isLight?: boolean }) {
-  const [activeFilter, setActiveFilter] = useState("All");
   const searchParams = useSearchParams();
   const router = useRouter();
   const currentTag = searchParams?.get("tag");
+  const currentFilter = searchParams?.get("filter") || "All";
+
+  const [activeFilter, setActiveFilter] = useState(currentFilter);
+
+  useEffect(() => {
+    setActiveFilter(currentFilter);
+  }, [currentFilter]);
 
   const filteredBlogs = blogsData.filter((blog) => {
     const matchesType = activeFilter === "All" || blog.type === activeFilter;
@@ -29,6 +35,17 @@ export default function BlogGrid({ isLight }: { isLight?: boolean }) {
   useEffect(() => {
     setCurrentPage(1);
   }, [activeFilter, currentTag]);
+
+  const handleFilterClick = (filter: string) => {
+    setActiveFilter(filter);
+    const newParams = new URLSearchParams(searchParams?.toString() || '');
+    if (filter === "All") {
+      newParams.delete("filter");
+    } else {
+      newParams.set("filter", filter);
+    }
+    router.push(`/blogs?${newParams.toString()}`, { scroll: false });
+  };
 
   const clearTag = () => {
     router.push('/blogs', { scroll: false });
@@ -69,11 +86,11 @@ export default function BlogGrid({ isLight }: { isLight?: boolean }) {
           {filters.map((filter) => (
             <button
               key={filter}
-              onClick={() => setActiveFilter(filter)}
+              onClick={() => handleFilterClick(filter)}
               className={`px-5 py-2 rounded-full border transition-all duration-300 text-sm
                 ${
                   activeFilter === filter
-                    ? "bg-[#6843B7] border-[#6843B7] text-app-fg"
+                    ? "bg-[#6843B7] border-[#6843B7] text-white"
                     : isLight ? "bg-app-fg border-app-border text-app-fg-invert hover:border-app-bg/20" : "bg-app-surface border-app-border text-app-fg hover:border-app-border-hover"
                 }`}
             >

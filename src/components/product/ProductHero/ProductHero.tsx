@@ -51,7 +51,7 @@ export default function ProductHero() {
               onClick={() => setActiveTab(tab)}
               className={`px-8 lg:px-10 py-3 rounded-sm text-[12px] font-black tracking-widest transition-all duration-300 ${
                 activeTab === tab 
-                ? 'bg-[#6843B7] text-app-fg shadow-lg' 
+                ? 'bg-[#6843B7] text-white shadow-lg' 
                 : 'text-app-fg/50 hover:text-app-fg hover:bg-app-fg/5'
               }`}
             >

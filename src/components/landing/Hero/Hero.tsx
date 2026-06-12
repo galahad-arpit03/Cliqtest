@@ -109,7 +109,7 @@ export default function Hero({ isLight }: { isLight?: boolean }) {
             <motion.button 
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-8 sm:px-10 py-3 sm:py-4 rounded-sm bg-[#6843B7] text-app-fg text-[14px] font-medium hover:bg-[#6843B7] transition-all whitespace-nowrap shadow-lg shadow-[#6843B7]/20"
+              className="px-8 sm:px-10 py-3 sm:py-4 rounded-sm bg-[#6843B7] text-white text-[14px] font-medium hover:bg-[#6843B7] transition-all whitespace-nowrap shadow-lg shadow-[#6843B7]/20"
             >
               Book a Demo
             </motion.button>

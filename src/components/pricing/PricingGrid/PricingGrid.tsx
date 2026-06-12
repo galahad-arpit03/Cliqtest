@@ -101,7 +101,7 @@ export default function PricingGrid() {
               }`}
             >
               {tier.highlighted && (
-                <span className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-[#6843B7] text-app-fg text-[10px] font-bold uppercase tracking-widest rounded-sm shadow-[0_0_15px_rgba(104,67,183,0.4)] whitespace-nowrap">
+                <span className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-[#6843B7] text-white text-[10px] font-bold uppercase tracking-widest rounded-sm shadow-[0_0_15px_rgba(104,67,183,0.4)] whitespace-nowrap">
                   Most Popular
                 </span>
               )}
@@ -133,7 +133,7 @@ export default function PricingGrid() {
 
  <button className={`w-full py-3.5 rounded-sm text-[14px] transition-all ${
                 tier.highlighted 
-                ? 'bg-[#6843B7] text-app-fg hover:bg-[#6843B7]/90 ' 
+                ? 'bg-[#6843B7] text-white hover:bg-[#6843B7]/90 ' 
                 : 'bg-app-fg/5 text-app-fg hover:bg-app-fg/10 border border-app-border'
               }`}>
                 Get Started

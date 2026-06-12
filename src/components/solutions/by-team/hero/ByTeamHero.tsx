@@ -34,7 +34,7 @@ export default function ByTeamHero() {
             {heroData.description}
           </p>
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }}>
-            <button onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })} className="inline-flex items-center gap-2 px-8 py-3 bg-[#6843B7] text-app-fg font-medium rounded-sm hover:bg-[#6843B7]/90 transition-all">
+            <button onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })} className="inline-flex items-center gap-2 px-8 py-3 bg-[#6843B7] text-white font-medium rounded-sm hover:bg-[#6843B7]/90 transition-all">
               {heroData.buttonText}
             </button>
           </motion.div>
