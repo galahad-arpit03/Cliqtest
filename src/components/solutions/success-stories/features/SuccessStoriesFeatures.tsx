@@ -54,33 +54,30 @@ function DomainSection({ feat, idx }: { feat: typeof features[0], idx: number })
           <div className={`lg:col-span-4 flex flex-col gap-4 order-2 ${idx % 2 === 0 ? 'lg:order-1' : 'lg:order-2'}`}>
             
             {/* Visual Demo Card */}
-            <motion.div 
-              className={`hidden md:flex h-48 bg-app-surface border border-app-border rounded-md relative overflow-hidden items-center justify-center group feature-demo-card ${isPurple ? "theme-purple" : "theme-green"} feature-demo-card ${isPurple ? "theme-purple" : "theme-green"}`}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-            >
-              <div className={`absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,${isPurple ? 'rgba(104,67,183,0.15)' : 'rgba(0,242,176,0.15)'}_50%,transparent_75%)] pointer-events-none`} />
-              
-              <Icon size={80} className={`${isPurple ? 'text-[#6843B7]' : 'text-[#00F2B0]'} opacity-30 group-hover:scale-110 transition-transform duration-700 relative z-10`} />
-
-              {/* Animated Mock Data Lines */}
-              <div className="absolute bottom-4 left-4 right-4 flex flex-col gap-2 opacity-20">
-                <motion.div 
-                  className={`h-1 rounded-full ${isPurple ? 'bg-[#6843B7]' : 'bg-[#00F2B0]'}`}
-                  initial={{ width: '20%' }}
-                  whileInView={{ width: '80%' }}
-                  transition={{ duration: 1.5, repeat: Infinity, repeatType: "reverse" }}
-                />
-                <motion.div 
-                  className={`h-1 rounded-full ${isPurple ? 'bg-[#6843B7]' : 'bg-[#00F2B0]'}`}
-                  initial={{ width: '40%' }}
-                  whileInView={{ width: '60%' }}
-                  transition={{ duration: 2, repeat: Infinity, repeatType: "reverse", delay: 0.5 }}
-                />
-              </div>
-            </motion.div>
+            <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.1 }}
+                  className="hidden md:flex h-48 bg-app-surface border border-app-border rounded-md relative overflow-hidden items-center justify-center group"
+                >
+                  {/* Elegant Gradient Background */}
+                  <div 
+                    className="absolute inset-0 pointer-events-none opacity-50" 
+                    style={{ background: `radial-gradient(circle at center, ${isPurple ? 'rgba(104,67,183,0.15)' : 'rgba(0,242,176,0.15)'} 0%, transparent 70%)`}} 
+                  />
+                  
+                  {/* Subtle Grid Pattern */}
+                  <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: 'radial-gradient(currentColor 1px, transparent 1px)', backgroundSize: '16px 16px' }} />
+                  
+                  {/* Central Glowing Orb */}
+                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 rounded-full blur-[40px] opacity-20 group-hover:opacity-40 transition-opacity duration-700 pointer-events-none" style={{ backgroundColor: isPurple ? '#6843B7' : '#00F2B0' }} />
+                  
+                  {/* Floating Icon Container */}
+                  <div className="relative z-10 flex items-center justify-center w-20 h-20 rounded-md bg-app-bg border border-app-border shadow-xl group-hover:scale-110 transition-transform duration-700 ease-out">
+                    <Icon size={36} className="opacity-90" style={{ color: isPurple ? '#6843B7' : '#00F2B0' }} />
+                  </div>
+                </motion.div>
             
             {/* Metrics Card */}
             <motion.div 

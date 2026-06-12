@@ -64,22 +64,24 @@ export default function DeviceLabFeatures() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: 0.1 }}
-                  className={`hidden md:flex h-48 bg-app-surface border border-app-border rounded-md relative overflow-hidden items-center justify-center group feature-demo-card ${isPurple ? "theme-purple" : "theme-green"} feature-demo-card ${isPurple ? "theme-purple" : "theme-green"}`}
+                  className="hidden md:flex h-48 bg-app-surface border border-app-border rounded-md relative overflow-hidden items-center justify-center group"
                 >
+                  {/* Elegant Gradient Background */}
                   <div 
-                    className="absolute inset-0 pointer-events-none" 
-                    style={{ background: `linear-gradient(45deg,transparent 25%,${isPurple ? 'rgba(104,67,183,0.15)' : 'rgba(0,242,176,0.15)'} 50%,transparent 75%)`}} 
+                    className="absolute inset-0 pointer-events-none opacity-50" 
+                    style={{ background: `radial-gradient(circle at center, ${isPurple ? 'rgba(104,67,183,0.15)' : 'rgba(0,242,176,0.15)'} 0%, transparent 70%)`}} 
                   />
-                  {/* Mock data lines */}
-                  <div className="absolute inset-0 flex flex-col gap-3 p-6 opacity-[0.08] pointer-events-none overflow-hidden justify-center">
-                    <div className="h-2 w-full bg-app-fg rounded-full" />
-                    <div className="h-2 w-3/4 bg-app-fg rounded-full" />
-                    <div className="h-2 w-5/6 bg-app-fg rounded-full" />
-                    <div className="h-2 w-1/2 bg-app-fg rounded-full" />
-                    <div className="h-2 w-full bg-app-fg rounded-full" />
-                    <div className="h-2 w-2/3 bg-app-fg rounded-full" />
+                  
+                  {/* Subtle Grid Pattern */}
+                  <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: 'radial-gradient(currentColor 1px, transparent 1px)', backgroundSize: '16px 16px' }} />
+                  
+                  {/* Central Glowing Orb */}
+                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 rounded-full blur-[40px] opacity-20 group-hover:opacity-40 transition-opacity duration-700 pointer-events-none" style={{ backgroundColor: isPurple ? '#6843B7' : '#00F2B0' }} />
+                  
+                  {/* Floating Icon Container */}
+                  <div className="relative z-10 flex items-center justify-center w-20 h-20 rounded-md bg-app-bg border border-app-border shadow-xl group-hover:scale-110 transition-transform duration-700 ease-out">
+                    <Icon size={36} className="opacity-90" style={{ color: isPurple ? '#6843B7' : '#00F2B0' }} />
                   </div>
-                  <Icon size={80} color={accentColor} className="opacity-30 group-hover:scale-110 transition-transform duration-700 relative z-10" />
                 </motion.div>
                 
                 {/* Benefits Card */}
@@ -90,6 +92,7 @@ export default function DeviceLabFeatures() {
                   transition={{ duration: 0.6, delay: 0.2 }}
                   className="flex-1 bg-app-surface border border-app-border rounded-md p-6 relative overflow-hidden group"
                 >
+                  <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: 'radial-gradient(currentColor 1px, transparent 1px)', backgroundSize: '16px 16px' }} />
                   <h4 className={`font-semibold mb-5 text-transparent bg-clip-text bg-gradient-to-r ${gradientClass}`}>
                     Key Capabilities
                   </h4>
