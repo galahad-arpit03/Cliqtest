@@ -38,7 +38,7 @@ export default function WhyCliqtestContent() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="sticky bg-app-surface border border-app-border rounded-md p-8 md:p-12 overflow-hidden shadow-2xl transition-all duration-500 scroll-mt-32"
+              className="sticky bg-app-surface border border-app-border rounded-md p-8 md:p-12 overflow-hidden shadow-2xl transition-all duration-500 scroll-mt-20"
             style={{ 
               top: `calc(8rem + ${index * 2}rem)`, 
               zIndex: 10 + index 

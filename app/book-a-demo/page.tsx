@@ -52,6 +52,15 @@ export default function BookADemoPage() {
            date.getFullYear() === today.getFullYear();
   };
 
+  const isTimeAvailable = (timeStr: string) => {
+    if (!selectedDate || !isToday(selectedDate)) return true;
+    const now = new Date();
+    const [hours, minutes] = timeStr.split(':').map(Number);
+    const slotTime = new Date();
+    slotTime.setHours(hours, minutes, 0, 0);
+    return slotTime > now;
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitted(true);
@@ -246,9 +255,9 @@ export default function BookADemoPage() {
                     <label className={`text-[10px] font-bold uppercase tracking-widest transition-colors duration-500 ${isLight ? 'text-app-fg-invert/60' : 'text-app-fg/60'}`}>Meeting Time</label>
                     <select required className={`w-full border rounded-sm px-4 py-3 text-sm focus:border-[#6843B7] outline-none appearance-none transition-all ${isLight ? 'bg-[#FAFAFA] border-app-border text-app-fg-invert' : 'bg-app-bg border-app-border text-app-fg'}`}>
                       <option value="">Select a slot</option>
-                      <option value="10:00">10:00 AM — 10:30 AM</option>
-                      <option value="14:00">02:00 PM — 02:30 PM</option>
-                      <option value="16:30">04:30 PM — 05:00 PM</option>
+                      {isTimeAvailable("10:00") && <option value="10:00">10:00 AM — 10:30 AM</option>}
+                      {isTimeAvailable("14:00") && <option value="14:00">02:00 PM — 02:30 PM</option>}
+                      {isTimeAvailable("16:30") && <option value="16:30">04:30 PM — 05:00 PM</option>}
                     </select>
                   </div>
 

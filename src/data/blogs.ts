@@ -16,11 +16,12 @@ export const blogsData: BlogPost[] = [
     slug: "ultimate-guide-agentic-qa",
     type: "Whitepaper",
     title: "The Ultimate Guide to Agentic QA",
-    excerpt: "Discover how AI agents are transforming test automation, from self-healing scripts to autonomous generation.",
+    excerpt:
+      "Discover how AI agents are transforming test automation, from self-healing scripts to autonomous generation.",
     image: "/blogs/2.png",
-    readTime: "8 min read",
-    date: "June 05, 2026",
-    author: "ApMoSys Research Team",
+    readTime: "3 min read",
+    date: "June 11, 2026",
+    author: "Presales Team",
     tags: ["Agentic QA", "AI Testing", "Automation", "Self-Healing"],
     content: `
       <h2>Why Traditional QA Is No Longer Enough</h2>
@@ -52,17 +53,18 @@ export const blogsData: BlogPost[] = [
 
       <h2>Looking Ahead</h2>
       <p>As AI continues to evolve, Agentic QA is expected to become a foundational component of modern quality engineering strategies, enabling autonomous and continuous quality assurance across the software lifecycle.</p>
-    `
+    `,
   },
   {
     slug: "global-fintech-cuts-qa-time",
     type: "Case Study",
     title: "Global FinTech Cuts QA Time by 80%",
-    excerpt: "Learn how a leading financial institution integrated intelligent automation to achieve seamless continuous delivery.",
+    excerpt:
+      "Learn how a leading financial institution integrated intelligent automation to achieve seamless continuous delivery.",
     image: "/blogs/enterprise.png",
     readTime: "6 min read",
     date: "May 28, 2026",
-    author: "Customer Success Team",
+    author: "Presales Team",
     tags: ["Automation", "DevOps", "AI Testing", "Self-Healing"],
     content: `
       <h2>The Challenge of Testing in Financial Services</h2>
@@ -89,13 +91,14 @@ export const blogsData: BlogPost[] = [
 
       <h2>Lessons for Financial Enterprises</h2>
       <p>Financial organizations can achieve both speed and compliance by adopting intelligent automation and modern quality engineering practices that support continuous delivery.</p>
-    `
+    `,
   },
   {
     slug: "scaling-test-infrastructure-2026",
     type: "Blog Post",
     title: "Scaling Test Infrastructure in 2026",
-    excerpt: "Best practices for managing parallel execution, scalable environments, and dynamic orchestration.",
+    excerpt:
+      "Best practices for managing parallel execution, scalable environments, and dynamic orchestration.",
     image: "/blogs/env.png",
     readTime: "5 min read",
     date: "May 15, 2026",
@@ -125,13 +128,14 @@ export const blogsData: BlogPost[] = [
 
       <h2>Future Outlook</h2>
       <p>Organizations that invest in scalable testing ecosystems today will be better prepared to support rapid innovation, continuous delivery, and enterprise-wide digital transformation initiatives.</p>
-    `
+    `,
   },
   {
     slug: "self-healing-automation-handbook",
     type: "Whitepaper",
     title: "Self-Healing Automation Handbook",
-    excerpt: "Reduce maintenance overhead and stabilize execution with AI-powered locator strategies.",
+    excerpt:
+      "Reduce maintenance overhead and stabilize execution with AI-powered locator strategies.",
     image: "/blogs/testcase.png",
     readTime: "12 min read",
     date: "April 22, 2026",
@@ -167,17 +171,18 @@ export const blogsData: BlogPost[] = [
 
       <h2>The Future of Resilient Testing</h2>
       <p>As applications evolve faster, self-healing capabilities will become a critical requirement for sustainable and scalable automation programs.</p>
-    `
+    `,
   },
   {
     slug: "insurance-enterprise-accelerates-delivery",
     type: "Case Study",
     title: "Insurance Enterprise Accelerates Delivery",
-    excerpt: "See how intelligent testing transformed release cycles and regulatory compliance.",
+    excerpt:
+      "See how intelligent testing transformed release cycles and regulatory compliance.",
     image: "/blogs/Insurance Enterprise Accelerates Delivery.png",
     readTime: "7 min read",
     date: "March 10, 2026",
-    author: "Customer Success Team",
+    author: "Presales Team",
     tags: ["Agentic QA", "DevOps", "Quality Engineering"],
     content: `
       <h2>Digital Transformation in Insurance</h2>
@@ -211,13 +216,14 @@ export const blogsData: BlogPost[] = [
 
       <h2>Key Takeaway</h2>
       <p>Insurance companies can accelerate digital transformation initiatives by embedding continuous quality practices throughout the software development lifecycle.</p>
-    `
+    `,
   },
   {
     slug: "future-of-automation-testing",
     type: "Blog Post",
     title: "Future of Automation Testing",
-    excerpt: "Exploring the next evolution of software quality, from hyperautomation to autonomous triaging.",
+    excerpt:
+      "Exploring the next evolution of software quality, from hyperautomation to autonomous triaging.",
     image: "/blogs/Future of Automation Testing.png",
     readTime: "4 min read",
     date: "February 05, 2026",
@@ -254,13 +260,14 @@ export const blogsData: BlogPost[] = [
 
       <h2>Looking Ahead</h2>
       <p>The future of testing will be defined by autonomous systems that continuously validate software quality with minimal human intervention, enabling organizations to innovate faster while reducing risk.</p>
-    `
+    `,
   },
   {
     slug: "from-manual-to-autonomous-quality",
     type: "Whitepaper",
     title: "From Manual Testing to Autonomous Quality Engineering",
-    excerpt: "How forward-thinking organizations are moving beyond traditional testing toward autonomous validation.",
+    excerpt:
+      "How forward-thinking organizations are moving beyond traditional testing toward autonomous validation.",
     image: "/blogs/From Manual Testing to Autonomous Quality Engineering.png",
     readTime: "10 min read",
     date: "January 18, 2026",
@@ -310,13 +317,14 @@ export const blogsData: BlogPost[] = [
 
       <h2>Looking Ahead</h2>
       <p>Autonomous quality engineering represents the next stage of software testing maturity, enabling organizations to continuously validate quality while supporting rapid innovation and business growth.</p>
-    `
+    `,
   },
   {
     slug: "why-real-device-testing-matters",
     type: "Blog Post",
     title: "Why Real Device Testing Matters More Than Ever",
-    excerpt: "Closing the reality gap by validating application behavior under actual usage conditions.",
+    excerpt:
+      "Closing the reality gap by validating application behavior under actual usage conditions.",
     image: "/blogs/Why Real Device Testing Matters More Than Ever.png",
     readTime: "6 min read",
     date: "December 02, 2025",
@@ -366,15 +374,16 @@ export const blogsData: BlogPost[] = [
 
       <h2>Future Outlook</h2>
       <p>As device diversity continues to expand, real device testing will become increasingly critical for organizations seeking to deliver consistent digital experiences across every user touchpoint.</p>
-    `
+    `,
   },
   {
     slug: "ai-powered-test-automation-beyond-record",
     type: "Whitepaper",
     title: "AI-Powered Test Automation: Beyond Record and Playback",
-    excerpt: "Discover how AI introduces intelligence into every stage of the testing process.",
+    excerpt:
+      "Discover how AI introduces intelligence into every stage of the testing process.",
     image: "/blogs/AI-Powered Test Automation: Beyond Record and Playback.png",
-    readTime: "8 min read",
+    readTime: "4 min read",
     date: "November 15, 2025",
     author: "Automation Architecture Team",
     tags: ["AI Testing", "Automation", "Quality Engineering"],
@@ -429,13 +438,14 @@ export const blogsData: BlogPost[] = [
 
       <h2>The Road Ahead</h2>
       <p>As AI capabilities continue to mature, test automation will evolve from a productivity tool into an intelligent quality engineering platform capable of driving autonomous testing strategies.</p>
-    `
+    `,
   },
   {
     slug: "continuous-testing-in-devops",
     type: "Blog Post",
     title: "Continuous Testing in the DevOps Era",
-    excerpt: "Integrating automated quality checks throughout the software delivery lifecycle.",
+    excerpt:
+      "Integrating automated quality checks throughout the software delivery lifecycle.",
     image: "/blogs/Continuous Testing in the DevOps Era.png",
     readTime: "7 min read",
     date: "October 22, 2025",
@@ -494,13 +504,14 @@ export const blogsData: BlogPost[] = [
 
       <h2>Looking Forward</h2>
       <p>Continuous testing is becoming a foundational pillar of DevOps success, enabling organizations to deliver software rapidly without compromising quality.</p>
-    `
+    `,
   },
   {
     slug: "rise-of-unified-test-management",
     type: "Blog Post",
     title: "The Rise of Unified Test Management Platforms",
-    excerpt: "The cost of fragmented testing ecosystems and the benefits of a centralized approach.",
+    excerpt:
+      "The cost of fragmented testing ecosystems and the benefits of a centralized approach.",
     image: "/blogs/The Rise of Unified Test Management Platforms.png",
     readTime: "5 min read",
     date: "September 08, 2025",
@@ -550,13 +561,14 @@ export const blogsData: BlogPost[] = [
 
       <h2>Future Outlook</h2>
       <p>As software delivery environments become increasingly complex, unified test management platforms will play a critical role in helping organizations scale quality engineering initiatives effectively.</p>
-    `
+    `,
   },
   {
     slug: "roi-of-test-automation-measuring-matters",
     type: "Case Study",
     title: "The ROI of Test Automation: Measuring What Matters",
-    excerpt: "Why traditional ROI calculations fall short, and how to measure true business impact.",
+    excerpt:
+      "Why traditional ROI calculations fall short, and how to measure true business impact.",
     image: "/blogs/The ROI of Test Automation: Measuring What Matters.png",
     readTime: "6 min read",
     date: "August 12, 2025",
@@ -608,8 +620,8 @@ export const blogsData: BlogPost[] = [
 
       <h2>Key Takeaway</h2>
       <p>The most successful organizations view automation as a long-term quality transformation strategy rather than a short-term cost-saving initiative. When measured against business outcomes rather than effort reduction alone, the return on automation becomes significantly more compelling.</p>
-    `
-  }
+    `,
+  },
 ];
 
 export const trendingTopics = [
@@ -626,9 +638,9 @@ export const getFeaturedPosts = () => {
 };
 
 export const getRecentPosts = () => {
-  return blogsData.slice(2, 6).map(post => ({
+  return blogsData.slice(2, 6).map((post) => ({
     date: post.date,
     title: post.title,
-    slug: post.slug
+    slug: post.slug,
   }));
 };

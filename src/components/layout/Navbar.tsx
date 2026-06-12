@@ -392,9 +392,19 @@ export default function Navbar() {
           <div className="hidden lg:flex flex-[2] justify-center items-center gap-6">
             {menuItems.map((item) => {
               const hasDropdown = !!item.content;
+              const titleSlug = item.title.toLowerCase().replace(/\s+/g, '-');
+              let isActiveRoute = false;
+              if (item.href) {
+                isActiveRoute = pathname === item.href || pathname.startsWith(item.href + '/');
+              } else if (item.title === 'Integrations') {
+                isActiveRoute = pathname === '/integrations' || pathname.startsWith('/integrations/');
+              } else {
+                isActiveRoute = pathname === `/${titleSlug}` || pathname.startsWith(`/${titleSlug}/`);
+              }
+              const isHighlighted = activeMenu === item.title || isActiveRoute;
 
               const ItemLabel = (
-                <div className={`flex items-center gap-1 text-[15px] font-medium tracking-wide transition-colors ${activeMenu === item.title ? 'text-[#6843B7]' : 'text-app-fg/70 hover:text-app-fg'
+                <div className={`flex items-center gap-1 text-[15px] font-medium tracking-wide transition-colors ${isHighlighted ? 'text-[#6843B7]' : 'text-app-fg/70 hover:text-app-fg'
                   }`}>
                   {item.title}
                   {hasDropdown && <ChevronDown size={14} className={`transition-transform duration-300 ${activeMenu === item.title ? 'rotate-180' : ''}`} />}
@@ -413,7 +423,11 @@ export default function Navbar() {
                         setActiveMenu(item.title);
                         const featureTabs = item.content?.tabs?.filter((t: NavTab) => !t.description);
                         if (featureTabs && featureTabs.length > 0) {
-                          setActiveTab(featureTabs[0].id);
+                          const matchingTab = featureTabs.find((t: NavTab) => {
+                            const targetPath = item.title === 'Integrations' && t.id === 'integrations' ? '/integrations' : `/${item.title.toLowerCase().replace(/\s+/g, '-')}/${t.id}`;
+                            return pathname === targetPath || pathname.startsWith(targetPath + '/');
+                          });
+                          setActiveTab(matchingTab ? matchingTab.id : featureTabs[0].id);
                           setShowMoreFeatures(false);
                         }
                       }
@@ -446,20 +460,24 @@ export default function Navbar() {
                             {/* Left Column (Tabs) */}
                             <div className="w-[30%] py-10 px-0 flex flex-col border-r border-app-border">
                               {item.content?.tabs?.filter((t: NavTab) => !t.description).map((tab: NavTab) => {
-                                const isActive = activeTab === tab.id;
+                                const targetPath = item.title === 'Integrations' && tab.id === 'integrations' ? '/integrations' : `/${item.title.toLowerCase().replace(/\s+/g, '-')}/${tab.id}`;
+                                const isCurrentRoute = pathname === targetPath || pathname.startsWith(targetPath + '/');
+                                const isActive = activeTab === tab.id || (isCurrentRoute && activeTab === null); // if activeTab is null somehow, fallback
+                                const isHighlighted = isActive || isCurrentRoute;
+                                
                                 return (
                                   <Link
-                                    href={item.title === 'Integrations' && tab.id === 'integrations' ? '/integrations' : `/${item.title.toLowerCase().replace(/\s+/g, '-')}/${tab.id}`}
+                                    href={targetPath}
                                     key={tab.id}
                                     onMouseEnter={() => { setActiveTab(tab.id); setShowMoreFeatures(false); }}
                                     onClick={() => setActiveMenu(null)}
-                                    className={`flex items-center justify-between px-10 py-[14px] transition-all duration-300 cursor-pointer ${isActive
+                                    className={`flex items-center justify-between px-10 py-[14px] transition-all duration-300 cursor-pointer ${isHighlighted
                                         ? 'bg-app-fg/5 border-l-[3px] border-[#6843B7] text-app-fg'
                                         : 'text-app-fg/60 hover:text-app-fg border-l-[3px] border-transparent'
                                       }`}
                                   >
-                                    <span className={`text-[15px] tracking-wide font-medium ${isActive ? 'text-[#6843B7]' : 'text-app-fg/60'}`}>{tab.label}</span>
-                                    <ChevronRight size={16} className={`transition-transform duration-300 ${isActive ? 'opacity-100 text-[#6843B7]' : 'opacity-100 text-app-fg/30'}`} />
+                                    <span className={`text-[15px] tracking-wide font-medium ${isHighlighted ? 'text-[#6843B7]' : 'text-app-fg/60'}`}>{tab.label}</span>
+                                    <ChevronRight size={16} className={`transition-transform duration-300 ${isHighlighted ? 'opacity-100 text-[#6843B7]' : 'opacity-100 text-app-fg/30'}`} />
                                   </Link>
                                 );
                               })}
@@ -499,7 +517,8 @@ export default function Navbar() {
                                                     const el = document.getElementById(targetHash);
                                                     if (el) {
                                                       e.preventDefault();
-                                                      el.scrollIntoView({ behavior: 'smooth' });
+                                                      const y = el.getBoundingClientRect().top + window.scrollY - 80;
+                                                      window.scrollTo({top: y, behavior: 'smooth'});
                                                       window.history.pushState(null, '', `${targetPath}#${targetHash}`);
                                                     }
                                                   }
@@ -640,17 +659,21 @@ export default function Navbar() {
                       >
                         <ChevronRight size={12} className="rotate-180" /> Back
                       </button>
-                      {item.content?.tabs?.map((tab: NavTab) => (
+                      {item.content?.tabs?.map((tab: NavTab) => {
+                        const targetPath = item.title === 'Integrations' && tab.id === 'integrations' ? '/integrations' : `/${item.title.toLowerCase().replace(/\s+/g, '-')}/${tab.id}`;
+                        const isCurrentRoute = pathname === targetPath || pathname.startsWith(targetPath + '/');
+                        return (
                         <Link
                           key={tab.id}
-                          href={item.title === 'Integrations' && tab.id === 'integrations' ? '/integrations' : `/${item.title.toLowerCase().replace(/\s+/g, '-')}/${tab.id}`}
+                          href={targetPath}
                           onClick={() => setIsMobileMenuOpen(false)}
-                          className="flex flex-col gap-0.5 group active:opacity-70"
+                          className={`flex flex-col gap-0.5 group active:opacity-70 ${isCurrentRoute ? 'bg-app-fg/5 border-l-2 border-[#6843B7] pl-3 -ml-3 py-1' : ''}`}
                         >
-                          <span className="text-[17px] font medium text-app-fg group-hover:text-[#6843B7] transition-colors tracking-tight">{tab.label}</span>
+                          <span className={`text-[17px] font medium transition-colors tracking-tight ${isCurrentRoute ? 'text-[#6843B7]' : 'text-app-fg group-hover:text-[#6843B7]'}`}>{tab.label}</span>
                           <span className="text-[11px] text-app-fg/40 leading-relaxed font-normal pr-4 line-clamp-1">{tab.header || tab.description}</span>
                         </Link>
-                      ))}
+                        );
+                      })}
                     </div>
                   )}
                 </div>

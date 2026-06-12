@@ -60,7 +60,7 @@ export default function ByUseCaseFeatures() {
 
         return (
           <React.Fragment key={feat.id}>
-            <div id={feat.id} className="scroll-mt-32 w-full" aria-hidden="true" />
+            <div id={feat.id} className="scroll-mt-20 w-full" aria-hidden="true" />
             
             <section 
               className="lg:sticky top-20 bg-app-bg py-6  border-t border-app-border rounded-md"
