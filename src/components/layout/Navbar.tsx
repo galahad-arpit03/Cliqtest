@@ -392,14 +392,9 @@ export default function Navbar() {
           <div className="hidden lg:flex flex-[2] justify-center items-center gap-6">
             {menuItems.map((item) => {
               const hasDropdown = !!item.content;
-              const basePath = `/${item.title.toLowerCase().replace(/\s+/g, '-')}`;
-              const isActivePath = item.href 
-                ? pathname === item.href || pathname.startsWith(`${item.href}/`) 
-                : pathname === basePath || pathname.startsWith(`${basePath}/`);
 
               const ItemLabel = (
-                <div className={`flex items-center gap-1 text-[15px] font-medium tracking-wide transition-colors ${
-                  activeMenu === item.title || isActivePath ? 'text-[#6843B7]' : 'text-app-fg/70 hover:text-app-fg'
+                <div className={`flex items-center gap-1 text-[15px] font-medium tracking-wide transition-colors ${activeMenu === item.title ? 'text-[#6843B7]' : 'text-app-fg/70 hover:text-app-fg'
                   }`}>
                   {item.title}
                   {hasDropdown && <ChevronDown size={14} className={`transition-transform duration-300 ${activeMenu === item.title ? 'rotate-180' : ''}`} />}
@@ -611,10 +606,6 @@ export default function Navbar() {
             {menuItems.map((item) => {
               const hasDropdown = !!item.content;
               const isExpanded = expandedItem === item.title;
-              const basePath = `/${item.title.toLowerCase().replace(/\s+/g, '-')}`;
-              const isActivePath = item.href 
-                ? pathname === item.href || pathname.startsWith(`${item.href}/`) 
-                : pathname === basePath || pathname.startsWith(`${basePath}/`);
 
               return (
                 <div key={item.title} className="flex flex-col border-b border-app-border pb-4 last:border-0">
@@ -622,7 +613,7 @@ export default function Navbar() {
                     <Link
                       href={item.href}
                       onClick={() => setIsMobileMenuOpen(false)}
-                      className={`text-2xl font medium transition-colors py-1 tracking-tight ${isActivePath ? 'text-[#6843B7]' : 'text-app-fg hover:text-[#6843B7]'}`}
+                      className="text-2xl font medium text-app-fg hover:text-[#6843B7] transition-colors py-1 tracking-tight"
                     >
                       {item.title}
                     </Link>
@@ -631,10 +622,10 @@ export default function Navbar() {
                       className="flex items-center justify-between py-1 cursor-pointer group"
                       onClick={() => setExpandedItem(isExpanded ? null : item.title)}
                     >
-                      <span className={`text-2xl font medium transition-colors tracking-tight ${isExpanded || isActivePath ? 'text-[#6843B7]' : 'text-app-fg'}`}>{item.title}</span>
+                      <span className={`text-2xl font medium transition-colors tracking-tight ${isExpanded ? 'text-[#6843B7]' : 'text-app-fg'}`}>{item.title}</span>
                       {hasDropdown && (
-                        <div className={`p-2 rounded-md transition-all ${isExpanded || isActivePath ? 'bg-[#6843B7]/10' : 'bg-app-fg/5'} ${isExpanded ? 'rotate-180' : ''}`}>
-                          {isExpanded ? <Minus size={20} className="text-[#6843B7]" /> : <Plus size={20} className={isActivePath ? 'text-[#6843B7]' : 'text-app-fg/40'} />}
+                        <div className={`p-2 rounded-md transition-all ${isExpanded ? 'bg-[#6843B7]/10 rotate-180' : 'bg-app-fg/5'}`}>
+                          {isExpanded ? <Minus size={20} className="text-[#6843B7]" /> : <Plus size={20} className="text-app-fg/40" />}
                         </div>
                       )}
                     </div>

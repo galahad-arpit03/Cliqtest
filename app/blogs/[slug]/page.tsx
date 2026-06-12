@@ -4,7 +4,6 @@ import Link from "next/link";
 import { blogsData } from "@/data/blogs";
 import PageThemeMenu from "@/components/common/PageThemeMenu";
 import ShareButtons from "@/components/blogs/ShareButtons";
-import BackButton from "@/components/blogs/BackButton";
 
 export function generateStaticParams() {
   return blogsData.map((blog) => ({
@@ -65,7 +64,9 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         {/* Hero Content */}
         <div className="relative z-10 w-full max-w-6xl mx-auto px-4 md:px-8">
           <div className="max-w-3xl mx-auto">
-            <BackButton />
+            <Link href="/blogs" className="text-[#9e7be9] hover:text-app-fg transition-colors text-sm font-medium mb-8 inline-flex items-center gap-2">
+              ← Back to all articles
+            </Link>
             
             <div className="flex items-center gap-3 text-xs font-semibold uppercase tracking-widest text-[#9e7be9] mb-6">
               <span>{blog.type}</span>
