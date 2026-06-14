@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { blogsData } from '@/data/blogs';
 import { useLandingModeStore } from "@/store/themeStore";
 import {
   ChevronDown,
@@ -30,6 +31,7 @@ interface Feature {
 interface NavTab {
   id: string;
   label: string;
+  href?: string;
   title?: string;
   description?: string;
   intro?: string;
@@ -38,7 +40,16 @@ interface NavTab {
   icon?: React.ElementType;
 }
 
-export const menuItems = [
+export interface MenuItem {
+  title: string;
+  href?: string;
+  dropdownType?: string;
+  content?: {
+    tabs: NavTab[];
+  };
+}
+
+export const menuItems: MenuItem[] = [
   {
     title: "Platform",
     dropdownType: "tabbed",
@@ -309,12 +320,27 @@ export const menuItems = [
 
   {
     title: "Resources",
-    href: "https://docs.cliqtest.com/"
-  },
-
-  {
-    title: "Blogs",
-    href: "/blogs"
+    dropdownType: "tabbed",
+    content: {
+      tabs: [
+        {
+          id: "blogs",
+          label: "Blogs",
+          href: "/blogs",
+          header: "Our Blog",
+          intro: "Read our latest articles, insights, and updates on quality engineering and software testing.",
+          features: []
+        },
+        {
+          id: "docs",
+          label: "Docs",
+          href: "https://docs.cliqtest.com/",
+          header: "Documentation",
+          intro: "Explore our comprehensive documentation, guides, and API references to get the most out of cliQTest.",
+          features: []
+        }
+      ]
+    }
   }
 ];
 
@@ -424,7 +450,7 @@ export default function Navbar() {
                         const featureTabs = item.content?.tabs?.filter((t: NavTab) => !t.description);
                         if (featureTabs && featureTabs.length > 0) {
                           const matchingTab = featureTabs.find((t: NavTab) => {
-                            const targetPath = item.title === 'Integrations' && t.id === 'integrations' ? '/integrations' : `/${item.title.toLowerCase().replace(/\s+/g, '-')}/${t.id}`;
+                            const targetPath = t.href || (item.title === 'Integrations' && t.id === 'integrations' ? '/integrations' : `/${item.title.toLowerCase().replace(/\s+/g, '-')}/${t.id}`);
                             return pathname === targetPath || pathname.startsWith(targetPath + '/');
                           });
                           setActiveTab(matchingTab ? matchingTab.id : featureTabs[0].id);
@@ -460,7 +486,7 @@ export default function Navbar() {
                             {/* Left Column (Tabs) */}
                             <div className="w-[30%] py-10 px-0 flex flex-col border-r border-app-border">
                               {item.content?.tabs?.filter((t: NavTab) => !t.description).map((tab: NavTab) => {
-                                const targetPath = item.title === 'Integrations' && tab.id === 'integrations' ? '/integrations' : `/${item.title.toLowerCase().replace(/\s+/g, '-')}/${tab.id}`;
+                                const targetPath = tab.href || (item.title === 'Integrations' && tab.id === 'integrations' ? '/integrations' : `/${item.title.toLowerCase().replace(/\s+/g, '-')}/${tab.id}`);
                                 const isCurrentRoute = pathname === targetPath || pathname.startsWith(targetPath + '/');
                                 const isActive = activeTab === tab.id || (isCurrentRoute && activeTab === null); // if activeTab is null somehow, fallback
                                 const isHighlighted = isActive || isCurrentRoute;
@@ -469,6 +495,8 @@ export default function Navbar() {
                                   <Link
                                     href={targetPath}
                                     key={tab.id}
+                                    target={tab.href?.startsWith('http') ? '_blank' : undefined}
+                                    rel={tab.href?.startsWith('http') ? 'noopener noreferrer' : undefined}
                                     onMouseEnter={() => { setActiveTab(tab.id); setShowMoreFeatures(false); }}
                                     onClick={() => setActiveMenu(null)}
                                     className={`flex items-center justify-between px-10 py-[14px] transition-all duration-300 cursor-pointer ${isHighlighted
@@ -498,6 +526,25 @@ export default function Navbar() {
                                         {tab.intro}
                                       </p>
                                     )}
+                                    {tab.id === 'blogs' && (
+                                      <div className="mb-4">
+                                        <h3 className="text-[13px] font-semibold text-app-fg/50 uppercase tracking-widest mb-2">Featured Article</h3>
+                                        <Link href={`/blogs/${blogsData[0].slug}`} onClick={() => setActiveMenu(null)} className="group flex gap-6 items-center p-4 -ml-4 rounded-md hover:bg-app-fg/5 transition-colors border border-transparent hover:border-app-border">
+                                          <div className="relative w-48 h-32 rounded-md overflow-hidden shrink-0 border border-app-border/50">
+                                            <Image src={blogsData[0].image} alt={blogsData[0].title} fill className="object-cover transition-transform duration-500 group-hover:scale-105" />
+                                          </div>
+                                        <div className="flex flex-col gap-2.5">
+                                          <div className="flex items-center gap-2 text-[12px] text-[#6843B7] font-medium tracking-wide">
+                                            <span className="uppercase">{blogsData[0].type}</span>
+                                            <span className="w-1 h-1 rounded-full bg-app-fg/20" />
+                                            <span className="text-app-fg/40">{blogsData[0].readTime}</span>
+                                          </div>
+                                          <h4 className="text-app-fg font-semibold text-lg leading-tight group-hover:text-[#6843B7] transition-colors line-clamp-2">{blogsData[0].title}</h4>
+                                          <p className="text-app-fg/60 text-sm leading-relaxed line-clamp-2">{blogsData[0].excerpt}</p>
+                                        </div>
+                                      </Link>
+                                      </div>
+                                    )}
                                     <div className="grid grid-cols-2 md:grid-cols-3 gap-x-12 gap-y-6">
                                       {tab.features && (
                                         <>
@@ -505,7 +552,7 @@ export default function Navbar() {
                                             showMoreFeatures ? 8 : 0,
                                             showMoreFeatures ? undefined : 8
                                           ).map((feat: { label: string; desc: string }, idx: number) => {
-                                            const targetPath = item.title === 'Integrations' && tab.id === 'integrations' ? '/integrations' : `/${item.title.toLowerCase().replace(/\s+/g, '-')}/${tab.id}`;
+                                            const targetPath = tab.href || (item.title === 'Integrations' && tab.id === 'integrations' ? '/integrations' : `/${item.title.toLowerCase().replace(/\s+/g, '-')}/${tab.id}`);
                                             const targetHash = feat.label.toLowerCase().replace(/\s+/g, '-');
 
                                             return (
@@ -660,12 +707,14 @@ export default function Navbar() {
                         <ChevronRight size={12} className="rotate-180" /> Back
                       </button>
                       {item.content?.tabs?.map((tab: NavTab) => {
-                        const targetPath = item.title === 'Integrations' && tab.id === 'integrations' ? '/integrations' : `/${item.title.toLowerCase().replace(/\s+/g, '-')}/${tab.id}`;
+                        const targetPath = tab.href || (item.title === 'Integrations' && tab.id === 'integrations' ? '/integrations' : `/${item.title.toLowerCase().replace(/\s+/g, '-')}/${tab.id}`);
                         const isCurrentRoute = pathname === targetPath || pathname.startsWith(targetPath + '/');
                         return (
                         <Link
                           key={tab.id}
                           href={targetPath}
+                          target={tab.href?.startsWith('http') ? '_blank' : undefined}
+                          rel={tab.href?.startsWith('http') ? 'noopener noreferrer' : undefined}
                           onClick={() => setIsMobileMenuOpen(false)}
                           className={`flex flex-col gap-0.5 group active:opacity-70 ${isCurrentRoute ? 'bg-app-fg/5 border-l-2 border-[#6843B7] pl-3 -ml-3 py-1' : ''}`}
                         >
