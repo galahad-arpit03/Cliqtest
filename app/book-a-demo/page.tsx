@@ -148,7 +148,7 @@ export default function BookADemoPage() {
                     </div>
                   </div>
                   <div className="flex flex-wrap gap-2">
-                    <span className="text-[10px] text-[#6843B7] bg-[#6843B7]/10 px-2 py-1 rounded-sm border border-[#6843B7]/20 font-medium">#Enterprise license</span>
+                    <span className="text-[10px] text-[#6843B7] bg-[#6843B7]/10 px-2 py-1 rounded-sm border border-[#6843B7]/20 font-medium">#EnterpriseLicense</span>
                     <span className="text-[10px] text-[#6843B7] bg-[#6843B7]/10 px-2 py-1 rounded-sm border border-[#6843B7]/20 font-medium">#Quotation</span>
                   </div>
                 </div>
