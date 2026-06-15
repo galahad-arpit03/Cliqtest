@@ -3,6 +3,73 @@ import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import features from './featuresData';
 
+const renderMockUIBody = (id: string, accentColor: string, idx: number) => {
+  switch (id) {
+    case 'execution-analytics':
+    case 'visual-dashboards':
+    case 'quality-trend-analysis':
+      return (
+        <div className="w-full h-full flex items-end p-2 gap-1.5 rounded-md bg-black/40 [.theme-light_&]:bg-white/80 shadow-sm border border-app-border/20 overflow-hidden">
+          {[...Array(6)].map((_, i) => (
+            <motion.div key={i} initial={{ height: 0 }} whileInView={{ height: `${30 + ((i * 17 + idx * 23) % 60)}%` }} transition={{ duration: 0.7, delay: i * 0.1 }} className="flex-1 rounded-t-sm opacity-80" style={{ backgroundColor: accentColor }} />
+          ))}
+        </div>
+      );
+    case 'execution-history':
+      return (
+        <div className="w-full h-full flex flex-col gap-2 rounded-md bg-black/40 [.theme-light_&]:bg-white/80 shadow-sm border border-app-border/20 p-2">
+          {[1, 2].map((_, i) => (
+            <div key={i} className="flex-1 rounded border border-app-border/20 bg-app-fg/5 flex items-center justify-between p-1.5 px-2">
+               <div className="w-16 h-1.5 rounded-full bg-app-fg/20" />
+               <div className="w-8 h-1.5 rounded-full" style={{ backgroundColor: accentColor, opacity: 0.8 }} />
+            </div>
+          ))}
+        </div>
+      );
+    case 'tree-view-reporting':
+      return (
+        <div className="w-full h-full flex flex-col gap-1.5 rounded-md bg-black/40 [.theme-light_&]:bg-white/80 shadow-sm border border-app-border/20 p-2 overflow-hidden">
+          <div className="flex gap-2 items-center"><div className="w-2 h-2 rounded-sm bg-app-fg/30"/><div className="w-12 h-1.5 rounded-full bg-app-fg/20"/></div>
+          <div className="ml-3 pl-2 border-l border-app-border/40 flex flex-col gap-1.5">
+            <div className="flex gap-2 items-center"><div className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: accentColor }}/><div className="w-16 h-1.5 rounded-full bg-app-fg/20"/></div>
+            <div className="flex gap-2 items-center"><div className="w-1.5 h-1.5 rounded-full bg-app-fg/20"/><div className="w-14 h-1.5 rounded-full bg-app-fg/20"/></div>
+          </div>
+        </div>
+      );
+    case 'real-time-monitoring':
+      return (
+        <div className="w-full h-full rounded-md bg-black/40 [.theme-light_&]:bg-white/80 shadow-sm border border-app-border/20 p-2 relative overflow-hidden flex items-center justify-center">
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(0,242,176,0.1)_0%,transparent_70%)] pointer-events-none" />
+          <motion.svg viewBox="0 0 100 40" className="w-full h-full stroke-current" style={{ color: accentColor }}>
+            <motion.path initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }} transition={{ duration: 1.5 }} d="M0,20 L20,20 L30,5 L40,35 L50,20 L100,20" fill="none" strokeWidth="2" />
+          </motion.svg>
+        </div>
+      );
+    case 'failure-analysis':
+      return (
+        <div className="w-full h-full flex flex-col gap-1.5 rounded-md bg-black/40 [.theme-light_&]:bg-white/80 shadow-sm border border-app-border/20 p-2">
+          <div className="flex gap-2"><div className="w-2/3 h-2 rounded" style={{ backgroundColor: accentColor, opacity: 0.8 }}/><div className="w-1/3 h-2 rounded bg-app-fg/20"/></div>
+          <div className="flex-1 rounded border border-app-fg/20 bg-app-fg/5 p-1.5 flex flex-col gap-1.5">
+             <div className="w-12 h-1.5 rounded-full" style={{ backgroundColor: accentColor, opacity: 0.5 }} />
+             <div className="w-3/4 h-1 rounded-full bg-app-fg/20" />
+             <div className="w-1/2 h-1 rounded-full bg-app-fg/20" />
+          </div>
+        </div>
+      );
+    default:
+      return (
+        <div className="w-full h-full rounded-md bg-black/40 [.theme-light_&]:bg-white/80 shadow-sm border border-app-border/20 flex flex-col gap-2 p-2">
+          {[1, 2].map((_, i) => (
+            <div key={i} className="flex-1 rounded border border-app-border/20 bg-app-fg/5 flex items-center gap-2 p-2">
+               <div className="w-3 h-3 rounded-sm" style={{ backgroundColor: accentColor }} />
+               <div className="flex-1 h-1.5 rounded-full bg-app-fg/20" />
+            </div>
+          ))}
+        </div>
+      );
+  }
+};
+
 export default function AnalyticsFeatures() {
   // Scroll to feature section if URL contains a hash
   useEffect(() => {
@@ -64,23 +131,61 @@ export default function AnalyticsFeatures() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: 0.1 }}
-                  className="hidden md:flex h-48 bg-app-surface border border-app-border rounded-md relative overflow-hidden items-center justify-center group"
+                  className="hidden md:flex h-48 bg-app-surface border border-app-border rounded-md relative overflow-hidden group"
                 >
-                  {/* Elegant Gradient Background */}
-                  <div 
-                    className="absolute inset-0 pointer-events-none opacity-50" 
-                    style={{ background: `radial-gradient(circle at center, ${isPurple ? 'rgba(104,67,183,0.15)' : 'rgba(0,242,176,0.15)'} 0%, transparent 70%)`}} 
+                  <div className="absolute inset-0 pointer-events-none opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(currentColor 1px, transparent 1px)', backgroundSize: '16px 16px' }} />
+                  
+                  {/* Large background icon for texture */}
+                  <Icon 
+                    size={160} 
+                    className="absolute -right-8 -bottom-10 opacity-[0.03] group-hover:opacity-[0.06] transition-opacity duration-700 pointer-events-none" 
+                    style={{ color: accentColor }} 
                   />
-                  
-                  {/* Subtle Grid Pattern */}
-                  <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: 'radial-gradient(currentColor 1px, transparent 1px)', backgroundSize: '16px 16px' }} />
-                  
-                  {/* Central Glowing Orb */}
-                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 rounded-full blur-[40px] opacity-20 group-hover:opacity-40 transition-opacity duration-700 pointer-events-none" style={{ backgroundColor: isPurple ? '#6843B7' : '#00F2B0' }} />
-                  
-                  {/* Floating Icon Container */}
-                  <div className="relative z-10 flex items-center justify-center w-20 h-20 rounded-md bg-app-bg border border-app-border shadow-xl group-hover:scale-110 transition-transform duration-700 ease-out">
-                    <Icon size={36} className="opacity-90" style={{ color: isPurple ? '#6843B7' : '#00F2B0' }} />
+
+                  {/* Mock UI */}
+                  <div className="absolute inset-0 p-4 flex flex-col z-10 w-full h-full">
+                    {/* Header */}
+                    <div className="flex items-center justify-between mb-3">
+                      <div className="flex items-center gap-2.5">
+                        <div 
+                          className="w-7 h-7 rounded-md flex items-center justify-center shadow-sm"
+                          style={{ backgroundColor: `${accentColor}15`, border: `1px solid ${accentColor}30` }}
+                        >
+                          <Icon size={14} style={{ color: accentColor }} />
+                        </div>
+                        <div className="flex flex-col gap-1.5">
+                          <div className="w-20 h-2 rounded-full bg-app-fg/20" />
+                          <div className="w-14 h-1.5 rounded-full bg-app-fg/10" />
+                        </div>
+                      </div>
+                      <div className="flex gap-1">
+                        <div className="w-1.5 h-1.5 rounded-full bg-app-fg/10" />
+                        <div className="w-1.5 h-1.5 rounded-full bg-app-fg/10" />
+                        <div className="w-1.5 h-1.5 rounded-full bg-app-fg/10" />
+                      </div>
+                    </div>
+
+                    {/* Body */}
+                    <div className="flex-1 flex gap-2.5 h-full min-h-0">
+                      {/* Sidebar */}
+                      <div className="w-1/3 rounded-md bg-black/30 [.theme-light_&]:bg-white/50 border border-app-border/50 p-2.5 flex flex-col gap-2 shadow-sm">
+                        {[1, 2, 3].map((_, i) => (
+                          <div key={i} className="flex items-center gap-2">
+                            <div className="w-2.5 h-2.5 rounded-sm bg-app-fg/20 shrink-0" />
+                            <div className="w-full h-1.5 rounded-full bg-app-fg/10" />
+                          </div>
+                        ))}
+                      </div>
+
+                      {/* Main Content Area */}
+                      <div className="w-2/3 rounded-md bg-black/30 [.theme-light_&]:bg-white/50 border border-app-border/50 p-2.5 flex flex-col min-h-0 shadow-sm">
+                        <div className="w-1/2 h-1.5 rounded-full bg-app-fg/20 mb-2 shrink-0" />
+                        
+                        <div className="flex-1 min-h-0">
+                          {renderMockUIBody(feat.id, accentColor, idx)}
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </motion.div>
                 
