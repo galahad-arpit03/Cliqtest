@@ -18,6 +18,114 @@ import {
 
 import { integrationsData } from './featuresData';
 
+const renderMockUIBody = (id: string, accentColor: string, idx: number, Icon: any) => {
+  const renderFallback = () => (
+    <div className="w-full h-full rounded-md bg-black/40 [.theme-light_&]:bg-white/80 shadow-sm border border-app-border/20 flex flex-col items-center justify-center relative overflow-hidden p-2 gap-2">
+       <div className="flex justify-center items-center w-full relative">
+          <motion.div animate={{ rotate: 360 }} transition={{ duration: 10, repeat: Infinity, ease: 'linear' }} className="absolute w-12 h-12 rounded-full border border-dashed border-app-fg/20" />
+          <div className="w-8 h-8 rounded-full flex items-center justify-center" style={{ backgroundColor: `${accentColor}20`, boxShadow: `0 0 15px ${accentColor}40` }}>
+             <Icon size={14} style={{ color: accentColor }} />
+          </div>
+       </div>
+       <div className="flex gap-2 w-full mt-2 justify-center">
+          <div className="w-1/3 h-1 rounded-full bg-app-fg/20" />
+          <div className="w-1/4 h-1 rounded-full bg-app-fg/20" />
+       </div>
+    </div>
+  );
+
+  switch (id) {
+    case 'ci/cd-integrations':
+      return (
+        <div className="w-full h-full flex flex-col gap-2 rounded-md bg-black/40 [.theme-light_&]:bg-white/80 shadow-sm border border-app-border/20 p-2 items-center justify-center">
+           <div className="flex items-center gap-2 text-[8px] font-mono">
+              <div className="w-6 h-6 rounded border border-app-border/40 flex items-center justify-center bg-app-surface shadow-sm">Build</div>
+              <motion.div animate={{ x: [0, 3, 0] }} transition={{ duration: 1, repeat: Infinity }}>→</motion.div>
+              <div className="w-6 h-6 rounded border flex items-center justify-center relative shadow-sm" style={{ borderColor: accentColor, backgroundColor: `${accentColor}15` }}>
+                <Icon size={10} style={{ color: accentColor }} />
+              </div>
+              <motion.div animate={{ x: [0, 3, 0] }} transition={{ duration: 1, repeat: Infinity }}>→</motion.div>
+              <div className="w-6 h-6 rounded border border-app-border/40 flex items-center justify-center bg-app-surface shadow-sm text-green-500">Deploy</div>
+           </div>
+           <div className="w-3/4 h-1.5 rounded-full bg-app-fg/10 mt-1 overflow-hidden relative">
+              <motion.div initial={{ x: '-100%' }} animate={{ x: '100%' }} transition={{ duration: 2, repeat: Infinity, ease: "linear" }} className="absolute top-0 bottom-0 w-1/2 rounded-full" style={{ backgroundColor: accentColor }} />
+           </div>
+        </div>
+      );
+    case 'project-&-workflow-integrations':
+      return (
+        <div className="w-full h-full flex gap-1.5 rounded-md bg-black/40 [.theme-light_&]:bg-white/80 shadow-sm border border-app-border/20 p-1.5">
+           {[1, 2, 3].map((col, i) => (
+             <div key={i} className="flex-1 bg-app-fg/5 rounded border border-app-border/10 p-1 flex flex-col gap-1">
+                <div className="w-1/2 h-1 rounded bg-app-fg/30 mb-1" />
+                <motion.div initial={{ y: 5, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: i * 0.2 }} className="w-full h-4 rounded shadow-sm border border-app-border/20 flex items-center px-1" style={{ backgroundColor: i === 1 ? `${accentColor}15` : 'var(--app-surface)', borderColor: i === 1 ? `${accentColor}40` : '' }}>
+                   <div className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: i === 1 ? accentColor : 'var(--app-fg)', opacity: i === 1 ? 1 : 0.3 }} />
+                </motion.div>
+                {i === 0 && <div className="w-full h-4 rounded shadow-sm border border-app-border/20 bg-app-surface" />}
+             </div>
+           ))}
+        </div>
+      );
+    case 'device-lab-integrations':
+      return (
+        <div className="w-full h-full flex items-center justify-center rounded-md bg-black/40 [.theme-light_&]:bg-white/80 shadow-sm border border-app-border/20 p-2">
+           <div className="grid grid-cols-3 gap-1.5">
+              {[1, 2, 3].map((_, i) => (
+                <motion.div key={i} animate={{ y: [0, -2, 0] }} transition={{ duration: 2, delay: i * 0.3, repeat: Infinity }} className="w-6 h-10 rounded border flex flex-col items-center justify-between p-0.5 shadow-sm bg-app-bg" style={{ borderColor: i === 1 ? accentColor : 'var(--app-border)' }}>
+                   <div className="w-2 h-0.5 rounded-full bg-app-fg/20 mt-0.5" />
+                   {i === 1 && <Icon size={8} style={{ color: accentColor }} />}
+                   <div className="w-1.5 h-1.5 rounded-full bg-app-fg/10 mb-0.5" />
+                </motion.div>
+              ))}
+           </div>
+        </div>
+      );
+    case 'sbom-integrations':
+    case 'cbom-integrations':
+      return (
+        <div className="w-full h-full flex flex-col items-center justify-center rounded-md bg-black/40 [.theme-light_&]:bg-white/80 shadow-sm border border-app-border/20 p-2 relative overflow-hidden">
+           <Icon size={16} style={{ color: accentColor, marginBottom: 4 }} />
+           <div className="flex gap-4 relative">
+             <div className="absolute top-1/2 left-0 right-0 h-px bg-app-fg/10 -z-10" />
+             <motion.div animate={{ scale: [1, 1.1, 1] }} transition={{ duration: 2, repeat: Infinity }} className="w-4 h-4 rounded bg-app-surface border border-app-border/40 shadow-sm flex items-center justify-center"><div className="w-1.5 h-1.5 rounded-full bg-green-500/50" /></motion.div>
+             <motion.div animate={{ scale: [1, 1.1, 1] }} transition={{ duration: 2, delay: 0.5, repeat: Infinity }} className="w-4 h-4 rounded bg-app-surface border shadow-sm flex items-center justify-center" style={{ borderColor: accentColor }}><div className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: accentColor }} /></motion.div>
+             <motion.div animate={{ scale: [1, 1.1, 1] }} transition={{ duration: 2, delay: 1, repeat: Infinity }} className="w-4 h-4 rounded bg-app-surface border border-app-border/40 shadow-sm flex items-center justify-center"><div className="w-1.5 h-1.5 rounded-full bg-green-500/50" /></motion.div>
+           </div>
+        </div>
+      );
+    case 'soc-room-integrations':
+      return (
+        <div className="w-full h-full flex items-center justify-center rounded-md bg-black/40 [.theme-light_&]:bg-white/80 shadow-sm border border-app-border/20 p-2 relative overflow-hidden">
+           <div className="absolute inset-0 flex items-center justify-center opacity-30">
+             <motion.div animate={{ scale: [1, 2], opacity: [1, 0] }} transition={{ duration: 2, repeat: Infinity }} className="absolute w-8 h-8 rounded-full border border-red-500" />
+             <motion.div animate={{ scale: [1, 2], opacity: [1, 0] }} transition={{ duration: 2, delay: 1, repeat: Infinity }} className="absolute w-8 h-8 rounded-full border border-red-500" />
+           </div>
+           <div className="w-12 h-8 rounded border flex flex-col items-center justify-center bg-app-surface shadow-lg z-10" style={{ borderColor: accentColor }}>
+              <Icon size={12} style={{ color: accentColor }} />
+              <div className="text-[5px] font-bold mt-1 text-app-fg/60">ALERT</div>
+           </div>
+        </div>
+      );
+    case 'api-&-automation-integrations':
+      return (
+        <div className="w-full h-full flex flex-col gap-1.5 rounded-md bg-black/40 [.theme-light_&]:bg-white/80 shadow-sm border border-app-border/20 p-2 text-[8px] font-mono">
+           <div className="flex items-center gap-2 border-b border-app-border/20 pb-1">
+             <div className="px-1 rounded bg-blue-500/20 text-blue-500 font-bold">GET</div>
+             <div className="text-app-fg/60">/api/v1/status</div>
+           </div>
+           <div className="flex-1 rounded bg-app-fg/5 border border-app-border/10 p-1.5 overflow-hidden">
+             <div style={{ color: accentColor }}>{`{`}</div>
+             <div className="ml-2 text-app-fg/80">"status": <span className="text-green-500">"ok"</span>,</div>
+             <div className="ml-2 text-app-fg/80">"code": <span className="text-orange-400">200</span></div>
+             <div style={{ color: accentColor }}>{`}`}</div>
+           </div>
+        </div>
+      );
+    default:
+      return renderFallback();
+  }
+};
+
 export default function IntegrationsContent() {
   // Scroll to feature section if URL contains a hash
   useEffect(() => {
@@ -75,29 +183,67 @@ export default function IntegrationsContent() {
                   
                   {/* Visual Demo Card */}
                   <motion.div
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: 0.1 }}
-                  className="hidden md:flex h-48 bg-app-surface border border-app-border rounded-md relative overflow-hidden items-center justify-center group"
-                >
-                  {/* Elegant Gradient Background */}
-                  <div 
-                    className="absolute inset-0 pointer-events-none opacity-50" 
-                    style={{ background: `radial-gradient(circle at center, ${isPurple ? 'rgba(104,67,183,0.15)' : 'rgba(0,242,176,0.15)'} 0%, transparent 70%)`}} 
-                  />
-                  
-                  {/* Subtle Grid Pattern */}
-                  <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: 'radial-gradient(currentColor 1px, transparent 1px)', backgroundSize: '16px 16px' }} />
-                  
-                  {/* Central Glowing Orb */}
-                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 rounded-full blur-[40px] opacity-20 group-hover:opacity-40 transition-opacity duration-700 pointer-events-none" style={{ backgroundColor: isPurple ? '#6843B7' : '#00F2B0' }} />
-                  
-                  {/* Floating Icon Container */}
-                  <div className="relative z-10 flex items-center justify-center w-20 h-20 rounded-md bg-app-bg border border-app-border shadow-xl group-hover:scale-110 transition-transform duration-700 ease-out">
-                    <Icon size={36} className="opacity-90" style={{ color: isPurple ? '#6843B7' : '#00F2B0' }} />
-                  </div>
-                </motion.div>
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: 0.1 }}
+                    className="hidden md:flex h-48 bg-app-surface border border-app-border rounded-md relative overflow-hidden group"
+                  >
+                    <div className="absolute inset-0 pointer-events-none opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(currentColor 1px, transparent 1px)', backgroundSize: '16px 16px' }} />
+                    
+                    {/* Large background icon for texture */}
+                    <Icon 
+                      size={160} 
+                      className="absolute -right-8 -bottom-10 opacity-[0.03] group-hover:opacity-[0.06] transition-opacity duration-700 pointer-events-none" 
+                      style={{ color: accentColor }} 
+                    />
+
+                    {/* Mock UI */}
+                    <div className="absolute inset-0 p-4 flex flex-col z-10 w-full h-full">
+                      {/* Header */}
+                      <div className="flex items-center justify-between mb-3">
+                        <div className="flex items-center gap-2.5">
+                          <div 
+                            className="w-7 h-7 rounded-md flex items-center justify-center shadow-sm"
+                            style={{ backgroundColor: `${accentColor}15`, border: `1px solid ${accentColor}30` }}
+                          >
+                            <Icon size={14} style={{ color: accentColor }} />
+                          </div>
+                          <div className="flex flex-col gap-1.5">
+                            <div className="w-20 h-2 rounded-full bg-app-fg/20" />
+                            <div className="w-14 h-1.5 rounded-full bg-app-fg/10" />
+                          </div>
+                        </div>
+                        <div className="flex gap-1">
+                          <div className="w-1.5 h-1.5 rounded-full bg-app-fg/10" />
+                          <div className="w-1.5 h-1.5 rounded-full bg-app-fg/10" />
+                          <div className="w-1.5 h-1.5 rounded-full bg-app-fg/10" />
+                        </div>
+                      </div>
+
+                      {/* Body */}
+                      <div className="flex-1 flex gap-2.5 h-full min-h-0">
+                        {/* Sidebar */}
+                        <div className="w-1/3 rounded-md bg-black/30 [.theme-light_&]:bg-white/50 border border-app-border/50 p-2.5 flex flex-col gap-2 shadow-sm">
+                          {[1, 2].map((_, i) => (
+                            <div key={i} className="flex items-center gap-2">
+                              <div className="w-2.5 h-2.5 rounded-sm bg-app-fg/20 shrink-0" />
+                              <div className="w-full h-1.5 rounded-full bg-app-fg/10" />
+                            </div>
+                          ))}
+                        </div>
+
+                        {/* Main Content Area */}
+                        <div className="w-2/3 rounded-md bg-black/30 [.theme-light_&]:bg-white/50 border border-app-border/50 p-2.5 flex flex-col min-h-0 shadow-sm">
+                          <div className="w-1/2 h-1.5 rounded-full bg-app-fg/20 mb-2 shrink-0" />
+                          
+                          <div className="flex-1 min-h-0">
+                            {renderMockUIBody(feat.id, accentColor, idx, Icon)}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </motion.div>
                   
                   {/* Metrics Card */}
                   <motion.div 

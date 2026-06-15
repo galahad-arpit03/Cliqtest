@@ -1,33 +1,21 @@
-"use client";
+const fs = require('fs');
+const path = require('path');
 
-import React, { useEffect, useState } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
-import { 
-  Landmark, 
-  HeartPulse, 
-  Store, 
-  ShoppingCart, 
-  RadioTower, 
-  CheckCircle2,
-  ShieldCheck,
-  Stethoscope,
-  Tags,
-  CreditCard,
-  Wifi
-} from 'lucide-react';
+const targetFiles = [
+  'src/components/solutions/by-use-case/features/ByUseCaseFeatures.tsx',
+  'src/components/solutions/by-team/features/ByTeamFeatures.tsx',
+  'src/components/solutions/success-stories/features/SuccessStoriesFeatures.tsx',
+  'src/components/solutions/by-industry/features/ByIndustryFeatures.tsx'
+];
 
-import Image from 'next/image';
-
-import industries from './featuresData';
-
-
+const renderMockUIBody = `
 const renderMockUIBody = (id: string, accentColor: string, idx: number, Icon: any) => {
   // Common fallback that looks good for any generic item
   const renderFallback = () => (
     <div className="w-full h-full rounded-md bg-black/40 [.theme-light_&]:bg-white/80 shadow-sm border border-app-border/20 flex flex-col items-center justify-center relative overflow-hidden p-2 gap-2">
        <div className="flex justify-center items-center w-full relative">
           <motion.div animate={{ rotate: 360 }} transition={{ duration: 10, repeat: Infinity, ease: 'linear' }} className="absolute w-12 h-12 rounded-full border border-dashed border-app-fg/20" />
-          <div className="w-8 h-8 rounded-full flex items-center justify-center" style={{ backgroundColor: `${accentColor}20`, boxShadow: `0 0 15px ${accentColor}40` }}>
+          <div className="w-8 h-8 rounded-full flex items-center justify-center" style={{ backgroundColor: \`\${accentColor}20\`, boxShadow: \`0 0 15px \${accentColor}40\` }}>
              <Icon size={14} style={{ color: accentColor }} />
           </div>
        </div>
@@ -59,7 +47,7 @@ const renderMockUIBody = (id: string, accentColor: string, idx: number, Icon: an
       return (
         <div className="w-full h-full flex items-center justify-center gap-4 rounded-md bg-black/40 [.theme-light_&]:bg-white/80 shadow-sm border border-app-border/20 p-2 relative overflow-hidden">
            <div className="absolute inset-0 flex items-center justify-center"><div className="w-full h-px bg-app-fg/10 border-t border-dashed border-app-fg/20" /></div>
-           <motion.div animate={{ y: [-3, 3, -3] }} transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }} className="w-10 h-10 rounded border border-app-border/30 flex items-center justify-center z-10 bg-app-bg shadow-lg" style={{ borderColor: accentColor, boxShadow: `0 0 15px ${accentColor}30` }}>
+           <motion.div animate={{ y: [-3, 3, -3] }} transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }} className="w-10 h-10 rounded border border-app-border/30 flex items-center justify-center z-10 bg-app-bg shadow-lg" style={{ borderColor: accentColor, boxShadow: \`0 0 15px \${accentColor}30\` }}>
              <Icon size={18} style={{ color: accentColor }} />
            </motion.div>
            <div className="flex flex-col gap-3 z-10">
@@ -80,7 +68,7 @@ const renderMockUIBody = (id: string, accentColor: string, idx: number, Icon: an
               <div className="absolute bottom-2 right-2 w-3 h-3 border-b-2 border-r-2 border-app-fg/30" />
               <div className="absolute top-2 right-2 w-3 h-3 border-t-2 border-r-2 border-app-fg/30" />
               <div className="absolute bottom-2 left-2 w-3 h-3 border-b-2 border-l-2 border-app-fg/30" />
-              <motion.div animate={{ scale: [1, 1.1, 1], opacity: [0.6, 1, 0.6] }} transition={{ duration: 2, repeat: Infinity }} className="w-10 h-10 rounded border border-dashed flex items-center justify-center relative" style={{ borderColor: accentColor, backgroundColor: `${accentColor}10` }}>
+              <motion.div animate={{ scale: [1, 1.1, 1], opacity: [0.6, 1, 0.6] }} transition={{ duration: 2, repeat: Infinity }} className="w-10 h-10 rounded border border-dashed flex items-center justify-center relative" style={{ borderColor: accentColor, backgroundColor: \`\${accentColor}10\` }}>
                  <Icon size={14} style={{ color: accentColor }} />
               </motion.div>
            </div>
@@ -108,67 +96,10 @@ const renderMockUIBody = (id: string, accentColor: string, idx: number, Icon: an
       return renderFallback();
   }
 };
+`;
 
-
-export default function ByIndustryFeatures() {
-  const [mounted, setMounted] = useState(false);
-  const { scrollY } = useScroll();
-  const y = useTransform(scrollY, [0, 1000], ['0%', '30%']);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  // Scroll to feature section if URL contains a hash
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const hash = window.location.hash?.substring(1);
-      if (hash) {
-        setTimeout(() => {
-          const el = document.getElementById(hash);
-          if (el) {
-            el.scrollIntoView({ behavior: 'smooth' });
-          }
-        }, 100);
-      }
-    }
-  }, []);
-
-  if (!mounted) return null;
-
-  return (
-    <div className="bg-app-bg text-app-fg overflow-x-clip selection:bg-[#00F2B0]/30 selection:text-app-fg">
-      
-      {/* Hero Section */}
-        
-
-      <div className="flex flex-col flex-1 pb-16 pt-16 max-w-7xl mx-auto px-8 md:px-16 lg:px-8">
-      {industries.map((feat, idx) => {
-        const words = feat.name.split(' ');
-        const firstWord = words[0];
-        const restWords = words.slice(1).join(' ');
-        
-        const isPurple = (feat as any).theme === 'purple' || !(feat as any).theme;
-        const accentColor = isPurple ? "#6843B7" : "#00F2B0";
-        const gradientClass = isPurple 
-          ? "from-[#6843B7] to-[#8f81eb]" 
-          : "from-[#00F2B0] to-[#ffffff]";
-        
-        const Icon = feat.icon;
-
-        return (
-          <React.Fragment key={feat.id}>
-            <div id={feat.id} className="scroll-mt-20 w-full" aria-hidden="true" />
-            
-            <section 
-              className="lg:sticky top-20 bg-app-bg py-6  border-t border-app-border rounded-md"
-              style={{ zIndex: 20 + idx }}
-            >
-            <div className="max-w-7xl mx-auto px-0">
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 lg:h-[500px]">
-              
-              <div className={`lg:col-span-4 flex flex-col gap-4 order-2 ${idx % 2 === 0 ? 'lg:order-1' : 'lg:order-2'}`}>
-                
+const visualCardReplacement = `
+                {/* Visual Demo Card */}
                 <motion.div
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -192,7 +123,7 @@ export default function ByIndustryFeatures() {
                       <div className="flex items-center gap-2.5">
                         <div 
                           className="w-7 h-7 rounded-md flex items-center justify-center shadow-sm"
-                          style={{ backgroundColor: `${accentColor}15`, border: `1px solid ${accentColor}30` }}
+                          style={{ backgroundColor: \`\${accentColor}15\`, border: \`1px solid \${accentColor}30\` }}
                         >
                           <Icon size={14} style={{ color: accentColor }} />
                         </div>
@@ -231,62 +162,29 @@ export default function ByIndustryFeatures() {
                     </div>
                   </div>
                 </motion.div>
-                
-                <motion.div
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: 0.2 }}
-                  className="flex-1 bg-app-surface border border-app-border rounded-md p-6 relative overflow-hidden group"
-                >
-                  <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: 'radial-gradient(currentColor 1px, transparent 1px)', backgroundSize: '16px 16px' }} />
-                  <h4 className={`font-semibold mb-5 text-transparent bg-clip-text bg-gradient-to-r ${gradientClass}`}>
-                    Key Capabilities
-                  </h4>
-                  <div className="space-y-4">
-                    {((feat as any).benefits || []).map((benefit: string, i: number) => (
-                      <div key={i} className="flex items-start gap-3 text-sm text-app-fg/80">
-                        <div className="shrink-0 mt-1.5 w-1.5 h-1.5 rounded-full" style={{ backgroundColor: accentColor }} />
-                        <span className="leading-snug">{benefit}</span>
-                      </div>
-                    ))}
-                  </div>
-                </motion.div>
+`;
 
-              </div>
 
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
-                className={`lg:col-span-8 bg-app-surface border border-app-border rounded-md p-8 md:p-10 relative overflow-hidden group order-1 flex flex-col justify-center ${idx % 2 === 0 ? 'lg:order-2' : 'lg:order-1'}`}
-              >
-                <div className="absolute top-0 inset-x-0 h-px opacity-50" style={{ background: `linear-gradient(to right, transparent, ${accentColor}, transparent)` }} />
-                <div className="absolute inset-0 pointer-events-none" style={{ background: `linear-gradient(-90deg,transparent 0%,${isPurple ? 'rgba(104,67,183,0.02)' : 'rgba(0,242,176,0.02)'} 50%,transparent 100%)`}} />
-                
-                <div className="relative z-10 h-full flex flex-col justify-center">
-                  <h2 className="text-3xl md:text-5xl font-semibold text-app-fg mb-8 tracking-tight">
-                    {firstWord} <span className={`text-transparent bg-clip-text bg-gradient-to-r ${gradientClass}`}>{restWords}</span>
-                  </h2>
-                  
-                  <div className="space-y-4 text-app-fg/60 text-[16px] leading-relaxed max-w-3xl">
-                    {Array.isArray((feat as any).desc) ? (feat as any).desc.map((p: string, i: number) => (
-                      <p key={i}>{p}</p>
-                    )) : <p>{(feat as any).desc}</p>}
-                  </div>
-                  
-                </div>
-              </motion.div>
+targetFiles.forEach(target => {
+  const filePath = path.join(process.cwd(), target);
+  let content = fs.readFileSync(filePath, 'utf8');
 
-              </div>
-            </div>
-          </section>
-          <div className="h-8 w-full" />
-        </React.Fragment>
-        );
-      })}
-      </div>
-    </div>
-  );
-}
+  // Inject renderMockUIBody if not present
+  if (!content.includes('renderMockUIBody')) {
+    const importMatch = content.match(/import.*?['"];/g);
+    if (importMatch) {
+      const lastImport = importMatch[importMatch.length - 1];
+      content = content.replace(lastImport, lastImport + '\\n\\n' + renderMockUIBody);
+    }
+  }
+
+  // Replace visual card
+  const oldVisualCardRegex = /<motion\.div[\\s\\S]*?className="hidden md:flex h-48 bg-app-surface border border-app-border rounded-md relative overflow-hidden items-center justify-center group"[\\s\\S]*?<\/motion\.div>/;
+  
+  if (oldVisualCardRegex.test(content)) {
+    content = content.replace(oldVisualCardRegex, visualCardReplacement);
+  }
+
+  fs.writeFileSync(filePath, content);
+  console.log('Processed', target);
+});
