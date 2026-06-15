@@ -169,8 +169,8 @@ export default function BookADemoPage() {
                     </div>
                   </div>
                   <div className="flex flex-wrap gap-2">
-                    <span className="text-[10px] text-[#6843B7] bg-[#6843B7]/10 px-2 py-1 rounded-sm border border-[#6843B7]/20 font-medium">#Featured discussion</span>
-                    <span className="text-[10px] text-[#6843B7] bg-[#6843B7]/10 px-2 py-1 rounded-sm border border-[#6843B7]/20 font-medium">#Tool capability</span>
+                    <span className="text-[10px] text-[#6843B7] bg-[#6843B7]/10 px-2 py-1 rounded-sm border border-[#6843B7]/20 font-medium">#FeaturedOverview</span>
+                    <span className="text-[10px] text-[#6843B7] bg-[#6843B7]/10 px-2 py-1 rounded-sm border border-[#6843B7]/20 font-medium">#TechnicalQnA</span>
                   </div>
                 </div>
               </div>

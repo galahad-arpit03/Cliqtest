@@ -134,7 +134,7 @@ export default function Logos({ isLight }: { isLight?: boolean }) {
                   src={item.src}
                   alt={item.name}
                   fill
-                  className={`dynamic-hover-target object-contain transition-all duration-300 grayscale opacity-80 cursor-pointer ${isLight ? 'invert' : ''}`}
+                  className={`dynamic-hover-target object-contain transition-all duration-300 grayscale opacity-100 cursor-pointer ${isLight ? 'invert' : ''}`}
                 />
               </div>
               <span className={`font-medium text-base md:text-lg tracking-tight transition-colors duration-300 opacity-80 ${isLight ? 'text-black' : 'text-white'}`}>

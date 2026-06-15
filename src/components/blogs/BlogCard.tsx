@@ -39,7 +39,7 @@ export default function BlogCard({
           className="object-cover"
         />
 
-        <div className="absolute inset-0 bg-gradient-to-t via-transparent to-transparent transition-colors duration-500 from-app-surface" />
+        <div className={`absolute inset-0 bg-gradient-to-t via-transparent to-transparent transition-colors duration-500 ${isLight ? 'from-white opacity-30' : 'from-app-surface opacity-100'}`} />
 
         <div className="absolute top-4 left-4 px-3 py-1 rounded-full bg-[#6843B7]/20 border border-[#6843B7]/30 text-[#9e7be9] text-xs font-semibold">
           {type}

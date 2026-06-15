@@ -50,7 +50,7 @@ export default function CloudFirst({ isLight }: { isLight?: boolean }) {
                 className={`object-cover object-center group-hover:scale-105 transition-all duration-700 ease-out ${isLight ? 'opacity-100' : 'opacity-80 group-hover:opacity-100'}`}
                 sizes="(max-width: 1024px) 100vw, 25vw"
               />
-              <div className={`absolute inset-0 bg-gradient-to-t via-transparent to-transparent opacity-100 z-10 ${isLight ? 'from-white' : 'from-app-surface'}`} />
+              <div className={`absolute inset-0 bg-gradient-to-t via-transparent to-transparent z-10 ${isLight ? 'from-white opacity-30' : 'from-app-surface opacity-100'}`} />
             </div>
             <div className="p-6 md:p-8 flex-1 flex flex-col justify-center">
               <h3 className={`text-[28px] font medium mb-1 leading-tight tracking-tight transition-colors duration-500 ${isLight ? 'text-app-fg-invert' : 'text-app-fg'}`}>12,000+</h3>
@@ -80,7 +80,7 @@ export default function CloudFirst({ isLight }: { isLight?: boolean }) {
                 className={`object-cover object-center group-hover:scale-105 transition-all duration-700 ease-out ${isLight ? 'opacity-100' : 'opacity-80 group-hover:opacity-100'}`}
                 sizes="(max-width: 640px) 100vw, 30vw"
               />
-              <div className={`absolute inset-0 bg-gradient-to-t via-transparent to-transparent opacity-100 z-10 ${isLight ? 'from-white' : 'from-app-surface'}`} />
+              <div className={`absolute inset-0 bg-gradient-to-t via-transparent to-transparent z-10 ${isLight ? 'from-white opacity-30' : 'from-app-surface opacity-100'}`} />
               <div className="absolute inset-0 group-hover:opacity-40 transition-opacity duration-700 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCI+PHBhdGggZD0iTTEwIDBWMjBNMCAxMEgyMCIgc3Ryb2tlPSIjMDBGMkIwIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiIG9wYWNpdHk9IjAuMSIvPjwvc3ZnPg==')] bg-[length:20px_20px] z-[5]" />
               {/* Gradient overlay restored to keep smooth fading */}
             </div>
@@ -111,7 +111,7 @@ export default function CloudFirst({ isLight }: { isLight?: boolean }) {
                 className={`object-cover object-center group-hover:scale-105 transition-all duration-700 ease-out ${isLight ? 'opacity-100' : 'opacity-80 group-hover:opacity-100'}`}
                 sizes="(max-width: 1024px) 100vw, 25vw"
               />
-              <div className={`absolute inset-0 bg-gradient-to-t via-transparent to-transparent opacity-100 z-10 ${isLight ? 'from-white' : 'from-app-surface'}`} />
+              <div className={`absolute inset-0 bg-gradient-to-t via-transparent to-transparent z-10 ${isLight ? 'from-white opacity-30' : 'from-app-surface opacity-100'}`} />
             </div>
             <div className="p-6 md:p-8 flex-1 flex flex-col justify-center">
               <h4 className={`text-xl font medium mb-3 leading-tight tracking-tight transition-colors duration-500 ${isLight ? 'text-app-fg-invert' : 'text-app-fg'}`}>Omnichannel AI Agents</h4>
@@ -140,7 +140,7 @@ export default function CloudFirst({ isLight }: { isLight?: boolean }) {
                 className={`object-cover object-left group-hover:scale-105 transition-all duration-700 ease-out ${isLight ? 'opacity-100' : 'opacity-80 group-hover:opacity-100'}`}
                 sizes="(max-width: 1024px) 100vw, 25vw"
               />
-              <div className={`absolute inset-0 bg-gradient-to-t via-transparent to-transparent opacity-100 z-10 ${isLight ? 'from-white' : 'from-app-surface'}`} />
+              <div className={`absolute inset-0 bg-gradient-to-t via-transparent to-transparent z-10 ${isLight ? 'from-white opacity-30' : 'from-app-surface opacity-100'}`} />
             </div>
             <div className="p-6 md:p-8 flex-1 flex flex-col justify-center">
               <h4 className={`text-xl font medium mb-3 leading-tight tracking-tight transition-colors duration-500 ${isLight ? 'text-app-fg-invert' : 'text-app-fg'}`}>10,000+ Dynamic Environments</h4>

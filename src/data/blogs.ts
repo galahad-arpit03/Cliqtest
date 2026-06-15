@@ -14,7 +14,7 @@ export interface BlogPost {
 export const blogsData: BlogPost[] = [
   {
     slug: "ultimate-guide-agentic-qa",
-    type: "Whitepaper",
+    type: "Blog Post",
     title: "The Ultimate Guide to Agentic QA",
     excerpt:
       "Discover how AI agents are transforming test automation, from self-healing scripts to autonomous generation.",
@@ -57,7 +57,7 @@ export const blogsData: BlogPost[] = [
   },
   {
     slug: "global-fintech-cuts-qa-time",
-    type: "Case Study",
+    type: "Blog Post",
     title: "Global FinTech Cuts QA Time by 80%",
     excerpt:
       "Learn how a leading financial institution integrated intelligent automation to achieve seamless continuous delivery.",
@@ -135,7 +135,7 @@ export const blogsData: BlogPost[] = [
   },
   {
     slug: "self-healing-automation-handbook",
-    type: "Whitepaper",
+    type: "Blog Post",
     title: "Self-Healing Automation Handbook",
     excerpt:
       "Reduce maintenance overhead and stabilize execution with AI-powered locator strategies.",
@@ -179,7 +179,7 @@ export const blogsData: BlogPost[] = [
   },
   {
     slug: "insurance-enterprise-accelerates-delivery",
-    type: "Case Study",
+    type: "Blog Post",
     title: "Insurance Enterprise Accelerates Delivery",
     excerpt:
       "See how intelligent testing transformed release cycles and regulatory compliance.",
@@ -270,7 +270,7 @@ export const blogsData: BlogPost[] = [
   },
   {
     slug: "from-manual-to-autonomous-quality",
-    type: "Whitepaper",
+    type: "Blog Post",
     title: "From Manual Testing to Autonomous Quality Engineering",
     excerpt:
       "How forward-thinking organizations are moving beyond traditional testing toward autonomous validation.",
@@ -386,7 +386,7 @@ export const blogsData: BlogPost[] = [
   },
   {
     slug: "ai-powered-test-automation-beyond-record",
-    type: "Whitepaper",
+    type: "Blog Post",
     title: "AI-Powered Test Automation: Beyond Record and Playback",
     excerpt:
       "Discover how AI introduces intelligence into every stage of the testing process.",
@@ -576,7 +576,7 @@ export const blogsData: BlogPost[] = [
   },
   {
     slug: "roi-of-test-automation-measuring-matters",
-    type: "Case Study",
+    type: "Blog Post",
     title: "The ROI of Test Automation: Measuring What Matters",
     excerpt:
       "Why traditional ROI calculations fall short, and how to measure true business impact.",

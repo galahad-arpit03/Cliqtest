@@ -422,6 +422,8 @@ export default function Navbar() {
               let isActiveRoute = false;
               if (item.href) {
                 isActiveRoute = pathname === item.href || pathname.startsWith(item.href + '/');
+              } else if (item.content?.tabs?.some((t: NavTab) => t.href?.startsWith('/') && (pathname === t.href || pathname.startsWith(t.href + '/')))) {
+                isActiveRoute = true;
               } else if (item.title === 'Integrations') {
                 isActiveRoute = pathname === '/integrations' || pathname.startsWith('/integrations/');
               } else {

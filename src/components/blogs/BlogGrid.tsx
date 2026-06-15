@@ -53,8 +53,6 @@ export default function BlogGrid({ isLight }: { isLight?: boolean }) {
 
   const filters = [
     "All",
-    "Whitepaper",
-    "Case Study",
     "Blog Post",
   ];
 

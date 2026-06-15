@@ -68,9 +68,9 @@ export default function Platform({ isLight }: { isLight?: boolean }) {
               <React.Fragment key={i}>
                 <div className="flex flex-col">
                   <span className={`font-bold text-3xl transition-colors duration-500 ${isLight ? 'text-app-fg-invert' : 'text-app-fg'}`}>{stat.value}</span>
-                  <span className="text-app-muted text-sm uppercase tracking-wider mt-1">{stat.label}</span>
+                  <span className={`text-sm uppercase tracking-wider mt-1 transition-colors duration-500 ${isLight ? 'text-app-fg-invert/70' : 'text-app-muted'}`}>{stat.label}</span>
                 </div>
-                {i < stats.length - 1 && <div className="w-px h-12 bg-zinc-500/20" />}
+                {i < stats.length - 1 && <div className={`w-px h-12 transition-colors duration-500 ${isLight ? 'bg-app-fg-invert/20' : 'bg-zinc-500/20'}`} />}
               </React.Fragment>
             ))}
           </motion.div>

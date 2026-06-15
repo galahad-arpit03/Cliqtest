@@ -50,16 +50,16 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
       sections={[
         <section key="hero" className="relative min-h-[60vh] flex flex-col justify-end overflow-hidden pt-32 pb-16">
         {/* Background Image & Overlay */}
-        <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 z-0 bg-app-bg">
           <Image
             src={blog.image}
             alt={blog.title}
             fill
-            className="object-cover"
+            className="object-cover opacity-50"
             priority
           />
-          <div className="absolute inset-0 bg-app-bg/60 mix-blend-multiply" />
-          <div className="absolute inset-0 bg-gradient-to-t from-app-bg via-app-bg/80 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-app-bg/60 via-app-bg/40 to-app-bg/30 pointer-events-none" />
+          <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-app-bg to-transparent pointer-events-none" />
         </div>
 
         {/* Hero Content */}
