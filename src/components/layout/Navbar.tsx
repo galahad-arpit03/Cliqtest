@@ -501,13 +501,16 @@ export default function Navbar() {
                                     rel={tab.href?.startsWith('http') ? 'noopener noreferrer' : undefined}
                                     onMouseEnter={() => { setActiveTab(tab.id); setShowMoreFeatures(false); }}
                                     onClick={() => setActiveMenu(null)}
-                                    className={`flex items-center justify-between px-10 py-[14px] transition-all duration-300 cursor-pointer ${isHighlighted
-                                        ? 'bg-app-fg/5 border-l-[3px] border-[#6843B7] text-app-fg'
-                                        : 'text-app-fg/60 hover:text-app-fg border-l-[3px] border-transparent'
-                                      }`}
+                                    className={`group flex items-center justify-between px-10 py-[14px] transition-all duration-300 cursor-pointer border-l-[3px] ${
+                                      isCurrentRoute
+                                        ? 'bg-app-fg/5 border-[#6843B7] text-app-fg'
+                                        : activeTab === tab.id
+                                          ? 'bg-app-fg/5 border-transparent text-[#6843B7]'
+                                          : 'text-app-fg/60 hover:bg-app-fg/5 hover:text-[#6843B7] border-transparent'
+                                    }`}
                                   >
-                                    <span className={`text-[15px] tracking-wide font-medium ${isHighlighted ? 'text-[#6843B7]' : 'text-app-fg/60'}`}>{tab.label}</span>
-                                    <ChevronRight size={16} className={`transition-transform duration-300 ${isHighlighted ? 'opacity-100 text-[#6843B7]' : 'opacity-100 text-app-fg/30'}`} />
+                                    <span className={`text-[15px] tracking-wide font-medium ${isCurrentRoute || activeTab === tab.id ? 'text-[#6843B7]' : 'text-app-fg/60 group-hover:text-[#6843B7]'}`}>{tab.label}</span>
+                                    <ChevronRight size={16} className={`transition-transform duration-300 ${isCurrentRoute || activeTab === tab.id ? 'opacity-100 text-[#6843B7]' : 'opacity-100 text-app-fg/30 group-hover:text-[#6843B7]'}`} />
                                   </Link>
                                 );
                               })}

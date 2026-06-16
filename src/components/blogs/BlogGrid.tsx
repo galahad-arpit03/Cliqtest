@@ -54,6 +54,8 @@ export default function BlogGrid({ isLight }: { isLight?: boolean }) {
   const filters = [
     "All",
     "Blog Post",
+    "White Paper",
+    "Case Study",
   ];
 
   return (
@@ -103,9 +105,12 @@ export default function BlogGrid({ isLight }: { isLight?: boolean }) {
               <BlogCard key={index} {...blog} isLight={isLight} />
             ))
           ) : (
-            <div className="col-span-full py-12 text-center">
-              <p className={`text-lg ${isLight ? 'text-app-fg-invert/60' : 'text-app-muted'}`}>
-                No articles found matching your selected filters. Try clearing the tag or selecting a different category.
+            <div className="col-span-full py-16 flex flex-col items-center justify-center text-center border border-dashed border-app-border rounded-xl">
+              <h3 className={`text-2xl font-semibold mb-2 ${isLight ? 'text-app-fg-invert' : 'text-app-fg'}`}>
+                No Data Found
+              </h3>
+              <p className={`text-lg max-w-md ${isLight ? 'text-app-fg-invert/60' : 'text-app-muted'}`}>
+                There are currently no articles matching your selected filters. Try clearing the tag or selecting a different category.
               </p>
             </div>
           )}

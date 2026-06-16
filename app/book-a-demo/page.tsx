@@ -229,7 +229,7 @@ export default function BookADemoPage() {
                 </div>
 
                 {/* Form Column */}
-                <form onSubmit={handleSubmit} className="space-y-6">
+                <form key={contactType || 'empty'} onSubmit={handleSubmit} className="space-y-6">
                   <h3 className={`text-xl font-semibold mb-4 flex items-center gap-3 transition-colors duration-500 ${isLight ? 'text-app-fg-invert' : 'text-app-fg'}`}>
                     <span className="w-8 h-8 rounded-sm bg-[#6843B7]/20 flex items-center justify-center text-[#6843B7] text-sm">2</span>
                     Your Details
@@ -261,7 +261,11 @@ export default function BookADemoPage() {
                     </select>
                   </div>
 
- <button type="submit" className="w-full py-4 bg-[#6843B7] text-app-fg rounded-sm hover:bg-[#6843B7]/90 transition-all  text-[14px] mt-4 active:scale-95">
+                  <button 
+                    type="submit" 
+                    disabled={viewDate.getFullYear() < new Date().getFullYear() || (viewDate.getFullYear() === new Date().getFullYear() && viewDate.getMonth() < new Date().getMonth())}
+                    className={`w-full py-4 rounded-sm transition-all text-[14px] mt-4 ${(viewDate.getFullYear() < new Date().getFullYear() || (viewDate.getFullYear() === new Date().getFullYear() && viewDate.getMonth() < new Date().getMonth())) ? 'bg-zinc-500/50 text-app-fg/50 cursor-not-allowed pointer-events-none' : 'bg-[#6843B7] text-app-fg hover:bg-[#6843B7]/90 active:scale-95'}`}
+                  >
                     Confirm Booking
                   </button>
                 </form>
