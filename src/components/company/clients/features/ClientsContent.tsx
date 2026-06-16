@@ -31,15 +31,17 @@ export default function ClientsContent() {
       
       {/* Success Stories Section has been moved to Solutions */}
       {/* Testimonials Marquee Section */}
-      <section id="testimonials">
+      <section id="testimonials" className="w-full flex flex-col items-center pb-24">
         <style dangerouslySetInnerHTML={{__html: `
-          @keyframes scroll-left {
-            0% { transform: translateX(0%); }
-            100% { transform: translateX(-33.333%); }
+          @keyframes scroll-vertical {
+            0% { transform: translateY(0%); }
+            100% { transform: translateY(-50%); }
           }
-          @keyframes scroll-right {
-            0% { transform: translateX(-33.333%); }
-            100% { transform: translateX(0%); }
+          .animate-scroll-vertical {
+            animation: scroll-vertical 100s linear infinite;
+          }
+          .group\\/marquee:hover .animate-scroll-vertical {
+            animation-play-state: paused !important;
           }
         `}} />
         <motion.div
@@ -47,82 +49,58 @@ export default function ClientsContent() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="w-full"
+          className="text-left w-full mb-12"
         >
-          <h2 className="text-3xl font-bold text-app-fg mb-10"><span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6843B7] to-[#ffffff]">Testimonials</span></h2>
-          
-          <div className="relative w-full flex flex-col gap-6 overflow-hidden group/marquee py-4">
-            {/* Fade gradients for edges */}
-            <div className="absolute top-0 left-0 w-12 md:w-32 h-full bg-gradient-to-r from-app-bg to-transparent z-10 pointer-events-none" />
-            <div className="absolute top-0 right-0 w-12 md:w-32 h-full bg-gradient-to-l from-app-bg to-transparent z-10 pointer-events-none" />
-
-            {/* Row 1 */}
-            <div 
-              className="flex items-center w-max gap-6 px-4 group-hover/marquee:[animation-play-state:paused]"
-              style={{ animation: 'scroll-left 100s linear infinite' }}
-            >
-              {[...testimonialsData.slice(0, 7), ...testimonialsData.slice(0, 7), ...testimonialsData.slice(0, 7)].map((item, idx) => (
-                <div 
-                  key={`r1-${idx}`} 
-                  className="w-[300px] md:w-[400px] shrink-0 bg-app-surface border border-app-border rounded-md p-6 relative overflow-hidden group/card shadow-2xl hover:border-[#6843B7]/30 hover:bg-app-surface-hover transition-all duration-300 flex flex-col justify-between hover:scale-105 hover:z-20 cursor-pointer"
-                >
-                  <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-[#6843B7] to-transparent opacity-50 group-hover/card:opacity-100 transition-opacity duration-500" />
-                  
-                  <p className="text-app-fg/60 text-sm md:text-base leading-relaxed relative z-10 mb-6 italic whitespace-normal line-clamp-3 group-hover/card:line-clamp-none transition-all duration-300">
-                    "{item.quote}"
-                  </p>
-                  
-                  <div className="flex items-center gap-4 relative z-10 mt-auto whitespace-normal">
-                    <div className="w-12 h-12 rounded-sm bg-app-fg/5 border border-app-border flex items-center justify-center shrink-0 overflow-hidden relative">
-                      {item.logo ? (
-                        <Image src={item.logo} alt={item.company} fill className="object-contain p-2" />
-                      ) : (
-                        <span className="text-app-fg/40 text-xs font-bold uppercase">{item.company.substring(0, 2)}</span>
-                      )}
-                    </div>
-                    <div>
-                      <h4 className="text-app-fg font-bold text-sm">{item.company}</h4>
-                      <p className="text-[#6843B7] text-xs font-medium uppercase tracking-wider">{item.role}</p>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {/* Row 2 */}
-            <div 
-              className="flex items-center w-max gap-6 px-4 group-hover/marquee:[animation-play-state:paused]"
-              style={{ animation: 'scroll-right 120s linear infinite' }}
-            >
-              {[...testimonialsData.slice(7), ...testimonialsData.slice(7), ...testimonialsData.slice(7)].map((item, idx) => (
-                <div 
-                  key={`r2-${idx}`} 
-                  className="w-[300px] md:w-[400px] shrink-0 bg-app-surface border border-app-border rounded-md p-6 relative overflow-hidden group/card shadow-2xl hover:border-[#6843B7]/30 hover:bg-app-surface-hover transition-all duration-300 flex flex-col justify-between hover:scale-105 hover:z-20 cursor-pointer"
-                >
-                  <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-[#6843B7] to-transparent opacity-50 group-hover/card:opacity-100 transition-opacity duration-500" />
-                  
-                  <p className="text-app-fg/60 text-sm md:text-base leading-relaxed relative z-10 mb-6 italic whitespace-normal line-clamp-3 group-hover/card:line-clamp-none transition-all duration-300">
-                    "{item.quote}"
-                  </p>
-                  
-                  <div className="flex items-center gap-4 relative z-10 mt-auto whitespace-normal">
-                    <div className="w-12 h-12 rounded-sm bg-app-fg/5 border border-app-border flex items-center justify-center shrink-0 overflow-hidden relative">
-                      {item.logo ? (
-                        <Image src={item.logo} alt={item.company} fill className="object-contain p-2" />
-                      ) : (
-                        <span className="text-app-fg/40 text-xs font-bold uppercase">{item.company.substring(0, 2)}</span>
-                      )}
-                    </div>
-                    <div>
-                      <h4 className="text-app-fg font-bold text-sm">{item.company}</h4>
-                      <p className="text-[#6843B7] text-xs font-medium uppercase tracking-wider">{item.role}</p>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
+          <h2 className="text-3xl md:text-4xl font-bold text-app-fg mb-3">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6843B7] to-[#ffffff]">Client Success Stories</span>
+          </h2>
+          <p className="text-app-fg/60 text-lg">Hear what our enterprise partners have to say.</p>
         </motion.div>
+
+        <div className="relative w-full max-w-7xl h-[800px] md:h-[1200px] overflow-hidden group/marquee rounded-md">
+          {/* Top and Bottom Fade Gradients */}
+          <div className="absolute top-0 left-0 w-full h-16 md:h-24 bg-gradient-to-b from-app-bg to-transparent z-10 pointer-events-none" />
+          <div className="absolute bottom-0 left-0 w-full h-32 md:h-48 bg-gradient-to-t from-app-bg to-transparent z-10 pointer-events-none" />
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full pb-8 animate-scroll-vertical">
+            {[...testimonialsData, ...testimonialsData].map((item, idx) => (
+              <div 
+                key={`testimonial-${idx}`}
+                className={`w-full bg-app-surface border border-app-border rounded-md p-6 relative overflow-hidden group shadow-sm hover:shadow-lg hover:border-[#6843B7]/40 transition-all duration-500 cursor-pointer ${idx % 2 !== 0 ? 'md:translate-y-1/2' : ''}`}
+              >
+                {/* Subtle background quote mark for depth */}
+                <div className="absolute -top-4 -right-4 text-[80px] leading-none font-serif text-[#6843B7] opacity-[0.03] group-hover:opacity-[0.05] transition-opacity select-none pointer-events-none">
+                  "
+                </div>
+                
+                <p className="text-app-fg/80 text-[15px] md:text-base leading-relaxed relative z-10 mb-5 font-light">
+                  "{item.quote}"
+                </p>
+                
+              <div className="flex items-center gap-4 relative z-10 pt-4 border-t border-app-border/50">
+                {item.logo ? (
+                  <div className="h-8 w-20 relative shrink-0">
+                    <Image 
+                      src={item.logo} 
+                      alt={item.company} 
+                      fill 
+                      className="object-contain object-left mix-blend-multiply [.theme-dark_&]:mix-blend-normal [.theme-dark_&]:brightness-0 [.theme-dark_&]:invert" 
+                    />
+                  </div>
+                ) : (
+                  <div className="w-10 h-10 rounded-md bg-app-bg border border-app-border flex items-center justify-center shrink-0 overflow-hidden relative shadow-sm">
+                    <span className="text-[#6843B7] text-sm font-bold uppercase">{item.company.substring(0, 2)}</span>
+                  </div>
+                )}
+                <div>
+                  <h4 className="text-app-fg font-bold text-sm">{item.company}</h4>
+                  <p className="text-[#6843B7] text-[11px] font-medium uppercase tracking-wider">{item.role}</p>
+                </div>
+              </div>
+              </div>
+            ))}
+          </div>
+        </div>
       </section>
 
     </div>

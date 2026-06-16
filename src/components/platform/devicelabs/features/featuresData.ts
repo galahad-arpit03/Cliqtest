@@ -20,10 +20,10 @@ const features = [
       "OTP and SIM-based workflow handling"
     ],
     stats: [
-      { value: "500+", label: "Real Devices" },
-      { value: "Zero", label: "Latency" },
-      { value: "Global", label: "Availability" },
-      { value: "100%", label: "Secure" }
+      { value: "5000+", label: "Real Devices" },
+      { value: "Zero", label: "Maintenance" },
+      { value: "99.9%", label: "Uptime" },
+      { value: "Global", label: "Datacenters" }
     ]
   },
   {
@@ -45,10 +45,10 @@ const features = [
       "Automated capture of user interactions"
     ],
     stats: [
-      { value: "500+", label: "Real Devices" },
-      { value: "Zero", label: "Latency" },
-      { value: "Global", label: "Availability" },
-      { value: "100%", label: "Secure" }
+      { value: "10x", label: "Faster Scripting" },
+      { value: "Zero", label: "Coding Required" },
+      { value: "95%", label: "Test Stability" },
+      { value: "1-Click", label: "Execution" }
     ]
   },
   {
@@ -70,10 +70,10 @@ const features = [
       "Scalable CI/CD pipeline integration"
     ],
     stats: [
-      { value: "500+", label: "Real Devices" },
-      { value: "Zero", label: "Latency" },
-      { value: "Global", label: "Availability" },
-      { value: "100%", label: "Secure" }
+      { value: "100x", label: "Faster Feedback" },
+      { value: "50+", label: "Concurrent Nodes" },
+      { value: "90%", label: "Reduced Time" },
+      { value: "Zero", label: "Bottlenecks" }
     ]
   },
   {
@@ -95,10 +95,10 @@ const features = [
       "Ideal for fintech, logistics, and e-commerce"
     ],
     stats: [
-      { value: "500+", label: "Real Devices" },
-      { value: "Zero", label: "Latency" },
-      { value: "Global", label: "Availability" },
-      { value: "100%", label: "Secure" }
+      { value: "100+", label: "Countries Simulated" },
+      { value: "Zero", label: "Physical Movement" },
+      { value: "100%", label: "Accuracy" },
+      { value: "Real-world", label: "Scenarios" }
     ]
   },
   {
@@ -120,10 +120,10 @@ const features = [
       "Centralized observability & diagnostics"
     ],
     stats: [
-      { value: "500+", label: "Real Devices" },
-      { value: "Zero", label: "Latency" },
-      { value: "Global", label: "Availability" },
-      { value: "100%", label: "Secure" }
+      { value: "<1s", label: "Latency" },
+      { value: "100%", label: "Shell Access" },
+      { value: "5x", label: "Faster Fixes" },
+      { value: "Real-time", label: "Diagnostics" }
     ]
   },
   {
@@ -145,10 +145,10 @@ const features = [
       "Improve global reliability"
     ],
     stats: [
-      { value: "500+", label: "Real Devices" },
-      { value: "Zero", label: "Latency" },
-      { value: "Global", label: "Availability" },
-      { value: "100%", label: "Secure" }
+      { value: "3G/4G/5G", label: "Simulation" },
+      { value: "0", label: "Packet Loss Risk" },
+      { value: "Custom", label: "Latency Profiles" },
+      { value: "100%", label: "Real-world Match" }
     ]
   },
   {
@@ -170,10 +170,10 @@ const features = [
       "Real-time profiling insights"
     ],
     stats: [
-      { value: "500+", label: "Real Devices" },
-      { value: "Zero", label: "Latency" },
-      { value: "Global", label: "Availability" },
-      { value: "100%", label: "Secure" }
+      { value: "5+", label: "Metrics Tracked" },
+      { value: "0", label: "Overhead" },
+      { value: "100%", label: "Crash Insights" },
+      { value: "Real-time", label: "Monitoring" }
     ]
   },
   {
@@ -195,10 +195,10 @@ const features = [
       "Detailed insights into browser-specific failures"
     ],
     stats: [
-      { value: "500+", label: "Real Devices" },
-      { value: "Zero", label: "Latency" },
-      { value: "Global", label: "Availability" },
-      { value: "100%", label: "Secure" }
+      { value: "3000+", label: "Browser/OS Combos" },
+      { value: "Zero", label: "Setup Time" },
+      { value: "99.9%", label: "Accuracy" },
+      { value: "100%", label: "Automated" }
     ]
   },
   {
@@ -220,10 +220,10 @@ const features = [
       "Scalable, future-ready quality engineering"
     ],
     stats: [
-      { value: "500+", label: "Real Devices" },
-      { value: "Zero", label: "Latency" },
-      { value: "Global", label: "Availability" },
-      { value: "100%", label: "Secure" }
+      { value: "4-in-1", label: "Unified Ecosystem" },
+      { value: "100%", label: "Standardization" },
+      { value: "Zero", label: "Context Switching" },
+      { value: "10x", label: "Scaling" }
     ]
   }
 ];

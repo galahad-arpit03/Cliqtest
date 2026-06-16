@@ -17,10 +17,10 @@ const features = [
       "Seamless collaboration across teams"
     ],
     stats: [
-      { value: "100k+", label: "Executions" },
-      { value: "99.9%", label: "Reliability" },
-      { value: "10x", label: "Faster" },
-      { value: "24/7", label: "Monitoring" }
+      { value: "1M+", label: "Managed Cases" },
+      { value: "40%", label: "Reusability Rate" },
+      { value: "360°", label: "Traceability" },
+      { value: "Zero", label: "Data Loss" }
     ]
   },
   {
@@ -39,10 +39,10 @@ const features = [
       "Alignment with release objectives"
     ],
     stats: [
-      { value: "100k+", label: "Executions" },
-      { value: "99.9%", label: "Reliability" },
-      { value: "10x", label: "Faster" },
-      { value: "24/7", label: "Monitoring" }
+      { value: "50K+", label: "Active Suites" },
+      { value: "1-Click", label: "Orchestration" },
+      { value: "100%", label: "Execution Coverage" },
+      { value: "5x", label: "Faster Grouping" }
     ]
   },
   {
@@ -61,10 +61,10 @@ const features = [
       "Predictable delivery outcomes"
     ],
     stats: [
-      { value: "100k+", label: "Executions" },
-      { value: "99.9%", label: "Reliability" },
-      { value: "10x", label: "Faster" },
-      { value: "24/7", label: "Monitoring" }
+      { value: "99%", label: "Predictability" },
+      { value: "10+", label: "Integration Nodes" },
+      { value: "3x", label: "Faster Planning" },
+      { value: "Real-time", label: "Tracking" }
     ]
   },
   {
@@ -83,10 +83,10 @@ const features = [
       "Audit readiness and compliance"
     ],
     stats: [
-      { value: "100k+", label: "Executions" },
-      { value: "99.9%", label: "Reliability" },
-      { value: "10x", label: "Faster" },
-      { value: "24/7", label: "Monitoring" }
+      { value: "100%", label: "Req Coverage" },
+      { value: "0", label: "Orphaned Tests" },
+      { value: "E2E", label: "Visibility" },
+      { value: "1-Click", label: "Audit Reports" }
     ]
   },
   {
@@ -105,10 +105,10 @@ const features = [
       "Bulk dataset generation"
     ],
     stats: [
-      { value: "100k+", label: "Executions" },
-      { value: "99.9%", label: "Reliability" },
-      { value: "10x", label: "Faster" },
-      { value: "24/7", label: "Monitoring" }
+      { value: "10M+", label: "Synthetic Records" },
+      { value: "<1ms", label: "Data Retrieval" },
+      { value: "Zero", label: "Prod Dependency" },
+      { value: "100%", label: "Compliant Data" }
     ]
   },
   {
@@ -127,10 +127,10 @@ const features = [
       "Downloadable reports in multiple formats"
     ],
     stats: [
-      { value: "100k+", label: "Executions" },
-      { value: "99.9%", label: "Reliability" },
-      { value: "10x", label: "Faster" },
-      { value: "24/7", label: "Monitoring" }
+      { value: "50+", label: "Custom Widgets" },
+      { value: "100%", label: "Live Insights" },
+      { value: "<1s", label: "Report Generation" },
+      { value: "360°", label: "View" }
     ]
   },
   {
@@ -149,10 +149,10 @@ const features = [
       "Reduced troubleshooting effort"
     ],
     stats: [
-      { value: "100k+", label: "Executions" },
-      { value: "99.9%", label: "Reliability" },
-      { value: "10x", label: "Faster" },
-      { value: "24/7", label: "Monitoring" }
+      { value: "Zero", label: "Latency" },
+      { value: "50%", label: "Faster RCA" },
+      { value: "100%", label: "Exception Capture" },
+      { value: "Real-time", label: "Streaming" }
     ]
   },
   {
@@ -171,10 +171,10 @@ const features = [
       "Collaborative review processes"
     ],
     stats: [
-      { value: "100k+", label: "Executions" },
-      { value: "99.9%", label: "Reliability" },
-      { value: "10x", label: "Faster" },
-      { value: "24/7", label: "Monitoring" }
+      { value: "5x", label: "Faster Uploads" },
+      { value: "100%", label: "Excel Support" },
+      { value: "1-Click", label: "Bug Creation" },
+      { value: "99%", label: "Process Consistency" }
     ]
   },
   {
@@ -193,10 +193,10 @@ const features = [
       "External ticketing system integration"
     ],
     stats: [
-      { value: "100k+", label: "Executions" },
-      { value: "99.9%", label: "Reliability" },
-      { value: "10x", label: "Faster" },
-      { value: "24/7", label: "Monitoring" }
+      { value: "0", label: "Duplicate Bugs" },
+      { value: "3x", label: "Faster Triage" },
+      { value: "100%", label: "Context Capture" },
+      { value: "Real-time", label: "Sync" }
     ]
   }
 ];

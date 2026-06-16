@@ -32,7 +32,7 @@
   --radius-3xl: calc(var(--global-radius) * 6);
 }
 
-:root {
+:root, .theme-dark {
   --app-bg: #000000;
   --app-surface: #0A0A0A;
   --app-surface-hover: #111111;
@@ -95,18 +95,18 @@ a, button, [role="button"] {
 }
 
 /* Disable text gradients in light mode and enforce solid legible colors */
-.theme-light .bg-clip-text {
+.theme-light .bg-clip-text:not(.theme-dark *) {
   background: none !important;
   -webkit-text-fill-color: initial !important;
 }
 
 /* For purple theme gradients */
-.theme-light .from-\[\#6843B7\] {
+.theme-light .from-\[\#6843B7\]:not(.theme-dark *) {
   color: #6843B7 !important;
 }
 
 /* For green theme gradients - darken slightly for white background legibility */
-.theme-light .from-\[\#00F2B0\] {
+.theme-light .from-\[\#00F2B0\]:not(.theme-dark *) {
   color: #00A67A !important;
 }
 
