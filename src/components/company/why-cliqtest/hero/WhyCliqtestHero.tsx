@@ -26,7 +26,7 @@ export default function WhyCliqtestHero() {
           fill
           priority
           unoptimized
-          className="object-contain object-right md:object-right-top opacity-60"
+          className="object-cover object-center md:object-contain md:object-right-top opacity-60"
         />
       </motion.div>
       {/* Dark overlay */}
