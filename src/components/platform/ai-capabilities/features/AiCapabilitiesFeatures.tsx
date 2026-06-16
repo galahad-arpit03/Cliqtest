@@ -226,12 +226,7 @@ export default function AiCapabilitiesFeatures() {
       </div>
 
       {features.map((feat, idx) => {
-        const aiStats = [
-          { value: "AI", label: "Powered" },
-          { value: "10x", label: "Faster" },
-          { value: "100%", label: "Automated" },
-          { value: "Zero", label: "Maintenance" }
-        ];
+
         const words = feat.title.split(' ');
         const firstWord = words[0];
         const restWords = words.slice(1).join(' ');
@@ -369,14 +364,16 @@ export default function AiCapabilitiesFeatures() {
                     )) : <p>{(feat as any).desc}</p>}
                   </div>
 
-                  <div className="mt-10 pt-6 border-t border-app-border flex flex-wrap gap-6 md:gap-10">
-                    {aiStats.map((s, i) => (
-                      <div key={i} className="flex flex-col gap-1">
-                        <span className="text-2xl font-bold text-app-fg tracking-tight">{s.value}</span>
-                        <span className="text-xs uppercase tracking-widest text-app-fg/40">{s.label}</span>
-                      </div>
-                    ))}
-                  </div>
+                  {(feat as any).stats && (
+                    <div className="mt-10 pt-6 border-t border-app-border flex flex-wrap gap-6 md:gap-10">
+                      {(feat as any).stats.map((s: { value: string; label: string }, i: number) => (
+                        <div key={i} className="flex flex-col gap-1">
+                          <span className="text-2xl font-bold text-app-fg tracking-tight">{s.value}</span>
+                          <span className="text-xs uppercase tracking-widest text-app-fg/40">{s.label}</span>
+                        </div>
+                      ))}
+                    </div>
+                  )}
                   
                 </div>
               </motion.div>
