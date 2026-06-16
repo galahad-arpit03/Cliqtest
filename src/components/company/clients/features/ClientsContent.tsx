@@ -1,21 +1,28 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { categorizedStories } from './featuresData';
-
 import Image from 'next/image';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
+
 const testimonialsData = categorizedStories.flatMap(cat => cat.stories);
 
 export default function ClientsContent() {
-  const duplicatedTestimonials = [...testimonialsData, ...testimonialsData];
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  const scroll = (direction: 'left' | 'right') => {
+    if (scrollRef.current) {
+      const scrollAmount = direction === 'left' ? -420 : 420;
+      scrollRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    }
+  };
 
   // Scroll to feature section if URL contains a hash
   useEffect(() => {
     if (typeof window !== 'undefined') {
       const hash = window.location.hash?.substring(1);
       if (hash) {
-        // Delay to ensure elements are rendered
         setTimeout(() => {
           const el = document.getElementById(hash);
           if (el) {
@@ -28,81 +35,104 @@ export default function ClientsContent() {
 
   return (
     <div className="max-w-7xl pt-12 mx-auto px-8">
-      
-      {/* Success Stories Section has been moved to Solutions */}
-      {/* Testimonials Marquee Section */}
-      <section id="testimonials" className="w-full flex flex-col items-center pb-24">
-        <style dangerouslySetInnerHTML={{__html: `
-          @keyframes scroll-vertical {
-            0% { transform: translateY(0%); }
-            100% { transform: translateY(-50%); }
-          }
-          .animate-scroll-vertical {
-            animation: scroll-vertical 100s linear infinite;
-          }
-          .group\\/marquee:hover .animate-scroll-vertical {
-            animation-play-state: paused !important;
-          }
-        `}} />
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-left w-full mb-12"
-        >
-          <h2 className="text-3xl md:text-4xl font-bold text-app-fg mb-3">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6843B7] to-[#ffffff]">Client Success Stories</span>
-          </h2>
-          <p className="text-app-fg/60 text-lg">Hear what our enterprise partners have to say.</p>
-        </motion.div>
+      <section id="testimonials" className="w-full flex flex-col pb-24">
+        
+        {/* Header with Navigation Arrows */}
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-6">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-left"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-app-fg mb-3">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6843B7] to-[#ffffff]">Client Success Stories</span>
+            </h2>
+            <p className="text-app-fg/60 text-lg">Hear what our enterprise partners have to say.</p>
+          </motion.div>
 
-        <div className="relative w-full max-w-7xl h-[800px] md:h-[1200px] overflow-hidden group/marquee rounded-md">
-          {/* Top and Bottom Fade Gradients */}
-          <div className="absolute top-0 left-0 w-full h-16 md:h-24 bg-gradient-to-b from-app-bg to-transparent z-10 pointer-events-none" />
-          <div className="absolute bottom-0 left-0 w-full h-32 md:h-48 bg-gradient-to-t from-app-bg to-transparent z-10 pointer-events-none" />
+          <motion.div 
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="flex items-center gap-3 shrink-0"
+          >
+            <button 
+              onClick={() => scroll('left')}
+              className="w-12 h-12 rounded-full border border-app-border/50 bg-app-surface flex items-center justify-center text-app-fg hover:bg-app-fg/5 hover:border-app-fg/20 transition-all focus:outline-none focus:ring-2 focus:ring-[#6843B7]/50"
+              aria-label="Previous testimonials"
+            >
+              <ChevronLeft size={24} />
+            </button>
+            <button 
+              onClick={() => scroll('right')}
+              className="w-12 h-12 rounded-full border border-app-border/50 bg-app-surface flex items-center justify-center text-app-fg hover:bg-app-fg/5 hover:border-app-fg/20 transition-all focus:outline-none focus:ring-2 focus:ring-[#6843B7]/50"
+              aria-label="Next testimonials"
+            >
+              <ChevronRight size={24} />
+            </button>
+          </motion.div>
+        </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full pb-8 animate-scroll-vertical">
-            {[...testimonialsData, ...testimonialsData].map((item, idx) => (
+        {/* Horizontal Scroll Container */}
+        <div className="relative w-full">
+          {/* Subtle fade edges for the carousel */}
+          <div className="absolute top-0 bottom-0 left-0 w-8 bg-gradient-to-r from-app-bg to-transparent z-10 pointer-events-none hidden md:block" />
+          <div className="absolute top-0 bottom-0 right-0 w-16 bg-gradient-to-l from-app-bg to-transparent z-10 pointer-events-none hidden md:block" />
+
+          <div 
+            ref={scrollRef}
+            className="flex overflow-x-auto gap-6 snap-x snap-mandatory hide-scrollbar scroll-smooth pb-8 pt-4 px-2"
+            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+          >
+            {/* Hide scrollbar styles for WebKit */}
+            <style dangerouslySetInnerHTML={{__html: `
+              .hide-scrollbar::-webkit-scrollbar {
+                display: none;
+              }
+            `}} />
+
+            {testimonialsData.map((item, idx) => (
               <div 
                 key={`testimonial-${idx}`}
-                className={`w-full bg-app-surface border border-app-border rounded-md p-6 relative overflow-hidden group shadow-sm hover:shadow-lg hover:border-[#6843B7]/40 transition-all duration-500 cursor-pointer ${idx % 2 !== 0 ? 'md:translate-y-1/2' : ''}`}
+                className="w-[85vw] md:w-[400px] shrink-0 snap-start bg-app-surface border border-app-border rounded-md p-8 relative overflow-hidden group shadow-sm hover:shadow-lg hover:border-[#6843B7]/40 transition-all duration-500 cursor-pointer flex flex-col justify-between min-h-[350px]"
               >
                 {/* Subtle background quote mark for depth */}
-                <div className="absolute -top-4 -right-4 text-[80px] leading-none font-serif text-[#6843B7] opacity-[0.03] group-hover:opacity-[0.05] transition-opacity select-none pointer-events-none">
+                <div className="absolute -top-4 -right-4 text-[100px] leading-none font-serif text-[#6843B7] opacity-[0.03] group-hover:opacity-[0.05] transition-opacity select-none pointer-events-none">
                   "
                 </div>
                 
-                <p className="text-app-fg/80 text-[15px] md:text-base leading-relaxed relative z-10 mb-5 font-light">
+                <p className="text-app-fg/80 text-[15px] leading-relaxed relative z-10 mb-8 font-light flex-1">
                   "{item.quote}"
                 </p>
                 
-              <div className="flex items-center gap-4 relative z-10 pt-4 border-t border-app-border/50">
-                {item.logo ? (
-                  <div className="h-8 w-20 relative shrink-0">
-                    <Image 
-                      src={item.logo} 
-                      alt={item.company} 
-                      fill 
-                      className="object-contain object-left mix-blend-multiply [.theme-dark_&]:mix-blend-normal [.theme-dark_&]:brightness-0 [.theme-dark_&]:invert" 
-                    />
+                <div className="flex items-center gap-4 relative z-10 pt-5 border-t border-app-border/50">
+                  {item.logo ? (
+                    <div className="h-10 w-24 relative shrink-0">
+                      <Image 
+                        src={item.logo} 
+                        alt={item.company} 
+                        fill 
+                        className="object-contain object-left mix-blend-multiply [.theme-dark_&]:mix-blend-normal [.theme-dark_&]:brightness-0 [.theme-dark_&]:invert" 
+                      />
+                    </div>
+                  ) : (
+                    <div className="w-10 h-10 rounded-md bg-app-bg border border-app-border flex items-center justify-center shrink-0 overflow-hidden relative shadow-sm">
+                      <span className="text-[#6843B7] text-sm font-bold uppercase">{item.company.substring(0, 2)}</span>
+                    </div>
+                  )}
+                  <div>
+                    <h4 className="text-app-fg font-bold text-sm">{item.company}</h4>
+                    <p className="text-[#6843B7] text-[11px] font-medium uppercase tracking-wider mt-0.5">{item.role}</p>
                   </div>
-                ) : (
-                  <div className="w-10 h-10 rounded-md bg-app-bg border border-app-border flex items-center justify-center shrink-0 overflow-hidden relative shadow-sm">
-                    <span className="text-[#6843B7] text-sm font-bold uppercase">{item.company.substring(0, 2)}</span>
-                  </div>
-                )}
-                <div>
-                  <h4 className="text-app-fg font-bold text-sm">{item.company}</h4>
-                  <p className="text-[#6843B7] text-[11px] font-medium uppercase tracking-wider">{item.role}</p>
                 </div>
-              </div>
               </div>
             ))}
           </div>
         </div>
       </section>
-
     </div>
   );
 }

@@ -19,7 +19,7 @@ const features = [
       },
       {
         company: "UCO Bank, RBL Bank & More",
-        desc: "UCO Bank, RBL Bank, ABCD Bank, and IDBI Bank implemented our cliQTest and Netraa solutions to enable real-time performance visibility, faster issue resolution, and improved system reliability.",
+        desc: "UCO Bank, RBL Bank and IDBI Bank implemented our cliQTest and Netraa solutions to enable real-time performance visibility, faster issue resolution, and improved system reliability.",
         benefits: ['Faster issue resolution', 'Real-time performance visibility', 'Improved system reliability']
       }
     ]
