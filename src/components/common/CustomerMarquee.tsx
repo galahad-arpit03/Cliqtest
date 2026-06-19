@@ -5,14 +5,14 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 
 const customers = [
-  { name: "Bank of Maharashtra", logo: "/clients/bank-of-maharashtra.svg" },
-  { name: "NSDL Payment Bank", logo: "/clients/nsdl-bank.png" },
-  { name: "UCO Bank", logo: "/clients/uco-bank.svg" },
-  { name: "Generali", logo: "/clients/Generali_Central_Life_Insurance_Company_Limited.svg" },
-  // { name: "IDBI Bank", logo: "/clients/idbi-bank.svg" },
+  { name: "Bank of Maharashtra", logo: "/clients/bank_of_maharashtra.svg" },
+  { name: "NSDL Payment Bank", logo: "/clients/nsdl_bank.png" },
+  { name: "UCO Bank", logo: "/clients/uco_bank.svg" },
+  { name: "Generali", logo: "/clients/generali_central_life_insurance_company_limited.svg" },
+  // { name: "IDBI Bank", logo: "/clients/idbi_bank.svg" },
   { name: "L&T", logo: "/clients/lt.svg" },
   { name: "Protean", logo: "/clients/protean.svg" },
-  { name: "RBL Bank", logo: "/clients/rbl-bank.svg" },
+  { name: "RBL Bank", logo: "/clients/rbl_bank.svg" },
   // { name: "FDC", logo: "/clients/fdc.jpeg" },
 ];
 

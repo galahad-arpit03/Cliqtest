@@ -8,7 +8,7 @@ const industries = [
     theme: "purple",
     desc: [
       "FinTech applications demand speed, reliability, security, and real-time validation across highly regulated financial ecosystems. cliQTest enables end-to-end automation of complex financial workflows including onboarding, payments, remittances, authentication, portfolio management, and transaction validation.",
-      "The platform supports OTP automation, biometric validation, API testing, AI-driven automation, real-device testing, and cross-system data consistency checks that ensure secure and reliable customer experiences. By automating critical financial workflows, cliQTest helps organizations reduce operational risks, accelerate releases, and maintain regulatory compliance."
+      "The platform equips teams with specialized tools for testing biometric authentication, multi-factor security flows, and continuous ledger consistency to ensure secure and reliable customer experiences. By streamlining these critical financial validations, cliQTest helps organizations minimize operational vulnerabilities, accelerate go-to-market cycles, and enforce strict regulatory compliance."
     ],
     benefits: [
       'Secure transaction workflow validation',
@@ -95,7 +95,7 @@ const industries = [
     theme: "green",
     desc: [
       "Banking ecosystems require highly reliable, secure, and scalable testing across core banking platforms, mobile applications, APIs, payment systems, and omnichannel customer journeys. cliQTest enables end-to-end automation of critical banking workflows including customer onboarding, account management, loan origination, fund transfers, transaction validation, and branch operations across interconnected systems.",
-      "The platform supports OTP automation, real-device testing, API validation, audit-ready reporting, AI-driven automation, and synchronized UI/API testing to ensure operational consistency and regulatory compliance. By automating large-scale banking workflows and regression cycles, cliQTest helps financial institutions improve system reliability, reduce operational risks, and accelerate digital banking transformation initiatives."
+      "The platform facilitates rigorous checks of identity verification modules, core banking endpoints, and complex multi-channel user journeys to maintain operational integrity and compliance. By orchestrating large-scale regression cycles, cliQTest empowers financial institutions to bolster system resilience, mitigate risks, and confidently drive their digital transformation."
     ],
     benefits: [
       "End-to-end core banking workflow validation",
@@ -146,7 +146,7 @@ const industries = [
     theme: "purple",
     desc: [
       "Payment and remittance platforms require secure, real-time validation of transaction flows, payment gateways, beneficiary management, authentication mechanisms, and cross-border financial operations. cliQTest enables end-to-end automation of complex payment journeys across mobile and web ecosystems while ensuring transaction consistency and operational reliability.",
-      "The platform supports OTP automation, API validation, PIN authentication workflows, real-device testing, and cross-system synchronization to validate complete remittance and payment processing lifecycles. By automating critical transaction workflows and reducing execution failures, cliQTest helps organizations improve transaction reliability, minimize operational risks, and accelerate release readiness across payment ecosystems."
+      "The platform accelerates the testing of complex clearance protocols, digital wallet authentication, and cross-border settlement logic to guarantee complete remittance lifecycle integrity. By safeguarding critical transaction workflows from execution failures, cliQTest helps organizations assure uninterrupted service, limit exposure, and expedite feature delivery in the payment sector."
     ],
     benefits: [
       "End-to-end remittance workflow validation",
@@ -197,7 +197,7 @@ const industries = [
     theme: "green",
     desc: [
       "Transportation and mobility platforms require seamless validation of booking systems, payment workflows, reservation processes, approvals, and cross-platform customer interactions across interconnected applications. cliQTest enables unified automation of transportation workflows spanning web, mobile, APIs, and backend systems while ensuring reliable execution across complex operational ecosystems.",
-      "The platform supports OTP handling, CAPTCHA automation, Flutter application testing, API validation, and synchronized cross-platform execution to improve operational efficiency and customer experience consistency. By automating long and complex mobility workflows, cliQTest helps organizations reduce operational risks and improve service reliability across transportation ecosystems."
+      "The platform addresses the unique challenges of mobility apps by seamlessly evaluating real-time location services, intricate ticketing logic, and rapid cross-platform UI interactions to bolster customer experience consistency. By conquering these demanding mobility use cases, cliQTest enables organizations to optimize routing dependability and scale their transportation services with confidence."
     ],
     benefits: [
       "End-to-end booking and reservation validation",
@@ -231,7 +231,7 @@ const industries = [
     theme: "green",
     desc: [
       "Financial service organizations require secure, scalable, and highly reliable validation across customer onboarding, lending, leasing, transaction processing, compliance operations, and digital customer engagement platforms. cliQTest enables intelligent automation of complex financial workflows across web, mobile, APIs, and backend systems.",
-      "The platform supports AI-driven automation, OTP and biometric handling, workflow orchestration, API testing, and real-device validation to ensure accurate execution and operational consistency across interconnected financial ecosystems. By improving visibility, automation scalability, and compliance readiness, cliQTest helps organizations accelerate digital transformation while maintaining customer trust and operational excellence."
+      "The platform streamlines the validation of credit assessment models, intricate leasing agreements, and secure onboarding procedures to maintain accurate execution across distributed financial hubs. By enhancing testing visibility and scaling governance seamlessly, cliQTest helps organizations fast-track their financial innovations without compromising client trust."
     ],
     benefits: [
       "End-to-end financial workflow automation",

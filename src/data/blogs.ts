@@ -28,7 +28,7 @@ export const blogsData: BlogPost[] = [
       <p>Modern software teams release updates multiple times a day across web, mobile, APIs, and cloud-native applications. Traditional testing approaches depend heavily on manually created test cases, scripted automation, and constant maintenance efforts.</p>
       <p>As applications become more dynamic, QA teams spend increasing amounts of time maintaining tests rather than validating quality.</p>
       
-      <img src="/indi-blog/agentic%20qa.png" alt="Agentic QA overview" className="w-full rounded-lg my-8 shadow-sm border border-app-border" />
+      <img src="/indi-blog/agentic_qa.png" alt="Agentic QA overview" className="w-full rounded-lg my-8 shadow-sm border border-app-border" />
 
       <h2>The Rise of Agentic QA</h2>
       <p>Agentic QA introduces autonomous testing agents that understand requirements, generate test scenarios, adapt to application changes, and continuously optimize testing strategies.</p>
@@ -45,7 +45,7 @@ export const blogsData: BlogPost[] = [
         <li>Detect anomalies in application behavior</li>
         <li>Recommend optimal test execution paths</li>
       </ul>
-      <img src="/indi-blog/how%20intelegent%20testing%20work.png" alt="How intelligent testing works" className="w-full rounded-lg my-8 shadow-sm border border-app-border" />
+      <img src="/indi-blog/how_intelegent_testing_work.png" alt="How intelligent testing works" className="w-full rounded-lg my-8 shadow-sm border border-app-border" />
 
       <h2>Business Impact</h2>
       <p>Organizations adopting Agentic QA are reducing testing effort, accelerating release cycles, and improving software reliability.</p>
@@ -70,7 +70,7 @@ export const blogsData: BlogPost[] = [
       <h2>The Challenge of Testing in Financial Services</h2>
       <p>Financial institutions operate in highly regulated environments where software quality directly impacts customer trust, compliance, and operational stability.</p>
       <p>A leading FinTech organization struggled with lengthy regression cycles, complex compliance validation requirements, and delayed releases across multiple digital channels.</p>
-      <img src="/indi-blog/Global%20FinTech%20Cuts%20QA%20Time%20by%2080%25%201.png" alt="Global FinTech Challenge" className="w-full rounded-lg my-8 shadow-sm border border-app-border" />
+      <img src="/indi-blog/global_fintech_cuts_qa_time_by_80_1.png" alt="Global FinTech Challenge" className="w-full rounded-lg my-8 shadow-sm border border-app-border" />
 
       <h2>Why Traditional Testing Was Slowing Growth</h2>
       <p>Testing activities required significant manual effort across web applications, mobile platforms, APIs, and payment integrations.</p>
@@ -79,7 +79,7 @@ export const blogsData: BlogPost[] = [
       <h2>Transforming Quality Engineering</h2>
       <p>The organization adopted a unified testing platform that combined automated testing, centralized test management, real-device validation, and CI/CD integration.</p>
       <p>Critical business workflows were automated while execution was distributed across scalable environments.</p>
-      <img src="/indi-blog/Global%20FinTech%20Cuts%20QA%20Time%20by%2080%25%202.png" alt="Transforming Quality Engineering" className="w-full rounded-lg my-8 shadow-sm border border-app-border" />
+      <img src="/indi-blog/global_fintech_cuts_qa_time_by_80_2.png" alt="Transforming Quality Engineering" className="w-full rounded-lg my-8 shadow-sm border border-app-border" />
 
       <h2>Results Achieved</h2>
       <p>The transformation delivered measurable improvements:</p>
@@ -114,7 +114,7 @@ export const blogsData: BlogPost[] = [
       <h2>Why Infrastructure Becomes the Bottleneck</h2>
       <p>As automation coverage grows, organizations face challenges including environment availability, execution delays, resource contention, and maintenance overhead.</p>
       <p>Without scalable infrastructure, even the best automation strategies fail to deliver expected outcomes.</p>
-      <img src="/indi-blog/Scaling%20Test%20Infrastructure%20in%202026%201.png" alt="Scaling Test Infrastructure" className="w-full rounded-lg my-8 shadow-sm border border-app-border" />
+      <img src="/indi-blog/scaling_test_infrastructure_in_2026_1.png" alt="Scaling Test Infrastructure" className="w-full rounded-lg my-8 shadow-sm border border-app-border" />
 
       <h2>Building for Enterprise Scale</h2>
       <p>Leading organizations are adopting cloud-native testing infrastructures that include:</p>
@@ -152,7 +152,7 @@ export const blogsData: BlogPost[] = [
       <h2>Understanding Self-Healing Automation</h2>
       <p>Self-healing automation uses artificial intelligence and intelligent object recognition to identify application changes and automatically adapt test scripts.</p>
       <p>Instead of failing when an element changes, tests can locate alternative attributes and continue execution.</p>
-      <img src="/indi-blog/Self-Healing%20Automation%20Handbook.png" alt="Self-Healing Automation Handbook" className="w-full rounded-lg my-8 shadow-sm border border-app-border" />
+      <img src="/indi-blog/self_healing_automation_handbook.png" alt="Self-Healing Automation Handbook" className="w-full rounded-lg my-8 shadow-sm border border-app-border" />
 
       <h2>Core Components of a Self-Healing Framework</h2>
       <p>Successful implementations typically combine:</p>
@@ -183,7 +183,7 @@ export const blogsData: BlogPost[] = [
     title: "Insurance Enterprise Accelerates Delivery",
     excerpt:
       "See how intelligent testing transformed release cycles and regulatory compliance.",
-    image: "/blogs/Insurance Enterprise Accelerates Delivery.png",
+    image: "/blogs/insurance_enterprise_accelerates_delivery.png",
     readTime: "7 min read",
     date: "March 10, 2026",
     author: "Presales Team",
@@ -196,7 +196,7 @@ export const blogsData: BlogPost[] = [
       <h2>Quality Challenges in Insurance Platforms</h2>
       <p>Complex policy workflows, claims processing systems, customer portals, and third-party integrations create extensive testing requirements.</p>
       <p>Traditional testing methods often struggle to support accelerated delivery timelines.</p>
-      <img src="/indi-blog/Insurance%20Enterprise%20Accelerates%20Delivery.png" alt="Insurance Enterprise Accelerates Delivery" className="w-full rounded-lg my-8 shadow-sm border border-app-border" />
+      <img src="/indi-blog/insurance_enterprise_accelerates_delivery.png" alt="Insurance Enterprise Accelerates Delivery" className="w-full rounded-lg my-8 shadow-sm border border-app-border" />
 
       <h2>Modernizing Quality Engineering</h2>
       <p>By adopting intelligent testing practices and automation, the organization transformed its approach to quality validation.</p>
@@ -229,7 +229,7 @@ export const blogsData: BlogPost[] = [
     title: "Future of Automation Testing",
     excerpt:
       "Exploring the next evolution of software quality, from hyperautomation to autonomous triaging.",
-    image: "/blogs/Future of Automation Testing.png",
+    image: "/blogs/future_of_automation_testing.png",
     readTime: "4 min read",
     date: "February 05, 2026",
     author: "AI Research Group",
@@ -238,7 +238,7 @@ export const blogsData: BlogPost[] = [
       <h2>Automation Is Entering a New Era</h2>
       <p>Traditional automation focused primarily on executing predefined scripts.</p>
       <p>The next generation of testing is moving toward intelligent systems capable of adapting, learning, and making decisions autonomously.</p>
-      <img src="/indi-blog/Future%20of%20Automation%20Testing.png" alt="Future of Automation Testing" className="w-full rounded-lg my-8 shadow-sm border border-app-border" />
+      <img src="/indi-blog/future_of_automation_testing.png" alt="Future of Automation Testing" className="w-full rounded-lg my-8 shadow-sm border border-app-border" />
 
       <h2>Key Trends Driving the Future</h2>
       <p>Several innovations are reshaping software testing:</p>
@@ -274,7 +274,7 @@ export const blogsData: BlogPost[] = [
     title: "From Manual Testing to Autonomous Quality Engineering",
     excerpt:
       "How forward-thinking organizations are moving beyond traditional testing toward autonomous validation.",
-    image: "/blogs/From Manual Testing to Autonomous Quality Engineering.png",
+    image: "/blogs/from_manual_testing_to_autonomous_quality_engineering.png",
     readTime: "10 min read",
     date: "January 18, 2026",
     author: "Quality Engineering Leaders",
@@ -283,7 +283,7 @@ export const blogsData: BlogPost[] = [
       <h2>Why Manual Testing Is Becoming a Business Constraint</h2>
       <p>As organizations accelerate digital transformation initiatives, software delivery cycles continue to shrink. Agile and DevOps practices have enabled faster development, but many quality assurance teams still depend heavily on manual testing processes.</p>
       <p>The result is a growing disconnect between development speed and testing capacity.</p>
-      <img src="/indi-blog/From%20Manual%20Testing%20to%20Autonomous%20Quality%20Engineering.png" alt="From Manual Testing to Autonomous Quality Engineering" className="w-full rounded-lg my-8 shadow-sm border border-app-border" />
+      <img src="/indi-blog/from_manual_testing_to_autonomous_quality_engineering.png" alt="From Manual Testing to Autonomous Quality Engineering" className="w-full rounded-lg my-8 shadow-sm border border-app-border" />
 
       <h2>The Challenges of Traditional Testing</h2>
       <p>Manual testing offers valuable human insight but often struggles to scale with modern application complexity. Frequent releases, expanding test coverage requirements, and increasingly interconnected systems create significant pressure on QA teams.</p>
@@ -332,7 +332,7 @@ export const blogsData: BlogPost[] = [
     title: "Why Real Device Testing Matters More Than Ever",
     excerpt:
       "Closing the reality gap by validating application behavior under actual usage conditions.",
-    image: "/blogs/Why Real Device Testing Matters More Than Ever.png",
+    image: "/blogs/why_real_device_testing_matters_more_than_ever.png",
     readTime: "6 min read",
     date: "December 02, 2025",
     author: "Mobile Experience Team",
@@ -341,7 +341,7 @@ export const blogsData: BlogPost[] = [
       <h2>The Growing Complexity of Mobile Experiences</h2>
       <p>Modern users interact with applications across a vast ecosystem of devices, operating systems, screen sizes, network conditions, and hardware configurations.</p>
       <p>Delivering consistent experiences across this fragmented landscape has become one of the biggest challenges in software quality assurance.</p>
-      <img src="/indi-blog/Why%20Real%20Device%20Testing%20Matters%20More%20Than%20Ever.png" alt="Why Real Device Testing Matters More Than Ever" className="w-full rounded-lg my-8 shadow-sm border border-app-border" />
+      <img src="/indi-blog/why_real_device_testing_matters_more_than_ever.png" alt="Why Real Device Testing Matters More Than Ever" className="w-full rounded-lg my-8 shadow-sm border border-app-border" />
 
       <h2>Why Simulators Alone Are Not Enough</h2>
       <p>While emulators and simulators provide valuable early-stage validation, they cannot fully replicate real-world user conditions.</p>
@@ -390,7 +390,7 @@ export const blogsData: BlogPost[] = [
     title: "AI-Powered Test Automation: Beyond Record and Playback",
     excerpt:
       "Discover how AI introduces intelligence into every stage of the testing process.",
-    image: "/blogs/AI-Powered Test Automation: Beyond Record and Playback.png",
+    image: "/blogs/ai_powered_test_automation_beyond_record_and_playback.png",
     readTime: "4 min read",
     date: "November 15, 2025",
     author: "Automation Architecture Team",
@@ -399,7 +399,7 @@ export const blogsData: BlogPost[] = [
       <h2>The Evolution of Test Automation</h2>
       <p>Record-and-playback tools simplified automation adoption by allowing teams to create scripts without extensive programming knowledge.</p>
       <p>However, as applications became more dynamic, these approaches often struggled with scalability, maintenance, and long-term sustainability.</p>
-      <img src="/indi-blog/AI-Powered%20Test%20Automation%3A%20Beyond%20Record%20and%20Playback.png" alt="AI-Powered Test Automation" className="w-full rounded-lg my-8 shadow-sm border border-app-border" />
+      <img src="/indi-blog/ai_powered_test_automation_beyond_record_and_playback.png" alt="AI-Powered Test Automation" className="w-full rounded-lg my-8 shadow-sm border border-app-border" />
 
       <h2>The Limitations of Traditional Automation</h2>
       <p>Many organizations encounter challenges such as:</p>
@@ -455,7 +455,7 @@ export const blogsData: BlogPost[] = [
     title: "Continuous Testing in the DevOps Era",
     excerpt:
       "Integrating automated quality checks throughout the software delivery lifecycle.",
-    image: "/blogs/Continuous Testing in the DevOps Era.png",
+    image: "/blogs/continuous_testing_in_the_devops_era.png",
     readTime: "7 min read",
     date: "October 22, 2025",
     author: "DevOps & SRE Group",
@@ -465,7 +465,7 @@ export const blogsData: BlogPost[] = [
       <p>Modern DevOps practices have dramatically accelerated software delivery.</p>
       <p>Organizations now deploy updates daily—or even multiple times per day—creating unprecedented pressure on quality assurance processes.</p>
       <p>Traditional testing approaches often become bottlenecks that slow innovation.</p>
-      <img src="/indi-blog/Continuous%20Testing%20in%20the%20DevOps%20Era.png" alt="Continuous Testing in the DevOps Era" className="w-full rounded-lg my-8 shadow-sm border border-app-border" />
+      <img src="/indi-blog/continuous_testing_in_the_devops_era.png" alt="Continuous Testing in the DevOps Era" className="w-full rounded-lg my-8 shadow-sm border border-app-border" />
 
       <h2>The Challenge of Late-Stage Testing</h2>
       <p>When testing occurs only near release milestones, defects are discovered late in the development cycle.</p>
@@ -522,7 +522,7 @@ export const blogsData: BlogPost[] = [
     title: "The Rise of Unified Test Management Platforms",
     excerpt:
       "The cost of fragmented testing ecosystems and the benefits of a centralized approach.",
-    image: "/blogs/The Rise of Unified Test Management Platforms.png",
+    image: "/blogs/the_rise_of_unified_test_management_platforms.png",
     readTime: "5 min read",
     date: "September 08, 2025",
     author: "Platform Architecture Team",
@@ -531,7 +531,7 @@ export const blogsData: BlogPost[] = [
       <h2>The Cost of Fragmented Testing Ecosystems</h2>
       <p>Many QA teams rely on multiple disconnected tools to manage requirements, test cases, defects, execution results, automation assets, and reporting.</p>
       <p>While each tool may solve a specific problem, fragmented ecosystems often create operational inefficiencies.</p>
-      <img src="/indi-blog/The%20Rise%20of%20Unified%20Test%20Management%20Platforms.png" alt="The Rise of Unified Test Management Platforms" className="w-full rounded-lg my-8 shadow-sm border border-app-border" />
+      <img src="/indi-blog/the_rise_of_unified_test_management_platforms.png" alt="The Rise of Unified Test Management Platforms" className="w-full rounded-lg my-8 shadow-sm border border-app-border" />
 
       <h2>Challenges of Disconnected Toolchains</h2>
       <p>Common issues include:</p>
@@ -589,7 +589,7 @@ export const blogsData: BlogPost[] = [
       <h2>Looking Beyond Cost Reduction</h2>
       <p>When organizations evaluate automation initiatives, discussions often focus on reducing manual testing effort.</p>
       <p>While operational efficiency is important, the true value of automation extends far beyond simple cost savings.</p>
-      <img src="/indi-blog/The%20ROI%20of%20Test%20Automation%3A%20Measuring%20What%20Matters.png" alt="The ROI of Test Automation" className="w-full rounded-lg my-8 shadow-sm border border-app-border" />
+      <img src="/indi-blog/the_roi_of_test_automation_measuring_what_matters.png" alt="The ROI of Test Automation" className="w-full rounded-lg my-8 shadow-sm border border-app-border" />
 
       <h2>Why Traditional ROI Calculations Fall Short</h2>
       <p>Measuring success solely through hours saved can overlook broader business outcomes.</p>

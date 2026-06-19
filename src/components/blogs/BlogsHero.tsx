@@ -19,7 +19,7 @@ export default function BlogsHero({ isLight }: { isLight?: boolean }) {
     >
       <motion.div style={{ y }} className="absolute inset-0 w-full h-full z-0 pointer-events-none">
         <Image
-          src="/images/blogs-hero.png"
+          src="/images/blogs_hero.png"
           alt="Blogs Hero Background"
           fill
           priority

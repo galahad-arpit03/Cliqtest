@@ -6,7 +6,7 @@ const features = [
     title: 'Web Testing',
     desc: [
       "Modern web applications operate across multiple browsers, environments, frameworks, and user workflows, making consistent validation increasingly complex. cliQTest enables comprehensive web testing through intelligent automation, cross-browser execution, real-device validation, and AI-powered automation management.",
-      "The platform supports automated validation of dynamic UI elements, authentication workflows, business transactions, and end-to-end user journeys while reducing automation maintenance through self-healing capabilities. Teams can execute scalable regression cycles across browsers and environments while monitoring execution results through centralized dashboards and reports.",
+      "The platform supports automated validation of dynamic UI elements, authentication workflows, business transactions, and end-to-end user journeys while reducing automation maintenance through self-healing capabilities. Teams can execute scalable regression cycles across browsers and environments while tracking execution results through centralized dashboards and reports.",
       "cliQTest ensures reliable, scalable, and high-performance web application testing for enterprise-grade digital experiences."
     ],
     benefits: [
@@ -119,7 +119,7 @@ const features = [
     ],
     benefits: [
       'Automated LLM and chatbot validation',
-      'Model accuracy and drift monitoring',
+      'Model accuracy and drift tracking',
       'Reduced hallucination risks',
       'Edge-case evaluation workflows',
       'Improved AI reliability and safety'

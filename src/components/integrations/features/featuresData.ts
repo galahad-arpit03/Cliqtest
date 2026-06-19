@@ -50,42 +50,6 @@ export const integrationsData = [
       icon: Layers
     },
     {
-      id: "sbom-integrations",
-      title: "SBOM Integrations",
-      desc: [
-        "cliQTest supports Software Bill of Materials (SBOM) integration capabilities that help organizations improve software supply chain visibility, dependency tracking, and security governance across enterprise applications. By integrating SBOM workflows into testing and release processes, cliQTest enables teams to identify component-level risks, maintain compliance readiness, and strengthen application security validation during software delivery cycles.",
-        "Proactively monitor third-party dependencies and open-source vulnerabilities before they ever enter the production environment. These integrations cross-reference your application's architecture against global vulnerability databases (CVEs) during the automated testing phase, failing builds when critical security risks are detected within the supply chain."
-      ],
-      listTitle: "Key Capabilities",
-      list: ["Software dependency visibility", "Supply chain security support", "Component-level traceability", "Compliance-focused validation", "Risk-aware release workflows"],
-      theme: "purple",
-      icon: Box
-    },
-    {
-      id: "cbom-integrations",
-      title: "CBOM Integrations",
-      desc: [
-        "cliQTest supports Cybersecurity Bill of Materials (CBOM) integration capabilities that enable organizations to strengthen cybersecurity governance, security testing visibility, and infrastructure-level risk management across enterprise ecosystems. These integrations help enterprises align quality engineering with cybersecurity operations by improving visibility into security assets, dependencies, and threat-aware validation workflows.",
-        "Connect directly with external threat intelligence platforms to dynamically adjust test parameters based on current infrastructural risks. The CBOM integration continuously audits the security posture of the underlying deployment environments, ensuring that automated tests run in environments that strictly adhere to corporate cybersecurity policies."
-      ],
-      listTitle: "Key Capabilities",
-      list: ["Cybersecurity asset visibility", "Security-focused traceability", "Threat-aware validation support", "Governance and compliance alignment", "Enterprise risk monitoring support"],
-      theme: "teal",
-      icon: ShieldAlert
-    },
-    {
-      id: "soc-room-integrations",
-      title: "SOC Room Integrations",
-      desc: [
-        "cliQTest supports SOC Room integrations designed to improve operational visibility, centralized monitoring, incident collaboration, and security-focused quality workflows across enterprise delivery ecosystems. Through category-based monitoring and integrated observability capabilities, organizations can streamline incident response, execution monitoring, compliance validation, and operational governance across testing and security operations.",
-        "Automated alerts, critical failure thresholds, and environmental health metrics are pushed directly to Security Operations Center (SOC) dashboards. This allows security and operations teams to maintain a 360-degree view of production readiness and actively respond to simulated or actual anomalous behaviors triggered during scale testing."
-      ],
-      listTitle: "Categories",
-      list: ["Security Operations Monitoring", "Incident & Alert Management", "Compliance Monitoring", "Execution Observability", "Risk & Governance Visibility"],
-      theme: "purple",
-      icon: Eye
-    },
-    {
       id: "cloud-&-infrastructure-integrations",
       title: "Cloud & Infrastructure Integrations",
       desc: [

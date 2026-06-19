@@ -41,7 +41,7 @@ export default function PartnersContent() {
     {
       icon: Shield,
       title: "Cybersecurity",
-      desc: "Providing comprehensive security strategies, threat management, risk assessment, and digital trust solutions for modern enterprises to ensure continuous protection against evolving threats. Our security operations center (SOC) integration and zero-trust implementation safeguard your critical infrastructure, intellectual property, and customer data from sophisticated cyber attacks.",
+      desc: "Providing comprehensive security strategies, threat management, risk assessment, and digital trust solutions for modern enterprises to ensure continuous protection against evolving threats. Our zero-trust implementation safeguards your critical infrastructure, intellectual property, and customer data from sophisticated cyber attacks.",
       bullets: [
         "Vulnerability Assessments",
         "Zero-Trust Architecture",
@@ -197,7 +197,7 @@ export default function PartnersContent() {
           <div className="lg:w-1/2 flex justify-start lg:justify-end items-center relative z-10">
             <div className="relative w-full max-w-[280px] aspect-square bg-white rounded-md shadow-lg flex items-center justify-center p-8 border border-zinc-200">
               <Image 
-                src="/logos/yespanchi-logo.jpg" 
+                src="/logos/yespanchi_logo.jpg" 
                 alt="YesPanchi Logo" 
                 fill 
                 className="object-contain p-6 mix-blend-multiply"

@@ -9,8 +9,7 @@ const integrations = [
   { name: "Docker", src: "/logos/docker.png" },
   { name: "AWS", src: "/logos/aws.png" },
   { name: "Jenkins", src: "/logos/jenkins.png" },
-  { name: "Git", src: "/logos/git.png" },
-  { name: "VS Code", src: "/logos/vscode.png" }
+  { name: "Git", src: "/logos/git.png" }
 ];
 
 export default function Logos({ isLight }: { isLight?: boolean }) {

@@ -4,6 +4,6 @@ export const heroData = {
   titleLine2: "Without Limits",
   description: "Empower your entire team to build robust, scalable test automation. No coding required. Just record, configure, and execute with precision.",
   buttonText: "Explore No-Code",
-  imageSrc: "/images/nocode-hero.png",
+  imageSrc: "/images/nocode_hero.png",
   theme: "purple",
 };

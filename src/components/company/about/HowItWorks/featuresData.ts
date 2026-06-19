@@ -16,8 +16,8 @@ export const steps = [
   },
   {
     number: "04",
-    title: "Monitor & Debug",
-    description: "Leverage real-time monitoring tools to identify and resolve issues promptly."
+    title: "Logs & Debug",
+    description: "Leverage run-time logs and execution logs to identify and resolve issues promptly."
   },
   {
     number: "05",

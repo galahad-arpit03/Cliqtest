@@ -4,5 +4,5 @@ export const heroData = {
   titleLine2: "Global Presence",
   description: "Delivery & Support worldwide.",
   buttonText: "Explore",
-  imageSrc: "/images/about-hero.png",
+  imageSrc: "/images/about_hero.png",
 };

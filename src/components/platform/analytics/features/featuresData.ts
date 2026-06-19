@@ -4,7 +4,7 @@ const features = [
   {
     id: "execution-analytics",
     title: "Execution Analytics",
-    benefits: ["Real-time execution monitoring", "Centralized performance tracking", "Advanced statistical analysis"],
+    benefits: ["Run-time execution logging", "Centralized performance tracking", "Advanced statistical analysis"],
     icon: BarChart2,
     desc: [
       "cliQTest delivers comprehensive execution analytics that provide real-time visibility into test execution performance, automation stability, pass/fail trends, environment behavior, and release readiness across projects and testing cycles.",
@@ -54,12 +54,12 @@ const features = [
     statLabel: "Hierarchical Drill-down"
   },
   {
-    id: "real-time-monitoring",
-    title: "Real-Time Monitoring",
+    id: "run-time-logs",
+    title: "Run-Time Logs",
     benefits: ["Live execution telemetry", "Instant failure detection", "Continuous health tracking"],
     icon: Activity,
     desc: [
-      "cliQTest provides real-time monitoring capabilities that allow teams to track test execution progress, runtime activities, environment behavior, and automation health as tests are actively running.",
+      "cliQTest provides run-time logging capabilities that allow teams to track test execution progress, runtime activities, environment behavior, and automation health as tests are actively running.",
       "The platform continuously streams execution updates, logs, status indicators, and live insights that help teams identify failures instantly, reduce response time, and improve operational awareness during critical testing cycles.",
       "This live observability ensures that critical release blockers can be identified and addressed in minutes rather than hours, safeguarding continuous delivery pipelines."
     ],
@@ -129,7 +129,7 @@ const features = [
       "By establishing a single source of truth for quality KPIs, engineering teams can objectively measure their progress, justify resource allocation, and foster a culture of data-driven development."
     ],
     stat: "KPI",
-    statLabel: "Centralized Monitoring"
+    statLabel: "Centralized Tracking"
   }
 ];
 

@@ -122,7 +122,7 @@ export const menuItems: MenuItem[] = [
             { label: "Visual Dashboards", desc: "Interactive data visualization." },
             { label: "Execution History", desc: "Comprehensive historical logs." },
             { label: "Tree View Reporting", desc: "Hierarchical test results." },
-            { label: "Real-Time Monitoring", desc: "Live operational insights." },
+            { label: "Run-Time Logs", desc: "Live operational insights." },
             { label: "Failure Analysis", desc: "Intelligent error categorization." },
             { label: "Customizable Reports", desc: "Tailored stakeholder updates." },
             { label: "Quality Trend Analysis", desc: "Long-term quality tracking." },
@@ -148,7 +148,7 @@ export const menuItems: MenuItem[] = [
             { label: "AI SQL Query Agent", desc: "Automated database testing." },
             { label: "AI CAPTCHA Automation", desc: "Intelligent challenge resolution." },
             { label: "AI Report Summarization", desc: "Natural language insights." },
-            { label: "AI System Validation", desc: "Comprehensive architecture checks." },
+            { label: "AI Model Evaluation", desc: "Comprehensive architecture checks." },
             { label: "Defect Insights", desc: "Root cause analysis." },
             { label: "Smart Recommendations", desc: "Proactive quality suggestions." }
           ]
@@ -307,9 +307,6 @@ export const menuItems: MenuItem[] = [
             { label: "Project & Workflow Integrations", desc: "Sync testing data with Jira, Asana, and more." },
             { label: "Device Lab Integrations", desc: "Connect with BrowserStack, Sauce Labs, and others." },
             { label: "TMT Integrations", desc: "Test Management Tool sync and bidirectional updates." },
-            { label: "SBOM Integrations", desc: "Software Bill of Materials security and compliance tracking." },
-            { label: "CBOM Integrations", desc: "Cloud Bill of Materials visibility and management." },
-            { label: "SOC Room Integrations", desc: "Real-time alerts and security operations center sync." },
             { label: "Cloud & Infrastructure Integrations", desc: "AWS, Azure, and Google Cloud native deployments." },
             { label: "API & Automation Integrations", desc: "REST, GraphQL, and extensive webhook support." }
           ]

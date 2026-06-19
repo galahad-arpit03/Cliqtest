@@ -14,13 +14,13 @@ const features = [
       },
       {
         company: "Bank of Maharashtra",
-        desc: "Bank of Maharashtra deployed the Netraa Lighthouse Synthetic Monitoring platform, ensuring end-to-end uptime visibility, faster incident detection, and improved digital channel reliability.",
-        benefits: ['End-to-end uptime visibility', 'Faster incident detection', 'Improved channel reliability']
+        desc: "Bank of Maharashtra deployed the cliQTest platform, ensuring end-to-end testing visibility, faster defect detection, and improved digital channel reliability.",
+        benefits: ['End-to-end testing visibility', 'Faster defect detection', 'Improved channel reliability']
       },
       {
         company: "UCO Bank, RBL Bank & More",
-        desc: "UCO Bank, RBL Bank and IDBI Bank implemented our cliQTest and Netraa solutions to enable real-time performance visibility, faster issue resolution, and improved system reliability.",
-        benefits: ['Faster issue resolution', 'Real-time performance visibility', 'Improved system reliability']
+        desc: "UCO Bank, RBL Bank and IDBI Bank implemented our cliQTest solution to enable real-time execution visibility, faster issue resolution, and improved system reliability.",
+        benefits: ['Faster issue resolution', 'Real-time execution visibility', 'Improved system reliability']
       }
     ]
   },
@@ -37,8 +37,8 @@ const features = [
       },
       {
         company: "Protean & NSDL",
-        desc: "Protean implemented our Netraa Lighthouse Synthetic Monitoring solution for Protean eGov Technologies, enabling continuous availability checks, proactive performance alerts, and seamless digital experience assurance. NSDL Payments Bank leveraged our cliQTest solution for real-time visibility.",
-        benefits: ['Continuous availability checks', 'Proactive performance alerts', 'Real-time visibility']
+        desc: "Protean implemented our cliQTest solution for Protean eGov Technologies, enabling continuous availability validation, proactive testing alerts, and seamless digital experience assurance. NSDL Payments Bank leveraged our cliQTest solution for real-time execution visibility.",
+        benefits: ['Continuous availability validation', 'Proactive testing alerts', 'Real-time execution visibility']
       }
     ]
   },
@@ -55,8 +55,8 @@ const features = [
       },
       {
         company: "L&T Finance",
-        desc: "L&T Finance deployed the Netraa Lighthouse Synthetic Monitoring platform, ensuring end-to-end uptime visibility, faster incident detection, and improved digital channel reliability.",
-        benefits: ['Faster incident detection', 'End-to-end uptime visibility', 'Reliable digital channels']
+        desc: "L&T Finance deployed the cliQTest platform, ensuring end-to-end testing visibility, faster defect detection, and improved digital channel reliability.",
+        benefits: ['Faster defect detection', 'End-to-end testing visibility', 'Reliable digital channels']
       }
     ]
   },
@@ -68,13 +68,13 @@ const features = [
     stories: [
       {
         company: "Generali Central Life Insurance",
-        desc: "Generali Central Life Insurance implemented its Netraa APM solution, enabling real-time performance visibility, faster issue resolution, and improved system reliability across their entire application ecosystem.",
-        benefits: ['Real-time APM visibility', 'Faster issue resolution', 'System ecosystem reliability']
+        desc: "Generali Central Life Insurance implemented its cliQTest solution, enabling real-time execution visibility, faster defect resolution, and improved software reliability across their entire application ecosystem.",
+        benefits: ['Real-time testing visibility', 'Faster defect resolution', 'System ecosystem reliability']
       },
       {
         company: "FDC India",
-        desc: "In the pharmaceutical sector, FDC India implemented its Netraa APM solution, enabling real-time performance visibility, faster issue resolution, and improved system reliability.",
-        benefits: ['Real-time APM visibility', 'Faster issue resolution', 'Improved system reliability']
+        desc: "In the pharmaceutical sector, FDC India implemented its cliQTest solution, enabling real-time execution visibility, faster defect resolution, and improved software reliability.",
+        benefits: ['Real-time testing visibility', 'Faster defect resolution', 'Improved software reliability']
       }
     ]
   }

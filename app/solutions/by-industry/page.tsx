@@ -4,6 +4,7 @@ import ByIndustryHero from '@/components/solutions/by-industry/hero/ByIndustryHe
 import ByIndustryFeatures from '@/components/solutions/by-industry/features/ByIndustryFeatures';
 
 export const metadata = {
+  keywords: ["cliQTest", "automated testing", "QA platform", "software testing", "industry testing", "fintech testing", "healthcare testing", "banking QA"],
   title: 'Solutions by Industry | cliQTest',
   description: 'Explore how cliQTest powers quality engineering across FinTech, Healthcare, Retail, E-Commerce, and Telecom.',
 };

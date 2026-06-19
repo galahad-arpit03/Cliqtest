@@ -71,7 +71,7 @@ const features = [
     benefits: ["Natural language to SQL", "Intelligent data validation", "Complex query synthesis"], 
     icon: DatabaseZap,
     span: "col-span-1",
-    desc: "cliQTest simplifies backend validation through its AI-powered SQL Query Agent that converts natural language prompts and validation requirements into optimized SQL queries automatically. The platform enables testers and QA teams to perform complex database validations, data consistency checks, and backend verification without extensive SQL expertise. By accelerating query generation and reducing manual effort, cliQTest improves data validation efficiency, enhances defect detection accuracy, and streamlines backend testing workflows across enterprise applications." 
+    desc: "cliQTest transforms database testing by utilizing an AI-powered SQL Query Agent that converts natural language prompts into optimized queries, directly aiding comprehensive DB validation. The platform enables testers and QA teams to perform complex database validations, data consistency checks, and backend verification without extensive SQL expertise. By accelerating query generation and reducing manual effort, cliQTest improves data validation efficiency, enhances defect detection accuracy, and streamlines backend testing workflows across enterprise applications." 
   },
   { 
     id: "ai-captcha-automation", 
@@ -90,12 +90,12 @@ const features = [
     desc: "cliQTest enhances reporting efficiency through AI-powered report summarization that automatically transforms complex execution reports, logs, defect insights, and testing data into concise, actionable, and stakeholder-friendly summaries. The platform intelligently extracts key trends, failure patterns, anomalies, quality risks, and execution highlights while generating executive-ready insights for faster analysis and decision-making. By reducing manual report review effort and improving visibility into testing outcomes, cliQTest accelerates release readiness assessments and enterprise quality governance." 
   },
   { 
-    id: "ai-system-validation", 
-    title: "AI System Validation",
+    id: "ai-model-evaluation", 
+    title: "AI Model Evaluation",
     benefits: ["End-to-end model testing", "Contextual consistency checks", "Performance benchmarking"], 
     icon: Activity,
     span: "col-span-1",
-    desc: "cliQTest delivers comprehensive AI system validation capabilities designed specifically for modern conversational AI, generative AI, and intelligent automation ecosystems. The platform supports validation of LLMs, RAG systems, chatbots, voicebots, and AI-driven applications through contextual response analysis, hallucination detection, prompt testing, bias identification, conversational flow evaluation, and response quality assessment. By ensuring fairness, consistency, reliability, and contextual correctness, cliQTest enables organizations to confidently deploy enterprise-grade AI systems into production environments." 
+    desc: "cliQTest delivers comprehensive AI model evaluation capabilities designed specifically for modern conversational AI, generative AI, and intelligent automation ecosystems. The platform supports validation of LLMs, RAG systems, chatbots, voicebots, and AI-driven applications through contextual response analysis, hallucination detection, prompt testing, bias identification, conversational flow evaluation, and response quality assessment. By ensuring fairness, consistency, reliability, and contextual correctness, cliQTest enables organizations to confidently deploy enterprise-grade AI systems into production environments." 
   },
   { 
     id: "defect-insights", 

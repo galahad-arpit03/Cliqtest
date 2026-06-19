@@ -6,6 +6,7 @@ import NewsletterCTA from "@/components/blogs/NewsletterCTA";
 import PageThemeMenu from '@/components/common/PageThemeMenu';
 
 export const metadata = {
+  keywords: ["cliQTest", "automated testing", "QA platform", "software testing"],
   title: 'Blog | cliQTest',
   description: 'Latest insights, tutorials, and updates from the cliQTest team.',
 };

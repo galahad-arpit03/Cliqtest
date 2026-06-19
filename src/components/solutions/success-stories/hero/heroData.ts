@@ -3,5 +3,5 @@ export const heroData = {
   titleLine2: "Success Stories",
   description: "Discover how leading global enterprises and innovative startups leverage our comprehensive platform to seamlessly achieve and exceed their quality goals across industries.",
   buttonText: "Explore",
-  imageSrc: "/images/success-story-hero.png",
+  imageSrc: "/images/success_story_hero.png",
 };

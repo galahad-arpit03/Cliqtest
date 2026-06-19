@@ -1,7 +1,7 @@
 export const cards = [
   {
     title: "Real-Device Lab",
-    description: "Access a wide range of real devices, including smartphones and tablets via a SaaS platform. Conduct cross-browser and cross-device testing for comprehensive coverage with real-time monitoring and debugging capabilities.",
+    description: "Access a wide range of real devices, including smartphones and tablets via a SaaS platform. Conduct cross-browser and cross-device testing for comprehensive coverage with run-time logging and debugging capabilities.",
     img: "/assets/68e97727a405c7cd4f58ca37_card-test-horizontal-stack.webp",
   },
   {

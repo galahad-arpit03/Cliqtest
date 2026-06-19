@@ -2,6 +2,7 @@ import React from 'react';
 import PageThemeMenu from '@/components/common/PageThemeMenu';
 
 export const metadata = {
+  keywords: ["cliQTest", "automated testing", "QA platform", "software testing"],
   title: 'Security Policy | cliQTest by ApMoSys',
   description: 'Security Policy for ApMoSys and cliQTest services.',
 };

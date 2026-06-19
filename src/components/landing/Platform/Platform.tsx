@@ -55,11 +55,10 @@ export default function Platform({ isLight }: { isLight?: boolean }) {
           
           <motion.div variants={itemVariants} className="space-y-6">
             <p className={`text-lg md:text-xl leading-relaxed font-light transition-colors duration-500 ${isLight ? 'text-app-fg-invert/70' : 'text-app-muted'}`}>
-              cliQTest is the first <span className={`font-semibold transition-colors duration-500 ${isLight ? 'text-app-fg-invert' : 'text-app-fg'}`}>AI-native testing platform </span> powered by specialized agents that think, adapt, and act. 
+              cliQTest represents the next evolution in <span className={`font-semibold transition-colors duration-500 ${isLight ? 'text-app-fg-invert' : 'text-app-fg'}`}>autonomous quality engineering</span>, driven by specialized AI agents designed to seamlessly integrate with your enterprise workflows. 
             </p>
             <p className={`text-lg md:text-xl leading-relaxed font-light transition-colors duration-500 ${isLight ? 'text-app-fg-invert/70' : 'text-app-muted'}`}>
-              These aren&apos;t scripts or plug-ins, they are intelligent systems built to <span className="text-[#6843B7]">eliminate the grind</span> of test creation and maintenance, 
-              so engineering teams can finally move at the speed of innovation.
+              Moving beyond traditional automation paradigms, our proprietary agents intelligently validate complex scenarios, <span className="text-[#6843B7]">reducing testing overhead</span> and empowering teams to release highly resilient software faster.
             </p>
           </motion.div>
           

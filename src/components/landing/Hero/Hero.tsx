@@ -50,7 +50,7 @@ export default function Hero({ isLight }: { isLight?: boolean }) {
       >
         {isLight ? (
           <Image
-            src="/videos/landing-hero.png"
+            src="/videos/landing_hero.png"
             alt="cliQTest Platform AI"
             fill
             className="object-cover object-center transition-opacity duration-500 opacity-100"
@@ -68,7 +68,7 @@ export default function Hero({ isLight }: { isLight?: boolean }) {
             aria-label="cliQTest AI-powered automated testing platform visualization"
             className="w-full h-full object-cover object-center transition-opacity duration-500 opacity-100"
           >
-            <source src="/videos/landing-brain.mp4" type="video/mp4" />
+            <source src="/videos/landing_brain.mp4" type="video/mp4" />
           </video>
         )}
         {/* Dark overlays matching other pages */}

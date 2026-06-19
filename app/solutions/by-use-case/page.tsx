@@ -4,6 +4,7 @@ import ByUseCaseHero from '@/components/solutions/by-use-case/hero/ByUseCaseHero
 import ByUseCaseFeatures from '@/components/solutions/by-use-case/features/ByUseCaseFeatures';
 
 export const metadata = {
+  keywords: ["cliQTest", "automated testing", "QA platform", "software testing", "web testing", "mobile testing", "API testing", "end-to-end testing"],
   title: 'Solutions by Use Case | cliQTest',
   description: 'Explore how cliQTest solves specific testing challenges including web, mobile, API, desktop, regression, and performance testing.',
 };

@@ -4,5 +4,5 @@ export const heroData = {
   titleLine2: "CSR & Community",
   description: "Community Initiatives and Innovation & Learning.",
   buttonText: "Explore",
-  imageSrc: "/images/about-hero.png",
+  imageSrc: "/images/about_hero.png",
 };

@@ -105,7 +105,7 @@ export default function CloudFirst({ isLight }: { isLight?: boolean }) {
           >
             <div className={`hidden sm:block relative w-full sm:w-[45%] h-[250px] sm:h-auto border-b sm:border-b-0 sm:border-r overflow-hidden transition-colors duration-500 ${isLight ? 'bg-app-fg border-zinc-200' : 'bg-app-bg border-app-border'}`}>
               <Image
-                src="/images/ai-agent.png"
+                src="/images/ai_agent.png"
                 alt="Platform Support"
                 fill
                 className={`object-cover object-center group-hover:scale-105 transition-all duration-700 ease-out ${isLight ? 'opacity-100' : 'opacity-80 group-hover:opacity-100'}`}

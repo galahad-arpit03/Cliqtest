@@ -3,5 +3,5 @@ export const heroData = {
   titleLine2: "Integrations",
   description: "",
   buttonText: "Explore",
-  imageSrc: "/images/integrations-hero.png",
+  imageSrc: "/images/integrations_hero.png",
 };

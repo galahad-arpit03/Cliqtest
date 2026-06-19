@@ -80,32 +80,7 @@ const renderMockUIBody = (id: string, accentColor: string, idx: number, Icon: an
            </div>
         </div>
       );
-    case 'sbom-integrations':
-    case 'cbom-integrations':
-      return (
-        <div className="w-full h-full flex flex-col items-center justify-center rounded-md bg-black/40 [.theme-light_&]:bg-white/80 shadow-sm border border-app-border/20 p-2 relative overflow-hidden">
-           <Icon size={16} style={{ color: accentColor, marginBottom: 4 }} />
-           <div className="flex gap-4 relative">
-             <div className="absolute top-1/2 left-0 right-0 h-px bg-app-fg/10 -z-10" />
-             <motion.div animate={{ scale: [1, 1.1, 1] }} transition={{ duration: 2, repeat: Infinity }} className="w-4 h-4 rounded bg-app-surface border border-app-border/40 shadow-sm flex items-center justify-center"><div className="w-1.5 h-1.5 rounded-full bg-green-500/50" /></motion.div>
-             <motion.div animate={{ scale: [1, 1.1, 1] }} transition={{ duration: 2, delay: 0.5, repeat: Infinity }} className="w-4 h-4 rounded bg-app-surface border shadow-sm flex items-center justify-center" style={{ borderColor: accentColor }}><div className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: accentColor }} /></motion.div>
-             <motion.div animate={{ scale: [1, 1.1, 1] }} transition={{ duration: 2, delay: 1, repeat: Infinity }} className="w-4 h-4 rounded bg-app-surface border border-app-border/40 shadow-sm flex items-center justify-center"><div className="w-1.5 h-1.5 rounded-full bg-green-500/50" /></motion.div>
-           </div>
-        </div>
-      );
-    case 'soc-room-integrations':
-      return (
-        <div className="w-full h-full flex items-center justify-center rounded-md bg-black/40 [.theme-light_&]:bg-white/80 shadow-sm border border-app-border/20 p-2 relative overflow-hidden">
-           <div className="absolute inset-0 flex items-center justify-center opacity-30">
-             <motion.div animate={{ scale: [1, 2], opacity: [1, 0] }} transition={{ duration: 2, repeat: Infinity }} className="absolute w-8 h-8 rounded-full border border-red-500" />
-             <motion.div animate={{ scale: [1, 2], opacity: [1, 0] }} transition={{ duration: 2, delay: 1, repeat: Infinity }} className="absolute w-8 h-8 rounded-full border border-red-500" />
-           </div>
-           <div className="w-12 h-8 rounded border flex flex-col items-center justify-center bg-app-surface shadow-lg z-10" style={{ borderColor: accentColor }}>
-              <Icon size={12} style={{ color: accentColor }} />
-              <div className="text-[5px] font-bold mt-1 text-app-fg/60">ALERT</div>
-           </div>
-        </div>
-      );
+
     case 'api-&-automation-integrations':
       return (
         <div className="w-full h-full flex flex-col gap-1.5 rounded-md bg-black/40 [.theme-light_&]:bg-white/80 shadow-sm border border-app-border/20 p-2 text-[8px] font-mono">

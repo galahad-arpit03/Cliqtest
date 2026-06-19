@@ -4,5 +4,5 @@ export const heroData = {
   titleLine2: "Compliance & Security",
   description: "Enterprise Security, Governance & Traceability, and Compliance Readiness.",
   buttonText: "Explore",
-  imageSrc: "/images/about-hero.png",
+  imageSrc: "/images/about_hero.png",
 };

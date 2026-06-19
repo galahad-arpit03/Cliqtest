@@ -135,13 +135,13 @@ const features = [
       theme: "purple",
       desc: [
         "cliQTest’s distributed execution architecture enables organizations to execute automated tests in parallel across multiple environments, devices, browsers, and systems through lightweight execution agents and scalable orchestration capabilities.",
-        "The platform supports local execution, hybrid deployment models, and real-time execution monitoring to accelerate regression cycles and improve testing efficiency across enterprise ecosystems.",
+        "The platform supports local execution, hybrid deployment models, and run-time execution logging to accelerate regression cycles and improve testing efficiency across enterprise ecosystems.",
         "By enabling distributed and parallel execution workflows, cliQTest significantly reduces execution time, improves scalability, and ensures consistent automation performance across large and complex testing environments."
       ],
       benefits: [
         "Parallel cross-device/browser testing",
         "Lightweight execution agents",
-        "Real-time execution monitoring"
+        "Run-time execution logging"
       ]
     }
   
