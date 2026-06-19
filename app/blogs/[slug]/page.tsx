@@ -1,3 +1,4 @@
+import parse, { Element, attributesToProps } from "html-react-parser";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
@@ -108,8 +109,25 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
               [&_a]:text-[#6843B7] hover:[&_a]:underline
               [&_strong]:text-app-fg [&_strong]:font-semibold
               [&>blockquote]:border-l-4 [&>blockquote]:border-[#6843B7] [&>blockquote]:bg-app-surface [&>blockquote]:py-3 [&>blockquote]:px-5 [&>blockquote]:text-app-fg/80 [&>blockquote]:rounded-r-md [&>blockquote]:text-base [&>blockquote]:italic [&>blockquote]:my-6"
-            dangerouslySetInnerHTML={{ __html: blog.content as string }}
-          />
+          >
+            {parse(blog.content as string, {
+              replace: (domNode) => {
+                if (domNode instanceof Element && domNode.name === 'img') {
+                  const props = attributesToProps(domNode.attribs);
+                  return (
+                    <Image
+                      src={props.src as string}
+                      alt={(props.alt as string) || ''}
+                      width={800}
+                      height={400}
+                      className={props.className as string}
+                      style={{ width: '100%', height: 'auto' }}
+                    />
+                  );
+                }
+              }
+            })}
+          </article>
 
           <div className="mt-20 pt-10 border-t border-app-border text-center">
             <h3 className="text-2xl font-semibold text-app-fg mb-2">Enjoyed this article?</h3>
