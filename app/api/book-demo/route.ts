@@ -1,5 +1,5 @@
-import { NextResponse } from 'next/server';
-import nodemailer from 'nodemailer';
+import { NextResponse } from "next/server";
+import nodemailer from "nodemailer";
 
 // In-memory store for rate limiting
 const rateLimitMap = new Map<string, { count: number; timestamp: number }>();
@@ -21,34 +21,44 @@ function isRateLimited(ip: string) {
   }
 
   if (data.count >= maxRequests) return true;
-  
+
   data.count++;
   return false;
 }
 
 export async function POST(req: Request) {
   try {
-    const ip = req.headers.get('x-forwarded-for') || '127.0.0.1';
+    const ip = req.headers.get("x-forwarded-for") || "127.0.0.1";
     if (isRateLimited(ip)) {
-      return NextResponse.json({ error: 'Too many requests. Please try again later.' }, { status: 429 });
+      return NextResponse.json(
+        { error: "Too many requests. Please try again later." },
+        { status: 429 },
+      );
     }
 
     const body = await req.json();
-    const { firstName, lastName, email, date, time, contactType, _honey } = body;
+    const { firstName, lastName, email, date, time, contactType, _honey } =
+      body;
 
     // Honeypot Trap: If a bot fills out the hidden _honey field, silently drop the request.
     if (_honey) {
-      return NextResponse.json({ success: true, message: 'Demo request sent successfully' });
+      return NextResponse.json({
+        success: true,
+        message: "Demo request sent successfully",
+      });
     }
 
     if (!firstName || !lastName || !email || !date || !time) {
-      return NextResponse.json({ error: 'Missing required fields' }, { status: 400 });
+      return NextResponse.json(
+        { error: "Missing required fields" },
+        { status: 400 },
+      );
     }
 
     const transporter = nodemailer.createTransport({
       host: process.env.SMTP_HOST,
       port: Number(process.env.SMTP_PORT),
-      secure: process.env.SMTP_PORT === '465',
+      secure: process.env.SMTP_PORT === "465",
       auth: {
         user: process.env.SMTP_USER,
         pass: process.env.SMTP_PASS,
@@ -57,14 +67,14 @@ export async function POST(req: Request) {
 
     const mailOptions = {
       from: '"Cliqtest Demo" <cliqtest@apmosys.com>',
-      to: 'arpit.gupta@apmosys.com, presales@apmosys.com, asutosh.maharana@apmosys.com',
+      to: "sales@apmosys.com, presales@apmosys.com",
       replyTo: email,
       subject: `New Demo Request: ${firstName} ${lastName}`,
       html: `
         <h2>New Demo Request</h2>
         <p><strong>Name:</strong> ${firstName} ${lastName}</p>
         <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Team Requested:</strong> ${contactType === 'sales' ? 'Sales / Enterprise License' : 'Pre-Sales / Technical'}</p>
+        <p><strong>Team Requested:</strong> ${contactType === "sales" ? "Sales / Enterprise License" : "Pre-Sales / Technical"}</p>
         <p><strong>Requested Date:</strong> ${date}</p>
         <p><strong>Requested Time:</strong> ${time}</p>
         <br />
@@ -74,9 +84,15 @@ export async function POST(req: Request) {
 
     await transporter.sendMail(mailOptions);
 
-    return NextResponse.json({ success: true, message: 'Demo request sent successfully' });
+    return NextResponse.json({
+      success: true,
+      message: "Demo request sent successfully",
+    });
   } catch (error) {
-    console.error('Error sending demo request email:', error);
-    return NextResponse.json({ error: 'Failed to send email' }, { status: 500 });
+    console.error("Error sending demo request email:", error);
+    return NextResponse.json(
+      { error: "Failed to send email" },
+      { status: 500 },
+    );
   }
 }
