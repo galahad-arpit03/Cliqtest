@@ -14,6 +14,14 @@ export default function BookADemoPage() {
   const [selectedDate, setSelectedDate] = useState<Date | null>(new Date());
   const [viewDate, setViewDate] = useState(new Date(new Date().getFullYear(), new Date().getMonth(), 1));
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    time: '',
+    honey: ''
+  });
 
   const [contactType, setContactType] = useState<'presales' | 'sales' | null>(null);
 
@@ -61,9 +69,38 @@ export default function BookADemoPage() {
     return slotTime > now;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitted(true);
+    if (!selectedDate || !formData.time || !contactType) return;
+    
+    setIsLoading(true);
+    try {
+      const response = await fetch('/api/book-demo', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          firstName: formData.firstName,
+          lastName: formData.lastName,
+          email: formData.email,
+          date: selectedDate.toDateString(),
+          time: formData.time,
+          contactType: contactType,
+          _honey: formData.honey
+        }),
+      });
+      
+      if (response.ok) {
+        setIsSubmitted(true);
+        setFormData({ firstName: '', lastName: '', email: '', time: '', honey: '' });
+      } else {
+        alert('Failed to send request. Please try again.');
+      }
+    } catch (error) {
+      console.error(error);
+      alert('An error occurred. Please try again later.');
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const monthNames = [
@@ -235,25 +272,35 @@ export default function BookADemoPage() {
                     Your Details
                   </h3>
 
+                  <input
+                    type="text"
+                    name="_honey"
+                    value={formData.honey}
+                    onChange={(e) => setFormData({...formData, honey: e.target.value})}
+                    style={{ display: 'none' }}
+                    tabIndex={-1}
+                    autoComplete="off"
+                  />
+
                   <div className="grid grid-cols-2 gap-4">
                     <div className="space-y-2">
                       <label className={`text-[10px] font-bold uppercase tracking-widest transition-colors duration-500 ${isLight ? 'text-app-fg-invert/60' : 'text-app-fg/60'}`}>First Name</label>
-                      <input required type="text" className={`w-full border rounded-sm px-4 py-3 text-sm focus:border-[#6843B7] outline-none transition-all ${isLight ? 'bg-[#FAFAFA] border-app-border text-app-fg-invert' : 'bg-app-bg border-app-border text-app-fg'}`} />
+                      <input required type="text" value={formData.firstName} onChange={e => setFormData({...formData, firstName: e.target.value})} className={`w-full border rounded-sm px-4 py-3 text-sm focus:border-[#6843B7] outline-none transition-all ${isLight ? 'bg-[#FAFAFA] border-app-border text-app-fg-invert' : 'bg-app-bg border-app-border text-app-fg'}`} />
                     </div>
                     <div className="space-y-2">
                       <label className={`text-[10px] font-bold uppercase tracking-widest transition-colors duration-500 ${isLight ? 'text-app-fg-invert/60' : 'text-app-fg/60'}`}>Last Name</label>
-                      <input required type="text" className={`w-full border rounded-sm px-4 py-3 text-sm focus:border-[#6843B7] outline-none transition-all ${isLight ? 'bg-[#FAFAFA] border-app-border text-app-fg-invert' : 'bg-app-bg border-app-border text-app-fg'}`} />
+                      <input required type="text" value={formData.lastName} onChange={e => setFormData({...formData, lastName: e.target.value})} className={`w-full border rounded-sm px-4 py-3 text-sm focus:border-[#6843B7] outline-none transition-all ${isLight ? 'bg-[#FAFAFA] border-app-border text-app-fg-invert' : 'bg-app-bg border-app-border text-app-fg'}`} />
                     </div>
                   </div>
 
                   <div className="space-y-2">
                     <label className={`text-[10px] font-bold uppercase tracking-widest transition-colors duration-500 ${isLight ? 'text-app-fg-invert/60' : 'text-app-fg/60'}`}>Work Email</label>
-                    <input required type="email" className={`w-full border rounded-sm px-4 py-3 text-sm focus:border-[#6843B7] outline-none transition-all ${isLight ? 'bg-[#FAFAFA] border-app-border text-app-fg-invert' : 'bg-app-bg border-app-border text-app-fg'}`} />
+                    <input required type="email" value={formData.email} onChange={e => setFormData({...formData, email: e.target.value})} className={`w-full border rounded-sm px-4 py-3 text-sm focus:border-[#6843B7] outline-none transition-all ${isLight ? 'bg-[#FAFAFA] border-app-border text-app-fg-invert' : 'bg-app-bg border-app-border text-app-fg'}`} />
                   </div>
 
                   <div className="space-y-2">
                     <label className={`text-[10px] font-bold uppercase tracking-widest transition-colors duration-500 ${isLight ? 'text-app-fg-invert/60' : 'text-app-fg/60'}`}>Meeting Time</label>
-                    <select required className={`w-full border rounded-sm px-4 py-3 text-sm focus:border-[#6843B7] outline-none appearance-none transition-all ${isLight ? 'bg-[#FAFAFA] border-app-border text-app-fg-invert' : 'bg-app-bg border-app-border text-app-fg'}`}>
+                    <select required value={formData.time} onChange={e => setFormData({...formData, time: e.target.value})} className={`w-full border rounded-sm px-4 py-3 text-sm focus:border-[#6843B7] outline-none appearance-none transition-all ${isLight ? 'bg-[#FAFAFA] border-app-border text-app-fg-invert' : 'bg-app-bg border-app-border text-app-fg'}`}>
                       <option value="">Select a slot</option>
                       {isTimeAvailable("10:00") && <option value="10:00">10:00 AM — 10:30 AM</option>}
                       {isTimeAvailable("14:00") && <option value="14:00">02:00 PM — 02:30 PM</option>}
@@ -263,10 +310,10 @@ export default function BookADemoPage() {
 
                   <button 
                     type="submit" 
-                    disabled={viewDate.getFullYear() < new Date().getFullYear() || (viewDate.getFullYear() === new Date().getFullYear() && viewDate.getMonth() < new Date().getMonth())}
-                    className={`w-full py-4 rounded-sm transition-all text-[14px] mt-4 ${(viewDate.getFullYear() < new Date().getFullYear() || (viewDate.getFullYear() === new Date().getFullYear() && viewDate.getMonth() < new Date().getMonth())) ? 'bg-zinc-500/50 text-app-fg/50 cursor-not-allowed pointer-events-none' : 'bg-[#6843B7] text-app-fg hover:bg-[#6843B7]/90 active:scale-95'}`}
+                    disabled={isLoading || viewDate.getFullYear() < new Date().getFullYear() || (viewDate.getFullYear() === new Date().getFullYear() && viewDate.getMonth() < new Date().getMonth())}
+                    className={`w-full py-4 rounded-sm transition-all text-[14px] mt-4 ${(viewDate.getFullYear() < new Date().getFullYear() || (viewDate.getFullYear() === new Date().getFullYear() && viewDate.getMonth() < new Date().getMonth())) ? 'bg-zinc-500/50 text-app-fg/50 cursor-not-allowed pointer-events-none' : 'bg-[#6843B7] text-app-fg hover:bg-[#6843B7]/90 active:scale-95'} ${isLoading ? 'opacity-70 cursor-wait' : ''}`}
                   >
-                    Confirm Booking
+                    {isLoading ? 'Booking...' : 'Confirm Booking'}
                   </button>
                 </form>
                 </div>
