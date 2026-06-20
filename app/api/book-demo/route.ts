@@ -56,8 +56,8 @@ export async function POST(req: Request) {
     });
 
     const mailOptions = {
-      from: process.env.SMTP_USER,
-      to: process.env.SMTP_USER, // Sending it to the same email address as requested
+      from: '"Cliqtest Demo" <cliqtest@apmosys.com>',
+      to: 'arpit.gupta@apmosys.com, presales@apmosys.com, asutosh.maharana@apmosys.com',
       replyTo: email,
       subject: `New Demo Request: ${firstName} ${lastName}`,
       html: `
