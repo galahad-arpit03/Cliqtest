@@ -110,12 +110,13 @@ export default function ClientsContent() {
                 
                 <div className="flex items-center gap-4 relative z-10 pt-5 border-t border-app-border/50">
                   {item.logo ? (
-                    <div className="h-10 w-24 relative shrink-0">
+                    <div className="h-10 w-10 relative shrink-0 bg-transparent">
                       <Image 
                         src={item.logo} 
                         alt={item.company} 
                         fill 
-                        className="object-contain object-left mix-blend-multiply [.theme-dark_&]:mix-blend-normal [.theme-dark_&]:brightness-0 [.theme-dark_&]:invert" 
+                        className="object-contain bg-transparent" 
+                        sizes="(max-width: 768px) 40px, 40px"
                       />
                     </div>
                   ) : (

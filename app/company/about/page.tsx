@@ -2,7 +2,6 @@ import React from 'react';
 import PageThemeMenu from '@/components/common/PageThemeMenu';
 import type { Metadata } from 'next';
 import AboutHero from '@/components/company/about/AboutHero/AboutHero';
-import Logos from "@/components/landing/Logos/Logos";
 import AboutPlatform from '@/components/company/about/AboutPlatform/AboutPlatform';
 import HowItWorks from '@/components/company/about/HowItWorks/HowItWorks';
 import KeyBenefits from '@/components/company/about/KeyBenefits/KeyBenefits';
@@ -19,7 +18,6 @@ export default function AboutPage() {
     <PageThemeMenu 
       sections={[
         <AboutHero key="AboutHero" />,
-        <Logos key="Logos" />,
         <MissionVision key="MissionVision" />,
         <KeyBenefits key="KeyBenefits" />,
         <HowItWorks key="HowItWorks" />
