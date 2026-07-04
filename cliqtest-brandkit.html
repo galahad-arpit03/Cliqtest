@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cliQTest Brand Kit & Design System</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Space Grotesk & Alata -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Alata&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind Configuration matching actual cliQTest specs -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class', // Enable toggling if needed
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Space Grotesk"', 'sans-serif'],
+                        alata: ['Alata', 'sans-serif'],
+                    },
+                    colors: {
+                        app: {
+                            bg: '#000000',
+                            surface: '#0A0A0A',
+                            'surface-hover': '#111111',
+                            fg: '#ffffff',
+                            'fg-invert': '#000000',
+                            muted: 'rgba(255, 255, 255, 0.6)',
+                            border: 'rgba(255, 255, 255, 0.1)',
+                            'border-hover': 'rgba(255, 255, 255, 0.2)',
+                        },
+                        brand: {
+                            purple: '#6843B7',
+                            'purple-light': 'rgba(104, 67, 183, 0.15)',
+                            green: '#00F2B0', // Dark mode pop
+                            'green-dark': '#00A67A', // Light mode legibility
+                            'green-light': 'rgba(0, 166, 122, 0.15)',
+                        }
+                    },
+                    borderRadius: {
+                        'global': '0.5rem',
+                        'sm': '0.25rem',
+                        'md': '0.75rem',
+                        'lg': '1rem',
+                        'xl': '1.5rem',
+                        '2xl': '2rem',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { 
+            font-family: 'Space Grotesk', sans-serif; 
+            background-color: #000000;
+            color: #ffffff;
+        }
+        
+        .font-alata { font-family: 'Alata', sans-serif; }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #000000; }
+        ::-webkit-scrollbar-thumb { background: #333333; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #555555; }
+
+        .glass-panel {
+            background: rgba(10, 10, 10, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .color-card { transition: all 0.2s ease-in-out; }
+        .color-card:hover { transform: translateY(-4px); box-shadow: 0 10px 25px -5px rgba(104, 67, 183, 0.2); z-index: 10; }
+
+        /* Sidebar active link styling */
+        .nav-link.active {
+            background-color: rgba(255, 255, 255, 0.05);
+            color: #ffffff;
+            border-right: 2px solid #6843B7;
+            font-weight: 600;
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, #6843B7 0%, #00F2B0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .gradient-border {
+            position: relative;
+            background: #0A0A0A;
+            background-clip: padding-box;
+            border: 1px solid transparent;
+            border-radius: 0.5rem;
+        }
+        .gradient-border::before {
+            content: '';
+            position: absolute;
+            top: 0; right: 0; bottom: 0; left: 0;
+            z-index: -1;
+            margin: -1px;
+            border-radius: inherit;
+            background: linear-gradient(135deg, #6843B7, #00F2B0);
+        }
+    </style>
+</head>
+<body class="flex h-screen overflow-hidden antialiased selection:bg-brand-purple selection:text-white">
+
+    <!-- Sidebar Navigation -->
+    <aside class="w-64 bg-app-surface border-r border-app-border h-full flex flex-col flex-shrink-0 z-20 relative">
+        <div class="p-6 border-b border-app-border">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-md bg-gradient-to-br from-brand-purple to-brand-green flex items-center justify-center text-white font-bold shadow-[0_0_15px_rgba(104,67,183,0.4)]">
+                    cQ
+                </div>
+                <div>
+                    <h1 class="font-bold text-lg tracking-tight text-white">cliQTest</h1>
+                    <p class="text-[10px] text-app-muted uppercase tracking-widest mt-0.5">Brand System</p>
+                </div>
+            </div>
+        </div>
+        <nav class="flex-1 overflow-y-auto py-6 px-3 space-y-1" id="nav-menu">
+            <a href="#overview" class="nav-link block px-4 py-2.5 rounded-md text-sm font-medium text-app-muted hover:bg-white/5 hover:text-white transition-colors active">1. Core Identity</a>
+            <a href="#logo" class="nav-link block px-4 py-2.5 rounded-md text-sm font-medium text-app-muted hover:bg-white/5 hover:text-white transition-colors">2. Logos & Marks</a>
+            <a href="#colors" class="nav-link block px-4 py-2.5 rounded-md text-sm font-medium text-app-muted hover:bg-white/5 hover:text-white transition-colors">3. Color Palette</a>
+            <a href="#typography" class="nav-link block px-4 py-2.5 rounded-md text-sm font-medium text-app-muted hover:bg-white/5 hover:text-white transition-colors">4. Typography</a>
+            <a href="#components" class="nav-link block px-4 py-2.5 rounded-md text-sm font-medium text-app-muted hover:bg-white/5 hover:text-white transition-colors">5. UI Elements</a>
+        </nav>
+        <div class="p-4 border-t border-app-border text-xs text-app-muted text-center font-alata">
+            v2.0 &copy; 2026 cliQTest
+        </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="flex-1 h-full overflow-y-auto bg-app-bg relative scroll-smooth" id="main-content">
+        
+        <!-- Decorative Background Glow -->
+        <div class="absolute top-0 left-1/4 w-96 h-96 bg-brand-purple rounded-full mix-blend-screen filter blur-[120px] opacity-20 pointer-events-none"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-brand-green rounded-full mix-blend-screen filter blur-[120px] opacity-10 pointer-events-none"></div>
+
+        <div class="max-w-5xl mx-auto px-10 py-16 pb-32 space-y-28 relative z-10">
+
+            <!-- 1. Brand Overview -->
+            <section id="overview" class="scroll-mt-16 opacity-0 transform translate-y-4 transition-all duration-700 ease-out animate-on-scroll">
+                <div class="space-y-6">
+                    <span class="inline-block py-1 px-3 rounded-full border border-brand-purple/30 bg-brand-purple/10 text-brand-purple text-xs font-semibold tracking-wide uppercase">Brand DNA</span>
+                    <h2 class="text-6xl font-bold tracking-tight text-white">The <span class="gradient-text">cliQTest</span> Standard</h2>
+                    <p class="text-xl text-app-muted leading-relaxed max-w-3xl font-alata">
+                        cliQTest is the ultimate AI-powered automated testing platform. Our visual identity is built for the modern developer: 
+                        <strong class="text-white font-sans font-medium">Dark by default, highly legible, and accented with electric, futuristic colors.</strong>
+                    </p>
+                </div>
+            </section>
+
+            <hr class="border-app-border">
+
+            <!-- 2. Logo & Identity -->
+            <section id="logo" class="scroll-mt-16 opacity-0 transform translate-y-4 transition-all duration-700 ease-out animate-on-scroll">
+                <div class="space-y-8">
+                    <div>
+                        <h3 class="text-3xl font-bold tracking-tight mb-2 text-white">Logo & Wordmark</h3>
+                        <p class="text-app-muted font-alata">The capitalization is strictly <strong class="text-white font-sans">cliQTest</strong>. Never Cliqtest, cliqtest, or CliqTest.</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <!-- Primary Logo (Dark Background) -->
+                        <div class="bg-app-surface p-12 border border-app-border rounded-xl flex flex-col items-center justify-center relative group overflow-hidden">
+                            <div class="absolute top-4 left-4 text-xs font-semibold text-app-muted uppercase tracking-wider">Primary Wordmark</div>
+                            <div class="flex items-center gap-3 z-10">
+                                <!-- Mock Logo Icon -->
+                                <div class="w-10 h-10 relative">
+                                    <div class="absolute inset-0 bg-brand-purple rounded-md transform rotate-45 opacity-80"></div>
+                                    <div class="absolute inset-0 bg-brand-green rounded-md transform -rotate-12 mix-blend-screen opacity-90 flex items-center justify-center">
+                                        <div class="w-4 h-4 bg-white rounded-full"></div>
+                                    </div>
+                                </div>
+                                <span class="text-4xl font-bold tracking-tight text-white">cli<span class="text-brand-green">Q</span>Test</span>
+                            </div>
+                        </div>
+
+                        <!-- Icon Only -->
+                        <div class="bg-app-surface p-12 border border-app-border rounded-xl flex flex-col items-center justify-center relative">
+                            <div class="absolute top-4 left-4 text-xs font-semibold text-app-muted uppercase tracking-wider">App Icon / Favicon</div>
+                            <div class="w-16 h-16 relative">
+                                <div class="absolute inset-0 bg-brand-purple rounded-lg transform rotate-45 opacity-80"></div>
+                                <div class="absolute inset-0 bg-brand-green rounded-lg transform -rotate-12 mix-blend-screen opacity-90 flex items-center justify-center">
+                                    <div class="w-6 h-6 bg-white rounded-full"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <hr class="border-app-border">
+
+            <!-- 3. Color System -->
+            <section id="colors" class="scroll-mt-16 opacity-0 transform translate-y-4 transition-all duration-700 ease-out animate-on-scroll">
+                <div class="space-y-12">
+                    <div>
+                        <h3 class="text-3xl font-bold tracking-tight mb-2 text-white">Color Architecture</h3>
+                        <p class="text-app-muted font-alata">Our interface is strictly monochromatic (Black/White/Grays) to let the code and testing data stand out, accented by vivid Purple and Green for interactive elements.</p>
+                    </div>
+
+                    <!-- Base Theme Colors -->
+                    <div>
+                        <h4 class="font-bold text-lg text-white mb-4">Core Surface & Background</h4>
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                            <div class="bg-[#000000] p-4 rounded-xl border border-app-border cursor-pointer hover:border-app-muted transition-colors" onclick="copyText('#000000')">
+                                <div class="h-12 w-full rounded-md bg-[#000000] border border-white/10 mb-3"></div>
+                                <h5 class="font-semibold text-white">App Background</h5>
+                                <p class="text-xs text-app-muted font-mono mt-1">#000000</p>
+                                <p class="text-[10px] text-app-muted/60 mt-1">var(--app-bg)</p>
+                            </div>
+                            <div class="bg-[#0A0A0A] p-4 rounded-xl border border-app-border cursor-pointer hover:border-app-muted transition-colors" onclick="copyText('#0A0A0A')">
+                                <div class="h-12 w-full rounded-md bg-[#0A0A0A] border border-white/5 mb-3"></div>
+                                <h5 class="font-semibold text-white">App Surface</h5>
+                                <p class="text-xs text-app-muted font-mono mt-1">#0A0A0A</p>
+                                <p class="text-[10px] text-app-muted/60 mt-1">var(--app-surface)</p>
+                            </div>
+                            <div class="bg-app-surface p-4 rounded-xl border border-app-border cursor-pointer hover:border-app-muted transition-colors" onclick="copyText('#111111')">
+                                <div class="h-12 w-full rounded-md bg-[#111111] mb-3 border border-white/5"></div>
+                                <h5 class="font-semibold text-white">Surface Hover</h5>
+                                <p class="text-xs text-app-muted font-mono mt-1">#111111</p>
+                                <p class="text-[10px] text-app-muted/60 mt-1">var(--app-surface-hover)</p>
+                            </div>
+                            <div class="bg-[#ffffff] p-4 rounded-xl border border-app-border cursor-pointer hover:opacity-90 transition-opacity" onclick="copyText('#ffffff')">
+                                <div class="h-12 w-full rounded-md bg-[#ffffff] mb-3 border border-black/10"></div>
+                                <h5 class="font-semibold text-black">Foreground (Text)</h5>
+                                <p class="text-xs text-gray-500 font-mono mt-1">#ffffff</p>
+                                <p class="text-[10px] text-gray-400 mt-1">var(--app-fg)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Accents -->
+                    <div>
+                        <h4 class="font-bold text-lg text-white mb-4">Brand Accents & Gradients</h4>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            
+                            <!-- Purple -->
+                            <div class="bg-app-surface p-6 rounded-xl border border-app-border flex gap-6 items-center">
+                                <div class="w-20 h-20 rounded-lg bg-[#6843B7] shadow-[0_0_30px_rgba(104,67,183,0.3)] cursor-pointer hover:scale-105 transition-transform" onclick="copyText('#6843B7')"></div>
+                                <div>
+                                    <h5 class="font-bold text-white text-lg">Theme Purple</h5>
+                                    <p class="text-sm text-app-muted font-alata mb-2">Used for primary actions, borders, and dark mode feature cards.</p>
+                                    <code class="text-xs text-brand-purple bg-brand-purple/10 px-2 py-1 rounded">#6843B7</code>
+                                </div>
+                            </div>
+
+                            <!-- Green -->
+                            <div class="bg-app-surface p-6 rounded-xl border border-app-border flex gap-6 items-center">
+                                <div class="w-20 h-20 rounded-lg bg-[#00F2B0] shadow-[0_0_30px_rgba(0,242,176,0.2)] cursor-pointer hover:scale-105 transition-transform" onclick="copyText('#00F2B0')"></div>
+                                <div>
+                                    <h5 class="font-bold text-white text-lg">Theme Green</h5>
+                                    <p class="text-sm text-app-muted font-alata mb-2">Used for success states, highlights, and gradient combinations.</p>
+                                    <div class="flex gap-2">
+                                        <code class="text-xs text-brand-green bg-brand-green/10 px-2 py-1 rounded">Dark: #00F2B0</code>
+                                        <code class="text-xs text-[#00A67A] bg-[#00A67A]/10 px-2 py-1 rounded">Light: #00A67A</code>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Gradient Showcase -->
+                            <div class="col-span-1 md:col-span-2 bg-app-surface p-6 rounded-xl border border-app-border">
+                                <h5 class="font-bold text-white text-sm mb-3">Primary Gradient</h5>
+                                <div class="w-full h-16 rounded-lg bg-gradient-to-r from-[#6843B7] to-[#00F2B0] cursor-pointer hover:opacity-90 transition-opacity" onclick="copyText('linear-gradient(90deg, #6843B7 0%, #00F2B0 100%)')"></div>
+                                <p class="text-xs text-app-muted font-mono mt-3 text-center">linear-gradient(90deg, #6843B7 0%, #00F2B0 100%)</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <hr class="border-app-border">
+
+            <!-- 4. Typography -->
+            <section id="typography" class="scroll-mt-16 opacity-0 transform translate-y-4 transition-all duration-700 ease-out animate-on-scroll">
+                <div class="space-y-10">
+                    <div>
+                        <h3 class="text-3xl font-bold tracking-tight mb-2 text-white">Typography</h3>
+                        <p class="text-app-muted font-alata">We pair the tech-forward <strong class="text-white font-sans">Space Grotesk</strong> for headings and UI, with the highly readable <strong class="text-white font-sans">Alata</strong> for body copy and paragraphs.</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <!-- Space Grotesk -->
+                        <div class="bg-app-surface border border-app-border rounded-xl p-8">
+                            <div class="flex justify-between items-start mb-8 border-b border-app-border pb-4">
+                                <div>
+                                    <h4 class="text-2xl font-bold text-white">Space Grotesk</h4>
+                                    <p class="text-xs text-brand-green font-mono mt-1">var(--font-space-grotesk)</p>
+                                </div>
+                                <span class="text-5xl font-bold text-app-border">Ag</span>
+                            </div>
+                            <div class="space-y-6">
+                                <div>
+                                    <p class="text-[10px] text-app-muted uppercase tracking-widest mb-1">Display</p>
+                                    <h1 class="text-4xl font-bold text-white tracking-tight">Real Device Cloud</h1>
+                                </div>
+                                <div>
+                                    <p class="text-[10px] text-app-muted uppercase tracking-widest mb-1">Heading</p>
+                                    <h2 class="text-2xl font-semibold text-white tracking-tight">Automated Test Execution</h2>
+                                </div>
+                                <div>
+                                    <p class="text-[10px] text-app-muted uppercase tracking-widest mb-1">UI Label</p>
+                                    <span class="text-sm font-medium text-white px-3 py-1 bg-white/5 border border-white/10 rounded-full">Dashboard Menu</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Alata -->
+                        <div class="bg-app-surface border border-app-border rounded-xl p-8 font-alata">
+                            <div class="flex justify-between items-start mb-8 border-b border-app-border pb-4">
+                                <div>
+                                    <h4 class="text-2xl text-white">Alata</h4>
+                                    <p class="text-xs text-brand-purple font-mono mt-1 font-sans">var(--font-alata)</p>
+                                </div>
+                                <span class="text-5xl text-app-border">Aa</span>
+                            </div>
+                            <div class="space-y-6">
+                                <div>
+                                    <p class="text-[10px] text-app-muted uppercase tracking-widest mb-2 font-sans">Body Copy</p>
+                                    <p class="text-base text-app-muted leading-relaxed">
+                                        Accelerate software delivery with cliQTest. The all-in-one AI-powered automated testing platform for web, mobile, and API. Features no-code test automation, self-healing tests, and real device cloud.
+                                    </p>
+                                </div>
+                                <div>
+                                    <p class="text-[10px] text-app-muted uppercase tracking-widest mb-2 font-sans">Small Copy</p>
+                                    <p class="text-sm text-app-muted/70">
+                                        By clicking 'Book a Demo', you agree to our Terms & Conditions and Privacy Policy.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <hr class="border-app-border">
+
+            <!-- 5. UI Elements -->
+            <section id="components" class="scroll-mt-16 opacity-0 transform translate-y-4 transition-all duration-700 ease-out animate-on-scroll">
+                <div class="space-y-8">
+                    <div>
+                        <h3 class="text-3xl font-bold tracking-tight mb-2 text-white">UI Components & Effects</h3>
+                        <p class="text-app-muted font-alata">Styling rules based on the `globals.css` structure, utilizing `--global-radius: 0.5rem`.</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        
+                        <!-- Buttons -->
+                        <div class="bg-app-surface p-8 rounded-xl border border-app-border">
+                            <h4 class="font-bold text-white mb-6 border-b border-app-border pb-2 text-sm uppercase tracking-wider">Interactive Buttons</h4>
+                            
+                            <div class="space-y-6">
+                                <!-- Primary Gradient Button -->
+                                <div>
+                                    <button class="bg-gradient-to-r from-brand-purple to-[#00A67A] hover:opacity-90 text-white font-medium py-2.5 px-6 rounded-[0.5rem] transition-all duration-200 shadow-[0_4px_14px_0_rgba(104,67,183,0.39)]">
+                                        Book a Demo
+                                    </button>
+                                    <p class="text-xs text-app-muted mt-2 font-mono">Gradient + Shadow</p>
+                                </div>
+
+                                <!-- Outline / Ghost Button -->
+                                <div>
+                                    <button class="bg-transparent hover:bg-white/5 border border-app-border hover:border-white/20 text-white font-medium py-2 px-6 rounded-[0.5rem] transition-all duration-200">
+                                        View Documentation
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Feature Demo Card (From CSS) -->
+                        <div class="bg-app-surface p-8 rounded-xl border border-app-border">
+                            <h4 class="font-bold text-white mb-6 border-b border-app-border pb-2 text-sm uppercase tracking-wider">Feature Demo Cards</h4>
+                            
+                            <div class="space-y-4">
+                                <!-- Theme Purple Card -->
+                                <div class="p-5 rounded-[0.5rem] border border-brand-purple/20 bg-brand-purple/10 flex items-center gap-4">
+                                    <div class="w-10 h-10 rounded-md bg-brand-purple/20 flex items-center justify-center text-brand-purple">
+                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                                    </div>
+                                    <div>
+                                        <h5 class="text-white font-medium text-sm">Self-Healing Tests</h5>
+                                        <p class="text-xs text-app-muted mt-1 font-alata">.feature-demo-card.theme-purple</p>
+                                    </div>
+                                </div>
+
+                                <!-- Theme Green Card -->
+                                <div class="p-5 rounded-[0.5rem] border border-brand-green/20 bg-brand-green/10 flex items-center gap-4">
+                                    <div class="w-10 h-10 rounded-md bg-brand-green/20 flex items-center justify-center text-brand-green">
+                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                    </div>
+                                    <div>
+                                        <h5 class="text-white font-medium text-sm">No-Code Automation</h5>
+                                        <p class="text-xs text-app-muted mt-1 font-alata">.feature-demo-card.theme-green</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Custom Animations -->
+                    <div class="bg-app-surface p-8 rounded-xl border border-app-border overflow-hidden">
+                        <h4 class="font-bold text-white mb-6 border-b border-app-border pb-2 text-sm uppercase tracking-wider">Platform Animations</h4>
+                        
+                        <div class="space-y-8">
+                            <!-- Shimmer -->
+                            <div>
+                                <p class="text-sm font-medium text-white mb-3">Shimmer Loading State (@keyframes shimmer)</p>
+                                <div class="w-full h-24 rounded-lg bg-[#111] border border-white/5 relative overflow-hidden flex items-center justify-center p-6">
+                                    <div class="w-full h-4 bg-white/5 rounded-full overflow-hidden relative">
+                                        <div class="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/10 to-transparent skew-x-[-12deg]" style="animation: shimmer 2s infinite"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Toast Notification for Copy -->
+    <div id="toast" class="fixed bottom-6 right-6 bg-app-surface border border-app-border text-white px-4 py-3 rounded-md shadow-xl transform translate-y-20 opacity-0 transition-all duration-300 z-50 flex items-center gap-2">
+        <svg class="w-4 h-4 text-brand-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+        <span id="toast-message" class="text-sm font-medium font-mono">Copied</span>
+    </div>
+
+    <!-- Interactivity Scripts -->
+    <script>
+        function copyText(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                const toast = document.getElementById('toast');
+                const msg = document.getElementById('toast-message');
+                msg.textContent = `${text} copied`;
+                
+                toast.classList.remove('translate-y-20', 'opacity-0');
+                
+                setTimeout(() => {
+                    toast.classList.add('translate-y-20', 'opacity-0');
+                }, 2000);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.remove('opacity-0', 'translate-y-4');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.animate-on-scroll').forEach(el => {
+                observer.observe(el);
+            });
+
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-link');
+            const mainContent = document.getElementById('main-content');
+
+            mainContent.addEventListener('scroll', () => {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    if (mainContent.scrollTop >= (sectionTop - 150)) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${current}`) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
