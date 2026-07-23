@@ -126,7 +126,7 @@ export default function ByUseCaseFeatures() {
       {/* 2. Main Content - Sticky Bento Layout */}
       <div className="bg-app-bg text-app-fg py-20 flex flex-col gap-8">
         {/* Header Section */}
-        <div className="w-full px-8 md:px-16 lg:px-32 xl:px-16 mb-16 text-left">
+        <div className="max-w-7xl mx-auto px-8 w-full  text-left">
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4 leading-tight text-app-fg">
             Solutions By <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00F2B0] to-[#ffffff]">Use Case</span>
           </h2>
