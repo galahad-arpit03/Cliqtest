@@ -62,15 +62,15 @@ export const menuItems: MenuItem[] = [
           intro: "Streamline your entire quality operations through a powerful, centralized hub. From precision test planning to full requirement traceability and comprehensive version control, our management suite brings absolute clarity and governance to your entire testing lifecycle.",
           icon: Globe,
           features: [
-            { label: "Test Cases", desc: "Comprehensive case authoring." },
-            { label: "Test Suites", desc: "Organize and group test scenarios." },
+            { label: "Test Cases & Suites", desc: "Comprehensive case authoring." },
             { label: "Test Plans", desc: "Strategic testing blueprints." },
             { label: "Traceability", desc: "End-to-end requirement mapping." },
             { label: "Test Data Management", desc: "Centralized data control." },
-            { label: "Dynamic Reports", desc: "Real-time actionable insights." },
+            { label: "Real-Time Dashboard", desc: "Customized analytics view." },
+            { label: "Environment Repository", desc: "Manage test configurations." },
             { label: "Live Logs & Debugging", desc: "Instant issue identification." },
-            { label: "Manual Test Operations", desc: "Track manual executions." },
-            { label: "Smart Bug Raiser", desc: "Automated defect logging." }
+            { label: "Smart Bug Raiser", desc: "Automated defect logging." },
+            { label: "Integration Capability", desc: "Connect with enterprise tools." }
           ]
         },
 
@@ -83,14 +83,15 @@ export const menuItems: MenuItem[] = [
           icon: Cpu,
           features: [
             { label: "Protean Device Farm", desc: "Extensive real device network." },
+            { label: "Direct APK/IPA Upload", desc: "Instant app installation." },
             { label: "Mobile Automation", desc: "Native and hybrid app testing." },
             { label: "Parallel Execution", desc: "Concurrent testing capabilities." },
             { label: "Geolocation Testing", desc: "Location-aware validation." },
             { label: "Interactive Debugging", desc: "Real-time remote access." },
             { label: "Network Throttling", desc: "Simulate bandwidth conditions." },
-            { label: "Performance Tracking (App Profiling)", desc: "Deep application profiling." },
+            { label: "Performance Tracking", desc: "Deep application profiling." },
             { label: "Browser Testing", desc: "Cross-browser compatibility." },
-            { label: "Cross Platform", desc: "Unified multi-platform support." },
+            { label: "Cross Platform", desc: "Unified multi-platform support." }
           ]
         },
         {
@@ -103,12 +104,12 @@ export const menuItems: MenuItem[] = [
             { label: "Recorder", desc: "Intelligent visual recording." },
             { label: "Scriptless Automation", desc: "No coding required." },
             { label: "Reusable Components", desc: "Modular test design." },
+            { label: "PDF/OCR Reader", desc: "Extract and validate text." },
+            { label: "Biometric Authentication", desc: "Automate complex logins." },
             { label: "AI Auto-Healing", desc: "Self-repairing test execution." },
-            { label: "API Automation", desc: "Seamless API testing." },
-            { label: "Desktop Automation", desc: "Desktop application support." },
-            { label: "Smart Authentication", desc: "Handle complex logins." },
-            { label: "Environment Management", desc: "Manage configurations." },
-            { label: "Distributed Execution", desc: "Scale across nodes." }
+            { label: "API & Desktop Automation", desc: "Unified platform support." },
+            { label: "Test Schedulers", desc: "Automated recurring runs." },
+            { label: "Integration Support", desc: "Connect CI/CD and Jira." }
           ]
         },
         {
