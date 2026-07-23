@@ -1,4 +1,4 @@
-import { Layers, Wand2, Code, Monitor, ShieldCheck, Settings, Network, CheckCircle2, Video, Blocks } from 'lucide-react';
+import { Layers, Wand2, Code, Monitor, ShieldCheck, Settings, Network, CheckCircle2, Video, Blocks, FileSearch, Fingerprint, CalendarClock, Puzzle } from 'lucide-react';
 
 const features = [
   {
@@ -142,6 +142,66 @@ const features = [
         "Parallel cross-device/browser testing",
         "Lightweight execution agents",
         "Run-time execution logging"
+      ]
+    },
+    {
+      id: "pdf-ocr-reader",
+      title: "PDF/OCR Reader",
+      icon: FileSearch,
+      theme: "teal",
+      desc: [
+        "cliQTest integrates advanced Optical Character Recognition (OCR) and PDF reading capabilities to automatically extract and validate text, images, and data embedded within scanned documents, PDFs, and static images.",
+        "By extending automation capabilities to unstructured document formats, cliQTest ensures comprehensive data validation across document-heavy workflows such as invoice processing, identity verification, and report generation."
+      ],
+      benefits: [
+        "Automated data extraction from PDFs",
+        "Support for scanned images and OCR",
+        "Validates document-heavy workflows"
+      ]
+    },
+    {
+      id: "biometric-authentication",
+      title: "Biometric Authentication",
+      icon: Fingerprint,
+      theme: "purple",
+      desc: [
+        "cliQTest facilitates seamless testing of modern biometric authentication workflows, enabling organizations to automate scenarios involving fingerprint scans, facial recognition, and other biometric security layers.",
+        "This capability ensures that security-focused applications maintain high accessibility and compliance standards without requiring manual intervention during the testing lifecycle."
+      ],
+      benefits: [
+        "Automate fingerprint and facial recognition workflows",
+        "Ensure security and compliance standards",
+        "Seamless end-to-end testing without manual halts"
+      ]
+    },
+    {
+      id: "test-schedulers",
+      title: "Test Schedulers",
+      icon: CalendarClock,
+      theme: "green",
+      desc: [
+        "cliQTest includes robust built-in test scheduling capabilities that allow teams to orchestrate and execute automated test suites at predefined times, specific intervals, or triggered events.",
+        "By supporting continuous testing during off-hours and automatically emailing comprehensive reports to registered stakeholders, cliQTest optimizes resource utilization and ensures immediate visibility into application health."
+      ],
+      benefits: [
+        "Execute automated tests at predefined times",
+        "Support for off-hours continuous testing",
+        "Automated email reporting to stakeholders"
+      ]
+    },
+    {
+      id: "versatile-integration",
+      title: "Versatile Integration Support",
+      icon: Puzzle,
+      theme: "teal",
+      desc: [
+        "cliQTest provides seamless integration capabilities with third-party bug tracking tools, CI/CD pipelines, and industry-leading frameworks such as Jira, Zephyr, AWS, and Git.",
+        "This versatile connectivity ensures that testing workflows are deeply embedded into the broader development and delivery ecosystem, driving cross-team collaboration and unified quality governance."
+      ],
+      benefits: [
+        "Seamless connectivity with Jira and Zephyr",
+        "Integrates deeply with CI/CD pipelines",
+        "Unified cross-team collaboration"
       ]
     }
   

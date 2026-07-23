@@ -1,26 +1,30 @@
 export const reasons = [
     {
-      title: "Unified Quality Engineering Platform",
-      desc: "cliQTest unifies test management, automation, mobile device labs, analytics, AI-driven validation, and reporting into a centralized quality engineering ecosystem that eliminates fragmented testing workflows and disconnected tools."
+      title: "Faster Test Execution",
+      desc: "Accelerates testing cycles through AI-driven automation and parallel execution capabilities, significantly reducing time-to-market."
     },
     {
-      title: "AI-Native Automation",
-      desc: "cliQTest leverages Generative AI, Agentic AI, MCP-based automation, self-healing execution, AI-driven report summarization, and intelligent validation capabilities to modernize automation and reduce manual effort across testing lifecycles."
+      title: "Reduced Manual Effort",
+      desc: "Minimizes repetitive tasks with self-healing automation, agentic AI, and intelligent workflows to improve team productivity."
     },
     {
-      title: "Enterprise-Grade Scalability",
-      desc: "Designed for modern enterprise environments, cliQTest supports cloud-native, on-premise, and hybrid deployment models with distributed execution agents, scalable automation architecture, centralized governance, and real-device execution capabilities."
+      title: "Improved Test Coverage",
+      desc: "AI-generated tests ensure broader validation across web, mobile, desktop, and API ecosystems."
     },
     {
-      title: "Faster Time-to-Market",
-      desc: "By combining low-code automation, reusable components, AI-powered execution stability, parallel execution, and CI/CD integration, cliQTest significantly accelerates regression cycles and release validation timelines."
+      title: "Enhanced Quality Insights",
+      desc: "AI enables faster analysis and smarter decisions through dynamic reporting, report summarization, and interactive debugging."
     },
     {
-      title: "Cross-Platform Testing Ecosystem",
-      desc: "cliQTest enables unified testing across web, mobile, desktop, APIs, AI systems, and enterprise workflows while ensuring consistent validation across browsers, devices, environments, and integrated business systems."
+      title: "Security & Control",
+      desc: "Maintains absolute control over the testing environment with flexible deployment options, compliance adherence, and secure integrations."
     },
     {
-      title: "Intelligent Insights & Reporting",
-      desc: "With centralized dashboards, AI-powered report summarization, execution analytics, failure analysis, and quality metrics, cliQTest transforms testing data into actionable business intelligence that supports faster and smarter release decisions."
+      title: "Accuracy & Faster Defect Resolution",
+      desc: "Real devices and comprehensive testing tools identify and resolve issues before they reach users; real-time logs, screenshots, and video recordings drastically reduce debugging time."
+    },
+    {
+      title: "Efficiency & Scalability",
+      desc: "Reduces testing time and effort with low-code automation and centralized management, easily adapting to projects of any size and diverse application architectures."
     }
   ];

@@ -1,0 +1,51 @@
+Step-by-Step Font Implementation in this Project
+
+This project uses `next/font/google` to optimize and load fonts, and integrates them natively with Tailwind CSS v4.
+
+Step 1: Import Fonts from Google Fonts
+In `app/layout.tsx`, the required fonts (Space Grotesk and Alata) are imported directly from the `next/font/google` module:
+```tsx
+import { Space_Grotesk, Alata } from "next/font/google";
+```
+
+Step 2: Configure Font Instances
+The fonts are initialized with specific subsets, weights (if required), and assigned a CSS variable name. This ensures that the generated font CSS is mapped to custom properties:
+```tsx
+const spaceGrotesk = Space_Grotesk({
+  variable: "--font-space-grotesk",
+  subsets: ["latin"],
+});
+
+const alata = Alata({
+  weight: "400",
+  variable: "--font-alata",
+  subsets: ["latin"],
+});
+```
+
+Step 3: Inject CSS Variables into the HTML
+The generated `.variable` strings are appended to the class list of the root `<html>` element in `app/layout.tsx`. This makes the CSS variables globally available throughout the application:
+```tsx
+<html
+  lang="en"
+  className={`${spaceGrotesk.variable} ${alata.variable} h-full antialiased`}
+>
+```
+
+Step 4: Map Fonts in Global CSS
+In `app/globals.css`, Tailwind v4's `@theme inline` block is used to map these raw CSS variables to Tailwind's internal theming system, creating usable utility classes (like `font-sans` and `font-alata`):
+```css
+@theme inline {
+  --font-sans: var(--font-space-grotesk);
+  --font-alata: var(--font-alata);
+}
+```
+
+Step 5: Apply the Global Font Family
+Finally, the default font for the entire application is set directly on the `body` tag inside `app/globals.css`, referencing the injected CSS variable:
+```css
+body {
+  font-family: var(--font-space-grotesk), sans-serif;
+}
+```
+With these steps, Space Grotesk is set as the default text font, and the Alata font can be used where needed via Tailwind utilities or custom CSS rules.

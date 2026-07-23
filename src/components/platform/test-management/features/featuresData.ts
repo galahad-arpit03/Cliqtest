@@ -1,4 +1,4 @@
-import { FileText, FolderTree, CalendarDays, Route, Database, BarChart3, TerminalSquare, UserCheck, Bug } from 'lucide-react';
+import { FileText, FolderTree, CalendarDays, Route, Database, BarChart3, TerminalSquare, UserCheck, Bug, LayoutDashboard, ServerCog, Network } from 'lucide-react';
 
 const features = [
   {
@@ -197,6 +197,69 @@ const features = [
       { value: "3x", label: "Faster Triage" },
       { value: "100%", label: "Context Capture" },
       { value: "Real-time", label: "Sync" }
+    ]
+  },
+  {
+    id: "customized-dashboard",
+    title: "Real-Time Customized Dashboard",
+    icon: LayoutDashboard,
+    theme: "teal",
+    desc: [
+      "cliQTest TMT provides personalized and dynamic views displaying key metrics, test results, performance indicators, and execution analytics tailored to specific reporting needs.",
+      "Leveraging historical data and immediate insights, these real-time project dashboards empower teams and stakeholders to make informed decisions for continuous quality improvement and tracking."
+    ],
+    benefits: [
+      "Personalized dynamic views for key metrics",
+      "Immediate insights and execution analytics",
+      "Historical data for continuous improvement"
+    ],
+    stats: [
+      { value: "Real-Time", label: "Insights" },
+      { value: "100%", label: "Customizable" },
+      { value: "1-Click", label: "Export" },
+      { value: "360°", label: "Visibility" }
+    ]
+  },
+  {
+    id: "test-environment-management",
+    title: "Test Environment Management & Repository",
+    icon: ServerCog,
+    theme: "purple",
+    desc: [
+      "cliQTest TMT acts as a single, organized repository to store and manage all project-related documents, test environments, execution reports, and failure screenshots.",
+      "This centralized environment control ensures consistent and efficient management of all test configurations, providing maximum traceability, strict version control, and eliminating duplication."
+    ],
+    benefits: [
+      "Single repository for all artifacts",
+      "Centralized control of test configurations",
+      "Strict version control and organized storage"
+    ],
+    stats: [
+      { value: "Central", label: "Repository" },
+      { value: "Zero", label: "Duplication" },
+      { value: "100%", label: "Version Control" },
+      { value: "Max", label: "Traceability" }
+    ]
+  },
+  {
+    id: "integration-capability",
+    title: "Integration Capability",
+    icon: Network,
+    theme: "teal",
+    desc: [
+      "cliQTest TMT seamlessly connects the testing suite with industry-leading tools, DevOps platforms, and tracking frameworks to foster cross-team collaboration.",
+      "This integration capability ensures that quality metrics, defect tracking, and release management are deeply ingrained into standard development and operational workflows."
+    ],
+    benefits: [
+      "Connects with DevOps and tracking tools",
+      "Fosters cross-team collaboration",
+      "Streamlines release and defect management"
+    ],
+    stats: [
+      { value: "Seamless", label: "Connectivity" },
+      { value: "DevOps", label: "Ready" },
+      { value: "100%", label: "Workflow Sync" },
+      { value: "API", label: "Driven" }
     ]
   }
 ];

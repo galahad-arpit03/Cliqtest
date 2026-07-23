@@ -1,4 +1,4 @@
-import { Activity, Globe, Layers, Map, MonitorSmartphone, Smartphone, TerminalSquare, Wifi, Zap } from 'lucide-react';
+import { Activity, Globe, Layers, Map, MonitorSmartphone, Smartphone, TerminalSquare, Wifi, Zap, Upload } from 'lucide-react';
 
 const features = [
   {
@@ -224,6 +224,31 @@ const features = [
       { value: "100%", label: "Standardization" },
       { value: "Zero", label: "Context Switching" },
       { value: "10x", label: "Scaling" }
+    ]
+  },
+  {
+    id: 'apk-upload',
+    label: 'APK Upload',
+    title: 'Direct APK Upload & Installation',
+    icon: Upload,
+    theme: "from-[#00F2B0] to-[#ffffff]",
+    accent: "bg-[#00F2B0]",
+    textAccent: "text-[#00F2B0]",
+    desc: [
+      "Protean streamlines the application provisioning process by allowing testers to quickly upload Android APK and iOS IPA files and install them directly onto real devices.",
+      "This frictionless deployment mechanism accelerates build validation and continuous testing workflows, ensuring that new releases can be tested on physical hardware instantly without cumbersome manual installations."
+    ],
+    benefits: [
+      "Direct upload of APK/IPA files",
+      "Instant installation on real physical devices",
+      "Accelerated build validation",
+      "Seamless continuous testing workflows"
+    ],
+    stats: [
+      { value: "1-Click", label: "Installation" },
+      { value: "<10s", label: "Deploy Time" },
+      { value: "100%", label: "Native Support" },
+      { value: "Zero", label: "Manual Steps" }
     ]
   }
 ];
