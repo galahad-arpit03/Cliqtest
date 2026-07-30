@@ -18,7 +18,7 @@ export const integrationsData = [
       title: "Project & Workflow Integrations",
       desc: [
         "cliQTest connects with enterprise project management and collaboration platforms to streamline requirement traceability, defect management, execution tracking, and release coordination across distributed teams. These integrations help unify QA, development, and business workflows within a centralized quality ecosystem.",
-        "Automatically sync your test cases, requirements, and execution statuses directly into tools like Jira or Azure Boards. When a test fails in cliQTest, the platform can automatically generate detailed defect tickets populated with exact failure contexts, logs, and screenshots, significantly accelerating triage and developer resolution times."
+        "Automatically log execution defects directly into Jira using Smart Bug Raiser. When a test fails in cliQTest, the platform can automatically generate detailed defect tickets populated with exact failure contexts, logs, and screenshots, significantly accelerating triage and developer resolution times."
       ],
       listTitle: "Supported Ecosystem",
       list: ["Jira", "Agile Workflow Platforms", "Requirement Management Systems", "Defect Tracking Tools"],
@@ -30,7 +30,7 @@ export const integrationsData = [
       title: "Device Lab Integrations",
       desc: [
         "cliQTest’s Protean Device Lab integrates seamlessly with mobile automation ecosystems, execution agents, real-device infrastructures, and remote testing environments to support scalable mobile and cross-platform validation workflows. These integrations enable centralized device orchestration, real-time execution visibility, and seamless automation across distributed environments.",
-        "Whether you are leveraging your own internal device clouds or connecting to third-party public device farms, cliQTest acts as the unified orchestration layer. It bridges the gap between native test scripts and remote hardware execution, giving your mobile engineering teams unfettered access to hundreds of real OS/device combinations from a single interface."
+        "Whether you are leveraging your local Protean device hosts or enterprise private device lab infrastructure, cliQTest acts as the unified orchestration layer. It bridges the gap between native test scripts and host hardware execution, giving your mobile engineering teams direct access to real OS/device combinations from a single interface."
       ],
       listTitle: "Key Capabilities",
       list: ["Real-device execution integration", "Cross-platform mobile testing", "Remote device orchestration", "Parallel execution workflows", "Device observability and debugging"],
@@ -54,7 +54,7 @@ export const integrationsData = [
       title: "Cloud & Infrastructure Integrations",
       desc: [
         "cliQTest integrates with enterprise cloud platforms, infrastructure ecosystems, and distributed execution environments to support scalable testing operations across cloud-native, hybrid, and on-premise deployments. These integrations ensure flexible execution management, centralized orchestration, and optimized performance across globally distributed enterprise applications.",
-        "Seamlessly spin up ephemeral testing environments using Kubernetes or Docker directly from the cliQTest interface, run thousands of parallel execution threads, and tear them down immediately upon completion. This native cloud flexibility drastically reduces infrastructure costs while dramatically accelerating end-to-end regression testing times."
+        "Seamlessly configure dynamic API request and response virtualization rules directly from the cliQTest SARANSH interface, mock complex downstream services, and isolate test execution. This virtualization approach drastically reduces environment dependency costs while accelerating end-to-end regression testing times."
       ],
       listTitle: "Supported Ecosystem",
       list: ["AWS", "Cloud Infrastructure Platforms", "Hybrid Deployment Environments", "Distributed Execution Agents", "Containerized Execution Workflows"],

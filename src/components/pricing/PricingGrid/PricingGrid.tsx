@@ -12,7 +12,7 @@ export default function PricingGrid() {
       features: [
         "Access to Test Management Module.",
         "1 User and 1 Device for Manual Testing.",
-        "Manual Testing on Browsers and Real Devices (200 minutes/month).",
+        "Manual Testing on Browsers and Local/Private Protean Devices.",
         "Unlimited Test Case Creation and Documentation.",
         "Standard Security.",
         "24x7 Email and Chat Support."
