@@ -63,7 +63,7 @@ const features = [
     benefits: ["Autonomous execution flows", "Adaptive reasoning", "Self-correcting pathways"], 
     icon: Bot,
     span: "col-span-1 md:col-span-2 lg:col-span-1",
-    desc: "cliQTest introduces next-generation Agentic Automation capabilities that enable intelligent AI agents to independently analyze, plan, generate, optimize, and execute complex automation workflows with minimal human intervention. The platform decomposes high-level testing goals into structured execution flows, orchestrates multiple specialized AI agents collaboratively, and continuously refines automation scripts based on execution feedback and application behavior. This autonomous and adaptive automation model significantly improves scalability, reduces manual effort, and transforms traditional automation into intelligent quality engineering." 
+    desc: "cliQTest introduces next-generation Agentic Automation capabilities that enable intelligent AI agents to assist in analyzing, planning, generating, optimizing, and executing complex automation workflows with human-in-the-loop oversight. The platform decomposes high-level testing goals into structured execution flows, orchestrates specialized AI agents collaboratively, and refines automation scripts based on execution feedback and user authorization. This adaptive automation model significantly improves scalability, reduces manual effort, and transforms traditional automation into intelligent quality engineering." 
   },
   { 
     id: "ai-sql-query-agent", 

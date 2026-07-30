@@ -19,7 +19,7 @@ export const featuresData = [
     id: "compliance-readiness",
     title: "Compliance Readiness",
     descriptions: [
-      "We understand that operating in heavily regulated industries such as Finance, Healthcare, and Telecommunications demands uncompromising compliance. cliQTest is built to align strictly with global regulatory standards, including GDPR, HIPAA, SOC 2, and ISO 27001.",
+      "We understand that operating in heavily regulated industries such as Finance, Healthcare, and Telecommunications demands uncompromising compliance and data privacy. cliQTest is engineered with robust security architecture, role-based access controls, and data privacy governance.",
       "We provide built-in compliance frameworks, automated audit logging, and data anonymization tools that ensure your quality engineering practices meet the strictest legal and security mandates. From comprehensive audit trails to secure data handling, our platform is actively maintained to be fully compliance-ready for any sector.",
     ]
   },
