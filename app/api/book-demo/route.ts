@@ -67,7 +67,7 @@ export async function POST(req: Request) {
 
     const mailOptions = {
       from: '"Cliqtest Demo" <cliqtest@apmosys.com>',
-      to: "sales@apmosys.com, arpit.gupta@apmosys.com",
+      to: "sales@apmosys.com",
       replyTo: email,
       subject: `New Demo Request (${contactType === "sales" ? "Sales" : "Pre-Sales"}): ${firstName} ${lastName}`,
       html: `
