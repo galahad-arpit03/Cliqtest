@@ -67,9 +67,9 @@ export async function POST(req: Request) {
 
     const mailOptions = {
       from: '"Cliqtest Demo" <cliqtest@apmosys.com>',
-      to: "sales@apmosys.com, presales@apmosys.com",
+      to: "sales@apmosys.com, arpit.gupta@apmosys.com",
       replyTo: email,
-      subject: `New Demo Request: ${firstName} ${lastName}`,
+      subject: `New Demo Request (${contactType === "sales" ? "Sales" : "Pre-Sales"}): ${firstName} ${lastName}`,
       html: `
         <h2>New Demo Request</h2>
         <p><strong>Name:</strong> ${firstName} ${lastName}</p>
@@ -82,7 +82,10 @@ export async function POST(req: Request) {
       `,
     };
 
-    await transporter.sendMail(mailOptions);
+    // Fire and forget: don't await the email so the UI responds instantly
+    transporter.sendMail(mailOptions).catch((error) => {
+      console.error("Background email send failed:", error);
+    });
 
     return NextResponse.json({
       success: true,
