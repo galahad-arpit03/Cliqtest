@@ -97,9 +97,11 @@ export async function POST(req: Request) {
       },
     });
 
+    const targetEmail = "sales@apmosys.com";
+
     const mailOptions = {
       from: `"Cliqtest Demo" <${process.env.SMTP_USER || 'cliqtest@apmosys.com'}>`,
-      to: "sales@apmosys.com, presales@apmosys.com",
+      to: targetEmail,
       replyTo: email,
       subject: `New Demo Request (${contactType === "sales" ? "Sales" : "Pre-Sales"}): ${firstName} ${lastName}`,
       html: `
