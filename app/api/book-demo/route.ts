@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
+import { validateBusinessEmail, verifyMxRecord } from "@/lib/emailValidation";
 
 // In-memory store for rate limiting
 const rateLimitMap = new Map<string, { count: number; timestamp: number }>();
@@ -55,19 +56,50 @@ export async function POST(req: Request) {
       );
     }
 
+    // 1. Business Email Check (Block personal/free email providers)
+    const emailValidation = validateBusinessEmail(email);
+    if (!emailValidation.isValid) {
+      return NextResponse.json(
+        { error: emailValidation.reason },
+        { status: 400 },
+      );
+    }
+
+    // 2. DNS MX Record Verification (Verify domain mail server exists)
+    if (emailValidation.domain) {
+      const mxValidation = await verifyMxRecord(emailValidation.domain);
+      if (!mxValidation.isValid) {
+        return NextResponse.json(
+          { error: mxValidation.reason },
+          { status: 400 },
+        );
+      }
+    }
+
+    if (!process.env.SMTP_HOST || !process.env.SMTP_USER || !process.env.SMTP_PASS) {
+      console.error("Missing SMTP environment variables (SMTP_HOST, SMTP_USER, SMTP_PASS).");
+      return NextResponse.json(
+        { error: "Server configuration error: SMTP credentials missing." },
+        { status: 500 }
+      );
+    }
+
     const transporter = nodemailer.createTransport({
       host: process.env.SMTP_HOST,
-      port: Number(process.env.SMTP_PORT),
-      secure: process.env.SMTP_PORT === "465",
+      port: Number(process.env.SMTP_PORT || 465),
+      secure: (process.env.SMTP_PORT || "465") === "465",
       auth: {
         user: process.env.SMTP_USER,
         pass: process.env.SMTP_PASS,
       },
+      tls: {
+        rejectUnauthorized: false,
+      },
     });
 
     const mailOptions = {
-      from: '"Cliqtest Demo" <cliqtest@apmosys.com>',
-      to: "sales@apmosys.com",
+      from: `"Cliqtest Demo" <${process.env.SMTP_USER || 'cliqtest@apmosys.com'}>`,
+      to: "sales@apmosys.com, presales@apmosys.com",
       replyTo: email,
       subject: `New Demo Request (${contactType === "sales" ? "Sales" : "Pre-Sales"}): ${firstName} ${lastName}`,
       html: `

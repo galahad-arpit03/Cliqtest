@@ -6,6 +6,7 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { useLandingModeStore } from '@/store/themeStore';
+import { validateBusinessEmail } from '@/lib/emailValidation';
 
 export default function BookADemoPage() {
   const router = useRouter();
@@ -22,6 +23,8 @@ export default function BookADemoPage() {
     time: '',
     honey: ''
   });
+  const [emailError, setEmailError] = useState<string | null>(null);
+  const [emailTouched, setEmailTouched] = useState(false);
 
   const [contactType, setContactType] = useState<'presales' | 'sales' | null>(null);
 
@@ -69,10 +72,34 @@ export default function BookADemoPage() {
     return slotTime > now;
   };
 
+  const handleEmailChange = (val: string) => {
+    setFormData(prev => ({ ...prev, email: val }));
+    if (emailTouched || val.trim().length > 0) {
+      const res = validateBusinessEmail(val);
+      setEmailError(res.isValid ? null : (res.reason || null));
+    }
+  };
+
+  const handleEmailBlur = () => {
+    setEmailTouched(true);
+    if (formData.email) {
+      const res = validateBusinessEmail(formData.email);
+      setEmailError(res.isValid ? null : (res.reason || null));
+    }
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!selectedDate || !formData.time || !contactType) return;
     
+    // Client-side Business Email Check
+    const emailValidation = validateBusinessEmail(formData.email);
+    if (!emailValidation.isValid) {
+      setEmailError(emailValidation.reason || 'Please enter a valid work email.');
+      setEmailTouched(true);
+      return;
+    }
+
     setIsLoading(true);
     try {
       const response = await fetch('/api/book-demo', {
@@ -89,11 +116,19 @@ export default function BookADemoPage() {
         }),
       });
       
+      const responseData = await response.json().catch(() => ({}));
+
       if (response.ok) {
         setIsSubmitted(true);
         setFormData({ firstName: '', lastName: '', email: '', time: '', honey: '' });
+        setEmailError(null);
+        setEmailTouched(false);
       } else {
-        alert('Failed to send request. Please try again.');
+        alert(responseData.error || 'Failed to send request. Please try again.');
+        if (responseData.error && responseData.error.toLowerCase().includes('email')) {
+          setEmailError(responseData.error);
+          setEmailTouched(true);
+        }
       }
     } catch (error) {
       console.error(error);
@@ -294,8 +329,31 @@ export default function BookADemoPage() {
                   </div>
 
                   <div className="space-y-2">
-                    <label className={`text-[10px] font-bold uppercase tracking-widest transition-colors duration-500 ${isLight ? 'text-app-fg-invert/60' : 'text-app-fg/60'}`}>Work Email</label>
-                    <input required type="email" value={formData.email} onChange={e => setFormData({...formData, email: e.target.value})} className={`w-full border rounded-sm px-4 py-3 text-sm focus:border-[#6843B7] outline-none transition-all ${isLight ? 'bg-[#FAFAFA] border-app-border text-app-fg-invert' : 'bg-app-bg border-app-border text-app-fg'}`} />
+                    <div className="flex justify-between items-center">
+                      <label className={`text-[10px] font-bold uppercase tracking-widest transition-colors duration-500 ${isLight ? 'text-app-fg-invert/60' : 'text-app-fg/60'}`}>Work Email</label>
+                      <span className="text-[10px] text-[#6843B7] font-medium tracking-tight">Business Email Only</span>
+                    </div>
+                    <input 
+                      required 
+                      type="email" 
+                      value={formData.email} 
+                      onChange={e => handleEmailChange(e.target.value)}
+                      onBlur={handleEmailBlur}
+                      placeholder="name@company.com"
+                      className={`w-full border rounded-sm px-4 py-3 text-sm outline-none transition-all ${
+                        emailError && emailTouched
+                          ? 'border-red-500 bg-red-500/5 text-red-500 focus:border-red-500'
+                          : isLight 
+                            ? 'bg-[#FAFAFA] border-app-border text-app-fg-invert focus:border-[#6843B7]' 
+                            : 'bg-app-bg border-app-border text-app-fg focus:border-[#6843B7]'
+                      }`} 
+                    />
+                    {emailError && emailTouched && (
+                      <p className="text-xs text-red-500 mt-1 font-medium flex items-center gap-1.5">
+                        <span className="inline-block w-1.5 h-1.5 rounded-full bg-red-500"></span>
+                        {emailError}
+                      </p>
+                    )}
                   </div>
 
                   <div className="space-y-2">

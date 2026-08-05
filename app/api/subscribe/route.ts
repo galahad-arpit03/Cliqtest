@@ -45,13 +45,24 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: 'Missing email field' }, { status: 400 });
     }
 
+    if (!process.env.SMTP_HOST || !process.env.SMTP_USER || !process.env.SMTP_PASS) {
+      console.error("Missing SMTP environment variables (SMTP_HOST, SMTP_USER, SMTP_PASS).");
+      return NextResponse.json(
+        { error: "Server configuration error: SMTP credentials missing." },
+        { status: 500 }
+      );
+    }
+
     const transporter = nodemailer.createTransport({
       host: process.env.SMTP_HOST,
-      port: Number(process.env.SMTP_PORT),
-      secure: process.env.SMTP_PORT === '465',
+      port: Number(process.env.SMTP_PORT || 465),
+      secure: (process.env.SMTP_PORT || '465') === '465',
       auth: {
         user: process.env.SMTP_USER,
         pass: process.env.SMTP_PASS,
+      },
+      tls: {
+        rejectUnauthorized: false,
       },
     });
 
